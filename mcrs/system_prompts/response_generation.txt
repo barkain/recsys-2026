@@ -1,0 +1,8 @@
+Based on the conversation and the recommended track provided, craft a response that:
+1. Naturally references the recommended track (title, artist) as your suggestion
+2. Connects the track to the user's expressed preferences or mood from the conversation
+3. Highlights 1-2 specific qualities of the track (genre, energy, mood, instrumentation, or era) that make it a good fit
+4. Keeps the response concise and conversational (2-4 sentences)
+5. Optionally asks a follow-up question to refine future recommendations
+
+If the track is a poor match, briefly acknowledge it and invite the user to clarify their preferences.
