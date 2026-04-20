@@ -5,9 +5,7 @@ to return the top-20 most relevant tracks in ranked order.  This directly
 optimises for conversational relevance at the nDCG@20 cut-off.
 
 Design:
-  • Sliding-window permutation: we chunk top-K candidates into windows of
-    `window_size` and rerank each window, then merge.  Default: single pass
-    over all candidates (window_size = candidate_k).
+  • Single-pass over candidates up to window_size (default: all candidates).
   • Graceful fallback: if the LLM response cannot be parsed, original order
     is preserved.
   • Stacks on top of user-profile reranker — call this *after* coarse
@@ -16,10 +14,13 @@ Design:
 from __future__ import annotations
 
 import json
+import logging
 import os
 import re
+from concurrent.futures import ThreadPoolExecutor
 import anthropic
 
+logger = logging.getLogger(__name__)
 
 _SYSTEM_PROMPT = """\
 You are a music recommendation expert.  Given a conversation and a numbered
@@ -57,17 +58,26 @@ def _format_conversation(session_memory: list[dict]) -> str:
         role = msg["role"].capitalize()
         content = msg["content"]
         if isinstance(content, dict):
-            content = content.get("track_name", "") + " by " + content.get("artist_name", "")
+            name = content.get("track_name") or "unknown track"
+            artist = content.get("artist_name") or "unknown artist"
+            content = f"{name} by {artist}"
         lines.append(f"{role}: {content}")
     return "\n".join(lines) if lines else "(no prior conversation)"
 
 
 def _format_candidates(candidates: list[str], item_db) -> str:
-    """Build a numbered candidate list for the LLM prompt."""
+    """Build a numbered candidate list for the LLM prompt, including track_ids."""
     lines = []
     for i, track_id in enumerate(candidates, 1):
-        meta = item_db.id_to_metadata(track_id) if item_db else f"track_id: {track_id}"
-        lines.append(f"{i}. {meta}")
+        if item_db:
+            meta = item_db.id_to_metadata(track_id)
+            if isinstance(meta, dict):
+                meta_str = " | ".join(f"{k}: {v}" for k, v in meta.items() if v)
+            else:
+                meta_str = str(meta)
+        else:
+            meta_str = ""
+        lines.append(f"{i}. [track_id: {track_id}] {meta_str}")
     return "\n".join(lines)
 
 
@@ -85,8 +95,8 @@ def _parse_llm_response(raw: str, valid_ids: set[str], topk: int) -> list[str] |
                 text = part
                 break
 
-    # Try to find a JSON array anywhere in the response
-    match = re.search(r"\[.*?\]", text, re.DOTALL)
+    # Try to find a JSON array anywhere in the response (greedy to capture full array)
+    match = re.search(r"\[.*\]", text, re.DOTALL)
     if not match:
         return None
 
@@ -164,7 +174,7 @@ class LLMListwiseReranker:
         try:
             response = self.client.messages.create(
                 model=self.model,
-                max_tokens=512,
+                max_tokens=1024,
                 system=system,
                 messages=[{"role": "user", "content": user_msg}],
             )
@@ -174,8 +184,8 @@ class LLMListwiseReranker:
                 # Append any candidates not returned by LLM (preserve coverage)
                 remaining = [c for c in candidates if c not in set(reranked)]
                 return (reranked + remaining)[:k]
-        except Exception:
-            pass
+        except Exception as e:
+            logger.warning("LLMListwiseReranker failed: %s", e)
 
         if self.fallback_on_error:
             return candidates[:k]
@@ -188,8 +198,10 @@ class LLMListwiseReranker:
         item_db,
         topk: int | None = None,
     ) -> list[list[str]]:
-        """Rerank a batch sequentially (Claude has no native batch API)."""
-        return [
-            self.rerank(batch_candidates[i], batch_session_memory[i], item_db, topk)
-            for i in range(len(batch_candidates))
-        ]
+        """Rerank a batch in parallel using threads."""
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            futures = [
+                pool.submit(self.rerank, cands, mem, item_db, topk)
+                for cands, mem in zip(batch_candidates, batch_session_memory)
+            ]
+            return [f.result() for f in futures]
