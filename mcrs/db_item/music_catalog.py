@@ -10,8 +10,8 @@ ALL_CORPUS_TYPES = [
     "tag_list",
 ]
 
-# Minimal fields for terse item representation in LLM prompts
-DISPLAY_FIELDS = ["track_name", "artist_name", "album_name"]
+# Fields shown to LLM in reranker/generation prompts — includes tags and year for richer signal
+DISPLAY_FIELDS = ["track_name", "artist_name", "album_name", "release_date", "tag_list"]
 
 
 class MusicCatalogDB:
@@ -35,11 +35,16 @@ class MusicCatalogDB:
         metadata = self.metadata_dict[track_id]
         parts = [f"track_id: {track_id}"]
         for field in DISPLAY_FIELDS:
-            if field in metadata:
-                val = metadata[field]
-                if isinstance(val, list):
-                    val = ", ".join(str(v) for v in val)
-                parts.append(f"{field}: {str(val).lower()}")
+            if field not in metadata:
+                continue
+            val = metadata[field]
+            if isinstance(val, list):
+                # For tag_list: keep top 5 tags to stay concise
+                val = ", ".join(str(v) for v in val[:5])
+            elif field == "release_date" and val:
+                # Show only the year (first 4 chars) to save tokens
+                val = str(val)[:4]
+            parts.append(f"{field}: {str(val).lower()}")
         return ", ".join(parts)
 
     def id_to_full_metadata(self, track_id: str) -> dict:
