@@ -18,6 +18,7 @@ class CRS_SYSTEM:
     Optional stages:
       3. Query reformulation: LLM extracts music entities before retrieval
       4. Reranking: user-profile embedding similarity
+      5. LLM listwise reranking (nDCG@20-optimised)
     """
 
     def __init__(
@@ -95,7 +96,6 @@ class CRS_SYSTEM:
         """Build retrieval query, optionally via LLM reformulation."""
         if self.query_reformulator is not None:
             return self.query_reformulator.reformulate(session_memory, user_query)
-        # Fallback: raw concatenation of conversation
         full_memory = list(session_memory) + [{"role": "user", "content": user_query}]
         return "\n".join(f"{m['role']}: {m['content']}" for m in full_memory)
 
@@ -158,7 +158,6 @@ class CRS_SYSTEM:
         else:
             batch_candidates = [self.retrieval.text_to_item_retrieval(q, topk=self.candidate_k) for q in retrieval_inputs]
 
-        # Rerank and get top items
         final_candidates = []
         top_items = []
         for i, candidates in enumerate(batch_candidates):
@@ -166,7 +165,6 @@ class CRS_SYSTEM:
             final_candidates.append(ranked)
             top_items.append(self.item_db.id_to_metadata(ranked[0]))
 
-        # Generate responses
         if hasattr(self.lm, "batch_response_generation"):
             responses = self.lm.batch_response_generation(sys_prompts, session_memories, top_items)
         else:
