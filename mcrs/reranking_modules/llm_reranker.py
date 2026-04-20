@@ -23,9 +23,18 @@ import anthropic
 logger = logging.getLogger(__name__)
 
 _SYSTEM_PROMPT = """\
-You are a music recommendation assistant.  Given a conversation and a numbered
-list of candidate tracks, select the {topk} tracks that are MOST relevant to
-what the user wants RIGHT NOW, and return them in descending relevance order.
+You are a music recommendation expert.  Given a conversation and a numbered
+list of candidate tracks (with genre tags and release year), select the {topk}
+tracks that are MOST relevant to what the user wants RIGHT NOW.
+
+Scoring criteria (in priority order):
+1. Genre/style match — does it fit the genre, mood, or vibe the user described?
+2. Artist match — if the user named an artist or asked for similar artists
+3. Era/decade match — if the user mentioned a time period (e.g. "80s", "2000s")
+4. Thematic fit — lyrical themes, energy level, tempo cues from conversation
+5. Diversity — prefer varied results over 20 tracks by the same artist
+
+Return them in DESCENDING relevance order (best match first).
 
 Rules:
 - Return ONLY a JSON array of track_id strings, e.g. ["id1", "id2", ...]
