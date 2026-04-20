@@ -1,0 +1,33 @@
+# Echo: E5-large-v2 upgrade — Hybrid (BM25 + E5-large) + QR + user-profile reranker + LLM reranker
+# Improvements over echo_hybrid_qr_llm_reranker_devset:
+#   1. Dense model upgraded from e5-base-v2 to e5-large-v2 (stronger semantic retrieval)
+#   2. release_date added to corpus_types (captures temporal queries: "80s rock", "recent indie")
+#   3. LLM reranker prompt updated with music-specific scoring criteria
+#   4. id_to_metadata now includes tag_list + year (richer LLM context)
+lm_type: "claude-haiku-4-5-20251001"
+retrieval_type: "hybrid"
+dense_model: "intfloat/e5-large-v2"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+item_db_name: "talkpl-ai/TalkPlayData-Challenge-Track-Metadata"
+user_db_name: "talkpl-ai/TalkPlayData-Challenge-User-Metadata"
+track_split_types:
+  - "all_tracks"
+user_split_types:
+  - "all_users"
+corpus_types:
+  - "track_name"
+  - "artist_name"
+  - "album_name"
+  - "release_date"
+  - "tag_list"
+cache_dir: "./cache"
+device: "cuda"
+attn_implementation: "eager"
+use_reranker: true
+reranker_alpha: 0.3
+candidate_k: 50
+use_query_reformulation: true
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-haiku-4-5-20251001"
+llm_reranker_window: 50

@@ -38,13 +38,19 @@ The baseline system:
 ## Implementation Order
 
 1. [x] Set up repo structure, clone baseline
-2. [ ] Explore HuggingFace datasets to understand data schema
-3. [ ] Implement enriched BM25 with tag_list (quick win)
-4. [ ] Replace BERT with E5-large or BGE retriever
-5. [ ] Add hybrid retrieval (BM25 + dense, RRF fusion)
-6. [ ] Add reranking stage with user profile
-7. [ ] Claude API for response generation
-8. [ ] Evaluate on devset, iterate
+2. [x] Explore HuggingFace datasets to understand data schema
+3. [x] Implement enriched BM25 with tag_list (quick win)
+4. [x] Replace BERT with E5-base-v2 dense retriever
+5. [x] Add hybrid retrieval (BM25 + dense, RRF fusion)
+6. [x] Add reranking stage: user-profile reranker + LLM listwise reranker
+7. [x] Claude API for generation (Haiku) and query reformulation
+8. [x] Upgrade dense model to E5-large-v2 + add release_date to corpus
+9. [x] Improve LLM reranker prompt with music-aware scoring criteria
+10. [x] Richer id_to_metadata: includes tag_list + year for LLM context
+11. [ ] Evaluate on devset, iterate
+12. [ ] Try BGE-M3 or music-specific embedding model
+13. [ ] Explore pre-computed TalkPlayData-2-Track-Embeddings for dense retrieval
+14. [ ] Sliding-window LLM reranker (rerank by smaller windows, merge)
 
 ## Key Datasets
 - Conversations: `talkpl-ai/TalkPlayData-Challenge-Dataset`
