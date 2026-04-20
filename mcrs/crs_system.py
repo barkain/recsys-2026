@@ -18,6 +18,7 @@ class CRS_SYSTEM:
     Optional stages:
       3. Query reformulation: LLM extracts music entities before retrieval
       4. Reranking: user-profile embedding similarity
+      5. LLM listwise reranking (nDCG@20-optimised)
     """
 
     def __init__(
@@ -39,6 +40,9 @@ class CRS_SYSTEM:
         candidate_k: int = 50,
         use_query_reformulation: bool = False,
         query_reformulation_model: str = "claude-haiku-4-5-20251001",
+        use_llm_reranker: bool = False,
+        llm_reranker_model: str = "claude-haiku-4-5-20251001",
+        llm_reranker_window: int | None = None,
     ):
         self.cache_dir = cache_dir
         self.candidate_k = candidate_k
@@ -59,6 +63,14 @@ class CRS_SYSTEM:
         if use_reranker:
             from mcrs.reranking_modules import UserProfileReranker
             self.reranker = UserProfileReranker(cache_dir=cache_dir, alpha=reranker_alpha)
+
+        self.llm_reranker = None
+        if use_llm_reranker:
+            from mcrs.reranking_modules import LLMListwiseReranker
+            self.llm_reranker = LLMListwiseReranker(
+                model=llm_reranker_model,
+                window_size=llm_reranker_window,
+            )
 
         self.query_reformulator = None
         if use_query_reformulation:
@@ -84,9 +96,27 @@ class CRS_SYSTEM:
         """Build retrieval query, optionally via LLM reformulation."""
         if self.query_reformulator is not None:
             return self.query_reformulator.reformulate(session_memory, user_query)
-        # Fallback: raw concatenation of conversation
         full_memory = list(session_memory) + [{"role": "user", "content": user_query}]
         return "\n".join(f"{m['role']}: {m['content']}" for m in full_memory)
+
+    def _apply_rerankers(
+        self,
+        candidates: list[str],
+        user_id: str | None,
+        session_memory: list[dict],
+    ) -> list[str]:
+        """Apply reranking pipeline: user-profile reranker, then LLM reranker."""
+        if self.reranker:
+            # Pass more candidates to LLM reranker if it will run next
+            k = self.candidate_k if self.llm_reranker else 20
+            candidates = self.reranker.rerank(candidates, user_id, topk=k)
+
+        if self.llm_reranker:
+            candidates = self.llm_reranker.rerank(candidates, session_memory, self.item_db, topk=20)
+        elif not self.reranker:
+            candidates = candidates[:20]
+
+        return candidates
 
     def chat(self, user_query: str, session_memory: list[dict], user_id: str | None = None) -> dict[str, Any]:
         session_memory = list(session_memory)
@@ -94,11 +124,7 @@ class CRS_SYSTEM:
         session_memory.append({"role": "user", "content": user_query})
 
         candidates = self.retrieval.text_to_item_retrieval(retrieval_input, topk=self.candidate_k)
-
-        if self.reranker:
-            candidates = self.reranker.rerank(candidates, user_id, topk=20)
-        else:
-            candidates = candidates[:20]
+        candidates = self._apply_rerankers(candidates, user_id, session_memory)
 
         sys_prompt = self._get_system_prompt(user_id)
         top_item = self.item_db.id_to_metadata(candidates[0])
@@ -132,18 +158,13 @@ class CRS_SYSTEM:
         else:
             batch_candidates = [self.retrieval.text_to_item_retrieval(q, topk=self.candidate_k) for q in retrieval_inputs]
 
-        # Rerank and get top items
         final_candidates = []
         top_items = []
         for i, candidates in enumerate(batch_candidates):
-            if self.reranker:
-                ranked = self.reranker.rerank(candidates, user_ids[i], topk=20)
-            else:
-                ranked = candidates[:20]
+            ranked = self._apply_rerankers(candidates, user_ids[i], session_memories[i])
             final_candidates.append(ranked)
             top_items.append(self.item_db.id_to_metadata(ranked[0]))
 
-        # Generate responses
         if hasattr(self.lm, "batch_response_generation"):
             responses = self.lm.batch_response_generation(sys_prompts, session_memories, top_items)
         else:
