@@ -3,10 +3,14 @@
 Extracts explicit music entities and preferences from conversation history
 to build a focused, enriched retrieval query — improving BM25 and dense recall.
 """
+import logging
 import os
 import json
+import re
+from concurrent.futures import ThreadPoolExecutor
 import anthropic
 
+logger = logging.getLogger(__name__)
 
 _SYSTEM_PROMPT = """\
 You are a music entity extractor. Given a music recommendation conversation, \
@@ -49,6 +53,13 @@ def _build_enriched_query(entities: dict) -> str:
     return " ".join(parts) if parts else user_q
 
 
+def _strip_fences(raw: str) -> str:
+    """Remove markdown code fences from a string."""
+    raw = re.sub(r"^```(?:json)?\s*", "", raw, flags=re.MULTILINE)
+    raw = re.sub(r"```\s*$", "", raw, flags=re.MULTILINE)
+    return raw.strip()
+
+
 class QueryReformulator:
     """Uses Claude to extract music search signals from conversation history."""
 
@@ -79,27 +90,26 @@ class QueryReformulator:
         try:
             response = self.client.messages.create(
                 model=self.model,
-                max_tokens=256,
+                max_tokens=512,
                 system=_SYSTEM_PROMPT,
                 messages=[
                     {"role": "user", "content": _USER_TEMPLATE.format(conversation=conversation_text)}
                 ],
             )
-            raw = response.content[0].text.strip()
-            # Strip markdown code fences if present
-            if raw.startswith("```"):
-                raw = raw.split("```")[1]
-                if raw.startswith("json"):
-                    raw = raw[4:]
+            if response.stop_reason != "end_turn":
+                raise ValueError(f"Response truncated: stop_reason={response.stop_reason}")
+            raw = _strip_fences(response.content[0].text)
             entities = json.loads(raw)
             enriched = _build_enriched_query(entities)
             return enriched if enriched.strip() else user_query
-        except Exception:
+        except Exception as e:
             if self.fallback_on_error:
+                logger.warning("QueryReformulator failed, falling back to raw query: %s", e)
                 return user_query
             raise
 
     def batch_reformulate(self, batch: list[tuple[list[dict], str]]) -> list[str]:
-        """Reformulate a batch of (session_memory, user_query) pairs."""
-        # Claude doesn't batch natively — process sequentially
-        return [self.reformulate(mem, q) for mem, q in batch]
+        """Reformulate a batch of (session_memory, user_query) pairs in parallel."""
+        with ThreadPoolExecutor(max_workers=16) as pool:
+            futures = [pool.submit(self.reformulate, mem, q) for mem, q in batch]
+            return [f.result() for f in futures]
