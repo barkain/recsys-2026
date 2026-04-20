@@ -49,12 +49,15 @@ class BM25Retriever:
         model.index(corpus_tokens)
         os.makedirs(index_path, exist_ok=True)
         model.save(index_path, corpus=corpus)
+        # Clear corpus from memory — we use integer indices for retrieval
+        model.corpus = None
         with open(os.path.join(index_path, "track_ids.json"), "w") as f:
             json.dump(track_ids, f)
         return model, track_ids
 
     def _load_index(self, index_path: str):
-        model = bm25s.BM25.load(index_path, load_corpus=True)
+        # load_corpus=False → retrieve returns integer indices into track_ids
+        model = bm25s.BM25.load(index_path, load_corpus=False)
         with open(os.path.join(index_path, "track_ids.json")) as f:
             track_ids = json.load(f)
         return model, track_ids
@@ -62,13 +65,13 @@ class BM25Retriever:
     def text_to_item_retrieval(self, query: str, topk: int = 20) -> list[str]:
         tokens = bm25s.tokenize([query.lower()])
         results = self.bm25_model.retrieve(tokens, k=topk, return_as="tuple")
-        return [self.track_ids[item["id"]] for item in results.documents[0]]
+        return [self.track_ids[int(idx)] for idx in results.documents[0]]
 
     def batch_text_to_item_retrieval(self, queries: list[str], topk: int = 20) -> list[list[str]]:
         tokens = bm25s.tokenize([q.lower() for q in queries])
         results = self.bm25_model.retrieve(tokens, k=topk, return_as="tuple")
         return [
-            [self.track_ids[item["id"]] for item in results.documents[i]]
+            [self.track_ids[int(idx)] for idx in results.documents[i]]
             for i in range(len(queries))
         ]
 
@@ -77,6 +80,6 @@ class BM25Retriever:
         tokens = bm25s.tokenize([query.lower()])
         results = self.bm25_model.retrieve(tokens, k=topk, return_as="tuple")
         return [
-            (self.track_ids[item["id"]], float(results.scores[0][idx]))
-            for idx, item in enumerate(results.documents[0])
+            (self.track_ids[int(idx)], float(results.scores[0][i]))
+            for i, idx in enumerate(results.documents[0])
         ]
