@@ -17,26 +17,15 @@ def load_retrieval_module(
     elif retrieval_type == "dense":
         model_name = kwargs.get("dense_model", "intfloat/e5-base-v2")
         return DenseRetriever(dataset_name, split_types, corpus_types, cache_dir, model_name=model_name)
-    elif retrieval_type in ("hybrid", "multi_query"):
+    elif retrieval_type == "hybrid":
         dense_model = kwargs.get("dense_model", "intfloat/e5-base-v2")
         bm25_weight = kwargs.get("bm25_weight", 0.5)
         candidate_k = kwargs.get("candidate_k", 100)
-        base = HybridRetriever(
+        return HybridRetriever(
             dataset_name, split_types, corpus_types, cache_dir,
             dense_model=dense_model, bm25_weight=bm25_weight,
             candidate_k=candidate_k,
         )
-        if retrieval_type == "multi_query":
-            model = kwargs.get("query_reformulation_model", "claude-haiku-4-5-20251001")
-            n_queries = kwargs.get("n_queries", 3)
-            per_query_k = kwargs.get("per_query_k", candidate_k)
-            return MultiQueryRetriever(
-                base_retriever=base,
-                model=model,
-                n_queries=n_queries,
-                per_query_k=per_query_k,
-            )
-        return base
     else:
         raise ValueError(f"Unknown retrieval_type: {retrieval_type}")
 
