@@ -1,6 +1,7 @@
 from mcrs.retrieval_modules.bm25 import BM25Retriever
 from mcrs.retrieval_modules.dense import DenseRetriever
 from mcrs.retrieval_modules.hybrid import HybridRetriever
+from mcrs.retrieval_modules.multi_query import MultiQueryRetriever
 
 
 def load_retrieval_module(
@@ -19,12 +20,20 @@ def load_retrieval_module(
     elif retrieval_type == "hybrid":
         dense_model = kwargs.get("dense_model", "intfloat/e5-base-v2")
         bm25_weight = kwargs.get("bm25_weight", 0.5)
+        candidate_k = kwargs.get("candidate_k", 100)
         return HybridRetriever(
             dataset_name, split_types, corpus_types, cache_dir,
-            dense_model=dense_model, bm25_weight=bm25_weight
+            dense_model=dense_model, bm25_weight=bm25_weight,
+            candidate_k=candidate_k,
         )
     else:
         raise ValueError(f"Unknown retrieval_type: {retrieval_type}")
 
 
-__all__ = ["BM25Retriever", "DenseRetriever", "HybridRetriever", "load_retrieval_module"]
+__all__ = [
+    "BM25Retriever",
+    "DenseRetriever",
+    "HybridRetriever",
+    "MultiQueryRetriever",
+    "load_retrieval_module",
+]

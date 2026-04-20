@@ -1,0 +1,40 @@
+# Echo: Multi-query retrieval — generates 3 diverse queries per turn, fuses via RRF
+# Stack: retrieval_type=multi_query (3x HybridRetriever queries, RRF fusion)
+#        + E5-large-v2 dense model
+#        + user-profile reranker
+#        + LLM listwise reranker
+# Improvement over echo_e5_large_full_devset:
+#   - Instead of a single reformulated query, Claude generates 3 diverse queries:
+#       q1: genre/style/sonic texture
+#       q2: artist names and similar artists
+#       q3: mood, era, and thematic context
+#   - Each query retrieves 100 candidates, RRF fuses all 300 into a ranked shortlist
+#   - This increases recall by capturing different facets of user intent
+lm_type: "claude-haiku-4-5-20251001"
+retrieval_type: "multi_query"
+dense_model: "intfloat/e5-large-v2"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+item_db_name: "talkpl-ai/TalkPlayData-Challenge-Track-Metadata"
+user_db_name: "talkpl-ai/TalkPlayData-Challenge-User-Metadata"
+track_split_types:
+  - "all_tracks"
+user_split_types:
+  - "all_users"
+corpus_types:
+  - "track_name"
+  - "artist_name"
+  - "album_name"
+  - "release_date"
+  - "tag_list"
+cache_dir: "./cache"
+device: "cuda"
+attn_implementation: "eager"
+use_reranker: true
+reranker_alpha: 0.3
+candidate_k: 50
+n_queries: 3
+per_query_k: 100
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-haiku-4-5-20251001"
+llm_reranker_window: 50
