@@ -55,6 +55,56 @@ def build_bm25_query(history: list[dict], user_query: str) -> str:
     return " ".join(parts)
 
 
+def generate_response(user_query: str, track_ids: list[str], metadata_dict: dict) -> str:
+    """Generate a natural-language recommendation response from retrieved tracks.
+
+    Focuses on the music (genres/tags) rather than echoing the raw user query,
+    which avoids incoherent phrases when the user query is conversational/confirmatory.
+    """
+    track_info = []
+    all_tags: list[str] = []
+    seen_artists: set[str] = set()
+
+    for tid in track_ids[:5]:
+        meta = metadata_dict.get(tid)
+        if not meta:
+            continue
+        track = meta.get("track_name", "")
+        artist = meta.get("artist_name", "")
+        tags = meta.get("tag_list", [])
+        if isinstance(track, list):
+            track = track[0] if track else ""
+        if isinstance(artist, list):
+            artist = ", ".join(str(a) for a in artist) if artist else ""
+        if not track or not artist:
+            continue
+        if isinstance(tags, list):
+            all_tags.extend(str(t) for t in tags[:3])
+        artist_key = artist.lower()
+        if artist_key not in seen_artists:
+            track_info.append((track, artist))
+            seen_artists.add(artist_key)
+
+    if not track_info:
+        return "Here are some tracks I think you'll enjoy based on our conversation!"
+
+    # Format track list
+    track_parts = [f'"{t}" by {a}' for t, a in track_info]
+    if len(track_parts) == 1:
+        recs = track_parts[0]
+    elif len(track_parts) == 2:
+        recs = f"{track_parts[0]} and {track_parts[1]}"
+    else:
+        recs = ", ".join(track_parts[:-1]) + f", and {track_parts[-1]}"
+
+    extra = len(track_ids) - len(track_info)
+    return (
+        f"Here are my top picks for you: {recs} — "
+        f"plus {extra} more tracks I think you'll love. "
+        f"Let me know if you'd like something more specific!"
+    )
+
+
 def main(args):
     print("Clearing local BM25 cache...")
     os.system("rm -rf cache")
@@ -97,12 +147,13 @@ def main(args):
         bm25_ranked = bm25.scored_retrieval(bm25_query, topk=candidate_k)
         fused = rrf_fuse(bm25_ranked, cf_ranked, k=rrf_k,
                          bm25_weight=bm25_weight, cf_weight=cf_weight, topk=20)
+        response = generate_response(user_query, fused, bm25.metadata_dict)
         results.append({
             "session_id": session_id,
             "user_id": user_id,
             "turn_number": turn_num,
             "predicted_track_ids": fused,
-            "predicted_response": "",
+            "predicted_response": response,
         })
 
     print(f"Total predictions: {len(results)}")
