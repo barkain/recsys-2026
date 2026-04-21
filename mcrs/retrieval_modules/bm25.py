@@ -43,14 +43,17 @@ class BM25Retriever:
 
     def _build_and_save(self, index_path: str):
         track_ids = list(self.metadata_dict.keys())
-        corpus = [self._stringify(self.metadata_dict[tid]) for tid in track_ids]
-        corpus_tokens = bm25s.tokenize(corpus)
+        corpus_texts = [self._stringify(self.metadata_dict[tid]) for tid in track_ids]
+        corpus_tokens = bm25s.tokenize(corpus_texts)
         model = bm25s.BM25()
         model.index(corpus_tokens)
         os.makedirs(index_path, exist_ok=True)
-        model.save(index_path, corpus=corpus)
+        # Store corpus as dicts so item["id"] returns the integer position in retrieval
+        model.save(index_path, corpus=[{"id": i} for i in range(len(track_ids))])
         with open(os.path.join(index_path, "track_ids.json"), "w") as f:
             json.dump(track_ids, f)
+        # Reload from disk so the in-memory corpus is also dict-based (not raw tokens)
+        model = bm25s.BM25.load(index_path, load_corpus=True)
         return model, track_ids
 
     def _load_index(self, index_path: str):
@@ -73,10 +76,10 @@ class BM25Retriever:
         ]
 
     def scored_retrieval(self, query: str, topk: int) -> list[tuple[str, float]]:
-        """Return (track_id, score) pairs for RRF fusion."""
+        """Return (track_id, score) pairs for RRF fusion. Score is rank-based (RRF ignores raw score)."""
         tokens = bm25s.tokenize([query.lower()])
         results = self.bm25_model.retrieve(tokens, k=topk, return_as="tuple")
         return [
-            (self.track_ids[item["id"]], float(results.scores[0][idx]))
+            (self.track_ids[item["id"]], 1.0 / (idx + 1))
             for idx, item in enumerate(results.documents[0])
         ]
