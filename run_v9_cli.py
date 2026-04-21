@@ -72,8 +72,8 @@ def build_bm25_query(history, user_query, metadata_dict=None):
     for i, turn in enumerate(user_turns):
         parts.append(turn)
         if i == n - 1:
-            parts.append(turn)
-    parts.extend([user_query, user_query, user_query])
+            parts.append(turn)  # last prior turn boosted 2× (recency weighting)
+    parts.extend([user_query, user_query, user_query])  # current query boosted 3×
     return " ".join(parts)
 
 
@@ -193,8 +193,7 @@ def claude_rerank_and_respond(session_idx, session_id, candidates, conv_text, ca
         print(f"  [WARN] Session {session_id} failed: {e} | stderr: {getattr(e, 'stderr', '')[:200]}")
 
     # Fallback: BM25 order (deduplicated) + template response
-    seen: set[str] = set()
-    deduped = [c for c in candidates if not (c in seen or seen.add(c))]  # type: ignore[func-returns-value]
+    deduped = list(dict.fromkeys(candidates))
     return session_idx, session_id, deduped[:topk], _FALLBACK_RESPONSE, True
 
 
@@ -296,14 +295,19 @@ def main(args):
             "predicted_response": response,
         })
 
-    # Validate no duplicates before saving (scorer will reject if any exist)
+    # Validate before saving — scorer rejects duplicates and may penalise short lists
     dup_sessions = []
+    short_sessions = []
     for p in predictions:
         ids = p["predicted_track_ids"]
         if len(ids) != len(set(ids)):
             dup_sessions.append(p["session_id"])
+        if len(ids) < 20:
+            short_sessions.append((p["session_id"], len(ids)))
     if dup_sessions:
         raise ValueError(f"Duplicate track IDs in {len(dup_sessions)} sessions: {dup_sessions}")
+    if short_sessions:
+        print(f"[WARN] {len(short_sessions)} sessions have fewer than 20 tracks: {short_sessions}")
     print(f"Validation passed: all {len(predictions)} sessions have unique track IDs.")
 
     # Save
