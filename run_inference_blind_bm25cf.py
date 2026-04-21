@@ -12,7 +12,6 @@ from omegaconf import OmegaConf
 from datasets import load_dataset
 
 from mcrs.retrieval_modules.bm25 import BM25Retriever
-from mcrs.retrieval_modules.cf_bpr import CFBPRRetriever
 
 
 def rrf_fuse(
@@ -36,6 +35,7 @@ def last_turn(conversations: list[dict]) -> tuple[int, str, list[dict]]:
     """Return (turn_number, user_query, prior_history_dicts) for the LAST user turn only.
 
     The Codabench scorer expects exactly one prediction per session (80 sessions = 80 entries).
+    Preserves role=music so query builder can use confirmed track IDs.
     """
     df = pd.DataFrame(conversations).sort_values("turn_number")
     user_rows = df[df["role"] == "user"]
@@ -44,65 +44,46 @@ def last_turn(conversations: list[dict]) -> tuple[int, str, list[dict]]:
     query = row["content"]
     history = []
     for _, h in df[df["turn_number"] < turn_num].iterrows():
-        role = h["role"] if h["role"] != "music" else "assistant"
-        history.append({"role": role, "content": h["content"]})
+        history.append({"role": h["role"], "content": h["content"]})
     return turn_num, query, history
 
 
-def build_bm25_query(history: list[dict], user_query: str) -> str:
-    parts = [m["content"] for m in history if m["role"] == "user"]
-    parts.append(user_query)
-    return " ".join(parts)
+def build_bm25_query(history: list[dict], user_query: str, metadata_dict: dict | None = None) -> str:
+    """Build enriched BM25 query from conversation history.
 
-
-def generate_response(user_query: str, track_ids: list[str], metadata_dict: dict) -> str:
-    """Generate a natural-language recommendation response from retrieved tracks.
-
-    Focuses on the music (genres/tags) rather than echoing the raw user query,
-    which avoids incoherent phrases when the user query is conversational/confirmatory.
+    Improvements over naive concatenation:
+    1. Confirmed tracks (role=music turns): add their artist + tags as direct relevance signal
+    2. Recency weighting: repeat the last user turn 2x and current query 3x
+    3. All prior user turns included for full context
     """
-    track_info = []
-    all_tags: list[str] = []
-    seen_artists: set[str] = set()
+    parts = []
 
-    for tid in track_ids[:5]:
-        meta = metadata_dict.get(tid)
-        if not meta:
-            continue
-        track = meta.get("track_name", "")
-        artist = meta.get("artist_name", "")
-        tags = meta.get("tag_list", [])
-        if isinstance(track, list):
-            track = track[0] if track else ""
-        if isinstance(artist, list):
-            artist = ", ".join(str(a) for a in artist) if artist else ""
-        if not track or not artist:
-            continue
-        if isinstance(tags, list):
-            all_tags.extend(str(t) for t in tags[:3])
-        artist_key = artist.lower()
-        if artist_key not in seen_artists:
-            track_info.append((track, artist))
-            seen_artists.add(artist_key)
+    # 1. Confirmed track metadata — strongest positive signal
+    if metadata_dict is not None:
+        for msg in history:
+            if msg["role"] == "music":
+                track_id = msg["content"].strip()
+                if track_id in metadata_dict:
+                    meta = metadata_dict[track_id]
+                    artist = meta.get("artist_name", "")
+                    if artist:
+                        parts.append(artist)
+                    tags = meta.get("tag_list", [])
+                    if isinstance(tags, list):
+                        parts.extend(str(t) for t in tags[:5])
 
-    if not track_info:
-        return "Here are some tracks I think you'll enjoy based on our conversation!"
+    # 2. Prior user turns — recency weighted
+    user_turns = [m["content"] for m in history if m["role"] == "user"]
+    n = len(user_turns)
+    for i, turn in enumerate(user_turns):
+        parts.append(turn)
+        if i == n - 1:          # last prior turn: repeat once more
+            parts.append(turn)
 
-    # Format track list
-    track_parts = [f'"{t}" by {a}' for t, a in track_info]
-    if len(track_parts) == 1:
-        recs = track_parts[0]
-    elif len(track_parts) == 2:
-        recs = f"{track_parts[0]} and {track_parts[1]}"
-    else:
-        recs = ", ".join(track_parts[:-1]) + f", and {track_parts[-1]}"
+    # 3. Current query — highest weight (3x)
+    parts.extend([user_query, user_query, user_query])
 
-    extra = len(track_ids) - len(track_info)
-    return (
-        f"Here are my top picks for you: {recs} — "
-        f"plus {extra} more tracks I think you'll love. "
-        f"Let me know if you'd like something more specific!"
-    )
+    return " ".join(parts)
 
 
 def main(args):
@@ -127,6 +108,7 @@ def main(args):
     cf = None
     if cf_weight > 0.0:
         print("Loading CF-BPR retriever...")
+        from mcrs.retrieval_modules.cf_bpr import CFBPRRetriever
         cf = CFBPRRetriever(
             track_embed_dataset="talkpl-ai/TalkPlayData-Challenge-Track-Embeddings",
             user_embed_dataset="talkpl-ai/TalkPlayData-Challenge-User-Embeddings",
@@ -147,17 +129,16 @@ def main(args):
         cf_ranked = cf.retrieve_for_user(user_id, topk=candidate_k) if cf is not None else []
 
         turn_num, user_query, history = last_turn(item["conversations"])
-        bm25_query = build_bm25_query(history, user_query)
+        bm25_query = build_bm25_query(history, user_query, metadata_dict=bm25.metadata_dict)
         bm25_ranked = bm25.scored_retrieval(bm25_query, topk=candidate_k)
         fused = rrf_fuse(bm25_ranked, cf_ranked, k=rrf_k,
                          bm25_weight=bm25_weight, cf_weight=cf_weight, topk=20)
-        response = generate_response(user_query, fused, bm25.metadata_dict)
         results.append({
             "session_id": session_id,
             "user_id": user_id,
             "turn_number": turn_num,
             "predicted_track_ids": fused,
-            "predicted_response": response,
+            "predicted_response": "",
         })
 
     print(f"Total predictions: {len(results)}")
