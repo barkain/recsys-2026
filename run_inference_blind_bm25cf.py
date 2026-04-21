@@ -56,13 +56,15 @@ def build_bm25_query(history: list[dict], user_query: str) -> str:
 
 
 def generate_response(user_query: str, track_ids: list[str], metadata_dict: dict) -> str:
-    """Generate a natural-language response from retrieved tracks + user query.
+    """Generate a natural-language recommendation response from retrieved tracks.
 
-    Template-based — no LLM needed. Produces non-zero LexDiv by varying
-    track names, artists, and tags per session.
+    Focuses on the music (genres/tags) rather than echoing the raw user query,
+    which avoids incoherent phrases when the user query is conversational/confirmatory.
     """
-    mentions = []
-    seen_artists = set()
+    track_info = []
+    all_tags: list[str] = []
+    seen_artists: set[str] = set()
+
     for tid in track_ids[:5]:
         meta = metadata_dict.get(tid)
         if not meta:
@@ -76,30 +78,30 @@ def generate_response(user_query: str, track_ids: list[str], metadata_dict: dict
             artist = ", ".join(str(a) for a in artist) if artist else ""
         if not track or not artist:
             continue
-        tag_str = ", ".join(str(t) for t in tags[:2]) if tags else ""
-        if artist not in seen_artists:
-            if tag_str:
-                mentions.append(f'"{track}" by {artist} ({tag_str})')
-            else:
-                mentions.append(f'"{track}" by {artist}')
-            seen_artists.add(artist)
-        else:
-            mentions.append(f'"{track}" by {artist}')
+        if isinstance(tags, list):
+            all_tags.extend(str(t) for t in tags[:3])
+        artist_key = artist.lower()
+        if artist_key not in seen_artists:
+            track_info.append((track, artist))
+            seen_artists.add(artist_key)
 
-    if not mentions:
-        return "Here are some tracks you might enjoy based on our conversation."
+    if not track_info:
+        return "Here are some tracks I think you'll enjoy based on our conversation!"
 
-    query_snippet = user_query.strip().rstrip("?.!").lower()
-    if len(mentions) == 1:
-        recs = mentions[0]
-    elif len(mentions) == 2:
-        recs = f"{mentions[0]} and {mentions[1]}"
+    # Format track list
+    track_parts = [f'"{t}" by {a}' for t, a in track_info]
+    if len(track_parts) == 1:
+        recs = track_parts[0]
+    elif len(track_parts) == 2:
+        recs = f"{track_parts[0]} and {track_parts[1]}"
     else:
-        recs = ", ".join(mentions[:-1]) + f", and {mentions[-1]}"
+        recs = ", ".join(track_parts[:-1]) + f", and {track_parts[-1]}"
 
+    extra = len(track_ids) - len(track_info)
     return (
-        f"Based on your interest in {query_snippet}, I'd recommend {recs}, "
-        f"along with {len(track_ids) - 5} more tracks you might enjoy."
+        f"Here are my top picks for you: {recs} — "
+        f"plus {extra} more tracks I think you'll love. "
+        f"Let me know if you'd like something more specific!"
     )
 
 
