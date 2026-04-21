@@ -52,6 +52,9 @@ class CRS_SYSTEM:
         # Multi-query retrieval
         n_queries: int = 3,
         per_query_k: int | None = None,
+        # Precomputed embedding retrieval
+        embed_column: str = "metadata-qwen3_embedding_0.6b",
+        embed_dataset: str = "talkpl-ai/TalkPlayData-Challenge-Track-Embeddings",
         # Ignored pass-through params (e.g. test_dataset_name from run script)
         **_ignored,
     ):
@@ -69,6 +72,8 @@ class CRS_SYSTEM:
             cache_dir,
             dense_model=dense_model,
             candidate_k=candidate_k,
+            embed_column=embed_column,
+            embed_dataset=embed_dataset,
         )
 
         # Wrap with multi-query if requested

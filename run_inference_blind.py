@@ -15,30 +15,32 @@ from mcrs import load_crs_system
 
 
 def chat_history_parser(conversations, crs):
-    """Parse the LAST user turn from a blind-set conversation.
+    """Parse a blind-set conversation into (turn_number, chat_history, user_query) tuples.
 
-    The Codabench scorer expects exactly one prediction per session (80 sessions = 80 entries).
-    Returns a single (turn_number, chat_history, user_query) tuple.
+    The blind set has only user turns (role='user'); no 'music' ground-truth rows.
+    We yield one prediction per user turn.
     """
     df = pd.DataFrame(conversations)
     user_rows = df[df["role"] == "user"].sort_values("turn_number")
-    row = user_rows.iloc[-1]
-    turn_number = int(row["turn_number"])
-    user_query = row["content"]
 
-    history_rows = df[df["turn_number"] < turn_number].sort_values("turn_number")
-    chat_history = []
-    for _, h in history_rows.iterrows():
-        role = h["role"]
-        content = h["content"]
-        if role == "music":
-            role = "assistant"
-            content = crs.item_db.id_to_metadata(content)
-        elif role == "system":
-            role = "assistant"
-        chat_history.append({"role": role, "content": content})
+    for _, row in user_rows.iterrows():
+        turn_number = int(row["turn_number"])
+        user_query = row["content"]
 
-    return turn_number, chat_history, user_query
+        # Build history: all user turns before this one (no music ground truth in blind set)
+        history_rows = df[df["turn_number"] < turn_number].sort_values("turn_number")
+        chat_history = []
+        for _, h in history_rows.iterrows():
+            role = h["role"]
+            content = h["content"]
+            if role == "music":
+                role = "assistant"
+                content = crs.item_db.id_to_metadata(content)
+            elif role == "system":
+                role = "assistant"
+            chat_history.append({"role": role, "content": content})
+
+        yield turn_number, chat_history, user_query
 
 
 def main(args):
@@ -58,19 +60,19 @@ def main(args):
     for item in db:
         user_id = item["user_id"]
         session_id = item["session_id"]
-        turn_number, chat_history, user_query = chat_history_parser(item["conversations"], crs)
-        batch_data.append({
-            "user_query": user_query,
-            "user_id": user_id,
-            "session_memory": chat_history,
-        })
-        metadata.append({
-            "session_id": session_id,
-            "user_id": user_id,
-            "turn_number": turn_number,
-        })
+        for turn_number, chat_history, user_query in chat_history_parser(item["conversations"], crs):
+            batch_data.append({
+                "user_query": user_query,
+                "user_id": user_id,
+                "session_memory": chat_history,
+            })
+            metadata.append({
+                "session_id": session_id,
+                "user_id": user_id,
+                "turn_number": turn_number,
+            })
 
-    print(f"Total sessions to predict: {len(batch_data)}")
+    print(f"Total turns to predict: {len(batch_data)}")
 
     inference_results = []
     for i in tqdm(range(0, len(batch_data), args.batch_size), desc="Inference"):
