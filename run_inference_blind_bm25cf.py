@@ -66,8 +66,10 @@ def build_bm25_query(history: list[dict], user_query: str, metadata_dict: dict |
                 if track_id in metadata_dict:
                     meta = metadata_dict[track_id]
                     artist = meta.get("artist_name", "")
+                    if isinstance(artist, list):
+                        artist = " ".join(str(a) for a in artist)
                     if artist:
-                        parts.append(artist)
+                        parts.append(str(artist))
                     tags = meta.get("tag_list", [])
                     if isinstance(tags, list):
                         parts.extend(str(t) for t in tags[:5])
@@ -98,8 +100,12 @@ def build_session_memory(history: list[dict], user_query: str, metadata_dict: di
             track_id = msg["content"].strip()
             meta = metadata_dict.get(track_id, {})
             track_name = meta.get("track_name", track_id)
+            if isinstance(track_name, list):
+                track_name = track_name[0] if track_name else track_id
             artist = meta.get("artist_name", "")
-            readable = f"{track_name} by {artist}" if artist else track_name
+            if isinstance(artist, list):
+                artist = ", ".join(str(a) for a in artist)
+            readable = f"{track_name} by {artist}" if artist else str(track_name)
             memory.append({"role": "assistant", "content": f"[Played: {readable}]"})
         else:
             memory.append({"role": msg["role"], "content": msg["content"]})

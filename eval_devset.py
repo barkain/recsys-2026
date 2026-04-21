@@ -44,8 +44,10 @@ def build_bm25_query(history, user_query, metadata_dict=None):
                 if track_id in metadata_dict:
                     meta = metadata_dict[track_id]
                     artist = meta.get("artist_name", "")
+                    if isinstance(artist, list):
+                        artist = " ".join(str(a) for a in artist)
                     if artist:
-                        parts.append(artist)
+                        parts.append(str(artist))
                     tags = meta.get("tag_list", [])
                     if isinstance(tags, list):
                         parts.extend(str(t) for t in tags[:5])
