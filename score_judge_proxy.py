@@ -81,9 +81,8 @@ Return ONLY valid JSON:
 
 def load_blind_sessions(hf_cache):
     """Load blind-A sessions for conversation context."""
-    env = os.environ.copy()
     if hf_cache:
-        env["HF_DATASETS_CACHE"] = hf_cache
+        os.environ["HF_DATASETS_CACHE"] = hf_cache
     db = load_dataset("talkpl-ai/TalkPlayData-Challenge-Blind-A", split="test")
     sessions = {}
     for item in db:
@@ -93,9 +92,8 @@ def load_blind_sessions(hf_cache):
 
 def load_metadata(hf_cache):
     """Load track metadata for formatting track names."""
-    env = os.environ.copy()
     if hf_cache:
-        env["HF_DATASETS_CACHE"] = hf_cache
+        os.environ["HF_DATASETS_CACHE"] = hf_cache
     ds = load_dataset("talkpl-ai/TalkPlayData-Challenge-Track-Metadata")
     combined = ds["train"] if "train" in ds else ds[list(ds.keys())[0]]
     return {item["track_id"]: item for item in combined}
