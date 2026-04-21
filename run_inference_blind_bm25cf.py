@@ -31,29 +31,22 @@ def rrf_fuse(
     return [tid for tid, _ in sorted(scores.items(), key=lambda x: -x[1])][:topk]
 
 
-def chat_history_to_query(conversations: list[dict]) -> tuple[str, list[dict]]:
-    """Extract the last user query and prior history from a conversation list."""
-    df = pd.DataFrame(conversations)
-    user_rows = df[df["role"] == "user"].sort_values("turn_number")
-    if user_rows.empty:
-        return "", []
-    return None, df  # handled per-turn below
 
+def last_turn(conversations: list[dict]) -> tuple[int, str, list[dict]]:
+    """Return (turn_number, user_query, prior_history_dicts) for the LAST user turn only.
 
-def iter_turns(conversations: list[dict]) -> list[tuple[int, str, list[dict]]]:
-    """Yield (turn_number, user_query, prior_history_dicts) for each user turn."""
+    The Codabench scorer expects exactly one prediction per session (80 sessions = 80 entries).
+    """
     df = pd.DataFrame(conversations).sort_values("turn_number")
     user_rows = df[df["role"] == "user"]
-    turns = []
-    for _, row in user_rows.iterrows():
-        turn_num = int(row["turn_number"])
-        query = row["content"]
-        history = []
-        for _, h in df[df["turn_number"] < turn_num].iterrows():
-            role = h["role"] if h["role"] != "music" else "assistant"
-            history.append({"role": role, "content": h["content"]})
-        turns.append((turn_num, query, history))
-    return turns
+    row = user_rows.iloc[-1]
+    turn_num = int(row["turn_number"])
+    query = row["content"]
+    history = []
+    for _, h in df[df["turn_number"] < turn_num].iterrows():
+        role = h["role"] if h["role"] != "music" else "assistant"
+        history.append({"role": role, "content": h["content"]})
+    return turn_num, query, history
 
 
 def build_bm25_query(history: list[dict], user_query: str) -> str:
@@ -99,18 +92,18 @@ def main(args):
         session_id = item["session_id"]
         cf_ranked = cf.retrieve_for_user(user_id, topk=candidate_k)
 
-        for turn_num, user_query, history in iter_turns(item["conversations"]):
-            bm25_query = build_bm25_query(history, user_query)
-            bm25_ranked = bm25.scored_retrieval(bm25_query, topk=candidate_k)
-            fused = rrf_fuse(bm25_ranked, cf_ranked, k=rrf_k,
-                             bm25_weight=bm25_weight, cf_weight=cf_weight, topk=20)
-            results.append({
-                "session_id": session_id,
-                "user_id": user_id,
-                "turn_number": turn_num,
-                "predicted_track_ids": fused,
-                "predicted_response": "",
-            })
+        turn_num, user_query, history = last_turn(item["conversations"])
+        bm25_query = build_bm25_query(history, user_query)
+        bm25_ranked = bm25.scored_retrieval(bm25_query, topk=candidate_k)
+        fused = rrf_fuse(bm25_ranked, cf_ranked, k=rrf_k,
+                         bm25_weight=bm25_weight, cf_weight=cf_weight, topk=20)
+        results.append({
+            "session_id": session_id,
+            "user_id": user_id,
+            "turn_number": turn_num,
+            "predicted_track_ids": fused,
+            "predicted_response": "",
+        })
 
     print(f"Total predictions: {len(results)}")
     os.makedirs("exp/inference/blind_a", exist_ok=True)
