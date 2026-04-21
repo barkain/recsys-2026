@@ -1,0 +1,24 @@
+# Echo: BM25 (content-aware) + CF-BPR (user-personalized) fused via RRF
+# No GPU, no model inference — pure lookup + FAISS on 128-dim vectors
+lm_type: "claude-haiku-4-5-20251001"
+retrieval_type: "bm25_cf"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Blind-A"
+devset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+item_db_name: "talkpl-ai/TalkPlayData-Challenge-Track-Metadata"
+user_db_name: "talkpl-ai/TalkPlayData-Challenge-User-Metadata"
+track_split_types:
+  - "all_tracks"
+user_split_types:
+  - "all_users"
+corpus_types:
+  - "track_name"
+  - "artist_name"
+  - "album_name"
+  - "tag_list"
+cache_dir: "./cache"
+device: "cpu"
+use_reranker: false
+candidate_k: 50
+bm25_weight: 1.0
+cf_weight: 0.0
+rrf_k: 60
