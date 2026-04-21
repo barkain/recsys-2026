@@ -16,7 +16,6 @@ from datasets import load_dataset
 from omegaconf import OmegaConf
 
 from mcrs.retrieval_modules.bm25 import BM25Retriever
-from mcrs.retrieval_modules.cf_bpr import CFBPRRetriever
 
 
 # ── Retrieval helpers (same as run_inference_blind_bm25cf.py) ────────────────
@@ -168,6 +167,7 @@ def main(args):
     cf = None
     if cf_weight > 0.0:
         print("Loading CF-BPR...")
+        from mcrs.retrieval_modules.cf_bpr import CFBPRRetriever
         cf = CFBPRRetriever(
             track_embed_dataset="talkpl-ai/TalkPlayData-Challenge-Track-Embeddings",
             user_embed_dataset="talkpl-ai/TalkPlayData-Challenge-User-Embeddings",
@@ -195,7 +195,9 @@ def main(args):
         user_rows = df[df["role"] == "user"]
         cf_ranked = cf.retrieve_for_user(user_id, topk=candidate_k) if cf is not None else []
 
-        for _, row in user_rows.iterrows():
+        # --last-turn-only mirrors Codabench blind inference (one prediction per session)
+        eval_rows = user_rows.iloc[[-1]] if args.last_turn_only else user_rows
+        for _, row in eval_rows.iterrows():
             turn_num = int(row["turn_number"])
             user_query = row["content"]
             gt = get_ground_truth(item["conversations"], turn_num)
@@ -220,14 +222,17 @@ def main(args):
     mean_ndcg = sum(ndcg_scores) / len(ndcg_scores) if ndcg_scores else 0
     lex_div = lexical_diversity(responses)
 
+    mode = "last-turn-only" if args.last_turn_only else "all-turns"
     print(f"\n{'='*50}")
+    print(f"Mode               : {mode}")
     print(f"Sessions evaluated : {len(ndcg_scores)} (skipped {skipped} — no GT)")
     print(f"nDCG@20            : {mean_ndcg:.4f}")
     print(f"LexDiv (proxy)     : {lex_div:.4f}")
     print(f"{'='*50}\n")
 
     os.makedirs("exp/eval", exist_ok=True)
-    out = f"exp/eval/{args.tid}_devset.json"
+    suffix = "_last_turn" if args.last_turn_only else ""
+    out = f"exp/eval/{args.tid}_devset{suffix}.json"
     with open(out, "w") as f:
         json.dump({"ndcg20": mean_ndcg, "lexdiv": lex_div, "n": len(ndcg_scores)}, f, indent=2)
     print(f"Results saved to {out}")
@@ -236,5 +241,7 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--tid", default="echo_bm25_cf_blind_a")
+    parser.add_argument("--last-turn-only", action="store_true",
+                        help="Evaluate only the last user turn per session (mirrors Codabench blind scoring)")
     args = parser.parse_args()
     main(args)
