@@ -99,7 +99,7 @@ def generate_response(user_query: str, track_ids: list[str], metadata_dict: dict
 
     return (
         f"Based on your interest in {query_snippet}, I'd recommend {recs}, "
-        f"along with {len(track_ids) - len(mentions)} more tracks you might enjoy."
+        f"along with {len(track_ids) - 5} more tracks you might enjoy."
     )
 
 
