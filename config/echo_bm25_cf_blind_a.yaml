@@ -1,5 +1,5 @@
-# Echo: BM25 (content-aware) + CF-BPR (user-personalized) fused via RRF
-# No GPU, no model inference — pure lookup + FAISS on 128-dim vectors
+# Echo: BM25-only retrieval (cf_weight=0.0 — A/B tested +29% nDCG@20 vs RRF 50/50)
+# No GPU, no model inference — pure BM25 lookup
 lm_type: "claude-haiku-4-5-20251001"
 retrieval_type: "bm25_cf"
 test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Blind-A"
