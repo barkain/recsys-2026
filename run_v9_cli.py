@@ -176,16 +176,26 @@ def claude_rerank_and_respond(session_idx, session_id, candidates, conv_text, ca
             match = re.search(r'\{.*\}', text, re.DOTALL)
             if match:
                 data = json.loads(match.group())
-                ranked = [str(i) for i in data.get("ranked_tracks", []) if str(i) in set(candidates)]
+                valid = set(candidates)
+                # Deduplicate ranked while preserving order
+                seen: set[str] = set()
+                ranked = []
+                for tid in data.get("ranked_tracks", []):
+                    tid = str(tid)
+                    if tid in valid and tid not in seen:
+                        seen.add(tid)
+                        ranked.append(tid)
                 response = str(data.get("response", "")).strip()
                 if ranked and response:
-                    remaining = [c for c in candidates if c not in set(ranked)]
+                    remaining = [c for c in candidates if c not in seen]
                     return session_idx, session_id, (ranked + remaining)[:topk], response, False
     except Exception as e:
         print(f"  [WARN] Session {session_id} failed: {e} | stderr: {getattr(e, 'stderr', '')[:200]}")
 
-    # Fallback: BM25 order + template response
-    return session_idx, session_id, candidates[:topk], _FALLBACK_RESPONSE, True
+    # Fallback: BM25 order (deduplicated) + template response
+    seen: set[str] = set()
+    deduped = [c for c in candidates if not (c in seen or seen.add(c))]  # type: ignore[func-returns-value]
+    return session_idx, session_id, deduped[:topk], _FALLBACK_RESPONSE, True
 
 
 # ── Main ─────────────────────────────────────────────────────────────────────
@@ -285,6 +295,16 @@ def main(args):
             "predicted_track_ids": ranked,
             "predicted_response": response,
         })
+
+    # Validate no duplicates before saving (scorer will reject if any exist)
+    dup_sessions = []
+    for p in predictions:
+        ids = p["predicted_track_ids"]
+        if len(ids) != len(set(ids)):
+            dup_sessions.append(p["session_id"])
+    if dup_sessions:
+        raise ValueError(f"Duplicate track IDs in {len(dup_sessions)} sessions: {dup_sessions}")
+    print(f"Validation passed: all {len(predictions)} sessions have unique track IDs.")
 
     # Save
     os.makedirs("exp/inference/blind_a", exist_ok=True)
