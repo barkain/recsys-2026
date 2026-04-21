@@ -86,6 +86,27 @@ def build_bm25_query(history: list[dict], user_query: str, metadata_dict: dict |
     return " ".join(parts)
 
 
+def build_session_memory(history: list[dict], user_query: str, metadata_dict: dict) -> list[dict]:
+    """Build conversation memory for the LLM reranker.
+
+    Translates role=music track IDs into readable "{track} by {artist}" strings
+    so the LLM understands what music the user was offered/confirmed.
+    """
+    memory = []
+    for msg in history:
+        if msg["role"] == "music":
+            track_id = msg["content"].strip()
+            meta = metadata_dict.get(track_id, {})
+            track_name = meta.get("track_name", track_id)
+            artist = meta.get("artist_name", "")
+            readable = f"{track_name} by {artist}" if artist else track_name
+            memory.append({"role": "assistant", "content": f"[Played: {readable}]"})
+        else:
+            memory.append({"role": msg["role"], "content": msg["content"]})
+    memory.append({"role": "user", "content": user_query})
+    return memory
+
+
 def main(args):
     print("Clearing local BM25 cache...")
     os.system("rm -rf cache")
@@ -104,6 +125,8 @@ def main(args):
     bm25_weight = getattr(config, "bm25_weight", 0.5)
     cf_weight = getattr(config, "cf_weight", 0.5)
     candidate_k = getattr(config, "candidate_k", 50)
+    use_reranker = getattr(config, "use_reranker", False)
+    reranker_model = getattr(config, "lm_type", "claude-haiku-4-5-20251001")
 
     cf = None
     if cf_weight > 0.0:
@@ -118,12 +141,19 @@ def main(args):
     else:
         print("CF weight=0.0 — skipping CF-BPR retriever load.")
 
+    reranker = None
+    if use_reranker:
+        from mcrs.reranking_modules.llm_reranker import LLMListwiseReranker
+        print(f"LLM reranker enabled — model: {reranker_model}")
+        reranker = LLMListwiseReranker(model=reranker_model, topk=20, window_size=candidate_k)
+
     blind_dataset_name = getattr(config, "test_dataset_name", "talkpl-ai/TalkPlayData-Challenge-Blind-A")
     print(f"Loading blind dataset: {blind_dataset_name}")
     db = load_dataset(blind_dataset_name, split="test")
 
-    results = []
-    for item in tqdm(db, desc="Sessions"):
+    # Collect all sessions first for batch reranking (parallel API calls)
+    all_sessions = []
+    for item in tqdm(db, desc="Retrieving candidates"):
         user_id = item["user_id"]
         session_id = item["session_id"]
         cf_ranked = cf.retrieve_for_user(user_id, topk=candidate_k) if cf is not None else []
@@ -131,13 +161,35 @@ def main(args):
         turn_num, user_query, history = last_turn(item["conversations"])
         bm25_query = build_bm25_query(history, user_query, metadata_dict=bm25.metadata_dict)
         bm25_ranked = bm25.scored_retrieval(bm25_query, topk=candidate_k)
+        # Fuse to candidate_k (not 20) so reranker has full candidate pool
+        rerank_topk = candidate_k if reranker else 20
         fused = rrf_fuse(bm25_ranked, cf_ranked, k=rrf_k,
-                         bm25_weight=bm25_weight, cf_weight=cf_weight, topk=20)
-        results.append({
+                         bm25_weight=bm25_weight, cf_weight=cf_weight, topk=rerank_topk)
+        session_memory = build_session_memory(history, user_query, bm25.metadata_dict)
+        all_sessions.append({
             "session_id": session_id,
             "user_id": user_id,
             "turn_number": turn_num,
-            "predicted_track_ids": fused,
+            "candidates": fused,
+            "session_memory": session_memory,
+        })
+
+    # Rerank in parallel batch (one LLM call per session, 8 threads)
+    if reranker:
+        print(f"Reranking {len(all_sessions)} sessions with LLM (parallel)...")
+        batch_candidates = [s["candidates"] for s in all_sessions]
+        batch_memory = [s["session_memory"] for s in all_sessions]
+        reranked_batch = reranker.batch_rerank(batch_candidates, batch_memory, bm25.metadata_dict)
+        for session, reranked in zip(all_sessions, reranked_batch):
+            session["candidates"] = reranked
+
+    results = []
+    for session in all_sessions:
+        results.append({
+            "session_id": session["session_id"],
+            "user_id": session["user_id"],
+            "turn_number": session["turn_number"],
+            "predicted_track_ids": session["candidates"][:20],
             "predicted_response": "",
         })
 

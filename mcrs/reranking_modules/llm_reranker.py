@@ -65,18 +65,28 @@ def _format_conversation(session_memory: list[dict]) -> str:
     return "\n".join(lines) if lines else "(no prior conversation)"
 
 
+_USEFUL_META_KEYS = {"track_name", "artist_name", "tag_list", "release_year", "album_name"}
+
+
 def _format_candidates(candidates: list[str], item_db) -> str:
-    """Build a numbered candidate list for the LLM prompt, including track_ids."""
+    """Build a numbered candidate list for the LLM prompt, including track_ids.
+
+    item_db can be either a plain dict ({track_id: metadata_dict}) or an object
+    with an id_to_metadata(track_id) method (MusicCatalogDB).
+    """
     lines = []
     for i, track_id in enumerate(candidates, 1):
-        if item_db:
-            meta = item_db.id_to_metadata(track_id)
-            if isinstance(meta, dict):
-                meta_str = " | ".join(f"{k}: {v}" for k, v in meta.items() if v)
+        meta_str = ""
+        if item_db is not None:
+            if isinstance(item_db, dict):
+                meta = item_db.get(track_id, {})
             else:
-                meta_str = str(meta)
-        else:
-            meta_str = ""
+                meta = item_db.id_to_metadata(track_id)
+            if isinstance(meta, dict):
+                meta_str = " | ".join(
+                    f"{k}: {v}" for k, v in meta.items()
+                    if k in _USEFUL_META_KEYS and v
+                )
         lines.append(f"{i}. [track_id: {track_id}] {meta_str}")
     return "\n".join(lines)
 
