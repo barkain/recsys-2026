@@ -114,8 +114,10 @@ def build_session_memory(history: list[dict], user_query: str, metadata_dict: di
 
 
 def main(args):
-    print("Clearing local BM25 cache...")
-    os.system("rm -rf cache")
+    if args.clear_cache:
+        import shutil
+        print("Clearing local BM25 cache...")
+        shutil.rmtree("cache", ignore_errors=True)
 
     config = OmegaConf.load(f"config/{args.tid}.yaml")
 
@@ -215,5 +217,7 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--tid", type=str, default="echo_bm25_cf_blind_a")
+    parser.add_argument("--clear-cache", action="store_true",
+                        help="Delete the BM25 cache before running (forces index rebuild)")
     args = parser.parse_args()
     main(args)

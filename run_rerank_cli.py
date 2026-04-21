@@ -28,7 +28,6 @@ from omegaconf import OmegaConf
 from mcrs.retrieval_modules.bm25 import BM25Retriever
 
 
-TID = "echo_bm25_cf_blind_a"
 CANDIDATE_K = 50
 N_WORKERS = 8
 CLAUDE_MODEL = "haiku"   # claude-haiku-4-5-20251001 alias
@@ -160,8 +159,16 @@ def claude_rerank(session_idx, session_id, candidates, conv_text, cands_text):
 
 # ── Main ─────────────────────────────────────────────────────────────────────
 
-def main():
-    config = OmegaConf.load(f"config/{TID}.yaml")
+def main(args):
+    # Fail fast if claude CLI is not available (avoids silent BM25-only fallback)
+    import shutil
+    if not shutil.which("claude"):
+        raise RuntimeError(
+            "claude CLI not found in PATH. Install Claude Code or set PATH correctly. "
+            "The reranker requires `claude -p` for subscription-auth inference."
+        )
+
+    config = OmegaConf.load(f"config/{args.tid}.yaml")
 
     print("Loading BM25 retriever (from cache if available)...")
     bm25 = BM25Retriever(
@@ -216,9 +223,14 @@ def main():
             idx, sid, ranked = f.result()
             results[idx] = (sid, ranked)
 
-    # Stage 3: Load v6 responses and merge
-    v6_path = "exp/inference/blind_a/echo_bm25_responses_v6.json"
-    print(f"\nStage 3: Merging with v6 responses ({v6_path})...")
+    # Stage 3: Load base responses and merge
+    v6_path = args.response_source
+    print(f"\nStage 3: Merging with base responses ({v6_path})...")
+    if not os.path.exists(v6_path):
+        raise FileNotFoundError(
+            f"Response source not found: {v6_path}\n"
+            f"Run run_inference_blind_bm25cf.py first or pass --response-source <path>"
+        )
     with open(v6_path) as f:
         v6_data = {s["session_id"]: s["predicted_response"] for s in json.load(f)}
 
@@ -240,7 +252,7 @@ def main():
         json.dump(predictions, f, ensure_ascii=False, indent=2)
     print(f"Saved predictions: {out_json}")
 
-    out_zip = "/workspace/group/echo_v8_submission.zip"
+    out_zip = args.out
     with zipfile.ZipFile(out_zip, "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(out_json, "prediction.json")
     print(f"Submission zip: {out_zip}")
@@ -248,4 +260,14 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--tid", default="echo_bm25_cf_blind_a",
+                        help="Config TID (looks up config/{tid}.yaml)")
+    parser.add_argument("--response-source",
+                        default="exp/inference/blind_a/echo_bm25_responses_v6.json",
+                        help="Path to base inference JSON (provides predicted_response text)")
+    parser.add_argument("--out", default="/workspace/group/echo_v8_submission.zip",
+                        help="Output zip path")
+    args = parser.parse_args()
+    main(args)
