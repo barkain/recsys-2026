@@ -119,18 +119,22 @@ def main(args):
         cache_dir=config.cache_dir,
     )
 
-    print("Loading CF-BPR retriever...")
-    cf = CFBPRRetriever(
-        track_embed_dataset="talkpl-ai/TalkPlayData-Challenge-Track-Embeddings",
-        user_embed_dataset="talkpl-ai/TalkPlayData-Challenge-User-Embeddings",
-        track_split_types=list(config.track_split_types),
-        cache_dir=config.cache_dir,
-    )
-
     rrf_k = getattr(config, "rrf_k", 60)
     bm25_weight = getattr(config, "bm25_weight", 0.5)
     cf_weight = getattr(config, "cf_weight", 0.5)
     candidate_k = getattr(config, "candidate_k", 50)
+
+    cf = None
+    if cf_weight > 0.0:
+        print("Loading CF-BPR retriever...")
+        cf = CFBPRRetriever(
+            track_embed_dataset="talkpl-ai/TalkPlayData-Challenge-Track-Embeddings",
+            user_embed_dataset="talkpl-ai/TalkPlayData-Challenge-User-Embeddings",
+            track_split_types=list(config.track_split_types),
+            cache_dir=config.cache_dir,
+        )
+    else:
+        print("CF weight=0.0 — skipping CF-BPR retriever load.")
 
     blind_dataset_name = getattr(config, "test_dataset_name", "talkpl-ai/TalkPlayData-Challenge-Blind-A")
     print(f"Loading blind dataset: {blind_dataset_name}")
@@ -140,7 +144,7 @@ def main(args):
     for item in tqdm(db, desc="Sessions"):
         user_id = item["user_id"]
         session_id = item["session_id"]
-        cf_ranked = cf.retrieve_for_user(user_id, topk=candidate_k)
+        cf_ranked = cf.retrieve_for_user(user_id, topk=candidate_k) if cf is not None else []
 
         turn_num, user_query, history = last_turn(item["conversations"])
         bm25_query = build_bm25_query(history, user_query)
