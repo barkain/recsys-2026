@@ -153,6 +153,9 @@ The ranked_tracks array must contain exactly 20 track IDs from the candidates ab
 """
 
 
+_FALLBACK_RESPONSE = "Here are some tracks I think you'll enjoy based on our conversation!"
+
+
 def claude_rerank_and_respond(session_idx, session_id, candidates, conv_text, cands_text):
     topk = 20
     prompt = COMBINED_PROMPT_TEMPLATE.format(conv_text=conv_text, cands_text=cands_text)
@@ -164,22 +167,25 @@ def claude_rerank_and_respond(session_idx, session_id, candidates, conv_text, ca
             text=True,
             timeout=120,
         )
-        text = result.stdout.strip()
-        # Extract JSON object (handle possible surrounding text)
-        match = re.search(r'\{.*\}', text, re.DOTALL)
-        if match:
-            data = json.loads(match.group())
-            ranked = [str(i) for i in data.get("ranked_tracks", []) if str(i) in set(candidates)]
-            response = str(data.get("response", "")).strip()
-            if ranked and response:
-                remaining = [c for c in candidates if c not in set(ranked)]
-                return session_idx, session_id, (ranked + remaining)[:topk], response
+        if result.returncode != 0:
+            print(f"  [WARN] Session {session_id} CLI error (rc={result.returncode}): "
+                  f"{result.stderr[:300]}")
+        else:
+            text = result.stdout.strip()
+            # Extract JSON object (handle possible surrounding text)
+            match = re.search(r'\{.*\}', text, re.DOTALL)
+            if match:
+                data = json.loads(match.group())
+                ranked = [str(i) for i in data.get("ranked_tracks", []) if str(i) in set(candidates)]
+                response = str(data.get("response", "")).strip()
+                if ranked and response:
+                    remaining = [c for c in candidates if c not in set(ranked)]
+                    return session_idx, session_id, (ranked + remaining)[:topk], response, False
     except Exception as e:
-        print(f"  [WARN] Session {session_id} failed: {e}")
+        print(f"  [WARN] Session {session_id} failed: {e} | stderr: {getattr(e, 'stderr', '')[:200]}")
 
     # Fallback: BM25 order + template response
-    fallback_response = "Here are some tracks I think you'll enjoy based on our conversation!"
-    return session_idx, session_id, candidates[:topk], fallback_response
+    return session_idx, session_id, candidates[:topk], _FALLBACK_RESPONSE, True
 
 
 # ── Main ─────────────────────────────────────────────────────────────────────
@@ -246,14 +252,29 @@ def main(args):
             for i, s in enumerate(sessions)
         }
         for f in tqdm(as_completed(futures), total=len(futures), desc="Reranking+Response"):
-            idx, sid, ranked, response = f.result()
+            try:
+                idx, sid, ranked, response, is_fallback = f.result()
+            except Exception as e:
+                orig_idx = futures[f]
+                print(f"  [ERROR] Thread for session index {orig_idx} crashed: {e}")
+                s = sessions[orig_idx]
+                idx, sid, ranked, response, is_fallback = (
+                    orig_idx, s["session_id"], s["candidates"][:20], _FALLBACK_RESPONSE, True
+                )
             results[idx] = (sid, ranked, response)
-            if response == "Here are some tracks I think you'll enjoy based on our conversation!":
+            if is_fallback:
                 fallback_count += 1
 
     print(f"Fallbacks (BM25 order + template): {fallback_count}/{len(sessions)}")
 
-    # Stage 3: Build predictions
+    # Stage 3: Build predictions — guard against any None slots
+    none_slots = [i for i, r in enumerate(results) if r is None]
+    if none_slots:
+        print(f"  [WARN] {len(none_slots)} result slots still None — applying fallback")
+        for i in none_slots:
+            s = sessions[i]
+            results[i] = (s["session_id"], s["candidates"][:20], _FALLBACK_RESPONSE)
+
     predictions = []
     for i, (sid, ranked, response) in enumerate(results):
         sess = sessions[i]
