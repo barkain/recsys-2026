@@ -3,8 +3,12 @@
 Computes nDCG@20 and LexDiv locally against devset ground truth.
 Use this BEFORE submitting to Codabench to validate changes.
 
+Default: evaluates only the LAST user turn per session (mirrors Codabench blind scoring).
+Use --all-turns to evaluate every turn (slower, gives all-history average).
+
 Usage:
-    python3 eval_devset.py
+    python3 eval_devset.py                  # last-turn-only (Codabench proxy)
+    python3 eval_devset.py --all-turns      # all turns (legacy behavior)
 """
 import json
 import math
@@ -16,7 +20,6 @@ from datasets import load_dataset
 from omegaconf import OmegaConf
 
 from mcrs.retrieval_modules.bm25 import BM25Retriever
-from mcrs.retrieval_modules.cf_bpr import CFBPRRetriever
 
 
 # ── Retrieval helpers (same as run_inference_blind_bm25cf.py) ────────────────
@@ -30,24 +33,35 @@ def rrf_fuse(bm25_results, cf_results, k=60, bm25_weight=0.5, cf_weight=0.5, top
     return [tid for tid, _ in sorted(scores.items(), key=lambda x: -x[1])][:topk]
 
 
-def build_bm25_query(history, user_query):
-    parts = [m["content"] for m in history if m["role"] == "user"]
-    parts.append(user_query)
+def build_bm25_query(history, user_query, metadata_dict=None):
+    """Enriched BM25 query — mirrors run_inference_blind_bm25cf.py exactly.
+
+    1. Confirmed track metadata (role=music turns): artist + tags
+    2. Recency-weighted user turns: last prior turn 2×, current query 3×
+    """
+    parts = []
+    if metadata_dict is not None:
+        for msg in history:
+            if msg["role"] == "music":
+                track_id = msg["content"].strip()
+                if track_id in metadata_dict:
+                    meta = metadata_dict[track_id]
+                    artist = meta.get("artist_name", "")
+                    if isinstance(artist, list):
+                        artist = " ".join(str(a) for a in artist)
+                    if artist:
+                        parts.append(str(artist))
+                    tags = meta.get("tag_list", [])
+                    if isinstance(tags, list):
+                        parts.extend(str(t) for t in tags[:5])
+    user_turns = [m["content"] for m in history if m["role"] == "user"]
+    n = len(user_turns)
+    for i, turn in enumerate(user_turns):
+        parts.append(turn)
+        if i == n - 1:
+            parts.append(turn)
+    parts.extend([user_query, user_query, user_query])
     return " ".join(parts)
-
-
-def get_last_user_turn(conversations):
-    """Return (turn_number, user_query, history) for the last user turn."""
-    df = pd.DataFrame(conversations).sort_values("turn_number")
-    user_rows = df[df["role"] == "user"]
-    row = user_rows.iloc[-1]
-    turn_num = int(row["turn_number"])
-    query = row["content"]
-    history = []
-    for _, h in df[df["turn_number"] < turn_num].iterrows():
-        role = h["role"] if h["role"] != "music" else "assistant"
-        history.append({"role": role, "content": h["content"]})
-    return turn_num, query, history
 
 
 def get_ground_truth(conversations, turn_number):
@@ -72,7 +86,7 @@ def generate_response(track_ids, metadata_dict):
         if isinstance(track, list):
             track = track[0] if track else ""
         if isinstance(artist, list):
-            artist = ", ".join(str(a) for a in artist) if artist else ""
+            artist = " ".join(str(a) for a in artist) if artist else ""
         if not track or not artist or artist.lower() in seen_artists:
             continue
         track_info.append((track, artist))
@@ -99,7 +113,6 @@ def ndcg_at_k(predicted, relevant_set, k=20):
     for i, tid in enumerate(predicted[:k]):
         if tid in relevant_set:
             dcg += 1.0 / math.log2(i + 2)
-    # Ideal: relevant item at rank 1
     idcg = 1.0 / math.log2(2) if relevant_set else 0.0
     return dcg / idcg if idcg > 0 else 0.0
 
@@ -110,7 +123,6 @@ def lexical_diversity(responses):
     if len(tokenized) < 2:
         return 0.0
     total, count = 0.0, 0
-    # Sample 200 pairs for speed
     import random
     random.seed(42)
     pairs = [(i, j) for i in range(len(tokenized)) for j in range(i + 1, len(tokenized))]
@@ -137,13 +149,19 @@ def main(args):
         cache_dir=config.cache_dir,
     )
 
-    print("Loading CF-BPR...")
-    cf = CFBPRRetriever(
-        track_embed_dataset="talkpl-ai/TalkPlayData-Challenge-Track-Embeddings",
-        user_embed_dataset="talkpl-ai/TalkPlayData-Challenge-User-Embeddings",
-        track_split_types=list(config.track_split_types),
-        cache_dir=config.cache_dir,
-    )
+    cf_weight = getattr(config, "cf_weight", 0.5)
+    cf = None
+    if cf_weight > 0.0:
+        from mcrs.retrieval_modules.cf_bpr import CFBPRRetriever
+        print("Loading CF-BPR...")
+        cf = CFBPRRetriever(
+            track_embed_dataset="talkpl-ai/TalkPlayData-Challenge-Track-Embeddings",
+            user_embed_dataset="talkpl-ai/TalkPlayData-Challenge-User-Embeddings",
+            track_split_types=list(config.track_split_types),
+            cache_dir=config.cache_dir,
+        )
+    else:
+        print("CF weight=0.0 — skipping CF-BPR load.")
 
     devset_name = getattr(config, "devset_name", "talkpl-ai/TalkPlayData-Challenge-Devset")
     print(f"Loading devset: {devset_name}")
@@ -151,7 +169,6 @@ def main(args):
 
     rrf_k = getattr(config, "rrf_k", 60)
     bm25_weight = getattr(config, "bm25_weight", 0.5)
-    cf_weight = getattr(config, "cf_weight", 0.5)
     candidate_k = getattr(config, "candidate_k", 50)
 
     ndcg_scores = []
@@ -162,9 +179,12 @@ def main(args):
         user_id = item["user_id"]
         df = pd.DataFrame(item["conversations"]).sort_values("turn_number")
         user_rows = df[df["role"] == "user"]
-        cf_ranked = cf.retrieve_for_user(user_id, topk=candidate_k)
+        cf_ranked = cf.retrieve_for_user(user_id, topk=candidate_k) if cf is not None else []
 
-        for _, row in user_rows.iterrows():
+        # Default: last-turn-only mirrors Codabench blind (one prediction per session).
+        # --all-turns evaluates every turn (legacy, gives multi-turn average).
+        eval_rows = user_rows if args.all_turns else user_rows.iloc[[-1]]
+        for _, row in eval_rows.iterrows():
             turn_num = int(row["turn_number"])
             user_query = row["content"]
             gt = get_ground_truth(item["conversations"], turn_num)
@@ -172,12 +192,12 @@ def main(args):
                 skipped += 1
                 continue
 
+            # Preserve role=music so query builder uses confirmed track signals
             history = []
             for _, h in df[df["turn_number"] < turn_num].iterrows():
-                role = h["role"] if h["role"] != "music" else "assistant"
-                history.append({"role": role, "content": h["content"]})
+                history.append({"role": h["role"], "content": h["content"]})
 
-            bm25_query = build_bm25_query(history, user_query)
+            bm25_query = build_bm25_query(history, user_query, metadata_dict=bm25.metadata_dict)
             bm25_ranked = bm25.scored_retrieval(bm25_query, topk=candidate_k)
             fused = rrf_fuse(bm25_ranked, cf_ranked, k=rrf_k,
                              bm25_weight=bm25_weight, cf_weight=cf_weight, topk=20)
@@ -189,14 +209,17 @@ def main(args):
     mean_ndcg = sum(ndcg_scores) / len(ndcg_scores) if ndcg_scores else 0
     lex_div = lexical_diversity(responses)
 
+    mode = "all-turns" if args.all_turns else "last-turn-only"
     print(f"\n{'='*50}")
+    print(f"Mode               : {mode}")
     print(f"Sessions evaluated : {len(ndcg_scores)} (skipped {skipped} — no GT)")
     print(f"nDCG@20            : {mean_ndcg:.4f}")
     print(f"LexDiv (proxy)     : {lex_div:.4f}")
     print(f"{'='*50}\n")
 
     os.makedirs("exp/eval", exist_ok=True)
-    out = f"exp/eval/{args.tid}_devset.json"
+    suffix = "_all_turns" if args.all_turns else "_last_turn"
+    out = f"exp/eval/{args.tid}_devset{suffix}.json"
     with open(out, "w") as f:
         json.dump({"ndcg20": mean_ndcg, "lexdiv": lex_div, "n": len(ndcg_scores)}, f, indent=2)
     print(f"Results saved to {out}")
@@ -205,5 +228,7 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--tid", default="echo_bm25_cf_blind_a")
+    parser.add_argument("--all-turns", action="store_true",
+                        help="Evaluate ALL user turns per session (default: last turn only, matching Codabench blind)")
     args = parser.parse_args()
     main(args)

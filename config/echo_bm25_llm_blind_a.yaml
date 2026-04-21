@@ -1,0 +1,25 @@
+# Echo: BM25 retrieval + LLM listwise reranker (Claude Haiku)
+# Retrieval: enriched BM25 query (confirmed track metadata + recency weighting)
+# Reranking: LLM reranks top-50 BM25 candidates per session using full conversation context
+lm_type: "claude-haiku-4-5-20251001"
+retrieval_type: "bm25_cf"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Blind-A"
+devset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+item_db_name: "talkpl-ai/TalkPlayData-Challenge-Track-Metadata"
+user_db_name: "talkpl-ai/TalkPlayData-Challenge-User-Metadata"
+track_split_types:
+  - "all_tracks"
+user_split_types:
+  - "all_users"
+corpus_types:
+  - "track_name"
+  - "artist_name"
+  - "album_name"
+  - "tag_list"
+cache_dir: "./cache"
+device: "cpu"
+use_reranker: true
+candidate_k: 50
+bm25_weight: 1.0
+cf_weight: 0.0
+rrf_k: 60
