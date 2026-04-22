@@ -337,12 +337,15 @@ def main():
     task_lookup = {sid: (conv, tracks) for sid, conv, tracks in tasks}
 
     def score_pair(sid, new_response):
+        # Sequential calls within the outer pool worker — no nested executor.
+        # The outer pool already provides N_WORKERS parallelism; a nested
+        # executor would create up to 16 concurrent claude subprocesses and
+        # cause rate-limit failures.
         conv, tracks = task_lookup[sid]
         v12_response = pred_by_sid[sid]["predicted_response"]
-        with ThreadPoolExecutor(max_workers=2) as p:
-            f_v12 = p.submit(proxy_score, sid, conv, v12_response, tracks)
-            f_v13 = p.submit(proxy_score, sid, conv, new_response, tracks)
-            return sid, f_v12.result(), f_v13.result()
+        v12_result = proxy_score(sid, conv, v12_response, tracks)
+        v13_result = proxy_score(sid, conv, new_response, tracks)
+        return sid, v12_result, v13_result
 
     # Store proxy E scores for transparency
     v12_proxy_e = {sid: e for sid, _, e, _, _ in target_sessions}
@@ -366,9 +369,11 @@ def main():
             if v12_avg is None or v13_avg is None:
                 print(f"  [GUARD] {sid[:8]}: score failed — keeping v12 (safe)")
             elif v13_avg <= v12_avg:
-                print(f"  [GUARD] {sid[:8]}: v13={v13_avg:.2f} ≤ v12={v12_avg:.2f} (E: {orig_e}→{v13_e or '?':.1f}) — keeping v12")
+                e_str = f"{v13_e:.1f}" if v13_e is not None else "?"
+                print(f"  [GUARD] {sid[:8]}: v13={v13_avg:.2f} ≤ v12={v12_avg:.2f} (E: {orig_e}→{e_str}) — keeping v12")
             else:
-                print(f"  [GUARD] {sid[:8]}: v13={v13_avg:.2f} > v12={v12_avg:.2f} (E: {orig_e}→{v13_e or '?':.1f}) — patching ✓")
+                e_str = f"{v13_e:.1f}" if v13_e is not None else "?"
+                print(f"  [GUARD] {sid[:8]}: v13={v13_avg:.2f} > v12={v12_avg:.2f} (E: {orig_e}→{e_str}) — patching ✓")
                 guarded[sid] = new_response
 
     print(f"Guard: {len(guarded)}/{len(improved)} responses cleared")
