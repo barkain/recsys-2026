@@ -177,10 +177,17 @@ def main():
     target_sessions = []
     for sid, v in sessions_scores.items():
         if v["personalization"] is None:
-            continue
-        avg = (v["personalization"] + v["explanation"]) / 2
+            # Scoring failed entirely — treat as worst possible score (0) so
+            # these sessions are always included in the regeneration target list.
+            avg = 0.0
+            p, e, r = 0, 0, "scoring failed"
+        else:
+            p = v["personalization"]
+            e = v["explanation"]
+            r = v.get("reasoning", "")
+            avg = (p + e) / 2
         if avg <= args.threshold:
-            target_sessions.append((sid, avg, v["personalization"], v["explanation"], v["reasoning"]))
+            target_sessions.append((sid, avg, p, e, r))
     target_sessions.sort(key=lambda x: x[1])
 
     print(f"Sessions to regenerate (avg ≤ {args.threshold}): {len(target_sessions)}")
