@@ -114,7 +114,11 @@ class QueryReformulator:
             content = msg["content"]
             # item metadata dict → summarise
             if isinstance(content, dict):
-                content = content.get("track_name", "") + " by " + content.get("artist_name", "")
+                name = content.get("track_name", "")
+                artist = content.get("artist_name", "")
+                tags = content.get("tag_list", [])
+                tag_str = ", ".join(str(t) for t in tags[:5]) if isinstance(tags, list) else str(tags)
+                content = f"{name} by {artist} [{tag_str}]" if tag_str else f"{name} by {artist}"
             lines.append(f"{role}: {content}")
         lines.append(f"User: {user_query}")
         return "\n".join(lines)
