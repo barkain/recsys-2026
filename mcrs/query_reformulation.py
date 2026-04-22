@@ -8,7 +8,7 @@ import json
 import re
 from concurrent.futures import ThreadPoolExecutor
 
-from mcrs.utils import call_claude_cli
+from mcrs.utils import call_claude_api
 
 logger = logging.getLogger(__name__)
 
@@ -87,11 +87,11 @@ class QueryReformulator:
         """Return an enriched retrieval query string."""
         conversation_text = self._conversation_to_text(session_memory, user_query)
         try:
-            raw = call_claude_cli(
+            raw = call_claude_api(
                 _SYSTEM_PROMPT,
                 _USER_TEMPLATE.format(conversation=conversation_text),
                 model=self.model,
-                timeout=20,
+                max_tokens=512,
             )
             if raw is None:
                 raise RuntimeError("claude CLI returned no output")
@@ -111,6 +111,6 @@ class QueryReformulator:
 
     def batch_reformulate(self, batch: list[tuple[list[dict], str]]) -> list[str]:
         """Reformulate a batch of (session_memory, user_query) pairs in parallel."""
-        with ThreadPoolExecutor(max_workers=16) as pool:
+        with ThreadPoolExecutor(max_workers=8) as pool:
             futures = [pool.submit(self.reformulate, mem, q) for mem, q in batch]
             return [f.result() for f in futures]
