@@ -1,5 +1,6 @@
 """Echo's enhanced CRS system for RecSys Challenge 2026."""
 import os
+from concurrent.futures import ThreadPoolExecutor
 from typing import Any
 
 from mcrs.db_item import MusicCatalogDB
@@ -236,12 +237,16 @@ class CRS_SYSTEM:
 
         batch_candidates = self._batch_retrieve(session_memories_pre, user_queries)
 
-        final_candidates = []
-        top_items = []
-        for i, candidates in enumerate(batch_candidates):
-            ranked = self._rerank(candidates, user_ids[i], session_memories_full[i])
-            final_candidates.append(ranked)
-            top_items.append(self.item_db.id_to_metadata(ranked[0]))
+        # Parallelize reranking — LLM reranker calls are independent HTTP requests
+        # and dominate latency; running them concurrently gives ~8x speedup.
+        def _rerank_one(args):
+            i, candidates = args
+            return self._rerank(candidates, user_ids[i], session_memories_full[i])
+
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            final_candidates = list(pool.map(_rerank_one, enumerate(batch_candidates)))
+
+        top_items = [self.item_db.id_to_metadata(ranked[0]) for ranked in final_candidates]
 
         sys_prompts = [self._get_system_prompt(uid) for uid in user_ids]
 

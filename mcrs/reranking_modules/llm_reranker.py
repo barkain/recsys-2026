@@ -27,12 +27,13 @@ You are a music recommendation expert.  Given a conversation and a numbered
 list of candidate tracks (with genre tags and release year), select the {topk}
 tracks that are MOST relevant to what the user wants RIGHT NOW.
 
-Scoring criteria (in priority order):
-1. Genre/style match — does it fit the genre, mood, or vibe the user described?
-2. Artist match — if the user named an artist or asked for similar artists
-3. Era/decade match — if the user mentioned a time period (e.g. "80s", "2000s")
-4. Thematic fit — lyrical themes, energy level, tempo cues from conversation
-5. Diversity — prefer varied results over 20 tracks by the same artist
+Scoring criteria (in strict priority order):
+1. Explicit user request — if the user named a specific artist, band, or track, \
+those must rank first, non-negotiable
+2. Genre/style/sonic texture match — fits the genre, mood, or vibe the user described
+3. Artist match — user asked for similar artists or named influences
+4. Era/decade match — user mentioned a time period (e.g. "80s", "2000s")
+5. Thematic/mood fit — lyrical themes, energy level, tempo cues from conversation
 
 Return them in DESCENDING relevance order (best match first).
 
