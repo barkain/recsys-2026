@@ -322,15 +322,25 @@ def main():
 
     guarded = {}
     for sid, new_response in improved.items():
-        baseline = baseline_scores.get(sid, 3.5)  # conservative fallback
         conv, tracks = task_lookup[sid]
-        new_score = proxy_score_response(sid, conv, new_response, tracks)
-        if new_score is None:
-            print(f"  [GUARD] {sid[:8]}: proxy score failed — keeping v10 (safe)")
-        elif new_score <= baseline:
-            print(f"  [GUARD] {sid[:8]}: v12={new_score:.2f} ≤ v10={baseline:.2f} — keeping v10")
+        # Score v10 and v12 in the same run to eliminate calibration drift.
+        # Doubles proxy calls but ensures both scores use the same judge instance.
+        v10_response = pred_by_sid[sid]["predicted_response"]
+        v10_live_score = proxy_score_response(sid, conv, v10_response, tracks)
+        v12_score = proxy_score_response(sid, conv, new_response, tracks)
+        stored_baseline = baseline_scores.get(sid, 3.5)
+
+        if v12_score is None or v10_live_score is None:
+            # Fall back to stored baseline if live scoring fails
+            if v12_score is not None and v12_score > stored_baseline:
+                print(f"  [GUARD] {sid[:8]}: v12={v12_score:.2f} > stored={stored_baseline:.2f} (v10-live failed) — patching ✓")
+                guarded[sid] = new_response
+            else:
+                print(f"  [GUARD] {sid[:8]}: proxy score failed — keeping v10 (safe)")
+        elif v12_score <= v10_live_score:
+            print(f"  [GUARD] {sid[:8]}: v12={v12_score:.2f} ≤ v10-live={v10_live_score:.2f} — keeping v10")
         else:
-            print(f"  [GUARD] {sid[:8]}: v12={new_score:.2f} > v10={baseline:.2f} — patching ✓")
+            print(f"  [GUARD] {sid[:8]}: v12={v12_score:.2f} > v10-live={v10_live_score:.2f} — patching ✓")
             guarded[sid] = new_response
 
     print(f"Regression guard: {len(guarded)}/{len(improved)} responses cleared (rest kept as v10)")
