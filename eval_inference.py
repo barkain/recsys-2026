@@ -13,6 +13,7 @@ import math
 import os
 import random
 import argparse
+from collections import defaultdict
 from datasets import load_dataset
 
 
@@ -79,7 +80,6 @@ def main(args):
 
     # Evaluate last turn per session (mirrors Codabench blind scoring)
     # Build per-session max turn for last-turn eval
-    from collections import defaultdict
     session_max_turn = defaultdict(int)
     for r in results:
         t = int(r["turn_number"])
