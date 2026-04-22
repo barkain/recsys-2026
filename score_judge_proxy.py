@@ -32,7 +32,6 @@ import zipfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm import tqdm
 
-import pandas as pd
 from datasets import load_dataset
 
 N_WORKERS = 8
