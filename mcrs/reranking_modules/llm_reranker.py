@@ -53,6 +53,18 @@ Candidate tracks (track_id → metadata):
 
 Return the {topk} most relevant track_ids as a JSON array."""
 
+_USER_TEMPLATE_WITH_QUERY = """\
+Conversation so far:
+{conversation}
+
+Synthesized search query (what the user wants RIGHT NOW):
+{reformulated_query}
+
+Candidate tracks (track_id → metadata):
+{candidates_text}
+
+Return the {topk} most relevant track_ids as a JSON array."""
+
 
 def _format_conversation(session_memory: list[dict]) -> str:
     lines = []
@@ -155,6 +167,7 @@ class LLMListwiseReranker:
         session_memory: list[dict],
         item_db,
         topk: int | None = None,
+        reformulated_query: str | None = None,
     ) -> list[str]:
         """Rerank candidates using LLM.
 
@@ -163,6 +176,9 @@ class LLMListwiseReranker:
             session_memory: Full conversation history (includes current user turn).
             item_db: MusicCatalogDB instance for metadata lookup.
             topk: Override default topk if provided.
+            reformulated_query: Optional NLQ query string synthesized from conversation.
+                When provided, it is shown to the LLM as an explicit search signal,
+                helping it focus on what the user wants right now.
 
         Returns:
             Reranked list of track_ids, length min(topk, len(candidates)).
@@ -177,11 +193,19 @@ class LLMListwiseReranker:
         candidates_text = _format_candidates(window, item_db)
 
         system = _SYSTEM_PROMPT.format(topk=min(k, len(window)))
-        user_msg = _USER_TEMPLATE.format(
-            conversation=conversation_text,
-            candidates_text=candidates_text,
-            topk=min(k, len(window)),
-        )
+        if reformulated_query:
+            user_msg = _USER_TEMPLATE_WITH_QUERY.format(
+                conversation=conversation_text,
+                reformulated_query=reformulated_query,
+                candidates_text=candidates_text,
+                topk=min(k, len(window)),
+            )
+        else:
+            user_msg = _USER_TEMPLATE.format(
+                conversation=conversation_text,
+                candidates_text=candidates_text,
+                topk=min(k, len(window)),
+            )
 
         try:
             raw = call_claude_api(system, user_msg, model=self.model, max_tokens=1024)
@@ -205,11 +229,15 @@ class LLMListwiseReranker:
         batch_session_memory: list[list[dict]],
         item_db,
         topk: int | None = None,
+        reformulated_queries: list[str] | None = None,
     ) -> list[list[str]]:
         """Rerank a batch in parallel using threads."""
         with ThreadPoolExecutor(max_workers=8) as pool:
             futures = [
-                pool.submit(self.rerank, cands, mem, item_db, topk)
-                for cands, mem in zip(batch_candidates, batch_session_memory)
+                pool.submit(
+                    self.rerank, cands, mem, item_db, topk,
+                    reformulated_queries[i] if reformulated_queries else None,
+                )
+                for i, (cands, mem) in enumerate(zip(batch_candidates, batch_session_memory))
             ]
             return [f.result() for f in futures]

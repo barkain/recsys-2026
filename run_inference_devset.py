@@ -33,8 +33,10 @@ def main(args):
     if not os.environ.get("ANTHROPIC_RECSYS_API_KEY"):
         raise EnvironmentError("ANTHROPIC_RECSYS_API_KEY is not set — cannot run LLM inference")
 
-    print("Clearing cache to prevent memory issues...")
-    os.system("rm -rf cache")
+    # Cache cleared only when explicitly requested — BM25 index re-build takes minutes
+    if os.environ.get("CLEAR_CACHE"):
+        print("Clearing cache (CLEAR_CACHE=1)...")
+        os.system("rm -rf cache")
 
     config = OmegaConf.load(f"config/{args.tid}.yaml")
     config_dict = OmegaConf.to_container(config, resolve=True)
