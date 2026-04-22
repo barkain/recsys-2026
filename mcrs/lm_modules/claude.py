@@ -6,9 +6,10 @@ import anthropic
 class ClaudeModule:
     """Response generation using Claude via the Anthropic API."""
 
-    def __init__(self, model: str = "claude-haiku-4-5-20251001"):
+    def __init__(self, model: str = "claude-haiku-4-5-20251001", api_key: str | None = None):
         self.model = model
-        self.client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
+        resolved_key = api_key or os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("ANTHROPIC_RECSYS_API_KEY")
+        self.client = anthropic.Anthropic(api_key=resolved_key)
 
     def response_generation(
         self,
