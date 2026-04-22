@@ -44,6 +44,9 @@ def chat_history_parser(conversations, crs):
 
 
 def main(args):
+    if not os.environ.get("ANTHROPIC_RECSYS_API_KEY"):
+        raise EnvironmentError("ANTHROPIC_RECSYS_API_KEY is not set — cannot run LLM inference")
+
     print("Clearing cache to prevent memory issues...")
     os.system("rm -rf cache")
 
