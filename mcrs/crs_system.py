@@ -46,6 +46,7 @@ class CRS_SYSTEM:
         # Query reformulation
         use_query_reformulation: bool = False,
         query_reformulation_model: str = "claude-haiku-4-5-20251001",
+        query_reformulation_mode: str = "entity",
         # LLM listwise reranker
         use_llm_reranker: bool = False,
         llm_reranker_model: str = "claude-haiku-4-5-20251001",
@@ -94,11 +95,14 @@ class CRS_SYSTEM:
             lm_type, device=device, attn_implementation=attn_implementation, dtype=dtype
         )
 
-        # Optional query reformulator (entity extraction → enriched query)
+        # Optional query reformulator (entity extraction or NLQ synthesis → enriched query)
         self.query_reformulator = None
         if use_query_reformulation and retrieval_type != "multi_query":
             from mcrs.query_reformulation import QueryReformulator
-            self.query_reformulator = QueryReformulator(model=query_reformulation_model)
+            self.query_reformulator = QueryReformulator(
+                model=query_reformulation_model,
+                mode=query_reformulation_mode,
+            )
 
         # Optional user-profile reranker
         self.reranker = None
