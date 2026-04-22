@@ -24,6 +24,7 @@ Usage:
 import argparse
 import json
 import os
+import re
 import shutil
 import subprocess
 import zipfile
@@ -44,7 +45,7 @@ You are a music recommendation assistant. Write a SHORT, warm, personalized reco
 **Conversation history (what the user said):**
 {conversation}
 
-**Recommended tracks (top 5):**
+**Recommended tracks (top 3):**
 {tracks}
 
 **Strict rules — read carefully:**
@@ -131,19 +132,20 @@ def regenerate_response(session_id, conversation_text, tracks_text):
             print(f"  [WARN] {session_id[:8]}: CLI error: {result.stderr[:100]}")
             return None
         text = result.stdout.strip()
-        # Reject track-first openings — key lesson from v11
-        track_first_phrases = [
-            "what ties these together",
-            "these tracks share",
-            "these tracks all share",
-            "connecting these tracks",
-            "the common thread",
+        # Require user-first opening — positive check on first sentence.
+        # Much safer than a blocklist: any response that doesn't start by
+        # addressing the user directly gets retried.
+        first_sentence = text.split('.')[0].lower()
+        user_first_markers = [
+            "you", "your", "since you", "you mentioned", "you asked",
+            "you said", "you love", "you wanted",
         ]
-        lower = text.lower()
-        for phrase in track_first_phrases:
-            if lower.startswith(phrase):
-                print(f"  [WARN] {session_id[:8]}: track-first opening detected, retrying")
-                return None
+        if not any(
+            first_sentence.startswith(m) or f" {m}" in first_sentence[:40]
+            for m in user_first_markers
+        ):
+            print(f"  [WARN] {session_id[:8]}: not user-first opening, retrying")
+            return None
         if text.startswith("{") or text.startswith("["):
             print(f"  [WARN] {session_id[:8]}: JSON leaked")
             return None
@@ -154,6 +156,58 @@ def regenerate_response(session_id, conversation_text, tracks_text):
     except Exception as ex:
         print(f"  [WARN] {session_id[:8]}: {ex}")
         return None
+
+
+JUDGE_PROMPT = """\
+You are a music recommendation evaluator. Score this recommendation response on two criteria.
+
+**Conversation history:**
+{conversation}
+
+**System response:**
+{response}
+
+**Recommended tracks (top 3 shown):**
+{tracks}
+
+Score on these two dimensions (each 1-5):
+
+**Personalization (1-5):** Does the response show understanding of THIS user's specific preferences?
+**Explanation Quality (1-5):** Does it explain WHY tracks match, connecting attributes to user preferences?
+
+Return ONLY valid JSON:
+{{"personalization": <1-5>, "explanation": <1-5>, "reasoning": "<one sentence>"}}
+"""
+
+
+def proxy_score_response(session_id, conversation_text, response, tracks_text):
+    """Call Claude Haiku to proxy-score a single response. Returns avg (P+E)/2 or None."""
+    prompt = JUDGE_PROMPT.format(
+        conversation=conversation_text,
+        response=response,
+        tracks=tracks_text,
+    )
+    try:
+        result = subprocess.run(
+            ["claude", "-p", "--no-session-persistence", "--model", CLAUDE_MODEL],
+            input=prompt,
+            capture_output=True,
+            text=True,
+            timeout=60,
+        )
+        if result.returncode != 0:
+            return None
+        text = result.stdout.strip()
+        match = re.search(r'\{.*\}', text, re.DOTALL)
+        if match:
+            data = json.loads(match.group())
+            p = float(data.get("personalization", 0))
+            e = float(data.get("explanation", 0))
+            if 1 <= p <= 5 and 1 <= e <= 5:
+                return (p + e) / 2
+    except Exception:
+        pass
+    return None
 
 
 def main():
@@ -218,7 +272,7 @@ def main():
             print(f"  [WARN] {sid[:8]}: missing from base or blind-A, skipping")
             continue
         conv_text = format_conversation(session)
-        tracks_text = format_tracks(pred["predicted_track_ids"], metadata)
+        tracks_text = format_tracks(pred["predicted_track_ids"], metadata, n=3)
         tasks.append((sid, conv_text, tracks_text))
 
     # 5. Regenerate — with one retry for track-first rejections
@@ -252,6 +306,35 @@ def main():
     failures = [sid for sid, *_ in tasks if sid not in improved]
     if failures:
         print(f"  Failed (keeping v10 response): {[s[:8] for s in failures]}")
+
+    # 5b. Regression guard: proxy-score each new response; only keep if it
+    # beats the v10 baseline for that session.  The 26 target sessions were
+    # untouched by v10 (v10 only patched avg ≤ 3.0) so their v9 proxy scores
+    # are the v10 baselines we must beat.
+    print(f"\nRunning regression guard (proxy-scoring {len(improved)} new responses)...")
+    # Build lookup: sid → baseline avg from v9 scores
+    baseline_scores = {}
+    for sid, avg, p, e, r in target_sessions:
+        baseline_scores[sid] = avg
+
+    # Build lookup: sid → (conv_text, tracks_text) for proxy scoring
+    task_lookup = {sid: (conv, tracks) for sid, conv, tracks in tasks}
+
+    guarded = {}
+    for sid, new_response in improved.items():
+        baseline = baseline_scores.get(sid, 3.5)  # conservative fallback
+        conv, tracks = task_lookup[sid]
+        new_score = proxy_score_response(sid, conv, new_response, tracks)
+        if new_score is None:
+            print(f"  [GUARD] {sid[:8]}: proxy score failed — keeping v10 (safe)")
+        elif new_score <= baseline:
+            print(f"  [GUARD] {sid[:8]}: v12={new_score:.2f} ≤ v10={baseline:.2f} — keeping v10")
+        else:
+            print(f"  [GUARD] {sid[:8]}: v12={new_score:.2f} > v10={baseline:.2f} — patching ✓")
+            guarded[sid] = new_response
+
+    print(f"Regression guard: {len(guarded)}/{len(improved)} responses cleared (rest kept as v10)")
+    improved = guarded
 
     # 6. Patch
     patched = 0
