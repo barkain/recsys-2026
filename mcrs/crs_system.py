@@ -216,7 +216,7 @@ class CRS_SYSTEM:
                 sim_cands = self._track_sim_candidates(session_memory)
                 if sim_cands:
                     lists.append(sim_cands)
-            return self._rrf_merge(lists, topk=self.candidate_k), q1  # q1 is the NLQ query
+            return self._rrf_merge(lists, topk=self.candidate_k), None  # no query hint to reranker
         elif self.query_reformulator:
             query = self.query_reformulator.reformulate(session_memory, user_query)
         else:
@@ -263,7 +263,7 @@ class CRS_SYSTEM:
                 c1 = self.retrieval.text_to_item_retrieval(q1, topk=self.candidate_k)
                 c2 = self.retrieval.text_to_item_retrieval(q2, topk=self.candidate_k)
                 results.append(self._rrf_merge([c1, c2], topk=self.candidate_k))
-            return results, list(queries1)  # NLQ queries passed to reranker
+            return results, [None] * len(results)  # no query hint to reranker
         elif self.query_reformulator:
             queries = self.query_reformulator.batch_reformulate(
                 list(zip(session_memories, user_queries))

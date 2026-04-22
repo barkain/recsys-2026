@@ -36,6 +36,10 @@ those must rank first, non-negotiable
 4. Era/decade match — user mentioned a time period (e.g. "80s", "2000s")
 5. Thematic/mood fit — lyrical themes, energy level, tempo cues from conversation
 
+IMPORTANT: Tracks already recommended in the conversation (shown as "Music:" turns) \
+have already been played. Do not place these at the top unless the user explicitly \
+asks to hear them again.
+
 Return them in DESCENDING relevance order (best match first).
 
 Rules:
@@ -45,7 +49,9 @@ Rules:
 - Do NOT add explanations or any text outside the JSON array"""
 
 _USER_TEMPLATE = """\
-Conversation so far:
+Current user request: {last_user_message}
+
+Full conversation:
 {conversation}
 
 Candidate tracks (track_id → metadata):
@@ -54,7 +60,9 @@ Candidate tracks (track_id → metadata):
 Return the {topk} most relevant track_ids as a JSON array."""
 
 _USER_TEMPLATE_WITH_QUERY = """\
-Conversation so far:
+Current user request: {last_user_message}
+
+Full conversation:
 {conversation}
 
 Synthesized search query (what the user wants RIGHT NOW):
@@ -66,17 +74,28 @@ Candidate tracks (track_id → metadata):
 Return the {topk} most relevant track_ids as a JSON array."""
 
 
+def _format_content(content) -> str:
+    if isinstance(content, dict):
+        name = content.get("track_name") or "unknown track"
+        artist = content.get("artist_name") or "unknown artist"
+        return f"{name} by {artist}"
+    return str(content)
+
+
 def _format_conversation(session_memory: list[dict]) -> str:
     lines = []
     for msg in session_memory:
         role = msg["role"].capitalize()
-        content = msg["content"]
-        if isinstance(content, dict):
-            name = content.get("track_name") or "unknown track"
-            artist = content.get("artist_name") or "unknown artist"
-            content = f"{name} by {artist}"
-        lines.append(f"{role}: {content}")
+        lines.append(f"{role}: {_format_content(msg['content'])}")
     return "\n".join(lines) if lines else "(no prior conversation)"
+
+
+def _get_last_user_message(session_memory: list[dict]) -> str:
+    """Return the most recent user message text."""
+    for msg in reversed(session_memory):
+        if msg["role"] == "user":
+            return _format_content(msg["content"])
+    return ""
 
 
 _USEFUL_META_KEYS = {"track_name", "artist_name", "tag_list", "release_year", "album_name"}
@@ -94,14 +113,15 @@ def _format_candidates(candidates: list[str], item_db) -> str:
         if item_db is not None:
             if isinstance(item_db, dict):
                 meta = item_db.get(track_id, {})
+                if isinstance(meta, dict):
+                    meta_str = " | ".join(
+                        f"{k}: {v}" for k, v in meta.items()
+                        if k in _USEFUL_META_KEYS and v
+                    )
             else:
-                meta = item_db.id_to_metadata(track_id)
-            if isinstance(meta, dict):
-                meta_str = " | ".join(
-                    f"{k}: {v}" for k, v in meta.items()
-                    if k in _USEFUL_META_KEYS and v
-                )
-        lines.append(f"{i}. [track_id: {track_id}] {meta_str}")
+                # MusicCatalogDB.id_to_metadata returns a formatted string directly
+                meta_str = item_db.id_to_metadata(track_id) or ""
+        lines.append(f"{i}. {meta_str}" if meta_str else f"{i}. [track_id: {track_id}]")
     return "\n".join(lines)
 
 
@@ -190,12 +210,14 @@ class LLMListwiseReranker:
         window = candidates if self.window_size is None else candidates[: self.window_size]
         valid_ids = set(window)
         conversation_text = _format_conversation(session_memory)
+        last_user_msg = _get_last_user_message(session_memory)
         candidates_text = _format_candidates(window, item_db)
 
         system = _SYSTEM_PROMPT.format(topk=min(k, len(window)))
         if reformulated_query:
             user_msg = _USER_TEMPLATE_WITH_QUERY.format(
                 conversation=conversation_text,
+                last_user_message=last_user_msg,
                 reformulated_query=reformulated_query,
                 candidates_text=candidates_text,
                 topk=min(k, len(window)),
@@ -203,6 +225,7 @@ class LLMListwiseReranker:
         else:
             user_msg = _USER_TEMPLATE.format(
                 conversation=conversation_text,
+                last_user_message=last_user_msg,
                 candidates_text=candidates_text,
                 topk=min(k, len(window)),
             )
