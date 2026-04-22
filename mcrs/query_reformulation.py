@@ -34,6 +34,29 @@ Conversation:
 
 Extract music search signals as JSON."""
 
+_NLQ_SYSTEM_PROMPT = """\
+You are a music search query writer. Given a multi-turn music recommendation \
+conversation, write a single compact search query (25-50 words) that captures \
+what the user wants RIGHT NOW — synthesising signals from the ENTIRE conversation.
+
+The query should read like a music track description and include:
+- Specific artist/band names if mentioned
+- Genre, subgenre, sonic texture
+- Era or decade if relevant
+- Mood, energy, tempo cues
+- Any explicit requests ("something like X", "more upbeat than Y")
+
+Prioritise the most recent user turn. Include earlier turns only if they add \
+useful context (e.g. established genre preference, reference artists).
+
+Return ONLY the query string — no JSON, no explanation, no quotes."""
+
+_NLQ_USER_TEMPLATE = """\
+Conversation:
+{conversation}
+
+Write the search query."""
+
 
 def _build_enriched_query(entities: dict) -> str:
     """Convert extracted entities dict to a flat retrieval query string."""
@@ -61,15 +84,28 @@ def _strip_fences(raw: str) -> str:
 
 
 class QueryReformulator:
-    """Uses Claude to extract music search signals from conversation history."""
+    """Uses Claude to extract music search signals from conversation history.
+
+    Args:
+        model: Claude model to use.
+        fallback_on_error: If True, return raw user_query on failure.
+        mode: "entity" (default) extracts structured fields and concatenates them;
+              "nlq" prompts the LLM to synthesise a single natural language query
+              directly — often better for BM25 since the output reads like a track
+              description rather than a flat keyword list.
+    """
 
     def __init__(
         self,
         model: str = "claude-haiku-4-5-20251001",
         fallback_on_error: bool = True,
+        mode: str = "entity",
     ):
         self.model = model
         self.fallback_on_error = fallback_on_error
+        if mode not in ("entity", "nlq"):
+            raise ValueError(f"QueryReformulator mode must be 'entity' or 'nlq', got {mode!r}")
+        self.mode = mode
 
     def _conversation_to_text(self, session_memory: list[dict], user_query: str) -> str:
         lines = []
@@ -87,22 +123,34 @@ class QueryReformulator:
         """Return an enriched retrieval query string."""
         conversation_text = self._conversation_to_text(session_memory, user_query)
         try:
-            raw = call_claude_api(
-                _SYSTEM_PROMPT,
-                _USER_TEMPLATE.format(conversation=conversation_text),
-                model=self.model,
-                max_tokens=512,
-            )
-            if raw is None:
-                raise RuntimeError("claude CLI returned no output")
-            raw = _strip_fences(raw)
-            try:
-                entities = json.loads(raw)
-            except json.JSONDecodeError:
-                logger.warning("QR JSON parse failed; raw output snippet: %r", raw[:200])
-                raise
-            enriched = _build_enriched_query(entities)
-            return enriched if enriched.strip() else user_query
+            if self.mode == "nlq":
+                raw = call_claude_api(
+                    _NLQ_SYSTEM_PROMPT,
+                    _NLQ_USER_TEMPLATE.format(conversation=conversation_text),
+                    model=self.model,
+                    max_tokens=128,
+                )
+                if raw is None:
+                    raise RuntimeError("API returned no output")
+                result = raw.strip()
+                return result if result else user_query
+            else:
+                raw = call_claude_api(
+                    _SYSTEM_PROMPT,
+                    _USER_TEMPLATE.format(conversation=conversation_text),
+                    model=self.model,
+                    max_tokens=512,
+                )
+                if raw is None:
+                    raise RuntimeError("API returned no output")
+                raw = _strip_fences(raw)
+                try:
+                    entities = json.loads(raw)
+                except json.JSONDecodeError:
+                    logger.warning("QR JSON parse failed; raw output snippet: %r", raw[:200])
+                    raise
+                enriched = _build_enriched_query(entities)
+                return enriched if enriched.strip() else user_query
         except Exception as e:
             if self.fallback_on_error:
                 logger.warning("QueryReformulator failed, falling back to raw query: %s", e)
