@@ -100,6 +100,24 @@ def _get_last_user_message(session_memory: list[dict]) -> str:
 
 _USEFUL_META_KEYS = {"track_name", "artist_name", "tag_list", "release_year", "album_name"}
 
+_TRACK_ID_RE = re.compile(r"track_id:\s*(\S+?)(?:,|$)")
+
+
+def _get_already_played(session_memory: list[dict]) -> set[str]:
+    """Extract track IDs of tracks already recommended in the conversation.
+
+    Prior music recommendations are stored in assistant turns as the metadata
+    string from id_to_metadata (e.g. "track_id: 123, track_name: ...").
+    """
+    played = set()
+    for msg in session_memory:
+        if msg["role"] in ("assistant", "music"):
+            content = str(msg.get("content", ""))
+            m = _TRACK_ID_RE.search(content)
+            if m:
+                played.add(m.group(1).strip(",").strip())
+    return played
+
 
 def _format_candidates(candidates: list[str], item_db) -> str:
     """Build a numbered candidate list for the LLM prompt, including track_ids.
@@ -206,6 +224,14 @@ class LLMListwiseReranker:
         k = topk if topk is not None else self.topk
         if not candidates:
             return []
+
+        # Filter already-played tracks from the window (they appear in assistant turns)
+        played = _get_already_played(session_memory)
+        if played:
+            # Move already-played tracks to end so new tracks fill the window
+            fresh = [c for c in candidates if c not in played]
+            stale = [c for c in candidates if c in played]
+            candidates = fresh + stale
 
         window = candidates if self.window_size is None else candidates[: self.window_size]
         valid_ids = set(window)

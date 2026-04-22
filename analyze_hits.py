@@ -18,19 +18,16 @@ DATASET_NAME = "talkpl-ai/TalkPlayData-Challenge-Dataset"
 
 
 def load_ground_truth():
+    """Return {session_id: {turn_number: gt_track_id}} matching eval_inference.py logic."""
     ds = load_dataset(DATASET_NAME, split="test", cache_dir=CACHE_DIR)
     gt = {}
-    for row in ds:
-        sid = row["session_id"]
-        if row["role"] == "music" and row["turn_number"] == 8:
-            content = row["content"]
-            if isinstance(content, dict):
-                gt[sid] = content.get("track_id")
-            elif isinstance(content, str):
-                try:
-                    gt[sid] = json.loads(content).get("track_id")
-                except Exception:
-                    pass
+    for item in ds:
+        sid = item["session_id"]
+        gt[sid] = {}
+        for conv in item["conversations"]:
+            if conv["role"] == "music":
+                track_id = conv["content"].strip()
+                gt[sid][int(conv["turn_number"])] = track_id
     return gt
 
 
@@ -43,16 +40,30 @@ def analyze(tid: str, gt: dict):
     with open(path) as f:
         data = json.load(f)
 
+    # Build session max turn (last-turn-only, matches eval_inference.py)
+    from collections import defaultdict
+    session_max_turn = defaultdict(int)
+    for item in data:
+        t = int(item["turn_number"])
+        if t > session_max_turn[item["session_id"]]:
+            session_max_turn[item["session_id"]] = t
+
     hit_ranks = []
     misses = 0
     for item in data:
         sid = item["session_id"]
-        gt_id = gt.get(sid)
+        turn = int(item["turn_number"])
+        if turn != session_max_turn[sid]:
+            continue  # last turn only
+        gt_id = gt.get(sid, {}).get(turn)
         if not gt_id:
             continue
         predicted = item["predicted_track_ids"]
         if isinstance(predicted, str):
-            predicted = json.loads(predicted.replace("'", '"'))
+            try:
+                predicted = json.loads(predicted)
+            except Exception:
+                predicted = json.loads(predicted.replace("'", '"'))
 
         found = False
         for i, tid_pred in enumerate(predicted[:100]):
