@@ -4,11 +4,11 @@ Extracts explicit music entities and preferences from conversation history
 to build a focused, enriched retrieval query — improving BM25 and dense recall.
 """
 import logging
-import os
 import json
 import re
 from concurrent.futures import ThreadPoolExecutor
-import anthropic
+
+from mcrs.utils import call_claude_cli
 
 logger = logging.getLogger(__name__)
 
@@ -70,7 +70,6 @@ class QueryReformulator:
     ):
         self.model = model
         self.fallback_on_error = fallback_on_error
-        self.client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
 
     def _conversation_to_text(self, session_memory: list[dict], user_query: str) -> str:
         lines = []
@@ -88,18 +87,20 @@ class QueryReformulator:
         """Return an enriched retrieval query string."""
         conversation_text = self._conversation_to_text(session_memory, user_query)
         try:
-            response = self.client.messages.create(
+            raw = call_claude_cli(
+                _SYSTEM_PROMPT,
+                _USER_TEMPLATE.format(conversation=conversation_text),
                 model=self.model,
-                max_tokens=512,
-                system=_SYSTEM_PROMPT,
-                messages=[
-                    {"role": "user", "content": _USER_TEMPLATE.format(conversation=conversation_text)}
-                ],
+                timeout=20,
             )
-            if response.stop_reason != "end_turn":
-                raise ValueError(f"Response truncated: stop_reason={response.stop_reason}")
-            raw = _strip_fences(response.content[0].text)
-            entities = json.loads(raw)
+            if raw is None:
+                raise RuntimeError("claude CLI returned no output")
+            raw = _strip_fences(raw)
+            try:
+                entities = json.loads(raw)
+            except json.JSONDecodeError:
+                logger.warning("QR JSON parse failed; raw output snippet: %r", raw[:200])
+                raise
             enriched = _build_enriched_query(entities)
             return enriched if enriched.strip() else user_query
         except Exception as e:

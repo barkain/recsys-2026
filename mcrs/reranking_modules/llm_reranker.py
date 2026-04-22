@@ -18,7 +18,8 @@ import logging
 import os
 import re
 from concurrent.futures import ThreadPoolExecutor
-import anthropic
+
+from mcrs.utils import call_claude_cli
 
 logger = logging.getLogger(__name__)
 
@@ -114,6 +115,7 @@ def _parse_llm_response(raw: str, valid_ids: set[str], topk: int) -> list[str] |
     try:
         ids = json.loads(match.group())
     except json.JSONDecodeError:
+        logger.warning("LLM reranker JSON parse failed; raw snippet: %r", raw[:200])
         return None
 
     if not isinstance(ids, list):
@@ -146,7 +148,6 @@ class LLMListwiseReranker:
         self.topk = topk
         self.window_size = window_size
         self.fallback_on_error = fallback_on_error
-        self.client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
 
     def rerank(
         self,
@@ -183,13 +184,9 @@ class LLMListwiseReranker:
         )
 
         try:
-            response = self.client.messages.create(
-                model=self.model,
-                max_tokens=1024,
-                system=system,
-                messages=[{"role": "user", "content": user_msg}],
-            )
-            raw = response.content[0].text
+            raw = call_claude_cli(system, user_msg, model=self.model, timeout=30)
+            if raw is None:
+                raise RuntimeError("claude CLI returned no output")
             reranked = _parse_llm_response(raw, valid_ids, k)
             if reranked:
                 # Append any candidates not returned by LLM (preserve coverage)

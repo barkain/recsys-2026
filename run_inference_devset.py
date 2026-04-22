@@ -40,11 +40,20 @@ def main(args):
 
     db = load_dataset(config.test_dataset_name, split="test")
 
+    # Optionally limit number of sessions (for quick sample evals)
+    if args.max_sessions:
+        db = db.select(range(min(args.max_sessions, len(db))))
+
+    # Determine which turns to run inference on.
+    # --last_turn_only: only run turn 8 (nDCG@20 is measured on the last turn).
+    # This reduces LLM calls 8x for quick offline measurements.
+    turns_to_run = [8] if args.last_turn_only else list(range(1, 9))
+
     batch_data, metadata = [], []
     for item in db:
         user_id = item["user_id"]
         session_id = item["session_id"]
-        for turn in range(1, 9):
+        for turn in turns_to_run:
             chat_history, user_query = chat_history_parser(item["conversations"], crs, turn)
             batch_data.append({
                 "user_query": user_query,
@@ -82,5 +91,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--tid", type=str, default="echo_hybrid_claude_devset")
     parser.add_argument("--batch_size", type=int, default=16)
+    parser.add_argument("--max_sessions", type=int, default=None,
+                        help="Limit number of sessions (useful for quick sample evals)")
+    parser.add_argument("--last_turn_only", action="store_true",
+                        help="Only run inference on turn 8 (mirrors Codabench nDCG@20 scoring)")
     args = parser.parse_args()
     main(args)
