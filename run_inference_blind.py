@@ -63,7 +63,10 @@ def main(args):
     for item in db:
         user_id = item["user_id"]
         session_id = item["session_id"]
-        for turn_number, chat_history, user_query in chat_history_parser(item["conversations"], crs):
+        turns = list(chat_history_parser(item["conversations"], crs))
+        if args.last_turn_only and turns:
+            turns = [turns[-1]]  # Only predict the final user turn
+        for turn_number, chat_history, user_query in turns:
             batch_data.append({
                 "user_query": user_query,
                 "user_id": user_id,
@@ -109,5 +112,7 @@ if __name__ == "__main__":
     parser.add_argument("--tid", type=str, default="echo_bm25_enriched_devset")
     parser.add_argument("--batch_size", type=int, default=32)
     parser.add_argument("--blind_dataset", type=str, default="talkpl-ai/TalkPlayData-Challenge-Blind-A")
+    parser.add_argument("--last_turn_only", action="store_true",
+                        help="Only predict the final user turn per session (8x faster, mirrors nDCG@20 scoring)")
     args = parser.parse_args()
     main(args)
