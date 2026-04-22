@@ -20,12 +20,12 @@ Usage:
 import json
 import os
 import re
+import shutil
 import subprocess
 import zipfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm import tqdm
 
-import pandas as pd
 from datasets import load_dataset
 from omegaconf import OmegaConf
 
@@ -200,7 +200,6 @@ def claude_rerank_and_respond(session_idx, session_id, candidates, conv_text, ca
 # ── Main ─────────────────────────────────────────────────────────────────────
 
 def main(args):
-    import shutil
     if not shutil.which("claude"):
         raise RuntimeError(
             "claude CLI not found in PATH. The v9 inference requires `claude -p` "
