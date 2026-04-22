@@ -71,8 +71,14 @@ class CRS_SYSTEM:
         self.use_track_sim_query = use_track_sim_query
 
         # Build base retriever
+        _base_type = retrieval_type
+        if retrieval_type == "multi_query":
+            _base_type = "hybrid"
+        elif retrieval_type == "bm25_multi_query":
+            _base_type = "bm25"
+
         base_retriever = load_retrieval_module(
-            "hybrid" if retrieval_type == "multi_query" else retrieval_type,
+            _base_type,
             item_db_name,
             track_split_types,
             corpus_types,
@@ -84,7 +90,7 @@ class CRS_SYSTEM:
         )
 
         # Wrap with multi-query if requested
-        if retrieval_type == "multi_query":
+        if retrieval_type in ("multi_query", "bm25_multi_query"):
             self.retrieval = MultiQueryRetriever(
                 base_retriever=base_retriever,
                 model=query_reformulation_model,
@@ -103,12 +109,12 @@ class CRS_SYSTEM:
         # Optional query reformulator (entity extraction or NLQ synthesis → enriched query)
         self.query_reformulator = None
         self.query_reformulator_aux = None  # Second QR for dual-QR ensemble
-        if use_dual_qr and retrieval_type != "multi_query":
+        if use_dual_qr and retrieval_type not in ("multi_query", "bm25_multi_query"):
             from mcrs.query_reformulation import QueryReformulator
             # Primary: NLQ for semantic richness; auxiliary: entity for keyword precision
             self.query_reformulator = QueryReformulator(model=query_reformulation_model, mode="nlq")
             self.query_reformulator_aux = QueryReformulator(model=query_reformulation_model, mode="entity")
-        elif use_query_reformulation and retrieval_type != "multi_query":
+        elif use_query_reformulation and retrieval_type not in ("multi_query", "bm25_multi_query"):
             from mcrs.query_reformulation import QueryReformulator
             self.query_reformulator = QueryReformulator(
                 model=query_reformulation_model,
@@ -192,7 +198,7 @@ class CRS_SYSTEM:
             NLQ/entity query string (or None if no reformulation was used).
             The reformulated_query is passed to the LLM reranker as an explicit signal.
         """
-        if self.retrieval_type == "multi_query":
+        if self.retrieval_type in ("multi_query", "bm25_multi_query"):
             return self.retrieval.retrieve(
                 session_memory, user_query, topk=self.candidate_k
             ), None
@@ -239,7 +245,7 @@ class CRS_SYSTEM:
             reformulated_queries contains the NLQ/entity query for each session,
             or None where no reformulation was used.
         """
-        if self.retrieval_type == "multi_query":
+        if self.retrieval_type in ("multi_query", "bm25_multi_query"):
             cands = self.retrieval.batch_retrieve(
                 list(zip(session_memories, user_queries)), topk=self.candidate_k
             )

@@ -1,0 +1,13 @@
+lm_type: "null"
+retrieval_type: "bm25"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+device: "cpu"
+use_reranker: false
+candidate_k: 200
+use_query_reformulation: true
+query_reformulation_model: "claude-haiku-4-5-20251001"
+query_reformulation_mode: "nlq"
+use_llm_reranker: true
+llm_reranker_model: "claude-haiku-4-5-20251001"
+llm_reranker_window: 10
+# k=200 + NLQ query hint to reranker — tests if more candidates boosts recall
