@@ -1,5 +1,5 @@
 # Echo's primary config: Hybrid retrieval (BM25 + E5) + Claude Haiku generation
-lm_type: "claude-haiku-4-5-20251001"
+lm_type: "null"
 retrieval_type: "hybrid"
 dense_model: "intfloat/e5-base-v2"
 test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
