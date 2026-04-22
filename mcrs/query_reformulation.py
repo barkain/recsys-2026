@@ -6,33 +6,11 @@ to build a focused, enriched retrieval query — improving BM25 and dense recall
 import logging
 import json
 import re
-import subprocess
 from concurrent.futures import ThreadPoolExecutor
 
+from mcrs.utils import call_claude_cli
+
 logger = logging.getLogger(__name__)
-
-
-def _call_claude_cli(system: str, user: str, timeout: int = 20) -> str | None:
-    """Call the claude CLI and return the response text, or None on failure."""
-    prompt = f"{system}\n\n{user}"
-    try:
-        result = subprocess.run(
-            ["claude", "-p", "--no-session-persistence"],
-            input=prompt,
-            capture_output=True,
-            text=True,
-            timeout=timeout,
-        )
-        if result.returncode == 0 and result.stdout.strip():
-            return result.stdout.strip()
-        logger.warning("claude CLI non-zero exit or empty output: %s", result.stderr[:200])
-        return None
-    except subprocess.TimeoutExpired:
-        logger.warning("claude CLI timed out after %ss", timeout)
-        return None
-    except Exception as e:
-        logger.warning("claude CLI failed: %s", e)
-        return None
 
 _SYSTEM_PROMPT = """\
 You are a music entity extractor. Given a music recommendation conversation, \
@@ -109,15 +87,20 @@ class QueryReformulator:
         """Return an enriched retrieval query string."""
         conversation_text = self._conversation_to_text(session_memory, user_query)
         try:
-            raw = _call_claude_cli(
+            raw = call_claude_cli(
                 _SYSTEM_PROMPT,
                 _USER_TEMPLATE.format(conversation=conversation_text),
+                model=self.model,
                 timeout=20,
             )
             if raw is None:
                 raise RuntimeError("claude CLI returned no output")
             raw = _strip_fences(raw)
-            entities = json.loads(raw)
+            try:
+                entities = json.loads(raw)
+            except json.JSONDecodeError:
+                logger.warning("QR JSON parse failed; raw output snippet: %r", raw[:200])
+                raise
             enriched = _build_enriched_query(entities)
             return enriched if enriched.strip() else user_query
         except Exception as e:
