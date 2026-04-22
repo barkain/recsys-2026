@@ -17,10 +17,39 @@ import json
 import logging
 import os
 import re
+import subprocess
 from concurrent.futures import ThreadPoolExecutor
-import anthropic
 
 logger = logging.getLogger(__name__)
+
+_CLAUDE_MODEL_FLAG = {
+    "claude-haiku-4-5-20251001": "haiku",
+    "claude-sonnet-4-6": "sonnet",
+    "claude-opus-4-6": "opus",
+}
+
+
+def _call_claude_cli(system: str, user: str, timeout: int = 30) -> str | None:
+    """Call the claude CLI and return the response text, or None on failure."""
+    prompt = f"{system}\n\n{user}"
+    try:
+        result = subprocess.run(
+            ["claude", "-p", "--no-session-persistence"],
+            input=prompt,
+            capture_output=True,
+            text=True,
+            timeout=timeout,
+        )
+        if result.returncode == 0 and result.stdout.strip():
+            return result.stdout.strip()
+        logger.warning("claude CLI non-zero exit or empty output: %s", result.stderr[:200])
+        return None
+    except subprocess.TimeoutExpired:
+        logger.warning("claude CLI timed out after %ss", timeout)
+        return None
+    except Exception as e:
+        logger.warning("claude CLI failed: %s", e)
+        return None
 
 _SYSTEM_PROMPT = """\
 You are a music recommendation expert.  Given a conversation and a numbered
@@ -146,7 +175,6 @@ class LLMListwiseReranker:
         self.topk = topk
         self.window_size = window_size
         self.fallback_on_error = fallback_on_error
-        self.client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
 
     def rerank(
         self,
@@ -183,13 +211,9 @@ class LLMListwiseReranker:
         )
 
         try:
-            response = self.client.messages.create(
-                model=self.model,
-                max_tokens=1024,
-                system=system,
-                messages=[{"role": "user", "content": user_msg}],
-            )
-            raw = response.content[0].text
+            raw = _call_claude_cli(system, user_msg, timeout=30)
+            if raw is None:
+                raise RuntimeError("claude CLI returned no output")
             reranked = _parse_llm_response(raw, valid_ids, k)
             if reranked:
                 # Append any candidates not returned by LLM (preserve coverage)
