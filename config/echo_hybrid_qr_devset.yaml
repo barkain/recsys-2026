@@ -1,5 +1,5 @@
 # Echo's ablation config: Hybrid retrieval + LLM query reformulation (no reranker)
-lm_type: "claude-haiku-4-5-20251001"
+lm_type: "null"
 retrieval_type: "hybrid"
 dense_model: "intfloat/e5-base-v2"
 test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
