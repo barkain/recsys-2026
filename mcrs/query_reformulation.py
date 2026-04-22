@@ -4,13 +4,35 @@ Extracts explicit music entities and preferences from conversation history
 to build a focused, enriched retrieval query — improving BM25 and dense recall.
 """
 import logging
-import os
 import json
 import re
+import subprocess
 from concurrent.futures import ThreadPoolExecutor
-import anthropic
 
 logger = logging.getLogger(__name__)
+
+
+def _call_claude_cli(system: str, user: str, timeout: int = 20) -> str | None:
+    """Call the claude CLI and return the response text, or None on failure."""
+    prompt = f"{system}\n\n{user}"
+    try:
+        result = subprocess.run(
+            ["claude", "-p", "--no-session-persistence"],
+            input=prompt,
+            capture_output=True,
+            text=True,
+            timeout=timeout,
+        )
+        if result.returncode == 0 and result.stdout.strip():
+            return result.stdout.strip()
+        logger.warning("claude CLI non-zero exit or empty output: %s", result.stderr[:200])
+        return None
+    except subprocess.TimeoutExpired:
+        logger.warning("claude CLI timed out after %ss", timeout)
+        return None
+    except Exception as e:
+        logger.warning("claude CLI failed: %s", e)
+        return None
 
 _SYSTEM_PROMPT = """\
 You are a music entity extractor. Given a music recommendation conversation, \
@@ -70,7 +92,6 @@ class QueryReformulator:
     ):
         self.model = model
         self.fallback_on_error = fallback_on_error
-        self.client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
 
     def _conversation_to_text(self, session_memory: list[dict], user_query: str) -> str:
         lines = []
@@ -88,17 +109,14 @@ class QueryReformulator:
         """Return an enriched retrieval query string."""
         conversation_text = self._conversation_to_text(session_memory, user_query)
         try:
-            response = self.client.messages.create(
-                model=self.model,
-                max_tokens=512,
-                system=_SYSTEM_PROMPT,
-                messages=[
-                    {"role": "user", "content": _USER_TEMPLATE.format(conversation=conversation_text)}
-                ],
+            raw = _call_claude_cli(
+                _SYSTEM_PROMPT,
+                _USER_TEMPLATE.format(conversation=conversation_text),
+                timeout=20,
             )
-            if response.stop_reason != "end_turn":
-                raise ValueError(f"Response truncated: stop_reason={response.stop_reason}")
-            raw = _strip_fences(response.content[0].text)
+            if raw is None:
+                raise RuntimeError("claude CLI returned no output")
+            raw = _strip_fences(raw)
             entities = json.loads(raw)
             enriched = _build_enriched_query(entities)
             return enriched if enriched.strip() else user_query
