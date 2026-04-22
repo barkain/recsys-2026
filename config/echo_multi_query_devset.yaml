@@ -10,7 +10,7 @@
 #       q3: mood, era, and thematic context
 #   - Each query retrieves 100 candidates, RRF fuses all 300 into a ranked shortlist
 #   - This increases recall by capturing different facets of user intent
-lm_type: "claude-haiku-4-5-20251001"
+lm_type: "null"
 retrieval_type: "multi_query"
 dense_model: "intfloat/e5-large-v2"
 test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"

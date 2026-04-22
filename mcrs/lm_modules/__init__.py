@@ -14,6 +14,8 @@ class NullLM:
 
 
 def load_lm_module(lm_type: str, **kwargs):
+    if lm_type in ("null", "none", "retrieval_only"):
+        return NullLM()
     if lm_type.startswith("claude") or lm_type.startswith("anthropic"):
         # Accept either ANTHROPIC_API_KEY or the project-specific ANTHROPIC_RECSYS_API_KEY
         api_key = os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("ANTHROPIC_RECSYS_API_KEY")

@@ -1,12 +1,8 @@
-# Echo: E5-large-v2 upgrade — Hybrid (BM25 + E5-large) + QR + user-profile reranker + LLM reranker
-# Improvements over echo_hybrid_qr_llm_reranker_devset:
-#   1. Dense model upgraded from e5-base-v2 to e5-large-v2 (stronger semantic retrieval)
-#   2. release_date added to corpus_types (captures temporal queries: "80s rock", "recent indie")
-#   3. LLM reranker prompt updated with music-specific scoring criteria
-#   4. id_to_metadata now includes tag_list + year (richer LLM context)
+# Echo: BM25+CF + QR + LLM reranker — CPU only, no model downloads
+# Stack: BM25+CF retrieve → user-profile rerank → LLM listwise rerank → Claude generate
+# This is our current blind submission stack + QR + LLM reranker, measurable on devset
 lm_type: "null"
-retrieval_type: "hybrid"
-dense_model: "intfloat/e5-large-v2"
+retrieval_type: "bm25_cf"
 test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
 item_db_name: "talkpl-ai/TalkPlayData-Challenge-Track-Metadata"
 user_db_name: "talkpl-ai/TalkPlayData-Challenge-User-Metadata"
@@ -18,14 +14,15 @@ corpus_types:
   - "track_name"
   - "artist_name"
   - "album_name"
-  - "release_date"
   - "tag_list"
 cache_dir: "./cache"
-device: "cuda"
-attn_implementation: "eager"
+device: "cpu"
 use_reranker: true
 reranker_alpha: 0.3
 candidate_k: 50
+bm25_weight: 0.5
+cf_weight: 0.5
+rrf_k: 60
 use_query_reformulation: true
 query_reformulation_model: "claude-haiku-4-5-20251001"
 use_llm_reranker: true
