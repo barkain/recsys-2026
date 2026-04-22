@@ -15,13 +15,16 @@ class NullLM:
 
 def load_lm_module(lm_type: str, **kwargs):
     if lm_type.startswith("claude") or lm_type.startswith("anthropic"):
-        if not os.environ.get("ANTHROPIC_API_KEY"):
+        # Accept either ANTHROPIC_API_KEY or the project-specific ANTHROPIC_RECSYS_API_KEY
+        api_key = os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("ANTHROPIC_RECSYS_API_KEY")
+        if not api_key:
             import logging
             logging.getLogger(__name__).warning(
-                "ANTHROPIC_API_KEY not set — using NullLM (retrieval-only, no response generation)"
+                "Neither ANTHROPIC_API_KEY nor ANTHROPIC_RECSYS_API_KEY set — "
+                "using NullLM (retrieval-only, no response generation)"
             )
             return NullLM()
-        return ClaudeModule(model=lm_type)
+        return ClaudeModule(model=lm_type, api_key=api_key)
     else:
         device = kwargs.get("device", "cuda")
         dtype = kwargs.get("dtype", None)
