@@ -1,0 +1,30 @@
+lm_type: "claude-haiku-4-5-20251001"
+retrieval_type: "bm25"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+item_db_name: "talkpl-ai/TalkPlayData-Challenge-Track-Metadata"
+user_db_name: "talkpl-ai/TalkPlayData-Challenge-User-Metadata"
+track_split_types:
+  - "all_tracks"
+user_split_types:
+  - "all_users"
+corpus_types:
+  - "track_name"
+  - "artist_name"
+  - "album_name"
+  - "tag_list"
+cache_dir: "./cache"
+device: "cpu"
+use_reranker: false
+candidate_k: 100
+use_query_reformulation: false
+use_dual_qr: true
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-sonnet-4-6"
+llm_reranker_window: 50
+# v19 devset experiment
+# Changes vs v16:
+#   1. NLQ query now passed to LLM reranker as explicit search signal
+#   2. llm_reranker_window: 20 → 50 (reranker sees 50 candidates instead of 20)
+# Hypothesis: tracks in BM25 positions 21-50 can be rescued by Sonnet reranker
+#             + NLQ hint gives reranker a clean query to focus on

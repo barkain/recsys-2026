@@ -25,8 +25,8 @@ logger = logging.getLogger(__name__)
 
 _SYSTEM_PROMPT = """\
 You are a music recommendation expert. Given a conversation and a numbered list \
-of candidate tracks, rank all {topk} tracks from most to least relevant to what \
-the user wants RIGHT NOW.
+of candidate tracks, select and rank the TOP {topk} most relevant tracks from the \
+{n_candidates} candidates provided.
 
 Your #1 ranked track must be the single BEST match for the user's immediate request — \
 the exact track they are most likely asking for at this moment. Be decisive: commit to \
@@ -46,8 +46,8 @@ asks to hear them again.
 
 Rules:
 - Return ONLY a JSON array of track_id strings, e.g. ["id1", "id2", ...]
-- Length must be exactly {topk} items (or fewer if fewer candidates exist)
-- Use only track_ids from the provided candidate list — include ALL {topk} candidates
+- Length must be exactly {topk} items
+- Use only track_ids from the provided candidate list
 - Do NOT add explanations or any text outside the JSON array"""
 
 _USER_TEMPLATE = """\
@@ -56,10 +56,10 @@ Current user request: {last_user_message}
 Full conversation:
 {conversation}
 
-Candidate tracks (track_id → metadata):
+Candidate tracks ({n_candidates} total, track_id → metadata):
 {candidates_text}
 
-Return the {topk} most relevant track_ids as a JSON array."""
+Return the top {topk} most relevant track_ids as a JSON array."""
 
 _USER_TEMPLATE_WITH_QUERY = """\
 Current user request: {last_user_message}
@@ -70,10 +70,10 @@ Full conversation:
 Synthesized search query (what the user wants RIGHT NOW):
 {reformulated_query}
 
-Candidate tracks (track_id → metadata):
+Candidate tracks ({n_candidates} total, track_id → metadata):
 {candidates_text}
 
-Return the {topk} most relevant track_ids as a JSON array."""
+Return the top {topk} most relevant track_ids as a JSON array."""
 
 
 def _format_content(content) -> str:
@@ -248,21 +248,25 @@ class LLMListwiseReranker:
         last_user_msg = _get_last_user_message(session_memory)
         candidates_text = _format_candidates(window, item_db)
 
-        system = _SYSTEM_PROMPT.format(topk=min(k, len(window)))
+        out_topk = min(k, len(window))
+        n_candidates = len(window)
+        system = _SYSTEM_PROMPT.format(topk=out_topk, n_candidates=n_candidates)
         if reformulated_query:
             user_msg = _USER_TEMPLATE_WITH_QUERY.format(
                 conversation=conversation_text,
                 last_user_message=last_user_msg,
                 reformulated_query=reformulated_query,
                 candidates_text=candidates_text,
-                topk=min(k, len(window)),
+                topk=out_topk,
+                n_candidates=n_candidates,
             )
         else:
             user_msg = _USER_TEMPLATE.format(
                 conversation=conversation_text,
                 last_user_message=last_user_msg,
                 candidates_text=candidates_text,
-                topk=min(k, len(window)),
+                topk=out_topk,
+                n_candidates=n_candidates,
             )
 
         try:
