@@ -61,6 +61,9 @@ class CRS_SYSTEM:
         # Precomputed embedding retrieval
         embed_column: str = "metadata-qwen3_embedding_0.6b",
         embed_dataset: str = "talkpl-ai/TalkPlayData-Challenge-Track-Embeddings",
+        # Generative retrieval: LLM suggests specific track/artist names → targeted BM25
+        use_generative_retrieval: bool = False,
+        generative_retrieval_model: str = "claude-haiku-4-5-20251001",
         # Ignored pass-through params (e.g. test_dataset_name from run script)
         **_ignored,
     ):
@@ -120,6 +123,12 @@ class CRS_SYSTEM:
                 model=query_reformulation_model,
                 mode=query_reformulation_mode,
             )
+
+        # Optional generative retriever (LLM-guided track suggestion → targeted BM25)
+        self.generative_retriever = None
+        if use_generative_retrieval:
+            from mcrs.retrieval_modules.generative import GenerativeRetriever
+            self.generative_retriever = GenerativeRetriever(model=generative_retrieval_model)
 
         # Optional user-profile reranker
         self.reranker = None
@@ -205,13 +214,24 @@ class CRS_SYSTEM:
 
         if self.query_reformulator_aux:
             # Dual-QR: run both reformulators in parallel, merge with RRF
-            with ThreadPoolExecutor(max_workers=2) as pool:
+            n_workers = 3 if self.generative_retriever else 2
+            with ThreadPoolExecutor(max_workers=n_workers) as pool:
                 f1 = pool.submit(self.query_reformulator.reformulate, session_memory, user_query)
                 f2 = pool.submit(self.query_reformulator_aux.reformulate, session_memory, user_query)
+                fg = pool.submit(self.generative_retriever.get_suggestions, session_memory, user_query) if self.generative_retriever else None
                 q1, q2 = f1.result(), f2.result()
+                gen_suggestions = fg.result() if fg else []
             cands1 = self.retrieval.text_to_item_retrieval(q1, topk=self.candidate_k)
             cands2 = self.retrieval.text_to_item_retrieval(q2, topk=self.candidate_k)
             lists = [cands1, cands2]
+            # Generative retrieval: run targeted BM25 for each LLM-suggested track/artist
+            if gen_suggestions:
+                gen_queries = self.generative_retriever.suggestions_to_queries(gen_suggestions)
+                gen_lists = [
+                    self.retrieval.text_to_item_retrieval(gq, topk=5)
+                    for gq in gen_queries
+                ]
+                lists.extend(gen_lists)
             if self.use_track_sim_query:
                 sim_cands = self._track_sim_candidates(session_memory)
                 if sim_cands:
@@ -254,15 +274,23 @@ class CRS_SYSTEM:
         if self.query_reformulator_aux:
             # Dual-QR: run both reformulators in parallel per batch, merge with RRF
             pairs = list(zip(session_memories, user_queries))
-            with ThreadPoolExecutor(max_workers=2) as pool:
+            n_workers = 3 if self.generative_retriever else 2
+            with ThreadPoolExecutor(max_workers=n_workers) as pool:
                 f1 = pool.submit(self.query_reformulator.batch_reformulate, pairs)
                 f2 = pool.submit(self.query_reformulator_aux.batch_reformulate, pairs)
+                fg = pool.submit(self.generative_retriever.batch_get_suggestions, pairs) if self.generative_retriever else None
                 queries1, queries2 = f1.result(), f2.result()
+                gen_suggestions_batch = fg.result() if fg else [[] for _ in pairs]
             results = []
-            for q1, q2 in zip(queries1, queries2):
+            for q1, q2, gen_suggestions in zip(queries1, queries2, gen_suggestions_batch):
                 c1 = self.retrieval.text_to_item_retrieval(q1, topk=self.candidate_k)
                 c2 = self.retrieval.text_to_item_retrieval(q2, topk=self.candidate_k)
-                results.append(self._rrf_merge([c1, c2], topk=self.candidate_k))
+                lists = [c1, c2]
+                if gen_suggestions:
+                    gen_queries = self.generative_retriever.suggestions_to_queries(gen_suggestions)
+                    for gq in gen_queries:
+                        lists.append(self.retrieval.text_to_item_retrieval(gq, topk=5))
+                results.append(self._rrf_merge(lists, topk=self.candidate_k))
             return results, queries1  # pass NLQ queries as hints to reranker
         elif self.query_reformulator:
             queries = self.query_reformulator.batch_reformulate(
