@@ -19,7 +19,7 @@ import os
 import re
 from concurrent.futures import ThreadPoolExecutor
 
-from mcrs.utils import call_claude_api
+from mcrs.utils import call_llm_api
 
 logger = logging.getLogger(__name__)
 
@@ -282,7 +282,7 @@ class LLMListwiseReranker:
             )
 
         try:
-            raw = call_claude_api(system, user_msg, model=self.model, max_tokens=1024)
+            raw = call_llm_api(system, user_msg, model=self.model, max_tokens=1024)
             if raw is None:
                 raise RuntimeError("claude CLI returned no output")
             reranked = _parse_llm_response(raw, valid_ids, k)

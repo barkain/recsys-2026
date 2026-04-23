@@ -8,7 +8,7 @@ import json
 import re
 from concurrent.futures import ThreadPoolExecutor
 
-from mcrs.utils import call_claude_api
+from mcrs.utils import call_llm_api
 
 logger = logging.getLogger(__name__)
 
@@ -128,7 +128,7 @@ class QueryReformulator:
         conversation_text = self._conversation_to_text(session_memory, user_query)
         try:
             if self.mode == "nlq":
-                raw = call_claude_api(
+                raw = call_llm_api(
                     _NLQ_SYSTEM_PROMPT,
                     _NLQ_USER_TEMPLATE.format(conversation=conversation_text),
                     model=self.model,
@@ -139,7 +139,7 @@ class QueryReformulator:
                 result = raw.strip()
                 return result if result else user_query
             else:
-                raw = call_claude_api(
+                raw = call_llm_api(
                     _SYSTEM_PROMPT,
                     _USER_TEMPLATE.format(conversation=conversation_text),
                     model=self.model,
