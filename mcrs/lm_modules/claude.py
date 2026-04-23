@@ -18,13 +18,8 @@ class ClaudeModule:
         recommend_item: str,
         max_new_tokens: int = 256,
     ) -> str:
-        # Build the track context as a user-visible instruction rather than
-        # an assistant prefill, to avoid raw metadata strings bleeding into output.
         messages = list(chat_history)
-        messages.append({
-            "role": "user",
-            "content": f"[Track to recommend: {recommend_item}]",
-        })
+        messages.append({"role": "assistant", "content": recommend_item})
         response = self.client.messages.create(
             model=self.model,
             max_tokens=max_new_tokens,
