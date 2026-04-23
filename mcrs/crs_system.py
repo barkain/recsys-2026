@@ -64,6 +64,10 @@ class CRS_SYSTEM:
         # Generative retrieval: LLM suggests specific track/artist names → targeted BM25
         use_generative_retrieval: bool = False,
         generative_retrieval_model: str = "claude-haiku-4-5-20251001",
+        # Track embedding similarity: find neighbors of last-played track via FAISS
+        use_track_embedding_sim: bool = False,
+        track_sim_embed_column: str = "metadata-qwen3_embedding_0.6b",
+        track_sim_topk: int = 30,
         # Ignored pass-through params (e.g. test_dataset_name from run script)
         **_ignored,
     ):
@@ -124,6 +128,17 @@ class CRS_SYSTEM:
                 mode=query_reformulation_mode,
             )
 
+        # Optional track embedding similarity retriever
+        self.track_sim_retriever = None
+        self.track_sim_topk = track_sim_topk
+        if use_track_embedding_sim:
+            from mcrs.retrieval_modules.track_sim import TrackSimilarityRetriever
+            self.track_sim_retriever = TrackSimilarityRetriever(
+                embed_column=track_sim_embed_column,
+                split_types=track_split_types,
+                cache_dir=cache_dir,
+            )
+
         # Optional generative retriever (LLM-guided track suggestion → targeted BM25)
         self.generative_retriever = None
         if use_generative_retrieval:
@@ -164,6 +179,17 @@ class CRS_SYSTEM:
             if profile_str:
                 prompt += "\n" + self.role_prompt["personalization"] + "\n" + profile_str
         return prompt
+
+    def _last_played_track_id(self, session_memory: list[dict]) -> str | None:
+        """Return the track_id of the most recent music recommendation in memory."""
+        for msg in reversed(session_memory):
+            if msg.get("role") == "music":
+                content = msg.get("content")
+                if isinstance(content, str):
+                    return content
+                if isinstance(content, dict):
+                    return content.get("track_id") or content.get("id")
+        return None
 
     def _track_sim_candidates(self, session_memory: list[dict]) -> list[str] | None:
         """Return BM25 candidates using the last music recommendation's metadata as query.
@@ -236,6 +262,14 @@ class CRS_SYSTEM:
                 sim_cands = self._track_sim_candidates(session_memory)
                 if sim_cands:
                     lists.append(sim_cands)
+            if self.track_sim_retriever:
+                last_tid = self._last_played_track_id(session_memory)
+                if last_tid:
+                    embed_sim = self.track_sim_retriever.track_id_to_neighbors(
+                        last_tid, topk=self.track_sim_topk
+                    )
+                    if embed_sim:
+                        lists.append(embed_sim)
             return self._rrf_merge(lists, topk=self.candidate_k), q1  # NLQ as hint to reranker
         elif self.query_reformulator:
             query = self.query_reformulator.reformulate(session_memory, user_query)
@@ -282,7 +316,9 @@ class CRS_SYSTEM:
                 queries1, queries2 = f1.result(), f2.result()
                 gen_suggestions_batch = fg.result() if fg else [[] for _ in pairs]
             results = []
-            for q1, q2, gen_suggestions in zip(queries1, queries2, gen_suggestions_batch):
+            for (mem, _uq), q1, q2, gen_suggestions in zip(
+                pairs, queries1, queries2, gen_suggestions_batch
+            ):
                 c1 = self.retrieval.text_to_item_retrieval(q1, topk=self.candidate_k)
                 c2 = self.retrieval.text_to_item_retrieval(q2, topk=self.candidate_k)
                 lists = [c1, c2]
@@ -290,6 +326,14 @@ class CRS_SYSTEM:
                     gen_queries = self.generative_retriever.suggestions_to_queries(gen_suggestions)
                     for gq in gen_queries:
                         lists.append(self.retrieval.text_to_item_retrieval(gq, topk=5))
+                if self.track_sim_retriever:
+                    last_tid = self._last_played_track_id(mem)
+                    if last_tid:
+                        embed_sim = self.track_sim_retriever.track_id_to_neighbors(
+                            last_tid, topk=self.track_sim_topk
+                        )
+                        if embed_sim:
+                            lists.append(embed_sim)
                 results.append(self._rrf_merge(lists, topk=self.candidate_k))
             return results, queries1  # pass NLQ queries as hints to reranker
         elif self.query_reformulator:
