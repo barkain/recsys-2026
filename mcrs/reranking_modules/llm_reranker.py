@@ -24,13 +24,17 @@ from mcrs.utils import call_claude_api
 logger = logging.getLogger(__name__)
 
 _SYSTEM_PROMPT = """\
-You are a music recommendation expert.  Given a conversation and a numbered
-list of candidate tracks (with genre tags and release year), select the {topk}
-tracks that are MOST relevant to what the user wants RIGHT NOW.
+You are a music recommendation expert. Given a conversation and a numbered list \
+of candidate tracks, rank all {topk} tracks from most to least relevant to what \
+the user wants RIGHT NOW.
+
+Your #1 ranked track must be the single BEST match for the user's immediate request — \
+the exact track they are most likely asking for at this moment. Be decisive: commit to \
+the strongest match at rank 1, even if other tracks are plausible.
 
 Scoring criteria (in strict priority order):
 1. Explicit user request — if the user named a specific artist, band, or track, \
-those must rank first, non-negotiable
+that MUST be rank 1, non-negotiable
 2. Genre/style/sonic texture match — fits the genre, mood, or vibe the user described
 3. Artist match — user asked for similar artists or named influences
 4. Era/decade match — user mentioned a time period (e.g. "80s", "2000s")
@@ -40,12 +44,10 @@ IMPORTANT: Tracks already recommended in the conversation (shown as "Music:" tur
 have already been played. Do not place these at the top unless the user explicitly \
 asks to hear them again.
 
-Return them in DESCENDING relevance order (best match first).
-
 Rules:
 - Return ONLY a JSON array of track_id strings, e.g. ["id1", "id2", ...]
 - Length must be exactly {topk} items (or fewer if fewer candidates exist)
-- Use only track_ids from the provided candidate list
+- Use only track_ids from the provided candidate list — include ALL {topk} candidates
 - Do NOT add explanations or any text outside the JSON array"""
 
 _USER_TEMPLATE = """\
