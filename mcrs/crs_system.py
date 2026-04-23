@@ -209,8 +209,12 @@ class CRS_SYSTEM:
                 f1 = pool.submit(self.query_reformulator.reformulate, session_memory, user_query)
                 f2 = pool.submit(self.query_reformulator_aux.reformulate, session_memory, user_query)
                 q1, q2 = f1.result(), f2.result()
-            cands1 = self.retrieval.text_to_item_retrieval(q1, topk=self.candidate_k)
-            cands2 = self.retrieval.text_to_item_retrieval(q2, topk=self.candidate_k)
+            # Use 2× k for each component so RRF has wider pool to merge from.
+            # This prevents correct tracks at NLQ rank 30+ from being displaced
+            # by tracks that happen to rank high on the entity query only.
+            wide_k = self.candidate_k * 2
+            cands1 = self.retrieval.text_to_item_retrieval(q1, topk=wide_k)
+            cands2 = self.retrieval.text_to_item_retrieval(q2, topk=wide_k)
             lists = [cands1, cands2]
             if self.use_track_sim_query:
                 sim_cands = self._track_sim_candidates(session_memory)
@@ -258,10 +262,11 @@ class CRS_SYSTEM:
                 f1 = pool.submit(self.query_reformulator.batch_reformulate, pairs)
                 f2 = pool.submit(self.query_reformulator_aux.batch_reformulate, pairs)
                 queries1, queries2 = f1.result(), f2.result()
+            wide_k = self.candidate_k * 2
             results = []
             for q1, q2 in zip(queries1, queries2):
-                c1 = self.retrieval.text_to_item_retrieval(q1, topk=self.candidate_k)
-                c2 = self.retrieval.text_to_item_retrieval(q2, topk=self.candidate_k)
+                c1 = self.retrieval.text_to_item_retrieval(q1, topk=wide_k)
+                c2 = self.retrieval.text_to_item_retrieval(q2, topk=wide_k)
                 results.append(self._rrf_merge([c1, c2], topk=self.candidate_k))
             return results, [None] * len(results)  # no query hint to reranker
         elif self.query_reformulator:
