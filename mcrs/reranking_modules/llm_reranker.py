@@ -102,22 +102,28 @@ def _get_last_user_message(session_memory: list[dict]) -> str:
 
 _USEFUL_META_KEYS = {"track_name", "artist_name", "tag_list", "release_year", "album_name"}
 
-_TRACK_ID_RE = re.compile(r"track_id:\s*(\S+?)(?:,|$)")
+_TRACK_ID_RE = re.compile(r"track_id:\s*(\S+?)(?:[,|\s]|$)")
 
 
 def _get_already_played(session_memory: list[dict]) -> set[str]:
     """Extract track IDs of tracks already recommended in the conversation.
 
-    Prior music recommendations are stored in assistant turns as the metadata
-    string from id_to_metadata (e.g. "track_id: 123, track_name: ...").
+    Handles two formats:
+    - dict content: raw track metadata dict with a "track_id" key
+    - string content: id_to_metadata format "track_id: 123, track_name: ..."
     """
     played = set()
     for msg in session_memory:
         if msg["role"] in ("assistant", "music"):
-            content = str(msg.get("content", ""))
-            m = _TRACK_ID_RE.search(content)
-            if m:
-                played.add(m.group(1).strip(",").strip())
+            content = msg.get("content", "")
+            if isinstance(content, dict):
+                tid = content.get("track_id")
+                if tid:
+                    played.add(str(tid))
+            elif isinstance(content, str):
+                m = _TRACK_ID_RE.search(content)
+                if m:
+                    played.add(m.group(1).rstrip(",").strip())
     return played
 
 
@@ -140,9 +146,15 @@ def _format_candidates(candidates: list[str], item_db) -> str:
                          if k in _USEFUL_META_KEYS and v]
                     )
             else:
-                # MusicCatalogDB.id_to_metadata returns a formatted string directly
-                meta_str = item_db.id_to_metadata(track_id) or ""
-        lines.append(f"{i}. {meta_str}" if meta_str else f"{i}. [track_id: {track_id}]")
+                # MusicCatalogDB.id_to_metadata returns a formatted string;
+                # it already starts with "track_id: <id>, ..." but we prepend
+                # explicitly for safety in case the format ever changes.
+                raw = item_db.id_to_metadata(track_id) or ""
+                if raw and not raw.startswith("track_id:"):
+                    meta_str = f"track_id: {track_id}, {raw}"
+                else:
+                    meta_str = raw or f"track_id: {track_id}"
+        lines.append(f"{i}. {meta_str}")
     return "\n".join(lines)
 
 
