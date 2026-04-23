@@ -19,55 +19,112 @@ import os
 import re
 from concurrent.futures import ThreadPoolExecutor
 
-from mcrs.utils import call_claude_api
+from mcrs.utils import call_llm_api
 
 logger = logging.getLogger(__name__)
 
 _SYSTEM_PROMPT = """\
-You are a music recommendation expert.  Given a conversation and a numbered
-list of candidate tracks (with genre tags and release year), select the {topk}
-tracks that are MOST relevant to what the user wants RIGHT NOW.
+You are a music recommendation expert. Given a conversation and a numbered list \
+of candidate tracks, select and rank the TOP {topk} most relevant tracks from the \
+{n_candidates} candidates provided.
+
+Your #1 ranked track must be the single BEST match for the user's immediate request — \
+the exact track they are most likely asking for at this moment. Be decisive: commit to \
+the strongest match at rank 1, even if other tracks are plausible.
 
 Scoring criteria (in strict priority order):
 1. Explicit user request — if the user named a specific artist, band, or track, \
-those must rank first, non-negotiable
+that MUST be rank 1, non-negotiable
 2. Genre/style/sonic texture match — fits the genre, mood, or vibe the user described
 3. Artist match — user asked for similar artists or named influences
 4. Era/decade match — user mentioned a time period (e.g. "80s", "2000s")
 5. Thematic/mood fit — lyrical themes, energy level, tempo cues from conversation
 
-Return them in DESCENDING relevance order (best match first).
+IMPORTANT: Tracks already recommended in the conversation (shown as "Music:" turns) \
+have already been played. Do not place these at the top unless the user explicitly \
+asks to hear them again.
 
 Rules:
 - Return ONLY a JSON array of track_id strings, e.g. ["id1", "id2", ...]
-- Length must be exactly {topk} items (or fewer if fewer candidates exist)
+- Length must be exactly {topk} items
 - Use only track_ids from the provided candidate list
 - Do NOT add explanations or any text outside the JSON array"""
 
 _USER_TEMPLATE = """\
-Conversation so far:
+Current user request: {last_user_message}
+
+Full conversation:
 {conversation}
 
-Candidate tracks (track_id → metadata):
+Candidate tracks ({n_candidates} total, track_id → metadata):
 {candidates_text}
 
-Return the {topk} most relevant track_ids as a JSON array."""
+Return the top {topk} most relevant track_ids as a JSON array."""
+
+_USER_TEMPLATE_WITH_QUERY = """\
+Current user request: {last_user_message}
+
+Full conversation:
+{conversation}
+
+Synthesized search query (what the user wants RIGHT NOW):
+{reformulated_query}
+
+Candidate tracks ({n_candidates} total, track_id → metadata):
+{candidates_text}
+
+Return the top {topk} most relevant track_ids as a JSON array."""
+
+
+def _format_content(content) -> str:
+    if isinstance(content, dict):
+        name = content.get("track_name") or "unknown track"
+        artist = content.get("artist_name") or "unknown artist"
+        return f"{name} by {artist}"
+    return str(content)
 
 
 def _format_conversation(session_memory: list[dict]) -> str:
     lines = []
     for msg in session_memory:
         role = msg["role"].capitalize()
-        content = msg["content"]
-        if isinstance(content, dict):
-            name = content.get("track_name") or "unknown track"
-            artist = content.get("artist_name") or "unknown artist"
-            content = f"{name} by {artist}"
-        lines.append(f"{role}: {content}")
+        lines.append(f"{role}: {_format_content(msg['content'])}")
     return "\n".join(lines) if lines else "(no prior conversation)"
 
 
+def _get_last_user_message(session_memory: list[dict]) -> str:
+    """Return the most recent user message text."""
+    for msg in reversed(session_memory):
+        if msg["role"] == "user":
+            return _format_content(msg["content"])
+    return ""
+
+
 _USEFUL_META_KEYS = {"track_name", "artist_name", "tag_list", "release_year", "album_name"}
+
+_TRACK_ID_RE = re.compile(r"track_id:\s*(\S+?)(?:[,|\s]|$)")
+
+
+def _get_already_played(session_memory: list[dict]) -> set[str]:
+    """Extract track IDs of tracks already recommended in the conversation.
+
+    Handles two formats:
+    - dict content: raw track metadata dict with a "track_id" key
+    - string content: id_to_metadata format "track_id: 123, track_name: ..."
+    """
+    played = set()
+    for msg in session_memory:
+        if msg["role"] in ("assistant", "music"):
+            content = msg.get("content", "")
+            if isinstance(content, dict):
+                tid = content.get("track_id")
+                if tid:
+                    played.add(str(tid))
+            elif isinstance(content, str):
+                m = _TRACK_ID_RE.search(content)
+                if m:
+                    played.add(m.group(1).rstrip(",").strip())
+    return played
 
 
 def _format_candidates(candidates: list[str], item_db) -> str:
@@ -82,14 +139,22 @@ def _format_candidates(candidates: list[str], item_db) -> str:
         if item_db is not None:
             if isinstance(item_db, dict):
                 meta = item_db.get(track_id, {})
+                if isinstance(meta, dict):
+                    meta_str = " | ".join(
+                        [f"track_id: {track_id}"] +
+                        [f"{k}: {v}" for k, v in meta.items()
+                         if k in _USEFUL_META_KEYS and v]
+                    )
             else:
-                meta = item_db.id_to_metadata(track_id)
-            if isinstance(meta, dict):
-                meta_str = " | ".join(
-                    f"{k}: {v}" for k, v in meta.items()
-                    if k in _USEFUL_META_KEYS and v
-                )
-        lines.append(f"{i}. [track_id: {track_id}] {meta_str}")
+                # MusicCatalogDB.id_to_metadata returns a formatted string;
+                # it already starts with "track_id: <id>, ..." but we prepend
+                # explicitly for safety in case the format ever changes.
+                raw = item_db.id_to_metadata(track_id) or ""
+                if raw and not raw.startswith("track_id:"):
+                    meta_str = f"track_id: {track_id}, {raw}"
+                else:
+                    meta_str = raw or f"track_id: {track_id}"
+        lines.append(f"{i}. {meta_str}")
     return "\n".join(lines)
 
 
@@ -121,8 +186,14 @@ def _parse_llm_response(raw: str, valid_ids: set[str], topk: int) -> list[str] |
     if not isinstance(ids, list):
         return None
 
-    # Filter to valid IDs only
-    result = [str(tid) for tid in ids if str(tid) in valid_ids]
+    # Filter to valid IDs only, deduplicating while preserving order
+    seen: set[str] = set()
+    result = []
+    for tid in ids:
+        s = str(tid)
+        if s in valid_ids and s not in seen:
+            seen.add(s)
+            result.append(s)
     return result[:topk] if result else None
 
 
@@ -155,6 +226,7 @@ class LLMListwiseReranker:
         session_memory: list[dict],
         item_db,
         topk: int | None = None,
+        reformulated_query: str | None = None,
     ) -> list[str]:
         """Rerank candidates using LLM.
 
@@ -163,6 +235,9 @@ class LLMListwiseReranker:
             session_memory: Full conversation history (includes current user turn).
             item_db: MusicCatalogDB instance for metadata lookup.
             topk: Override default topk if provided.
+            reformulated_query: Optional NLQ query string synthesized from conversation.
+                When provided, it is shown to the LLM as an explicit search signal,
+                helping it focus on what the user wants right now.
 
         Returns:
             Reranked list of track_ids, length min(topk, len(candidates)).
@@ -171,27 +246,59 @@ class LLMListwiseReranker:
         if not candidates:
             return []
 
+        # Filter already-played tracks from the window (they appear in assistant turns)
+        played = _get_already_played(session_memory)
+        if played:
+            # Move already-played tracks to end so new tracks fill the window
+            fresh = [c for c in candidates if c not in played]
+            stale = [c for c in candidates if c in played]
+            candidates = fresh + stale
+
         window = candidates if self.window_size is None else candidates[: self.window_size]
         valid_ids = set(window)
         conversation_text = _format_conversation(session_memory)
+        last_user_msg = _get_last_user_message(session_memory)
         candidates_text = _format_candidates(window, item_db)
 
-        system = _SYSTEM_PROMPT.format(topk=min(k, len(window)))
-        user_msg = _USER_TEMPLATE.format(
-            conversation=conversation_text,
-            candidates_text=candidates_text,
-            topk=min(k, len(window)),
-        )
+        out_topk = min(k, len(window))
+        n_candidates = len(window)
+        system = _SYSTEM_PROMPT.format(topk=out_topk, n_candidates=n_candidates)
+        if reformulated_query:
+            user_msg = _USER_TEMPLATE_WITH_QUERY.format(
+                conversation=conversation_text,
+                last_user_message=last_user_msg,
+                reformulated_query=reformulated_query,
+                candidates_text=candidates_text,
+                topk=out_topk,
+                n_candidates=n_candidates,
+            )
+        else:
+            user_msg = _USER_TEMPLATE.format(
+                conversation=conversation_text,
+                last_user_message=last_user_msg,
+                candidates_text=candidates_text,
+                topk=out_topk,
+                n_candidates=n_candidates,
+            )
 
         try:
-            raw = call_claude_api(system, user_msg, model=self.model, max_tokens=1024)
+            raw = call_llm_api(system, user_msg, model=self.model, max_tokens=1024)
             if raw is None:
                 raise RuntimeError("claude CLI returned no output")
             reranked = _parse_llm_response(raw, valid_ids, k)
             if reranked:
                 # Append any candidates not returned by LLM (preserve coverage)
-                remaining = [c for c in candidates if c not in set(reranked)]
-                return (reranked + remaining)[:k]
+                reranked_set = set(reranked)
+                remaining = [c for c in candidates if c not in reranked_set]
+                combined = reranked + remaining
+                # Final safety dedup (preserving order)
+                seen_final: set[str] = set()
+                deduped: list[str] = []
+                for x in combined:
+                    if x not in seen_final:
+                        seen_final.add(x)
+                        deduped.append(x)
+                return deduped[:k]
         except Exception as e:
             logger.warning("LLMListwiseReranker failed: %s", e)
 
@@ -205,11 +312,15 @@ class LLMListwiseReranker:
         batch_session_memory: list[list[dict]],
         item_db,
         topk: int | None = None,
+        reformulated_queries: list[str] | None = None,
     ) -> list[list[str]]:
         """Rerank a batch in parallel using threads."""
         with ThreadPoolExecutor(max_workers=8) as pool:
             futures = [
-                pool.submit(self.rerank, cands, mem, item_db, topk)
-                for cands, mem in zip(batch_candidates, batch_session_memory)
+                pool.submit(
+                    self.rerank, cands, mem, item_db, topk,
+                    reformulated_queries[i] if reformulated_queries else None,
+                )
+                for i, (cands, mem) in enumerate(zip(batch_candidates, batch_session_memory))
             ]
             return [f.result() for f in futures]

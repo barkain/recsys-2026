@@ -1,0 +1,33 @@
+lm_type: "claude-haiku-4-5-20251001"
+retrieval_type: "bm25"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+item_db_name: "talkpl-ai/TalkPlayData-Challenge-Track-Metadata"
+user_db_name: "talkpl-ai/TalkPlayData-Challenge-User-Metadata"
+track_split_types:
+  - "all_tracks"
+user_split_types:
+  - "all_users"
+corpus_types:
+  - "track_name"
+  - "artist_name"
+  - "album_name"
+  - "tag_list"
+cache_dir: "./cache"
+device: "cpu"
+use_reranker: false
+candidate_k: 100
+use_query_reformulation: false
+use_dual_qr: true
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_generative_retrieval: true
+generative_retrieval_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-sonnet-4-6"
+llm_reranker_window: 50
+# v23: adds Qwen3 track embedding similarity on top of v22
+# For each session, look up the last-played track's pre-computed Qwen3 embedding,
+# find 30 nearest neighbors via FAISS, add to RRF pool alongside dual-QR + generative.
+# No model download needed — embeddings are pre-computed on HuggingFace.
+use_track_embedding_sim: true
+track_sim_embed_column: "metadata-qwen3_embedding_0.6b"
+track_sim_topk: 30

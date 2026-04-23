@@ -2,7 +2,7 @@
 # Baseline: pure BM25 (~0.065 nDCG last-turn on devset)
 # Additions: Claude QR (enriched query) + Claude LLM listwise reranker
 # Purpose: measure how much QR + LLM reranker lifts BM25 retrieval
-lm_type: "claude-haiku-4-5-20251001"
+lm_type: "null"
 retrieval_type: "bm25"
 test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
 item_db_name: "talkpl-ai/TalkPlayData-Challenge-Track-Metadata"

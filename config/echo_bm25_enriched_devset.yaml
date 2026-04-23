@@ -1,5 +1,5 @@
 # Echo's enriched BM25 config: fast baseline with tag_list added to corpus
-lm_type: "claude-haiku-4-5-20251001"
+lm_type: "null"
 retrieval_type: "bm25"
 test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
 item_db_name: "talkpl-ai/TalkPlayData-Challenge-Track-Metadata"

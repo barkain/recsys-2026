@@ -1,0 +1,39 @@
+lm_type: "claude-haiku-4-5-20251001"
+retrieval_type: "bm25"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+item_db_name: "talkpl-ai/TalkPlayData-Challenge-Track-Metadata"
+user_db_name: "talkpl-ai/TalkPlayData-Challenge-User-Metadata"
+track_split_types:
+  - "all_tracks"
+user_split_types:
+  - "all_users"
+corpus_types:
+  - "track_name"
+  - "artist_name"
+  - "album_name"
+  - "tag_list"
+cache_dir: "./cache"
+device: "cpu"
+use_reranker: false
+candidate_k: 100
+use_query_reformulation: false
+use_dual_qr: true
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_generative_retrieval: true
+generative_retrieval_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-sonnet-4-6"
+llm_reranker_window: 50
+# v22 experiment: LLM-guided generative retrieval
+# The fundamental bottleneck is 76-78% BM25 miss rate.
+# New approach: Ask Claude to suggest 25 specific track/artist names per session,
+# then run targeted BM25 queries for each suggestion.
+# These targeted searches are merged with dual-QR candidates via RRF.
+# Hypothesis: Claude's music knowledge surfaces tracks that keyword-BM25 misses,
+# significantly reducing the miss rate and improving nDCG@20.
+#
+# Changes vs v19 (our best offline):
+#   + use_generative_retrieval: true (new stage)
+#   + generative_retrieval_model: haiku (25 suggestions per session)
+# Keeps from v19:
+#   - dual-QR (NLQ + entity), window=50, NLQ hint to reranker, bug fixes

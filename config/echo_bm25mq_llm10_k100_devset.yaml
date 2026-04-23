@@ -1,0 +1,14 @@
+lm_type: "null"
+retrieval_type: "bm25_multi_query"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+device: "cpu"
+use_reranker: false
+candidate_k: 100
+n_queries: 3
+per_query_k: 100
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-haiku-4-5-20251001"
+llm_reranker_window: 10
+# BM25-only multi-query: 3 faceted queries (genre, artist, mood/era), RRF merged
+# No dense model needed — pure BM25 with 3x coverage vs single NLQ

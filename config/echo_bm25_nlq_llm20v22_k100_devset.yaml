@@ -1,0 +1,14 @@
+lm_type: "null"
+retrieval_type: "bm25"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+device: "cpu"
+use_reranker: false
+candidate_k: 100
+use_query_reformulation: true
+query_reformulation_mode: "nlq"
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-haiku-4-5-20251001"
+llm_reranker_window: 20
+# v2.2 w=20: all of the above + window=20 for 22 in-window hits
+# If w=20 v2 (no filter) works, this combines both improvements

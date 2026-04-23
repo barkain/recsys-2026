@@ -46,6 +46,11 @@ class CRS_SYSTEM:
         # Query reformulation
         use_query_reformulation: bool = False,
         query_reformulation_model: str = "claude-haiku-4-5-20251001",
+        query_reformulation_mode: str = "entity",
+        # Dual-QR: run both NLQ and entity QR, merge candidates via RRF
+        use_dual_qr: bool = False,
+        # Track-similarity query: also retrieve using last music recommendation metadata
+        use_track_sim_query: bool = False,
         # LLM listwise reranker
         use_llm_reranker: bool = False,
         llm_reranker_model: str = "claude-haiku-4-5-20251001",
@@ -56,6 +61,13 @@ class CRS_SYSTEM:
         # Precomputed embedding retrieval
         embed_column: str = "metadata-qwen3_embedding_0.6b",
         embed_dataset: str = "talkpl-ai/TalkPlayData-Challenge-Track-Embeddings",
+        # Generative retrieval: LLM suggests specific track/artist names → targeted BM25
+        use_generative_retrieval: bool = False,
+        generative_retrieval_model: str = "claude-haiku-4-5-20251001",
+        # Track embedding similarity: find neighbors of last-played track via FAISS
+        use_track_embedding_sim: bool = False,
+        track_sim_embed_column: str = "metadata-qwen3_embedding_0.6b",
+        track_sim_topk: int = 30,
         # Ignored pass-through params (e.g. test_dataset_name from run script)
         **_ignored,
     ):
@@ -63,10 +75,17 @@ class CRS_SYSTEM:
         self.candidate_k = candidate_k
         self.use_query_reformulation = use_query_reformulation
         self.retrieval_type = retrieval_type
+        self.use_track_sim_query = use_track_sim_query
 
         # Build base retriever
+        _base_type = retrieval_type
+        if retrieval_type == "multi_query":
+            _base_type = "hybrid"
+        elif retrieval_type == "bm25_multi_query":
+            _base_type = "bm25"
+
         base_retriever = load_retrieval_module(
-            "hybrid" if retrieval_type == "multi_query" else retrieval_type,
+            _base_type,
             item_db_name,
             track_split_types,
             corpus_types,
@@ -78,7 +97,7 @@ class CRS_SYSTEM:
         )
 
         # Wrap with multi-query if requested
-        if retrieval_type == "multi_query":
+        if retrieval_type in ("multi_query", "bm25_multi_query"):
             self.retrieval = MultiQueryRetriever(
                 base_retriever=base_retriever,
                 model=query_reformulation_model,
@@ -94,11 +113,37 @@ class CRS_SYSTEM:
             lm_type, device=device, attn_implementation=attn_implementation, dtype=dtype
         )
 
-        # Optional query reformulator (entity extraction → enriched query)
+        # Optional query reformulator (entity extraction or NLQ synthesis → enriched query)
         self.query_reformulator = None
-        if use_query_reformulation and retrieval_type != "multi_query":
+        self.query_reformulator_aux = None  # Second QR for dual-QR ensemble
+        if use_dual_qr and retrieval_type not in ("multi_query", "bm25_multi_query"):
             from mcrs.query_reformulation import QueryReformulator
-            self.query_reformulator = QueryReformulator(model=query_reformulation_model)
+            # Primary: NLQ for semantic richness; auxiliary: entity for keyword precision
+            self.query_reformulator = QueryReformulator(model=query_reformulation_model, mode="nlq")
+            self.query_reformulator_aux = QueryReformulator(model=query_reformulation_model, mode="entity")
+        elif use_query_reformulation and retrieval_type not in ("multi_query", "bm25_multi_query"):
+            from mcrs.query_reformulation import QueryReformulator
+            self.query_reformulator = QueryReformulator(
+                model=query_reformulation_model,
+                mode=query_reformulation_mode,
+            )
+
+        # Optional track embedding similarity retriever
+        self.track_sim_retriever = None
+        self.track_sim_topk = track_sim_topk
+        if use_track_embedding_sim:
+            from mcrs.retrieval_modules.track_sim import TrackSimilarityRetriever
+            self.track_sim_retriever = TrackSimilarityRetriever(
+                embed_column=track_sim_embed_column,
+                split_types=track_split_types,
+                cache_dir=cache_dir,
+            )
+
+        # Optional generative retriever (LLM-guided track suggestion → targeted BM25)
+        self.generative_retriever = None
+        if use_generative_retrieval:
+            from mcrs.retrieval_modules.generative import GenerativeRetriever
+            self.generative_retriever = GenerativeRetriever(model=generative_retrieval_model)
 
         # Optional user-profile reranker
         self.reranker = None
@@ -135,35 +180,163 @@ class CRS_SYSTEM:
                 prompt += "\n" + self.role_prompt["personalization"] + "\n" + profile_str
         return prompt
 
-    def _retrieve(self, session_memory: list[dict], user_query: str) -> list[str]:
-        """Run retrieval, using multi-query or reformulation if configured."""
-        if self.retrieval_type == "multi_query":
-            # MultiQueryRetriever needs session_memory + user_query directly
+    def _last_played_track_id(self, session_memory: list[dict]) -> str | None:
+        """Return the track_id of the most recent music recommendation in memory."""
+        for msg in reversed(session_memory):
+            if msg.get("role") == "music":
+                content = msg.get("content")
+                if isinstance(content, str):
+                    return content
+                if isinstance(content, dict):
+                    return content.get("track_id") or content.get("id")
+        return None
+
+    def _track_sim_candidates(self, session_memory: list[dict]) -> list[str] | None:
+        """Return BM25 candidates using the last music recommendation's metadata as query.
+
+        This boosts recall when the next recommendation is by the same artist or genre.
+        """
+        for msg in reversed(session_memory):
+            content = msg.get("content")
+            if isinstance(content, dict):
+                parts = []
+                artist = content.get("artist_name", "")
+                track = content.get("track_name", "")
+                tags = content.get("tag_list", [])
+                if artist:
+                    parts.append(artist)
+                if track:
+                    parts.append(track)
+                if isinstance(tags, list):
+                    parts.extend(str(t) for t in tags[:5])
+                elif tags:
+                    parts.append(str(tags))
+                if parts:
+                    query = " ".join(parts)
+                    return self.retrieval.text_to_item_retrieval(query, topk=self.candidate_k)
+        return None
+
+    @staticmethod
+    def _rrf_merge(lists: list[list[str]], k: int = 60, topk: int = 100) -> list[str]:
+        """Reciprocal Rank Fusion over multiple ranked candidate lists."""
+        scores: dict[str, float] = {}
+        for ranked in lists:
+            for rank, track_id in enumerate(ranked):
+                scores[track_id] = scores.get(track_id, 0.0) + 1.0 / (k + rank + 1)
+        return sorted(scores, key=scores.__getitem__, reverse=True)[:topk]
+
+    def _retrieve(self, session_memory: list[dict], user_query: str) -> tuple[list[str], str | None]:
+        """Run retrieval, using multi-query or reformulation if configured.
+
+        Returns:
+            (candidates, reformulated_query) where reformulated_query is the
+            NLQ/entity query string (or None if no reformulation was used).
+            The reformulated_query is passed to the LLM reranker as an explicit signal.
+        """
+        if self.retrieval_type in ("multi_query", "bm25_multi_query"):
             return self.retrieval.retrieve(
                 session_memory, user_query, topk=self.candidate_k
-            )
+            ), None
 
-        if self.query_reformulator:
+        if self.query_reformulator_aux:
+            # Dual-QR: run both reformulators in parallel, merge with RRF
+            n_workers = 3 if self.generative_retriever else 2
+            with ThreadPoolExecutor(max_workers=n_workers) as pool:
+                f1 = pool.submit(self.query_reformulator.reformulate, session_memory, user_query)
+                f2 = pool.submit(self.query_reformulator_aux.reformulate, session_memory, user_query)
+                fg = pool.submit(self.generative_retriever.get_suggestions, session_memory, user_query) if self.generative_retriever else None
+                q1, q2 = f1.result(), f2.result()
+                gen_suggestions = fg.result() if fg else []
+            cands1 = self.retrieval.text_to_item_retrieval(q1, topk=self.candidate_k)
+            cands2 = self.retrieval.text_to_item_retrieval(q2, topk=self.candidate_k)
+            lists = [cands1, cands2]
+            # Generative retrieval: run targeted BM25 for each LLM-suggested track/artist
+            if gen_suggestions:
+                gen_queries = self.generative_retriever.suggestions_to_queries(gen_suggestions)
+                gen_lists = [
+                    self.retrieval.text_to_item_retrieval(gq, topk=5)
+                    for gq in gen_queries
+                ]
+                lists.extend(gen_lists)
+            if self.use_track_sim_query:
+                sim_cands = self._track_sim_candidates(session_memory)
+                if sim_cands:
+                    lists.append(sim_cands)
+            if self.track_sim_retriever:
+                last_tid = self._last_played_track_id(session_memory)
+                if last_tid:
+                    embed_sim = self.track_sim_retriever.track_id_to_neighbors(
+                        last_tid, topk=self.track_sim_topk
+                    )
+                    if embed_sim:
+                        lists.append(embed_sim)
+            return self._rrf_merge(lists, topk=self.candidate_k), q1  # NLQ as hint to reranker
+        elif self.query_reformulator:
             query = self.query_reformulator.reformulate(session_memory, user_query)
         else:
-            query = "\n".join(f"{m['role']}: {m['content']}" for m in session_memory)
-            if user_query:
-                query += f"\nUser: {user_query}"
+            query = None
 
-        return self.retrieval.text_to_item_retrieval(query, topk=self.candidate_k)
+        raw_query = query or (
+            "\n".join(f"{m['role']}: {m['content']}" for m in session_memory)
+            + (f"\nUser: {user_query}" if user_query else "")
+        )
+        main_cands = self.retrieval.text_to_item_retrieval(raw_query, topk=self.candidate_k)
+        if self.use_track_sim_query:
+            sim_cands = self._track_sim_candidates(session_memory)
+            if sim_cands:
+                return self._rrf_merge([main_cands, sim_cands], topk=self.candidate_k), query
+        return main_cands, query
 
     def _batch_retrieve(
         self,
         session_memories: list[list[dict]],
         user_queries: list[str],
-    ) -> list[list[str]]:
-        """Batch retrieval with optional multi-query or reformulation."""
-        if self.retrieval_type == "multi_query":
-            return self.retrieval.batch_retrieve(
+    ) -> tuple[list[list[str]], list[str | None]]:
+        """Batch retrieval with optional multi-query or reformulation.
+
+        Returns:
+            (list_of_candidates, list_of_reformulated_queries)
+            reformulated_queries contains the NLQ/entity query for each session,
+            or None where no reformulation was used.
+        """
+        if self.retrieval_type in ("multi_query", "bm25_multi_query"):
+            cands = self.retrieval.batch_retrieve(
                 list(zip(session_memories, user_queries)), topk=self.candidate_k
             )
+            return cands, [None] * len(cands)
 
-        if self.query_reformulator:
+        if self.query_reformulator_aux:
+            # Dual-QR: run both reformulators in parallel per batch, merge with RRF
+            pairs = list(zip(session_memories, user_queries))
+            n_workers = 3 if self.generative_retriever else 2
+            with ThreadPoolExecutor(max_workers=n_workers) as pool:
+                f1 = pool.submit(self.query_reformulator.batch_reformulate, pairs)
+                f2 = pool.submit(self.query_reformulator_aux.batch_reformulate, pairs)
+                fg = pool.submit(self.generative_retriever.batch_get_suggestions, pairs) if self.generative_retriever else None
+                queries1, queries2 = f1.result(), f2.result()
+                gen_suggestions_batch = fg.result() if fg else [[] for _ in pairs]
+            results = []
+            for (mem, _uq), q1, q2, gen_suggestions in zip(
+                pairs, queries1, queries2, gen_suggestions_batch
+            ):
+                c1 = self.retrieval.text_to_item_retrieval(q1, topk=self.candidate_k)
+                c2 = self.retrieval.text_to_item_retrieval(q2, topk=self.candidate_k)
+                lists = [c1, c2]
+                if gen_suggestions:
+                    gen_queries = self.generative_retriever.suggestions_to_queries(gen_suggestions)
+                    for gq in gen_queries:
+                        lists.append(self.retrieval.text_to_item_retrieval(gq, topk=5))
+                if self.track_sim_retriever:
+                    last_tid = self._last_played_track_id(mem)
+                    if last_tid:
+                        embed_sim = self.track_sim_retriever.track_id_to_neighbors(
+                            last_tid, topk=self.track_sim_topk
+                        )
+                        if embed_sim:
+                            lists.append(embed_sim)
+                results.append(self._rrf_merge(lists, topk=self.candidate_k))
+            return results, queries1  # pass NLQ queries as hints to reranker
+        elif self.query_reformulator:
             queries = self.query_reformulator.batch_reformulate(
                 list(zip(session_memories, user_queries))
             )
@@ -176,21 +349,35 @@ class CRS_SYSTEM:
                 queries.append(q)
 
         if hasattr(self.retrieval, "batch_text_to_item_retrieval"):
-            return self.retrieval.batch_text_to_item_retrieval(queries, topk=self.candidate_k)
-        return [self.retrieval.text_to_item_retrieval(q, topk=self.candidate_k) for q in queries]
+            main_results = self.retrieval.batch_text_to_item_retrieval(queries, topk=self.candidate_k)
+        else:
+            main_results = [self.retrieval.text_to_item_retrieval(q, topk=self.candidate_k) for q in queries]
+
+        if self.use_track_sim_query:
+            merged = []
+            for i, mem in enumerate(session_memories):
+                sim_cands = self._track_sim_candidates(mem)
+                if sim_cands:
+                    merged.append(self._rrf_merge([main_results[i], sim_cands], topk=self.candidate_k))
+                else:
+                    merged.append(main_results[i])
+            return merged, queries if self.query_reformulator else [None] * len(queries)
+        return main_results, queries if self.query_reformulator else [None] * len(queries)
 
     def _rerank(
         self,
         candidates: list[str],
         user_id: str | None,
         session_memory: list[dict],
+        reformulated_query: str | None = None,
     ) -> list[str]:
         """Apply reranking stages in order: user-profile → LLM listwise."""
         if self.reranker:
             candidates = self.reranker.rerank(candidates, user_id, topk=len(candidates))
         if self.llm_reranker:
             candidates = self.llm_reranker.rerank(
-                candidates, session_memory, self.item_db, topk=20
+                candidates, session_memory, self.item_db, topk=20,
+                reformulated_query=reformulated_query,
             )
         return candidates[:20]
 
@@ -203,8 +390,8 @@ class CRS_SYSTEM:
         session_memory = list(session_memory)
         session_memory.append({"role": "user", "content": user_query})
 
-        candidates = self._retrieve(session_memory[:-1], user_query)
-        candidates = self._rerank(candidates, user_id, session_memory)
+        candidates, reformulated_query = self._retrieve(session_memory[:-1], user_query)
+        candidates = self._rerank(candidates, user_id, session_memory, reformulated_query)
 
         sys_prompt = self._get_system_prompt(user_id)
         top_item = self.item_db.id_to_metadata(candidates[0])
@@ -235,13 +422,16 @@ class CRS_SYSTEM:
             session_memories_full.append(memory + [{"role": "user", "content": user_query}])
             user_ids.append(user_id)
 
-        batch_candidates = self._batch_retrieve(session_memories_pre, user_queries)
+        batch_candidates, batch_queries = self._batch_retrieve(session_memories_pre, user_queries)
 
         # Parallelize reranking — LLM reranker calls are independent HTTP requests
         # and dominate latency; running them concurrently gives ~8x speedup.
         def _rerank_one(args):
             i, candidates = args
-            return self._rerank(candidates, user_ids[i], session_memories_full[i])
+            return self._rerank(
+                candidates, user_ids[i], session_memories_full[i],
+                reformulated_query=batch_queries[i] if batch_queries else None,
+            )
 
         with ThreadPoolExecutor(max_workers=8) as pool:
             final_candidates = list(pool.map(_rerank_one, enumerate(batch_candidates)))

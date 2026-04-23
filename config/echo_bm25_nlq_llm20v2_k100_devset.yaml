@@ -1,0 +1,16 @@
+lm_type: "null"
+retrieval_type: "bm25"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+device: "cpu"
+use_reranker: false
+candidate_k: 100
+use_query_reformulation: true
+query_reformulation_mode: "nlq"
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-haiku-4-5-20251001"
+llm_reranker_window: 20
+# NLQ + v2 reranker with window=20 (expands from 11 to 22 in-window hits)
+# Previous w=20 (0.0645) was with blind LLM (metadata bug).
+# With metadata fix, 20 candidates should be manageable for Haiku.
+# If all 22 hits are in window, max nDCG = ~0.138 (beats #1 target 0.1036)

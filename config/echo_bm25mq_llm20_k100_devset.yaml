@@ -1,0 +1,13 @@
+lm_type: "null"
+retrieval_type: "bm25_multi_query"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+device: "cpu"
+use_reranker: false
+candidate_k: 100
+n_queries: 3
+per_query_k: 100
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-haiku-4-5-20251001"
+llm_reranker_window: 20
+# BM25 multi-query w=20: 3 faceted queries + LLM reranks full top-20
