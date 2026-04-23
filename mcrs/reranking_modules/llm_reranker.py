@@ -173,8 +173,14 @@ def _parse_llm_response(raw: str, valid_ids: set[str], topk: int) -> list[str] |
     if not isinstance(ids, list):
         return None
 
-    # Filter to valid IDs only
-    result = [str(tid) for tid in ids if str(tid) in valid_ids]
+    # Filter to valid IDs only, deduplicating while preserving order
+    seen: set[str] = set()
+    result = []
+    for tid in ids:
+        s = str(tid)
+        if s in valid_ids and s not in seen:
+            seen.add(s)
+            result.append(s)
     return result[:topk] if result else None
 
 
@@ -265,8 +271,13 @@ class LLMListwiseReranker:
             reranked = _parse_llm_response(raw, valid_ids, k)
             if reranked:
                 # Append any candidates not returned by LLM (preserve coverage)
-                remaining = [c for c in candidates if c not in set(reranked)]
-                return (reranked + remaining)[:k]
+                reranked_set = set(reranked)
+                remaining = [c for c in candidates if c not in reranked_set]
+                combined = reranked + remaining
+                # Final safety dedup (preserving order)
+                seen: set[str] = set()
+                combined = [x for x in combined if not (x in seen or seen.add(x))]  # type: ignore[func-returns-value]
+                return combined[:k]
         except Exception as e:
             logger.warning("LLMListwiseReranker failed: %s", e)
 
