@@ -1,0 +1,15 @@
+lm_type: "null"
+retrieval_type: "bm25_multi_query"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+device: "cpu"
+use_reranker: false
+candidate_k: 100
+n_queries: 3
+per_query_k: 100
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-sonnet-4-6"
+llm_reranker_window: 10
+# BM25 multi-query (3 faceted queries via Haiku) + Sonnet reranker (v2 prompt)
+# Diversified retrieval from 3 angles (genre/style, artists, mood/era) + strong reranker
+# Tests if faceted recall + Sonnet ranking can beat dual-QR (0.1025)
