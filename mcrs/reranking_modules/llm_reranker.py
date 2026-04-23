@@ -135,8 +135,9 @@ def _format_candidates(candidates: list[str], item_db) -> str:
                 meta = item_db.get(track_id, {})
                 if isinstance(meta, dict):
                     meta_str = " | ".join(
-                        f"{k}: {v}" for k, v in meta.items()
-                        if k in _USEFUL_META_KEYS and v
+                        [f"track_id: {track_id}"] +
+                        [f"{k}: {v}" for k, v in meta.items()
+                         if k in _USEFUL_META_KEYS and v]
                     )
             else:
                 # MusicCatalogDB.id_to_metadata returns a formatted string directly
@@ -275,9 +276,13 @@ class LLMListwiseReranker:
                 remaining = [c for c in candidates if c not in reranked_set]
                 combined = reranked + remaining
                 # Final safety dedup (preserving order)
-                seen: set[str] = set()
-                combined = [x for x in combined if not (x in seen or seen.add(x))]  # type: ignore[func-returns-value]
-                return combined[:k]
+                seen_final: set[str] = set()
+                deduped: list[str] = []
+                for x in combined:
+                    if x not in seen_final:
+                        seen_final.add(x)
+                        deduped.append(x)
+                return deduped[:k]
         except Exception as e:
             logger.warning("LLMListwiseReranker failed: %s", e)
 

@@ -77,7 +77,7 @@ def analyze(tid: str, gt: dict):
     n = len(hit_ranks) + misses
     hits = len(hit_ranks)
 
-    ndcg = sum(1/math.log2(r+1) for r in hit_ranks) / n if n else 0
+    ndcg = sum(1/math.log2(r+1) for r in hit_ranks if r <= 20) / n if n else 0
 
     rank_buckets = Counter()
     for r in hit_ranks:
