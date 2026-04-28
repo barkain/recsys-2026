@@ -2,7 +2,27 @@
 import os
 import json
 import bm25s
-from datasets import load_dataset, concatenate_datasets
+from pathlib import Path
+
+from datasets import Dataset, DownloadConfig, concatenate_datasets, load_dataset
+
+
+DEFAULT_HF_CACHE = Path.home() / ".cache" / "huggingface" / "datasets"
+
+
+def _trace(message: str) -> None:
+    if os.environ.get("MCRS_INIT_TRACE"):
+        print(f"[bm25] {message}", flush=True)
+
+
+def _cached_track_arrow(split_type: str) -> str | None:
+    matches = sorted(
+        DEFAULT_HF_CACHE.glob(
+            "talkpl-ai___talk_play_data-challenge-track-metadata/default/*/*/"
+            f"talk_play_data-challenge-track-metadata-{split_type}.arrow"
+        )
+    )
+    return str(matches[-1]) if matches else None
 
 
 class BM25Retriever:
@@ -18,17 +38,43 @@ class BM25Retriever:
         self.corpus_types = corpus_types
         self.corpus_name = "_".join(corpus_types)
         self.cache_dir = cache_dir
-        self.metadata_dict = self._load_corpus()
         index_path = os.path.join(self.cache_dir, "bm25", self.corpus_name)
         if os.path.exists(index_path):
+            _trace(f"loading index: {index_path}")
+            self.metadata_dict = {}
             self.bm25_model, self.track_ids = self._load_index(index_path)
+            _trace("index loaded")
         else:
+            _trace("loading corpus")
+            self.metadata_dict = self._load_corpus()
+            _trace(f"corpus loaded: {len(self.metadata_dict)} tracks")
+            _trace(f"building index: {index_path}")
             self.bm25_model, self.track_ids = self._build_and_save(index_path)
+            _trace("index built")
 
     def _load_corpus(self) -> dict[str, dict]:
-        ds = load_dataset(self.dataset_name)
-        combined = concatenate_datasets([ds[s] for s in self.split_types])
-        return {item["track_id"]: item for item in combined}
+        cached_splits = []
+        for split in self.split_types:
+            arrow_path = _cached_track_arrow(split)
+            if arrow_path:
+                _trace(f"loading arrow for split {split}: {arrow_path}")
+                cached_splits.append(Dataset.from_file(arrow_path))
+        if len(cached_splits) == len(self.split_types):
+            _trace("concatenating cached arrow splits")
+            combined = concatenate_datasets(cached_splits)
+        else:
+            _trace("falling back to load_dataset(local_files_only=True)")
+            ds = load_dataset(
+                self.dataset_name,
+                download_config=DownloadConfig(local_files_only=True),
+            )
+            combined = concatenate_datasets([ds[s] for s in self.split_types])
+        columns = combined.to_dict()
+        track_ids = [str(tid) for tid in columns["track_id"]]
+        return {
+            tid: {key: values[i] for key, values in columns.items()}
+            for i, tid in enumerate(track_ids)
+        }
 
     def _stringify(self, metadata: dict) -> str:
         parts = []

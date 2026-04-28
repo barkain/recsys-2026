@@ -15,11 +15,10 @@ from __future__ import annotations
 
 import json
 import logging
-import os
 import re
 from concurrent.futures import ThreadPoolExecutor
 
-from mcrs.utils import call_llm_api
+from mcrs.utils import LLMTruncationError, call_llm_api
 
 logger = logging.getLogger(__name__)
 
@@ -45,9 +44,14 @@ have already been played. Do not place these at the top unless the user explicit
 asks to hear them again.
 
 Rules:
-- Return ONLY a JSON array of track_id strings, e.g. ["id1", "id2", ...]
+- Return exactly ONE JSON array of candidate numbers
 - Length must be exactly {topk} items
-- Use only track_ids from the provided candidate list
+- Each number must be an integer between 1 and {n_candidates}, referring to the
+  numbered candidate list below
+- Do NOT return track_id UUID strings; return candidate numbers only
+- Do NOT invent candidates or use numbers outside 1..{n_candidates}
+- Do NOT self-correct, include a second array, or write prose such as "Wait" or
+  "Let me redo this"
 - Do NOT add explanations or any text outside the JSON array"""
 
 _USER_TEMPLATE = """\
@@ -59,7 +63,8 @@ Full conversation:
 Candidate tracks ({n_candidates} total, track_id → metadata):
 {candidates_text}
 
-Return the top {topk} most relevant track_ids as a JSON array."""
+Return exactly one JSON array containing the top {topk} candidate numbers.
+Use integers 1..{n_candidates} only. Do not return UUIDs or any prose."""
 
 _USER_TEMPLATE_WITH_QUERY = """\
 Current user request: {last_user_message}
@@ -73,7 +78,8 @@ Synthesized search query (what the user wants RIGHT NOW):
 Candidate tracks ({n_candidates} total, track_id → metadata):
 {candidates_text}
 
-Return the top {topk} most relevant track_ids as a JSON array."""
+Return exactly one JSON array containing the top {topk} candidate numbers.
+Use integers 1..{n_candidates} only. Do not return UUIDs or any prose."""
 
 
 def _format_content(content) -> str:
@@ -103,6 +109,11 @@ def _get_last_user_message(session_memory: list[dict]) -> str:
 _USEFUL_META_KEYS = {"track_name", "artist_name", "tag_list", "release_year", "album_name"}
 
 _TRACK_ID_RE = re.compile(r"track_id:\s*(\S+?)(?:[,|\s]|$)")
+_UUID_RE = re.compile(
+    r"^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-"
+    r"[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+)
+_UUID_LIKE_RE = re.compile(r"^[0-9a-fA-F-]{30,40}$")
 
 
 def _get_already_played(session_memory: list[dict]) -> set[str]:
@@ -160,7 +171,148 @@ def _format_candidates(candidates: list[str], item_db) -> str:
 
 def _parse_llm_response(raw: str, valid_ids: set[str], topk: int) -> list[str] | None:
     """Extract a list of track_ids from the LLM response. Returns None on failure."""
-    # Strip markdown fences
+    result, _metadata = _parse_llm_response_with_repairs(raw, valid_ids, topk)
+    return result
+
+
+def _parse_candidate_index_response(
+    raw: str,
+    candidates: list[str],
+    topk: int,
+) -> tuple[list[str] | None, dict]:
+    """Parse a JSON array of 1-based candidate positions and map to track_ids."""
+    metadata: dict = {
+        "response_format": "candidate_indices",
+        "invalid_candidate_indices": [],
+    }
+
+    arrays = _extract_json_arrays(raw)
+    for ids in reversed(arrays):
+        seen: set[int] = set()
+        result = []
+        invalid = []
+        for item in ids:
+            if len(result) >= topk:
+                break
+            if isinstance(item, bool):
+                invalid.append(item)
+                continue
+            if isinstance(item, int):
+                idx = item
+            elif isinstance(item, str) and item.isdigit():
+                idx = int(item)
+            else:
+                invalid.append(item)
+                continue
+            if 1 <= idx <= len(candidates) and idx not in seen:
+                seen.add(idx)
+                result.append(candidates[idx - 1])
+            else:
+                invalid.append(item)
+        if result:
+            metadata["invalid_candidate_indices"] = invalid
+            return result, metadata
+
+    logger.warning("LLM reranker index JSON parse failed; raw snippet: %r", raw[:200])
+    return None, metadata
+
+
+def _edit_distance_at_most(a: str, b: str, max_distance: int) -> int | None:
+    """Return Levenshtein distance if <= max_distance, else None."""
+    if abs(len(a) - len(b)) > max_distance:
+        return None
+
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, start=1):
+        curr = [i]
+        row_min = i
+        for j, cb in enumerate(b, start=1):
+            cost = 0 if ca == cb else 1
+            val = min(prev[j] + 1, curr[j - 1] + 1, prev[j - 1] + cost)
+            curr.append(val)
+            row_min = min(row_min, val)
+        if row_min > max_distance:
+            return None
+        prev = curr
+
+    distance = prev[-1]
+    return distance if distance <= max_distance else None
+
+
+def _parse_llm_response_with_repairs(
+    raw: str,
+    valid_ids: set[str],
+    topk: int,
+) -> tuple[list[str] | None, dict]:
+    """Extract track_ids and deterministic near-miss repair metadata."""
+    metadata: dict = {
+        "response_format": "track_ids",
+        "near_miss_salvage_count": 0,
+        "near_miss_salvages": [],
+    }
+
+    def _salvage_malformed_id(s: str, unavailable: set[str]) -> str | None:
+        # Well-formed UUIDs that are not in the candidate set are hallucinations,
+        # not transcription glitches. Do not repair them.
+        if _UUID_RE.match(s) or not _UUID_LIKE_RE.match(s):
+            return None
+
+        matches: list[tuple[int, str]] = []
+        for candidate in valid_ids:
+            if candidate in unavailable:
+                continue
+            distance = _edit_distance_at_most(s.lower(), candidate.lower(), 2)
+            if distance is not None:
+                matches.append((distance, candidate))
+        if len(matches) != 1:
+            return None
+        return matches[0][1]
+
+    def _filtered_valid_ids(ids: list) -> tuple[list[str], list[dict]]:
+        exact_valid = {str(tid) for tid in ids if str(tid) in valid_ids}
+        unavailable = set(exact_valid)
+        seen: set[str] = set()
+        result = []
+        salvages = []
+        for tid in ids:
+            if len(result) >= topk:
+                break
+            s = str(tid)
+            if s in valid_ids:
+                if s not in seen:
+                    seen.add(s)
+                    result.append(s)
+                continue
+
+            repaired = _salvage_malformed_id(s, unavailable | seen)
+            if repaired and repaired not in seen:
+                seen.add(repaired)
+                unavailable.add(repaired)
+                result.append(repaired)
+                salvages.append({"original": s, "corrected": repaired})
+
+        return result[:topk], salvages
+
+    arrays = _extract_json_arrays(raw)
+
+    for ids in reversed(arrays):
+        result, salvages = _filtered_valid_ids(ids)
+        if result:
+            metadata["near_miss_salvage_count"] = len(salvages)
+            metadata["near_miss_salvages"] = salvages
+            return result, metadata
+
+    logger.warning("LLM reranker JSON parse failed; raw snippet: %r", raw[:200])
+    return None, metadata
+
+
+def _extract_json_arrays(raw: str) -> list[list]:
+    """Extract JSON arrays, with a narrow fallback for integer-index arrays.
+
+    Claude occasionally emits candidate indices with leading zeroes (e.g. 05),
+    which is not valid JSON but has an unambiguous integer interpretation.
+    Only accept this fallback for bracketed comma-separated integers.
+    """
     text = raw.strip()
     if text.startswith("```"):
         parts = text.split("```")
@@ -172,29 +324,29 @@ def _parse_llm_response(raw: str, valid_ids: set[str], topk: int) -> list[str] |
                 text = part
                 break
 
-    # Try to find a JSON array anywhere in the response (greedy to capture full array)
-    match = re.search(r"\[.*\]", text, re.DOTALL)
-    if not match:
-        return None
+    # Parse every well-formed JSON array and prefer the last one with valid
+    # candidate IDs. This handles model self-corrections like:
+    #   ["1", "2", ...] Wait, use track_ids. ["uuid", ...]
+    decoder = json.JSONDecoder()
+    parsed_arrays: list[list] = []
+    for match in re.finditer(r"\[", text):
+        try:
+            parsed, _end = decoder.raw_decode(text[match.start():])
+        except json.JSONDecodeError:
+            continue
+        if isinstance(parsed, list):
+            parsed_arrays.append(parsed)
+    if parsed_arrays:
+        return parsed_arrays
 
-    try:
-        ids = json.loads(match.group())
-    except json.JSONDecodeError:
-        logger.warning("LLM reranker JSON parse failed; raw snippet: %r", raw[:200])
-        return None
-
-    if not isinstance(ids, list):
-        return None
-
-    # Filter to valid IDs only, deduplicating while preserving order
-    seen: set[str] = set()
-    result = []
-    for tid in ids:
-        s = str(tid)
-        if s in valid_ids and s not in seen:
-            seen.add(s)
-            result.append(s)
-    return result[:topk] if result else None
+    for match in re.finditer(r"\[([^\[\]]+)\]", text):
+        body = match.group(1).strip()
+        if not body:
+            continue
+        tokens = [tok.strip() for tok in body.split(",")]
+        if all(re.fullmatch(r"[+-]?\d+", tok) for tok in tokens):
+            parsed_arrays.append([int(tok) for tok in tokens])
+    return parsed_arrays
 
 
 class LLMListwiseReranker:
@@ -242,9 +394,42 @@ class LLMListwiseReranker:
         Returns:
             Reranked list of track_ids, length min(topk, len(candidates)).
         """
+        top_k, _pool, _prov = self.rerank_with_pool(
+            candidates, session_memory, item_db,
+            topk=topk, reformulated_query=reformulated_query,
+        )
+        return top_k
+
+    def rerank_with_pool(
+        self,
+        candidates: list[str],
+        session_memory: list[dict],
+        item_db,
+        topk: int | None = None,
+        reformulated_query: str | None = None,
+    ) -> tuple[list[str], list[str], dict]:
+        """Rerank and also return the full combined candidate pool.
+
+        Returns:
+            (top_k, pool, provenance):
+              - top_k: length min(topk, len(window)), same as rerank().
+              - pool: full deduped combined list (LLM-reranked prefix +
+                remaining rerank-input-window candidates in retrieval order).
+                Length up to len(window).
+              - provenance: dict describing how the pool was assembled.
+                Honestly labels ranks 21+ as coming from the rerank-input
+                window in retrieval order (not LLM-ranked).
+        """
         k = topk if topk is not None else self.topk
         if not candidates:
-            return []
+            return [], [], {
+                "reranker_class": type(self).__name__,
+                "llm_reranked_prefix": 0,
+                "pool_size": 0,
+                "window_size": self.window_size,
+                "remainder_source": "none",
+                "llm_success": False,
+            }
 
         # Filter already-played tracks from the window (they appear in assistant turns)
         played = _get_already_played(session_memory)
@@ -281,13 +466,127 @@ class LLMListwiseReranker:
                 n_candidates=n_candidates,
             )
 
+        # Under fail-fast mode (fallback_on_error=False), silent truncation
+        # and short-list parses are catastrophic — they corrupt ranked JSON
+        # without surfacing. Propagate a hard-error policy down to the API
+        # layer and up through the length check below.
+        strict = not self.fallback_on_error
+        # Retry provenance (only set if retry is invoked).
+        retry_prov: dict = {}
         try:
-            raw = call_llm_api(system, user_msg, model=self.model, max_tokens=1024)
+            raw = call_llm_api(
+                system,
+                user_msg,
+                model=self.model,
+                max_tokens=4096,
+                strict_no_truncation=strict,
+            )
             if raw is None:
                 raise RuntimeError("claude CLI returned no output")
-            reranked = _parse_llm_response(raw, valid_ids, k)
+            reranked, repair_metadata = _parse_candidate_index_response(raw, window, k)
+            # Compatibility fallback: older cached responses may still contain
+            # track_id UUID arrays. New prompts ask for candidate indices.
+            if reranked is None:
+                reranked, repair_metadata = _parse_llm_response_with_repairs(raw, valid_ids, k)
+            # Short-list detection: if the LLM returned fewer items than we
+            # asked for (e.g., truncated mid-array, degenerate parse), treat
+            # it as a hard error under fail-fast. The fallback path still
+            # tolerates short lists so non-fail-fast callers are unchanged.
+            if strict:
+                if reranked is None:
+                    raise RuntimeError(
+                        "LLM reranker parse_failed under fail-fast "
+                        "(no JSON array found or all ids invalid)"
+                    )
+                if len(reranked) < out_topk:
+                    logger.warning(
+                        "LLM reranker short-list under fail-fast: parsed_valid=%s "
+                        "requested=%s valid_window=%s model=%s repairs=%s raw_prefix=%r",
+                        len(reranked),
+                        out_topk,
+                        len(valid_ids),
+                        self.model,
+                        repair_metadata,
+                        raw[:1000],
+                    )
+                    # Single retry-on-invalid-index (Option C). Only fires on
+                    # candidate-index path with non-empty invalid indices.
+                    invalid_indices = repair_metadata.get("invalid_candidate_indices", [])
+                    if (
+                        repair_metadata.get("response_format") == "candidate_indices"
+                        and invalid_indices
+                    ):
+                        retry_system = (
+                            system
+                            + "\n\nRETRY CORRECTIVE FEEDBACK:\n"
+                            f"Your previous response contained invalid candidate number(s): "
+                            f"{invalid_indices}. "
+                            f"Return exactly {out_topk} integers, each between 1 and "
+                            f"{n_candidates}, no duplicates. Output only the JSON array; "
+                            f"no prose."
+                        )
+                        retry_user = (
+                            user_msg
+                            + "\n\nYou previously returned invalid candidate number(s): "
+                            f"{invalid_indices}. "
+                            f"Return exactly {out_topk} integers, each between 1 and "
+                            f"{n_candidates}, no duplicates. Output only the JSON array; "
+                            f"no prose."
+                        )
+                        retry_raw = call_llm_api(
+                            retry_system,
+                            retry_user,
+                            model=self.model,
+                            max_tokens=4096,
+                            strict_no_truncation=strict,
+                        )
+                        logger.info(
+                            "LLM reranker retry after invalid indices: %s, new raw=%r",
+                            invalid_indices,
+                            (retry_raw or "")[:500],
+                        )
+                        retry_prov = {
+                            "retry_invoked": True,
+                            "retry_reason": list(invalid_indices),
+                            "retry_succeeded": False,
+                        }
+                        if retry_raw is None:
+                            raise RuntimeError(
+                                f"LLM reranker retry returned no output; "
+                                f"original parsed list length {len(reranked)} < "
+                                f"requested top_k {out_topk} under fail-fast"
+                            )
+                        retry_reranked, retry_repair = _parse_candidate_index_response(
+                            retry_raw, window, k
+                        )
+                        if (
+                            retry_reranked is not None
+                            and len(retry_reranked) == out_topk
+                            and not retry_repair.get("invalid_candidate_indices")
+                        ):
+                            retry_prov["retry_succeeded"] = True
+                            reranked = retry_reranked
+                            repair_metadata = retry_repair
+                        else:
+                            raise RuntimeError(
+                                f"LLM reranker retry also short-listed or failed "
+                                f"(retry parsed length "
+                                f"{len(retry_reranked) if retry_reranked else 0}, "
+                                f"retry invalid="
+                                f"{retry_repair.get('invalid_candidate_indices', [])}); "
+                                f"original parsed list length {len(reranked)} < "
+                                f"requested top_k {out_topk} under fail-fast"
+                            )
+                    else:
+                        raise RuntimeError(
+                            f"LLM reranker parsed list length {len(reranked)} < "
+                            f"requested top_k {out_topk} under fail-fast"
+                        )
             if reranked:
-                # Append any candidates not returned by LLM (preserve coverage)
+                # Append any candidates not returned by LLM (preserve coverage).
+                # Remainder is in the ORIGINAL retrieval order of the rerank
+                # input window (after already-played reordering). This is the
+                # same behavior that existed before pool exposure was added.
                 reranked_set = set(reranked)
                 remaining = [c for c in candidates if c not in reranked_set]
                 combined = reranked + remaining
@@ -298,12 +597,42 @@ class LLMListwiseReranker:
                     if x not in seen_final:
                         seen_final.add(x)
                         deduped.append(x)
-                return deduped[:k]
+                provenance = {
+                    "reranker_class": type(self).__name__,
+                    "llm_reranked_prefix": len(reranked),
+                    "pool_size": len(deduped),
+                    "window_size": self.window_size,
+                    "remainder_source": "rerank_input_window_retrieval_order",
+                    "llm_success": True,
+                    **repair_metadata,
+                    **retry_prov,
+                }
+                return deduped[:k], deduped, provenance
+        except LLMTruncationError:
+            # Never swallow truncation under fail-fast — it indicates the
+            # response was cut off mid-JSON and any partial parse is unsafe.
+            if strict:
+                raise
+            logger.warning("LLMListwiseReranker truncated; using fallback order")
         except Exception as e:
+            if strict:
+                raise
             logger.warning("LLMListwiseReranker failed: %s", e)
 
         if self.fallback_on_error:
-            return candidates[:k]
+            # Fallback: no LLM ranking happened — pool is just the input window.
+            fallback_pool = list(candidates)
+            provenance = {
+                "reranker_class": type(self).__name__,
+                "llm_reranked_prefix": 0,
+                "pool_size": len(fallback_pool),
+                "window_size": self.window_size,
+                "remainder_source": "fallback_retrieval_order_only",
+                "llm_success": False,
+                "near_miss_salvage_count": 0,
+                "near_miss_salvages": [],
+            }
+            return candidates[:k], fallback_pool, provenance
         raise RuntimeError("LLM reranker failed and fallback is disabled")
 
     def batch_rerank(
@@ -319,6 +648,25 @@ class LLMListwiseReranker:
             futures = [
                 pool.submit(
                     self.rerank, cands, mem, item_db, topk,
+                    reformulated_queries[i] if reformulated_queries else None,
+                )
+                for i, (cands, mem) in enumerate(zip(batch_candidates, batch_session_memory))
+            ]
+            return [f.result() for f in futures]
+
+    def batch_rerank_with_pool(
+        self,
+        batch_candidates: list[list[str]],
+        batch_session_memory: list[list[dict]],
+        item_db,
+        topk: int | None = None,
+        reformulated_queries: list[str] | None = None,
+    ) -> list[tuple[list[str], list[str], dict]]:
+        """Batched version of rerank_with_pool. Returns per-row (top_k, pool, provenance)."""
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            futures = [
+                pool.submit(
+                    self.rerank_with_pool, cands, mem, item_db, topk,
                     reformulated_queries[i] if reformulated_queries else None,
                 )
                 for i, (cands, mem) in enumerate(zip(batch_candidates, batch_session_memory))

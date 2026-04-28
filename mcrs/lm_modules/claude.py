@@ -1,6 +1,7 @@
 """Claude API response generation module."""
 import os
-import anthropic
+
+from mcrs.utils import call_llm_api
 
 
 class ClaudeModule:
@@ -8,8 +9,8 @@ class ClaudeModule:
 
     def __init__(self, model: str = "claude-haiku-4-5-20251001", api_key: str | None = None):
         self.model = model
-        resolved_key = api_key or os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("ANTHROPIC_RECSYS_API_KEY")
-        self.client = anthropic.Anthropic(api_key=resolved_key)
+        if api_key:
+            os.environ.setdefault("ANTHROPIC_RECSYS_API_KEY", api_key)
 
     def response_generation(
         self,
@@ -19,14 +20,16 @@ class ClaudeModule:
         max_new_tokens: int = 256,
     ) -> str:
         messages = list(chat_history)
-        messages.append({"role": "assistant", "content": recommend_item})
-        response = self.client.messages.create(
+        # Anthropic API rejects trailing whitespace on final assistant content.
+        safe_item = recommend_item.rstrip() or "(none)"
+        messages.append({"role": "assistant", "content": safe_item})
+        raw = call_llm_api(
+            sys_prompt,
+            messages,
             model=self.model,
             max_tokens=max_new_tokens,
-            system=sys_prompt,
-            messages=messages,
         )
-        return response.content[0].text
+        return raw or ""
 
     def batch_response_generation(
         self,

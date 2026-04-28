@@ -1,3 +1,4 @@
+# ruff: noqa: T201
 """One-time script to pre-cache Qwen3 track embeddings from HuggingFace.
 
 Run this ONCE before v23 inference:
@@ -12,6 +13,8 @@ Optional args:
 import argparse
 import json
 import os
+import sys
+from collections import Counter
 
 import numpy as np
 
@@ -44,8 +47,21 @@ def main(column: str, cache_dir: str) -> None:
     combined = concatenate_datasets([ds[s] for s in available])
     print(f"  Loaded {len(combined):,} tracks")
 
-    track_ids = [str(t) for t in combined["track_id"]]
-    vectors = np.array(combined[column], dtype=np.float32)
+    raw_ids = combined["track_id"]
+    raw_vecs = combined[column]
+    total = len(raw_ids)
+    lengths = Counter(len(v) for v in raw_vecs if v is not None)
+    expected_dim = lengths.most_common(1)[0][0]
+    track_ids: list[str] = []
+    kept: list = []
+    for tid, v in zip(raw_ids, raw_vecs):
+        if v is None or len(v) != expected_dim:
+            continue
+        track_ids.append(str(tid))
+        kept.append(v)
+    filtered = total - len(kept)
+    sys.stderr.write(f"kept {len(kept)} / total {total}, filtered out {filtered}\n")
+    vectors = np.asarray(kept, dtype=np.float32)
     print(f"  Vectors shape: {vectors.shape}")
 
     # L2-normalise for cosine similarity via inner product

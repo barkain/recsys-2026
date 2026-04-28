@@ -10,25 +10,11 @@ import math
 import os
 from collections import Counter
 
-from datasets import load_dataset
+from eval_inference import build_ground_truth, load_ground_truth_dataset, lookup_ground_truth
 
 
-CACHE_DIR = os.environ.get("HF_DATASETS_CACHE", "./cache")
-DATASET_NAME = "talkpl-ai/TalkPlayData-Challenge-Dataset"
-
-
-def load_ground_truth():
-    """Return {session_id: {turn_number: gt_track_id}} matching eval_inference.py logic."""
-    ds = load_dataset(DATASET_NAME, split="test", cache_dir=CACHE_DIR)
-    gt = {}
-    for item in ds:
-        sid = item["session_id"]
-        gt[sid] = {}
-        for conv in item["conversations"]:
-            if conv["role"] == "music":
-                track_id = conv["content"].strip()
-                gt[sid][int(conv["turn_number"])] = track_id
-    return gt
+def _case_key(item: dict) -> tuple[str, str]:
+    return str(item["session_id"]), "" if item.get("user_id") is None else str(item.get("user_id"))
 
 
 def analyze(tid: str, gt: dict):
@@ -45,17 +31,18 @@ def analyze(tid: str, gt: dict):
     session_max_turn = defaultdict(int)
     for item in data:
         t = int(item["turn_number"])
-        if t > session_max_turn[item["session_id"]]:
-            session_max_turn[item["session_id"]] = t
+        case = _case_key(item)
+        if t > session_max_turn[case]:
+            session_max_turn[case] = t
 
     hit_ranks = []
     misses = 0
     for item in data:
         sid = item["session_id"]
         turn = int(item["turn_number"])
-        if turn != session_max_turn[sid]:
+        if turn != session_max_turn[_case_key(item)]:
             continue  # last turn only
-        gt_id = gt.get(sid, {}).get(turn)
+        gt_id = lookup_ground_truth(gt, sid, item.get("user_id"), turn)
         if not gt_id:
             continue
         predicted = item["predicted_track_ids"]
@@ -130,8 +117,12 @@ def main():
         return
 
     print("Loading ground truth...")
-    gt = load_ground_truth()
-    print(f"Ground truth sessions: {len(gt)}")
+    class Args:
+        gt_arrow = None
+        allow_network = False
+
+    gt = build_ground_truth(load_ground_truth_dataset(Args()))
+    print(f"Ground truth sessions: {len(gt['session'])}")
 
     results = {}
     for tid in tids:

@@ -1,7 +1,5 @@
 import os
 import logging
-from mcrs.lm_modules.claude import ClaudeModule
-from mcrs.lm_modules.llama import LlamaModule
 
 _log = logging.getLogger(__name__)
 
@@ -29,6 +27,7 @@ def load_lm_module(lm_type: str, **kwargs):
                 "using NullLM (retrieval-only, no response generation)"
             )
             return NullLM()
+        from mcrs.lm_modules.claude import ClaudeModule
         return ClaudeModule(model=lm_type, api_key=api_key)
     if any(lm_type.startswith(p) for p in _OPENAI_PREFIXES):
         from mcrs.lm_modules.openai_module import OpenAIModule
@@ -40,7 +39,8 @@ def load_lm_module(lm_type: str, **kwargs):
     device = kwargs.get("device", "cuda")
     dtype = kwargs.get("dtype", None)
     attn = kwargs.get("attn_implementation", "eager")
+    from mcrs.lm_modules.llama import LlamaModule
     return LlamaModule(model_name=lm_type, device=device, attn_implementation=attn, dtype=dtype)
 
 
-__all__ = ["ClaudeModule", "LlamaModule", "NullLM", "load_lm_module"]
+__all__ = ["NullLM", "load_lm_module"]

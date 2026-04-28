@@ -66,7 +66,9 @@ class TrackSimilarityRetriever:
         # Map track_id → row index for O(1) lookup
         self._id_to_idx: dict[str, int] = {tid: i for i, tid in enumerate(self.track_ids)}
 
-        self._build_faiss_index()
+        self.index = None
+        if os.environ.get("MCRS_TRACK_SIM_USE_FAISS"):
+            self._build_faiss_index()
 
     def _build_faiss_index(self) -> None:
         import faiss  # noqa: PLC0415
@@ -89,12 +91,26 @@ class TrackSimilarityRetriever:
         if idx is None:
             logger.debug("TrackSimilarityRetriever: track_id %r not in index", track_id)
             return []
-        query_vec = self.vectors[idx : idx + 1]  # shape (1, dim)
-        # Fetch topk+1 to exclude the query track itself
-        _, idxs = self.index.search(query_vec, topk + 1)
+        if self.index is not None:
+            query_vec = self.vectors[idx : idx + 1]  # shape (1, dim)
+            # Fetch topk+1 to exclude the query track itself
+            _, idxs = self.index.search(query_vec, topk + 1)
+            return [
+                self.track_ids[i]
+                for i in idxs[0]
+                if i >= 0 and i != idx
+            ][:topk]
+
+        query_vec = np.asarray(self.vectors[idx], dtype=np.float32)
+        scores = np.asarray(self.vectors @ query_vec, dtype=np.float32)
+        n = min(topk + 1, len(scores))
+        if n <= 0:
+            return []
+        idxs = np.argpartition(-scores, n - 1)[:n]
+        idxs = idxs[np.argsort(-scores[idxs])]
         return [
             self.track_ids[i]
-            for i in idxs[0]
+            for i in idxs
             if i >= 0 and i != idx
         ][:topk]
 
