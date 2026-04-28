@@ -1,10 +1,3 @@
-from mcrs.retrieval_modules.bm25 import BM25Retriever
-from mcrs.retrieval_modules.dense import DenseRetriever
-from mcrs.retrieval_modules.hybrid import HybridRetriever
-from mcrs.retrieval_modules.multi_query import MultiQueryRetriever
-from mcrs.retrieval_modules.precomputed import PrecomputedEmbeddingRetriever
-
-
 def load_retrieval_module(
     retrieval_type: str,
     dataset_name: str,
@@ -14,11 +7,14 @@ def load_retrieval_module(
     **kwargs,
 ):
     if retrieval_type == "bm25":
+        from mcrs.retrieval_modules.bm25 import BM25Retriever
         return BM25Retriever(dataset_name, split_types, corpus_types, cache_dir)
     elif retrieval_type == "dense":
+        from mcrs.retrieval_modules.dense import DenseRetriever
         model_name = kwargs.get("dense_model", "intfloat/e5-base-v2")
         return DenseRetriever(dataset_name, split_types, corpus_types, cache_dir, model_name=model_name)
     elif retrieval_type == "hybrid":
+        from mcrs.retrieval_modules.hybrid import HybridRetriever
         dense_model = kwargs.get("dense_model", "intfloat/e5-base-v2")
         bm25_weight = kwargs.get("bm25_weight", 0.5)
         candidate_k = kwargs.get("candidate_k", 100)
@@ -28,6 +24,7 @@ def load_retrieval_module(
             candidate_k=candidate_k,
         )
     elif retrieval_type == "precomputed":
+        from mcrs.retrieval_modules.precomputed import PrecomputedEmbeddingRetriever
         embed_col = kwargs.get("embed_column", "metadata-qwen3_embedding_0.6b")
         embed_ds = kwargs.get("embed_dataset", "talkpl-ai/TalkPlayData-Challenge-Track-Embeddings")
         return PrecomputedEmbeddingRetriever(
@@ -41,10 +38,5 @@ def load_retrieval_module(
 
 
 __all__ = [
-    "BM25Retriever",
-    "DenseRetriever",
-    "HybridRetriever",
-    "MultiQueryRetriever",
-    "PrecomputedEmbeddingRetriever",
     "load_retrieval_module",
 ]

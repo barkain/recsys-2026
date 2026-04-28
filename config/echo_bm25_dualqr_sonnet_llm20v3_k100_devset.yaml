@@ -1,0 +1,16 @@
+lm_type: "null"
+retrieval_type: "bm25"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+device: "cpu"
+use_reranker: false
+candidate_k: 100
+use_query_reformulation: false
+use_dual_qr: true
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-sonnet-4-6"
+llm_reranker_window: 20
+# Dual-QR + Sonnet w=20 with v3 prompt (improved decisive rank-1 guidance)
+# v2 result: 0.1037 nDCG (rank1=2, rank2-5=10, rank11-20=5)
+# v3 adds: "Your #1 ranked track must be the single BEST match — commit decisively"
+# Expects rank-1 count to increase, pushing nDCG >= 0.1040

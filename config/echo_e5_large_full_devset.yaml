@@ -4,7 +4,7 @@
 #   2. release_date added to corpus_types (captures temporal queries: "80s rock", "recent indie")
 #   3. LLM reranker prompt updated with music-specific scoring criteria
 #   4. id_to_metadata now includes tag_list + year (richer LLM context)
-lm_type: "claude-haiku-4-5-20251001"
+lm_type: "null"
 retrieval_type: "hybrid"
 dense_model: "intfloat/e5-large-v2"
 test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"

@@ -1,0 +1,24 @@
+# Echo: BM25 + QR + LLM reranker — Blind-A submission (v14)
+lm_type: "claude-haiku-4-5-20251001"
+retrieval_type: "bm25"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Blind-A"
+item_db_name: "talkpl-ai/TalkPlayData-Challenge-Track-Metadata"
+user_db_name: "talkpl-ai/TalkPlayData-Challenge-User-Metadata"
+track_split_types:
+  - "all_tracks"
+user_split_types:
+  - "all_users"
+corpus_types:
+  - "track_name"
+  - "artist_name"
+  - "album_name"
+  - "tag_list"
+cache_dir: "./cache"
+device: "cpu"
+candidate_k: 50
+use_reranker: false
+use_query_reformulation: true
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-haiku-4-5-20251001"
+llm_reranker_window: 50

@@ -1,0 +1,18 @@
+lm_type: "claude-haiku-4-5-20251001"
+retrieval_type: "bm25"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+device: "cpu"
+use_reranker: false
+candidate_k: 100
+use_query_reformulation: false
+use_dual_qr: true
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-sonnet-4-6"
+llm_reranker_window: 10
+# v14 blind submission config
+# Dual-QR (NLQ + entity, wide_k=200 per component, RRF-merged to k=100)
+# + Sonnet reranker (claude-sonnet-4-6) with v2 prompt + metadata fix
+# + already-played track filter
+# Offline 100-session: 0.1025 nDCG → ~0.287 blind estimate
+# Target to beat #1 (el_presidente): 0.29 blind / 0.1036 offline

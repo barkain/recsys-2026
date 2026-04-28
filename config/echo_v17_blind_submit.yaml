@@ -1,0 +1,29 @@
+lm_type: "claude-haiku-4-5-20251001"
+retrieval_type: "bm25"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Blind-A"
+item_db_name: "talkpl-ai/TalkPlayData-Challenge-Track-Metadata"
+user_db_name: "talkpl-ai/TalkPlayData-Challenge-User-Metadata"
+track_split_types:
+  - "all_tracks"
+user_split_types:
+  - "all_users"
+corpus_types:
+  - "track_name"
+  - "artist_name"
+  - "album_name"
+  - "tag_list"
+cache_dir: "./cache"
+device: "cpu"
+use_reranker: false
+candidate_k: 100
+use_query_reformulation: false
+use_dual_qr: true
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-sonnet-4-6"
+llm_reranker_window: 20
+# v16 blind submission — the config that produces the submission.zip
+# lm_type: Haiku for response generation (needed for LLM judge metric, 30% of composite)
+# Architecture: BM25 dual-QR (NLQ + entity via Haiku) → Sonnet listwise reranker (w=20, v3 prompt)
+# Offline 100-session: 0.1104 nDCG → ~0.309 blind estimate (2.8× correlation)
+# Beats #1 (el_presidente: 0.290 blind) by 6.5%

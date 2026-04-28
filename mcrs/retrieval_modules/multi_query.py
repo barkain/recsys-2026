@@ -72,15 +72,18 @@ class MultiQueryRetriever:
         self,
         base_retriever: HybridRetriever,
         model: str = "claude-haiku-4-5-20251001",
+        n_queries: int = 3,
         per_query_k: int = 100,
         fallback_on_error: bool = True,
     ):
         self.retriever = base_retriever
         self.model = model
-        self.n_queries = 3
+        self.n_queries = n_queries
         self.per_query_k = per_query_k
         self.fallback_on_error = fallback_on_error
-        self.client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
+        self.client = anthropic.Anthropic(
+            api_key=os.environ.get("ANTHROPIC_RECSYS_API_KEY") or os.environ.get("ANTHROPIC_API_KEY")
+        )
 
     def _generate_queries(self, session_memory: list[dict], user_query: str) -> list[str]:
         """Call Claude to generate 3 diverse queries. Returns list of query strings."""

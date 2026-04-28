@@ -1,6 +1,6 @@
 # Echo's full pipeline: Hybrid retrieval + LLM query reformulation + LLM listwise reranker
 # Pipeline: hybrid retrieve (BM25+E5) → QR reform → user-profile rerank → LLM listwise rerank → Claude generate
-lm_type: "claude-haiku-4-5-20251001"
+lm_type: "null"
 retrieval_type: "hybrid"
 dense_model: "intfloat/e5-base-v2"
 test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"

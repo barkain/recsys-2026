@@ -1,0 +1,29 @@
+# Echo: precomputed embeddings + QR + LLM reranker — no GPU needed
+# Uses cached Qwen3-0.6B embeddings for dense retrieval (1.8GB already cached)
+# Stack: precomputed embed retrieve → user-profile rerank → LLM listwise rerank → Claude generate
+lm_type: "null"
+retrieval_type: "precomputed"
+embed_column: "metadata-qwen3_embedding_0.6b"
+embed_dataset: "talkpl-ai/TalkPlayData-Challenge-Track-Embeddings"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+item_db_name: "talkpl-ai/TalkPlayData-Challenge-Track-Metadata"
+user_db_name: "talkpl-ai/TalkPlayData-Challenge-User-Metadata"
+track_split_types:
+  - "all_tracks"
+user_split_types:
+  - "all_users"
+corpus_types:
+  - "track_name"
+  - "artist_name"
+  - "album_name"
+  - "tag_list"
+cache_dir: "./cache"
+device: "cpu"
+use_reranker: true
+reranker_alpha: 0.3
+candidate_k: 50
+use_query_reformulation: true
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-haiku-4-5-20251001"
+llm_reranker_window: 50

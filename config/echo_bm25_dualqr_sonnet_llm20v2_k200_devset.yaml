@@ -1,0 +1,17 @@
+lm_type: "null"
+retrieval_type: "bm25"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+device: "cpu"
+use_reranker: false
+candidate_k: 200
+use_query_reformulation: false
+use_dual_qr: true
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-sonnet-4-6"
+llm_reranker_window: 20
+# Dual-QR + Sonnet reranker with window=20 AND k=200 candidate pool
+# Tests if larger candidate pool (200 vs 100) improves recall, combined with w=20
+# BM25 recall ceiling at k=100 is ~25%; k=200 may capture tracks at ranks 101-200.
+# However: window=20 only reranks top-20 of 200 — recall improvement only from
+# the dual-QR pulling more hits into the top-20 positions.

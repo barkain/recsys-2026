@@ -1,0 +1,35 @@
+lm_type: "claude-haiku-4-5-20251001"
+retrieval_type: "bm25"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+item_db_name: "talkpl-ai/TalkPlayData-Challenge-Track-Metadata"
+user_db_name: "talkpl-ai/TalkPlayData-Challenge-User-Metadata"
+track_split_types:
+  - "all_tracks"
+user_split_types:
+  - "all_users"
+corpus_types:
+  - "track_name"
+  - "artist_name"
+  - "album_name"
+  - "tag_list"
+cache_dir: "./cache"
+device: "cpu"
+use_reranker: false
+candidate_k: 100
+use_query_reformulation: false
+use_dual_qr: true
+query_reformulation_model: "o4-mini"
+use_llm_reranker: true
+llm_reranker_model: "claude-sonnet-4-6"
+llm_reranker_window: 20
+# v21 experiment: o4-mini for query reformulation (dual-QR)
+# Changes vs v20:
+#   1. query_reformulation_model: haiku → o4-mini (OpenAI reasoning model)
+#      Hypothesis: o4-mini reasons over conversation better, producing higher-quality
+#      NLQ and entity queries → more relevant BM25 candidates → better reranker input
+# Keeps from v19/v20:
+#   - NLQ query passed to LLM reranker as explicit search signal
+#   - _get_already_played bug fix (dict-format content)
+#   - _format_candidates track_id safety fix
+#   - window=20 (same as v16 and v20)
+# Requires: OPENAI_API_KEY env var

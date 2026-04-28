@@ -1,0 +1,14 @@
+lm_type: "null"
+retrieval_type: "bm25"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+device: "cpu"
+use_reranker: false
+candidate_k: 100
+use_query_reformulation: false
+use_dual_qr: true
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-sonnet-4-6"
+llm_reranker_window: 10
+# Dual-QR (NLQ + entity) + Sonnet reranker + v2 prompt + metadata fix
+# dual-QR gave +0.002 recall improvement; Sonnet smarter ranking

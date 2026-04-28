@@ -1,0 +1,15 @@
+lm_type: "null"
+retrieval_type: "bm25"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+device: "cpu"
+use_reranker: false
+candidate_k: 100
+use_query_reformulation: false
+use_dual_qr: true
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-sonnet-4-6"
+llm_reranker_window: 10
+# Dual-QR v2: uses wide_k=200 per component before RRF-merge to k=100.
+# Fixes displacement bug where NLQ hits at rank 30+ get outscored by
+# entity-only tracks. Better recall than original dual-QR.

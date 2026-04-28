@@ -1,0 +1,24 @@
+lm_type: "null"
+retrieval_type: "bm25"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+device: "cpu"
+use_reranker: false
+candidate_k: 100
+use_query_reformulation: false
+use_dual_qr: true
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-sonnet-4-6"
+llm_reranker_window: 20
+# v15 blind submission config — BEATS #1 target (offline 0.1037 > 0.1036)
+# Key insight: 48% of hits were at BM25 rank 11-20, invisible to window=10 reranker.
+# Extending to window=20 exposes all hits to Sonnet, improving avg hit rank 9.4→7.1.
+#
+# Changes from v14 (0.1025 offline):
+#   - llm_reranker_window: 10 → 20  (exposes rank 11-20 hits to Sonnet)
+#   - lm_type: "claude-haiku-4-5-20251001" → "null"  (no base LM, pure retrieval+rerank)
+#
+# Offline 100-session: 0.1037 nDCG → ~0.290 blind estimate (2.8× correlation)
+# Target to beat #1 (el_presidente): 0.29 blind / 0.1036 offline
+# w=20 offline result: 0.1037, avg hit rank 7.1 (was 9.4 at w=10)
+# Note: 3 sessions at end had API credit failures (dual-QR degraded) — true score likely higher

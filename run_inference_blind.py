@@ -7,11 +7,30 @@ import os
 import json
 import zipfile
 import argparse
+import random
 import pandas as pd
 from tqdm import tqdm
 from omegaconf import OmegaConf
 from datasets import load_dataset
 from mcrs import load_crs_system
+
+
+def _result_key(result: dict) -> tuple[str, str | None, int]:
+    user_id = result.get("user_id")
+    return str(result["session_id"]), None if user_id is None else str(user_id), int(result["turn_number"])
+
+
+def _atomic_write_json(path: str, data) -> None:
+    tmp_path = f"{path}.tmp"
+    with open(tmp_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    os.replace(tmp_path, path)
+
+
+def _sample_sessions(db, sample_size: int, seed: int):
+    n = min(sample_size, len(db))
+    indices = sorted(random.Random(seed).sample(range(len(db)), n))
+    return db.select(indices)
 
 
 def chat_history_parser(conversations, crs):
@@ -47,23 +66,36 @@ def main(args):
     if not os.environ.get("ANTHROPIC_RECSYS_API_KEY"):
         raise EnvironmentError("ANTHROPIC_RECSYS_API_KEY is not set — cannot run LLM inference")
 
-    print("Clearing cache to prevent memory issues...")
-    os.system("rm -rf cache")
+    if os.environ.get("CLEAR_CACHE"):
+        print("Clearing cache (CLEAR_CACHE=1)...")
+        os.system("rm -rf cache")
 
     config = OmegaConf.load(f"config/{args.tid}.yaml")
     config_dict = OmegaConf.to_container(config, resolve=True)
+    config_dict["generate_responses"] = not args.skip_response_generation
+    if args.fail_fast_llm:
+        config_dict["fail_fast_llm"] = True
 
+    print(f"Loading CRS config: {args.tid}", flush=True)
     crs = load_crs_system(**config_dict)
+    print("CRS loaded", flush=True)
 
     blind_dataset_name = args.blind_dataset or "talkpl-ai/TalkPlayData-Challenge-Blind-A"
-    print(f"Loading blind dataset: {blind_dataset_name}")
+    print(f"Loading blind dataset: {blind_dataset_name}", flush=True)
     db = load_dataset(blind_dataset_name, split="test")
+    print(f"Blind dataset loaded: {len(db)} sessions", flush=True)
+    if args.sample_size:
+        db = _sample_sessions(db, args.sample_size, args.sample_seed)
+        print(f"Selected deterministic sample: {len(db)} sessions (seed={args.sample_seed})")
 
     batch_data, metadata = [], []
     for item in db:
         user_id = item["user_id"]
         session_id = item["session_id"]
-        for turn_number, chat_history, user_query in chat_history_parser(item["conversations"], crs):
+        turns = list(chat_history_parser(item["conversations"], crs))
+        if args.last_turn_only and turns:
+            turns = [turns[-1]]  # Only predict the final user turn
+        for turn_number, chat_history, user_query in turns:
             batch_data.append({
                 "user_query": user_query,
                 "user_id": user_id,
@@ -77,7 +109,33 @@ def main(args):
 
     print(f"Total turns to predict: {len(batch_data)}")
 
+    output_tid = args.output_tid or args.tid
+    os.makedirs("exp/inference/blind_a", exist_ok=True)
+    out_json = f"exp/inference/blind_a/{output_tid}.json"
+
     inference_results = []
+    completed: set[tuple[str, str | None, int]] = set()
+    if args.resume and os.path.exists(out_json):
+        with open(out_json, encoding="utf-8") as f:
+            inference_results = json.load(f)
+        completed = {_result_key(r) for r in inference_results}
+        print(f"Resuming from {out_json}: {len(completed)} completed turns")
+
+    if completed:
+        filtered_batch_data, filtered_metadata = [], []
+        for item, meta in zip(batch_data, metadata):
+            user_id = meta.get("user_id")
+            key = (
+                str(meta["session_id"]),
+                None if user_id is None else str(user_id),
+                int(meta["turn_number"]),
+            )
+            if key not in completed:
+                filtered_batch_data.append(item)
+                filtered_metadata.append(meta)
+        print(f"Skipping {len(batch_data) - len(filtered_batch_data)} completed turns")
+        batch_data, metadata = filtered_batch_data, filtered_metadata
+
     for i in tqdm(range(0, len(batch_data), args.batch_size), desc="Inference"):
         batch = batch_data[i:i + args.batch_size]
         batch_meta = metadata[i:i + args.batch_size]
@@ -90,15 +148,12 @@ def main(args):
                 "predicted_track_ids": result["retrieval_items"],
                 "predicted_response": result.get("response", ""),
             })
+        _atomic_write_json(out_json, inference_results)
 
-    os.makedirs("exp/inference/blind_a", exist_ok=True)
-    out_json = f"exp/inference/blind_a/{args.tid}.json"
-    with open(out_json, "w", encoding="utf-8") as f:
-        json.dump(inference_results, f, ensure_ascii=False, indent=2)
     print(f"Saved {len(inference_results)} results to {out_json}")
 
     # Package as submission.zip
-    out_zip = f"exp/inference/blind_a/{args.tid}_submission.zip"
+    out_zip = f"exp/inference/blind_a/{output_tid}_submission.zip"
     with zipfile.ZipFile(out_zip, "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(out_json, "prediction.json")
     print(f"Submission zip: {out_zip}")
@@ -107,7 +162,17 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--tid", type=str, default="echo_bm25_enriched_devset")
+    parser.add_argument("--output_tid", type=str, default=None)
     parser.add_argument("--batch_size", type=int, default=32)
     parser.add_argument("--blind_dataset", type=str, default="talkpl-ai/TalkPlayData-Challenge-Blind-A")
+    parser.add_argument("--sample_size", type=int, default=None)
+    parser.add_argument("--sample_seed", type=int, default=42)
+    parser.add_argument("--last_turn_only", action="store_true",
+                        help="Only predict the final user turn per session (8x faster, mirrors nDCG@20 scoring)")
+    parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--skip_response_generation", action="store_true",
+                        help="Do retrieval/reranking only and write empty responses (saves one LLM call per turn)")
+    parser.add_argument("--fail_fast_llm", action="store_true",
+                        help="Abort if QR/reranker LLM calls fail instead of falling back silently")
     args = parser.parse_args()
     main(args)

@@ -1,0 +1,15 @@
+lm_type: "null"
+retrieval_type: "bm25"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+device: "cpu"
+use_reranker: false
+candidate_k: 100
+use_query_reformulation: false
+use_dual_qr: true
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-haiku-4-5-20251001"
+llm_reranker_window: 10
+# Dual-QR (NLQ + entity) + v2 reranker (metadata fix + improved prompt)
+# Prior dual-QR: 0.0768 (with blind reranker)
+# Expected: significant boost from seeing actual track metadata

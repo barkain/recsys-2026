@@ -1,0 +1,17 @@
+lm_type: "null"
+retrieval_type: "bm25"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+device: "cpu"
+use_reranker: false
+candidate_k: 100
+use_query_reformulation: false
+use_dual_qr: true
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-sonnet-4-6"
+llm_reranker_window: 20
+# Dual-QR + Sonnet reranker with window=20 (never tested with Sonnet + fixed metadata)
+# Key insight: 12/25 hits are at BM25 rank 11-20 — window=10 never reranks them.
+# Extending window to 20 exposes ALL 25 hits to Sonnet reranking.
+# Previous w=20 test used Haiku WITHOUT metadata fix (0.0700) — incomparable.
+# Sonnet is much more reliable at ranking 20 candidates than Haiku.

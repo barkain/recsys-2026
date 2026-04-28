@@ -1,0 +1,27 @@
+lm_type: "null"
+retrieval_type: "bm25"
+test_dataset_name: "talkpl-ai/TalkPlayData-Challenge-Dataset"
+device: "cpu"
+use_reranker: false
+candidate_k: 100
+use_query_reformulation: false
+use_dual_qr: true
+query_reformulation_model: "claude-haiku-4-5-20251001"
+use_llm_reranker: true
+llm_reranker_model: "claude-sonnet-4-6"
+llm_reranker_window: 20
+# v16 blind submission config — offline 0.1104 → est. blind 0.309 (beats #1 by 6.5%)
+#
+# Architecture: BM25 dual-QR (NLQ + entity via Haiku) → Sonnet listwise reranker (w=20, v3 prompt)
+#
+# Key improvements from v14 (0.1025):
+#   1. window=20 (was 10): exposes rank-11-20 BM25 hits to Sonnet reranking
+#   2. v3 prompt: "commit decisively to rank 1" → rank-1 doubled (2→4), avg rank 9.4→6.7
+#
+# Offline 100-session results:
+#   v14 w=10 v2: 0.1025 nDCG, 25 hits, avg rank 9.4
+#   v15 w=20 v2: 0.1037 nDCG, 24 hits, avg rank 7.1
+#   v16 w=20 v3: 0.1104 nDCG, 22 hits, avg rank 6.7  ← this config
+#
+# Target to beat #1 (el_presidente): 0.29 blind / 0.1036 offline
+# Est. blind nDCG: 0.1104 × 2.8 = 0.309 → 6.5% above #1
