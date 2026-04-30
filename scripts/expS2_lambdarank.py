@@ -30,8 +30,21 @@ from datasets import DownloadConfig, load_dataset
 from implicit.als import AlternatingLeastSquares
 
 from scripts.expF1_cfbpr_retrieval import weighted_rrf
-from scripts.expS2_lambdarank_grouped import grouped_session_folds
 from scripts.tune_postrank_v23 import tokens
+
+
+def grouped_session_folds(sessions, seed, k=5):
+    """Split by unique session_id — all turns of a session go to the same fold."""
+    unique_sessions = sorted(set(sessions))
+    rng = np.random.RandomState(seed)
+    rng.shuffle(unique_sessions)
+    session_to_fold = {}
+    for i, sid in enumerate(unique_sessions):
+        session_to_fold[sid] = i % k
+    folds = [[] for _ in range(k)]
+    for case_idx, sid in enumerate(sessions):
+        folds[session_to_fold[sid]].append(case_idx)
+    return [np.asarray(f, dtype=np.int64) for f in folds]
 
 R12_CACHE = REPO_ROOT / "exp" / "eval" / "_R12_all_turns_payload.pkl"
 POOL_K = 100

@@ -27,7 +27,7 @@ from implicit.als import AlternatingLeastSquares
 
 from scripts.expF1_cfbpr_retrieval import weighted_rrf
 from scripts.tune_postrank_v23 import FEATURE_NAMES, INIT_WEIGHTS, tokens
-from scripts.expS2_lambdarank import FEATURE_NAMES_LR, build_als
+from scripts.expS2_lambdarank import FEATURE_NAMES_LR, build_als  # noqa: E402 — no circular import since lambdarank no longer imports from _grouped
 
 from scipy.optimize import minimize
 
