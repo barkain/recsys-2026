@@ -394,7 +394,7 @@ def main(args: argparse.Namespace) -> None:
     for item in db:
         sid = str(item["session_id"])
         uid = item.get("user_id")
-        if args.last_turn_only:
+        if not args.all_turns:
             turn_num, user_query, history, music_turns = parse_last_turn(item)
             rows.append({
                 "session_id": sid, "user_id": uid,
@@ -540,8 +540,63 @@ def main(args: argparse.Namespace) -> None:
 
     log.info("Fallback zero-pool: %d", fallback_zero_pool)
 
-    # ----- Response generation ----- #
-    if not args.skip_response_generation and pending_outputs:
+    # ----- Response assembly ----- #
+    if args.hybrid_responses_from:
+        log.info("Loading hybrid responses from %s", args.hybrid_responses_from)
+        with open(args.hybrid_responses_from, encoding="utf-8") as f:
+            prior_results = json.load(f)
+        prior_by_sid = {r["session_id"]: r for r in prior_results}
+        n_reused, n_generated = 0, 0
+        for out in pending_outputs:
+            sid = out["session_id"]
+            top20_set = set(out["predicted_track_ids"])
+            prior = prior_by_sid.get(sid)
+            if prior and prior["predicted_track_ids"][0] in top20_set:
+                resp = prior["predicted_response"].lstrip(",").lstrip()
+                if resp.strip():
+                    out["predicted_response"] = resp
+                    n_reused += 1
+                    continue
+            out["predicted_response"] = ""
+            n_generated += 1
+        log.info("Hybrid responses: %d reused, %d need generation", n_reused, n_generated)
+
+        if n_generated > 0 and not args.skip_response_generation:
+            if not os.environ.get("ANTHROPIC_RECSYS_API_KEY"):
+                raise EnvironmentError(
+                    f"{n_generated} rows need new responses but ANTHROPIC_RECSYS_API_KEY not set."
+                )
+            from mcrs.db_item.music_catalog import MusicCatalogDB
+            from mcrs.lm_modules.claude import ClaudeModule
+
+            item_db = MusicCatalogDB(
+                dataset_name="talkpl-ai/TalkPlayData-Challenge-Track-Metadata",
+                split_types=["all_tracks"],
+            )
+            prompts_dir = REPO_ROOT / "mcrs" / "system_prompts"
+            sys_prompt = (
+                (prompts_dir / "roleplay.txt").read_text(encoding="utf-8")
+                + "\n"
+                + (prompts_dir / "response_generation.txt").read_text(encoding="utf-8")
+            )
+            haiku = ClaudeModule(model="claude-haiku-4-5-20251001")
+            for r, out in zip(pending, pending_outputs):
+                if out["predicted_response"]:
+                    continue
+                top_id = out["predicted_track_ids"][0]
+                try:
+                    top_item = item_db.id_to_metadata(top_id)
+                except KeyError:
+                    top_item = f"track_id: {top_id}"
+                session_memory = build_session_memory_for_response(
+                    r["history"], r["user_query"], item_db)
+                response = haiku.response_generation(sys_prompt, session_memory, top_item)
+                out["predicted_response"] = (response or "").lstrip(",").lstrip()
+            log.info("Generated %d new responses", n_generated)
+        elif n_generated > 0:
+            log.warning("%d rows have empty responses (no API key, skip_response_generation)", n_generated)
+
+    elif not args.skip_response_generation and pending_outputs:
         if not os.environ.get("ANTHROPIC_RECSYS_API_KEY"):
             raise EnvironmentError(
                 "ANTHROPIC_RECSYS_API_KEY not set. Pass --skip_response_generation."
@@ -570,9 +625,10 @@ def main(args: argparse.Namespace) -> None:
                 top_item = item_db.id_to_metadata(top_id)
             except KeyError:
                 top_item = f"track_id: {top_id}"
-            session_memory = build_session_memory_for_response(r["history"], r["user_query"], item_db)
+            session_memory = build_session_memory_for_response(
+                r["history"], r["user_query"], item_db)
             response = haiku.response_generation(sys_prompt, session_memory, top_item)
-            out["predicted_response"] = response or ""
+            out["predicted_response"] = (response or "").lstrip(",").lstrip()
         log.info("Response generation done in %.2fs", time.time() - t_resp)
     else:
         log.info("Skipping response generation")
@@ -594,7 +650,7 @@ def main(args: argparse.Namespace) -> None:
         "config": "ABCDF+ALS → LightGBM LambdaRank",
         "blind_dataset": args.blind_dataset,
         "sample_size": args.sample_size,
-        "last_turn_only": args.last_turn_only,
+        "last_turn_only": not args.all_turns,
         "skip_response_generation": args.skip_response_generation,
         "n_results": len(inference_results),
         "n_pending_this_run": len(pending),
@@ -619,7 +675,10 @@ if __name__ == "__main__":
     parser.add_argument("--blind_dataset", type=str,
                         default="talkpl-ai/TalkPlayData-Challenge-Blind-A")
     parser.add_argument("--sample_size", type=int, default=None)
-    parser.add_argument("--last_turn_only", action="store_true")
+    parser.add_argument("--all_turns", action="store_true",
+                        help="Predict all turns (default: last turn only)")
     parser.add_argument("--skip_response_generation", action="store_true")
+    parser.add_argument("--hybrid_responses_from", type=str, default=None,
+                        help="Path to prior artifact JSON for hybrid response reuse")
     parser.add_argument("--resume", action="store_true")
     main(parser.parse_args())

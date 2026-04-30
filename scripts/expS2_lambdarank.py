@@ -6,8 +6,8 @@ Replaces 8-feature Powell ranker with a nonlinear pairwise ranker.
 Uses ABCDF+ALS sources, pool_k=100, and richer features including
 source ranks, presence bits, and ALS scores.
 
-Evaluation: session-level CV5 with out-of-fold Powell weights
-(in-fold features, out-of-fold labels).
+WARNING: This script originally used cv_folds which leaks sessions.
+Updated to use grouped_session_folds (zero session overlap).
 No API. No blind.
 """
 from __future__ import annotations
@@ -30,7 +30,7 @@ from datasets import DownloadConfig, load_dataset
 from implicit.als import AlternatingLeastSquares
 
 from scripts.expF1_cfbpr_retrieval import weighted_rrf
-from scripts.r3_confirm_400_deterministic import cv_folds
+from scripts.expS2_lambdarank_grouped import grouped_session_folds
 from scripts.tune_postrank_v23 import tokens
 
 R12_CACHE = REPO_ROOT / "exp" / "eval" / "_R12_all_turns_payload.pkl"
@@ -314,7 +314,7 @@ def main():
     X_powell = X[:, :, :8]  # first 8 features = original Powell features
     powell_cv5_seeds = []
     for seed in seeds:
-        folds = cv_folds(sessions, seed)
+        folds = grouped_session_folds(sessions, seed)
         fold_sc = []
         for fold in folds:
             held = set(fold.tolist())
@@ -345,7 +345,7 @@ def main():
 
     lr_cv5_seeds = []
     for seed in seeds:
-        folds = cv_folds(sessions, seed)
+        folds = grouped_session_folds(sessions, seed)
         fold_ndcgs = []
         for fi, fold in enumerate(folds):
             held = set(fold.tolist())
