@@ -835,6 +835,18 @@ wheels = [
 ]
 
 [[package]]
+name = "implicit"
+version = "0.7.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+    { name = "scipy" },
+    { name = "threadpoolctl" },
+    { name = "tqdm" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/2e/1c/b3154f16fec6ebc9bc118ad4fbadc960a656d6a55eae2e6f3f9dd08409e6/implicit-0.7.2.tar.gz", hash = "sha256:bacf79120c87ad0744a4365a089409fddd33231880aef4a495bab2d4f888291d", size = 70298, upload-time = "2023-09-29T21:08:24.734Z" }
+
+[[package]]
 name = "iniconfig"
 version = "2.3.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1365,6 +1377,7 @@ dependencies = [
     { name = "bm25s" },
     { name = "datasets" },
     { name = "faiss-cpu" },
+    { name = "implicit" },
     { name = "numpy" },
     { name = "omegaconf" },
     { name = "openai" },
@@ -1390,6 +1403,7 @@ requires-dist = [
     { name = "bm25s", specifier = ">=0.2.13" },
     { name = "datasets", specifier = ">=3.1.0" },
     { name = "faiss-cpu", specifier = ">=1.9.0" },
+    { name = "implicit", specifier = ">=0.7.2" },
     { name = "numpy", specifier = ">=2.0.0" },
     { name = "omegaconf", specifier = ">=2.3.0" },
     { name = "openai", specifier = ">=1.0.0" },
