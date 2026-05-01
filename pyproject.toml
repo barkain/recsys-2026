@@ -24,6 +24,7 @@ dependencies = [
     "numpy>=2.0.0",
     "faiss-cpu>=1.9.0",
     "implicit>=0.7.2",
+    "accelerate>=1.1.0",
 ]
 
 [tool.setuptools.packages.find]
