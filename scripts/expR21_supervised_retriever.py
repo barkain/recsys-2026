@@ -67,14 +67,12 @@ def load_catalog_metadata():
     """Load full track metadata."""
     from datasets import Dataset, concatenate_datasets
     hf_cache = Path.home() / ".cache" / "huggingface" / "datasets"
-    splits = []
-    for split in ["all_tracks", "test_tracks"]:
-        matches = sorted(hf_cache.glob(
-            f"talkpl-ai___talk_play_data-challenge-track-metadata/default/*/*/"
-            f"talk_play_data-challenge-track-metadata-{split}.arrow"))
-        if matches:
-            splits.append(Dataset.from_file(str(matches[-1])))
-    ds = concatenate_datasets(splits)
+    matches = sorted(hf_cache.glob(
+        "talkpl-ai___talk_play_data-challenge-track-metadata/default/*/*/"
+        "talk_play_data-challenge-track-metadata-all_tracks.arrow"))
+    if not matches:
+        raise FileNotFoundError("all_tracks arrow not found")
+    ds = Dataset.from_file(str(matches[-1]))
     cols = ds.to_dict()
     meta = {}
     track_ids = []
