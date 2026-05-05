@@ -1,0 +1,59 @@
+{
+  "changes": [
+    {
+      "row": 4,
+      "type": "change_both",
+      "old_top1": "f88c7884-6c2c-4ab8-9e98-6ed4ee49673e",
+      "new_top1": "87e71768-bc6a-43d3-8913-7a2dd490265d",
+      "reason": "User said 'no more Wood Brothers' 3x, all top-5 were Wood Brothers"
+    },
+    {
+      "row": 29,
+      "type": "change_both",
+      "old_top1": "b31d1d31-10fd-4d5e-a344-d9bb7ed5700f",
+      "new_top1": "ff660faa-9994-46a9-8e4c-85598afcbfa2",
+      "reason": "User asked to branch out from Noisia/DmC multiple times"
+    },
+    {
+      "row": 79,
+      "type": "change_both",
+      "old_top1": "48865b90-9a76-40a8-b69b-ca9f34579e83",
+      "new_top1": "7af76991-1c53-4a3c-b03d-41efed1170e0",
+      "reason": "User said 'beyond just Santa Claus', top-1 was literally Santa Claus song"
+    },
+    {
+      "row": 10,
+      "type": "change_response",
+      "reason": "RESPONSE: Track mismatch \u2014 R25 implies lyrics/depth but track is explicitly tagged Instrumental"
+    },
+    {
+      "row": 35,
+      "type": "change_response",
+      "reason": "RESPONSE: Track mismatch in both R21 and R25"
+    },
+    {
+      "row": 50,
+      "type": "change_response",
+      "reason": "RESPONSE: Track mismatch - R21 claims 'this track is actually a modern blues-rock homage to Johnson's legend rather than Johnson himself' but top-1 IS 'Cross Road Blues' by Robert Johnson. R21 also has leading garbage metadata text."
+    },
+    {
+      "row": 67,
+      "type": "change_response",
+      "reason": "RESPONSE: Track mismatch \u2014 user says 'Play Johnny Too Bad Freestyle - Rarities Version' but top-1 is 'Lou Makes Friends - Rarities Version' and R25 describes the wrong track without acknowledging the user's explicit play request"
+    }
+  ],
+  "track_changed_rows": [
+    4,
+    29,
+    79
+  ],
+  "top1_changed_rows": [
+    4,
+    29,
+    79
+  ],
+  "mean_overlap": 1.0,
+  "lexdiv_r25": 0.8132868193538602,
+  "lexdiv_r27": 0.8144914215686274,
+  "trailing_questions": 0
+}

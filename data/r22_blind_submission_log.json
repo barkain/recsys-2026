@@ -205,5 +205,43 @@
     "top1_change_vs_prev": 0,
     "response_reuse_count": 0,
     "notes": "Response-only change. LexDiv 0.77\u21920.81 (+0.04) but LLM 4.70\u21924.65 (-0.05). Net composite +0.0003. Trailing questions removed (75\u21920), user-first openers (54\u219280). LexDiv gain and LLM loss nearly cancel."
+  },
+  {
+    "id": "r27",
+    "name": "r27_agent_audit",
+    "description": "Agentic audit: 3 track reranks (rows 4,29,79 constraint violations) + 4 response patches on R25 base",
+    "artifact": "exp/inference/blind_a/r27_agent_audit_submission.zip",
+    "date": "2026-05-05",
+    "actual_blind_ndcg": 0.4734,
+    "actual_composite": 0.5949,
+    "actual_llm": 4.65,
+    "actual_lexdiv": 0.8145,
+    "actual_catdiv": 0.0306,
+    "local_cv5": null,
+    "pool_hit": null,
+    "pool_k": null,
+    "n_features": null,
+    "n_sources": null,
+    "ranker": "R21+agent_audit",
+    "notes": "nDCG unchanged from R25 (reranks missed GT). LexDiv +0.001. Leaderboard dropped to #6 (new competitors amaranta_, semintelligence)"
+  },
+  {
+    "id": "r27b",
+    "name": "r27b_agent_audit_5edits",
+    "description": "5 track reranks (rows 4,29,43,78,79) + 4 response patches. Codex deeper-edit variant.",
+    "artifact": "exp/inference/blind_a/r27b_agent_audit_submission.zip",
+    "date": "2026-05-05",
+    "actual_blind_ndcg": 0.4688,
+    "actual_composite": 0.6002,
+    "actual_llm": 4.75,
+    "actual_lexdiv": 0.8151,
+    "actual_catdiv": 0.0306,
+    "local_cv5": null,
+    "pool_hit": null,
+    "pool_k": null,
+    "n_features": null,
+    "n_sources": null,
+    "ranker": "R21+agent_audit_5edits",
+    "notes": "nDCG -0.005 but LLM +0.10 from constraint-violation fixes. Best composite 0.6002. Back to #4."
   }
 ]
