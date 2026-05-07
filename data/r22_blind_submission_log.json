@@ -243,5 +243,22 @@
     "n_sources": null,
     "ranker": "R21+agent_audit_5edits",
     "notes": "nDCG -0.005 but LLM +0.10 from constraint-violation fixes. Best composite 0.6002. Back to #4."
+  },
+  {
+    "id": "r26",
+    "name": "r26_q2q3_v2",
+    "description": "Structured intent retrieval (Q2 artist-boost BM25 + Q3 intent dense) fused with R21 pipeline. NEGATIVE on blind.",
+    "artifact": "exp/inference/blind_a/r26_q2q3_submission_v2.zip",
+    "date": "2026-05-06",
+    "actual_blind_ndcg": 0.4554,
+    "actual_composite": 0.5867,
+    "actual_llm": 4.65,
+    "actual_lexdiv": 0.8233,
+    "dev_pool_hit": 0.6295,
+    "dev_cv5": 0.22327,
+    "dev_last_turn": 0.22994,
+    "n_sources": 9,
+    "ranker": "LambdaRank_Q2Q3",
+    "notes": "Dev pool_hit +0.030 and CV5 +0.009 did not transfer. Blind nDCG -0.018 vs R21. 50% top-1 changes too aggressive. Structured intents useful for cold-start/diagnostics, not safe for global fusion on last-turn blind."
   }
 ]
