@@ -114,6 +114,20 @@ But start with 8 because Blind-A sessions are short and hist_7 is the target.
 
 ## Model V0: SASRec-ID
 
+V0 intentionally uses learned item-ID embeddings, not BGE/Qwen embeddings, as the primary representation. This isolates the core question R31 is meant to answer:
+
+```text
+Is there ordered behavioral signal in the track sequence that current text/content sources miss?
+```
+
+Qwen/BGE embeddings encode metadata/content similarity. R31 V0 should first test sequential collaborative dynamics:
+
+```text
+users who go A -> B -> C often next go D
+```
+
+This transition can be real even when D is not semantically similar to A/B/C in metadata space.
+
 ### Inputs
 
 ```text
@@ -141,6 +155,12 @@ max_len = 8
 
 This is intentionally small. We need a fast, stable fold-0 signal before larger models.
 
+Input token:
+
+```text
+x_t = item_emb(track_id_t) + pos_emb(position_t)
+```
+
 ### Encoder
 
 Use causal self-attention:
@@ -159,6 +179,90 @@ score(track_j) = session_vec @ item_emb[j]
 ```
 
 Use tied input/output item embeddings for V0.
+
+This output head is strongest for seen-track behavioral recommendation. It cannot score tracks that are absent from the learned item vocabulary unless those tracks are explicitly assigned embeddings.
+
+## Qwen Embedding Variants
+
+The provided Qwen metadata embeddings can be useful, but they should be introduced as controlled variants after the pure ID baseline. There are two distinct places to use Qwen.
+
+### Variant V1a: Qwen As Input Features
+
+For each prior track, combine a learned ID embedding with a projected Qwen metadata embedding:
+
+```text
+id_vec_t     = item_emb(track_id_t)                 # learned, d_model
+qwen_vec_t   = qwen_emb(track_id_t)                 # fixed, 1024d
+qwen_proj_t  = Linear(1024 -> d_model)(qwen_vec_t)
+pos_vec_t    = pos_emb(t)
+
+x_t = LayerNorm(id_vec_t + qwen_proj_t + pos_vec_t)
+```
+
+Rationale:
+
+- ID embedding captures behavioral identity and co-listening transitions.
+- Qwen embedding adds content continuity and helps rare tracks share statistical strength.
+- Position embedding preserves order.
+
+Risk:
+
+- Existing sources A/D already use Qwen heavily. Adding Qwen to R31 can make the source redundant unless the sequence encoder contributes genuinely new ordering signal.
+
+### Variant V1b: Qwen As Output Scoring Space
+
+Instead of scoring candidates with learned item embeddings, predict a vector in Qwen space:
+
+```text
+session_vec = Transformer(sequence)
+pred_qwen   = normalize(Linear(d_model -> 1024)(session_vec))
+score_j     = pred_qwen @ qwen_emb(track_j)
+```
+
+Rationale:
+
+- Can score every catalog track with a Qwen embedding, including cold/rare tracks.
+- Better for content-continuity recommendations.
+- Uses the same catalog vector space as existing Qwen sources, but with a sequence-conditioned query vector.
+
+Risk:
+
+- It may collapse back into content similarity and fail to model behavioral transitions.
+- Prior Qwen/content-heavy approaches improved cold-start/CV but often hurt Blind-A last-turn.
+
+### Variant V1c: Two-Head R31
+
+If V0 shows any sequential signal, test two output heads:
+
+```text
+ID head:
+  score_id(track_j) = session_vec @ item_emb[j]
+
+Qwen head:
+  pred_qwen = normalize(Linear(session_vec -> 1024))
+  score_qwen(track_j) = pred_qwen @ qwen_emb[j]
+```
+
+Produce separate candidate lists:
+
+```text
+R31_ID
+R31_QWEN
+R31_ID_UNION_QWEN
+```
+
+Expected behavior:
+
+- `R31_ID` should help seen behavioral hist_7 tracks.
+- `R31_QWEN` may help content-continuity and cold/rare tracks.
+- The union may be useful if the two lists are complementary.
+
+Decision rule:
+
+```text
+Do not add Qwen variants unless V0 has at least weak positive hist_7 signal.
+If V0 fails completely, Qwen is unlikely to rescue R31 because Qwen-heavy retrieval has already been tested in other forms.
+```
 
 ## Model V1: SASRec + Query Adapter
 
@@ -246,6 +350,13 @@ If R31 works, later add content-initialized item embeddings:
 item_emb_init = projection(BGE/R21 track text embedding)
 ```
 
+or Qwen-initialized / Qwen-augmented embeddings:
+
+```text
+item_emb_init = projection(qwen_track_embedding)
+x_t = learned_id_emb + projected_qwen_emb + pos_emb
+```
+
 But V0 should use learned ID embeddings to test pure sequential signal.
 
 ## Evaluation Protocol
@@ -276,6 +387,9 @@ unique GTs vs current full pool
 lost GTs vs R21
 seen vs unseen split
 top1_repeat_rate
+overlap with R21
+overlap with ALS/CF-BPR if available
+for Qwen variants: overlap with A/D Qwen sources
 ```
 
 Primary gate:
@@ -313,6 +427,17 @@ rank_R31
 r31_presence
 r31_score_norm
 r31_agreement_count with R21/ALS/CF
+```
+
+For two-head variants, keep features separate:
+
+```text
+rank_R31_ID
+r31_id_presence
+r31_id_score_norm
+rank_R31_QWEN
+r31_qwen_presence
+r31_qwen_score_norm
 ```
 
 Gate:
@@ -424,4 +549,3 @@ Next radical directions would be:
 ```
 
 But R31 should be tested before those because it is the cleanest untried inductive bias for hist_7.
-
