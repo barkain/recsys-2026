@@ -59,15 +59,17 @@ def load_track_albums():
     track_album = {}
     for item in ds:
         tid = str(item["track_id"])
-        alb = item.get("album_name", [])
-        if isinstance(alb, list) and alb:
-            track_album[tid] = str(alb[0])
-        elif isinstance(alb, str):
-            track_album[tid] = alb
+        alb_id = item.get("album_id", [])
+        if isinstance(alb_id, list) and alb_id:
+            track_album[tid] = str(alb_id[0])
         else:
-            track_album[tid] = ""
+            alb_name = item.get("album_name", [])
+            if isinstance(alb_name, list) and alb_name:
+                track_album[tid] = str(alb_name[0])
+            else:
+                track_album[tid] = ""
     non_empty = sum(1 for v in track_album.values() if v)
-    print(f"  Album mapping: {len(track_album)} tracks, {non_empty} with album")
+    print(f"  Album mapping: {len(track_album)} tracks, {non_empty} with album_id")
     return track_album
 
 
