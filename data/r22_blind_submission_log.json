@@ -277,5 +277,22 @@
     "n_sources": 7,
     "ranker": "LambdaRank_album",
     "notes": "New best nDCG (0.4798) and composite (0.6024). First nDCG improvement since R21. Album features transfer cleanly to blind. Forensic approach validated."
+  },
+  {
+    "id": "r41a",
+    "name": "r41a_raretag",
+    "description": "R39 album baseline + 7 rare-tag IDF features (41 total). R40 forensic-driven: rare_tag_overlap covers 30% of miss cases.",
+    "artifact": "exp/inference/blind_a/r41a_raretag_submission.zip",
+    "date": "2026-05-09",
+    "actual_blind_ndcg": 0.4569,
+    "actual_composite": 0.5908,
+    "actual_llm": 4.7,
+    "actual_lexdiv": 0.819,
+    "dev_pool_hit": 0.6,
+    "dev_cv5": 0.21937,
+    "dev_last_turn": 0.24845,
+    "n_sources": 7,
+    "ranker": "LambdaRank_album_raretag",
+    "notes": "NEGATIVE. Dev h7 +0.005 did NOT transfer. Blind nDCG -0.023 vs R39. 163K/164K tags are 'rare' (df<500) — threshold too loose, features are essentially full-tag overlap, overfit to dev. 18/80 top-1 changes. Lesson: tag-based features do not transfer like structural (album) features."
   }
 ]
