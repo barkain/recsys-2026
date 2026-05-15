@@ -65,6 +65,36 @@ FORBIDDEN_OPENERS = [
 ]
 
 
+TAG_PREFIX_RX = re.compile(r"^([^\n]{1,49})\n\n+(.+)$", re.DOTALL)
+
+
+def strip_tag_prefix(resp: str) -> str:
+    """Strip a short non-sentence prefix line followed by blank line.
+
+    Targets metadata leaks like 'metal\\n\\nReal response...' or
+    '2010s country, fip\\n\\n"Track"...'. Keep if head looks like a real
+    sentence (quoted title, sentence-ending punctuation, or many tokens).
+    """
+    s = resp.strip()
+    m = TAG_PREFIX_RX.match(s)
+    if not m:
+        return s
+    head = m.group(1).strip().lstrip("-").strip()
+    rest = m.group(2).strip()
+    if not head:
+        return rest
+    if '"' in head or "'" in head:
+        return s
+    if head[-1] in ".!?":
+        return s
+    tokens = re.findall(r"\w+", head)
+    if not tokens:
+        return rest
+    if len(tokens) <= 6 and all(len(t) <= 20 for t in tokens):
+        return rest
+    return s
+
+
 BOILERPLATE_PATTERNS = [
     "great choice", "wonderful choice", "perfect choice", "excellent choice",
     "hope you enjoy", "i hope you", "enjoy listening",
@@ -363,9 +393,11 @@ def phase_polish(mode="hybrid"):
     sys_prompt += (
         "\n\nR54c polish — strict guidelines:\n"
         "- Mention the recommended track or artist explicitly. Name it.\n"
-        "- Mention one concrete attribute: genre, mood, era, or notable feature.\n"
         "- Reference the user's expressed preference directly.\n"
         "- Length: 60-100 words. 2-3 complete sentences.\n"
+        "- Start with a complete sentence. Do NOT prefix your response with "
+        "genre tags, year labels, comma-separated descriptors, or any line "
+        "that is not a complete sentence.\n"
         "- NO trailing questions. Do not end the response with '?'.\n"
         "- NO boilerplate: 'great choice', 'hope you enjoy', 'let me know if', "
         "'would you like', 'is there anything', 'I'm sorry', 'as an AI'.\n"
@@ -398,6 +430,7 @@ def phase_polish(mode="hybrid"):
         for attempt in range(3):
             resp = haiku.response_generation(sys_prompt, session_memory, top_item)
             resp = (resp or "").lstrip(",").lstrip()
+            resp = strip_tag_prefix(resp)
             if not resp:
                 continue
             # Check forbidden opener
@@ -421,6 +454,34 @@ def phase_polish(mode="hybrid"):
         if (ai + 1) % 5 == 0:
             print(f"    {ai+1}/{len(flagged)} processed ({n_retry} retries)", flush=True)
 
+    # Universal artifact cleanup: strip metadata-prefix leaks from ALL 80 rows
+    # (including kept R54b rows). Track IDs unchanged. No semantic rewrites.
+    n_cleanup = 0
+    cleanup_samples = []
+    for r in results:
+        before = r["predicted_response"]
+        after = strip_tag_prefix(before)
+        if after != before.strip():
+            n_cleanup += 1
+            if len(cleanup_samples) < 8:
+                cleanup_samples.append((r["session_id"][:8], before, after))
+            r["predicted_response"] = after
+    print(f"\n  Universal prefix cleanup: {n_cleanup}/80 rows had a prefix leak stripped")
+    if cleanup_samples:
+        print(f"\n  === BEFORE / AFTER samples (first {len(cleanup_samples)}) ===")
+        for sid, before, after in cleanup_samples:
+            b_head = before[:80].replace("\n", "\\n")
+            a_head = after[:80].replace("\n", "\\n")
+            print(f"    sid={sid}")
+            print(f"      BEFORE: {b_head!r}")
+            print(f"      AFTER : {a_head!r}")
+
+    # Debug dump BEFORE validation so we can inspect even if validation fails
+    debug_path = REPO / "exp" / "eval" / "expR54c_polish_debug.json"
+    with open(debug_path, "w") as f:
+        json.dump(results, f, indent=2)
+    print(f"\n  Debug dump (pre-validation): {debug_path}")
+
     # Verify bitwise track IDs
     print(f"\n  Verifying bitwise-identical track IDs vs R54b ...")
     for r in results:
@@ -436,6 +497,7 @@ def phase_polish(mode="hybrid"):
     sids = set()
     n_trailing_q = 0
     n_boilerplate = 0
+    n_prefix_leak = 0
     for r in results:
         sid = r["session_id"]
         resp = r["predicted_response"]
@@ -453,10 +515,13 @@ def phase_polish(mode="hybrid"):
         low = normalize(resp)
         if any(p in low for p in BOILERPLATE_PATTERNS):
             n_boilerplate += 1
+        if strip_tag_prefix(resp) != resp.strip():
+            n_prefix_leak += 1
         sids.add(sid)
-    print(f"  rows=80 unique={len(sids)}  trailing_q={n_trailing_q}  boilerplate={n_boilerplate}")
-    if n_trailing_q + n_boilerplate > 5:
-        print(f"  FAIL: {n_trailing_q + n_boilerplate} responses still have issues")
+    print(f"  rows=80 unique={len(sids)}  trailing_q={n_trailing_q}  "
+          f"boilerplate={n_boilerplate}  prefix_leak={n_prefix_leak}")
+    if n_trailing_q + n_boilerplate + n_prefix_leak > 0:
+        print(f"  FAIL: {n_trailing_q + n_boilerplate + n_prefix_leak} responses still have issues")
         sys.exit(1)
 
     # LexDiv
