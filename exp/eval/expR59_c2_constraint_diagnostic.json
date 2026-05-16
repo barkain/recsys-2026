@@ -1,0 +1,70 @@
+{
+  "n_cases": 8000,
+  "buckets": {
+    "IN_POOL": 4976,
+    "POOL_MISS": 1163,
+    "UNREACHABLE": 1861
+  },
+  "pool_hit_at_300": 0.622,
+  "src_union_hit": 0.767375,
+  "extraction": {
+    "any_constraint": 6446,
+    "high_confidence": 4904,
+    "per_category_counts": {
+      "decade": 1719,
+      "tag": 5576,
+      "modern": 136,
+      "artist_exclusion": 450,
+      "classic": 884,
+      "duration_short_qualitative": 12,
+      "duration_long_qualitative": 398,
+      "recent": 278,
+      "specific_year": 39
+    }
+  },
+  "compliance_by_bucket": {
+    "IN_POOL": {
+      "total_with_constraint": 2881,
+      "gt_complies": 1447
+    },
+    "POOL_MISS": {
+      "total_with_constraint": 812,
+      "gt_complies": 412
+    },
+    "UNREACHABLE": {
+      "total_with_constraint": 1211,
+      "gt_complies": 494
+    }
+  },
+  "overall_compliance_rate": 0.4798123980424144,
+  "admission": {
+    "pool_miss_constrained_w_compliance": 412,
+    "pool_miss_admittable": 93,
+    "unreachable_constrained_w_compliance": 494,
+    "unreachable_admittable": 18,
+    "total_admittable": 111
+  },
+  "false_positive_rates": {
+    "IN_POOL": {
+      "total": 2881,
+      "fp": 1434
+    },
+    "POOL_MISS": {
+      "total": 812,
+      "fp": 400
+    },
+    "UNREACHABLE": {
+      "total": 1211,
+      "fp": 717
+    }
+  },
+  "gates": {
+    "proceed_threshold": 150,
+    "archive_threshold": 100,
+    "tune_compliance_threshold": 0.4,
+    "verdict": "BORDERLINE"
+  },
+  "elapsed_s": 52.864880084991455,
+  "created_at": "2026-05-16T18:36:06.052908",
+  "notes": "Heuristic regex extractor only. No LLM, no training, no API. Bucket IN_POOL = HIT + DEMOTED (LR not run). POOL_MISS and UNREACHABLE are exact. Admission proxies: POOL_MISS uses best-source-rank < 100; UNREACHABLE uses constrained_pool_size < 1000 (much weaker)."
+}
