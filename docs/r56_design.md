@@ -49,7 +49,7 @@ Pipeline change (final ranking stage only):
 2. LR predicts scores per candidate — **unchanged**
 3. Sort by LR score — **unchanged** (this is the baseline ordering)
 4. **NEW: apply protection rule** — promote candidates that hit the source
-   criterion, subject to per-variant scope
+   criterion, subject to per-variant scope and a per-session cap
 5. Final top-20 = first 20 items after protection re-order
 
 Why a post-LR layer and not new LR features:
@@ -59,6 +59,48 @@ Why a post-LR layer and not new LR features:
 - **Falsifiable**: ablation is trivial (turn protection off, re-run).
 - **Safer for blind**: if protection regresses on dev, we never run it
   on blind. We don't risk modifying LR weights that already work.
+
+### Exact protection mechanics
+
+Define `qualifies(c)` per variant (see §4) and `K` = per-session protection
+cap (swept; see §5).
+
+```
+baseline_order = candidates sorted by LR score descending
+protected_set  = { c in baseline_order : qualifies(c) and baseline_rank(c) > 20 }
+
+# Cap: take at most K protected candidates per session, ordered by LR score
+protected_insert = first K of protected_set sorted by LR score descending
+
+unprotected_top20 = first 20 of baseline_order that are NOT in protected_insert
+unprotected_tail  = baseline_order minus (unprotected_top20 ∪ protected_insert)
+                    preserving baseline order
+
+# Final order: protected candidates go into the top band; displacement comes
+# from the lowest-LR-score members of unprotected_top20.
+new_top20 = (unprotected_top20 minus the K lowest-LR-score members)
+            ∪ protected_insert
+new_top20 = stable-sorted by LR score descending  # preserves LR's
+                                                  # relative preference
+
+final_order = new_top20 + unprotected_top20_lowest_K_displaced
+              + unprotected_tail
+```
+
+Properties:
+
+- Unprotected candidates keep their LR-induced relative order.
+- Protected candidates are *inserted* into the top-20 band at the cost of
+  the K lowest-LR-score unprotected candidates that were in the top-20.
+- Within the new top-20, ordering is still by LR score, so protection
+  doesn't artificially elevate a protected candidate above a higher-LR
+  unprotected one — it only ensures the protected candidate is *in* the
+  top-20.
+- The cap K bounds blast radius. One noisy session can't insert 5 wrong
+  candidates and erase a correct LR top-5.
+
+Sweep K = {1, 2, 3}. Default K = 1. Higher K only considered if K=1 shows
+clean signal.
 
 ## 4. Variants
 
@@ -71,13 +113,14 @@ is > 20, we promote it to the lowest unfilled rank in the protected band
 (20 by default). Ties among multiple protected candidates are broken by
 LR score (preserving LR's relative preference among them).
 
-| Variant | Criterion (what qualifies a candidate) | Scope |
+| Variant | Criterion (what qualifies a candidate) | Scope (session-level routing) |
 |---|---|---|
 | **A** | top-20 in any of {R54, R21, src_b, src_c} | all 8000 cases |
 | **B** | top-10 in any of {R54, R21, src_b, src_c} | all 8000 cases |
 | **C** | top-20 in R54 OR R21 (dense only) | all 8000 cases |
 | **D** | top-20 in src_b OR src_c (lexical only) | all 8000 cases |
-| **E** | top-20 in any of {R54, R21, src_b, src_c} | gated: diff_artist OR n_prior_music < 3 |
+| **E** | top-20 in any of {R54, R21, src_b, src_c} | **observable-only gated** (see below) |
+| **O (ORACLE, diagnostic only)** | top-20 in any of {R54, R21, src_b, src_c} | gated by true `diff_artist` (GT-side label) |
 
 Rationale per variant:
 
@@ -86,9 +129,31 @@ Rationale per variant:
 - **C** — tests whether the dense retrievers (R54/R21) are specifically
   the ones being over-demoted by LR.
 - **D** — symmetric test for lexical (BM25) retrievers.
-- **E** — applies protection only where LR struggles most (diff_artist
-  cases have dev nDCG 0.10; same_artist 0.45). Limits collateral damage to
-  the cases where LR is already correct.
+- **E** — applies protection only on **observable** session features that
+  *correlate with* the "diff_artist / hard case" regime, since the true
+  diff_artist label is GT-side and not available at inference. Deployable.
+- **O (ORACLE)** — tells us the *ceiling* of perfect gating. Uses true
+  diff_artist (artist of GT ∉ played artists). **Diagnostic only. Never
+  a blind candidate.** If O materially beats E, we know the gating signal
+  is weaker than the ideal and observable proxies could be improved.
+
+### Variant E observable gates
+
+Variant E applies protection on a session iff at least one of the following
+holds (all computable at inference time without GT):
+
+| Gate | Definition | Why |
+|---|---|---|
+| `n_prior_music < 3` | played history is short | LR has little signal to work with; protection lifts safe high-source candidates |
+| `n_unique_artists >= 5` | played history spans 5+ distinct artists | Session is exploration-mode, not artist-deep-dive; LR's same-artist bias is less reliable |
+| `pool_top20_same_artist_share <= 0.30` | of the LR top-20, ≤30% share the played-artist set | If LR's top-20 is already dominated by same-artist tracks, protection adds little; if it's NOT, the case is structurally diff-artist and protection has more lift potential |
+
+We OR the three gates. E qualifies a session if ANY observable gate fires.
+
+True same/diff artist is **reported, not routed** — used in metric splits
+only to detect regressions and characterise the lift. The ORACLE variant
+(O) is the only place GT-side gating is permitted, and it stays in the
+diagnostic table.
 
 We DO NOT include a "top-50 in any source" variant: at that depth the
 signal-to-noise ratio is too low, and we'd be lifting tracks the LR
@@ -106,32 +171,39 @@ correctly demoted.
 
 ### Per-variant report
 
-For each variant we report:
+For each variant (and each K ∈ {1, 2, 3}) we report:
 
 | Metric | Reason |
 |---|---|
 | h7 nDCG@20 | Primary production target |
 | all-dev nDCG@20 | Aggregate consistency check |
-| Same-artist nDCG@20 | Regression detector |
+| Same-artist nDCG@20 | Regression detector (split is for reporting only, not routing) |
 | Diff-artist nDCG@20 | Where the lift should appear |
 | Hist-depth breakdown (h0..h7+) | Spot if protection helps short or long history more |
-| Top-1 churn vs baseline (count of cases where top-1 changed) | Stability |
+| Top-1 churn (all-dev) | Stability — count of all-8000 sessions where top-1 changed |
+| Top-1 churn (h7-only) | Stability on the production-target slice |
 | Top-20 overlap median vs baseline | Stability |
+| Sessions affected (≥1 candidate inserted) | How wide the intervention reaches |
 | Recovered (DEMOTED → HIT) | Direct benefit count |
 | Lost (HIT → DEMOTED) | Direct cost count |
 | Net recovery = recovered − lost | Headline number |
 
 ### Gates
 
+The earlier draft used dev top-1 churn thresholds of <25/8000 and <10/8000
+— those are ≤0.3% and ≤0.125% of cases, which is effectively zero and
+would reject any method that does anything. Re-scaled below.
+
 - **Production candidate** (eligible for direct blind submission):
   - h7 nDCG **+0.010** or better vs baseline (per `[[blind-gate]]` memory)
   - Same-artist nDCG **does not regress** (Δ ≥ 0)
-  - Top-1 churn vs baseline acceptable (<~25/8000 sessions on dev is
-    indicative of a stable fix)
+  - **Top-1 churn (all-dev) ≤ 240/8000 (3.0%)**
+  - **Top-1 churn (h7-only) ≤ 30/1000 (3.0%)** reported separately
 - **Exploratory blind candidate** (slot for measurement only):
   - h7 nDCG **+0.005** or better
   - Same-artist nDCG does not regress
-  - Top-1 churn very low (< ~10/8000 on dev)
+  - **Top-1 churn (all-dev) ≤ 120/8000 (1.5%)**
+  - **Top-1 churn (h7-only) ≤ 15/1000 (1.5%)** reported separately
 - **Stop** any variant where:
   - Net recovery (recovered − lost) ≤ 0 on dev
   - Same-artist nDCG regresses by more than 0.002
@@ -203,19 +275,41 @@ focus shifts to:
 | Multiple protected candidates per case → which gets the rank-20 slot | Deterministic tiebreak by LR score (preserves LR's preference among protected candidates). |
 | Source-rank "top-20" threshold is arbitrary | Variants A and B span two values (20 and 10). Treat as a small sweep. No more thresholds without first evidence one works. |
 
-## 11. Open questions for review
+## 11. Open questions — resolved
 
-1. Should we evaluate **stacking** (e.g. A + D combined: top-20 in any
-   source AND top-20 in BM25 = extra protection)? My answer: not in this
-   round. Test single-variant signal first.
-2. Should we apply protection to LR top-50 only (cheap), or scan the full
-   pool@300? My answer: scan the full pool@300 — pool of 300 is small, the
-   compute is negligible, and a few of the DEMOTED cases have GT at rank
-   50-300.
-3. Should we honor the existing LR's top-1? Or is top-1 also a candidate
-   for protection-driven swaps? My answer: top-1 is also a candidate.
-   Protection-driven top-1 changes are part of the test.
+1. **No stacking in first pass.** Test single-variant signal first
+   (A, B, C, D, E, O). Stacking experiments (e.g. A ∩ D) only after a
+   single-variant winner is established.
+2. **Scan full pool@300.** Pool of 300 is small, the compute is
+   negligible, and a few DEMOTED cases have GT at rank 50-300.
+3. **Top-1 eligible for protection swap.** Not pinned to LR's top-1.
+   Protection-driven top-1 changes are part of the test — and are
+   bounded by the per-session K cap and the churn gate.
 
 ---
 
-**Awaiting design review.** No code, no blind submission until approved.
+**Awaiting design review v2.** No code, no blind submission until approved.
+
+## 12. Patch history
+
+**v2 (post-review):**
+
+- §3 Approach — added "Exact protection mechanics" subsection with
+  precise insertion algorithm, displacement rule, and per-session cap K
+  swept over {1, 2, 3} (default 1). Prevents one noisy session from
+  flooding the top-20.
+- §4 Variants — Variant E is now **observable-only**: gated by
+  `n_prior_music<3` OR `n_unique_artists>=5` OR
+  `pool_top20_same_artist_share<=0.30`, none of which use GT. True
+  `diff_artist` is reporting-only.
+- §4 Variants — Added Variant O (ORACLE), gated by true `diff_artist`.
+  Diagnostic only, never a blind candidate. Quantifies the ceiling of
+  perfect gating so we know whether observable E is leaving signal on
+  the table.
+- §5 Gates — Top-1 churn thresholds rescaled from <25/<10 per 8000
+  (impossible) to **≤240/8000 (3%)** for production and **≤120/8000
+  (1.5%)** for exploratory. Now also report h7-only top-1 churn at
+  ≤30/1000 (3%) and ≤15/1000 (1.5%) separately.
+- §11 Open questions — collapsed into "resolved" answers since the
+  three calls didn't change in review.
+
