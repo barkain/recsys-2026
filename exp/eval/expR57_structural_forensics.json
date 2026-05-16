@@ -1,0 +1,167 @@
+{
+  "baseline": {
+    "n_cases": 8000,
+    "bucket_counts": {
+      "HIT": 3348,
+      "POOL_MISS": 1163,
+      "UNREACHABLE": 1861,
+      "DEMOTED": 1628
+    },
+    "demoted_cases": 1628
+  },
+  "metadata_coverage": {
+    "catalog_level": {
+      "artist_id": 1.0,
+      "album_id": 1.0,
+      "release_year": 0.9863185400777549,
+      "duration_ms": 1.0,
+      "isrc": 0.9716598330182066,
+      "isrc_country": 0.9716598330182066,
+      "isrc_registrant": 0.9716598330182066
+    },
+    "demoted_gt_level": {
+      "release_year": 1.0,
+      "release_decade": 1.0,
+      "duration_ms": 1.0,
+      "isrc_country": 0.9582309582309583,
+      "isrc_registrant": 0.9582309582309583,
+      "artist_id": 1.0
+    }
+  },
+  "patterns": {
+    "release_year_proximity_last1": {
+      "field": "release_year",
+      "scope": "ranking_only",
+      "note": null,
+      "coverage_catalog": 0.9863185400777549,
+      "gt_has_pattern": 756,
+      "gt_has_pattern_not_top1": 204,
+      "gt_has_pattern_not_any_top5": 41,
+      "same_artist_has_pattern": 281,
+      "diff_artist_has_pattern": 475,
+      "adds_beyond_artist_name": null
+    },
+    "release_year_proximity_last3": {
+      "field": "release_year",
+      "scope": "ranking_only",
+      "note": null,
+      "coverage_catalog": 0.9863185400777549,
+      "gt_has_pattern": 1024,
+      "gt_has_pattern_not_top1": 137,
+      "gt_has_pattern_not_any_top5": 12,
+      "same_artist_has_pattern": 402,
+      "diff_artist_has_pattern": 622,
+      "adds_beyond_artist_name": null
+    },
+    "release_decade_match_last1": {
+      "field": "release_decade",
+      "scope": "ranking_only",
+      "note": null,
+      "coverage_catalog": 0.9863185400777549,
+      "gt_has_pattern": 897,
+      "gt_has_pattern_not_top1": 171,
+      "gt_has_pattern_not_any_top5": 31,
+      "same_artist_has_pattern": 338,
+      "diff_artist_has_pattern": 559,
+      "adds_beyond_artist_name": null
+    },
+    "release_decade_match_history": {
+      "field": "release_decade",
+      "scope": "ranking_only",
+      "note": null,
+      "coverage_catalog": 0.9863185400777549,
+      "gt_has_pattern": 1179,
+      "gt_has_pattern_not_top1": 96,
+      "gt_has_pattern_not_any_top5": 7,
+      "same_artist_has_pattern": 460,
+      "diff_artist_has_pattern": 719,
+      "adds_beyond_artist_name": null
+    },
+    "duration_close_last1": {
+      "field": "duration_ms",
+      "scope": "ranking_only",
+      "note": null,
+      "coverage_catalog": 1.0,
+      "gt_has_pattern": 469,
+      "gt_has_pattern_not_top1": 281,
+      "gt_has_pattern_not_any_top5": 69,
+      "same_artist_has_pattern": 153,
+      "diff_artist_has_pattern": 316,
+      "adds_beyond_artist_name": null
+    },
+    "duration_close_last3": {
+      "field": "duration_ms",
+      "scope": "ranking_only",
+      "note": null,
+      "coverage_catalog": 1.0,
+      "gt_has_pattern": 794,
+      "gt_has_pattern_not_top1": 291,
+      "gt_has_pattern_not_any_top5": 29,
+      "same_artist_has_pattern": 271,
+      "diff_artist_has_pattern": 523,
+      "adds_beyond_artist_name": null
+    },
+    "isrc_country_match": {
+      "field": "isrc_country",
+      "scope": "ranking_only",
+      "note": null,
+      "coverage_catalog": 0.9716598330182066,
+      "gt_has_pattern": 1167,
+      "gt_has_pattern_not_top1": 86,
+      "gt_has_pattern_not_any_top5": 8,
+      "same_artist_has_pattern": 474,
+      "diff_artist_has_pattern": 693,
+      "adds_beyond_artist_name": null
+    },
+    "isrc_registrant_match": {
+      "field": "isrc_registrant",
+      "scope": "ranking_only",
+      "note": null,
+      "coverage_catalog": 0.9716598330182066,
+      "gt_has_pattern": 663,
+      "gt_has_pattern_not_top1": 92,
+      "gt_has_pattern_not_any_top5": 10,
+      "same_artist_has_pattern": 422,
+      "diff_artist_has_pattern": 241,
+      "adds_beyond_artist_name": null
+    },
+    "artist_id_match_history": {
+      "field": "artist_id",
+      "scope": "ranking_only",
+      "note": "Largely overlaps with track_artist_name match (already a feature). Adds-beyond reported separately.",
+      "coverage_catalog": 1.0,
+      "gt_has_pattern": 565,
+      "gt_has_pattern_not_top1": 55,
+      "gt_has_pattern_not_any_top5": 10,
+      "same_artist_has_pattern": 514,
+      "diff_artist_has_pattern": 51,
+      "adds_beyond_artist_name": 51
+    }
+  },
+  "filters": {
+    "min_cases": 30,
+    "min_coverage": 0.9
+  },
+  "passing_patterns": [
+    "release_year_proximity_last1",
+    "release_year_proximity_last3",
+    "release_decade_match_last1",
+    "release_decade_match_history",
+    "duration_close_last1",
+    "duration_close_last3",
+    "isrc_country_match",
+    "isrc_registrant_match",
+    "artist_id_match_history"
+  ],
+  "historical_r49c_h7": {
+    "release_decade_match": 45,
+    "release_year_proximity": 66,
+    "artist_id_match": 17,
+    "artist_id_adds_beyond_name": 5,
+    "duration_bucket_match": 97,
+    "isrc_prefix_match": 35,
+    "scope_note": "R49C used hist_7 only (n=578 misses); this refresh uses all DEMOTED."
+  },
+  "elapsed_s": 347.49306297302246,
+  "created_at": "2026-05-16T16:46:48.910771"
+}
