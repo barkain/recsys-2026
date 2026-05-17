@@ -1,0 +1,2299 @@
+{
+  "submission_label": "R63c-repair targeted response polish | base=R63b | tracks=R54c | 15 rows regenerated with diversified sentence architecture | LexDiv=0.8288 | purpose=push LLM judge 4.85 → 4.90+ with preserved LexDiv",
+  "created_at": "2026-05-17T22:53:08.964876",
+  "generation_timestamp": "2026-05-17T22:53:08.964876",
+  "model": "claude-opus-4-7",
+  "prompt_version": "R63c repair v1; one attempt over same 15 R63c rows; diversified sentence architecture for LexDiv recovery",
+  "base": {
+    "rows_file": "exp/inference/blind_a/r63c_rows_final.jsonl",
+    "metadata_file": "exp/inference/blind_a/r63c_targeted_polish_submission.metadata.json",
+    "r63b_rows_file": "exp/inference/blind_a/r63b_rows_final.jsonl",
+    "r63b_metadata_file": "exp/inference/blind_a/r63b_targeted_polish_submission.metadata.json",
+    "note": "R63b remains production unless this repair clears the LexDiv gate."
+  },
+  "source_tracks": {
+    "artifact": "exp/inference/blind_a/r54c_polish_submission.zip",
+    "constraint": "R63c-repair predicted_track_ids copied from R63c/R54c, unchanged."
+  },
+  "persisted_rows_file": "exp/inference/blind_a/r63c_repair_rows_persisted.jsonl",
+  "final_rows_file": "exp/inference/blind_a/r63c_repair_rows_final.jsonl",
+  "submission_zip": "exp/inference/blind_a/r63c_repair_polish_submission.zip",
+  "lexdiv_distinct2": 0.8287693830419004,
+  "repair_gate": "PASS",
+  "ready_to_submit": "YES",
+  "lexdiv_policy": {
+    "pass_floor": 0.8255,
+    "borderline_floor": 0.824,
+    "hard_stop_below": 0.824,
+    "r63b_local_reference": 0.826,
+    "r63c_local_before_repair": 0.8191210232863234
+  },
+  "selection": {
+    "policy": "Same 15 rows regenerated in R63c; other 65 rows kept bitwise at row-response level.",
+    "selected_row_indices": [
+      39,
+      36,
+      7,
+      10,
+      8,
+      21,
+      25,
+      31,
+      62,
+      26,
+      70,
+      0,
+      11,
+      27,
+      32
+    ],
+    "selected_rows": [
+      {
+        "row_index": 39,
+        "session_id": "d5c80ee5-97c2-4de1-af2e-2295e3ae34a3",
+        "top1_track_id": "983dbea0-db39-423f-b734-c9a18f384620",
+        "top1_track": "Bits With Byte",
+        "top1_artist": "8 Bit Weapon",
+        "word_count": 78,
+        "weakness_score": 3,
+        "components": {
+          "generic_reasoning": 2,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 1
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "electro",
+            "melody"
+          ],
+          "metadata_hits": [
+            "bits",
+            "byte",
+            "electro",
+            "with"
+          ],
+          "session_token_overlap": [
+            "catchy",
+            "escape",
+            "fighter",
+            "frenetic",
+            "level",
+            "melody",
+            "racer",
+            "retro",
+            "triumphant",
+            "xenon"
+          ]
+        },
+        "before_response": "Bits With Byte by 8 Bit Weapon keeps you in the same retro space-arcade territory as Escape From Xenon, since you wanted more galaxy-exploring, alien-boss energy from that same artist. This one leans on crunchy square-wave leads and a steady electro pulse, like drifting between star systems before a pixelated showdown. The melody stays catchy and triumphant rather than frenetic, matching the calmer-but-memorable classic-gameplay feel that finally clicked for you with 2D Racer Level 1 and Lil' Fighter.",
+        "before_snapshot": "Bits With Byte by 8 Bit Weapon keeps you in the same retro space-arcade territory as Escape From Xenon, since you wanted more galaxy-exploring, alien-boss energy from that same artist. This one leans on crunchy square-wave leads and a steady electro pulse, li…",
+        "repair_order": 0,
+        "repair_architecture": "contrast sentence"
+      },
+      {
+        "row_index": 36,
+        "session_id": "d851eac7-27a7-4363-b2a4-6cb365c79d22",
+        "top1_track_id": "425c0307-9479-41c8-9910-0006480c156a",
+        "top1_track": "White Ferrari",
+        "top1_artist": "Frank Ocean",
+        "word_count": 91,
+        "weakness_score": 1,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 1,
+          "no_top1_justification": 0,
+          "overly_short_flat": 0
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "alternative",
+            "ambient",
+            "beatles",
+            "frank",
+            "guitar",
+            "indie",
+            "ocean",
+            "the"
+          ],
+          "metadata_hits": [
+            "beatles",
+            "frank",
+            "ocean",
+            "the"
+          ],
+          "session_token_overlap": [
+            "stands"
+          ]
+        },
+        "before_response": "White Ferrari by Frank Ocean is the strongest match because Blonde's cover—that flushed green-lit portrait of Frank with his hand obscuring his face—stands among the most striking sleeves in modern alternative R&B. This specifically because you asked for bold palettes, and as a UK listener leaning indie/alternative, the track itself pairs that sleeve with hushed falsetto, drifting ambient guitar, and a quiet Beatles interpolation borrowed from \"Here, There and Everywhere.\" Released in 2016, it remains spacious and weightless, a striking visual paired with equally considered sonic detail.",
+        "before_snapshot": "White Ferrari by Frank Ocean is the strongest match because Blonde's cover—that flushed green-lit portrait of Frank with his hand obscuring his face—stands among the most striking sleeves in modern alternative R&B. This specifically because you asked for bold…",
+        "repair_order": 1,
+        "repair_architecture": "genre-first sentence"
+      },
+      {
+        "row_index": 7,
+        "session_id": "4b8ed42b-39ec-4d17-9bea-507828687a0c",
+        "top1_track_id": "621c763c-4a32-4696-82e6-866b36eb2ac8",
+        "top1_track": "Fight To Live",
+        "top1_artist": "The Bouncing Souls",
+        "word_count": 84,
+        "weakness_score": 0,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 0
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "a",
+            "and",
+            "bouncing",
+            "chorus",
+            "fight",
+            "hopeless",
+            "live",
+            "melodic",
+            "punk",
+            "romantic",
+            "souls",
+            "the"
+          ],
+          "metadata_hits": [
+            "a",
+            "and",
+            "bouncing",
+            "fight",
+            "hopeless",
+            "live",
+            "punk",
+            "romantic",
+            "souls",
+            "the",
+            "to"
+          ],
+          "session_token_overlap": [
+            "chorus",
+            "defiance",
+            "gang",
+            "it's",
+            "melodic",
+            "missing",
+            "nostalgic",
+            "ohio",
+            "punk",
+            "road",
+            "singalong",
+            "trip"
+          ]
+        },
+        "before_response": "Fight To Live by The Bouncing Souls pulls from the same Hopeless Romantic album you just connected with, keeping that thread going. It's 90s melodic punk with a galloping drumbeat and a shout-along chorus built for gang vocals, answering the singalong punch you said was missing from the earlier Defiance, Ohio picks. Lyrically it leans into scrappy, hold-onto-the-good-times defiance, which fits the nostalgic road trip mood you locked in, and the album-mate continuity means it sits cleanly next to Hopeless Romantic on your playlist.",
+        "before_snapshot": "Fight To Live by The Bouncing Souls pulls from the same Hopeless Romantic album you just connected with, keeping that thread going. It's 90s melodic punk with a galloping drumbeat and a shout-along chorus built for gang vocals, answering the singalong punch y…",
+        "repair_order": 2,
+        "repair_architecture": "memory-reference sentence"
+      },
+      {
+        "row_index": 10,
+        "session_id": "d53d9457-12f1-4286-b195-aa42c23d3bce",
+        "top1_track_id": "dbc800fa-1a95-4300-861e-907b30dda303",
+        "top1_track": "Whispers from the Ether",
+        "top1_artist": "Kognitif",
+        "word_count": 81,
+        "weakness_score": 1,
+        "components": {
+          "generic_reasoning": 1,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 0
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "electronic",
+            "instrumental",
+            "textures"
+          ],
+          "metadata_hits": [
+            "electronic",
+            "instrumental",
+            "monometric"
+          ],
+          "session_token_overlap": [
+            "common",
+            "electronic",
+            "ground",
+            "it's",
+            "keeping",
+            "melancholic",
+            "resilient",
+            "started",
+            "that's",
+            "tone",
+            "uplifting"
+          ]
+        },
+        "before_response": "Whispers from the Ether by Kognitif moves you into the Electronic territory you just asked about while keeping the Kognitif thread you've leaned on since \"That's Where It All Started.\" It's an instrumental cut from the Monometric album, built on atmospheric electronic textures and a steady pulse that leaves room for the kind of reflection his verses on \"Common Ground\" sparked lyrically. The forward-leaning tone keeps things resilient rather than melancholic, matching the uplifting reflection you flagged earlier as a priority.",
+        "before_snapshot": "Whispers from the Ether by Kognitif moves you into the Electronic territory you just asked about while keeping the Kognitif thread you've leaned on since \"That's Where It All Started.\" It's an instrumental cut from the Monometric album, built on atmospheric e…",
+        "repair_order": 3,
+        "repair_architecture": "artist-context sentence"
+      },
+      {
+        "row_index": 8,
+        "session_id": "ca9c5de4-c2b7-4972-a524-615a400d0105",
+        "top1_track_id": "19d984a3-530a-4b83-82e4-4f7bb72931c7",
+        "top1_track": "Still Pretty",
+        "top1_artist": "Kyle Dixon, Kyle Dixon & Michael Stein",
+        "word_count": 85,
+        "weakness_score": 0,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 0
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "pads",
+            "score",
+            "synth"
+          ],
+          "metadata_hits": [
+            "a",
+            "stranger",
+            "things",
+            "vol"
+          ],
+          "session_token_overlap": [
+            "abilities",
+            "arpeggiated",
+            "danger",
+            "pads",
+            "sci-fi",
+            "synth"
+          ]
+        },
+        "before_response": "Still Pretty by Kyle Dixon & Michael Stein pulls directly from Stranger Things, Vol. 2, extending the thread you started with Abilities. The track hinges on slow, layered analogue synth pads beneath a patient arpeggiated figure, echoing the tension-building structure of Danger Danger you flagged. Its brooding minor-key harmonic drift sits squarely in that Carpenter-influenced early-80s sci-fi register you're chasing. Choosing this one specifically because it sustains the same composer pairing while pushing further into the darker, more restrained side of the score than Abilities did.",
+        "before_snapshot": "Still Pretty by Kyle Dixon & Michael Stein pulls directly from Stranger Things, Vol. 2, extending the thread you started with Abilities. The track hinges on slow, layered analogue synth pads beneath a patient arpeggiated figure, echoing the tension-building s…",
+        "repair_order": 4,
+        "repair_architecture": "energy/mood sentence"
+      },
+      {
+        "row_index": 21,
+        "session_id": "eb4a6ef2-7a7e-448a-bfed-c94e68b01505",
+        "top1_track_id": "520ec886-e8e8-4ad0-9df7-a329b6e62c91",
+        "top1_track": "Watching As She Reels",
+        "top1_artist": "Rafael Anton Irisarri",
+        "word_count": 86,
+        "weakness_score": 0,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 0
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "atmospheric",
+            "drones",
+            "instrumental",
+            "melancholy",
+            "minimal",
+            "slow",
+            "textures",
+            "to",
+            "vocals"
+          ],
+          "metadata_hits": [
+            "and",
+            "atmospheric",
+            "desires",
+            "hopes",
+            "instrumental",
+            "melancholy",
+            "minimal",
+            "past",
+            "slow",
+            "to"
+          ],
+          "session_token_overlap": [
+            "arthur",
+            "atmospheric",
+            "background",
+            "focus",
+            "foreground",
+            "instrumental",
+            "john",
+            "maus",
+            "russell",
+            "stare",
+            "thousand-yard"
+          ]
+        },
+        "before_response": "Watching As She Reels by Rafael Anton Irisarri keeps you in the same hushed, atmospheric register you responded to in \"A Thousand-Yard Stare.\" Pulled from his 2015 album Hopes And Past Desires, it works through slow drones and minimal modern-classical textures, with no vocals to drag it forward the way the Arthur Russell and John Maus picks did. This one specifically, because you confirmed Irisarri's instrumental melancholy suits your focus sessions, and its unhurried stillness sits in the background rather than the foreground you flagged earlier.",
+        "before_snapshot": "Watching As She Reels by Rafael Anton Irisarri keeps you in the same hushed, atmospheric register you responded to in \"A Thousand-Yard Stare.\" Pulled from his 2015 album Hopes And Past Desires, it works through slow drones and minimal modern-classical texture…",
+        "repair_order": 5,
+        "repair_architecture": "contrast sentence"
+      },
+      {
+        "row_index": 25,
+        "session_id": "ee7bfbda-86ee-4ade-b695-dbdeb12ae063",
+        "top1_track_id": "ef666ec8-358f-4aa1-ad7d-ced727ac9452",
+        "top1_track": "Actress",
+        "top1_artist": "Hand Habits",
+        "word_count": 85,
+        "weakness_score": 0,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 0
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "alternative",
+            "arrangement",
+            "guitar",
+            "indie",
+            "lyrics"
+          ],
+          "metadata_hits": [
+            "alternative",
+            "the"
+          ],
+          "session_token_overlap": [
+            "andrews",
+            "atmosphere",
+            "billie",
+            "contemplative",
+            "depth",
+            "emotional",
+            "girl",
+            "indie",
+            "into",
+            "introspective",
+            "jill",
+            "kill"
+          ]
+        },
+        "before_response": "Actress by Hand Habits extends those indie girl sensibilities you've been gravitating toward, with Meg Duffy's hushed singer-songwriter delivery turning self-questioning into something tender and unresolved. Sparse fingerpicked guitar and a drifting alternative arrangement leave space for lyrics picking apart identity and quiet ache. This one specifically because you praised the contemplative atmosphere in Billie Marten's \"In for the Kill\" and the emotional depth of Jill Andrews, and Duffy threads both together, murmured rather than soaring, keeping the introspective inner-thought focus you keep asking for.",
+        "before_snapshot": "Actress by Hand Habits extends those indie girl sensibilities you've been gravitating toward, with Meg Duffy's hushed singer-songwriter delivery turning self-questioning into something tender and unresolved. Sparse fingerpicked guitar and a drifting alternati…",
+        "repair_order": 6,
+        "repair_architecture": "genre-first sentence"
+      },
+      {
+        "row_index": 31,
+        "session_id": "3aee4d9b-b0f1-4282-bbe6-58942c71f311",
+        "top1_track_id": "88649eb5-d2d4-43d4-8d86-a738931d97fe",
+        "top1_track": "In Another Life",
+        "top1_artist": "The Rippingtons, Russ Freeman",
+        "word_count": 85,
+        "weakness_score": 0,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 0
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "electric",
+            "fusion",
+            "guitar",
+            "jazz",
+            "rhythm",
+            "rock"
+          ],
+          "metadata_hits": [
+            "black",
+            "diamond",
+            "fusion",
+            "jazz",
+            "rock"
+          ],
+          "session_token_overlap": [
+            "bella",
+            "jazz",
+            "lights",
+            "luna",
+            "northern",
+            "oceansong",
+            "specific"
+          ]
+        },
+        "before_response": "In Another Life by The Rippingtons, Russ Freeman keeps your Rippingtons run going after Bella Luna and Northern Lights. It's pulled from the Black Diamond album, with Russ Freeman's warm electric guitar threading over a relaxed jazz fusion groove and a subtle rock undercurrent in the rhythm section. This specific track suits you because you've consistently gravitated toward the mellow instrumental side of the band, and Black Diamond leans into that polished, melody-first writing you enjoyed on Oceansong while adding a bit more harmonic depth.",
+        "before_snapshot": "In Another Life by The Rippingtons, Russ Freeman keeps your Rippingtons run going after Bella Luna and Northern Lights. It's pulled from the Black Diamond album, with Russ Freeman's warm electric guitar threading over a relaxed jazz fusion groove and a subtle…",
+        "repair_order": 7,
+        "repair_architecture": "memory-reference sentence"
+      },
+      {
+        "row_index": 62,
+        "session_id": "3afb9f67-a18a-4b97-81cf-ef1806fce0e9",
+        "top1_track_id": "5ec10c67-dfe6-46c9-aa80-32584053c165",
+        "top1_track": "American Star",
+        "top1_artist": "Shanell, Lil Wayne",
+        "word_count": 81,
+        "weakness_score": 0,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 0
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "american",
+            "drums",
+            "electric",
+            "guitar",
+            "hip-hop",
+            "hook",
+            "lyrics",
+            "melodic",
+            "production",
+            "riffs",
+            "star",
+            "vocals"
+          ],
+          "metadata_hits": [
+            "american",
+            "hip-hop",
+            "rebirth",
+            "star"
+          ],
+          "session_token_overlap": [
+            "experimental",
+            "phase",
+            "sounded",
+            "usual"
+          ]
+        },
+        "before_response": "American Star by Shanell, Lil Wayne is almost certainly the half-remembered track you're chasing, lifted from Rebirth — Wayne's 2010 detour into rock-rap. Electric guitar riffs carry the production while his auto-tuned hook trades verses with Shanell's softer melodic vocals, the lyrics circling fame and longing. This specifically, because you flagged an experimental phase that sounded unlike his usual output, and Rebirth is the one Wayne project where guitar-led arrangements fully replace the trap drums a hip-hop listener would expect from him.",
+        "before_snapshot": "American Star by Shanell, Lil Wayne is almost certainly the half-remembered track you're chasing, lifted from Rebirth — Wayne's 2010 detour into rock-rap. Electric guitar riffs carry the production while his auto-tuned hook trades verses with Shanell's softer…",
+        "repair_order": 8,
+        "repair_architecture": "artist-context sentence"
+      },
+      {
+        "row_index": 26,
+        "session_id": "9d4ef919-504b-4963-af47-777478ace477",
+        "top1_track_id": "52604ca3-85ff-4852-ba67-2dffdf9bcf9b",
+        "top1_track": "Ulvinde",
+        "top1_artist": "Myrkur",
+        "word_count": 93,
+        "weakness_score": 0,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 0
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "atmospheric",
+            "beats",
+            "black",
+            "folk",
+            "guitars",
+            "metal",
+            "tremolo",
+            "vocals"
+          ],
+          "metadata_hits": [
+            "atmospheric",
+            "black",
+            "folk",
+            "mareridt",
+            "metal"
+          ],
+          "session_token_overlap": [
+            "ancient-sounding",
+            "beauty",
+            "crown",
+            "folk",
+            "haunting",
+            "instrumentation",
+            "into",
+            "it's",
+            "melancholic",
+            "metal",
+            "traditional"
+          ]
+        },
+        "before_response": "Ulvinde by Myrkur is the clearest example of that exact collision you've been circling — raw atmospheric black metal slamming into ancient-sounding Nordic folk passages. Amalie Bruun's clean, near-ritualistic vocals float over tremolo guitars and blast beats, then drop into hushed traditional instrumentation. Since you've already singled out the haunting beauty in Crown and the melancholic weight of Mareridt, this specifically because it's the 2017 track where both halves coexist inside one song rather than across an album, which is probably why you named it first when describing what compels you about her work.",
+        "before_snapshot": "Ulvinde by Myrkur is the clearest example of that exact collision you've been circling — raw atmospheric black metal slamming into ancient-sounding Nordic folk passages. Amalie Bruun's clean, near-ritualistic vocals float over tremolo guitars and blast beats,…",
+        "repair_order": 9,
+        "repair_architecture": "energy/mood sentence"
+      },
+      {
+        "row_index": 70,
+        "session_id": "7905bb71-efea-4210-8ad9-881f37cad50a",
+        "top1_track_id": "a038b4da-5aed-4b80-ac11-a70564527597",
+        "top1_track": "Happier",
+        "top1_artist": "Ed Sheeran",
+        "word_count": 75,
+        "weakness_score": 0,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 0
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "acoustic",
+            "arrangement",
+            "ed",
+            "guitar",
+            "lyrics",
+            "pop",
+            "sheeran"
+          ],
+          "metadata_hits": [
+            "ed",
+            "pop",
+            "sheeran"
+          ],
+          "session_token_overlap": [
+            "feel-good",
+            "happy",
+            "spirits"
+          ]
+        },
+        "before_response": "Happier by Ed Sheeran leans on fingerpicked acoustic guitar and a soft pop arrangement from his 2017 ÷ era, with bittersweet lyrics about wishing someone well after a breakup. I know you asked for happy, feel-good music from Indonesian artists, so this specifically works as a tender warm-up, because its gentle tempo eases a heavy mood before I queue brighter Indonesian picks like Hivi!, Yura Yunita, or Tulus to keep your spirits climbing through the session.",
+        "before_snapshot": "Happier by Ed Sheeran leans on fingerpicked acoustic guitar and a soft pop arrangement from his 2017 ÷ era, with bittersweet lyrics about wishing someone well after a breakup. I know you asked for happy, feel-good music from Indonesian artists, so this specif…",
+        "repair_order": 10,
+        "repair_architecture": "contrast sentence"
+      },
+      {
+        "row_index": 0,
+        "session_id": "9c37dcd7-d7c2-4686-8541-1e37c4814a09",
+        "top1_track_id": "f8d00364-1708-4b78-8ca3-786fd53de9ae",
+        "top1_track": "Eyes on Me",
+        "top1_artist": "Desired",
+        "word_count": 82,
+        "weakness_score": 3,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 2,
+          "no_top1_justification": 0,
+          "overly_short_flat": 1
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "hook",
+            "lyrical",
+            "production",
+            "synth",
+            "the"
+          ],
+          "metadata_hits": [
+            "dream",
+            "sweetest",
+            "the"
+          ],
+          "session_token_overlap": []
+        },
+        "before_response": "Eyes on Me by Desired pairs a four-on-the-floor dance-pop pulse with airy late-2010s synth stabs and a flirtatious lyrical hook about holding someone's gaze on the floor. Pulled from 2017's The Sweetest Dream, it sits close to the polished K-pop production sensibility you gravitate toward as a listener in Germany. This specifically, because your request for something danceable and mood-lifting meets a track whose tempo and bright synth layering are engineered to keep teenage listeners physically moving rather than just nodding along.",
+        "before_snapshot": "Eyes on Me by Desired pairs a four-on-the-floor dance-pop pulse with airy late-2010s synth stabs and a flirtatious lyrical hook about holding someone's gaze on the floor. Pulled from 2017's The Sweetest Dream, it sits close to the polished K-pop production se…",
+        "repair_order": 11,
+        "repair_architecture": "genre-first sentence"
+      },
+      {
+        "row_index": 11,
+        "session_id": "db8ec85f-fa1f-4e88-b4d2-333b63b0d386",
+        "top1_track_id": "2b3bce2c-b23c-465f-aa9f-ba852f4cb00b",
+        "top1_track": "Silversum",
+        "top1_artist": "Plaid",
+        "word_count": 85,
+        "weakness_score": 1,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 1,
+          "overly_short_flat": 0
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "abstract",
+            "ambient",
+            "electronic",
+            "idm",
+            "instrumental",
+            "melodic",
+            "out",
+            "techno",
+            "textures",
+            "vocal"
+          ],
+          "metadata_hits": [
+            "abstract",
+            "ambient",
+            "double",
+            "electronic",
+            "figure",
+            "idm",
+            "instrumental",
+            "out",
+            "techno"
+          ],
+          "session_token_overlap": [
+            "ambient",
+            "assault",
+            "attention",
+            "background",
+            "electronic",
+            "eyen",
+            "focus",
+            "instrumental",
+            "light",
+            "manyme",
+            "precinct",
+            "purely"
+          ]
+        },
+        "before_response": "Silversum by Plaid sits in the same hushed ambient techno register that made Light Rain work for you, trading the busier IDM patterns of Eyen and Assault On Precinct Zero for soft, abstract electronic textures and faint melodic drifts. Pulled from Double Figure, this Warp-era instrumental stays free of the vocal foreground that ruled out Manyme, holding a steady, low-contrast pulse beneath the surface. Given your push toward purely instrumental focus music, this specifically suits sustained background listening without pulling your attention from the task.",
+        "before_snapshot": "Silversum by Plaid sits in the same hushed ambient techno register that made Light Rain work for you, trading the busier IDM patterns of Eyen and Assault On Precinct Zero for soft, abstract electronic textures and faint melodic drifts. Pulled from Double Figu…",
+        "repair_order": 12,
+        "repair_architecture": "memory-reference sentence"
+      },
+      {
+        "row_index": 27,
+        "session_id": "c08eb2a1-8491-442d-a10f-db8d9ba831d6",
+        "top1_track_id": "ccc856f6-0525-472e-9b60-4217f9180050",
+        "top1_track": "Lenha",
+        "top1_artist": "Zeca Baleiro",
+        "word_count": 84,
+        "weakness_score": 0,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 0
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "and",
+            "baleiro",
+            "brazilian",
+            "horn",
+            "in",
+            "lenha",
+            "lyrics",
+            "mpb",
+            "nacional",
+            "pop",
+            "rock",
+            "the"
+          ],
+          "metadata_hits": [
+            "and",
+            "baleiro",
+            "brazilian",
+            "in",
+            "lenha",
+            "mpb",
+            "nacional",
+            "pop",
+            "rock",
+            "the",
+            "you",
+            "zeca"
+          ],
+          "session_token_overlap": [
+            "driving",
+            "energy",
+            "evening",
+            "focus",
+            "list",
+            "pennywise",
+            "pontual",
+            "ruiz's",
+            "tulipa",
+            "upbeat",
+            "while"
+          ]
+        },
+        "before_response": "Lenha by Zeca Baleiro should power an evening run while keeping the Brazilian thread running through your list. From his 1999 album Vô Imbolá, it pairs pop rock nacional with bluesy, free-jazz horn flashes and a steady percussive push. This specifically, because you locked into the driving pulse of Tulipa Ruiz's Pontual for focus, and you've consistently asked for upbeat rhythms tied to MPB rather than the harder energy of Pennywise. Zeca's brass-led groove and playful Maranhão-rooted lyrics keep both demands in one track.",
+        "before_snapshot": "Lenha by Zeca Baleiro should power an evening run while keeping the Brazilian thread running through your list. From his 1999 album Vô Imbolá, it pairs pop rock nacional with bluesy, free-jazz horn flashes and a steady percussive push. This specifically, beca…",
+        "repair_order": 13,
+        "repair_architecture": "artist-context sentence"
+      },
+      {
+        "row_index": 32,
+        "session_id": "4b239a62-4435-4f39-80d6-26cffe0d1871",
+        "top1_track_id": "d469984d-5dbc-4e1b-89a8-4a964554d062",
+        "top1_track": "You Got Me There",
+        "top1_artist": "Parov Stelar",
+        "word_count": 83,
+        "weakness_score": 0,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 0
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "brass",
+            "downtempo",
+            "drum",
+            "electronic",
+            "female",
+            "melancholy",
+            "parov",
+            "rhythm",
+            "soulful",
+            "stelar",
+            "vocal"
+          ],
+          "metadata_hits": [
+            "downtempo",
+            "electronic",
+            "female",
+            "melancholy",
+            "parov",
+            "soulful",
+            "stelar",
+            "the",
+            "vocal"
+          ],
+          "session_token_overlap": [
+            "beach",
+            "beautiful",
+            "downtempo",
+            "female",
+            "instrumentation",
+            "nu-jazz",
+            "rhythm"
+          ]
+        },
+        "before_response": "You Got Me There by Parov Stelar extends the same nu-jazz, downtempo lineage as \"Beautiful Morning\" and \"The Beach,\" but with a more melancholy tilt from its soulful female vocal. This specifically, because you're stuck between rhythm and instrumentation as the source of the appeal: here the shuffled, brushed drum pattern is dialed back enough that the brass stabs and vocal phrasing sit forward, letting you isolate which layer actually grabs you. A clarifying listen for a Chill & Electronic ear in your 20s.",
+        "before_snapshot": "You Got Me There by Parov Stelar extends the same nu-jazz, downtempo lineage as \"Beautiful Morning\" and \"The Beach,\" but with a more melancholy tilt from its soulful female vocal. This specifically, because you're stuck between rhythm and instrumentation as t…",
+        "repair_order": 14,
+        "repair_architecture": "energy/mood sentence"
+      }
+    ],
+    "architecture_assignments": [
+      {
+        "row_index": 39,
+        "architecture": "contrast sentence"
+      },
+      {
+        "row_index": 36,
+        "architecture": "genre-first sentence"
+      },
+      {
+        "row_index": 7,
+        "architecture": "memory-reference sentence"
+      },
+      {
+        "row_index": 10,
+        "architecture": "artist-context sentence"
+      },
+      {
+        "row_index": 8,
+        "architecture": "energy/mood sentence"
+      },
+      {
+        "row_index": 21,
+        "architecture": "contrast sentence"
+      },
+      {
+        "row_index": 25,
+        "architecture": "genre-first sentence"
+      },
+      {
+        "row_index": 31,
+        "architecture": "memory-reference sentence"
+      },
+      {
+        "row_index": 62,
+        "architecture": "artist-context sentence"
+      },
+      {
+        "row_index": 26,
+        "architecture": "energy/mood sentence"
+      },
+      {
+        "row_index": 70,
+        "architecture": "contrast sentence"
+      },
+      {
+        "row_index": 0,
+        "architecture": "genre-first sentence"
+      },
+      {
+        "row_index": 11,
+        "architecture": "memory-reference sentence"
+      },
+      {
+        "row_index": 27,
+        "architecture": "artist-context sentence"
+      },
+      {
+        "row_index": 32,
+        "architecture": "energy/mood sentence"
+      }
+    ]
+  },
+  "generation": {
+    "started_at": "2026-05-17T22:51:54.909295",
+    "completed_at": "2026-05-17T22:53:08.964876",
+    "selected_rows_attempted": 15,
+    "accepted_regenerated_rows": 15,
+    "fallback_to_r63c_rows": 0,
+    "non_selected_rows_kept_from_r63c": 65,
+    "max_attempts_per_selected_row": 1,
+    "word_target_regenerated_rows": [
+      75,
+      95
+    ],
+    "word_target_fallback_rows": [
+      65,
+      95
+    ],
+    "generation_failures": [],
+    "attempts": [
+      {
+        "row_index": 39,
+        "session_id": "d5c80ee5-97c2-4de1-af2e-2295e3ae34a3",
+        "weakness_score": 3,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 79,
+        "top1_track": "Bits With Byte",
+        "top1_artist": "8 Bit Weapon",
+        "repair_architecture": "contrast sentence"
+      },
+      {
+        "row_index": 36,
+        "session_id": "d851eac7-27a7-4363-b2a4-6cb365c79d22",
+        "weakness_score": 1,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 85,
+        "top1_track": "White Ferrari",
+        "top1_artist": "Frank Ocean",
+        "repair_architecture": "genre-first sentence"
+      },
+      {
+        "row_index": 7,
+        "session_id": "4b8ed42b-39ec-4d17-9bea-507828687a0c",
+        "weakness_score": 0,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 83,
+        "top1_track": "Fight To Live",
+        "top1_artist": "The Bouncing Souls",
+        "repair_architecture": "memory-reference sentence"
+      },
+      {
+        "row_index": 10,
+        "session_id": "d53d9457-12f1-4286-b195-aa42c23d3bce",
+        "weakness_score": 1,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 80,
+        "top1_track": "Whispers from the Ether",
+        "top1_artist": "Kognitif",
+        "repair_architecture": "artist-context sentence"
+      },
+      {
+        "row_index": 8,
+        "session_id": "ca9c5de4-c2b7-4972-a524-615a400d0105",
+        "weakness_score": 0,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 78,
+        "top1_track": "Still Pretty",
+        "top1_artist": "Kyle Dixon, Kyle Dixon & Michael Stein",
+        "repair_architecture": "energy/mood sentence"
+      },
+      {
+        "row_index": 21,
+        "session_id": "eb4a6ef2-7a7e-448a-bfed-c94e68b01505",
+        "weakness_score": 0,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 85,
+        "top1_track": "Watching As She Reels",
+        "top1_artist": "Rafael Anton Irisarri",
+        "repair_architecture": "contrast sentence"
+      },
+      {
+        "row_index": 25,
+        "session_id": "ee7bfbda-86ee-4ade-b695-dbdeb12ae063",
+        "weakness_score": 0,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 80,
+        "top1_track": "Actress",
+        "top1_artist": "Hand Habits",
+        "repair_architecture": "genre-first sentence"
+      },
+      {
+        "row_index": 31,
+        "session_id": "3aee4d9b-b0f1-4282-bbe6-58942c71f311",
+        "weakness_score": 0,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 82,
+        "top1_track": "In Another Life",
+        "top1_artist": "The Rippingtons, Russ Freeman",
+        "repair_architecture": "memory-reference sentence"
+      },
+      {
+        "row_index": 62,
+        "session_id": "3afb9f67-a18a-4b97-81cf-ef1806fce0e9",
+        "weakness_score": 0,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 81,
+        "top1_track": "American Star",
+        "top1_artist": "Shanell, Lil Wayne",
+        "repair_architecture": "artist-context sentence"
+      },
+      {
+        "row_index": 26,
+        "session_id": "9d4ef919-504b-4963-af47-777478ace477",
+        "weakness_score": 0,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 83,
+        "top1_track": "Ulvinde",
+        "top1_artist": "Myrkur",
+        "repair_architecture": "energy/mood sentence"
+      },
+      {
+        "row_index": 70,
+        "session_id": "7905bb71-efea-4210-8ad9-881f37cad50a",
+        "weakness_score": 0,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 79,
+        "top1_track": "Happier",
+        "top1_artist": "Ed Sheeran",
+        "repair_architecture": "contrast sentence"
+      },
+      {
+        "row_index": 0,
+        "session_id": "9c37dcd7-d7c2-4686-8541-1e37c4814a09",
+        "weakness_score": 3,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 83,
+        "top1_track": "Eyes on Me",
+        "top1_artist": "Desired",
+        "repair_architecture": "genre-first sentence"
+      },
+      {
+        "row_index": 11,
+        "session_id": "db8ec85f-fa1f-4e88-b4d2-333b63b0d386",
+        "weakness_score": 1,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 82,
+        "top1_track": "Silversum",
+        "top1_artist": "Plaid",
+        "repair_architecture": "memory-reference sentence"
+      },
+      {
+        "row_index": 27,
+        "session_id": "c08eb2a1-8491-442d-a10f-db8d9ba831d6",
+        "weakness_score": 0,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 84,
+        "top1_track": "Lenha",
+        "top1_artist": "Zeca Baleiro",
+        "repair_architecture": "artist-context sentence"
+      },
+      {
+        "row_index": 32,
+        "session_id": "4b239a62-4435-4f39-80d6-26cffe0d1871",
+        "weakness_score": 0,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 78,
+        "top1_track": "You Got Me There",
+        "top1_artist": "Parov Stelar",
+        "repair_architecture": "energy/mood sentence"
+      }
+    ],
+    "rows_persisted_immediately_after_each_targeted_row": true,
+    "packaging_source": "exp/inference/blind_a/r63c_repair_rows_final.jsonl",
+    "run_policy": "one repair generation pass; no second repair pass"
+  },
+  "usage": {
+    "calls": 16,
+    "input_tokens": 25826,
+    "output_tokens": 2914,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "estimated_cost_usd": 0.20198,
+    "pricing": {
+      "input_usd_per_million_tokens": 5.0,
+      "output_usd_per_million_tokens": 25.0,
+      "source": "https://www.anthropic.com/research/claude-opus-4-7"
+    }
+  },
+  "cumulative_usage": {
+    "calls": 322,
+    "input_tokens": 391356,
+    "output_tokens": 54503,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "estimated_cost_usd": 3.319355,
+    "pricing": {
+      "input_usd_per_million_tokens": 5.0,
+      "output_usd_per_million_tokens": 25.0,
+      "source": "https://www.anthropic.com/research/claude-opus-4-7"
+    }
+  },
+  "r63c_usage_reference": {
+    "calls": 16,
+    "input_tokens": 21854,
+    "output_tokens": 2945,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "estimated_cost_usd": 0.182895,
+    "pricing": {
+      "input_usd_per_million_tokens": 5.0,
+      "output_usd_per_million_tokens": 25.0,
+      "source": "https://www.anthropic.com/research/claude-opus-4-7"
+    }
+  },
+  "r63c_cumulative_usage_reference": {
+    "calls": 306,
+    "input_tokens": 365530,
+    "output_tokens": 51589,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "estimated_cost_usd": 3.117375,
+    "pricing": {
+      "input_usd_per_million_tokens": 5.0,
+      "output_usd_per_million_tokens": 25.0,
+      "source": "https://www.anthropic.com/research/claude-opus-4-7"
+    }
+  },
+  "validation_results": {
+    "rows_80": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "unique_sessions_80": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "tracks_20_each": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "total_tracks_1600": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "no_duplicate_tracks_within_row": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "valid_uuid_track_ids": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "track_ids_exactly_equal_to_r54c_per_position": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "prefix_leak_count_0": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "trailing_question_count_0": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "boilerplate_count_0": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "empty_or_too_short_count_0": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "target_word_range_65_95": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "first_sentence_names_top1_track_and_artist": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "lexdiv_floor_0_83": {
+      "status": "warn",
+      "passed": false,
+      "blocking": false
+    },
+    "lexdiv_target_r54c_0_8381": {
+      "status": "warn",
+      "passed": false,
+      "blocking": false
+    },
+    "opener_cluster_max_le_5": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "selected_rows_word_range_and_first_sentence": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "local_lexdiv_floor_0_82": {
+      "status": "pass",
+      "passed": true,
+      "blocking": false
+    },
+    "repair_lexdiv_pass_floor_0_8255": {
+      "status": "pass",
+      "passed": true,
+      "blocking": false
+    },
+    "repair_lexdiv_borderline_floor_0_8240": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    }
+  },
+  "r54c_track_hash_match": {
+    "rows_compared": 80,
+    "rows_with_matching_track_sequence": 80,
+    "rows_with_mismatched_track_sequence": 0,
+    "total_tracks_compared": 1600,
+    "per_position_mismatches": 0,
+    "per_row": [
+      {
+        "session_id": "9c37dcd7-d7c2-4686-8541-1e37c4814a09",
+        "r54c_sha256": "bb0b9a10bcfdf7c119a379abddc7b5b6b731cb3d82827b31aa6b5a85b300a3cd",
+        "r63_sha256": "bb0b9a10bcfdf7c119a379abddc7b5b6b731cb3d82827b31aa6b5a85b300a3cd",
+        "matching": true
+      },
+      {
+        "session_id": "60a6fd69-33f4-4dbf-aa0d-872b27a69037",
+        "r54c_sha256": "9ef8ad60a340a6afd06a62c129c01639bf8495241af10ff72209515543052708",
+        "r63_sha256": "9ef8ad60a340a6afd06a62c129c01639bf8495241af10ff72209515543052708",
+        "matching": true
+      },
+      {
+        "session_id": "25cc9533-7c02-4781-9100-ab438e848a3d",
+        "r54c_sha256": "d06c123e195c502f6ab133aab9338d04f35339b1032da1b59ec0da7cb2f4d8fb",
+        "r63_sha256": "d06c123e195c502f6ab133aab9338d04f35339b1032da1b59ec0da7cb2f4d8fb",
+        "matching": true
+      },
+      {
+        "session_id": "39698083-bc11-4514-9e53-da76d9260b3a",
+        "r54c_sha256": "2f872c7135da4f9bac2f36b4d157a9be7a57e896d7022c047f33f3dfe068f37c",
+        "r63_sha256": "2f872c7135da4f9bac2f36b4d157a9be7a57e896d7022c047f33f3dfe068f37c",
+        "matching": true
+      },
+      {
+        "session_id": "0fedfa80-ebe2-4977-b16b-594f4a2b19b1",
+        "r54c_sha256": "9b9668b4894d9adf2801cc72655e3dd4227fcec2aecfbe5197ee9d0ed8bfd878",
+        "r63_sha256": "9b9668b4894d9adf2801cc72655e3dd4227fcec2aecfbe5197ee9d0ed8bfd878",
+        "matching": true
+      },
+      {
+        "session_id": "a1df8767-11df-44d3-a1f6-e1ba2115e8f0",
+        "r54c_sha256": "9152c8f53a83baa1cfbe5101e20c3e8a34d7bbdc00b71aa843034088a9eeaf9a",
+        "r63_sha256": "9152c8f53a83baa1cfbe5101e20c3e8a34d7bbdc00b71aa843034088a9eeaf9a",
+        "matching": true
+      },
+      {
+        "session_id": "02ec3071-bd03-4f78-91bc-96666d0e3b6b",
+        "r54c_sha256": "4366a30faadd8dc6e44a8a65d294da395a6bbdf355c4f3e8d295266d99e57e21",
+        "r63_sha256": "4366a30faadd8dc6e44a8a65d294da395a6bbdf355c4f3e8d295266d99e57e21",
+        "matching": true
+      },
+      {
+        "session_id": "4b8ed42b-39ec-4d17-9bea-507828687a0c",
+        "r54c_sha256": "24f2b425b34fc43a680f720aa65ae905aa8ab1b1cfa52cf8ae43419d89bda6b9",
+        "r63_sha256": "24f2b425b34fc43a680f720aa65ae905aa8ab1b1cfa52cf8ae43419d89bda6b9",
+        "matching": true
+      },
+      {
+        "session_id": "ca9c5de4-c2b7-4972-a524-615a400d0105",
+        "r54c_sha256": "6f5c7300d0a51bc03d779698ed9fc9313cdf4d1490c0ab21a96604df8415b2ce",
+        "r63_sha256": "6f5c7300d0a51bc03d779698ed9fc9313cdf4d1490c0ab21a96604df8415b2ce",
+        "matching": true
+      },
+      {
+        "session_id": "645670fd-b825-4c26-aba5-edcdb57e7684",
+        "r54c_sha256": "45cd50214959b50fca7ee370b2fea4d2cc798c368a9460dd4cc3de511333a173",
+        "r63_sha256": "45cd50214959b50fca7ee370b2fea4d2cc798c368a9460dd4cc3de511333a173",
+        "matching": true
+      },
+      {
+        "session_id": "d53d9457-12f1-4286-b195-aa42c23d3bce",
+        "r54c_sha256": "6af4c1d7fb1410bd01ff2194b04ae6bae4451e82a0f564c8a0276e8f3bcf54e3",
+        "r63_sha256": "6af4c1d7fb1410bd01ff2194b04ae6bae4451e82a0f564c8a0276e8f3bcf54e3",
+        "matching": true
+      },
+      {
+        "session_id": "db8ec85f-fa1f-4e88-b4d2-333b63b0d386",
+        "r54c_sha256": "96e1264265b5fb3d66eb191cd7f0475437b3a822ba15a7f75f832e9f4df6763d",
+        "r63_sha256": "96e1264265b5fb3d66eb191cd7f0475437b3a822ba15a7f75f832e9f4df6763d",
+        "matching": true
+      },
+      {
+        "session_id": "fc6ba76a-3dd8-4c11-b5af-a233253b01bf",
+        "r54c_sha256": "f6e647749c1b3c9bc9d025c045854288c532200b4f68a16b707d7cec9ed3efb3",
+        "r63_sha256": "f6e647749c1b3c9bc9d025c045854288c532200b4f68a16b707d7cec9ed3efb3",
+        "matching": true
+      },
+      {
+        "session_id": "b6457586-ddb1-4e18-a9b5-4d4926b8b46d",
+        "r54c_sha256": "fe5b3c1c2cbb542c10ad43d06555efbec4150cba41f193d293f0472bb4ed2207",
+        "r63_sha256": "fe5b3c1c2cbb542c10ad43d06555efbec4150cba41f193d293f0472bb4ed2207",
+        "matching": true
+      },
+      {
+        "session_id": "70a0e5ad-50cb-475c-95a3-adffcf04b72e",
+        "r54c_sha256": "8c2feae4b5315027a807ea1f2db7d5c223d1377ef5cca8f6d938da2085dece1b",
+        "r63_sha256": "8c2feae4b5315027a807ea1f2db7d5c223d1377ef5cca8f6d938da2085dece1b",
+        "matching": true
+      },
+      {
+        "session_id": "dc3c1b72-0520-44c6-ab2b-4935d0455e19",
+        "r54c_sha256": "ea8d87f62275b25093dca0b3b7227cbbe445db7f9db2210f1cbea7efd51d68ee",
+        "r63_sha256": "ea8d87f62275b25093dca0b3b7227cbbe445db7f9db2210f1cbea7efd51d68ee",
+        "matching": true
+      },
+      {
+        "session_id": "2a677d32-23e9-4fe7-8b8e-4875c93509a2",
+        "r54c_sha256": "a5041a857634268742d3a813db1ad2eec767ea14f310b53ed4e37ddc1ede2914",
+        "r63_sha256": "a5041a857634268742d3a813db1ad2eec767ea14f310b53ed4e37ddc1ede2914",
+        "matching": true
+      },
+      {
+        "session_id": "198470a5-db1e-4add-b04a-bee8c5945d4b",
+        "r54c_sha256": "eb02c46808868af2706aa901e9f10f2f18740c0342ce4730cdc1344f2787a704",
+        "r63_sha256": "eb02c46808868af2706aa901e9f10f2f18740c0342ce4730cdc1344f2787a704",
+        "matching": true
+      },
+      {
+        "session_id": "07aae53d-7c65-442a-a893-6ffde80efb0d",
+        "r54c_sha256": "2440fc2b1015ffe4619a3386871224c03ca1475ec433ddab6dd113954c42bba4",
+        "r63_sha256": "2440fc2b1015ffe4619a3386871224c03ca1475ec433ddab6dd113954c42bba4",
+        "matching": true
+      },
+      {
+        "session_id": "525f9f69-31e5-4fee-9813-e903ad24e39e",
+        "r54c_sha256": "64ef9411c1abe87a1deb46b30977f6a8937d7cc6ec9329fa7d80c0fc4e0f5d70",
+        "r63_sha256": "64ef9411c1abe87a1deb46b30977f6a8937d7cc6ec9329fa7d80c0fc4e0f5d70",
+        "matching": true
+      },
+      {
+        "session_id": "0802ac4a-187b-4a78-b090-0ceb7630cf12",
+        "r54c_sha256": "6c6fde41bdb9e53010fd1c970bcb5e6bfcabb79dffc7fee8253e8e471e062f47",
+        "r63_sha256": "6c6fde41bdb9e53010fd1c970bcb5e6bfcabb79dffc7fee8253e8e471e062f47",
+        "matching": true
+      },
+      {
+        "session_id": "eb4a6ef2-7a7e-448a-bfed-c94e68b01505",
+        "r54c_sha256": "785b24ecc5d76c15768a52c1179eeb4bea94b1844c134bbf018fd630b32f871c",
+        "r63_sha256": "785b24ecc5d76c15768a52c1179eeb4bea94b1844c134bbf018fd630b32f871c",
+        "matching": true
+      },
+      {
+        "session_id": "0a1f7a63-c5e4-4a2d-9285-433cd036f4e7",
+        "r54c_sha256": "24b80e913b4ba8c7ae42e22985bf146feecfed512e8c1d4162775f5a4c0ea05d",
+        "r63_sha256": "24b80e913b4ba8c7ae42e22985bf146feecfed512e8c1d4162775f5a4c0ea05d",
+        "matching": true
+      },
+      {
+        "session_id": "ca8cbe02-1def-4fca-ba48-f17f9fac0ed8",
+        "r54c_sha256": "4cbcf2e74652abaeab27a21ae8df93eb5e7a25ddc2d3485a34fc553004698624",
+        "r63_sha256": "4cbcf2e74652abaeab27a21ae8df93eb5e7a25ddc2d3485a34fc553004698624",
+        "matching": true
+      },
+      {
+        "session_id": "574f75cf-7036-4cd2-b699-93202d81e7e1",
+        "r54c_sha256": "9aa7a13c65615b2784e9ca767166c466da094f7692c7d365d145290d98e2884a",
+        "r63_sha256": "9aa7a13c65615b2784e9ca767166c466da094f7692c7d365d145290d98e2884a",
+        "matching": true
+      },
+      {
+        "session_id": "ee7bfbda-86ee-4ade-b695-dbdeb12ae063",
+        "r54c_sha256": "a952cd90480197947bae0a82afa79ae586d4abecbb74742f703fff83a0f1acfb",
+        "r63_sha256": "a952cd90480197947bae0a82afa79ae586d4abecbb74742f703fff83a0f1acfb",
+        "matching": true
+      },
+      {
+        "session_id": "9d4ef919-504b-4963-af47-777478ace477",
+        "r54c_sha256": "4cbf1962f1b0f2199f24cc80531933c81ffb2b8642c784bb411c4880c690a168",
+        "r63_sha256": "4cbf1962f1b0f2199f24cc80531933c81ffb2b8642c784bb411c4880c690a168",
+        "matching": true
+      },
+      {
+        "session_id": "c08eb2a1-8491-442d-a10f-db8d9ba831d6",
+        "r54c_sha256": "3d609e301b3c96db501a694b046948e821ec0f9887fb7b1fe85e170fc5c0c01d",
+        "r63_sha256": "3d609e301b3c96db501a694b046948e821ec0f9887fb7b1fe85e170fc5c0c01d",
+        "matching": true
+      },
+      {
+        "session_id": "38a5f361-9802-40be-9d15-15c67d5ba60a",
+        "r54c_sha256": "e67ceb7a155502ec647b5cda560c25f3df077a36abc3d5d7450b23e780d9345b",
+        "r63_sha256": "e67ceb7a155502ec647b5cda560c25f3df077a36abc3d5d7450b23e780d9345b",
+        "matching": true
+      },
+      {
+        "session_id": "fe22cfe0-f552-4d43-bf13-ea77bef4f1ce",
+        "r54c_sha256": "a9068877c31c108f804148d920aeb44120ab5ca61e6c87f13feee8adc65eee43",
+        "r63_sha256": "a9068877c31c108f804148d920aeb44120ab5ca61e6c87f13feee8adc65eee43",
+        "matching": true
+      },
+      {
+        "session_id": "40cc1c03-6db9-49db-8bbe-8b97b45adb0b",
+        "r54c_sha256": "7df961bbd51ce67052ed34c797d320c48a6d975f489d4e14e5a4824a7c7d5480",
+        "r63_sha256": "7df961bbd51ce67052ed34c797d320c48a6d975f489d4e14e5a4824a7c7d5480",
+        "matching": true
+      },
+      {
+        "session_id": "3aee4d9b-b0f1-4282-bbe6-58942c71f311",
+        "r54c_sha256": "15716deb8f7fc0a8cb7d9bfa84763a4fd4b4b01c831356886ec3c73680100b53",
+        "r63_sha256": "15716deb8f7fc0a8cb7d9bfa84763a4fd4b4b01c831356886ec3c73680100b53",
+        "matching": true
+      },
+      {
+        "session_id": "4b239a62-4435-4f39-80d6-26cffe0d1871",
+        "r54c_sha256": "9c36925677a0d829dc4ea04fef3d92e1bef4a24f739a7e1af68d291bf002b097",
+        "r63_sha256": "9c36925677a0d829dc4ea04fef3d92e1bef4a24f739a7e1af68d291bf002b097",
+        "matching": true
+      },
+      {
+        "session_id": "809d4fbc-5298-494a-8817-78b3fdc5317e",
+        "r54c_sha256": "8ef6ab61a1fc5d2d9783da7200ac99959bd1bc3eb95b4bc1984e35eff7006672",
+        "r63_sha256": "8ef6ab61a1fc5d2d9783da7200ac99959bd1bc3eb95b4bc1984e35eff7006672",
+        "matching": true
+      },
+      {
+        "session_id": "5e1f5a89-99c0-46bb-af78-005338d05858",
+        "r54c_sha256": "ed34e6d49a0b990a561a7485bd78fee4c7d1f72e356da9e8b105284633921b1a",
+        "r63_sha256": "ed34e6d49a0b990a561a7485bd78fee4c7d1f72e356da9e8b105284633921b1a",
+        "matching": true
+      },
+      {
+        "session_id": "d7426802-d075-4a49-8062-977ba656c9a2",
+        "r54c_sha256": "3b2112bbdf0832a46257f38fe7e42a8ed3c04634bd412b3f519ca80446ccbbf5",
+        "r63_sha256": "3b2112bbdf0832a46257f38fe7e42a8ed3c04634bd412b3f519ca80446ccbbf5",
+        "matching": true
+      },
+      {
+        "session_id": "d851eac7-27a7-4363-b2a4-6cb365c79d22",
+        "r54c_sha256": "ed41a9c2c9f315034fd2f99aef230a0176a083363fe539918e83882998a1b67f",
+        "r63_sha256": "ed41a9c2c9f315034fd2f99aef230a0176a083363fe539918e83882998a1b67f",
+        "matching": true
+      },
+      {
+        "session_id": "28c3ecd9-fbaa-4423-a85c-92508346e1e8",
+        "r54c_sha256": "ad1652bdab4b4273f19eadf2ae64ef90ee361fc7f2cb0c194f83cd2ebc3f68da",
+        "r63_sha256": "ad1652bdab4b4273f19eadf2ae64ef90ee361fc7f2cb0c194f83cd2ebc3f68da",
+        "matching": true
+      },
+      {
+        "session_id": "5b2f877b-a6d5-4473-879c-f5a24d4fd06f",
+        "r54c_sha256": "06d376455c3d65b3bb48f7e58b941203a61b13cbf9480089cfbc6aa9900841fa",
+        "r63_sha256": "06d376455c3d65b3bb48f7e58b941203a61b13cbf9480089cfbc6aa9900841fa",
+        "matching": true
+      },
+      {
+        "session_id": "d5c80ee5-97c2-4de1-af2e-2295e3ae34a3",
+        "r54c_sha256": "8760b266a0b4601f267d69170fd95c8a4ab1395cb49034699ebb0a4f452a7bf1",
+        "r63_sha256": "8760b266a0b4601f267d69170fd95c8a4ab1395cb49034699ebb0a4f452a7bf1",
+        "matching": true
+      },
+      {
+        "session_id": "68993adf-60d9-42f9-b21f-cdd5bf851cb1",
+        "r54c_sha256": "aa96c365521f4bed0419597b1da8ced203ff35046bd677708940886f9cd45b9e",
+        "r63_sha256": "aa96c365521f4bed0419597b1da8ced203ff35046bd677708940886f9cd45b9e",
+        "matching": true
+      },
+      {
+        "session_id": "6c54de37-9c55-4c59-b203-ec190dd07523",
+        "r54c_sha256": "845b58721e5781a846567c6cbe5ec68203ea73e6e073a669da85930708b6d8f4",
+        "r63_sha256": "845b58721e5781a846567c6cbe5ec68203ea73e6e073a669da85930708b6d8f4",
+        "matching": true
+      },
+      {
+        "session_id": "eaeca304-3ddb-4adb-8087-0f15b597f73e",
+        "r54c_sha256": "08788108817f6244f7a770fa57d8fc965fd53561289f9c398cb357567bf949f4",
+        "r63_sha256": "08788108817f6244f7a770fa57d8fc965fd53561289f9c398cb357567bf949f4",
+        "matching": true
+      },
+      {
+        "session_id": "2fe9abf6-ccea-4f05-8490-82da8bf57764",
+        "r54c_sha256": "c7f522daf09b761c0134ea8854439e5f5db299b3f620c83f7383daf28883f340",
+        "r63_sha256": "c7f522daf09b761c0134ea8854439e5f5db299b3f620c83f7383daf28883f340",
+        "matching": true
+      },
+      {
+        "session_id": "1f7b28c1-8b18-4045-be27-0475edb96857",
+        "r54c_sha256": "5c12c4367aeb53515c227a2e1a5ecdefc931b84e01448ce8e2c7cf5c0be8f781",
+        "r63_sha256": "5c12c4367aeb53515c227a2e1a5ecdefc931b84e01448ce8e2c7cf5c0be8f781",
+        "matching": true
+      },
+      {
+        "session_id": "ebad356d-d5ab-437a-81f1-6d219e532c33",
+        "r54c_sha256": "0847a75e59c08003ca73dc6b0a33737578e4c3bb238962b52daf1ad499e3833b",
+        "r63_sha256": "0847a75e59c08003ca73dc6b0a33737578e4c3bb238962b52daf1ad499e3833b",
+        "matching": true
+      },
+      {
+        "session_id": "6953ac7a-5e95-48d8-be4e-8f153ac937e2",
+        "r54c_sha256": "fdced8340a0ee446fe496e142f20427a891ba599261695db51bfed12b73eb61c",
+        "r63_sha256": "fdced8340a0ee446fe496e142f20427a891ba599261695db51bfed12b73eb61c",
+        "matching": true
+      },
+      {
+        "session_id": "49009ca7-f8da-45df-9c62-7b88d960d5d2",
+        "r54c_sha256": "a6148a85eac23ffc7f3e4341c01d98d0dd49ca942d6001440a98891b4415f637",
+        "r63_sha256": "a6148a85eac23ffc7f3e4341c01d98d0dd49ca942d6001440a98891b4415f637",
+        "matching": true
+      },
+      {
+        "session_id": "8cd8575d-4743-4235-a493-aee6039551b4",
+        "r54c_sha256": "67816376592fdef15bc714993ddc7055242136d35b66a5df4e1800ef277f2c0d",
+        "r63_sha256": "67816376592fdef15bc714993ddc7055242136d35b66a5df4e1800ef277f2c0d",
+        "matching": true
+      },
+      {
+        "session_id": "ff76b679-7d7a-4796-8f6c-929efef45428",
+        "r54c_sha256": "759abe4836097645ccc140089e6a8ea1ca332ff17b01734c3113a97aa6c1d7a2",
+        "r63_sha256": "759abe4836097645ccc140089e6a8ea1ca332ff17b01734c3113a97aa6c1d7a2",
+        "matching": true
+      },
+      {
+        "session_id": "78487c90-fda7-4723-ad4c-4557393ea95f",
+        "r54c_sha256": "8201cf1c558c333e72fd291cc03f925c014322ad277f63e0308bc64250baa5bc",
+        "r63_sha256": "8201cf1c558c333e72fd291cc03f925c014322ad277f63e0308bc64250baa5bc",
+        "matching": true
+      },
+      {
+        "session_id": "5ad7094f-3764-4e32-94c9-c0c02b65e01b",
+        "r54c_sha256": "56f05dfa5c63eb31740d64ad542d6989c0cd0775a17b1f21f259e3fea481e754",
+        "r63_sha256": "56f05dfa5c63eb31740d64ad542d6989c0cd0775a17b1f21f259e3fea481e754",
+        "matching": true
+      },
+      {
+        "session_id": "db11666f-bfb8-4d0d-b62b-075ab85d92f9",
+        "r54c_sha256": "4ed605f70f8be2545f09426da348cd0b83d9a4f41ec0278433ebfec4d7efdf41",
+        "r63_sha256": "4ed605f70f8be2545f09426da348cd0b83d9a4f41ec0278433ebfec4d7efdf41",
+        "matching": true
+      },
+      {
+        "session_id": "8998b916-97bf-406f-92db-3ae40a832f4c",
+        "r54c_sha256": "3a62b045c232a9d4e830dc9c64b304606594e91bb1cd75d7f37bd865624bb1fe",
+        "r63_sha256": "3a62b045c232a9d4e830dc9c64b304606594e91bb1cd75d7f37bd865624bb1fe",
+        "matching": true
+      },
+      {
+        "session_id": "31bf71ab-497f-4045-bc91-06552f9b69b8",
+        "r54c_sha256": "1f2b24c9fae094dc4fad507e35da152d4f6ee0f65d56b0fe68e81fe38538b40a",
+        "r63_sha256": "1f2b24c9fae094dc4fad507e35da152d4f6ee0f65d56b0fe68e81fe38538b40a",
+        "matching": true
+      },
+      {
+        "session_id": "12124711-bfe3-4634-8368-2fa1d8ddf885",
+        "r54c_sha256": "c4c79459ad3ffac2a61806af4ccc2c89dda3cbcca4d27d87f75fdb8b6e7a0f74",
+        "r63_sha256": "c4c79459ad3ffac2a61806af4ccc2c89dda3cbcca4d27d87f75fdb8b6e7a0f74",
+        "matching": true
+      },
+      {
+        "session_id": "9cd93031-ae32-4c15-99fa-fbb1b6fbac0b",
+        "r54c_sha256": "d6717ac68c8314513b79ce7c753224bd40831b379e51caee2ef3ba81efd4050f",
+        "r63_sha256": "d6717ac68c8314513b79ce7c753224bd40831b379e51caee2ef3ba81efd4050f",
+        "matching": true
+      },
+      {
+        "session_id": "789f9994-f2b6-481d-b71a-c0c6706d82c6",
+        "r54c_sha256": "c729547b74639ac988f434bd4bbc4a56b15f0cc0f9d93342ca8bd6c1cec631d9",
+        "r63_sha256": "c729547b74639ac988f434bd4bbc4a56b15f0cc0f9d93342ca8bd6c1cec631d9",
+        "matching": true
+      },
+      {
+        "session_id": "3734e44b-ca86-456b-95b1-9352effa8d3a",
+        "r54c_sha256": "6dd4ad342955b4a6870dc8af045f90cb00135c0552c731e534a1eb1a9f948226",
+        "r63_sha256": "6dd4ad342955b4a6870dc8af045f90cb00135c0552c731e534a1eb1a9f948226",
+        "matching": true
+      },
+      {
+        "session_id": "8aeb8706-f800-4827-ba71-0797bf5afb0d",
+        "r54c_sha256": "3a8e9639186d8bd45614bc464c773486ac5169a0c2362516196515a9e6c6fb98",
+        "r63_sha256": "3a8e9639186d8bd45614bc464c773486ac5169a0c2362516196515a9e6c6fb98",
+        "matching": true
+      },
+      {
+        "session_id": "ab87371b-9ebc-4fb1-9eea-b984a5b76258",
+        "r54c_sha256": "d1c815363a1be596d8d06fd16cfaa0dd5c5985f2fe067d7bd7b47df9640291da",
+        "r63_sha256": "d1c815363a1be596d8d06fd16cfaa0dd5c5985f2fe067d7bd7b47df9640291da",
+        "matching": true
+      },
+      {
+        "session_id": "46faad58-58e7-4379-978e-4de6e5cc3b4f",
+        "r54c_sha256": "56f9c46d9a32997fb56bb6d51c3c784e2d3a8e793f2580daf447bd39890486a0",
+        "r63_sha256": "56f9c46d9a32997fb56bb6d51c3c784e2d3a8e793f2580daf447bd39890486a0",
+        "matching": true
+      },
+      {
+        "session_id": "3afb9f67-a18a-4b97-81cf-ef1806fce0e9",
+        "r54c_sha256": "5ee668899511eaabf9005e1ec94cc9f378da7055f89bba74e66514a20ca64c2f",
+        "r63_sha256": "5ee668899511eaabf9005e1ec94cc9f378da7055f89bba74e66514a20ca64c2f",
+        "matching": true
+      },
+      {
+        "session_id": "2b1cbd1c-dd5b-40ab-943a-0392894babc0",
+        "r54c_sha256": "4e5024b96c91314961bfbc95d756660d69a7816e2e68e43813bfe95aad6f5bc9",
+        "r63_sha256": "4e5024b96c91314961bfbc95d756660d69a7816e2e68e43813bfe95aad6f5bc9",
+        "matching": true
+      },
+      {
+        "session_id": "164fc33f-b103-424f-836a-b7a7d565f6c2",
+        "r54c_sha256": "ee89504998cc0c25b426f94c8fa6de726c6d62e215cb9da6635c09f0ee7b7157",
+        "r63_sha256": "ee89504998cc0c25b426f94c8fa6de726c6d62e215cb9da6635c09f0ee7b7157",
+        "matching": true
+      },
+      {
+        "session_id": "ab8bc8fa-6326-47a5-afb4-3e3a30ca7360",
+        "r54c_sha256": "f16e2722529eccef9999833e7344a149de854b9c93c27f0d44180677e02a0556",
+        "r63_sha256": "f16e2722529eccef9999833e7344a149de854b9c93c27f0d44180677e02a0556",
+        "matching": true
+      },
+      {
+        "session_id": "b7d2f58e-a1e5-418d-b3bd-88e88d20908d",
+        "r54c_sha256": "66859b7f8d087e2941af9de7e5d8a3f4687165c41de67b354ca2c9c89423f875",
+        "r63_sha256": "66859b7f8d087e2941af9de7e5d8a3f4687165c41de67b354ca2c9c89423f875",
+        "matching": true
+      },
+      {
+        "session_id": "2bfd631e-7d47-4dd6-a419-7d63615833c5",
+        "r54c_sha256": "fb21e22177dcc3c72082d061fb2c6f6087f19bb352b00f788813b6889330d755",
+        "r63_sha256": "fb21e22177dcc3c72082d061fb2c6f6087f19bb352b00f788813b6889330d755",
+        "matching": true
+      },
+      {
+        "session_id": "91ce5668-ec1e-4d09-a30a-3440be9c8861",
+        "r54c_sha256": "1faaf0f0a49019a82a5ba9d6c4f13c2d13348a8a6e37871a70d43fce557928a4",
+        "r63_sha256": "1faaf0f0a49019a82a5ba9d6c4f13c2d13348a8a6e37871a70d43fce557928a4",
+        "matching": true
+      },
+      {
+        "session_id": "c4f7d055-a3cc-4d6b-be80-b90278bc0d32",
+        "r54c_sha256": "15a50aa9a42d283398ea0058a1ccad6a7e5155cb7594ea8e1e2963345e7e91b1",
+        "r63_sha256": "15a50aa9a42d283398ea0058a1ccad6a7e5155cb7594ea8e1e2963345e7e91b1",
+        "matching": true
+      },
+      {
+        "session_id": "7905bb71-efea-4210-8ad9-881f37cad50a",
+        "r54c_sha256": "7c0906129e289015eac782c94a79e7cdb2a1e331ea94a513187ecbfd6546c18f",
+        "r63_sha256": "7c0906129e289015eac782c94a79e7cdb2a1e331ea94a513187ecbfd6546c18f",
+        "matching": true
+      },
+      {
+        "session_id": "1415a335-8fa3-4ead-8f30-0f04b337d079",
+        "r54c_sha256": "ff778cf5c4e9827895caa3fcf6a8c786d993a36cb188cf73306c07465dc66d95",
+        "r63_sha256": "ff778cf5c4e9827895caa3fcf6a8c786d993a36cb188cf73306c07465dc66d95",
+        "matching": true
+      },
+      {
+        "session_id": "4831a3b4-3964-40ec-92a3-151cef2cae8f",
+        "r54c_sha256": "780b76845f35c3f56e2b4d31a5b3ecc0278770ed139bad6b3f749ceab0d13ed7",
+        "r63_sha256": "780b76845f35c3f56e2b4d31a5b3ecc0278770ed139bad6b3f749ceab0d13ed7",
+        "matching": true
+      },
+      {
+        "session_id": "d9cca604-febe-4c95-a5cc-a4318c33ec40",
+        "r54c_sha256": "c3ff73595201f3b9a78229c0599d91ad7cd82a598b6dcf155d692c35c8c9b713",
+        "r63_sha256": "c3ff73595201f3b9a78229c0599d91ad7cd82a598b6dcf155d692c35c8c9b713",
+        "matching": true
+      },
+      {
+        "session_id": "f321d88d-d809-4bcb-aca0-a1ef551a48de",
+        "r54c_sha256": "0b7fb569981994a835ade3d5c6740d0ce9141d8efed73ab923166255391440c0",
+        "r63_sha256": "0b7fb569981994a835ade3d5c6740d0ce9141d8efed73ab923166255391440c0",
+        "matching": true
+      },
+      {
+        "session_id": "c0d4e758-5dfe-41a4-b0f2-07c29e27cdce",
+        "r54c_sha256": "9ff06759694ed1796d66ce0a529d42c302c7f12e13f656bf669f281bbc8fc5e3",
+        "r63_sha256": "9ff06759694ed1796d66ce0a529d42c302c7f12e13f656bf669f281bbc8fc5e3",
+        "matching": true
+      },
+      {
+        "session_id": "4e849a6c-dfbc-4a67-82cc-6dff9076b382",
+        "r54c_sha256": "d20b594a5e622727407e8631d8ed3e81576e0a17339ede1bd67acbfe0982b276",
+        "r63_sha256": "d20b594a5e622727407e8631d8ed3e81576e0a17339ede1bd67acbfe0982b276",
+        "matching": true
+      },
+      {
+        "session_id": "bd392a56-236a-49da-8f89-46c453e97ea2",
+        "r54c_sha256": "3c8a934361bf031b0b46bc15bac2dc9f9efe4b99fa760004033aea038e9c8048",
+        "r63_sha256": "3c8a934361bf031b0b46bc15bac2dc9f9efe4b99fa760004033aea038e9c8048",
+        "matching": true
+      },
+      {
+        "session_id": "c75f8e41-fde6-4d81-9c90-6f4844dad1b5",
+        "r54c_sha256": "dbba84d67a7c0d79ddf1da5ce6031feaaff177e88d0fc29a32cac87c99f75ff2",
+        "r63_sha256": "dbba84d67a7c0d79ddf1da5ce6031feaaff177e88d0fc29a32cac87c99f75ff2",
+        "matching": true
+      },
+      {
+        "session_id": "77faef85-566c-4eb7-90b6-ee9fdeeacbe8",
+        "r54c_sha256": "fee2149169628567c8227717c246b39ab84cc95fd0997cdd0aae92bef55598ee",
+        "r63_sha256": "fee2149169628567c8227717c246b39ab84cc95fd0997cdd0aae92bef55598ee",
+        "matching": true
+      }
+    ]
+  },
+  "validation": {
+    "gates": {
+      "rows_80": true,
+      "unique_sessions_80": true,
+      "tracks_20_each": true,
+      "total_tracks_1600": true,
+      "no_duplicate_tracks_within_row": true,
+      "valid_uuid_track_ids": true,
+      "track_ids_exactly_equal_to_r54c_per_position": true,
+      "prefix_leak_count_0": true,
+      "trailing_question_count_0": true,
+      "boilerplate_count_0": true,
+      "empty_or_too_short_count_0": true,
+      "target_word_range_65_95": true,
+      "first_sentence_names_top1_track_and_artist": true,
+      "lexdiv_floor_0_83": false,
+      "lexdiv_target_r54c_0_8381": false,
+      "opener_cluster_max_le_5": true
+    },
+    "counts": {
+      "rows": 80,
+      "unique_sessions": 80,
+      "duplicate_session_count": 0,
+      "track_rows_wrong_len": 0,
+      "total_tracks": 1600,
+      "rows_with_duplicate_tracks": 0,
+      "invalid_uuid_track_ids": 0,
+      "invalid_catalog_track_ids": 0,
+      "prefix_leak_count": 0,
+      "trailing_question_count": 0,
+      "boilerplate_count": 0,
+      "empty_or_too_short_count": 0,
+      "target_word_range_violations": 0,
+      "first_sentence_name_violations": 0
+    },
+    "lexdiv_distinct2": 0.8287693830419004,
+    "repeated_opener_clusters": [
+      {
+        "opener": "cry out by one ok",
+        "count": 2
+      }
+    ],
+    "opener_max_cluster": 2,
+    "track_hash_comparison": {
+      "rows_compared": 80,
+      "rows_with_matching_track_sequence": 80,
+      "rows_with_mismatched_track_sequence": 0,
+      "total_tracks_compared": 1600,
+      "per_position_mismatches": 0,
+      "per_row": [
+        {
+          "session_id": "9c37dcd7-d7c2-4686-8541-1e37c4814a09",
+          "r54c_sha256": "bb0b9a10bcfdf7c119a379abddc7b5b6b731cb3d82827b31aa6b5a85b300a3cd",
+          "r63_sha256": "bb0b9a10bcfdf7c119a379abddc7b5b6b731cb3d82827b31aa6b5a85b300a3cd",
+          "matching": true
+        },
+        {
+          "session_id": "60a6fd69-33f4-4dbf-aa0d-872b27a69037",
+          "r54c_sha256": "9ef8ad60a340a6afd06a62c129c01639bf8495241af10ff72209515543052708",
+          "r63_sha256": "9ef8ad60a340a6afd06a62c129c01639bf8495241af10ff72209515543052708",
+          "matching": true
+        },
+        {
+          "session_id": "25cc9533-7c02-4781-9100-ab438e848a3d",
+          "r54c_sha256": "d06c123e195c502f6ab133aab9338d04f35339b1032da1b59ec0da7cb2f4d8fb",
+          "r63_sha256": "d06c123e195c502f6ab133aab9338d04f35339b1032da1b59ec0da7cb2f4d8fb",
+          "matching": true
+        },
+        {
+          "session_id": "39698083-bc11-4514-9e53-da76d9260b3a",
+          "r54c_sha256": "2f872c7135da4f9bac2f36b4d157a9be7a57e896d7022c047f33f3dfe068f37c",
+          "r63_sha256": "2f872c7135da4f9bac2f36b4d157a9be7a57e896d7022c047f33f3dfe068f37c",
+          "matching": true
+        },
+        {
+          "session_id": "0fedfa80-ebe2-4977-b16b-594f4a2b19b1",
+          "r54c_sha256": "9b9668b4894d9adf2801cc72655e3dd4227fcec2aecfbe5197ee9d0ed8bfd878",
+          "r63_sha256": "9b9668b4894d9adf2801cc72655e3dd4227fcec2aecfbe5197ee9d0ed8bfd878",
+          "matching": true
+        },
+        {
+          "session_id": "a1df8767-11df-44d3-a1f6-e1ba2115e8f0",
+          "r54c_sha256": "9152c8f53a83baa1cfbe5101e20c3e8a34d7bbdc00b71aa843034088a9eeaf9a",
+          "r63_sha256": "9152c8f53a83baa1cfbe5101e20c3e8a34d7bbdc00b71aa843034088a9eeaf9a",
+          "matching": true
+        },
+        {
+          "session_id": "02ec3071-bd03-4f78-91bc-96666d0e3b6b",
+          "r54c_sha256": "4366a30faadd8dc6e44a8a65d294da395a6bbdf355c4f3e8d295266d99e57e21",
+          "r63_sha256": "4366a30faadd8dc6e44a8a65d294da395a6bbdf355c4f3e8d295266d99e57e21",
+          "matching": true
+        },
+        {
+          "session_id": "4b8ed42b-39ec-4d17-9bea-507828687a0c",
+          "r54c_sha256": "24f2b425b34fc43a680f720aa65ae905aa8ab1b1cfa52cf8ae43419d89bda6b9",
+          "r63_sha256": "24f2b425b34fc43a680f720aa65ae905aa8ab1b1cfa52cf8ae43419d89bda6b9",
+          "matching": true
+        },
+        {
+          "session_id": "ca9c5de4-c2b7-4972-a524-615a400d0105",
+          "r54c_sha256": "6f5c7300d0a51bc03d779698ed9fc9313cdf4d1490c0ab21a96604df8415b2ce",
+          "r63_sha256": "6f5c7300d0a51bc03d779698ed9fc9313cdf4d1490c0ab21a96604df8415b2ce",
+          "matching": true
+        },
+        {
+          "session_id": "645670fd-b825-4c26-aba5-edcdb57e7684",
+          "r54c_sha256": "45cd50214959b50fca7ee370b2fea4d2cc798c368a9460dd4cc3de511333a173",
+          "r63_sha256": "45cd50214959b50fca7ee370b2fea4d2cc798c368a9460dd4cc3de511333a173",
+          "matching": true
+        },
+        {
+          "session_id": "d53d9457-12f1-4286-b195-aa42c23d3bce",
+          "r54c_sha256": "6af4c1d7fb1410bd01ff2194b04ae6bae4451e82a0f564c8a0276e8f3bcf54e3",
+          "r63_sha256": "6af4c1d7fb1410bd01ff2194b04ae6bae4451e82a0f564c8a0276e8f3bcf54e3",
+          "matching": true
+        },
+        {
+          "session_id": "db8ec85f-fa1f-4e88-b4d2-333b63b0d386",
+          "r54c_sha256": "96e1264265b5fb3d66eb191cd7f0475437b3a822ba15a7f75f832e9f4df6763d",
+          "r63_sha256": "96e1264265b5fb3d66eb191cd7f0475437b3a822ba15a7f75f832e9f4df6763d",
+          "matching": true
+        },
+        {
+          "session_id": "fc6ba76a-3dd8-4c11-b5af-a233253b01bf",
+          "r54c_sha256": "f6e647749c1b3c9bc9d025c045854288c532200b4f68a16b707d7cec9ed3efb3",
+          "r63_sha256": "f6e647749c1b3c9bc9d025c045854288c532200b4f68a16b707d7cec9ed3efb3",
+          "matching": true
+        },
+        {
+          "session_id": "b6457586-ddb1-4e18-a9b5-4d4926b8b46d",
+          "r54c_sha256": "fe5b3c1c2cbb542c10ad43d06555efbec4150cba41f193d293f0472bb4ed2207",
+          "r63_sha256": "fe5b3c1c2cbb542c10ad43d06555efbec4150cba41f193d293f0472bb4ed2207",
+          "matching": true
+        },
+        {
+          "session_id": "70a0e5ad-50cb-475c-95a3-adffcf04b72e",
+          "r54c_sha256": "8c2feae4b5315027a807ea1f2db7d5c223d1377ef5cca8f6d938da2085dece1b",
+          "r63_sha256": "8c2feae4b5315027a807ea1f2db7d5c223d1377ef5cca8f6d938da2085dece1b",
+          "matching": true
+        },
+        {
+          "session_id": "dc3c1b72-0520-44c6-ab2b-4935d0455e19",
+          "r54c_sha256": "ea8d87f62275b25093dca0b3b7227cbbe445db7f9db2210f1cbea7efd51d68ee",
+          "r63_sha256": "ea8d87f62275b25093dca0b3b7227cbbe445db7f9db2210f1cbea7efd51d68ee",
+          "matching": true
+        },
+        {
+          "session_id": "2a677d32-23e9-4fe7-8b8e-4875c93509a2",
+          "r54c_sha256": "a5041a857634268742d3a813db1ad2eec767ea14f310b53ed4e37ddc1ede2914",
+          "r63_sha256": "a5041a857634268742d3a813db1ad2eec767ea14f310b53ed4e37ddc1ede2914",
+          "matching": true
+        },
+        {
+          "session_id": "198470a5-db1e-4add-b04a-bee8c5945d4b",
+          "r54c_sha256": "eb02c46808868af2706aa901e9f10f2f18740c0342ce4730cdc1344f2787a704",
+          "r63_sha256": "eb02c46808868af2706aa901e9f10f2f18740c0342ce4730cdc1344f2787a704",
+          "matching": true
+        },
+        {
+          "session_id": "07aae53d-7c65-442a-a893-6ffde80efb0d",
+          "r54c_sha256": "2440fc2b1015ffe4619a3386871224c03ca1475ec433ddab6dd113954c42bba4",
+          "r63_sha256": "2440fc2b1015ffe4619a3386871224c03ca1475ec433ddab6dd113954c42bba4",
+          "matching": true
+        },
+        {
+          "session_id": "525f9f69-31e5-4fee-9813-e903ad24e39e",
+          "r54c_sha256": "64ef9411c1abe87a1deb46b30977f6a8937d7cc6ec9329fa7d80c0fc4e0f5d70",
+          "r63_sha256": "64ef9411c1abe87a1deb46b30977f6a8937d7cc6ec9329fa7d80c0fc4e0f5d70",
+          "matching": true
+        },
+        {
+          "session_id": "0802ac4a-187b-4a78-b090-0ceb7630cf12",
+          "r54c_sha256": "6c6fde41bdb9e53010fd1c970bcb5e6bfcabb79dffc7fee8253e8e471e062f47",
+          "r63_sha256": "6c6fde41bdb9e53010fd1c970bcb5e6bfcabb79dffc7fee8253e8e471e062f47",
+          "matching": true
+        },
+        {
+          "session_id": "eb4a6ef2-7a7e-448a-bfed-c94e68b01505",
+          "r54c_sha256": "785b24ecc5d76c15768a52c1179eeb4bea94b1844c134bbf018fd630b32f871c",
+          "r63_sha256": "785b24ecc5d76c15768a52c1179eeb4bea94b1844c134bbf018fd630b32f871c",
+          "matching": true
+        },
+        {
+          "session_id": "0a1f7a63-c5e4-4a2d-9285-433cd036f4e7",
+          "r54c_sha256": "24b80e913b4ba8c7ae42e22985bf146feecfed512e8c1d4162775f5a4c0ea05d",
+          "r63_sha256": "24b80e913b4ba8c7ae42e22985bf146feecfed512e8c1d4162775f5a4c0ea05d",
+          "matching": true
+        },
+        {
+          "session_id": "ca8cbe02-1def-4fca-ba48-f17f9fac0ed8",
+          "r54c_sha256": "4cbcf2e74652abaeab27a21ae8df93eb5e7a25ddc2d3485a34fc553004698624",
+          "r63_sha256": "4cbcf2e74652abaeab27a21ae8df93eb5e7a25ddc2d3485a34fc553004698624",
+          "matching": true
+        },
+        {
+          "session_id": "574f75cf-7036-4cd2-b699-93202d81e7e1",
+          "r54c_sha256": "9aa7a13c65615b2784e9ca767166c466da094f7692c7d365d145290d98e2884a",
+          "r63_sha256": "9aa7a13c65615b2784e9ca767166c466da094f7692c7d365d145290d98e2884a",
+          "matching": true
+        },
+        {
+          "session_id": "ee7bfbda-86ee-4ade-b695-dbdeb12ae063",
+          "r54c_sha256": "a952cd90480197947bae0a82afa79ae586d4abecbb74742f703fff83a0f1acfb",
+          "r63_sha256": "a952cd90480197947bae0a82afa79ae586d4abecbb74742f703fff83a0f1acfb",
+          "matching": true
+        },
+        {
+          "session_id": "9d4ef919-504b-4963-af47-777478ace477",
+          "r54c_sha256": "4cbf1962f1b0f2199f24cc80531933c81ffb2b8642c784bb411c4880c690a168",
+          "r63_sha256": "4cbf1962f1b0f2199f24cc80531933c81ffb2b8642c784bb411c4880c690a168",
+          "matching": true
+        },
+        {
+          "session_id": "c08eb2a1-8491-442d-a10f-db8d9ba831d6",
+          "r54c_sha256": "3d609e301b3c96db501a694b046948e821ec0f9887fb7b1fe85e170fc5c0c01d",
+          "r63_sha256": "3d609e301b3c96db501a694b046948e821ec0f9887fb7b1fe85e170fc5c0c01d",
+          "matching": true
+        },
+        {
+          "session_id": "38a5f361-9802-40be-9d15-15c67d5ba60a",
+          "r54c_sha256": "e67ceb7a155502ec647b5cda560c25f3df077a36abc3d5d7450b23e780d9345b",
+          "r63_sha256": "e67ceb7a155502ec647b5cda560c25f3df077a36abc3d5d7450b23e780d9345b",
+          "matching": true
+        },
+        {
+          "session_id": "fe22cfe0-f552-4d43-bf13-ea77bef4f1ce",
+          "r54c_sha256": "a9068877c31c108f804148d920aeb44120ab5ca61e6c87f13feee8adc65eee43",
+          "r63_sha256": "a9068877c31c108f804148d920aeb44120ab5ca61e6c87f13feee8adc65eee43",
+          "matching": true
+        },
+        {
+          "session_id": "40cc1c03-6db9-49db-8bbe-8b97b45adb0b",
+          "r54c_sha256": "7df961bbd51ce67052ed34c797d320c48a6d975f489d4e14e5a4824a7c7d5480",
+          "r63_sha256": "7df961bbd51ce67052ed34c797d320c48a6d975f489d4e14e5a4824a7c7d5480",
+          "matching": true
+        },
+        {
+          "session_id": "3aee4d9b-b0f1-4282-bbe6-58942c71f311",
+          "r54c_sha256": "15716deb8f7fc0a8cb7d9bfa84763a4fd4b4b01c831356886ec3c73680100b53",
+          "r63_sha256": "15716deb8f7fc0a8cb7d9bfa84763a4fd4b4b01c831356886ec3c73680100b53",
+          "matching": true
+        },
+        {
+          "session_id": "4b239a62-4435-4f39-80d6-26cffe0d1871",
+          "r54c_sha256": "9c36925677a0d829dc4ea04fef3d92e1bef4a24f739a7e1af68d291bf002b097",
+          "r63_sha256": "9c36925677a0d829dc4ea04fef3d92e1bef4a24f739a7e1af68d291bf002b097",
+          "matching": true
+        },
+        {
+          "session_id": "809d4fbc-5298-494a-8817-78b3fdc5317e",
+          "r54c_sha256": "8ef6ab61a1fc5d2d9783da7200ac99959bd1bc3eb95b4bc1984e35eff7006672",
+          "r63_sha256": "8ef6ab61a1fc5d2d9783da7200ac99959bd1bc3eb95b4bc1984e35eff7006672",
+          "matching": true
+        },
+        {
+          "session_id": "5e1f5a89-99c0-46bb-af78-005338d05858",
+          "r54c_sha256": "ed34e6d49a0b990a561a7485bd78fee4c7d1f72e356da9e8b105284633921b1a",
+          "r63_sha256": "ed34e6d49a0b990a561a7485bd78fee4c7d1f72e356da9e8b105284633921b1a",
+          "matching": true
+        },
+        {
+          "session_id": "d7426802-d075-4a49-8062-977ba656c9a2",
+          "r54c_sha256": "3b2112bbdf0832a46257f38fe7e42a8ed3c04634bd412b3f519ca80446ccbbf5",
+          "r63_sha256": "3b2112bbdf0832a46257f38fe7e42a8ed3c04634bd412b3f519ca80446ccbbf5",
+          "matching": true
+        },
+        {
+          "session_id": "d851eac7-27a7-4363-b2a4-6cb365c79d22",
+          "r54c_sha256": "ed41a9c2c9f315034fd2f99aef230a0176a083363fe539918e83882998a1b67f",
+          "r63_sha256": "ed41a9c2c9f315034fd2f99aef230a0176a083363fe539918e83882998a1b67f",
+          "matching": true
+        },
+        {
+          "session_id": "28c3ecd9-fbaa-4423-a85c-92508346e1e8",
+          "r54c_sha256": "ad1652bdab4b4273f19eadf2ae64ef90ee361fc7f2cb0c194f83cd2ebc3f68da",
+          "r63_sha256": "ad1652bdab4b4273f19eadf2ae64ef90ee361fc7f2cb0c194f83cd2ebc3f68da",
+          "matching": true
+        },
+        {
+          "session_id": "5b2f877b-a6d5-4473-879c-f5a24d4fd06f",
+          "r54c_sha256": "06d376455c3d65b3bb48f7e58b941203a61b13cbf9480089cfbc6aa9900841fa",
+          "r63_sha256": "06d376455c3d65b3bb48f7e58b941203a61b13cbf9480089cfbc6aa9900841fa",
+          "matching": true
+        },
+        {
+          "session_id": "d5c80ee5-97c2-4de1-af2e-2295e3ae34a3",
+          "r54c_sha256": "8760b266a0b4601f267d69170fd95c8a4ab1395cb49034699ebb0a4f452a7bf1",
+          "r63_sha256": "8760b266a0b4601f267d69170fd95c8a4ab1395cb49034699ebb0a4f452a7bf1",
+          "matching": true
+        },
+        {
+          "session_id": "68993adf-60d9-42f9-b21f-cdd5bf851cb1",
+          "r54c_sha256": "aa96c365521f4bed0419597b1da8ced203ff35046bd677708940886f9cd45b9e",
+          "r63_sha256": "aa96c365521f4bed0419597b1da8ced203ff35046bd677708940886f9cd45b9e",
+          "matching": true
+        },
+        {
+          "session_id": "6c54de37-9c55-4c59-b203-ec190dd07523",
+          "r54c_sha256": "845b58721e5781a846567c6cbe5ec68203ea73e6e073a669da85930708b6d8f4",
+          "r63_sha256": "845b58721e5781a846567c6cbe5ec68203ea73e6e073a669da85930708b6d8f4",
+          "matching": true
+        },
+        {
+          "session_id": "eaeca304-3ddb-4adb-8087-0f15b597f73e",
+          "r54c_sha256": "08788108817f6244f7a770fa57d8fc965fd53561289f9c398cb357567bf949f4",
+          "r63_sha256": "08788108817f6244f7a770fa57d8fc965fd53561289f9c398cb357567bf949f4",
+          "matching": true
+        },
+        {
+          "session_id": "2fe9abf6-ccea-4f05-8490-82da8bf57764",
+          "r54c_sha256": "c7f522daf09b761c0134ea8854439e5f5db299b3f620c83f7383daf28883f340",
+          "r63_sha256": "c7f522daf09b761c0134ea8854439e5f5db299b3f620c83f7383daf28883f340",
+          "matching": true
+        },
+        {
+          "session_id": "1f7b28c1-8b18-4045-be27-0475edb96857",
+          "r54c_sha256": "5c12c4367aeb53515c227a2e1a5ecdefc931b84e01448ce8e2c7cf5c0be8f781",
+          "r63_sha256": "5c12c4367aeb53515c227a2e1a5ecdefc931b84e01448ce8e2c7cf5c0be8f781",
+          "matching": true
+        },
+        {
+          "session_id": "ebad356d-d5ab-437a-81f1-6d219e532c33",
+          "r54c_sha256": "0847a75e59c08003ca73dc6b0a33737578e4c3bb238962b52daf1ad499e3833b",
+          "r63_sha256": "0847a75e59c08003ca73dc6b0a33737578e4c3bb238962b52daf1ad499e3833b",
+          "matching": true
+        },
+        {
+          "session_id": "6953ac7a-5e95-48d8-be4e-8f153ac937e2",
+          "r54c_sha256": "fdced8340a0ee446fe496e142f20427a891ba599261695db51bfed12b73eb61c",
+          "r63_sha256": "fdced8340a0ee446fe496e142f20427a891ba599261695db51bfed12b73eb61c",
+          "matching": true
+        },
+        {
+          "session_id": "49009ca7-f8da-45df-9c62-7b88d960d5d2",
+          "r54c_sha256": "a6148a85eac23ffc7f3e4341c01d98d0dd49ca942d6001440a98891b4415f637",
+          "r63_sha256": "a6148a85eac23ffc7f3e4341c01d98d0dd49ca942d6001440a98891b4415f637",
+          "matching": true
+        },
+        {
+          "session_id": "8cd8575d-4743-4235-a493-aee6039551b4",
+          "r54c_sha256": "67816376592fdef15bc714993ddc7055242136d35b66a5df4e1800ef277f2c0d",
+          "r63_sha256": "67816376592fdef15bc714993ddc7055242136d35b66a5df4e1800ef277f2c0d",
+          "matching": true
+        },
+        {
+          "session_id": "ff76b679-7d7a-4796-8f6c-929efef45428",
+          "r54c_sha256": "759abe4836097645ccc140089e6a8ea1ca332ff17b01734c3113a97aa6c1d7a2",
+          "r63_sha256": "759abe4836097645ccc140089e6a8ea1ca332ff17b01734c3113a97aa6c1d7a2",
+          "matching": true
+        },
+        {
+          "session_id": "78487c90-fda7-4723-ad4c-4557393ea95f",
+          "r54c_sha256": "8201cf1c558c333e72fd291cc03f925c014322ad277f63e0308bc64250baa5bc",
+          "r63_sha256": "8201cf1c558c333e72fd291cc03f925c014322ad277f63e0308bc64250baa5bc",
+          "matching": true
+        },
+        {
+          "session_id": "5ad7094f-3764-4e32-94c9-c0c02b65e01b",
+          "r54c_sha256": "56f05dfa5c63eb31740d64ad542d6989c0cd0775a17b1f21f259e3fea481e754",
+          "r63_sha256": "56f05dfa5c63eb31740d64ad542d6989c0cd0775a17b1f21f259e3fea481e754",
+          "matching": true
+        },
+        {
+          "session_id": "db11666f-bfb8-4d0d-b62b-075ab85d92f9",
+          "r54c_sha256": "4ed605f70f8be2545f09426da348cd0b83d9a4f41ec0278433ebfec4d7efdf41",
+          "r63_sha256": "4ed605f70f8be2545f09426da348cd0b83d9a4f41ec0278433ebfec4d7efdf41",
+          "matching": true
+        },
+        {
+          "session_id": "8998b916-97bf-406f-92db-3ae40a832f4c",
+          "r54c_sha256": "3a62b045c232a9d4e830dc9c64b304606594e91bb1cd75d7f37bd865624bb1fe",
+          "r63_sha256": "3a62b045c232a9d4e830dc9c64b304606594e91bb1cd75d7f37bd865624bb1fe",
+          "matching": true
+        },
+        {
+          "session_id": "31bf71ab-497f-4045-bc91-06552f9b69b8",
+          "r54c_sha256": "1f2b24c9fae094dc4fad507e35da152d4f6ee0f65d56b0fe68e81fe38538b40a",
+          "r63_sha256": "1f2b24c9fae094dc4fad507e35da152d4f6ee0f65d56b0fe68e81fe38538b40a",
+          "matching": true
+        },
+        {
+          "session_id": "12124711-bfe3-4634-8368-2fa1d8ddf885",
+          "r54c_sha256": "c4c79459ad3ffac2a61806af4ccc2c89dda3cbcca4d27d87f75fdb8b6e7a0f74",
+          "r63_sha256": "c4c79459ad3ffac2a61806af4ccc2c89dda3cbcca4d27d87f75fdb8b6e7a0f74",
+          "matching": true
+        },
+        {
+          "session_id": "9cd93031-ae32-4c15-99fa-fbb1b6fbac0b",
+          "r54c_sha256": "d6717ac68c8314513b79ce7c753224bd40831b379e51caee2ef3ba81efd4050f",
+          "r63_sha256": "d6717ac68c8314513b79ce7c753224bd40831b379e51caee2ef3ba81efd4050f",
+          "matching": true
+        },
+        {
+          "session_id": "789f9994-f2b6-481d-b71a-c0c6706d82c6",
+          "r54c_sha256": "c729547b74639ac988f434bd4bbc4a56b15f0cc0f9d93342ca8bd6c1cec631d9",
+          "r63_sha256": "c729547b74639ac988f434bd4bbc4a56b15f0cc0f9d93342ca8bd6c1cec631d9",
+          "matching": true
+        },
+        {
+          "session_id": "3734e44b-ca86-456b-95b1-9352effa8d3a",
+          "r54c_sha256": "6dd4ad342955b4a6870dc8af045f90cb00135c0552c731e534a1eb1a9f948226",
+          "r63_sha256": "6dd4ad342955b4a6870dc8af045f90cb00135c0552c731e534a1eb1a9f948226",
+          "matching": true
+        },
+        {
+          "session_id": "8aeb8706-f800-4827-ba71-0797bf5afb0d",
+          "r54c_sha256": "3a8e9639186d8bd45614bc464c773486ac5169a0c2362516196515a9e6c6fb98",
+          "r63_sha256": "3a8e9639186d8bd45614bc464c773486ac5169a0c2362516196515a9e6c6fb98",
+          "matching": true
+        },
+        {
+          "session_id": "ab87371b-9ebc-4fb1-9eea-b984a5b76258",
+          "r54c_sha256": "d1c815363a1be596d8d06fd16cfaa0dd5c5985f2fe067d7bd7b47df9640291da",
+          "r63_sha256": "d1c815363a1be596d8d06fd16cfaa0dd5c5985f2fe067d7bd7b47df9640291da",
+          "matching": true
+        },
+        {
+          "session_id": "46faad58-58e7-4379-978e-4de6e5cc3b4f",
+          "r54c_sha256": "56f9c46d9a32997fb56bb6d51c3c784e2d3a8e793f2580daf447bd39890486a0",
+          "r63_sha256": "56f9c46d9a32997fb56bb6d51c3c784e2d3a8e793f2580daf447bd39890486a0",
+          "matching": true
+        },
+        {
+          "session_id": "3afb9f67-a18a-4b97-81cf-ef1806fce0e9",
+          "r54c_sha256": "5ee668899511eaabf9005e1ec94cc9f378da7055f89bba74e66514a20ca64c2f",
+          "r63_sha256": "5ee668899511eaabf9005e1ec94cc9f378da7055f89bba74e66514a20ca64c2f",
+          "matching": true
+        },
+        {
+          "session_id": "2b1cbd1c-dd5b-40ab-943a-0392894babc0",
+          "r54c_sha256": "4e5024b96c91314961bfbc95d756660d69a7816e2e68e43813bfe95aad6f5bc9",
+          "r63_sha256": "4e5024b96c91314961bfbc95d756660d69a7816e2e68e43813bfe95aad6f5bc9",
+          "matching": true
+        },
+        {
+          "session_id": "164fc33f-b103-424f-836a-b7a7d565f6c2",
+          "r54c_sha256": "ee89504998cc0c25b426f94c8fa6de726c6d62e215cb9da6635c09f0ee7b7157",
+          "r63_sha256": "ee89504998cc0c25b426f94c8fa6de726c6d62e215cb9da6635c09f0ee7b7157",
+          "matching": true
+        },
+        {
+          "session_id": "ab8bc8fa-6326-47a5-afb4-3e3a30ca7360",
+          "r54c_sha256": "f16e2722529eccef9999833e7344a149de854b9c93c27f0d44180677e02a0556",
+          "r63_sha256": "f16e2722529eccef9999833e7344a149de854b9c93c27f0d44180677e02a0556",
+          "matching": true
+        },
+        {
+          "session_id": "b7d2f58e-a1e5-418d-b3bd-88e88d20908d",
+          "r54c_sha256": "66859b7f8d087e2941af9de7e5d8a3f4687165c41de67b354ca2c9c89423f875",
+          "r63_sha256": "66859b7f8d087e2941af9de7e5d8a3f4687165c41de67b354ca2c9c89423f875",
+          "matching": true
+        },
+        {
+          "session_id": "2bfd631e-7d47-4dd6-a419-7d63615833c5",
+          "r54c_sha256": "fb21e22177dcc3c72082d061fb2c6f6087f19bb352b00f788813b6889330d755",
+          "r63_sha256": "fb21e22177dcc3c72082d061fb2c6f6087f19bb352b00f788813b6889330d755",
+          "matching": true
+        },
+        {
+          "session_id": "91ce5668-ec1e-4d09-a30a-3440be9c8861",
+          "r54c_sha256": "1faaf0f0a49019a82a5ba9d6c4f13c2d13348a8a6e37871a70d43fce557928a4",
+          "r63_sha256": "1faaf0f0a49019a82a5ba9d6c4f13c2d13348a8a6e37871a70d43fce557928a4",
+          "matching": true
+        },
+        {
+          "session_id": "c4f7d055-a3cc-4d6b-be80-b90278bc0d32",
+          "r54c_sha256": "15a50aa9a42d283398ea0058a1ccad6a7e5155cb7594ea8e1e2963345e7e91b1",
+          "r63_sha256": "15a50aa9a42d283398ea0058a1ccad6a7e5155cb7594ea8e1e2963345e7e91b1",
+          "matching": true
+        },
+        {
+          "session_id": "7905bb71-efea-4210-8ad9-881f37cad50a",
+          "r54c_sha256": "7c0906129e289015eac782c94a79e7cdb2a1e331ea94a513187ecbfd6546c18f",
+          "r63_sha256": "7c0906129e289015eac782c94a79e7cdb2a1e331ea94a513187ecbfd6546c18f",
+          "matching": true
+        },
+        {
+          "session_id": "1415a335-8fa3-4ead-8f30-0f04b337d079",
+          "r54c_sha256": "ff778cf5c4e9827895caa3fcf6a8c786d993a36cb188cf73306c07465dc66d95",
+          "r63_sha256": "ff778cf5c4e9827895caa3fcf6a8c786d993a36cb188cf73306c07465dc66d95",
+          "matching": true
+        },
+        {
+          "session_id": "4831a3b4-3964-40ec-92a3-151cef2cae8f",
+          "r54c_sha256": "780b76845f35c3f56e2b4d31a5b3ecc0278770ed139bad6b3f749ceab0d13ed7",
+          "r63_sha256": "780b76845f35c3f56e2b4d31a5b3ecc0278770ed139bad6b3f749ceab0d13ed7",
+          "matching": true
+        },
+        {
+          "session_id": "d9cca604-febe-4c95-a5cc-a4318c33ec40",
+          "r54c_sha256": "c3ff73595201f3b9a78229c0599d91ad7cd82a598b6dcf155d692c35c8c9b713",
+          "r63_sha256": "c3ff73595201f3b9a78229c0599d91ad7cd82a598b6dcf155d692c35c8c9b713",
+          "matching": true
+        },
+        {
+          "session_id": "f321d88d-d809-4bcb-aca0-a1ef551a48de",
+          "r54c_sha256": "0b7fb569981994a835ade3d5c6740d0ce9141d8efed73ab923166255391440c0",
+          "r63_sha256": "0b7fb569981994a835ade3d5c6740d0ce9141d8efed73ab923166255391440c0",
+          "matching": true
+        },
+        {
+          "session_id": "c0d4e758-5dfe-41a4-b0f2-07c29e27cdce",
+          "r54c_sha256": "9ff06759694ed1796d66ce0a529d42c302c7f12e13f656bf669f281bbc8fc5e3",
+          "r63_sha256": "9ff06759694ed1796d66ce0a529d42c302c7f12e13f656bf669f281bbc8fc5e3",
+          "matching": true
+        },
+        {
+          "session_id": "4e849a6c-dfbc-4a67-82cc-6dff9076b382",
+          "r54c_sha256": "d20b594a5e622727407e8631d8ed3e81576e0a17339ede1bd67acbfe0982b276",
+          "r63_sha256": "d20b594a5e622727407e8631d8ed3e81576e0a17339ede1bd67acbfe0982b276",
+          "matching": true
+        },
+        {
+          "session_id": "bd392a56-236a-49da-8f89-46c453e97ea2",
+          "r54c_sha256": "3c8a934361bf031b0b46bc15bac2dc9f9efe4b99fa760004033aea038e9c8048",
+          "r63_sha256": "3c8a934361bf031b0b46bc15bac2dc9f9efe4b99fa760004033aea038e9c8048",
+          "matching": true
+        },
+        {
+          "session_id": "c75f8e41-fde6-4d81-9c90-6f4844dad1b5",
+          "r54c_sha256": "dbba84d67a7c0d79ddf1da5ce6031feaaff177e88d0fc29a32cac87c99f75ff2",
+          "r63_sha256": "dbba84d67a7c0d79ddf1da5ce6031feaaff177e88d0fc29a32cac87c99f75ff2",
+          "matching": true
+        },
+        {
+          "session_id": "77faef85-566c-4eb7-90b6-ee9fdeeacbe8",
+          "r54c_sha256": "fee2149169628567c8227717c246b39ab84cc95fd0997cdd0aae92bef55598ee",
+          "r63_sha256": "fee2149169628567c8227717c246b39ab84cc95fd0997cdd0aae92bef55598ee",
+          "matching": true
+        }
+      ]
+    }
+  },
+  "regenerated_row_validation": {
+    "selected_rows": 15,
+    "accepted_regenerated_rows": 15,
+    "fallback_original_rows": 0,
+    "violations": [],
+    "passed": true
+  },
+  "before_after_samples": [
+    {
+      "row_index": 39,
+      "session_id": "d5c80ee5-97c2-4de1-af2e-2295e3ae34a3",
+      "top1_track_id": "983dbea0-db39-423f-b734-c9a18f384620",
+      "top1_track": "Bits With Byte",
+      "top1_artist": "8 Bit Weapon",
+      "weakness_score": 3,
+      "repair_architecture": "contrast sentence",
+      "r63c_response": "Bits With Byte by 8 Bit Weapon keeps you in the same retro space-arcade territory as Escape From Xenon, since you wanted more galaxy-exploring, alien-boss energy from that same artist. This one leans on crunchy square-wave leads and a steady electro pulse, like drifting between star systems before a pixelated showdown. The melody stays catchy and triumphant rather than frenetic, matching the calmer-but-memorable classic-gameplay feel that finally clicked for you with 2D Racer Level 1 and Lil' Fighter.",
+      "repair_response": "Where Escape From Xenon dropped you into a sci-fi shooter, Bits With Byte by 8 Bit Weapon pushes deeper into that galaxy-exploration feeling you just asked about, staying with the artist who finally nailed the brief. Built around bright square-wave melodies and a steady electro pulse, it carries the triumphant arcade-theme quality you loved in Lil' Fighter without tipping into Chipzel's frenetic intensity. The melodic focus also echoes why 2D Racer Level 1 first cracked things open for you."
+    },
+    {
+      "row_index": 36,
+      "session_id": "d851eac7-27a7-4363-b2a4-6cb365c79d22",
+      "top1_track_id": "425c0307-9479-41c8-9910-0006480c156a",
+      "top1_track": "White Ferrari",
+      "top1_artist": "Frank Ocean",
+      "weakness_score": 1,
+      "repair_architecture": "genre-first sentence",
+      "r63c_response": "White Ferrari by Frank Ocean is the strongest match because Blonde's cover—that flushed green-lit portrait of Frank with his hand obscuring his face—stands among the most striking sleeves in modern alternative R&B. This specifically because you asked for bold palettes, and as a UK listener leaning indie/alternative, the track itself pairs that sleeve with hushed falsetto, drifting ambient guitar, and a quiet Beatles interpolation borrowed from \"Here, There and Everywhere.\" Released in 2016, it remains spacious and weightless, a striking visual paired with equally considered sonic detail.",
+      "repair_response": "Alternative R&B at its most spacious, White Ferrari by Frank Ocean pairs one of the era's most arresting sleeves—that fluorescent green-lit Blonde portrait—with hushed falsetto, drifting ambient guitar, and a subtle Beatles interpolation from \"Here, There and Everywhere.\" Given your request for bold palettes and striking design, the 2016 cover art alone earns its place, and as a UK indie/alternative listener in your twenties, the weightless production and tender lyrical drift should sit comfortably alongside the aesthetic-forward picks shaping this session."
+    },
+    {
+      "row_index": 7,
+      "session_id": "4b8ed42b-39ec-4d17-9bea-507828687a0c",
+      "top1_track_id": "621c763c-4a32-4696-82e6-866b36eb2ac8",
+      "top1_track": "Fight To Live",
+      "top1_artist": "The Bouncing Souls",
+      "weakness_score": 0,
+      "repair_architecture": "memory-reference sentence",
+      "r63c_response": "Fight To Live by The Bouncing Souls pulls from the same Hopeless Romantic album you just connected with, keeping that thread going. It's 90s melodic punk with a galloping drumbeat and a shout-along chorus built for gang vocals, answering the singalong punch you said was missing from the earlier Defiance, Ohio picks. Lyrically it leans into scrappy, hold-onto-the-good-times defiance, which fits the nostalgic road trip mood you locked in, and the album-mate continuity means it sits cleanly next to Hopeless Romantic on your playlist.",
+      "repair_response": "Since Hopeless Romantic clicked so hard for that nostalgic road trip feeling, Fight To Live by The Bouncing Souls keeps you inside the same 1997 album and extends the streak. This one rides a galloping drum kick and a shout-along chorus tailor-made for gang vocals, addressing the singalong punch the Defiance, Ohio tracks were missing. The lyrics dig into scrappy, hold-tight-to-the-good-times resilience, mirroring the upbeat-yet-reflective melodic punk you outlined, and its album-mate kinship means it sequences naturally beside the track you already loved."
+    },
+    {
+      "row_index": 10,
+      "session_id": "d53d9457-12f1-4286-b195-aa42c23d3bce",
+      "top1_track_id": "dbc800fa-1a95-4300-861e-907b30dda303",
+      "top1_track": "Whispers from the Ether",
+      "top1_artist": "Kognitif",
+      "weakness_score": 1,
+      "repair_architecture": "artist-context sentence",
+      "r63c_response": "Whispers from the Ether by Kognitif moves you into the Electronic territory you just asked about while keeping the Kognitif thread you've leaned on since \"That's Where It All Started.\" It's an instrumental cut from the Monometric album, built on atmospheric electronic textures and a steady pulse that leaves room for the kind of reflection his verses on \"Common Ground\" sparked lyrically. The forward-leaning tone keeps things resilient rather than melancholic, matching the uplifting reflection you flagged earlier as a priority.",
+      "repair_response": "Kognitif's Monometric album pivots into instrumental Electronic territory, and Whispers from the Ether is shaped around drifting synth pads and a patient, hypnotic pulse rather than bars. Since you've stayed locked into his catalog from \"That's Where It All Started\" through \"Common Ground,\" this keeps that thread while crossing into the Electronic side you just asked to explore. The atmospheric production carries a forward-tilted, resilient tone, leaving open headspace for the reflective listening you've been chasing without tipping into melancholy."
+    },
+    {
+      "row_index": 8,
+      "session_id": "ca9c5de4-c2b7-4972-a524-615a400d0105",
+      "top1_track_id": "19d984a3-530a-4b83-82e4-4f7bb72931c7",
+      "top1_track": "Still Pretty",
+      "top1_artist": "Kyle Dixon, Kyle Dixon & Michael Stein",
+      "weakness_score": 0,
+      "repair_architecture": "energy/mood sentence",
+      "r63c_response": "Still Pretty by Kyle Dixon & Michael Stein pulls directly from Stranger Things, Vol. 2, extending the thread you started with Abilities. The track hinges on slow, layered analogue synth pads beneath a patient arpeggiated figure, echoing the tension-building structure of Danger Danger you flagged. Its brooding minor-key harmonic drift sits squarely in that Carpenter-influenced early-80s sci-fi register you're chasing. Choosing this one specifically because it sustains the same composer pairing while pushing further into the darker, more restrained side of the score than Abilities did.",
+      "repair_response": "Slow-burning dread held at simmer rather than boil — that's Still Pretty by Kyle Dixon & Michael Stein, drawn from Stranger Things, Vol. 2. The arpeggiated synth figure threads beneath swelling analogue pads, directly answering your request for tension built from deep pads and sequenced melody. Where Abilities opened things atmospherically, this one tilts further into Carpenter-school early-80s sci-fi menace, holding a minor-key drift that suits the darker corner of the soundtrack culture you've been mapping out across this session."
+    },
+    {
+      "row_index": 21,
+      "session_id": "eb4a6ef2-7a7e-448a-bfed-c94e68b01505",
+      "top1_track_id": "520ec886-e8e8-4ad0-9df7-a329b6e62c91",
+      "top1_track": "Watching As She Reels",
+      "top1_artist": "Rafael Anton Irisarri",
+      "weakness_score": 0,
+      "repair_architecture": "contrast sentence",
+      "r63c_response": "Watching As She Reels by Rafael Anton Irisarri keeps you in the same hushed, atmospheric register you responded to in \"A Thousand-Yard Stare.\" Pulled from his 2015 album Hopes And Past Desires, it works through slow drones and minimal modern-classical textures, with no vocals to drag it forward the way the Arthur Russell and John Maus picks did. This one specifically, because you confirmed Irisarri's instrumental melancholy suits your focus sessions, and its unhurried stillness sits in the background rather than the foreground you flagged earlier.",
+      "repair_response": "Unlike the Arthur Russell detour into vocal avant-garde territory, Watching As She Reels by Rafael Anton Irisarri stays committed to the wordless, drifting ambience you confirmed worked on \"A Thousand-Yard Stare.\" From his 2015 record Hopes And Past Desires, it leans on slow processed drones and minimal modern-classical textures that recede into the room. Since you flagged the Maus track as too foreground-heavy, Irisarri's hushed instrumental patience is the closer match for sustained focus, extending the same atmospheric thread without pulling your attention back up."
+    },
+    {
+      "row_index": 25,
+      "session_id": "ee7bfbda-86ee-4ade-b695-dbdeb12ae063",
+      "top1_track_id": "ef666ec8-358f-4aa1-ad7d-ced727ac9452",
+      "top1_track": "Actress",
+      "top1_artist": "Hand Habits",
+      "weakness_score": 0,
+      "repair_architecture": "genre-first sentence",
+      "r63c_response": "Actress by Hand Habits extends those indie girl sensibilities you've been gravitating toward, with Meg Duffy's hushed singer-songwriter delivery turning self-questioning into something tender and unresolved. Sparse fingerpicked guitar and a drifting alternative arrangement leave space for lyrics picking apart identity and quiet ache. This one specifically because you praised the contemplative atmosphere in Billie Marten's \"In for the Kill\" and the emotional depth of Jill Andrews, and Duffy threads both together, murmured rather than soaring, keeping the introspective inner-thought focus you keep asking for.",
+      "repair_response": "Hushed singer-songwriter folk meets alternative restraint on Actress by Hand Habits, where Meg Duffy turns self-examination into something tender and unresolved. Fingerpicked guitar and a drifting, sparse arrangement carry lyrics that pick apart identity and quiet ache. Since you connected with the contemplative atmosphere of Billie Marten's \"In for the Kill\" and praised the emotional depth in Jill Andrews, Duffy's murmured delivery threads both qualities together, keeping the introspective inner-thought focus central to those indie girl sensibilities guiding this session."
+    },
+    {
+      "row_index": 31,
+      "session_id": "3aee4d9b-b0f1-4282-bbe6-58942c71f311",
+      "top1_track_id": "88649eb5-d2d4-43d4-8d86-a738931d97fe",
+      "top1_track": "In Another Life",
+      "top1_artist": "The Rippingtons, Russ Freeman",
+      "weakness_score": 0,
+      "repair_architecture": "memory-reference sentence",
+      "r63c_response": "In Another Life by The Rippingtons, Russ Freeman keeps your Rippingtons run going after Bella Luna and Northern Lights. It's pulled from the Black Diamond album, with Russ Freeman's warm electric guitar threading over a relaxed jazz fusion groove and a subtle rock undercurrent in the rhythm section. This specific track suits you because you've consistently gravitated toward the mellow instrumental side of the band, and Black Diamond leans into that polished, melody-first writing you enjoyed on Oceansong while adding a bit more harmonic depth.",
+      "repair_response": "Since Bella Luna and Oceansong both clicked for you, In Another Life by The Rippingtons, Russ Freeman is the natural next step in this Rippingtons run. Lifted from the Black Diamond album, it's jazz fusion with a quiet rock undercurrent, built around Russ Freeman's warm electric guitar lines and a polished, melody-first arrangement. Given how reliably you've responded to the band's mellow instrumental side across Kilimanjaro, Morocco, and Northern Lights, this one extends that exact thread with a touch more harmonic depth."
+    }
+  ]
+}
