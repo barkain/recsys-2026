@@ -1,0 +1,2706 @@
+{
+  "submission_label": "R63b targeted response polish | base=R63 | tracks=R54c | 25 rows regenerated | LexDiv=0.8260 | purpose=push LLM judge 4.80 -> 4.85+",
+  "created_at": "2026-05-17T22:26:19.613291",
+  "generation_timestamp": "2026-05-17T22:26:19.613291",
+  "model": "claude-opus-4-7",
+  "prompt_version": "R63b targeted polish v1; selected weakest R63 rows only",
+  "base": {
+    "rows_file": "exp/inference/blind_a/r63_rows_persisted.jsonl",
+    "submission_zip": "exp/inference/blind_a/r63_response_only_submission.zip",
+    "metadata_file": "exp/inference/blind_a/r63_response_only_submission.metadata.json",
+    "blind_result": {
+      "composite": 0.618,
+      "llm_judge": 4.8,
+      "lexdiv": 0.8379,
+      "tracks": "bitwise R54c"
+    }
+  },
+  "source_tracks": {
+    "artifact": "exp/inference/blind_a/r54c_polish_submission.zip",
+    "constraint": "R63b predicted_track_ids copied from R63/R54c, unchanged."
+  },
+  "persisted_rows_file": "exp/inference/blind_a/r63b_rows_persisted.jsonl",
+  "final_rows_file": "exp/inference/blind_a/r63b_rows_final.jsonl",
+  "submission_zip": "exp/inference/blind_a/r63b_targeted_polish_submission.zip",
+  "lexdiv_distinct2": 0.8260060872505918,
+  "lexdiv_policy": {
+    "local_warning_floor": 0.82,
+    "warn_if_below_floor": false,
+    "blind_scorer_note": "R63 local LexDiv was 0.8256 while blind LexDiv was 0.8379; local LexDiv >=~0.82 is treated as acceptable information."
+  },
+  "selection": {
+    "policy": "Composite weakness score over generic reasoning, missing session reference, missing top-1 justification, and overly short/flat prose. Selected only the top ranked weak rows; all other R63 responses kept.",
+    "target_selected_rows": 25,
+    "selected_row_indices": [
+      54,
+      37,
+      39,
+      76,
+      46,
+      75,
+      30,
+      49,
+      36,
+      3,
+      17,
+      55,
+      68,
+      24,
+      35,
+      48,
+      12,
+      43,
+      47,
+      57,
+      63,
+      66,
+      1,
+      5,
+      6
+    ],
+    "selected_rows": [
+      {
+        "row_index": 54,
+        "session_id": "31bf71ab-497f-4045-bc91-06552f9b69b8",
+        "top1_track_id": "676f59fc-1bd0-42cf-a80a-3b9d846f7810",
+        "top1_track": "Absolute Bearing",
+        "top1_artist": "Work Drugs",
+        "word_count": 66,
+        "weakness_score": 6,
+        "components": {
+          "generic_reasoning": 2,
+          "no_user_session_ref": 1,
+          "no_top1_justification": 0,
+          "overly_short_flat": 3
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "guitars",
+            "pop"
+          ],
+          "metadata_hits": [
+            "absolute",
+            "bearing",
+            "pop"
+          ],
+          "session_token_overlap": [
+            "license"
+          ]
+        },
+        "before_response": "Absolute Bearing by Work Drugs keeps you in the same lane as License to Drive, drawing from the band's signature blend of breezy pop hooks and polished indie-rock guitars. Since you went straight to Work Drugs by name, staying with one of their title tracks should sit well, carrying that same smooth, late-night cruising feel running through their catalog without straying from what drew you in.",
+        "before_snapshot": "Absolute Bearing by Work Drugs keeps you in the same lane as License to Drive, drawing from the band's signature blend of breezy pop hooks and polished indie-rock guitars. Since you went straight to Work Drugs by name, staying with one of their title tracks s…"
+      },
+      {
+        "row_index": 37,
+        "session_id": "28c3ecd9-fbaa-4423-a85c-92508346e1e8",
+        "top1_track_id": "2655af4d-0731-4c58-8a14-28e1b2249c19",
+        "top1_track": "Hem",
+        "top1_artist": "King Woman",
+        "word_count": 70,
+        "weakness_score": 4,
+        "components": {
+          "generic_reasoning": 2,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "guitar",
+            "vocals"
+          ],
+          "metadata_hits": [
+            "created",
+            "image",
+            "in",
+            "of",
+            "suffering",
+            "the"
+          ],
+          "session_token_overlap": [
+            "atmospheric",
+            "brooding",
+            "burn",
+            "deep",
+            "doom-gaze",
+            "further",
+            "into",
+            "introspection",
+            "it's",
+            "leaning",
+            "post-metal",
+            "reflective"
+          ]
+        },
+        "before_response": "Hem by King Woman extends the doom-gaze pull you locked into with Burn, sinking further into that post-metal heaviness you flagged as the sweet spot. Kristina Esfandiari's vocals hover like incantation over slow, corroded guitar tonnage, leaning fully into the brooding, ritualistic weight you're after for deep introspection. Pulled from Created in the Image of Suffering, it's bleaker and more crushing than Burn while keeping the atmospheric, reflective gravity intact.",
+        "before_snapshot": "Hem by King Woman extends the doom-gaze pull you locked into with Burn, sinking further into that post-metal heaviness you flagged as the sweet spot. Kristina Esfandiari's vocals hover like incantation over slow, corroded guitar tonnage, leaning fully into th…"
+      },
+      {
+        "row_index": 39,
+        "session_id": "d5c80ee5-97c2-4de1-af2e-2295e3ae34a3",
+        "top1_track_id": "983dbea0-db39-423f-b734-c9a18f384620",
+        "top1_track": "Bits With Byte",
+        "top1_artist": "8 Bit Weapon",
+        "word_count": 70,
+        "weakness_score": 4,
+        "components": {
+          "generic_reasoning": 2,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "electro",
+            "melody"
+          ],
+          "metadata_hits": [
+            "bits",
+            "byte",
+            "electro",
+            "with"
+          ],
+          "session_token_overlap": [
+            "alien",
+            "arcade",
+            "escape",
+            "frenetic",
+            "gameplay",
+            "into",
+            "melody",
+            "memorable",
+            "retro",
+            "space",
+            "xenon"
+          ]
+        },
+        "before_response": "Bits With Byte by 8 Bit Weapon keeps you in that same retro space arcade territory you loved about Escape From Xenon. Coming from the same artist, it leans into crunchy square-wave leads and a punchy electro pulse that suggests cruising between star systems or squaring off against a pixelated alien commander. The melody stays memorable rather than frenetic, echoing the calmer-but-triumphant gameplay moments you've been chasing throughout this search.",
+        "before_snapshot": "Bits With Byte by 8 Bit Weapon keeps you in that same retro space arcade territory you loved about Escape From Xenon. Coming from the same artist, it leans into crunchy square-wave leads and a punchy electro pulse that suggests cruising between star systems o…"
+      },
+      {
+        "row_index": 76,
+        "session_id": "4e849a6c-dfbc-4a67-82cc-6dff9076b382",
+        "top1_track_id": "9313e715-4c01-4275-a1ee-c74511b5bc69",
+        "top1_track": "Virtual Lust",
+        "top1_artist": "Infinity Frequencies",
+        "word_count": 74,
+        "weakness_score": 4,
+        "components": {
+          "generic_reasoning": 2,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "synth",
+            "textures"
+          ],
+          "metadata_hits": [
+            "shrines"
+          ],
+          "session_token_overlap": [
+            "chillwave",
+            "darker",
+            "dreams",
+            "hazy",
+            "introspective",
+            "lo-fi",
+            "lost",
+            "other",
+            "tracks"
+          ]
+        },
+        "before_response": "Virtual Lust by Infinity Frequencies leans into that darker, more introspective territory you're after now. Coming from the same artist behind Lost Dreams, it carries hazy synth textures and a brooding, slowed-down pulse that pulls the chillwave mood somewhere heavier and more reflective. Off the Shrines record, it keeps the lo-fi haze you've been gravitating toward while sinking into a moodier headspace, which should pair well with the other tracks already on your list.",
+        "before_snapshot": "Virtual Lust by Infinity Frequencies leans into that darker, more introspective territory you're after now. Coming from the same artist behind Lost Dreams, it carries hazy synth textures and a brooding, slowed-down pulse that pulls the chillwave mood somewher…"
+      },
+      {
+        "row_index": 46,
+        "session_id": "6953ac7a-5e95-48d8-be4e-8f153ac937e2",
+        "top1_track_id": "2cce80ee-09b3-4e74-a3ac-bdd9766aea3d",
+        "top1_track": "For Those We Loved",
+        "top1_artist": "Austin Wintory",
+        "word_count": 67,
+        "weakness_score": 3,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 1,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "score",
+            "steel",
+            "strings",
+            "syndicate"
+          ],
+          "metadata_hits": [
+            "syndicate"
+          ],
+          "session_token_overlap": [
+            "assassin",
+            "atmosphere",
+            "cathedrals",
+            "grand",
+            "industrial",
+            "london",
+            "melancholy",
+            "rooftop",
+            "slower",
+            "steel",
+            "two-step"
+          ]
+        },
+        "before_response": "For Those We Loved by Austin Wintory eases the tempo right down after the rooftop rush of The Assassin Two-Step, offering a more reflective moment from the Syndicate score. Its mournful strings and restrained pacing carry that same grand, industrial melancholy of London you praised in Cathedrals of Steel, but stripped back into something quieter and more intimate, fitting beautifully alongside the slower atmosphere you're now chasing.",
+        "before_snapshot": "For Those We Loved by Austin Wintory eases the tempo right down after the rooftop rush of The Assassin Two-Step, offering a more reflective moment from the Syndicate score. Its mournful strings and restrained pacing carry that same grand, industrial melanchol…"
+      },
+      {
+        "row_index": 75,
+        "session_id": "c0d4e758-5dfe-41a4-b0f2-07c29e27cdce",
+        "top1_track_id": "89931a15-5bad-49c3-9b4e-aad4bfac0c44",
+        "top1_track": "Miami - Original Mix",
+        "top1_artist": "Jasper Byrne",
+        "word_count": 67,
+        "weakness_score": 3,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 1,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "arpeggio",
+            "electronic",
+            "game",
+            "hotline",
+            "instrumental",
+            "miami",
+            "pads",
+            "soundtrack",
+            "synthwave",
+            "vgm"
+          ],
+          "metadata_hits": [
+            "electronic",
+            "game",
+            "hotline",
+            "instrumental",
+            "miami",
+            "soundtrack",
+            "vgm"
+          ],
+          "session_token_overlap": [
+            "retro-futuristic"
+          ]
+        },
+        "before_response": "Miami - Original Mix by Jasper Byrne taps into that retro-futuristic pull you're chasing, drawn from the Hotline Miami soundtrack and steeped in 80s-styled synthwave. Hazy analog pads and a slow, pulsing arpeggio give it a moonlit, neon-after-dark quality close to the pixel-art game scores you're trying to recall. As a fellow VGM listener, this one sits comfortably alongside Jim Guthrie's work while leaning more electronic and instrumental.",
+        "before_snapshot": "Miami - Original Mix by Jasper Byrne taps into that retro-futuristic pull you're chasing, drawn from the Hotline Miami soundtrack and steeped in 80s-styled synthwave. Hazy analog pads and a slow, pulsing arpeggio give it a moonlit, neon-after-dark quality clo…"
+      },
+      {
+        "row_index": 30,
+        "session_id": "40cc1c03-6db9-49db-8bbe-8b97b45adb0b",
+        "top1_track_id": "94c987d0-cd80-499c-b4f4-50958be00452",
+        "top1_track": "Sinner",
+        "top1_artist": "Lincoln Durham",
+        "word_count": 69,
+        "weakness_score": 3,
+        "components": {
+          "generic_reasoning": 1,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "blues",
+            "guitar",
+            "vocal"
+          ],
+          "metadata_hits": [
+            "blues",
+            "the"
+          ],
+          "session_token_overlap": [
+            "blues",
+            "coffinshaker",
+            "dawn",
+            "gritty",
+            "guitar",
+            "intensity",
+            "last",
+            "outlaw",
+            "saraceno",
+            "storytelling"
+          ]
+        },
+        "before_response": "Sinner by Lincoln Durham circles back to the artist behind Last Red Dawn, which already hooked you with its raw intensity. This one cranks up the gritty side even further, built around scorched, slide-driven blues guitar and a hoarse, sermon-like vocal snarl. It carries that same outlaw menace running through Blues Saraceno and Rob Coffinshaker, while staying rooted in the haunted storytelling tradition you've been gravitating toward all conversation.",
+        "before_snapshot": "Sinner by Lincoln Durham circles back to the artist behind Last Red Dawn, which already hooked you with its raw intensity. This one cranks up the gritty side even further, built around scorched, slide-driven blues guitar and a hoarse, sermon-like vocal snarl.…"
+      },
+      {
+        "row_index": 49,
+        "session_id": "ff76b679-7d7a-4796-8f6c-929efef45428",
+        "top1_track_id": "529ac9f8-032d-43e2-8ce2-f63185a043c8",
+        "top1_track": "Sickness",
+        "top1_artist": "TENDER",
+        "word_count": 72,
+        "weakness_score": 3,
+        "components": {
+          "generic_reasoning": 1,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "synth",
+            "textures"
+          ],
+          "metadata_hits": [
+            "addiction",
+            "modern"
+          ],
+          "session_token_overlap": [
+            "abstract",
+            "almost",
+            "bold"
+          ]
+        },
+        "before_response": "Sickness by TENDER pulls from Modern Addiction, whose sleeve matches that abstract, geometric description you're chasing — bold blocked color fields with a tactile, almost painterly finish that stands out on a shelf. Sonically, it's a moody piece of alt-electronic songwriting, hushed falsetto threaded through cool synth textures and a patient, brooding pulse. Given your lean toward hip-hop, the rhythmic restraint here should still hit, while the artwork answers your visual memory cleanly.",
+        "before_snapshot": "Sickness by TENDER pulls from Modern Addiction, whose sleeve matches that abstract, geometric description you're chasing — bold blocked color fields with a tactile, almost painterly finish that stands out on a shelf. Sonically, it's a moody piece of alt-elect…"
+      },
+      {
+        "row_index": 36,
+        "session_id": "d851eac7-27a7-4363-b2a4-6cb365c79d22",
+        "top1_track_id": "425c0307-9479-41c8-9910-0006480c156a",
+        "top1_track": "White Ferrari",
+        "top1_artist": "Frank Ocean",
+        "word_count": 77,
+        "weakness_score": 3,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 2,
+          "no_top1_justification": 0,
+          "overly_short_flat": 1
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "alternative",
+            "ambient",
+            "beatles",
+            "frank",
+            "guitar",
+            "indie",
+            "ocean",
+            "the"
+          ],
+          "metadata_hits": [
+            "beatles",
+            "frank",
+            "ocean",
+            "the"
+          ],
+          "session_token_overlap": []
+        },
+        "before_response": "White Ferrari by Frank Ocean belongs on your shortlist, since Blonde's cover—that washed pink-and-green portrait under harsh light—is one of the most arresting visual statements in modern alternative R&B. It matches your interest in striking palettes while sitting close to your indie leanings through its hushed falsetto, ambient guitar drift, and a quiet Beatles interpolation that ties the song to a wider art-pop lineage. Slow, spacious, and emotionally weightless throughout most of its runtime.",
+        "before_snapshot": "White Ferrari by Frank Ocean belongs on your shortlist, since Blonde's cover—that washed pink-and-green portrait under harsh light—is one of the most arresting visual statements in modern alternative R&B. It matches your interest in striking palettes while si…"
+      },
+      {
+        "row_index": 3,
+        "session_id": "39698083-bc11-4514-9e53-da76d9260b3a",
+        "top1_track_id": "9d9ca4fe-fa41-482c-b3ca-af1ed38d62fc",
+        "top1_track": "Cry Out",
+        "top1_artist": "ONE OK ROCK",
+        "word_count": 65,
+        "weakness_score": 2,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "chorus",
+            "guitars",
+            "japanese",
+            "melodic",
+            "ok",
+            "one",
+            "rock",
+            "the",
+            "you"
+          ],
+          "metadata_hits": [
+            "chorus",
+            "japanese",
+            "ok",
+            "one",
+            "rock",
+            "the",
+            "you"
+          ],
+          "session_token_overlap": [
+            "anthemic",
+            "chorus",
+            "spirit",
+            "strong",
+            "unity"
+          ]
+        },
+        "before_response": "Cry Out by ONE OK ROCK comes from the same album family as \"We Are\" and carries that huge, anthemic charge you connected with. Soaring melodic hooks ride over driving guitars and a thunderous chorus built for crowds shouting along, echoing the unity and fight-together spirit you wanted. Since you're exploring 35xxxv territory, this one keeps that arena-sized Japanese rock momentum going strong for you.",
+        "before_snapshot": "Cry Out by ONE OK ROCK comes from the same album family as \"We Are\" and carries that huge, anthemic charge you connected with. Soaring melodic hooks ride over driving guitars and a thunderous chorus built for crowds shouting along, echoing the unity and fight…"
+      },
+      {
+        "row_index": 17,
+        "session_id": "198470a5-db1e-4add-b04a-bee8c5945d4b",
+        "top1_track_id": "db4bfcb8-2043-46f3-8bce-c0499720b819",
+        "top1_track": "We Can Talk",
+        "top1_artist": "Emma Brammer, Satin Jackets",
+        "word_count": 65,
+        "weakness_score": 2,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "dance",
+            "electronic",
+            "house",
+            "vocal"
+          ],
+          "metadata_hits": [
+            "can",
+            "dance",
+            "electronic",
+            "house",
+            "talk",
+            "we"
+          ],
+          "session_token_overlap": [
+            "alright",
+            "electronic",
+            "evening",
+            "it's",
+            "olivia",
+            "poolside",
+            "poolside's",
+            "smooth"
+          ]
+        },
+        "before_response": "We Can Talk by Emma Brammer and Satin Jackets keeps that Satin Jackets signature you locked onto with Olivia, pairing breezy house grooves with Brammer's airy vocal on top. The mid-tempo dance pulse sits comfortably next to Poolside's Feel Alright, holding the sunlit poolside warmth into the evening without breaking the calm. It's a clean continuation of the smooth electronic thread running through tonight's set.",
+        "before_snapshot": "We Can Talk by Emma Brammer and Satin Jackets keeps that Satin Jackets signature you locked onto with Olivia, pairing breezy house grooves with Brammer's airy vocal on top. The mid-tempo dance pulse sits comfortably next to Poolside's Feel Alright, holding th…"
+      },
+      {
+        "row_index": 55,
+        "session_id": "12124711-bfe3-4634-8368-2fa1d8ddf885",
+        "top1_track_id": "83f59691-b422-4ede-a6c4-587e7964db66",
+        "top1_track": "Pas n’importe quel toon",
+        "top1_artist": "Casseurs Flowters",
+        "word_count": 65,
+        "weakness_score": 2,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "beat",
+            "rap",
+            "soundtrack"
+          ],
+          "metadata_hits": [
+            "c'est",
+            "comment",
+            "loin",
+            "rap"
+          ],
+          "session_token_overlap": [
+            "abribus",
+            "connards",
+            "dans",
+            "french",
+            "orelsan",
+            "other",
+            "soundtrack",
+            "toujours",
+            "wondercash"
+          ]
+        },
+        "before_response": "Pas n'importe quel toon by Casseurs Flowters keeps you locked into the Comment c'est loin soundtrack you've been working through after Wondercash and C'est toujours 2 connards dans un abribus. Orelsan and Gringe trade verses over a laid-back boom-bap beat with playful punchlines, staying close to the cinematic feel of the film. A solid pick before branching out to other French rap names buzzing now.",
+        "before_snapshot": "Pas n'importe quel toon by Casseurs Flowters keeps you locked into the Comment c'est loin soundtrack you've been working through after Wondercash and C'est toujours 2 connards dans un abribus. Orelsan and Gringe trade verses over a laid-back boom-bap beat wit…"
+      },
+      {
+        "row_index": 68,
+        "session_id": "91ce5668-ec1e-4d09-a30a-3440be9c8861",
+        "top1_track_id": "026092d9-76d5-4cc0-ae9d-1c8c51710e04",
+        "top1_track": "Lil' Fighter",
+        "top1_artist": "Zalza",
+        "word_count": 65,
+        "weakness_score": 2,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "beat",
+            "electronic",
+            "production",
+            "rhythm",
+            "synth"
+          ],
+          "metadata_hits": [
+            "electronic",
+            "superposition"
+          ],
+          "session_token_overlap": [
+            "abstract",
+            "artwork",
+            "bold",
+            "colorful",
+            "electronic",
+            "lost",
+            "superman",
+            "upbeat",
+            "vibrant"
+          ]
+        },
+        "before_response": "Lil' Fighter by Zalza continues that bold, colorful direction you loved on \"Superman Lost.\" The Superposition cover leans into abstract, neon-leaning visuals, pairing with punchy electronic production and a bouncy, upbeat rhythm that keeps the energy high. Given your enthusiasm for vibrant artwork tied to driving EDM, Zalza's playful synth work and crisp beat should fit right alongside the Mat Zo track in your rotation.",
+        "before_snapshot": "Lil' Fighter by Zalza continues that bold, colorful direction you loved on \"Superman Lost.\" The Superposition cover leans into abstract, neon-leaning visuals, pairing with punchy electronic production and a bouncy, upbeat rhythm that keeps the energy high. Gi…"
+      },
+      {
+        "row_index": 24,
+        "session_id": "574f75cf-7036-4cd2-b699-93202d81e7e1",
+        "top1_track_id": "2b1634ac-5623-4aa2-a5c7-381102e396b4",
+        "top1_track": "Shoom",
+        "top1_artist": "TR/ST",
+        "word_count": 66,
+        "weakness_score": 2,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "dance",
+            "darkwave",
+            "nihilistic",
+            "synths"
+          ],
+          "metadata_hits": [
+            "dance",
+            "darkwave",
+            "nihilistic"
+          ],
+          "session_token_overlap": [
+            "danceable",
+            "darkwave",
+            "dressed",
+            "gothic",
+            "melancholic",
+            "space"
+          ]
+        },
+        "before_response": "Shoom by TR/ST keeps you inside the same project while pulling further into the melancholic, gothic register you're now after. Following Dressed For Space, this one leans harder into early-2010s darkwave with brooding low-end synths and a hushed, nihilistic dance pulse that fits the electroclash-to-darker-synthpop arc you've been tracing. Its colder, more haunted tone should bridge nicely toward EBM-adjacent territory without losing the danceable momentum.",
+        "before_snapshot": "Shoom by TR/ST keeps you inside the same project while pulling further into the melancholic, gothic register you're now after. Following Dressed For Space, this one leans harder into early-2010s darkwave with brooding low-end synths and a hushed, nihilistic d…"
+      },
+      {
+        "row_index": 35,
+        "session_id": "d7426802-d075-4a49-8062-977ba656c9a2",
+        "top1_track_id": "b2aa66ca-4f74-43ab-b9fc-2ecb256211b5",
+        "top1_track": "When The Stars Come Out",
+        "top1_artist": "Chris Stapleton",
+        "word_count": 66,
+        "weakness_score": 2,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "acoustic",
+            "country",
+            "textures",
+            "vocals"
+          ],
+          "metadata_hits": [
+            "country",
+            "traveller"
+          ],
+          "session_token_overlap": [
+            "blame",
+            "called",
+            "keeps",
+            "might",
+            "nobody",
+            "phenomenal",
+            "stoned",
+            "well"
+          ]
+        },
+        "before_response": "When The Stars Come Out by Chris Stapleton keeps you locked into Traveller, the album you've been working through track by track. Since you've been pulling favorites like Nobody To Blame and Might As Well Get Stoned, this one rewards the same listen — a slow-burning country ballad with weathered vocals and warm acoustic textures that lean into the reflective side of the record you've called phenomenal.",
+        "before_snapshot": "When The Stars Come Out by Chris Stapleton keeps you locked into Traveller, the album you've been working through track by track. Since you've been pulling favorites like Nobody To Blame and Might As Well Get Stoned, this one rewards the same listen — a slow-…"
+      },
+      {
+        "row_index": 48,
+        "session_id": "8cd8575d-4743-4235-a493-aee6039551b4",
+        "top1_track_id": "0550c249-1fa8-4df8-ad07-756e08856a3e",
+        "top1_track": "Burst Synapse",
+        "top1_artist": "Full Of Hell",
+        "word_count": 66,
+        "weakness_score": 2,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "percussion",
+            "production",
+            "punk",
+            "vocals"
+          ],
+          "metadata_hits": [
+            "full",
+            "hell",
+            "of"
+          ],
+          "session_token_overlap": [
+            "abrasive",
+            "aggression",
+            "coven",
+            "driving",
+            "guttural",
+            "larynx",
+            "production",
+            "punk",
+            "rhythms",
+            "vocals"
+          ]
+        },
+        "before_response": "Burst Synapse by Full Of Hell pushes further into the blast-beat territory you wanted, ramping up the driving rhythms while keeping that raw aggression you praised in Coven of the Larynx. Its grindcore-meets-blackened-hardcore edge brings sharper punk urgency alongside the guttural vocals and abrasive production you're after, and the relentless percussion gives it more forward momentum than the previous pick without sacrificing any of the harshness.",
+        "before_snapshot": "Burst Synapse by Full Of Hell pushes further into the blast-beat territory you wanted, ramping up the driving rhythms while keeping that raw aggression you praised in Coven of the Larynx. Its grindcore-meets-blackened-hardcore edge brings sharper punk urgency…"
+      },
+      {
+        "row_index": 12,
+        "session_id": "fc6ba76a-3dd8-4c11-b5af-a233253b01bf",
+        "top1_track_id": "9bc3ed38-f642-4ce5-b08e-3da7456fb76c",
+        "top1_track": "All I Need (feat. Beth Hirsch)",
+        "top1_artist": "Beth Hirsch, Air",
+        "word_count": 67,
+        "weakness_score": 2,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "downtempo",
+            "keys",
+            "relaxing",
+            "to",
+            "vocal",
+            "you"
+          ],
+          "metadata_hits": [
+            "downtempo",
+            "moon",
+            "relaxing",
+            "safari",
+            "to",
+            "you"
+          ],
+          "session_token_overlap": [
+            "background",
+            "unwind"
+          ]
+        },
+        "before_response": "All I Need (feat. Beth Hirsch) by Beth Hirsch and Air suits your search for relaxing background music to unwind to. Drawn from Air's 1998 Moon Safari, the track floats on hushed downtempo grooves and warm analog keys, with Hirsch's airy vocal drifting softly above. Its lounge-leaning ambience stays gentle enough to fade into the background while still rewarding closer listening when you settle in to decompress.",
+        "before_snapshot": "All I Need (feat. Beth Hirsch) by Beth Hirsch and Air suits your search for relaxing background music to unwind to. Drawn from Air's 1998 Moon Safari, the track floats on hushed downtempo grooves and warm analog keys, with Hirsch's airy vocal drifting softly …"
+      },
+      {
+        "row_index": 43,
+        "session_id": "2fe9abf6-ccea-4f05-8490-82da8bf57764",
+        "top1_track_id": "a6fb2fd2-1340-4844-9fa4-6af04ab4286b",
+        "top1_track": "Brave New Hell",
+        "top1_artist": "Bloodbath",
+        "word_count": 67,
+        "weakness_score": 2,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "and",
+            "bloodbath",
+            "brave",
+            "chorus",
+            "death",
+            "guitar",
+            "harmony",
+            "hell",
+            "melodic",
+            "metal",
+            "new",
+            "of"
+          ],
+          "metadata_hits": [
+            "and",
+            "bloodbath",
+            "brave",
+            "death",
+            "flesh",
+            "hell",
+            "made",
+            "melodic",
+            "metal",
+            "new",
+            "nightmares",
+            "of"
+          ],
+          "session_token_overlap": [
+            "crushing",
+            "death",
+            "dismember",
+            "early",
+            "entombed",
+            "into",
+            "melancholic",
+            "melodic",
+            "memorable",
+            "metal",
+            "obituary",
+            "riffing"
+          ]
+        },
+        "before_response": "Brave New Hell by Bloodbath answers that pull toward melancholic Swedish death metal you mentioned alongside early Entombed and Dismember. Off 2005's Nightmares Made Flesh, it carries the buzzsaw guitar tone and downcast melodic riffing of the Stockholm school while keeping the crushing weight you praised in Obituary. The chorus riff is genuinely memorable, leaning into mournful harmony without sacrificing the unrelenting heaviness you want from Bloodbath.",
+        "before_snapshot": "Brave New Hell by Bloodbath answers that pull toward melancholic Swedish death metal you mentioned alongside early Entombed and Dismember. Off 2005's Nightmares Made Flesh, it carries the buzzsaw guitar tone and downcast melodic riffing of the Stockholm schoo…"
+      },
+      {
+        "row_index": 47,
+        "session_id": "49009ca7-f8da-45df-9c62-7b88d960d5d2",
+        "top1_track_id": "ff41bc47-7a51-4179-9451-96453e8860fc",
+        "top1_track": "Frosne Vind",
+        "top1_artist": "Myrkur",
+        "word_count": 67,
+        "weakness_score": 2,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "atmospheric",
+            "black",
+            "choral",
+            "metal",
+            "myrkur",
+            "vocal",
+            "vocals"
+          ],
+          "metadata_hits": [
+            "atmospheric",
+            "black",
+            "metal",
+            "myrkur"
+          ],
+          "session_token_overlap": [
+            "atmospheric",
+            "black",
+            "contrast",
+            "ethereal",
+            "fusion",
+            "highlights",
+            "into",
+            "metal",
+            "nordic",
+            "seamless",
+            "trying",
+            "versatility"
+          ]
+        },
+        "before_response": "Frosne Vind by Myrkur should bring you closer to that fusion you're chasing. From her 2014 self-titled release, it leans into atmospheric black metal while letting her ethereal, almost choral vocals drift over the tremolo-picked harshness you already responded to. The contrast between the icy folk-tinged melodies and the raw black metal underneath highlights the seamless vocal versatility and Nordic character you've been trying to pin down.",
+        "before_snapshot": "Frosne Vind by Myrkur should bring you closer to that fusion you're chasing. From her 2014 self-titled release, it leans into atmospheric black metal while letting her ethereal, almost choral vocals drift over the tremolo-picked harshness you already responde…"
+      },
+      {
+        "row_index": 57,
+        "session_id": "789f9994-f2b6-481d-b71a-c0c6706d82c6",
+        "top1_track_id": "e908f222-5d71-46b4-854b-428a75449bdd",
+        "top1_track": "Skogsdotter",
+        "top1_artist": "Finntroll",
+        "word_count": 67,
+        "weakness_score": 2,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "black",
+            "finntroll",
+            "folk",
+            "metal",
+            "orchestral",
+            "pagan",
+            "riffs",
+            "symphonic",
+            "textures",
+            "troll",
+            "vocals",
+            "with"
+          ],
+          "metadata_hits": [
+            "black",
+            "blodsvept",
+            "finntroll",
+            "folk",
+            "metal",
+            "pagan",
+            "symphonic",
+            "troll",
+            "with"
+          ],
+          "session_token_overlap": [
+            "black",
+            "fanskapsfylld",
+            "heavier",
+            "metal"
+          ]
+        },
+        "before_response": "Skogsdotter by Finntroll leans into the heavier side you're after, drawing on symphonic black metal textures while keeping the pagan folk roots intact. Off 2013's Blodsvept, it pairs blackened, rasping vocals with galloping riffs and ominous orchestral flourishes, giving it more bite than Fanskapsfylld. The troll metal atmosphere stays intact, but the darker edge and aggressive tempo should scratch that itch for something fiercer from their catalogue.",
+        "before_snapshot": "Skogsdotter by Finntroll leans into the heavier side you're after, drawing on symphonic black metal textures while keeping the pagan folk roots intact. Off 2013's Blodsvept, it pairs blackened, rasping vocals with galloping riffs and ominous orchestral flouri…"
+      },
+      {
+        "row_index": 63,
+        "session_id": "2b1cbd1c-dd5b-40ab-943a-0392894babc0",
+        "top1_track_id": "43736aec-7c69-4a74-bf67-978a6dbdf15e",
+        "top1_track": "Fangs",
+        "top1_artist": "Man Man",
+        "word_count": 67,
+        "weakness_score": 2,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "indie",
+            "percussion",
+            "philadelphia",
+            "rock",
+            "vocals"
+          ],
+          "metadata_hits": [
+            "indie",
+            "on",
+            "oni",
+            "philadelphia",
+            "pond",
+            "rock"
+          ],
+          "session_token_overlap": [
+            "cover",
+            "pyramids",
+            "quirky",
+            "surreal"
+          ]
+        },
+        "before_response": "Fangs by Man Man comes from that same On Oni Pond record with the tigers-on-a-boat cover you recognized. Sticking with the surreal Philadelphia indie rock world of Pyramids, it leans on jagged percussion and theatrical, almost unhinged vocals layered over a restless rock backbone. Since you locked onto the album through its quirky art, this track lets you sit deeper inside the strange universe behind that cover.",
+        "before_snapshot": "Fangs by Man Man comes from that same On Oni Pond record with the tigers-on-a-boat cover you recognized. Sticking with the surreal Philadelphia indie rock world of Pyramids, it leans on jagged percussion and theatrical, almost unhinged vocals layered over a r…"
+      },
+      {
+        "row_index": 66,
+        "session_id": "b7d2f58e-a1e5-418d-b3bd-88e88d20908d",
+        "top1_track_id": "811f35ae-5cb5-4e1c-bf17-847b3f9e0371",
+        "top1_track": "The Proxy",
+        "top1_artist": "RJD2",
+        "word_count": 67,
+        "weakness_score": 2,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "bass",
+            "by",
+            "deep",
+            "electric",
+            "experimental",
+            "groove",
+            "hip-hop",
+            "instrumental",
+            "riff",
+            "rjd2",
+            "textures",
+            "the"
+          ],
+          "metadata_hits": [
+            "bass",
+            "by",
+            "deadringer",
+            "deep",
+            "electric",
+            "experimental",
+            "groove",
+            "hip-hop",
+            "instrumental",
+            "riff",
+            "rjd2",
+            "the"
+          ],
+          "session_token_overlap": [
+            "deep",
+            "excellent",
+            "final",
+            "frontier",
+            "instrumental",
+            "planetarium",
+            "strictly",
+            "thine",
+            "work"
+          ]
+        },
+        "before_response": "The Proxy by RJD2 keeps you firmly inside the Deadringer pocket you've been locking into across Final Frontier and Thine Planetarium. Built around a warm electric bass riff and drifting, spacey textures, it stays strictly instrumental so nothing pulls your focus from deep work. The slightly experimental edge and unhurried groove sit comfortably alongside the chilled, sample-driven hip-hop cuts you've already flagged as excellent for sustained concentration.",
+        "before_snapshot": "The Proxy by RJD2 keeps you firmly inside the Deadringer pocket you've been locking into across Final Frontier and Thine Planetarium. Built around a warm electric bass riff and drifting, spacey textures, it stays strictly instrumental so nothing pulls your fo…"
+      },
+      {
+        "row_index": 1,
+        "session_id": "60a6fd69-33f4-4dbf-aa0d-872b27a69037",
+        "top1_track_id": "21e1c53a-90e9-495c-8fcb-f3c93b2ae868",
+        "top1_track": "On and On",
+        "top1_artist": "Pete Rock & C.L. Smooth",
+        "word_count": 68,
+        "weakness_score": 2,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "cadence",
+            "coast",
+            "drums",
+            "east",
+            "flows",
+            "horn",
+            "loops",
+            "rock",
+            "soul"
+          ],
+          "metadata_hits": [
+            "and",
+            "brother",
+            "coast",
+            "east",
+            "mecca",
+            "soul",
+            "the"
+          ],
+          "session_token_overlap": [
+            "early",
+            "flows",
+            "soulful"
+          ]
+        },
+        "before_response": "On and On by Pete Rock & C.L. Smooth is the cut you're chasing. Pete Rock's dusty horn loops and crisp boom-bap drums define that early 90s East Coast jazzy template, while C.L. Smooth's relaxed, conversational cadence matches the smooth flows you remembered. Pulled from Mecca And The Soul Brother, it sits squarely in the soulful, head-nodding pocket that shaped the Golden Age sound you're drawn to.",
+        "before_snapshot": "On and On by Pete Rock & C.L. Smooth is the cut you're chasing. Pete Rock's dusty horn loops and crisp boom-bap drums define that early 90s East Coast jazzy template, while C.L. Smooth's relaxed, conversational cadence matches the smooth flows you remembered.…"
+      },
+      {
+        "row_index": 5,
+        "session_id": "a1df8767-11df-44d3-a1f6-e1ba2115e8f0",
+        "top1_track_id": "91c0deb1-4c48-49d6-b7e3-c16a380b30a8",
+        "top1_track": "Saturn III",
+        "top1_artist": "Fu Manchu",
+        "word_count": 68,
+        "weakness_score": 2,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "bass",
+            "fu",
+            "heavy",
+            "hypnotic",
+            "iii",
+            "manchu",
+            "psychedelic",
+            "riff",
+            "rock",
+            "saturn",
+            "stoner"
+          ],
+          "metadata_hits": [
+            "action",
+            "bass",
+            "fu",
+            "go",
+            "heavy",
+            "hypnotic",
+            "iii",
+            "is",
+            "manchu",
+            "psychedelic",
+            "rock",
+            "saturn"
+          ],
+          "session_token_overlap": [
+            "heavy",
+            "their",
+            "themes",
+            "work"
+          ]
+        },
+        "before_response": "Saturn III by Fu Manchu pulls straight from The Action Is Go, the very album you've been asking about, so it's a proper window into that record's character. The track leans into hypnotic, fuzz-soaked bass and psychedelic drift alongside the heavy riff work, which sets the album apart from their more straightforward skate-rock anthems. Themes lean cosmic and motor-obsessed, fitting your stoner rock taste nicely. Crank it loud.",
+        "before_snapshot": "Saturn III by Fu Manchu pulls straight from The Action Is Go, the very album you've been asking about, so it's a proper window into that record's character. The track leans into hypnotic, fuzz-soaked bass and psychedelic drift alongside the heavy riff work, w…"
+      },
+      {
+        "row_index": 6,
+        "session_id": "02ec3071-bd03-4f78-91bc-96666d0e3b6b",
+        "top1_track_id": "69ab3de6-b138-4708-b9a0-eac472b2ac40",
+        "top1_track": "Good Friday",
+        "top1_artist": "Josh Garrels",
+        "word_count": 68,
+        "weakness_score": 2,
+        "components": {
+          "generic_reasoning": 0,
+          "no_user_session_ref": 0,
+          "no_top1_justification": 0,
+          "overly_short_flat": 2
+        },
+        "audit_signals": {
+          "concrete_attribute_hits": [
+            "acoustic",
+            "guitar",
+            "lyrics"
+          ],
+          "metadata_hits": [
+            "acoustic"
+          ],
+          "session_token_overlap": [
+            "acoustic",
+            "contemplative",
+            "different",
+            "fire",
+            "growth",
+            "hope",
+            "lyrics",
+            "miles",
+            "million",
+            "night",
+            "personal",
+            "quiet"
+          ]
+        },
+        "before_response": "Good Friday by Josh Garrels continues the thread that worked so well with Million Miles and Fire By Night, even though you asked for a different artist—his catalog runs this deep. The fingerpicked acoustic guitar and his hushed, soulful delivery carry the same quiet strength you responded to, while the lyrics sit with grief before turning toward hope, fitting the contemplative space you're building for personal growth.",
+        "before_snapshot": "Good Friday by Josh Garrels continues the thread that worked so well with Million Miles and Fire By Night, even though you asked for a different artist—his catalog runs this deep. The fingerpicked acoustic guitar and his hushed, soulful delivery carry the sam…"
+      }
+    ]
+  },
+  "generation": {
+    "started_at": "2026-05-17T22:24:11.331319",
+    "completed_at": "2026-05-17T22:26:19.613291",
+    "selected_rows_attempted": 25,
+    "accepted_regenerated_rows": 25,
+    "fallback_original_rows": 0,
+    "non_selected_rows_kept_from_r63": 55,
+    "max_attempts_per_selected_row": 4,
+    "word_target_regenerated_rows": [
+      75,
+      95
+    ],
+    "word_target_fallback_original_rows": [
+      65,
+      95
+    ],
+    "failures_after_retries": [],
+    "attempts": [
+      {
+        "row_index": 1,
+        "session_id": "60a6fd69-33f4-4dbf-aa0d-872b27a69037",
+        "weakness_score": 2,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 81,
+        "top1_track": "On and On",
+        "top1_artist": "Pete Rock & C.L. Smooth"
+      },
+      {
+        "row_index": 3,
+        "session_id": "39698083-bc11-4514-9e53-da76d9260b3a",
+        "weakness_score": 2,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 83,
+        "top1_track": "Cry Out",
+        "top1_artist": "ONE OK ROCK"
+      },
+      {
+        "row_index": 5,
+        "session_id": "a1df8767-11df-44d3-a1f6-e1ba2115e8f0",
+        "weakness_score": 2,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 86,
+        "top1_track": "Saturn III",
+        "top1_artist": "Fu Manchu"
+      },
+      {
+        "row_index": 6,
+        "session_id": "02ec3071-bd03-4f78-91bc-96666d0e3b6b",
+        "weakness_score": 2,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 84,
+        "top1_track": "Good Friday",
+        "top1_artist": "Josh Garrels"
+      },
+      {
+        "row_index": 12,
+        "session_id": "fc6ba76a-3dd8-4c11-b5af-a233253b01bf",
+        "weakness_score": 2,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 83,
+        "top1_track": "All I Need (feat. Beth Hirsch)",
+        "top1_artist": "Beth Hirsch, Air"
+      },
+      {
+        "row_index": 17,
+        "session_id": "198470a5-db1e-4add-b04a-bee8c5945d4b",
+        "weakness_score": 2,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 82,
+        "top1_track": "We Can Talk",
+        "top1_artist": "Emma Brammer, Satin Jackets"
+      },
+      {
+        "row_index": 24,
+        "session_id": "574f75cf-7036-4cd2-b699-93202d81e7e1",
+        "weakness_score": 2,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 75,
+        "top1_track": "Shoom",
+        "top1_artist": "TR/ST"
+      },
+      {
+        "row_index": 30,
+        "session_id": "40cc1c03-6db9-49db-8bbe-8b97b45adb0b",
+        "weakness_score": 3,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 84,
+        "top1_track": "Sinner",
+        "top1_artist": "Lincoln Durham"
+      },
+      {
+        "row_index": 35,
+        "session_id": "d7426802-d075-4a49-8062-977ba656c9a2",
+        "weakness_score": 2,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 83,
+        "top1_track": "When The Stars Come Out",
+        "top1_artist": "Chris Stapleton"
+      },
+      {
+        "row_index": 36,
+        "session_id": "d851eac7-27a7-4363-b2a4-6cb365c79d22",
+        "weakness_score": 3,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 88,
+        "top1_track": "White Ferrari",
+        "top1_artist": "Frank Ocean"
+      },
+      {
+        "row_index": 37,
+        "session_id": "28c3ecd9-fbaa-4423-a85c-92508346e1e8",
+        "weakness_score": 4,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 83,
+        "top1_track": "Hem",
+        "top1_artist": "King Woman"
+      },
+      {
+        "row_index": 39,
+        "session_id": "d5c80ee5-97c2-4de1-af2e-2295e3ae34a3",
+        "weakness_score": 4,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 77,
+        "top1_track": "Bits With Byte",
+        "top1_artist": "8 Bit Weapon"
+      },
+      {
+        "row_index": 43,
+        "session_id": "2fe9abf6-ccea-4f05-8490-82da8bf57764",
+        "weakness_score": 2,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 85,
+        "top1_track": "Brave New Hell",
+        "top1_artist": "Bloodbath"
+      },
+      {
+        "row_index": 46,
+        "session_id": "6953ac7a-5e95-48d8-be4e-8f153ac937e2",
+        "weakness_score": 3,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 87,
+        "top1_track": "For Those We Loved",
+        "top1_artist": "Austin Wintory"
+      },
+      {
+        "row_index": 47,
+        "session_id": "49009ca7-f8da-45df-9c62-7b88d960d5d2",
+        "weakness_score": 2,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 78,
+        "top1_track": "Frosne Vind",
+        "top1_artist": "Myrkur"
+      },
+      {
+        "row_index": 48,
+        "session_id": "8cd8575d-4743-4235-a493-aee6039551b4",
+        "weakness_score": 2,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 86,
+        "top1_track": "Burst Synapse",
+        "top1_artist": "Full Of Hell"
+      },
+      {
+        "row_index": 49,
+        "session_id": "ff76b679-7d7a-4796-8f6c-929efef45428",
+        "weakness_score": 3,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 82,
+        "top1_track": "Sickness",
+        "top1_artist": "TENDER"
+      },
+      {
+        "row_index": 54,
+        "session_id": "31bf71ab-497f-4045-bc91-06552f9b69b8",
+        "weakness_score": 6,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 80,
+        "top1_track": "Absolute Bearing",
+        "top1_artist": "Work Drugs"
+      },
+      {
+        "row_index": 55,
+        "session_id": "12124711-bfe3-4634-8368-2fa1d8ddf885",
+        "weakness_score": 2,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 81,
+        "top1_track": "Pas n’importe quel toon",
+        "top1_artist": "Casseurs Flowters"
+      },
+      {
+        "row_index": 57,
+        "session_id": "789f9994-f2b6-481d-b71a-c0c6706d82c6",
+        "weakness_score": 2,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 79,
+        "top1_track": "Skogsdotter",
+        "top1_artist": "Finntroll"
+      },
+      {
+        "row_index": 63,
+        "session_id": "2b1cbd1c-dd5b-40ab-943a-0392894babc0",
+        "weakness_score": 2,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 76,
+        "top1_track": "Fangs",
+        "top1_artist": "Man Man"
+      },
+      {
+        "row_index": 66,
+        "session_id": "b7d2f58e-a1e5-418d-b3bd-88e88d20908d",
+        "weakness_score": 2,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 79,
+        "top1_track": "The Proxy",
+        "top1_artist": "RJD2"
+      },
+      {
+        "row_index": 68,
+        "session_id": "91ce5668-ec1e-4d09-a30a-3440be9c8861",
+        "weakness_score": 2,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 80,
+        "top1_track": "Lil' Fighter",
+        "top1_artist": "Zalza"
+      },
+      {
+        "row_index": 75,
+        "session_id": "c0d4e758-5dfe-41a4-b0f2-07c29e27cdce",
+        "weakness_score": 3,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 84,
+        "top1_track": "Miami - Original Mix",
+        "top1_artist": "Jasper Byrne"
+      },
+      {
+        "row_index": 76,
+        "session_id": "4e849a6c-dfbc-4a67-82cc-6dff9076b382",
+        "weakness_score": 4,
+        "attempts": 1,
+        "accepted_regenerated_response": true,
+        "word_count": 81,
+        "top1_track": "Virtual Lust",
+        "top1_artist": "Infinity Frequencies"
+      }
+    ],
+    "rows_persisted_immediately_after_each_targeted_row": true,
+    "packaging_source": "exp/inference/blind_a/r63b_rows_final.jsonl",
+    "run_policy": "one targeted generation pass; no whole-80 regeneration"
+  },
+  "usage": {
+    "calls": 26,
+    "input_tokens": 34511,
+    "output_tokens": 4785,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "estimated_cost_usd": 0.29218,
+    "pricing": {
+      "input_usd_per_million_tokens": 5.0,
+      "output_usd_per_million_tokens": 25.0,
+      "source": "https://www.anthropic.com/research/claude-opus-4-7"
+    }
+  },
+  "cumulative_usage": {
+    "calls": 26,
+    "input_tokens": 34511,
+    "output_tokens": 4785,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "estimated_cost_usd": 0.29218,
+    "pricing": {
+      "input_usd_per_million_tokens": 5.0,
+      "output_usd_per_million_tokens": 25.0,
+      "source": "https://www.anthropic.com/research/claude-opus-4-7"
+    }
+  },
+  "r63_usage_reference": {
+    "calls": 264,
+    "input_tokens": 309165,
+    "output_tokens": 43859,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "estimated_cost_usd": 2.6423,
+    "pricing": {
+      "input_usd_per_million_tokens": 5.0,
+      "output_usd_per_million_tokens": 25.0,
+      "source": "https://www.anthropic.com/research/claude-opus-4-7"
+    }
+  },
+  "validation_results": {
+    "rows_80": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "unique_sessions_80": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "tracks_20_each": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "total_tracks_1600": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "no_duplicate_tracks_within_row": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "valid_uuid_track_ids": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "track_ids_exactly_equal_to_r54c_per_position": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "prefix_leak_count_0": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "trailing_question_count_0": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "boilerplate_count_0": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "empty_or_too_short_count_0": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "target_word_range_65_95": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "first_sentence_names_top1_track_and_artist": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "lexdiv_floor_0_83": {
+      "status": "warn",
+      "passed": false,
+      "blocking": false
+    },
+    "lexdiv_target_r54c_0_8381": {
+      "status": "warn",
+      "passed": false,
+      "blocking": false
+    },
+    "opener_cluster_max_le_5": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "selected_rows_word_range_and_first_sentence": {
+      "status": "pass",
+      "passed": true,
+      "blocking": true
+    },
+    "local_lexdiv_floor_0_82": {
+      "status": "pass",
+      "passed": true,
+      "blocking": false
+    }
+  },
+  "ready_to_submit": true,
+  "r54c_track_hash_match": {
+    "rows_compared": 80,
+    "rows_with_matching_track_sequence": 80,
+    "rows_with_mismatched_track_sequence": 0,
+    "total_tracks_compared": 1600,
+    "per_position_mismatches": 0,
+    "per_row": [
+      {
+        "session_id": "9c37dcd7-d7c2-4686-8541-1e37c4814a09",
+        "r54c_sha256": "bb0b9a10bcfdf7c119a379abddc7b5b6b731cb3d82827b31aa6b5a85b300a3cd",
+        "r63_sha256": "bb0b9a10bcfdf7c119a379abddc7b5b6b731cb3d82827b31aa6b5a85b300a3cd",
+        "matching": true
+      },
+      {
+        "session_id": "60a6fd69-33f4-4dbf-aa0d-872b27a69037",
+        "r54c_sha256": "9ef8ad60a340a6afd06a62c129c01639bf8495241af10ff72209515543052708",
+        "r63_sha256": "9ef8ad60a340a6afd06a62c129c01639bf8495241af10ff72209515543052708",
+        "matching": true
+      },
+      {
+        "session_id": "25cc9533-7c02-4781-9100-ab438e848a3d",
+        "r54c_sha256": "d06c123e195c502f6ab133aab9338d04f35339b1032da1b59ec0da7cb2f4d8fb",
+        "r63_sha256": "d06c123e195c502f6ab133aab9338d04f35339b1032da1b59ec0da7cb2f4d8fb",
+        "matching": true
+      },
+      {
+        "session_id": "39698083-bc11-4514-9e53-da76d9260b3a",
+        "r54c_sha256": "2f872c7135da4f9bac2f36b4d157a9be7a57e896d7022c047f33f3dfe068f37c",
+        "r63_sha256": "2f872c7135da4f9bac2f36b4d157a9be7a57e896d7022c047f33f3dfe068f37c",
+        "matching": true
+      },
+      {
+        "session_id": "0fedfa80-ebe2-4977-b16b-594f4a2b19b1",
+        "r54c_sha256": "9b9668b4894d9adf2801cc72655e3dd4227fcec2aecfbe5197ee9d0ed8bfd878",
+        "r63_sha256": "9b9668b4894d9adf2801cc72655e3dd4227fcec2aecfbe5197ee9d0ed8bfd878",
+        "matching": true
+      },
+      {
+        "session_id": "a1df8767-11df-44d3-a1f6-e1ba2115e8f0",
+        "r54c_sha256": "9152c8f53a83baa1cfbe5101e20c3e8a34d7bbdc00b71aa843034088a9eeaf9a",
+        "r63_sha256": "9152c8f53a83baa1cfbe5101e20c3e8a34d7bbdc00b71aa843034088a9eeaf9a",
+        "matching": true
+      },
+      {
+        "session_id": "02ec3071-bd03-4f78-91bc-96666d0e3b6b",
+        "r54c_sha256": "4366a30faadd8dc6e44a8a65d294da395a6bbdf355c4f3e8d295266d99e57e21",
+        "r63_sha256": "4366a30faadd8dc6e44a8a65d294da395a6bbdf355c4f3e8d295266d99e57e21",
+        "matching": true
+      },
+      {
+        "session_id": "4b8ed42b-39ec-4d17-9bea-507828687a0c",
+        "r54c_sha256": "24f2b425b34fc43a680f720aa65ae905aa8ab1b1cfa52cf8ae43419d89bda6b9",
+        "r63_sha256": "24f2b425b34fc43a680f720aa65ae905aa8ab1b1cfa52cf8ae43419d89bda6b9",
+        "matching": true
+      },
+      {
+        "session_id": "ca9c5de4-c2b7-4972-a524-615a400d0105",
+        "r54c_sha256": "6f5c7300d0a51bc03d779698ed9fc9313cdf4d1490c0ab21a96604df8415b2ce",
+        "r63_sha256": "6f5c7300d0a51bc03d779698ed9fc9313cdf4d1490c0ab21a96604df8415b2ce",
+        "matching": true
+      },
+      {
+        "session_id": "645670fd-b825-4c26-aba5-edcdb57e7684",
+        "r54c_sha256": "45cd50214959b50fca7ee370b2fea4d2cc798c368a9460dd4cc3de511333a173",
+        "r63_sha256": "45cd50214959b50fca7ee370b2fea4d2cc798c368a9460dd4cc3de511333a173",
+        "matching": true
+      },
+      {
+        "session_id": "d53d9457-12f1-4286-b195-aa42c23d3bce",
+        "r54c_sha256": "6af4c1d7fb1410bd01ff2194b04ae6bae4451e82a0f564c8a0276e8f3bcf54e3",
+        "r63_sha256": "6af4c1d7fb1410bd01ff2194b04ae6bae4451e82a0f564c8a0276e8f3bcf54e3",
+        "matching": true
+      },
+      {
+        "session_id": "db8ec85f-fa1f-4e88-b4d2-333b63b0d386",
+        "r54c_sha256": "96e1264265b5fb3d66eb191cd7f0475437b3a822ba15a7f75f832e9f4df6763d",
+        "r63_sha256": "96e1264265b5fb3d66eb191cd7f0475437b3a822ba15a7f75f832e9f4df6763d",
+        "matching": true
+      },
+      {
+        "session_id": "fc6ba76a-3dd8-4c11-b5af-a233253b01bf",
+        "r54c_sha256": "f6e647749c1b3c9bc9d025c045854288c532200b4f68a16b707d7cec9ed3efb3",
+        "r63_sha256": "f6e647749c1b3c9bc9d025c045854288c532200b4f68a16b707d7cec9ed3efb3",
+        "matching": true
+      },
+      {
+        "session_id": "b6457586-ddb1-4e18-a9b5-4d4926b8b46d",
+        "r54c_sha256": "fe5b3c1c2cbb542c10ad43d06555efbec4150cba41f193d293f0472bb4ed2207",
+        "r63_sha256": "fe5b3c1c2cbb542c10ad43d06555efbec4150cba41f193d293f0472bb4ed2207",
+        "matching": true
+      },
+      {
+        "session_id": "70a0e5ad-50cb-475c-95a3-adffcf04b72e",
+        "r54c_sha256": "8c2feae4b5315027a807ea1f2db7d5c223d1377ef5cca8f6d938da2085dece1b",
+        "r63_sha256": "8c2feae4b5315027a807ea1f2db7d5c223d1377ef5cca8f6d938da2085dece1b",
+        "matching": true
+      },
+      {
+        "session_id": "dc3c1b72-0520-44c6-ab2b-4935d0455e19",
+        "r54c_sha256": "ea8d87f62275b25093dca0b3b7227cbbe445db7f9db2210f1cbea7efd51d68ee",
+        "r63_sha256": "ea8d87f62275b25093dca0b3b7227cbbe445db7f9db2210f1cbea7efd51d68ee",
+        "matching": true
+      },
+      {
+        "session_id": "2a677d32-23e9-4fe7-8b8e-4875c93509a2",
+        "r54c_sha256": "a5041a857634268742d3a813db1ad2eec767ea14f310b53ed4e37ddc1ede2914",
+        "r63_sha256": "a5041a857634268742d3a813db1ad2eec767ea14f310b53ed4e37ddc1ede2914",
+        "matching": true
+      },
+      {
+        "session_id": "198470a5-db1e-4add-b04a-bee8c5945d4b",
+        "r54c_sha256": "eb02c46808868af2706aa901e9f10f2f18740c0342ce4730cdc1344f2787a704",
+        "r63_sha256": "eb02c46808868af2706aa901e9f10f2f18740c0342ce4730cdc1344f2787a704",
+        "matching": true
+      },
+      {
+        "session_id": "07aae53d-7c65-442a-a893-6ffde80efb0d",
+        "r54c_sha256": "2440fc2b1015ffe4619a3386871224c03ca1475ec433ddab6dd113954c42bba4",
+        "r63_sha256": "2440fc2b1015ffe4619a3386871224c03ca1475ec433ddab6dd113954c42bba4",
+        "matching": true
+      },
+      {
+        "session_id": "525f9f69-31e5-4fee-9813-e903ad24e39e",
+        "r54c_sha256": "64ef9411c1abe87a1deb46b30977f6a8937d7cc6ec9329fa7d80c0fc4e0f5d70",
+        "r63_sha256": "64ef9411c1abe87a1deb46b30977f6a8937d7cc6ec9329fa7d80c0fc4e0f5d70",
+        "matching": true
+      },
+      {
+        "session_id": "0802ac4a-187b-4a78-b090-0ceb7630cf12",
+        "r54c_sha256": "6c6fde41bdb9e53010fd1c970bcb5e6bfcabb79dffc7fee8253e8e471e062f47",
+        "r63_sha256": "6c6fde41bdb9e53010fd1c970bcb5e6bfcabb79dffc7fee8253e8e471e062f47",
+        "matching": true
+      },
+      {
+        "session_id": "eb4a6ef2-7a7e-448a-bfed-c94e68b01505",
+        "r54c_sha256": "785b24ecc5d76c15768a52c1179eeb4bea94b1844c134bbf018fd630b32f871c",
+        "r63_sha256": "785b24ecc5d76c15768a52c1179eeb4bea94b1844c134bbf018fd630b32f871c",
+        "matching": true
+      },
+      {
+        "session_id": "0a1f7a63-c5e4-4a2d-9285-433cd036f4e7",
+        "r54c_sha256": "24b80e913b4ba8c7ae42e22985bf146feecfed512e8c1d4162775f5a4c0ea05d",
+        "r63_sha256": "24b80e913b4ba8c7ae42e22985bf146feecfed512e8c1d4162775f5a4c0ea05d",
+        "matching": true
+      },
+      {
+        "session_id": "ca8cbe02-1def-4fca-ba48-f17f9fac0ed8",
+        "r54c_sha256": "4cbcf2e74652abaeab27a21ae8df93eb5e7a25ddc2d3485a34fc553004698624",
+        "r63_sha256": "4cbcf2e74652abaeab27a21ae8df93eb5e7a25ddc2d3485a34fc553004698624",
+        "matching": true
+      },
+      {
+        "session_id": "574f75cf-7036-4cd2-b699-93202d81e7e1",
+        "r54c_sha256": "9aa7a13c65615b2784e9ca767166c466da094f7692c7d365d145290d98e2884a",
+        "r63_sha256": "9aa7a13c65615b2784e9ca767166c466da094f7692c7d365d145290d98e2884a",
+        "matching": true
+      },
+      {
+        "session_id": "ee7bfbda-86ee-4ade-b695-dbdeb12ae063",
+        "r54c_sha256": "a952cd90480197947bae0a82afa79ae586d4abecbb74742f703fff83a0f1acfb",
+        "r63_sha256": "a952cd90480197947bae0a82afa79ae586d4abecbb74742f703fff83a0f1acfb",
+        "matching": true
+      },
+      {
+        "session_id": "9d4ef919-504b-4963-af47-777478ace477",
+        "r54c_sha256": "4cbf1962f1b0f2199f24cc80531933c81ffb2b8642c784bb411c4880c690a168",
+        "r63_sha256": "4cbf1962f1b0f2199f24cc80531933c81ffb2b8642c784bb411c4880c690a168",
+        "matching": true
+      },
+      {
+        "session_id": "c08eb2a1-8491-442d-a10f-db8d9ba831d6",
+        "r54c_sha256": "3d609e301b3c96db501a694b046948e821ec0f9887fb7b1fe85e170fc5c0c01d",
+        "r63_sha256": "3d609e301b3c96db501a694b046948e821ec0f9887fb7b1fe85e170fc5c0c01d",
+        "matching": true
+      },
+      {
+        "session_id": "38a5f361-9802-40be-9d15-15c67d5ba60a",
+        "r54c_sha256": "e67ceb7a155502ec647b5cda560c25f3df077a36abc3d5d7450b23e780d9345b",
+        "r63_sha256": "e67ceb7a155502ec647b5cda560c25f3df077a36abc3d5d7450b23e780d9345b",
+        "matching": true
+      },
+      {
+        "session_id": "fe22cfe0-f552-4d43-bf13-ea77bef4f1ce",
+        "r54c_sha256": "a9068877c31c108f804148d920aeb44120ab5ca61e6c87f13feee8adc65eee43",
+        "r63_sha256": "a9068877c31c108f804148d920aeb44120ab5ca61e6c87f13feee8adc65eee43",
+        "matching": true
+      },
+      {
+        "session_id": "40cc1c03-6db9-49db-8bbe-8b97b45adb0b",
+        "r54c_sha256": "7df961bbd51ce67052ed34c797d320c48a6d975f489d4e14e5a4824a7c7d5480",
+        "r63_sha256": "7df961bbd51ce67052ed34c797d320c48a6d975f489d4e14e5a4824a7c7d5480",
+        "matching": true
+      },
+      {
+        "session_id": "3aee4d9b-b0f1-4282-bbe6-58942c71f311",
+        "r54c_sha256": "15716deb8f7fc0a8cb7d9bfa84763a4fd4b4b01c831356886ec3c73680100b53",
+        "r63_sha256": "15716deb8f7fc0a8cb7d9bfa84763a4fd4b4b01c831356886ec3c73680100b53",
+        "matching": true
+      },
+      {
+        "session_id": "4b239a62-4435-4f39-80d6-26cffe0d1871",
+        "r54c_sha256": "9c36925677a0d829dc4ea04fef3d92e1bef4a24f739a7e1af68d291bf002b097",
+        "r63_sha256": "9c36925677a0d829dc4ea04fef3d92e1bef4a24f739a7e1af68d291bf002b097",
+        "matching": true
+      },
+      {
+        "session_id": "809d4fbc-5298-494a-8817-78b3fdc5317e",
+        "r54c_sha256": "8ef6ab61a1fc5d2d9783da7200ac99959bd1bc3eb95b4bc1984e35eff7006672",
+        "r63_sha256": "8ef6ab61a1fc5d2d9783da7200ac99959bd1bc3eb95b4bc1984e35eff7006672",
+        "matching": true
+      },
+      {
+        "session_id": "5e1f5a89-99c0-46bb-af78-005338d05858",
+        "r54c_sha256": "ed34e6d49a0b990a561a7485bd78fee4c7d1f72e356da9e8b105284633921b1a",
+        "r63_sha256": "ed34e6d49a0b990a561a7485bd78fee4c7d1f72e356da9e8b105284633921b1a",
+        "matching": true
+      },
+      {
+        "session_id": "d7426802-d075-4a49-8062-977ba656c9a2",
+        "r54c_sha256": "3b2112bbdf0832a46257f38fe7e42a8ed3c04634bd412b3f519ca80446ccbbf5",
+        "r63_sha256": "3b2112bbdf0832a46257f38fe7e42a8ed3c04634bd412b3f519ca80446ccbbf5",
+        "matching": true
+      },
+      {
+        "session_id": "d851eac7-27a7-4363-b2a4-6cb365c79d22",
+        "r54c_sha256": "ed41a9c2c9f315034fd2f99aef230a0176a083363fe539918e83882998a1b67f",
+        "r63_sha256": "ed41a9c2c9f315034fd2f99aef230a0176a083363fe539918e83882998a1b67f",
+        "matching": true
+      },
+      {
+        "session_id": "28c3ecd9-fbaa-4423-a85c-92508346e1e8",
+        "r54c_sha256": "ad1652bdab4b4273f19eadf2ae64ef90ee361fc7f2cb0c194f83cd2ebc3f68da",
+        "r63_sha256": "ad1652bdab4b4273f19eadf2ae64ef90ee361fc7f2cb0c194f83cd2ebc3f68da",
+        "matching": true
+      },
+      {
+        "session_id": "5b2f877b-a6d5-4473-879c-f5a24d4fd06f",
+        "r54c_sha256": "06d376455c3d65b3bb48f7e58b941203a61b13cbf9480089cfbc6aa9900841fa",
+        "r63_sha256": "06d376455c3d65b3bb48f7e58b941203a61b13cbf9480089cfbc6aa9900841fa",
+        "matching": true
+      },
+      {
+        "session_id": "d5c80ee5-97c2-4de1-af2e-2295e3ae34a3",
+        "r54c_sha256": "8760b266a0b4601f267d69170fd95c8a4ab1395cb49034699ebb0a4f452a7bf1",
+        "r63_sha256": "8760b266a0b4601f267d69170fd95c8a4ab1395cb49034699ebb0a4f452a7bf1",
+        "matching": true
+      },
+      {
+        "session_id": "68993adf-60d9-42f9-b21f-cdd5bf851cb1",
+        "r54c_sha256": "aa96c365521f4bed0419597b1da8ced203ff35046bd677708940886f9cd45b9e",
+        "r63_sha256": "aa96c365521f4bed0419597b1da8ced203ff35046bd677708940886f9cd45b9e",
+        "matching": true
+      },
+      {
+        "session_id": "6c54de37-9c55-4c59-b203-ec190dd07523",
+        "r54c_sha256": "845b58721e5781a846567c6cbe5ec68203ea73e6e073a669da85930708b6d8f4",
+        "r63_sha256": "845b58721e5781a846567c6cbe5ec68203ea73e6e073a669da85930708b6d8f4",
+        "matching": true
+      },
+      {
+        "session_id": "eaeca304-3ddb-4adb-8087-0f15b597f73e",
+        "r54c_sha256": "08788108817f6244f7a770fa57d8fc965fd53561289f9c398cb357567bf949f4",
+        "r63_sha256": "08788108817f6244f7a770fa57d8fc965fd53561289f9c398cb357567bf949f4",
+        "matching": true
+      },
+      {
+        "session_id": "2fe9abf6-ccea-4f05-8490-82da8bf57764",
+        "r54c_sha256": "c7f522daf09b761c0134ea8854439e5f5db299b3f620c83f7383daf28883f340",
+        "r63_sha256": "c7f522daf09b761c0134ea8854439e5f5db299b3f620c83f7383daf28883f340",
+        "matching": true
+      },
+      {
+        "session_id": "1f7b28c1-8b18-4045-be27-0475edb96857",
+        "r54c_sha256": "5c12c4367aeb53515c227a2e1a5ecdefc931b84e01448ce8e2c7cf5c0be8f781",
+        "r63_sha256": "5c12c4367aeb53515c227a2e1a5ecdefc931b84e01448ce8e2c7cf5c0be8f781",
+        "matching": true
+      },
+      {
+        "session_id": "ebad356d-d5ab-437a-81f1-6d219e532c33",
+        "r54c_sha256": "0847a75e59c08003ca73dc6b0a33737578e4c3bb238962b52daf1ad499e3833b",
+        "r63_sha256": "0847a75e59c08003ca73dc6b0a33737578e4c3bb238962b52daf1ad499e3833b",
+        "matching": true
+      },
+      {
+        "session_id": "6953ac7a-5e95-48d8-be4e-8f153ac937e2",
+        "r54c_sha256": "fdced8340a0ee446fe496e142f20427a891ba599261695db51bfed12b73eb61c",
+        "r63_sha256": "fdced8340a0ee446fe496e142f20427a891ba599261695db51bfed12b73eb61c",
+        "matching": true
+      },
+      {
+        "session_id": "49009ca7-f8da-45df-9c62-7b88d960d5d2",
+        "r54c_sha256": "a6148a85eac23ffc7f3e4341c01d98d0dd49ca942d6001440a98891b4415f637",
+        "r63_sha256": "a6148a85eac23ffc7f3e4341c01d98d0dd49ca942d6001440a98891b4415f637",
+        "matching": true
+      },
+      {
+        "session_id": "8cd8575d-4743-4235-a493-aee6039551b4",
+        "r54c_sha256": "67816376592fdef15bc714993ddc7055242136d35b66a5df4e1800ef277f2c0d",
+        "r63_sha256": "67816376592fdef15bc714993ddc7055242136d35b66a5df4e1800ef277f2c0d",
+        "matching": true
+      },
+      {
+        "session_id": "ff76b679-7d7a-4796-8f6c-929efef45428",
+        "r54c_sha256": "759abe4836097645ccc140089e6a8ea1ca332ff17b01734c3113a97aa6c1d7a2",
+        "r63_sha256": "759abe4836097645ccc140089e6a8ea1ca332ff17b01734c3113a97aa6c1d7a2",
+        "matching": true
+      },
+      {
+        "session_id": "78487c90-fda7-4723-ad4c-4557393ea95f",
+        "r54c_sha256": "8201cf1c558c333e72fd291cc03f925c014322ad277f63e0308bc64250baa5bc",
+        "r63_sha256": "8201cf1c558c333e72fd291cc03f925c014322ad277f63e0308bc64250baa5bc",
+        "matching": true
+      },
+      {
+        "session_id": "5ad7094f-3764-4e32-94c9-c0c02b65e01b",
+        "r54c_sha256": "56f05dfa5c63eb31740d64ad542d6989c0cd0775a17b1f21f259e3fea481e754",
+        "r63_sha256": "56f05dfa5c63eb31740d64ad542d6989c0cd0775a17b1f21f259e3fea481e754",
+        "matching": true
+      },
+      {
+        "session_id": "db11666f-bfb8-4d0d-b62b-075ab85d92f9",
+        "r54c_sha256": "4ed605f70f8be2545f09426da348cd0b83d9a4f41ec0278433ebfec4d7efdf41",
+        "r63_sha256": "4ed605f70f8be2545f09426da348cd0b83d9a4f41ec0278433ebfec4d7efdf41",
+        "matching": true
+      },
+      {
+        "session_id": "8998b916-97bf-406f-92db-3ae40a832f4c",
+        "r54c_sha256": "3a62b045c232a9d4e830dc9c64b304606594e91bb1cd75d7f37bd865624bb1fe",
+        "r63_sha256": "3a62b045c232a9d4e830dc9c64b304606594e91bb1cd75d7f37bd865624bb1fe",
+        "matching": true
+      },
+      {
+        "session_id": "31bf71ab-497f-4045-bc91-06552f9b69b8",
+        "r54c_sha256": "1f2b24c9fae094dc4fad507e35da152d4f6ee0f65d56b0fe68e81fe38538b40a",
+        "r63_sha256": "1f2b24c9fae094dc4fad507e35da152d4f6ee0f65d56b0fe68e81fe38538b40a",
+        "matching": true
+      },
+      {
+        "session_id": "12124711-bfe3-4634-8368-2fa1d8ddf885",
+        "r54c_sha256": "c4c79459ad3ffac2a61806af4ccc2c89dda3cbcca4d27d87f75fdb8b6e7a0f74",
+        "r63_sha256": "c4c79459ad3ffac2a61806af4ccc2c89dda3cbcca4d27d87f75fdb8b6e7a0f74",
+        "matching": true
+      },
+      {
+        "session_id": "9cd93031-ae32-4c15-99fa-fbb1b6fbac0b",
+        "r54c_sha256": "d6717ac68c8314513b79ce7c753224bd40831b379e51caee2ef3ba81efd4050f",
+        "r63_sha256": "d6717ac68c8314513b79ce7c753224bd40831b379e51caee2ef3ba81efd4050f",
+        "matching": true
+      },
+      {
+        "session_id": "789f9994-f2b6-481d-b71a-c0c6706d82c6",
+        "r54c_sha256": "c729547b74639ac988f434bd4bbc4a56b15f0cc0f9d93342ca8bd6c1cec631d9",
+        "r63_sha256": "c729547b74639ac988f434bd4bbc4a56b15f0cc0f9d93342ca8bd6c1cec631d9",
+        "matching": true
+      },
+      {
+        "session_id": "3734e44b-ca86-456b-95b1-9352effa8d3a",
+        "r54c_sha256": "6dd4ad342955b4a6870dc8af045f90cb00135c0552c731e534a1eb1a9f948226",
+        "r63_sha256": "6dd4ad342955b4a6870dc8af045f90cb00135c0552c731e534a1eb1a9f948226",
+        "matching": true
+      },
+      {
+        "session_id": "8aeb8706-f800-4827-ba71-0797bf5afb0d",
+        "r54c_sha256": "3a8e9639186d8bd45614bc464c773486ac5169a0c2362516196515a9e6c6fb98",
+        "r63_sha256": "3a8e9639186d8bd45614bc464c773486ac5169a0c2362516196515a9e6c6fb98",
+        "matching": true
+      },
+      {
+        "session_id": "ab87371b-9ebc-4fb1-9eea-b984a5b76258",
+        "r54c_sha256": "d1c815363a1be596d8d06fd16cfaa0dd5c5985f2fe067d7bd7b47df9640291da",
+        "r63_sha256": "d1c815363a1be596d8d06fd16cfaa0dd5c5985f2fe067d7bd7b47df9640291da",
+        "matching": true
+      },
+      {
+        "session_id": "46faad58-58e7-4379-978e-4de6e5cc3b4f",
+        "r54c_sha256": "56f9c46d9a32997fb56bb6d51c3c784e2d3a8e793f2580daf447bd39890486a0",
+        "r63_sha256": "56f9c46d9a32997fb56bb6d51c3c784e2d3a8e793f2580daf447bd39890486a0",
+        "matching": true
+      },
+      {
+        "session_id": "3afb9f67-a18a-4b97-81cf-ef1806fce0e9",
+        "r54c_sha256": "5ee668899511eaabf9005e1ec94cc9f378da7055f89bba74e66514a20ca64c2f",
+        "r63_sha256": "5ee668899511eaabf9005e1ec94cc9f378da7055f89bba74e66514a20ca64c2f",
+        "matching": true
+      },
+      {
+        "session_id": "2b1cbd1c-dd5b-40ab-943a-0392894babc0",
+        "r54c_sha256": "4e5024b96c91314961bfbc95d756660d69a7816e2e68e43813bfe95aad6f5bc9",
+        "r63_sha256": "4e5024b96c91314961bfbc95d756660d69a7816e2e68e43813bfe95aad6f5bc9",
+        "matching": true
+      },
+      {
+        "session_id": "164fc33f-b103-424f-836a-b7a7d565f6c2",
+        "r54c_sha256": "ee89504998cc0c25b426f94c8fa6de726c6d62e215cb9da6635c09f0ee7b7157",
+        "r63_sha256": "ee89504998cc0c25b426f94c8fa6de726c6d62e215cb9da6635c09f0ee7b7157",
+        "matching": true
+      },
+      {
+        "session_id": "ab8bc8fa-6326-47a5-afb4-3e3a30ca7360",
+        "r54c_sha256": "f16e2722529eccef9999833e7344a149de854b9c93c27f0d44180677e02a0556",
+        "r63_sha256": "f16e2722529eccef9999833e7344a149de854b9c93c27f0d44180677e02a0556",
+        "matching": true
+      },
+      {
+        "session_id": "b7d2f58e-a1e5-418d-b3bd-88e88d20908d",
+        "r54c_sha256": "66859b7f8d087e2941af9de7e5d8a3f4687165c41de67b354ca2c9c89423f875",
+        "r63_sha256": "66859b7f8d087e2941af9de7e5d8a3f4687165c41de67b354ca2c9c89423f875",
+        "matching": true
+      },
+      {
+        "session_id": "2bfd631e-7d47-4dd6-a419-7d63615833c5",
+        "r54c_sha256": "fb21e22177dcc3c72082d061fb2c6f6087f19bb352b00f788813b6889330d755",
+        "r63_sha256": "fb21e22177dcc3c72082d061fb2c6f6087f19bb352b00f788813b6889330d755",
+        "matching": true
+      },
+      {
+        "session_id": "91ce5668-ec1e-4d09-a30a-3440be9c8861",
+        "r54c_sha256": "1faaf0f0a49019a82a5ba9d6c4f13c2d13348a8a6e37871a70d43fce557928a4",
+        "r63_sha256": "1faaf0f0a49019a82a5ba9d6c4f13c2d13348a8a6e37871a70d43fce557928a4",
+        "matching": true
+      },
+      {
+        "session_id": "c4f7d055-a3cc-4d6b-be80-b90278bc0d32",
+        "r54c_sha256": "15a50aa9a42d283398ea0058a1ccad6a7e5155cb7594ea8e1e2963345e7e91b1",
+        "r63_sha256": "15a50aa9a42d283398ea0058a1ccad6a7e5155cb7594ea8e1e2963345e7e91b1",
+        "matching": true
+      },
+      {
+        "session_id": "7905bb71-efea-4210-8ad9-881f37cad50a",
+        "r54c_sha256": "7c0906129e289015eac782c94a79e7cdb2a1e331ea94a513187ecbfd6546c18f",
+        "r63_sha256": "7c0906129e289015eac782c94a79e7cdb2a1e331ea94a513187ecbfd6546c18f",
+        "matching": true
+      },
+      {
+        "session_id": "1415a335-8fa3-4ead-8f30-0f04b337d079",
+        "r54c_sha256": "ff778cf5c4e9827895caa3fcf6a8c786d993a36cb188cf73306c07465dc66d95",
+        "r63_sha256": "ff778cf5c4e9827895caa3fcf6a8c786d993a36cb188cf73306c07465dc66d95",
+        "matching": true
+      },
+      {
+        "session_id": "4831a3b4-3964-40ec-92a3-151cef2cae8f",
+        "r54c_sha256": "780b76845f35c3f56e2b4d31a5b3ecc0278770ed139bad6b3f749ceab0d13ed7",
+        "r63_sha256": "780b76845f35c3f56e2b4d31a5b3ecc0278770ed139bad6b3f749ceab0d13ed7",
+        "matching": true
+      },
+      {
+        "session_id": "d9cca604-febe-4c95-a5cc-a4318c33ec40",
+        "r54c_sha256": "c3ff73595201f3b9a78229c0599d91ad7cd82a598b6dcf155d692c35c8c9b713",
+        "r63_sha256": "c3ff73595201f3b9a78229c0599d91ad7cd82a598b6dcf155d692c35c8c9b713",
+        "matching": true
+      },
+      {
+        "session_id": "f321d88d-d809-4bcb-aca0-a1ef551a48de",
+        "r54c_sha256": "0b7fb569981994a835ade3d5c6740d0ce9141d8efed73ab923166255391440c0",
+        "r63_sha256": "0b7fb569981994a835ade3d5c6740d0ce9141d8efed73ab923166255391440c0",
+        "matching": true
+      },
+      {
+        "session_id": "c0d4e758-5dfe-41a4-b0f2-07c29e27cdce",
+        "r54c_sha256": "9ff06759694ed1796d66ce0a529d42c302c7f12e13f656bf669f281bbc8fc5e3",
+        "r63_sha256": "9ff06759694ed1796d66ce0a529d42c302c7f12e13f656bf669f281bbc8fc5e3",
+        "matching": true
+      },
+      {
+        "session_id": "4e849a6c-dfbc-4a67-82cc-6dff9076b382",
+        "r54c_sha256": "d20b594a5e622727407e8631d8ed3e81576e0a17339ede1bd67acbfe0982b276",
+        "r63_sha256": "d20b594a5e622727407e8631d8ed3e81576e0a17339ede1bd67acbfe0982b276",
+        "matching": true
+      },
+      {
+        "session_id": "bd392a56-236a-49da-8f89-46c453e97ea2",
+        "r54c_sha256": "3c8a934361bf031b0b46bc15bac2dc9f9efe4b99fa760004033aea038e9c8048",
+        "r63_sha256": "3c8a934361bf031b0b46bc15bac2dc9f9efe4b99fa760004033aea038e9c8048",
+        "matching": true
+      },
+      {
+        "session_id": "c75f8e41-fde6-4d81-9c90-6f4844dad1b5",
+        "r54c_sha256": "dbba84d67a7c0d79ddf1da5ce6031feaaff177e88d0fc29a32cac87c99f75ff2",
+        "r63_sha256": "dbba84d67a7c0d79ddf1da5ce6031feaaff177e88d0fc29a32cac87c99f75ff2",
+        "matching": true
+      },
+      {
+        "session_id": "77faef85-566c-4eb7-90b6-ee9fdeeacbe8",
+        "r54c_sha256": "fee2149169628567c8227717c246b39ab84cc95fd0997cdd0aae92bef55598ee",
+        "r63_sha256": "fee2149169628567c8227717c246b39ab84cc95fd0997cdd0aae92bef55598ee",
+        "matching": true
+      }
+    ]
+  },
+  "validation": {
+    "gates": {
+      "rows_80": true,
+      "unique_sessions_80": true,
+      "tracks_20_each": true,
+      "total_tracks_1600": true,
+      "no_duplicate_tracks_within_row": true,
+      "valid_uuid_track_ids": true,
+      "track_ids_exactly_equal_to_r54c_per_position": true,
+      "prefix_leak_count_0": true,
+      "trailing_question_count_0": true,
+      "boilerplate_count_0": true,
+      "empty_or_too_short_count_0": true,
+      "target_word_range_65_95": true,
+      "first_sentence_names_top1_track_and_artist": true,
+      "lexdiv_floor_0_83": false,
+      "lexdiv_target_r54c_0_8381": false,
+      "opener_cluster_max_le_5": true
+    },
+    "counts": {
+      "rows": 80,
+      "unique_sessions": 80,
+      "duplicate_session_count": 0,
+      "track_rows_wrong_len": 0,
+      "total_tracks": 1600,
+      "rows_with_duplicate_tracks": 0,
+      "invalid_uuid_track_ids": 0,
+      "invalid_catalog_track_ids": 0,
+      "prefix_leak_count": 0,
+      "trailing_question_count": 0,
+      "boilerplate_count": 0,
+      "empty_or_too_short_count": 0,
+      "target_word_range_violations": 0,
+      "first_sentence_name_violations": 0
+    },
+    "lexdiv_distinct2": 0.8260060872505918,
+    "repeated_opener_clusters": [
+      {
+        "opener": "cry out by one ok",
+        "count": 2
+      }
+    ],
+    "opener_max_cluster": 2,
+    "track_hash_comparison": {
+      "rows_compared": 80,
+      "rows_with_matching_track_sequence": 80,
+      "rows_with_mismatched_track_sequence": 0,
+      "total_tracks_compared": 1600,
+      "per_position_mismatches": 0,
+      "per_row": [
+        {
+          "session_id": "9c37dcd7-d7c2-4686-8541-1e37c4814a09",
+          "r54c_sha256": "bb0b9a10bcfdf7c119a379abddc7b5b6b731cb3d82827b31aa6b5a85b300a3cd",
+          "r63_sha256": "bb0b9a10bcfdf7c119a379abddc7b5b6b731cb3d82827b31aa6b5a85b300a3cd",
+          "matching": true
+        },
+        {
+          "session_id": "60a6fd69-33f4-4dbf-aa0d-872b27a69037",
+          "r54c_sha256": "9ef8ad60a340a6afd06a62c129c01639bf8495241af10ff72209515543052708",
+          "r63_sha256": "9ef8ad60a340a6afd06a62c129c01639bf8495241af10ff72209515543052708",
+          "matching": true
+        },
+        {
+          "session_id": "25cc9533-7c02-4781-9100-ab438e848a3d",
+          "r54c_sha256": "d06c123e195c502f6ab133aab9338d04f35339b1032da1b59ec0da7cb2f4d8fb",
+          "r63_sha256": "d06c123e195c502f6ab133aab9338d04f35339b1032da1b59ec0da7cb2f4d8fb",
+          "matching": true
+        },
+        {
+          "session_id": "39698083-bc11-4514-9e53-da76d9260b3a",
+          "r54c_sha256": "2f872c7135da4f9bac2f36b4d157a9be7a57e896d7022c047f33f3dfe068f37c",
+          "r63_sha256": "2f872c7135da4f9bac2f36b4d157a9be7a57e896d7022c047f33f3dfe068f37c",
+          "matching": true
+        },
+        {
+          "session_id": "0fedfa80-ebe2-4977-b16b-594f4a2b19b1",
+          "r54c_sha256": "9b9668b4894d9adf2801cc72655e3dd4227fcec2aecfbe5197ee9d0ed8bfd878",
+          "r63_sha256": "9b9668b4894d9adf2801cc72655e3dd4227fcec2aecfbe5197ee9d0ed8bfd878",
+          "matching": true
+        },
+        {
+          "session_id": "a1df8767-11df-44d3-a1f6-e1ba2115e8f0",
+          "r54c_sha256": "9152c8f53a83baa1cfbe5101e20c3e8a34d7bbdc00b71aa843034088a9eeaf9a",
+          "r63_sha256": "9152c8f53a83baa1cfbe5101e20c3e8a34d7bbdc00b71aa843034088a9eeaf9a",
+          "matching": true
+        },
+        {
+          "session_id": "02ec3071-bd03-4f78-91bc-96666d0e3b6b",
+          "r54c_sha256": "4366a30faadd8dc6e44a8a65d294da395a6bbdf355c4f3e8d295266d99e57e21",
+          "r63_sha256": "4366a30faadd8dc6e44a8a65d294da395a6bbdf355c4f3e8d295266d99e57e21",
+          "matching": true
+        },
+        {
+          "session_id": "4b8ed42b-39ec-4d17-9bea-507828687a0c",
+          "r54c_sha256": "24f2b425b34fc43a680f720aa65ae905aa8ab1b1cfa52cf8ae43419d89bda6b9",
+          "r63_sha256": "24f2b425b34fc43a680f720aa65ae905aa8ab1b1cfa52cf8ae43419d89bda6b9",
+          "matching": true
+        },
+        {
+          "session_id": "ca9c5de4-c2b7-4972-a524-615a400d0105",
+          "r54c_sha256": "6f5c7300d0a51bc03d779698ed9fc9313cdf4d1490c0ab21a96604df8415b2ce",
+          "r63_sha256": "6f5c7300d0a51bc03d779698ed9fc9313cdf4d1490c0ab21a96604df8415b2ce",
+          "matching": true
+        },
+        {
+          "session_id": "645670fd-b825-4c26-aba5-edcdb57e7684",
+          "r54c_sha256": "45cd50214959b50fca7ee370b2fea4d2cc798c368a9460dd4cc3de511333a173",
+          "r63_sha256": "45cd50214959b50fca7ee370b2fea4d2cc798c368a9460dd4cc3de511333a173",
+          "matching": true
+        },
+        {
+          "session_id": "d53d9457-12f1-4286-b195-aa42c23d3bce",
+          "r54c_sha256": "6af4c1d7fb1410bd01ff2194b04ae6bae4451e82a0f564c8a0276e8f3bcf54e3",
+          "r63_sha256": "6af4c1d7fb1410bd01ff2194b04ae6bae4451e82a0f564c8a0276e8f3bcf54e3",
+          "matching": true
+        },
+        {
+          "session_id": "db8ec85f-fa1f-4e88-b4d2-333b63b0d386",
+          "r54c_sha256": "96e1264265b5fb3d66eb191cd7f0475437b3a822ba15a7f75f832e9f4df6763d",
+          "r63_sha256": "96e1264265b5fb3d66eb191cd7f0475437b3a822ba15a7f75f832e9f4df6763d",
+          "matching": true
+        },
+        {
+          "session_id": "fc6ba76a-3dd8-4c11-b5af-a233253b01bf",
+          "r54c_sha256": "f6e647749c1b3c9bc9d025c045854288c532200b4f68a16b707d7cec9ed3efb3",
+          "r63_sha256": "f6e647749c1b3c9bc9d025c045854288c532200b4f68a16b707d7cec9ed3efb3",
+          "matching": true
+        },
+        {
+          "session_id": "b6457586-ddb1-4e18-a9b5-4d4926b8b46d",
+          "r54c_sha256": "fe5b3c1c2cbb542c10ad43d06555efbec4150cba41f193d293f0472bb4ed2207",
+          "r63_sha256": "fe5b3c1c2cbb542c10ad43d06555efbec4150cba41f193d293f0472bb4ed2207",
+          "matching": true
+        },
+        {
+          "session_id": "70a0e5ad-50cb-475c-95a3-adffcf04b72e",
+          "r54c_sha256": "8c2feae4b5315027a807ea1f2db7d5c223d1377ef5cca8f6d938da2085dece1b",
+          "r63_sha256": "8c2feae4b5315027a807ea1f2db7d5c223d1377ef5cca8f6d938da2085dece1b",
+          "matching": true
+        },
+        {
+          "session_id": "dc3c1b72-0520-44c6-ab2b-4935d0455e19",
+          "r54c_sha256": "ea8d87f62275b25093dca0b3b7227cbbe445db7f9db2210f1cbea7efd51d68ee",
+          "r63_sha256": "ea8d87f62275b25093dca0b3b7227cbbe445db7f9db2210f1cbea7efd51d68ee",
+          "matching": true
+        },
+        {
+          "session_id": "2a677d32-23e9-4fe7-8b8e-4875c93509a2",
+          "r54c_sha256": "a5041a857634268742d3a813db1ad2eec767ea14f310b53ed4e37ddc1ede2914",
+          "r63_sha256": "a5041a857634268742d3a813db1ad2eec767ea14f310b53ed4e37ddc1ede2914",
+          "matching": true
+        },
+        {
+          "session_id": "198470a5-db1e-4add-b04a-bee8c5945d4b",
+          "r54c_sha256": "eb02c46808868af2706aa901e9f10f2f18740c0342ce4730cdc1344f2787a704",
+          "r63_sha256": "eb02c46808868af2706aa901e9f10f2f18740c0342ce4730cdc1344f2787a704",
+          "matching": true
+        },
+        {
+          "session_id": "07aae53d-7c65-442a-a893-6ffde80efb0d",
+          "r54c_sha256": "2440fc2b1015ffe4619a3386871224c03ca1475ec433ddab6dd113954c42bba4",
+          "r63_sha256": "2440fc2b1015ffe4619a3386871224c03ca1475ec433ddab6dd113954c42bba4",
+          "matching": true
+        },
+        {
+          "session_id": "525f9f69-31e5-4fee-9813-e903ad24e39e",
+          "r54c_sha256": "64ef9411c1abe87a1deb46b30977f6a8937d7cc6ec9329fa7d80c0fc4e0f5d70",
+          "r63_sha256": "64ef9411c1abe87a1deb46b30977f6a8937d7cc6ec9329fa7d80c0fc4e0f5d70",
+          "matching": true
+        },
+        {
+          "session_id": "0802ac4a-187b-4a78-b090-0ceb7630cf12",
+          "r54c_sha256": "6c6fde41bdb9e53010fd1c970bcb5e6bfcabb79dffc7fee8253e8e471e062f47",
+          "r63_sha256": "6c6fde41bdb9e53010fd1c970bcb5e6bfcabb79dffc7fee8253e8e471e062f47",
+          "matching": true
+        },
+        {
+          "session_id": "eb4a6ef2-7a7e-448a-bfed-c94e68b01505",
+          "r54c_sha256": "785b24ecc5d76c15768a52c1179eeb4bea94b1844c134bbf018fd630b32f871c",
+          "r63_sha256": "785b24ecc5d76c15768a52c1179eeb4bea94b1844c134bbf018fd630b32f871c",
+          "matching": true
+        },
+        {
+          "session_id": "0a1f7a63-c5e4-4a2d-9285-433cd036f4e7",
+          "r54c_sha256": "24b80e913b4ba8c7ae42e22985bf146feecfed512e8c1d4162775f5a4c0ea05d",
+          "r63_sha256": "24b80e913b4ba8c7ae42e22985bf146feecfed512e8c1d4162775f5a4c0ea05d",
+          "matching": true
+        },
+        {
+          "session_id": "ca8cbe02-1def-4fca-ba48-f17f9fac0ed8",
+          "r54c_sha256": "4cbcf2e74652abaeab27a21ae8df93eb5e7a25ddc2d3485a34fc553004698624",
+          "r63_sha256": "4cbcf2e74652abaeab27a21ae8df93eb5e7a25ddc2d3485a34fc553004698624",
+          "matching": true
+        },
+        {
+          "session_id": "574f75cf-7036-4cd2-b699-93202d81e7e1",
+          "r54c_sha256": "9aa7a13c65615b2784e9ca767166c466da094f7692c7d365d145290d98e2884a",
+          "r63_sha256": "9aa7a13c65615b2784e9ca767166c466da094f7692c7d365d145290d98e2884a",
+          "matching": true
+        },
+        {
+          "session_id": "ee7bfbda-86ee-4ade-b695-dbdeb12ae063",
+          "r54c_sha256": "a952cd90480197947bae0a82afa79ae586d4abecbb74742f703fff83a0f1acfb",
+          "r63_sha256": "a952cd90480197947bae0a82afa79ae586d4abecbb74742f703fff83a0f1acfb",
+          "matching": true
+        },
+        {
+          "session_id": "9d4ef919-504b-4963-af47-777478ace477",
+          "r54c_sha256": "4cbf1962f1b0f2199f24cc80531933c81ffb2b8642c784bb411c4880c690a168",
+          "r63_sha256": "4cbf1962f1b0f2199f24cc80531933c81ffb2b8642c784bb411c4880c690a168",
+          "matching": true
+        },
+        {
+          "session_id": "c08eb2a1-8491-442d-a10f-db8d9ba831d6",
+          "r54c_sha256": "3d609e301b3c96db501a694b046948e821ec0f9887fb7b1fe85e170fc5c0c01d",
+          "r63_sha256": "3d609e301b3c96db501a694b046948e821ec0f9887fb7b1fe85e170fc5c0c01d",
+          "matching": true
+        },
+        {
+          "session_id": "38a5f361-9802-40be-9d15-15c67d5ba60a",
+          "r54c_sha256": "e67ceb7a155502ec647b5cda560c25f3df077a36abc3d5d7450b23e780d9345b",
+          "r63_sha256": "e67ceb7a155502ec647b5cda560c25f3df077a36abc3d5d7450b23e780d9345b",
+          "matching": true
+        },
+        {
+          "session_id": "fe22cfe0-f552-4d43-bf13-ea77bef4f1ce",
+          "r54c_sha256": "a9068877c31c108f804148d920aeb44120ab5ca61e6c87f13feee8adc65eee43",
+          "r63_sha256": "a9068877c31c108f804148d920aeb44120ab5ca61e6c87f13feee8adc65eee43",
+          "matching": true
+        },
+        {
+          "session_id": "40cc1c03-6db9-49db-8bbe-8b97b45adb0b",
+          "r54c_sha256": "7df961bbd51ce67052ed34c797d320c48a6d975f489d4e14e5a4824a7c7d5480",
+          "r63_sha256": "7df961bbd51ce67052ed34c797d320c48a6d975f489d4e14e5a4824a7c7d5480",
+          "matching": true
+        },
+        {
+          "session_id": "3aee4d9b-b0f1-4282-bbe6-58942c71f311",
+          "r54c_sha256": "15716deb8f7fc0a8cb7d9bfa84763a4fd4b4b01c831356886ec3c73680100b53",
+          "r63_sha256": "15716deb8f7fc0a8cb7d9bfa84763a4fd4b4b01c831356886ec3c73680100b53",
+          "matching": true
+        },
+        {
+          "session_id": "4b239a62-4435-4f39-80d6-26cffe0d1871",
+          "r54c_sha256": "9c36925677a0d829dc4ea04fef3d92e1bef4a24f739a7e1af68d291bf002b097",
+          "r63_sha256": "9c36925677a0d829dc4ea04fef3d92e1bef4a24f739a7e1af68d291bf002b097",
+          "matching": true
+        },
+        {
+          "session_id": "809d4fbc-5298-494a-8817-78b3fdc5317e",
+          "r54c_sha256": "8ef6ab61a1fc5d2d9783da7200ac99959bd1bc3eb95b4bc1984e35eff7006672",
+          "r63_sha256": "8ef6ab61a1fc5d2d9783da7200ac99959bd1bc3eb95b4bc1984e35eff7006672",
+          "matching": true
+        },
+        {
+          "session_id": "5e1f5a89-99c0-46bb-af78-005338d05858",
+          "r54c_sha256": "ed34e6d49a0b990a561a7485bd78fee4c7d1f72e356da9e8b105284633921b1a",
+          "r63_sha256": "ed34e6d49a0b990a561a7485bd78fee4c7d1f72e356da9e8b105284633921b1a",
+          "matching": true
+        },
+        {
+          "session_id": "d7426802-d075-4a49-8062-977ba656c9a2",
+          "r54c_sha256": "3b2112bbdf0832a46257f38fe7e42a8ed3c04634bd412b3f519ca80446ccbbf5",
+          "r63_sha256": "3b2112bbdf0832a46257f38fe7e42a8ed3c04634bd412b3f519ca80446ccbbf5",
+          "matching": true
+        },
+        {
+          "session_id": "d851eac7-27a7-4363-b2a4-6cb365c79d22",
+          "r54c_sha256": "ed41a9c2c9f315034fd2f99aef230a0176a083363fe539918e83882998a1b67f",
+          "r63_sha256": "ed41a9c2c9f315034fd2f99aef230a0176a083363fe539918e83882998a1b67f",
+          "matching": true
+        },
+        {
+          "session_id": "28c3ecd9-fbaa-4423-a85c-92508346e1e8",
+          "r54c_sha256": "ad1652bdab4b4273f19eadf2ae64ef90ee361fc7f2cb0c194f83cd2ebc3f68da",
+          "r63_sha256": "ad1652bdab4b4273f19eadf2ae64ef90ee361fc7f2cb0c194f83cd2ebc3f68da",
+          "matching": true
+        },
+        {
+          "session_id": "5b2f877b-a6d5-4473-879c-f5a24d4fd06f",
+          "r54c_sha256": "06d376455c3d65b3bb48f7e58b941203a61b13cbf9480089cfbc6aa9900841fa",
+          "r63_sha256": "06d376455c3d65b3bb48f7e58b941203a61b13cbf9480089cfbc6aa9900841fa",
+          "matching": true
+        },
+        {
+          "session_id": "d5c80ee5-97c2-4de1-af2e-2295e3ae34a3",
+          "r54c_sha256": "8760b266a0b4601f267d69170fd95c8a4ab1395cb49034699ebb0a4f452a7bf1",
+          "r63_sha256": "8760b266a0b4601f267d69170fd95c8a4ab1395cb49034699ebb0a4f452a7bf1",
+          "matching": true
+        },
+        {
+          "session_id": "68993adf-60d9-42f9-b21f-cdd5bf851cb1",
+          "r54c_sha256": "aa96c365521f4bed0419597b1da8ced203ff35046bd677708940886f9cd45b9e",
+          "r63_sha256": "aa96c365521f4bed0419597b1da8ced203ff35046bd677708940886f9cd45b9e",
+          "matching": true
+        },
+        {
+          "session_id": "6c54de37-9c55-4c59-b203-ec190dd07523",
+          "r54c_sha256": "845b58721e5781a846567c6cbe5ec68203ea73e6e073a669da85930708b6d8f4",
+          "r63_sha256": "845b58721e5781a846567c6cbe5ec68203ea73e6e073a669da85930708b6d8f4",
+          "matching": true
+        },
+        {
+          "session_id": "eaeca304-3ddb-4adb-8087-0f15b597f73e",
+          "r54c_sha256": "08788108817f6244f7a770fa57d8fc965fd53561289f9c398cb357567bf949f4",
+          "r63_sha256": "08788108817f6244f7a770fa57d8fc965fd53561289f9c398cb357567bf949f4",
+          "matching": true
+        },
+        {
+          "session_id": "2fe9abf6-ccea-4f05-8490-82da8bf57764",
+          "r54c_sha256": "c7f522daf09b761c0134ea8854439e5f5db299b3f620c83f7383daf28883f340",
+          "r63_sha256": "c7f522daf09b761c0134ea8854439e5f5db299b3f620c83f7383daf28883f340",
+          "matching": true
+        },
+        {
+          "session_id": "1f7b28c1-8b18-4045-be27-0475edb96857",
+          "r54c_sha256": "5c12c4367aeb53515c227a2e1a5ecdefc931b84e01448ce8e2c7cf5c0be8f781",
+          "r63_sha256": "5c12c4367aeb53515c227a2e1a5ecdefc931b84e01448ce8e2c7cf5c0be8f781",
+          "matching": true
+        },
+        {
+          "session_id": "ebad356d-d5ab-437a-81f1-6d219e532c33",
+          "r54c_sha256": "0847a75e59c08003ca73dc6b0a33737578e4c3bb238962b52daf1ad499e3833b",
+          "r63_sha256": "0847a75e59c08003ca73dc6b0a33737578e4c3bb238962b52daf1ad499e3833b",
+          "matching": true
+        },
+        {
+          "session_id": "6953ac7a-5e95-48d8-be4e-8f153ac937e2",
+          "r54c_sha256": "fdced8340a0ee446fe496e142f20427a891ba599261695db51bfed12b73eb61c",
+          "r63_sha256": "fdced8340a0ee446fe496e142f20427a891ba599261695db51bfed12b73eb61c",
+          "matching": true
+        },
+        {
+          "session_id": "49009ca7-f8da-45df-9c62-7b88d960d5d2",
+          "r54c_sha256": "a6148a85eac23ffc7f3e4341c01d98d0dd49ca942d6001440a98891b4415f637",
+          "r63_sha256": "a6148a85eac23ffc7f3e4341c01d98d0dd49ca942d6001440a98891b4415f637",
+          "matching": true
+        },
+        {
+          "session_id": "8cd8575d-4743-4235-a493-aee6039551b4",
+          "r54c_sha256": "67816376592fdef15bc714993ddc7055242136d35b66a5df4e1800ef277f2c0d",
+          "r63_sha256": "67816376592fdef15bc714993ddc7055242136d35b66a5df4e1800ef277f2c0d",
+          "matching": true
+        },
+        {
+          "session_id": "ff76b679-7d7a-4796-8f6c-929efef45428",
+          "r54c_sha256": "759abe4836097645ccc140089e6a8ea1ca332ff17b01734c3113a97aa6c1d7a2",
+          "r63_sha256": "759abe4836097645ccc140089e6a8ea1ca332ff17b01734c3113a97aa6c1d7a2",
+          "matching": true
+        },
+        {
+          "session_id": "78487c90-fda7-4723-ad4c-4557393ea95f",
+          "r54c_sha256": "8201cf1c558c333e72fd291cc03f925c014322ad277f63e0308bc64250baa5bc",
+          "r63_sha256": "8201cf1c558c333e72fd291cc03f925c014322ad277f63e0308bc64250baa5bc",
+          "matching": true
+        },
+        {
+          "session_id": "5ad7094f-3764-4e32-94c9-c0c02b65e01b",
+          "r54c_sha256": "56f05dfa5c63eb31740d64ad542d6989c0cd0775a17b1f21f259e3fea481e754",
+          "r63_sha256": "56f05dfa5c63eb31740d64ad542d6989c0cd0775a17b1f21f259e3fea481e754",
+          "matching": true
+        },
+        {
+          "session_id": "db11666f-bfb8-4d0d-b62b-075ab85d92f9",
+          "r54c_sha256": "4ed605f70f8be2545f09426da348cd0b83d9a4f41ec0278433ebfec4d7efdf41",
+          "r63_sha256": "4ed605f70f8be2545f09426da348cd0b83d9a4f41ec0278433ebfec4d7efdf41",
+          "matching": true
+        },
+        {
+          "session_id": "8998b916-97bf-406f-92db-3ae40a832f4c",
+          "r54c_sha256": "3a62b045c232a9d4e830dc9c64b304606594e91bb1cd75d7f37bd865624bb1fe",
+          "r63_sha256": "3a62b045c232a9d4e830dc9c64b304606594e91bb1cd75d7f37bd865624bb1fe",
+          "matching": true
+        },
+        {
+          "session_id": "31bf71ab-497f-4045-bc91-06552f9b69b8",
+          "r54c_sha256": "1f2b24c9fae094dc4fad507e35da152d4f6ee0f65d56b0fe68e81fe38538b40a",
+          "r63_sha256": "1f2b24c9fae094dc4fad507e35da152d4f6ee0f65d56b0fe68e81fe38538b40a",
+          "matching": true
+        },
+        {
+          "session_id": "12124711-bfe3-4634-8368-2fa1d8ddf885",
+          "r54c_sha256": "c4c79459ad3ffac2a61806af4ccc2c89dda3cbcca4d27d87f75fdb8b6e7a0f74",
+          "r63_sha256": "c4c79459ad3ffac2a61806af4ccc2c89dda3cbcca4d27d87f75fdb8b6e7a0f74",
+          "matching": true
+        },
+        {
+          "session_id": "9cd93031-ae32-4c15-99fa-fbb1b6fbac0b",
+          "r54c_sha256": "d6717ac68c8314513b79ce7c753224bd40831b379e51caee2ef3ba81efd4050f",
+          "r63_sha256": "d6717ac68c8314513b79ce7c753224bd40831b379e51caee2ef3ba81efd4050f",
+          "matching": true
+        },
+        {
+          "session_id": "789f9994-f2b6-481d-b71a-c0c6706d82c6",
+          "r54c_sha256": "c729547b74639ac988f434bd4bbc4a56b15f0cc0f9d93342ca8bd6c1cec631d9",
+          "r63_sha256": "c729547b74639ac988f434bd4bbc4a56b15f0cc0f9d93342ca8bd6c1cec631d9",
+          "matching": true
+        },
+        {
+          "session_id": "3734e44b-ca86-456b-95b1-9352effa8d3a",
+          "r54c_sha256": "6dd4ad342955b4a6870dc8af045f90cb00135c0552c731e534a1eb1a9f948226",
+          "r63_sha256": "6dd4ad342955b4a6870dc8af045f90cb00135c0552c731e534a1eb1a9f948226",
+          "matching": true
+        },
+        {
+          "session_id": "8aeb8706-f800-4827-ba71-0797bf5afb0d",
+          "r54c_sha256": "3a8e9639186d8bd45614bc464c773486ac5169a0c2362516196515a9e6c6fb98",
+          "r63_sha256": "3a8e9639186d8bd45614bc464c773486ac5169a0c2362516196515a9e6c6fb98",
+          "matching": true
+        },
+        {
+          "session_id": "ab87371b-9ebc-4fb1-9eea-b984a5b76258",
+          "r54c_sha256": "d1c815363a1be596d8d06fd16cfaa0dd5c5985f2fe067d7bd7b47df9640291da",
+          "r63_sha256": "d1c815363a1be596d8d06fd16cfaa0dd5c5985f2fe067d7bd7b47df9640291da",
+          "matching": true
+        },
+        {
+          "session_id": "46faad58-58e7-4379-978e-4de6e5cc3b4f",
+          "r54c_sha256": "56f9c46d9a32997fb56bb6d51c3c784e2d3a8e793f2580daf447bd39890486a0",
+          "r63_sha256": "56f9c46d9a32997fb56bb6d51c3c784e2d3a8e793f2580daf447bd39890486a0",
+          "matching": true
+        },
+        {
+          "session_id": "3afb9f67-a18a-4b97-81cf-ef1806fce0e9",
+          "r54c_sha256": "5ee668899511eaabf9005e1ec94cc9f378da7055f89bba74e66514a20ca64c2f",
+          "r63_sha256": "5ee668899511eaabf9005e1ec94cc9f378da7055f89bba74e66514a20ca64c2f",
+          "matching": true
+        },
+        {
+          "session_id": "2b1cbd1c-dd5b-40ab-943a-0392894babc0",
+          "r54c_sha256": "4e5024b96c91314961bfbc95d756660d69a7816e2e68e43813bfe95aad6f5bc9",
+          "r63_sha256": "4e5024b96c91314961bfbc95d756660d69a7816e2e68e43813bfe95aad6f5bc9",
+          "matching": true
+        },
+        {
+          "session_id": "164fc33f-b103-424f-836a-b7a7d565f6c2",
+          "r54c_sha256": "ee89504998cc0c25b426f94c8fa6de726c6d62e215cb9da6635c09f0ee7b7157",
+          "r63_sha256": "ee89504998cc0c25b426f94c8fa6de726c6d62e215cb9da6635c09f0ee7b7157",
+          "matching": true
+        },
+        {
+          "session_id": "ab8bc8fa-6326-47a5-afb4-3e3a30ca7360",
+          "r54c_sha256": "f16e2722529eccef9999833e7344a149de854b9c93c27f0d44180677e02a0556",
+          "r63_sha256": "f16e2722529eccef9999833e7344a149de854b9c93c27f0d44180677e02a0556",
+          "matching": true
+        },
+        {
+          "session_id": "b7d2f58e-a1e5-418d-b3bd-88e88d20908d",
+          "r54c_sha256": "66859b7f8d087e2941af9de7e5d8a3f4687165c41de67b354ca2c9c89423f875",
+          "r63_sha256": "66859b7f8d087e2941af9de7e5d8a3f4687165c41de67b354ca2c9c89423f875",
+          "matching": true
+        },
+        {
+          "session_id": "2bfd631e-7d47-4dd6-a419-7d63615833c5",
+          "r54c_sha256": "fb21e22177dcc3c72082d061fb2c6f6087f19bb352b00f788813b6889330d755",
+          "r63_sha256": "fb21e22177dcc3c72082d061fb2c6f6087f19bb352b00f788813b6889330d755",
+          "matching": true
+        },
+        {
+          "session_id": "91ce5668-ec1e-4d09-a30a-3440be9c8861",
+          "r54c_sha256": "1faaf0f0a49019a82a5ba9d6c4f13c2d13348a8a6e37871a70d43fce557928a4",
+          "r63_sha256": "1faaf0f0a49019a82a5ba9d6c4f13c2d13348a8a6e37871a70d43fce557928a4",
+          "matching": true
+        },
+        {
+          "session_id": "c4f7d055-a3cc-4d6b-be80-b90278bc0d32",
+          "r54c_sha256": "15a50aa9a42d283398ea0058a1ccad6a7e5155cb7594ea8e1e2963345e7e91b1",
+          "r63_sha256": "15a50aa9a42d283398ea0058a1ccad6a7e5155cb7594ea8e1e2963345e7e91b1",
+          "matching": true
+        },
+        {
+          "session_id": "7905bb71-efea-4210-8ad9-881f37cad50a",
+          "r54c_sha256": "7c0906129e289015eac782c94a79e7cdb2a1e331ea94a513187ecbfd6546c18f",
+          "r63_sha256": "7c0906129e289015eac782c94a79e7cdb2a1e331ea94a513187ecbfd6546c18f",
+          "matching": true
+        },
+        {
+          "session_id": "1415a335-8fa3-4ead-8f30-0f04b337d079",
+          "r54c_sha256": "ff778cf5c4e9827895caa3fcf6a8c786d993a36cb188cf73306c07465dc66d95",
+          "r63_sha256": "ff778cf5c4e9827895caa3fcf6a8c786d993a36cb188cf73306c07465dc66d95",
+          "matching": true
+        },
+        {
+          "session_id": "4831a3b4-3964-40ec-92a3-151cef2cae8f",
+          "r54c_sha256": "780b76845f35c3f56e2b4d31a5b3ecc0278770ed139bad6b3f749ceab0d13ed7",
+          "r63_sha256": "780b76845f35c3f56e2b4d31a5b3ecc0278770ed139bad6b3f749ceab0d13ed7",
+          "matching": true
+        },
+        {
+          "session_id": "d9cca604-febe-4c95-a5cc-a4318c33ec40",
+          "r54c_sha256": "c3ff73595201f3b9a78229c0599d91ad7cd82a598b6dcf155d692c35c8c9b713",
+          "r63_sha256": "c3ff73595201f3b9a78229c0599d91ad7cd82a598b6dcf155d692c35c8c9b713",
+          "matching": true
+        },
+        {
+          "session_id": "f321d88d-d809-4bcb-aca0-a1ef551a48de",
+          "r54c_sha256": "0b7fb569981994a835ade3d5c6740d0ce9141d8efed73ab923166255391440c0",
+          "r63_sha256": "0b7fb569981994a835ade3d5c6740d0ce9141d8efed73ab923166255391440c0",
+          "matching": true
+        },
+        {
+          "session_id": "c0d4e758-5dfe-41a4-b0f2-07c29e27cdce",
+          "r54c_sha256": "9ff06759694ed1796d66ce0a529d42c302c7f12e13f656bf669f281bbc8fc5e3",
+          "r63_sha256": "9ff06759694ed1796d66ce0a529d42c302c7f12e13f656bf669f281bbc8fc5e3",
+          "matching": true
+        },
+        {
+          "session_id": "4e849a6c-dfbc-4a67-82cc-6dff9076b382",
+          "r54c_sha256": "d20b594a5e622727407e8631d8ed3e81576e0a17339ede1bd67acbfe0982b276",
+          "r63_sha256": "d20b594a5e622727407e8631d8ed3e81576e0a17339ede1bd67acbfe0982b276",
+          "matching": true
+        },
+        {
+          "session_id": "bd392a56-236a-49da-8f89-46c453e97ea2",
+          "r54c_sha256": "3c8a934361bf031b0b46bc15bac2dc9f9efe4b99fa760004033aea038e9c8048",
+          "r63_sha256": "3c8a934361bf031b0b46bc15bac2dc9f9efe4b99fa760004033aea038e9c8048",
+          "matching": true
+        },
+        {
+          "session_id": "c75f8e41-fde6-4d81-9c90-6f4844dad1b5",
+          "r54c_sha256": "dbba84d67a7c0d79ddf1da5ce6031feaaff177e88d0fc29a32cac87c99f75ff2",
+          "r63_sha256": "dbba84d67a7c0d79ddf1da5ce6031feaaff177e88d0fc29a32cac87c99f75ff2",
+          "matching": true
+        },
+        {
+          "session_id": "77faef85-566c-4eb7-90b6-ee9fdeeacbe8",
+          "r54c_sha256": "fee2149169628567c8227717c246b39ab84cc95fd0997cdd0aae92bef55598ee",
+          "r63_sha256": "fee2149169628567c8227717c246b39ab84cc95fd0997cdd0aae92bef55598ee",
+          "matching": true
+        }
+      ]
+    }
+  },
+  "regenerated_row_validation": {
+    "selected_rows": 25,
+    "accepted_regenerated_rows": 25,
+    "fallback_original_rows": 0,
+    "violations": [],
+    "passed": true
+  },
+  "before_after_samples": [
+    {
+      "row_index": 54,
+      "session_id": "31bf71ab-497f-4045-bc91-06552f9b69b8",
+      "top1_track_id": "676f59fc-1bd0-42cf-a80a-3b9d846f7810",
+      "top1_track": "Absolute Bearing",
+      "top1_artist": "Work Drugs",
+      "weakness_score": 6,
+      "weakness_components": {
+        "generic_reasoning": 2,
+        "no_user_session_ref": 1,
+        "no_top1_justification": 0,
+        "overly_short_flat": 3
+      },
+      "r54c_response": "I can't actually play music for you, but *Absolute Bearing* by Work Drugs hits that same synth-wave energy—it's got those propulsive, neon-soaked synths and hypnotic grooves that make Work Drugs so addictive. If you've got a streaming service handy, you should be able to find both tracks there.",
+      "r63_response": "Absolute Bearing by Work Drugs keeps you in the same lane as License to Drive, drawing from the band's signature blend of breezy pop hooks and polished indie-rock guitars. Since you went straight to Work Drugs by name, staying with one of their title tracks should sit well, carrying that same smooth, late-night cruising feel running through their catalog without straying from what drew you in.",
+      "r63b_response": "Absolute Bearing by Work Drugs stays close to License to Drive, leaning on the same hazy synth-pop production and clean indie-rock guitar lines the duo built their sound around. Since you asked for Work Drugs directly rather than a genre, this specifically works because it's another title track from the band, holding that same nocturnal, coastal mood without pulling you toward a different artist. The relaxed tempo and laid-back vocal delivery keep the listening session cohesive with your initial pick."
+    },
+    {
+      "row_index": 37,
+      "session_id": "28c3ecd9-fbaa-4423-a85c-92508346e1e8",
+      "top1_track_id": "2655af4d-0731-4c58-8a14-28e1b2249c19",
+      "top1_track": "Hem",
+      "top1_artist": "King Woman",
+      "weakness_score": 4,
+      "weakness_components": {
+        "generic_reasoning": 2,
+        "no_user_session_ref": 0,
+        "no_top1_justification": 0,
+        "overly_short_flat": 2
+      },
+      "r54c_response": "You've clearly found your sonic sweet spot with that doom-gaze fusion, and \"Hem\" by King Woman deepens that immersion with funeral-paced dynamics that let distortion bloom like decay through sparse vocal passages. The track constructs an emotional architecture that begins in murky introspection, layering feedback and reverb until the weight becomes almost physical, then pulls back to let silence breathe before collapsing inward again. This cyclical descent mirrors genuine grief—patient, unrushed, refusing catharsis in favor of sustained melancholy.",
+      "r63_response": "Hem by King Woman extends the doom-gaze pull you locked into with Burn, sinking further into that post-metal heaviness you flagged as the sweet spot. Kristina Esfandiari's vocals hover like incantation over slow, corroded guitar tonnage, leaning fully into the brooding, ritualistic weight you're after for deep introspection. Pulled from Created in the Image of Suffering, it's bleaker and more crushing than Burn while keeping the atmospheric, reflective gravity intact.",
+      "r63b_response": "Hem by King Woman pushes deeper into the doom-gaze territory you locked onto with Burn, leaning harder into the post-metal heaviness you flagged as the sweet spot. Kristina Esfandiari's vocals drift like a low incantation over slow, corroded guitar work, with lyrics circling religious trauma and inherited suffering. From 2017's Created in the Image of Suffering, this specific track works because it's bleaker and more ritualistic than Burn while holding onto the atmospheric, reflective weight you wanted after Akira opened that shoegaze door."
+    },
+    {
+      "row_index": 39,
+      "session_id": "d5c80ee5-97c2-4de1-af2e-2295e3ae34a3",
+      "top1_track_id": "983dbea0-db39-423f-b734-c9a18f384620",
+      "top1_track": "Bits With Byte",
+      "top1_artist": "8 Bit Weapon",
+      "weakness_score": 4,
+      "weakness_components": {
+        "generic_reasoning": 2,
+        "no_user_session_ref": 0,
+        "no_top1_justification": 0,
+        "overly_short_flat": 2
+      },
+      "r54c_response": "You're craving that cosmic arcade adventure with an edge, and \"Bits With Byte\" by 8 Bit Weapon delivers exactly that intergalactic energy. The track layers synth arpeggios with punchy percussion that feels like navigating an alien starfield—each bleeping oscillator line builds momentum as if you're powering through successive waves of extraterrestrial adversaries. This is pure retro space combat distilled into chiptune form.",
+      "r63_response": "Bits With Byte by 8 Bit Weapon keeps you in that same retro space arcade territory you loved about Escape From Xenon. Coming from the same artist, it leans into crunchy square-wave leads and a punchy electro pulse that suggests cruising between star systems or squaring off against a pixelated alien commander. The melody stays memorable rather than frenetic, echoing the calmer-but-triumphant gameplay moments you've been chasing throughout this search.",
+      "r63b_response": "Bits With Byte by 8 Bit Weapon keeps you in that retro space-arcade territory you loved about Escape From Xenon. Same artist, but this one leans harder into crunchy square-wave leads and a steady electro pulse, like cruising between star systems before squaring off with a pixelated alien commander. The melody stays catchy and memorable rather than frantic, echoing the calmer-but-triumphant gameplay moments you've been chasing since 2D Racer Level 1 and Lil' Fighter clicked for you."
+    },
+    {
+      "row_index": 76,
+      "session_id": "4e849a6c-dfbc-4a67-82cc-6dff9076b382",
+      "top1_track_id": "9313e715-4c01-4275-a1ee-c74511b5bc69",
+      "top1_track": "Virtual Lust",
+      "top1_artist": "Infinity Frequencies",
+      "weakness_score": 4,
+      "weakness_components": {
+        "generic_reasoning": 2,
+        "no_user_session_ref": 0,
+        "no_top1_justification": 0,
+        "overly_short_flat": 2
+      },
+      "r54c_response": "\"Virtual Lust\" by Infinity Frequencies takes that atmospheric foundation and dyes it in deeper, moodier tones—the cinematic production feels introspective without ever becoming heavy-handed, and there's a palpable sense of longing woven through the synth layers. It's the perfect next step if you want to explore that darker, more contemplative side of electronic music.",
+      "r63_response": "Virtual Lust by Infinity Frequencies leans into that darker, more introspective territory you're after now. Coming from the same artist behind Lost Dreams, it carries hazy synth textures and a brooding, slowed-down pulse that pulls the chillwave mood somewhere heavier and more reflective. Off the Shrines record, it keeps the lo-fi haze you've been gravitating toward while sinking into a moodier headspace, which should pair well with the other tracks already on your list.",
+      "r63b_response": "Virtual Lust by Infinity Frequencies pushes into the darker, more introspective electronic territory you just asked about. Since Lost Dreams clicked for you, staying with Infinity Frequencies makes sense here specifically because Shrines leans heavier on muted, slowed-down synth pads and a brooding low-end pulse than the Dreams West tracks did. The hazy lo-fi production keeps continuity with your early 2010s chillwave thread, but the muffled vocal samples and melancholic atmosphere give it that heavier, more reflective weight you're now chasing."
+    },
+    {
+      "row_index": 46,
+      "session_id": "6953ac7a-5e95-48d8-be4e-8f153ac937e2",
+      "top1_track_id": "2cce80ee-09b3-4e74-a3ac-bdd9766aea3d",
+      "top1_track": "For Those We Loved",
+      "top1_artist": "Austin Wintory",
+      "weakness_score": 3,
+      "weakness_components": {
+        "generic_reasoning": 0,
+        "no_user_session_ref": 0,
+        "no_top1_justification": 1,
+        "overly_short_flat": 2
+      },
+      "r54c_response": "You've moved through the adrenaline perfectly with \"The Assassin Two-Step,\" and now \"For Those We Loved\" offers that deceleration you're craving—a contemplative orchestral piece that lets breathing room emerge between the strings and understated piano. Wintory anchors this track in neo-romantic film scoring, where restrained melodic development and sparse harmonic movement create space for reflection rather than action. The result is a moment of regrouping within the larger narrative arc of Victorian London's shadows.",
+      "r63_response": "For Those We Loved by Austin Wintory eases the tempo right down after the rooftop rush of The Assassin Two-Step, offering a more reflective moment from the Syndicate score. Its mournful strings and restrained pacing carry that same grand, industrial melancholy of London you praised in Cathedrals of Steel, but stripped back into something quieter and more intimate, fitting beautifully alongside the slower atmosphere you're now chasing.",
+      "r63b_response": "For Those We Loved by Austin Wintory eases the pace down after the rooftop rush of The Assassin Two-Step, settling into a solemn orchestral elegy from the Syndicate score. Its mourning strings and sparse piano carry that grand, industrial melancholy you praised in Cathedrals of Steel, but pared back to something more intimate and funereal. This one specifically, because its grieving Victorian theme honors the human cost beneath London's smoke-stained skyline, giving you the slower, weightier counterpart to the chase music without losing the album's somber thread."
+    },
+    {
+      "row_index": 75,
+      "session_id": "c0d4e758-5dfe-41a4-b0f2-07c29e27cdce",
+      "top1_track_id": "89931a15-5bad-49c3-9b4e-aad4bfac0c44",
+      "top1_track": "Miami - Original Mix",
+      "top1_artist": "Jasper Byrne",
+      "weakness_score": 3,
+      "weakness_components": {
+        "generic_reasoning": 0,
+        "no_user_session_ref": 1,
+        "no_top1_justification": 0,
+        "overly_short_flat": 2
+      },
+      "r54c_response": "\"Miami\" from the *Hotline Miami* soundtrack by Jasper Byrne captures exactly that retro-futuristic aesthetic—all neon-soaked synths and analog warmth draped over a propulsive, hypnotic beat. The album artwork features that iconic moon imagery you're after, and the whole score channels 1980s Miami noir filtered through a distinctly modern, surreal lens. It's the kind of score that feels simultaneously nostalgic and otherworldly, with shimmering synth textures that evoke both vintage arcade games and midnight cyberpunk reveries.",
+      "r63_response": "Miami - Original Mix by Jasper Byrne taps into that retro-futuristic pull you're chasing, drawn from the Hotline Miami soundtrack and steeped in 80s-styled synthwave. Hazy analog pads and a slow, pulsing arpeggio give it a moonlit, neon-after-dark quality close to the pixel-art game scores you're trying to recall. As a fellow VGM listener, this one sits comfortably alongside Jim Guthrie's work while leaning more electronic and instrumental.",
+      "r63b_response": "Miami - Original Mix by Jasper Byrne pulls from the 2012 Hotline Miami EP, a synthwave instrumental built on hazy analog pads and a slow arpeggiated bassline under washed-out drum machine hits. Given your VGM background and that retro-futuristic moonlit cover you're trying to place, this specifically fits because Jasper Byrne's score sits in the same indie-game lineage as Jim Guthrie's Sword & Sworcery work, sharing the pixel-era electronic palette while pushing harder into 80s neon-noir territory. A useful stepping stone toward the album you're half-remembering."
+    },
+    {
+      "row_index": 30,
+      "session_id": "40cc1c03-6db9-49db-8bbe-8b97b45adb0b",
+      "top1_track_id": "94c987d0-cd80-499c-b4f4-50958be00452",
+      "top1_track": "Sinner",
+      "top1_artist": "Lincoln Durham",
+      "weakness_score": 3,
+      "weakness_components": {
+        "generic_reasoning": 1,
+        "no_user_session_ref": 0,
+        "no_top1_justification": 0,
+        "overly_short_flat": 2
+      },
+      "r54c_response": "You want that abrasive, unpolished edge that cuts through the polish—\"Sinner\" by Lincoln Durham delivers exactly that with its overdriven guitar tone and ragged vocal delivery that strips away any smoothness. Durham roots this track in classic American blues-rock lineage, where distortion and grit became the primary storytelling instruments alongside lyrical confession. The production lets every string scrape and breath crack stay in the mix, giving it that live-wire intensity you're after.",
+      "r63_response": "Sinner by Lincoln Durham circles back to the artist behind Last Red Dawn, which already hooked you with its raw intensity. This one cranks up the gritty side even further, built around scorched, slide-driven blues guitar and a hoarse, sermon-like vocal snarl. It carries that same outlaw menace running through Blues Saraceno and Rob Coffinshaker, while staying rooted in the haunted storytelling tradition you've been gravitating toward all conversation.",
+      "r63b_response": "Sinner by Lincoln Durham brings you back to the artist behind Last Red Dawn, which already hooked you with its raw intensity. This 2013 cut from Exodus of the Deemed Unrighteous leans harder into scorched slide guitar and a hoarse, sermon-style vocal about damnation and judgment. Pick this specifically because you wanted grittier blues rock energy after the Quaker City Night Hawks softened things — Durham's one-man-band stomp keeps the outlaw menace from Blues Saraceno alive while staying tied to the haunted Gothic Americana thread."
+    },
+    {
+      "row_index": 49,
+      "session_id": "ff76b679-7d7a-4796-8f6c-929efef45428",
+      "top1_track_id": "529ac9f8-032d-43e2-8ce2-f63185a043c8",
+      "top1_track": "Sickness",
+      "top1_artist": "TENDER",
+      "weakness_score": 3,
+      "weakness_components": {
+        "generic_reasoning": 1,
+        "no_user_session_ref": 0,
+        "no_top1_justification": 0,
+        "overly_short_flat": 2
+      },
+      "r54c_response": "I'd lean toward **\"Sickness\" by Tender** from their album *Modern Addiction*—the cover itself is a striking study in geometric abstraction with bold, clashing colors that absolutely reads like contemporary art. The sonic palette mirrors that visual boldness: glitchy electronics collide with raw, distorted vocals and hypnotic synth layers that feel deliberately off-kilter, almost unsettling in the best way.",
+      "r63_response": "Sickness by TENDER pulls from Modern Addiction, whose sleeve matches that abstract, geometric description you're chasing — bold blocked color fields with a tactile, almost painterly finish that stands out on a shelf. Sonically, it's a moody piece of alt-electronic songwriting, hushed falsetto threaded through cool synth textures and a patient, brooding pulse. Given your lean toward hip-hop, the rhythmic restraint here should still hit, while the artwork answers your visual memory cleanly.",
+      "r63b_response": "Sickness by TENDER comes off Modern Addiction, an album whose sleeve fits the abstract, geometrically blocked artwork you're trying to place — flat color fields with a tactile, almost screen-printed finish. The track itself is late-2010s alt-electronic, built on hushed falsetto, cool synth pads, and a patient, brooding pulse rather than drums up front. Since your usual lean is American hip-hop, the rhythmic restraint and lyrical pull around obsession should still translate, while the cover answers the specific visual memory you opened with."
+    }
+  ]
+}
