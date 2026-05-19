@@ -1,0 +1,360 @@
+{
+  "experiment": "R66 Phase 0 static profile conversion",
+  "created_at": "2026-05-19T20:21:56.442257",
+  "elapsed_s": 1186.0693747997284,
+  "head_sha_before": "cf1684c",
+  "head_sha_after": "cf1684cdd955fd50bef1abb9003f350c6347c58d",
+  "verdict": "ARCHIVE_PHASE_0",
+  "passers": [],
+  "baseline_metrics_P0_check": {
+    "all_dev_ndcg20": {
+      "reference": 0.3158755,
+      "reproduced": 0.3158754882808494,
+      "delta": -1.1719150594391436e-08
+    },
+    "h7_ndcg20": {
+      "reference": 0.3483779,
+      "reproduced": 0.34837790523461903,
+      "delta": 5.234619016025732e-09
+    },
+    "same_artist_ndcg20": {
+      "reference": 0.6282143,
+      "reproduced": 0.6282143452884996,
+      "delta": 4.528849961715764e-08
+    },
+    "diff_artist_ndcg20": {
+      "reference": 0.1423674,
+      "reproduced": 0.14236739680294613,
+      "delta": -3.19705387163971e-09
+    },
+    "pool_hit_all": {
+      "reference": 0.622,
+      "reproduced": 0.622,
+      "delta": 0.0
+    },
+    "pool_hit_h7": {
+      "reference": 0.613,
+      "reproduced": 0.613,
+      "delta": 0.0
+    },
+    "max_abs_delta": 4.528849961715764e-08,
+    "verdict": "PASS"
+  },
+  "kill_gate_definition": {
+    "pool_hit_h7_lift_ge": 0.01,
+    "h7_ndcg_delta_ge": 0.0,
+    "same_artist_delta_ge": -0.002,
+    "recovered_gt_lost": true
+  },
+  "churn_sample": {
+    "size": 80,
+    "seed": 0
+  },
+  "profiles": {
+    "P0": {
+      "label": "R54c baseline",
+      "weights": {
+        "A": 1.0,
+        "B": 1.0,
+        "C": 1.0,
+        "D": 0.5,
+        "F": 1.0,
+        "ALS": 1.0,
+        "R21": 1.0,
+        "R54": 1.0
+      },
+      "pool_hit_all": 0.622,
+      "pool_hit_h7": 0.613,
+      "ndcg20_all": 0.3158754882808494,
+      "ndcg20_h7": 0.34837790523461903,
+      "ndcg20_same_artist": 0.6282143452884996,
+      "ndcg20_diff_artist": 0.14236739680294613,
+      "recovered_h7": 0,
+      "lost_h7": 0,
+      "net_h7": 0,
+      "top1_churn_per_80": 0,
+      "top20_overlap_mean": 20.0,
+      "deltas_vs_P0": {
+        "pool_hit_all": 0.0,
+        "pool_hit_h7": 0.0,
+        "ndcg20_all": 0.0,
+        "ndcg20_h7": 0.0,
+        "ndcg20_same_artist": 0.0,
+        "ndcg20_diff_artist": 0.0
+      },
+      "gate_pool_hit_h7_lift_ge_001": null,
+      "gate_h7_ndcg_delta_ge_0": null,
+      "gate_same_artist_delta_ge_neg002": null,
+      "gate_recovered_gt_lost": null,
+      "passes_phase0_gate": null,
+      "elapsed_s": 146.52405500411987
+    },
+    "P1": {
+      "label": "text-heavy",
+      "weights": {
+        "A": 1.5,
+        "B": 1.5,
+        "C": 1.5,
+        "D": 0.5,
+        "F": 1.5,
+        "ALS": 0.5,
+        "R21": 0.7,
+        "R54": 0.7
+      },
+      "pool_hit_all": 0.593375,
+      "pool_hit_h7": 0.596,
+      "ndcg20_all": 0.30883041005131046,
+      "ndcg20_h7": 0.3424724388842908,
+      "ndcg20_same_artist": 0.6239883777089368,
+      "ndcg20_diff_artist": 0.13375626780012662,
+      "recovered_h7": 1,
+      "lost_h7": 14,
+      "net_h7": -13,
+      "top1_churn_per_80": 13,
+      "top20_overlap_mean": 17.321625,
+      "deltas_vs_P0": {
+        "pool_hit_all": -0.02862500000000001,
+        "pool_hit_h7": -0.017000000000000015,
+        "ndcg20_all": -0.007045078229538926,
+        "ndcg20_h7": -0.005905466350328237,
+        "ndcg20_same_artist": -0.004225967579562839,
+        "ndcg20_diff_artist": -0.008611129002819518
+      },
+      "gate_pool_hit_h7_lift_ge_001": false,
+      "gate_h7_ndcg_delta_ge_0": false,
+      "gate_same_artist_delta_ge_neg002": false,
+      "gate_recovered_gt_lost": false,
+      "passes_phase0_gate": false,
+      "elapsed_s": 146.71146440505981
+    },
+    "P2": {
+      "label": "collaborative-heavy",
+      "weights": {
+        "A": 0.5,
+        "B": 0.5,
+        "C": 0.5,
+        "D": 0.3,
+        "F": 0.5,
+        "ALS": 1.5,
+        "R21": 1.5,
+        "R54": 1.5
+      },
+      "pool_hit_all": 0.642,
+      "pool_hit_h7": 0.62,
+      "ndcg20_all": 0.306149425453784,
+      "ndcg20_h7": 0.3269906766125342,
+      "ndcg20_same_artist": 0.6104696894522019,
+      "ndcg20_diff_artist": 0.13709576139710888,
+      "recovered_h7": 4,
+      "lost_h7": 21,
+      "net_h7": -17,
+      "top1_churn_per_80": 15,
+      "top20_overlap_mean": 17.41,
+      "deltas_vs_P0": {
+        "pool_hit_all": 0.020000000000000018,
+        "pool_hit_h7": 0.007000000000000006,
+        "ndcg20_all": -0.009726062827065396,
+        "ndcg20_h7": -0.02138722862208481,
+        "ndcg20_same_artist": -0.017744655836297696,
+        "ndcg20_diff_artist": -0.005271635405837249
+      },
+      "gate_pool_hit_h7_lift_ge_001": false,
+      "gate_h7_ndcg_delta_ge_0": false,
+      "gate_same_artist_delta_ge_neg002": false,
+      "gate_recovered_gt_lost": false,
+      "passes_phase0_gate": false,
+      "elapsed_s": 144.71445894241333
+    },
+    "P3": {
+      "label": "R54-heavy",
+      "weights": {
+        "A": 0.7,
+        "B": 0.7,
+        "C": 0.7,
+        "D": 0.3,
+        "F": 0.7,
+        "ALS": 0.7,
+        "R21": 0.7,
+        "R54": 2.0
+      },
+      "pool_hit_all": 0.63325,
+      "pool_hit_h7": 0.619,
+      "ndcg20_all": 0.3089284913190717,
+      "ndcg20_h7": 0.3350607167703065,
+      "ndcg20_same_artist": 0.6167688432422799,
+      "ndcg20_diff_artist": 0.13791937495807502,
+      "recovered_h7": 4,
+      "lost_h7": 17,
+      "net_h7": -13,
+      "top1_churn_per_80": 12,
+      "top20_overlap_mean": 17.673875,
+      "deltas_vs_P0": {
+        "pool_hit_all": 0.011249999999999982,
+        "pool_hit_h7": 0.006000000000000005,
+        "ndcg20_all": -0.006946996961777696,
+        "ndcg20_h7": -0.013317188464312513,
+        "ndcg20_same_artist": -0.011445502046219747,
+        "ndcg20_diff_artist": -0.004448021844871114
+      },
+      "gate_pool_hit_h7_lift_ge_001": false,
+      "gate_h7_ndcg_delta_ge_0": false,
+      "gate_same_artist_delta_ge_neg002": false,
+      "gate_recovered_gt_lost": false,
+      "passes_phase0_gate": false,
+      "elapsed_s": 144.53868007659912
+    },
+    "P4": {
+      "label": "R21/R54 pair",
+      "weights": {
+        "A": 0.5,
+        "B": 0.5,
+        "C": 0.5,
+        "D": 0.3,
+        "F": 0.5,
+        "ALS": 0.5,
+        "R21": 1.5,
+        "R54": 1.5
+      },
+      "pool_hit_all": 0.635375,
+      "pool_hit_h7": 0.619,
+      "ndcg20_all": 0.30567078204056986,
+      "ndcg20_h7": 0.33022770539486623,
+      "ndcg20_same_artist": 0.60885311750221,
+      "ndcg20_diff_artist": 0.13724925133594104,
+      "recovered_h7": 10,
+      "lost_h7": 22,
+      "net_h7": -12,
+      "top1_churn_per_80": 15,
+      "top20_overlap_mean": 17.038,
+      "deltas_vs_P0": {
+        "pool_hit_all": 0.013375000000000026,
+        "pool_hit_h7": 0.006000000000000005,
+        "ndcg20_all": -0.010204706240279526,
+        "ndcg20_h7": -0.0181501998397528,
+        "ndcg20_same_artist": -0.01936122778628957,
+        "ndcg20_diff_artist": -0.005118145467005092
+      },
+      "gate_pool_hit_h7_lift_ge_001": false,
+      "gate_h7_ndcg_delta_ge_0": false,
+      "gate_same_artist_delta_ge_neg002": false,
+      "gate_recovered_gt_lost": false,
+      "passes_phase0_gate": false,
+      "elapsed_s": 143.06353402137756
+    },
+    "P5": {
+      "label": "BM25-only",
+      "weights": {
+        "A": 1.5,
+        "B": 1.5,
+        "C": 1.5,
+        "D": 0.5,
+        "F": 1.5,
+        "ALS": 0.3,
+        "R21": 0.3,
+        "R54": 0.3
+      },
+      "pool_hit_all": 0.565375,
+      "pool_hit_h7": 0.583,
+      "ndcg20_all": 0.30242379603840847,
+      "ndcg20_h7": 0.3383955647383036,
+      "ndcg20_same_artist": 0.6179410883820975,
+      "ndcg20_diff_artist": 0.1271500444875783,
+      "recovered_h7": 6,
+      "lost_h7": 28,
+      "net_h7": -22,
+      "top1_churn_per_80": 14,
+      "top20_overlap_mean": 15.775375,
+      "deltas_vs_P0": {
+        "pool_hit_all": -0.056625000000000036,
+        "pool_hit_h7": -0.030000000000000027,
+        "ndcg20_all": -0.013451692242440916,
+        "ndcg20_h7": -0.009982340496315412,
+        "ndcg20_same_artist": -0.010273256906402128,
+        "ndcg20_diff_artist": -0.015217352315367833
+      },
+      "gate_pool_hit_h7_lift_ge_001": false,
+      "gate_h7_ndcg_delta_ge_0": false,
+      "gate_same_artist_delta_ge_neg002": false,
+      "gate_recovered_gt_lost": false,
+      "passes_phase0_gate": false,
+      "elapsed_s": 147.41102600097656
+    },
+    "P6": {
+      "label": "C+R54 dominant",
+      "weights": {
+        "A": 0.5,
+        "B": 0.5,
+        "C": 2.0,
+        "D": 0.3,
+        "F": 0.5,
+        "ALS": 0.5,
+        "R21": 0.7,
+        "R54": 2.0
+      },
+      "pool_hit_all": 0.62825,
+      "pool_hit_h7": 0.627,
+      "ndcg20_all": 0.3064422069953871,
+      "ndcg20_h7": 0.3336943835918844,
+      "ndcg20_same_artist": 0.6134971471760111,
+      "ndcg20_diff_artist": 0.1358693965547799,
+      "recovered_h7": 10,
+      "lost_h7": 24,
+      "net_h7": -14,
+      "top1_churn_per_80": 15,
+      "top20_overlap_mean": 17.44425,
+      "deltas_vs_P0": {
+        "pool_hit_all": 0.006249999999999978,
+        "pool_hit_h7": 0.014000000000000012,
+        "ndcg20_all": -0.00943328128546228,
+        "ndcg20_h7": -0.01468352164273462,
+        "ndcg20_same_artist": -0.014717198112488505,
+        "ndcg20_diff_artist": -0.006498000248166241
+      },
+      "gate_pool_hit_h7_lift_ge_001": true,
+      "gate_h7_ndcg_delta_ge_0": false,
+      "gate_same_artist_delta_ge_neg002": false,
+      "gate_recovered_gt_lost": false,
+      "passes_phase0_gate": false,
+      "elapsed_s": 146.5213840007782
+    },
+    "P7": {
+      "label": "ALS+R54 dominant",
+      "weights": {
+        "A": 0.5,
+        "B": 0.5,
+        "C": 0.5,
+        "D": 0.3,
+        "F": 0.5,
+        "ALS": 2.0,
+        "R21": 0.7,
+        "R54": 2.0
+      },
+      "pool_hit_all": 0.641625,
+      "pool_hit_h7": 0.619,
+      "ndcg20_all": 0.3065756138761063,
+      "ndcg20_h7": 0.3268303995522223,
+      "ndcg20_same_artist": 0.6109144129249205,
+      "ndcg20_diff_artist": 0.13751165337008606,
+      "recovered_h7": 6,
+      "lost_h7": 24,
+      "net_h7": -18,
+      "top1_churn_per_80": 18,
+      "top20_overlap_mean": 17.301125,
+      "deltas_vs_P0": {
+        "pool_hit_all": 0.019625000000000004,
+        "pool_hit_h7": 0.006000000000000005,
+        "ndcg20_all": -0.009299874404743058,
+        "ndcg20_h7": -0.021547505682396717,
+        "ndcg20_same_artist": -0.017299932363579074,
+        "ndcg20_diff_artist": -0.004855743432860077
+      },
+      "gate_pool_hit_h7_lift_ge_001": false,
+      "gate_h7_ndcg_delta_ge_0": false,
+      "gate_same_artist_delta_ge_neg002": false,
+      "gate_recovered_gt_lost": false,
+      "passes_phase0_gate": false,
+      "elapsed_s": 144.6332881450653
+    }
+  },
+  "notes": "Phase 0 sweeps 8 hand-designed RRF weight profiles, each scored by frozen R54c LR on the resulting weighted_rrf@300 pool. Pass requires all 4 gates: pool_hit_h7 lift >=+0.010, h7 nDCG delta >=0, same-artist delta >=-0.002, and recovered_h7 > lost_h7 vs P0 baseline."
+}
