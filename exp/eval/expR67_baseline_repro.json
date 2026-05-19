@@ -1,0 +1,57 @@
+{
+  "experiment": "R67 baseline reproduction",
+  "created_at": "2026-05-19T21:19:32.843862",
+  "elapsed_s": 169.10487699508667,
+  "branch": "r67-llm-semantic-rerank",
+  "head_sha": "349ad04ba341932ddbe6f5651a61d0d466a1207b",
+  "verdict": "PASS",
+  "epsilon_gate": 0.0005,
+  "reference_file": "exp/eval/expR59_c3_phase2_frozen_lr.json",
+  "metrics": {
+    "all_dev_ndcg20": {
+      "reference": 0.315875,
+      "reproduced": 0.3158754882808494,
+      "delta": 4.882808493644752e-07
+    },
+    "h7_ndcg20": {
+      "reference": 0.348378,
+      "reproduced": 0.34837790523461903,
+      "delta": -9.476538098684983e-08
+    },
+    "same_artist_ndcg20": {
+      "reference": 0.628214,
+      "reproduced": 0.6282143452884996,
+      "delta": 3.452884995702732e-07
+    },
+    "diff_artist_ndcg20": {
+      "reference": 0.142367,
+      "reproduced": 0.14236739680294613,
+      "delta": 3.9680294613986256e-07
+    },
+    "pool_hit_all": {
+      "reference": 0.622,
+      "reproduced": 0.622,
+      "delta": 0.0
+    },
+    "pool_hit_h7": {
+      "reference": 0.613,
+      "reproduced": 0.613,
+      "delta": 0.0
+    }
+  },
+  "max_abs_delta": 4.882808493644752e-07,
+  "r63c_response_only_note": "R63c-repair is response-side only; retrieval/LR baseline is bitwise R54c. The R67 LLM reranker operates on the same R54c LR top-30.",
+  "top30_extraction": {
+    "n_cases": 8000,
+    "top_k": 30,
+    "unique_candidate_tracks": 26344,
+    "metadata_coverage_pct": {
+      "title": 1.0,
+      "artist": 1.0,
+      "album": 1.0,
+      "tags": 0.9987093835408443,
+      "release_year": 0.9790844215001518
+    },
+    "output_pkl": "exp/eval/expR67_top30_candidates.pkl"
+  }
+}
