@@ -1,0 +1,1363 @@
+{
+  "seed": 0,
+  "n": 150,
+  "strata_counts": {
+    "S1": 30,
+    "S2": 30,
+    "S3": 30,
+    "S4": 30,
+    "S5": 30
+  },
+  "cases": [
+    {
+      "case_id": "b2a14422-064f-4b78-86d8-0dedfc135ac9",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "e4ef85ae-6b6d-46c5-85b6-ac5116fe4f1b",
+      "gt_in_top20_rank": 2,
+      "lr_rank1_score": 2.1847068584016824,
+      "lr_rank5_score": -0.43495984693942785
+    },
+    {
+      "case_id": "88af7ec3-c368-421b-9512-d0180da3d1f6",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "a369e646-9c3a-4429-b5d9-1590d2a3d434",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.947411909610889,
+      "lr_rank5_score": 0.16245538520110164
+    },
+    {
+      "case_id": "fe046b0b-c8ca-4097-9fbb-2374a69774f3",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "b9a19a73-795a-4c85-aa0a-1b6fbc4870ed",
+      "gt_in_top20_rank": 1,
+      "lr_rank1_score": 0.5207507027702529,
+      "lr_rank5_score": 0.10083674296972076
+    },
+    {
+      "case_id": "eb111128-5459-4294-8bd1-eccd70d61f8b",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "0e4e84e9-6939-47a4-9d45-4b9f5dd8c67c",
+      "gt_in_top20_rank": 1,
+      "lr_rank1_score": 1.890575338820638,
+      "lr_rank5_score": -0.06165608527933929
+    },
+    {
+      "case_id": "a2272863-eed5-4798-b8a3-f08f13fda97e",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "a4c2cb5e-bbc3-4f7c-9bcf-36f786d4aabd",
+      "gt_in_top20_rank": 1,
+      "lr_rank1_score": 2.162767497594839,
+      "lr_rank5_score": -0.47277553918734255
+    },
+    {
+      "case_id": "a4c72038-51f4-4329-b269-e58c8be90281",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "ffc9260e-c22f-427d-8f9a-b4453dec4791",
+      "gt_in_top20_rank": 1,
+      "lr_rank1_score": 0.5436695324125477,
+      "lr_rank5_score": -1.4758992144213217
+    },
+    {
+      "case_id": "60fe2a68-222b-41b0-914b-c315b15f0c2c",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "bd4935bc-d00c-43a4-a7c9-a3e799565661",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.21007739323868324,
+      "lr_rank5_score": -0.07901145000588745
+    },
+    {
+      "case_id": "d0f59638-61de-4ffc-a91d-db6fafcba1cf",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "16184928-c83f-4618-ba5c-d09fe8ecf2cd",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.34834130211113745,
+      "lr_rank5_score": -0.4305098243180653
+    },
+    {
+      "case_id": "b3d673d4-2500-4bbc-928f-e0973a04659d",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "b9e26a7a-c64e-43f0-b1e8-26602f22e6ac",
+      "gt_in_top20_rank": 10,
+      "lr_rank1_score": 2.420134278414803,
+      "lr_rank5_score": 1.5634390825163742
+    },
+    {
+      "case_id": "8d58208b-08fb-4c4b-9081-825c27fc6382",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "0fb50975-40e1-4132-ab0c-37b610168353",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 2.4420494950280376,
+      "lr_rank5_score": 1.8778691808502044
+    },
+    {
+      "case_id": "d639f4c1-9463-4b08-b441-c1e5aed663a3",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "653162e5-576a-45b9-9e59-7a14666d53ee",
+      "gt_in_top20_rank": 1,
+      "lr_rank1_score": 1.5886778043701992,
+      "lr_rank5_score": 0.387642488435539
+    },
+    {
+      "case_id": "476fcb90-6b9a-4b1c-8540-b4a84b4da872",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "22de3def-c373-4957-b0f9-f9c6ca032f25",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": -0.180867943047531,
+      "lr_rank5_score": -0.44542726517683684
+    },
+    {
+      "case_id": "a3a9d0e4-0d34-4087-ad3e-8fb9e382b8e1",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "aa6f789f-ed30-4d36-a8c7-8bac3117010e",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.6362173243709247,
+      "lr_rank5_score": 0.08011829833767524
+    },
+    {
+      "case_id": "4f26b37b-010b-4e2f-be3d-f71d851bab3f",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "cdc79a53-9f70-4aca-8bf0-11eb185ef870",
+      "gt_in_top20_rank": 1,
+      "lr_rank1_score": 1.7326847631757818,
+      "lr_rank5_score": 0.6601090847594687
+    },
+    {
+      "case_id": "e6a5c30e-7083-4ff1-bbc9-c1148fa19098",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "cd4d441c-3614-45e3-917b-3873220e9bed",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 1.7547415396458588,
+      "lr_rank5_score": -0.41481535742569287
+    },
+    {
+      "case_id": "cbaab904-5c18-4621-b7ac-45d1251f02b4",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "d954cd1d-0227-4bd5-993a-2fcbd17d496c",
+      "gt_in_top20_rank": 1,
+      "lr_rank1_score": 2.052013215634596,
+      "lr_rank5_score": 1.0024218814317483
+    },
+    {
+      "case_id": "13552d56-f3d8-443a-9272-11ec16c80fa1",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "ec72228f-0fc0-406e-8e11-7e1f4fa525a8",
+      "gt_in_top20_rank": 3,
+      "lr_rank1_score": 0.14981532957669966,
+      "lr_rank5_score": -0.17233934020589575
+    },
+    {
+      "case_id": "d009ccbe-9987-40d6-8735-abdc51438585",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "1449b9cd-7fb8-4678-b22f-705c1fa8e219",
+      "gt_in_top20_rank": 2,
+      "lr_rank1_score": 1.849136763195107,
+      "lr_rank5_score": 1.3997432496004325
+    },
+    {
+      "case_id": "aee1a08c-16de-480d-ba3d-8cad246e7985",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "32bb3fa5-b64d-4010-a22d-da723326f34d",
+      "gt_in_top20_rank": 1,
+      "lr_rank1_score": 1.3037783979001571,
+      "lr_rank5_score": 0.16319892733401778
+    },
+    {
+      "case_id": "1c567917-f931-4609-9695-a9c0f8e39f3d",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "f840dc77-7f6f-4dd4-b737-4be110cf25ea",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.9582642369668685,
+      "lr_rank5_score": -0.34048477643115316
+    },
+    {
+      "case_id": "bed1769d-f899-4e19-bf11-a32beb2af23e",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "16184928-c83f-4618-ba5c-d09fe8ecf2cd",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 1.0225540613485617,
+      "lr_rank5_score": -0.896479586673236
+    },
+    {
+      "case_id": "3931d388-af39-4f8f-807a-1e73772f9a93",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "7c30ffb1-d9e6-48bc-8a80-003b774de2c3",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.8606484898740133,
+      "lr_rank5_score": 0.4875987414332055
+    },
+    {
+      "case_id": "dfe19245-880b-4b08-be0a-8b1247ef5134",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "b5a43227-9b5d-4ab2-8b84-07b524c3cb10",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 1.8615474810600683,
+      "lr_rank5_score": -0.039496539400478176
+    },
+    {
+      "case_id": "1f1947c0-1c27-4520-9577-66af51c463f3",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "34292d6c-8086-404a-8e1a-faf24f1024f0",
+      "gt_in_top20_rank": 1,
+      "lr_rank1_score": 1.1693134964466394,
+      "lr_rank5_score": -0.4973993056458609
+    },
+    {
+      "case_id": "7f00ac11-2923-43ba-99e2-0c747a9b72b9",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "20e5bfa2-6c41-483c-83b3-0ed7a8de82fd",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.5611213373010009,
+      "lr_rank5_score": -0.0874352938630335
+    },
+    {
+      "case_id": "9ed348b3-166d-4b19-9c08-d5caa2a0652f",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "b5a997de-74f1-4c3a-b504-cb869cc52d9d",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 2.4199149883710853,
+      "lr_rank5_score": -0.8606334792398498
+    },
+    {
+      "case_id": "0bdf1cc7-5669-4701-a7b3-ec23a15c4511",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "3cb3186a-f14d-4827-93ce-da1d4e6be96d",
+      "gt_in_top20_rank": 1,
+      "lr_rank1_score": 1.8801754339661485,
+      "lr_rank5_score": 0.9369103304411516
+    },
+    {
+      "case_id": "7d2bb60e-1046-4956-91d0-cf1dd73037cc",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "77bcded1-2ca4-4b2c-8125-95f13816640b",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.2820759319190958,
+      "lr_rank5_score": 0.0011304041057197916
+    },
+    {
+      "case_id": "a335ba9f-070a-4f4b-806c-08554b37ae02",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "76417268-32b8-4d0f-8495-86aee450ed6e",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.9210038099799541,
+      "lr_rank5_score": 0.04816241016458392
+    },
+    {
+      "case_id": "3ed4e6dc-f046-412d-adcd-da85039a0cd1",
+      "history_depth": 7,
+      "stratum": "S1",
+      "gt_track_id": "334c70b1-a9d0-450d-878c-69096ea23739",
+      "gt_in_top20_rank": 7,
+      "lr_rank1_score": 2.006373505902301,
+      "lr_rank5_score": 0.36734958599300116
+    },
+    {
+      "case_id": "2c897369-9b46-4e4c-9067-ab356ad9aecf",
+      "history_depth": 5,
+      "stratum": "S2",
+      "gt_track_id": "7d3f670a-83da-4898-8e6e-56184a612eb1",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 2.2483800739670747,
+      "lr_rank5_score": 0.43280487946371976
+    },
+    {
+      "case_id": "a8df96e2-c196-462c-9484-72aa093aedf4",
+      "history_depth": 3,
+      "stratum": "S2",
+      "gt_track_id": "54ce6d6e-0ac3-43c1-8771-3e0ab532a3bf",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.9705313886292339,
+      "lr_rank5_score": 0.6998517893376198
+    },
+    {
+      "case_id": "91a9bb07-1274-4238-8052-ad97c78ef30c",
+      "history_depth": 5,
+      "stratum": "S2",
+      "gt_track_id": "86c5e0b7-b9d0-4876-b7bf-8b35651dbc84",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.17984236750712632,
+      "lr_rank5_score": -0.2902537094558939
+    },
+    {
+      "case_id": "ae45c487-5dfa-48c5-bfd7-c54727ebeb9e",
+      "history_depth": 4,
+      "stratum": "S2",
+      "gt_track_id": "a409fe0a-528a-4ded-a338-b4b447d90955",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.19455944403808986,
+      "lr_rank5_score": -0.5996497538570653
+    },
+    {
+      "case_id": "9272fc8a-7221-4b79-ade4-0ee81afcad8c",
+      "history_depth": 2,
+      "stratum": "S2",
+      "gt_track_id": "567fc103-4713-44dd-bfcf-99b22e1fee7c",
+      "gt_in_top20_rank": 13,
+      "lr_rank1_score": 2.7248643758705877,
+      "lr_rank5_score": -0.187038281446652
+    },
+    {
+      "case_id": "b4ffa800-8173-4f16-800a-4b5e765d7f80",
+      "history_depth": 6,
+      "stratum": "S2",
+      "gt_track_id": "cd7f1b5c-cbc4-492a-a9d2-cc895451bbba",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.0819433059100867,
+      "lr_rank5_score": -0.3678531009136017
+    },
+    {
+      "case_id": "4178b72c-63f4-4b4c-844a-b89b9bb5d57e",
+      "history_depth": 4,
+      "stratum": "S2",
+      "gt_track_id": "99c8b004-9aa7-4ea9-a8a4-38463e33ecf7",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 1.7510423841363856,
+      "lr_rank5_score": 0.9556561131107134
+    },
+    {
+      "case_id": "d056b131-1177-41c1-87b4-a18b2a3b560b",
+      "history_depth": 6,
+      "stratum": "S2",
+      "gt_track_id": "2ba55db4-8e84-4468-a90a-70187988548c",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 1.0556020467316158,
+      "lr_rank5_score": -0.3004564682791059
+    },
+    {
+      "case_id": "ec661599-2332-4ed7-8bd0-1dc61cfbee9e",
+      "history_depth": 2,
+      "stratum": "S2",
+      "gt_track_id": "be487716-2089-4106-b17a-8d1c29629908",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.8437993913055222,
+      "lr_rank5_score": 0.11126292645272942
+    },
+    {
+      "case_id": "552d3734-bcc5-4244-a804-a4b3dc1def4c",
+      "history_depth": 0,
+      "stratum": "S2",
+      "gt_track_id": "66510ee9-1866-4f76-a925-11b863f6dae6",
+      "gt_in_top20_rank": 18,
+      "lr_rank1_score": 1.3161250239760391,
+      "lr_rank5_score": -0.6121440189366372
+    },
+    {
+      "case_id": "e4f3a2b2-f34a-4d5f-90ae-3a432364fbd8",
+      "history_depth": 0,
+      "stratum": "S2",
+      "gt_track_id": "c37331bb-59e5-48c3-a6e7-16c430fb4173",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": -0.4273094033454333,
+      "lr_rank5_score": -1.5839633752545397
+    },
+    {
+      "case_id": "7f538720-8e67-4245-91eb-d3c9f4830de3",
+      "history_depth": 5,
+      "stratum": "S2",
+      "gt_track_id": "fd1c5365-f177-4fcc-84b5-7326acae226d",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.12160707617627008,
+      "lr_rank5_score": -0.14851099872098872
+    },
+    {
+      "case_id": "06e77b7f-7423-4c4c-ae28-d5b246d7140c",
+      "history_depth": 3,
+      "stratum": "S2",
+      "gt_track_id": "c8424c12-4e19-4936-93c3-c086c1beb2ce",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 1.9864885220831279,
+      "lr_rank5_score": -0.018210872108730992
+    },
+    {
+      "case_id": "a7fe9394-8293-41f1-a0e5-1d706a5f1466",
+      "history_depth": 3,
+      "stratum": "S2",
+      "gt_track_id": "248c7334-a899-4d53-a19f-c948dd833b1f",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 1.5035588255711654,
+      "lr_rank5_score": -0.27345534554318335
+    },
+    {
+      "case_id": "f86d58b6-8005-4713-9900-50c1e7558126",
+      "history_depth": 3,
+      "stratum": "S2",
+      "gt_track_id": "b3f26e6a-7ef1-4ce9-9dd8-6606422f130d",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 1.6122882383998192,
+      "lr_rank5_score": 0.1700430116930538
+    },
+    {
+      "case_id": "57e65556-b9d7-4dff-8f09-9d19cd2ca9b4",
+      "history_depth": 5,
+      "stratum": "S2",
+      "gt_track_id": "deb239f4-23ed-4c14-ac69-d0df281ddee8",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 1.5019739610608187,
+      "lr_rank5_score": 0.3911496754975952
+    },
+    {
+      "case_id": "3c58e98f-1f40-456e-a43c-722a19db5d9d",
+      "history_depth": 1,
+      "stratum": "S2",
+      "gt_track_id": "e659ee75-4448-4a94-9ccb-776ba234f679",
+      "gt_in_top20_rank": 18,
+      "lr_rank1_score": 1.062091750043374,
+      "lr_rank5_score": 0.8067754088496505
+    },
+    {
+      "case_id": "d216f37d-a689-4db1-90a3-911ccd626a6a",
+      "history_depth": 5,
+      "stratum": "S2",
+      "gt_track_id": "256f82af-4cc5-440d-9976-19403eb026e3",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.848014220375553,
+      "lr_rank5_score": -0.3268605108564825
+    },
+    {
+      "case_id": "3facade7-5154-4ce2-9a7d-4f7249d855b5",
+      "history_depth": 0,
+      "stratum": "S2",
+      "gt_track_id": "56a74e20-b6f7-4e2e-af19-16fbdaba2dc5",
+      "gt_in_top20_rank": 1,
+      "lr_rank1_score": 0.477828728346555,
+      "lr_rank5_score": -0.450123850664609
+    },
+    {
+      "case_id": "0ea27486-019f-41ef-a3b6-9725163a576f",
+      "history_depth": 0,
+      "stratum": "S2",
+      "gt_track_id": "9902f123-d4d1-4101-bb08-d7991d9f686a",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": -1.3297934105719822,
+      "lr_rank5_score": -2.205815918453298
+    },
+    {
+      "case_id": "5d23de5c-578a-4454-bbf7-97ec141fb6fe",
+      "history_depth": 3,
+      "stratum": "S2",
+      "gt_track_id": "7ac20d9b-793c-4c92-9443-837510471efc",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 1.6123530325587512,
+      "lr_rank5_score": 1.1821558313481835
+    },
+    {
+      "case_id": "74308030-ec0a-4bcc-97e2-39deb2169b6b",
+      "history_depth": 5,
+      "stratum": "S2",
+      "gt_track_id": "947dd542-9f6b-4b4e-a203-dab1e331294e",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.8152873001409704,
+      "lr_rank5_score": 0.14937278109004343
+    },
+    {
+      "case_id": "17420af9-d7c8-4428-aedd-6e2a451a0a15",
+      "history_depth": 5,
+      "stratum": "S2",
+      "gt_track_id": "0914f862-d20b-4001-8aee-d2bd812a7927",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.2294349914445846,
+      "lr_rank5_score": -0.45297715606664546
+    },
+    {
+      "case_id": "5800f4fe-88d0-4124-a107-86a7f1561b18",
+      "history_depth": 0,
+      "stratum": "S2",
+      "gt_track_id": "2be6a3fa-7b78-4472-bab1-3fd7a837a2eb",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": -0.1426526085979793,
+      "lr_rank5_score": -0.9059548993881331
+    },
+    {
+      "case_id": "1a763a61-670e-4558-81fb-47a0c9d461bf",
+      "history_depth": 5,
+      "stratum": "S2",
+      "gt_track_id": "622832c4-9004-4685-b7de-800165fa8199",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 2.5220471292712214,
+      "lr_rank5_score": -0.19821039389254969
+    },
+    {
+      "case_id": "fbff4fee-8403-4eb7-8b1c-293a07fd0b39",
+      "history_depth": 0,
+      "stratum": "S2",
+      "gt_track_id": "305091b1-5ea1-47c1-8d16-a99cdbb4c080",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.0881012907746499,
+      "lr_rank5_score": -0.8154159779352361
+    },
+    {
+      "case_id": "2eafb2ae-e306-46aa-8c5d-1c443b2e5c6b",
+      "history_depth": 6,
+      "stratum": "S2",
+      "gt_track_id": "d4e39b49-8a97-4117-9212-3adf8f76f85d",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 2.742631834124377,
+      "lr_rank5_score": 0.6161042031382462
+    },
+    {
+      "case_id": "3ed4e6dc-f046-412d-adcd-da85039a0cd1",
+      "history_depth": 3,
+      "stratum": "S2",
+      "gt_track_id": "771ff3b9-aaa1-454f-950d-e0bfd23ed389",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 2.827373952365062,
+      "lr_rank5_score": 1.756003773540679
+    },
+    {
+      "case_id": "5800f4fe-88d0-4124-a107-86a7f1561b18",
+      "history_depth": 2,
+      "stratum": "S2",
+      "gt_track_id": "bb19c959-f800-4190-874c-da5714bc932c",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.6188348030537838,
+      "lr_rank5_score": -0.008112094443895556
+    },
+    {
+      "case_id": "32f3959d-00c9-41be-8653-423632d85882",
+      "history_depth": 7,
+      "stratum": "S2",
+      "gt_track_id": "43a996bd-d19b-419f-bae3-8bb443ff43f6",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 1.5933738664181567,
+      "lr_rank5_score": 1.1454471931355512
+    },
+    {
+      "case_id": "ea30156b-0e1a-45a0-8df3-21923ba13988",
+      "history_depth": 5,
+      "stratum": "S3",
+      "gt_track_id": "902ab8ae-c36a-4c2f-a39d-9eb8a8f23ce5",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": -0.3631237626295053,
+      "lr_rank5_score": -0.475440362401924
+    },
+    {
+      "case_id": "82addd50-0784-4811-b223-c5e96546476e",
+      "history_depth": 3,
+      "stratum": "S3",
+      "gt_track_id": "888f8cc4-93cb-45f1-bef2-4e69166cc064",
+      "gt_in_top20_rank": 2,
+      "lr_rank1_score": 1.5166989610036985,
+      "lr_rank5_score": 1.416798810782024
+    },
+    {
+      "case_id": "37097db6-54b8-491b-8512-1df70648548b",
+      "history_depth": 5,
+      "stratum": "S3",
+      "gt_track_id": "f5f41ee8-b322-4dab-8944-f5ff7a316339",
+      "gt_in_top20_rank": 16,
+      "lr_rank1_score": 1.0697566794282176,
+      "lr_rank5_score": 0.9400330930621026
+    },
+    {
+      "case_id": "88af7ec3-c368-421b-9512-d0180da3d1f6",
+      "history_depth": 5,
+      "stratum": "S3",
+      "gt_track_id": "a4991325-7309-433c-94eb-677167ec09a0",
+      "gt_in_top20_rank": 4,
+      "lr_rank1_score": -0.12105911087132826,
+      "lr_rank5_score": -0.21150796710680445
+    },
+    {
+      "case_id": "d056b131-1177-41c1-87b4-a18b2a3b560b",
+      "history_depth": 3,
+      "stratum": "S3",
+      "gt_track_id": "7920a1da-c333-4f56-9c3a-5e2f17fa986a",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.07842565833896648,
+      "lr_rank5_score": -0.0013679013701019815
+    },
+    {
+      "case_id": "501bec47-5aad-4bcf-95ec-b67f12b7629b",
+      "history_depth": 1,
+      "stratum": "S3",
+      "gt_track_id": "1287a9d3-c5f5-4c2d-8f0a-e67118a2ac26",
+      "gt_in_top20_rank": 2,
+      "lr_rank1_score": 2.3536375133506287,
+      "lr_rank5_score": 2.2690939850749783
+    },
+    {
+      "case_id": "49516c57-aa60-4398-8ca8-c5949e064de0",
+      "history_depth": 4,
+      "stratum": "S3",
+      "gt_track_id": "27d3c0c4-f383-4ef9-8809-238dc3c17a9f",
+      "gt_in_top20_rank": 20,
+      "lr_rank1_score": 0.7527047314562568,
+      "lr_rank5_score": 0.6723969654487141
+    },
+    {
+      "case_id": "07d9f73f-6f33-4b55-805b-fe306d834618",
+      "history_depth": 2,
+      "stratum": "S3",
+      "gt_track_id": "35367899-ea24-4acd-a073-3d012b8a009c",
+      "gt_in_top20_rank": 10,
+      "lr_rank1_score": 0.141399899176783,
+      "lr_rank5_score": 0.013940502686651668
+    },
+    {
+      "case_id": "e2c24291-9369-4daa-8017-ab4ae2d05b4e",
+      "history_depth": 3,
+      "stratum": "S3",
+      "gt_track_id": "01808dda-8409-480c-b61d-b5644f578c6c",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.16337717779538455,
+      "lr_rank5_score": 0.1338128279239929
+    },
+    {
+      "case_id": "afd30f49-02af-48cb-88ca-68ef58abf6bd",
+      "history_depth": 1,
+      "stratum": "S3",
+      "gt_track_id": "4f4a2b42-6d44-40ab-b917-55c1c4dfd3f2",
+      "gt_in_top20_rank": 1,
+      "lr_rank1_score": 2.283708211577723,
+      "lr_rank5_score": 2.1850676925351062
+    },
+    {
+      "case_id": "02404d35-3b35-4575-9380-5dc5891cf26b",
+      "history_depth": 6,
+      "stratum": "S3",
+      "gt_track_id": "7206e740-31e2-46d1-ae01-d8f24d31db34",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": -0.35005905677537014,
+      "lr_rank5_score": -0.46117064590850865
+    },
+    {
+      "case_id": "e330dcf0-1e1e-4caa-b49b-fafbc38183e0",
+      "history_depth": 1,
+      "stratum": "S3",
+      "gt_track_id": "9780a857-55a6-40df-8e05-97a68e749025",
+      "gt_in_top20_rank": 2,
+      "lr_rank1_score": 0.7867475419520323,
+      "lr_rank5_score": 0.6889005672710131
+    },
+    {
+      "case_id": "ac49af30-8d6f-412d-8a34-2b31f3279d98",
+      "history_depth": 1,
+      "stratum": "S3",
+      "gt_track_id": "59f8be05-193a-4112-87f3-1affe08d9865",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.5745113976017239,
+      "lr_rank5_score": 0.4455362288255507
+    },
+    {
+      "case_id": "fbbd78a8-d871-4844-a923-6361b5a7b903",
+      "history_depth": 6,
+      "stratum": "S3",
+      "gt_track_id": "0f34e19c-29d1-4df8-8843-7e7869e8e180",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.8899351807794101,
+      "lr_rank5_score": 0.8507999638562024
+    },
+    {
+      "case_id": "af0390b7-c61c-492a-8087-a8cc5208b6dc",
+      "history_depth": 0,
+      "stratum": "S3",
+      "gt_track_id": "d2216a69-8fd3-4381-afe9-65a94a6eeb13",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.8775292489265307,
+      "lr_rank5_score": 0.7898639801160294
+    },
+    {
+      "case_id": "a6c5663c-204e-422d-b468-abf92ba8260b",
+      "history_depth": 6,
+      "stratum": "S3",
+      "gt_track_id": "fcf5335e-a855-4dca-a2ba-f77d4d35db9a",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": -0.5366290872496903,
+      "lr_rank5_score": -0.5862944591340881
+    },
+    {
+      "case_id": "86e9a076-391f-4142-b6f5-d1a2b9d5fe1a",
+      "history_depth": 4,
+      "stratum": "S3",
+      "gt_track_id": "1ea6e16b-7adf-4514-99d2-7602287bc0b8",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.011674042851350017,
+      "lr_rank5_score": -0.033816217462973544
+    },
+    {
+      "case_id": "37097db6-54b8-491b-8512-1df70648548b",
+      "history_depth": 2,
+      "stratum": "S3",
+      "gt_track_id": "f3998f73-e158-45db-9b6e-1e909b27acb0",
+      "gt_in_top20_rank": 11,
+      "lr_rank1_score": 1.7871123394915729,
+      "lr_rank5_score": 1.6702349805334606
+    },
+    {
+      "case_id": "451e7e67-8b7e-4d13-b8f2-868d238191db",
+      "history_depth": 2,
+      "stratum": "S3",
+      "gt_track_id": "a8c5ae23-633d-4a62-b233-a696362ea263",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": -0.25149302030768994,
+      "lr_rank5_score": -0.3834730549957161
+    },
+    {
+      "case_id": "27f40adb-daa8-4622-85f0-d52aca96ae5e",
+      "history_depth": 1,
+      "stratum": "S3",
+      "gt_track_id": "c7ac71f6-f527-4d9d-9789-f3e0b41efd24",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.2233582922950361,
+      "lr_rank5_score": 0.12472872168194371
+    },
+    {
+      "case_id": "802e623e-aed7-461e-8e4e-0912dc89ae44",
+      "history_depth": 1,
+      "stratum": "S3",
+      "gt_track_id": "76c25358-b295-4d35-819d-ba5373479a07",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 1.002429216104649,
+      "lr_rank5_score": 0.9606048231702696
+    },
+    {
+      "case_id": "b2582e52-6d13-40b4-8552-2d8b63fa6c75",
+      "history_depth": 7,
+      "stratum": "S3",
+      "gt_track_id": "855f8169-8222-44fb-9526-05e22a268a9d",
+      "gt_in_top20_rank": 9,
+      "lr_rank1_score": 0.7675317850497904,
+      "lr_rank5_score": 0.6781683637106186
+    },
+    {
+      "case_id": "4090c0ec-2d3e-4516-8c7f-2c3db994b80d",
+      "history_depth": 2,
+      "stratum": "S3",
+      "gt_track_id": "36f23ba1-a3e6-43d4-bc51-991b5867fc2c",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": -0.7625169283338332,
+      "lr_rank5_score": -0.8239871913590836
+    },
+    {
+      "case_id": "b20ab0fd-017c-4543-a0db-32b3e55e9a63",
+      "history_depth": 0,
+      "stratum": "S3",
+      "gt_track_id": "d4a28a68-e871-4705-98b7-5aeb09d0e2dd",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": -0.08856741630600083,
+      "lr_rank5_score": -0.21763989914836684
+    },
+    {
+      "case_id": "a3531a35-43da-4b0a-812f-866f602019ab",
+      "history_depth": 4,
+      "stratum": "S3",
+      "gt_track_id": "e9d347aa-7094-4b6e-9e13-8fba370fd74f",
+      "gt_in_top20_rank": 8,
+      "lr_rank1_score": -0.1680987611992469,
+      "lr_rank5_score": -0.29658590673180857
+    },
+    {
+      "case_id": "6fc50761-51dd-4195-afbc-bf7f16c40c7f",
+      "history_depth": 6,
+      "stratum": "S3",
+      "gt_track_id": "2f8ab8da-6aab-4dd0-a033-ae740f543499",
+      "gt_in_top20_rank": 1,
+      "lr_rank1_score": -0.2140297351381989,
+      "lr_rank5_score": -0.266024230588381
+    },
+    {
+      "case_id": "f4115525-7e44-40df-8957-e38df99f214d",
+      "history_depth": 6,
+      "stratum": "S3",
+      "gt_track_id": "8cd77fc2-b41d-47c9-9776-45e9fcff0eb3",
+      "gt_in_top20_rank": 2,
+      "lr_rank1_score": 1.4046308002256158,
+      "lr_rank5_score": 1.2952159253689322
+    },
+    {
+      "case_id": "a2b64215-1bab-486a-9a8d-13e653660c0b",
+      "history_depth": 7,
+      "stratum": "S3",
+      "gt_track_id": "4ce6b59c-c9fa-4ea2-803b-68dc257863fb",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": -0.507222482478518,
+      "lr_rank5_score": -0.5893934272814413
+    },
+    {
+      "case_id": "8401fae3-2d18-4c78-b7a7-afc99cd2d7fd",
+      "history_depth": 6,
+      "stratum": "S3",
+      "gt_track_id": "d9e49dd9-63ad-47ea-a4fc-14e34e75bd2f",
+      "gt_in_top20_rank": 5,
+      "lr_rank1_score": 1.249107421492778,
+      "lr_rank5_score": 1.1190386629614408
+    },
+    {
+      "case_id": "435788ed-20b2-4b37-a97d-8614cb70c570",
+      "history_depth": 4,
+      "stratum": "S3",
+      "gt_track_id": "06bae2eb-c427-4de2-b748-b7d5d2d85c5a",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.07377426391251464,
+      "lr_rank5_score": -0.035337922307120156
+    },
+    {
+      "case_id": "49bdf91e-6a39-47ad-b769-5babe77c4732",
+      "history_depth": 5,
+      "stratum": "S4",
+      "gt_track_id": "253696e7-f199-4419-8bb0-a1bec7106e72",
+      "gt_in_top20_rank": 8,
+      "lr_rank1_score": 0.2707508986216197,
+      "lr_rank5_score": -0.08547574820633314
+    },
+    {
+      "case_id": "e830af42-6358-4d99-b974-a381a13ca761",
+      "history_depth": 0,
+      "stratum": "S4",
+      "gt_track_id": "e3353e54-0188-4657-8921-940881d14211",
+      "gt_in_top20_rank": 3,
+      "lr_rank1_score": 2.8377150924533403,
+      "lr_rank5_score": 0.9026607947591009
+    },
+    {
+      "case_id": "d5cd0084-4ef5-44a4-a84d-5582d5b167b0",
+      "history_depth": 2,
+      "stratum": "S4",
+      "gt_track_id": "1c555c53-9418-43a6-90e7-40e5df55b00c",
+      "gt_in_top20_rank": 6,
+      "lr_rank1_score": 2.508305735749762,
+      "lr_rank5_score": 1.287460799549971
+    },
+    {
+      "case_id": "20486195-9834-426e-a64b-d278f1cb7df8",
+      "history_depth": 3,
+      "stratum": "S4",
+      "gt_track_id": "338bf0e0-6824-429c-b03c-bc4a44c30620",
+      "gt_in_top20_rank": 3,
+      "lr_rank1_score": 1.9254770885941948,
+      "lr_rank5_score": 1.063539651656821
+    },
+    {
+      "case_id": "fd840666-dd4c-4d6a-8afa-c0193095e427",
+      "history_depth": 1,
+      "stratum": "S4",
+      "gt_track_id": "8744bb89-0062-4127-a0a2-278cd4017842",
+      "gt_in_top20_rank": 20,
+      "lr_rank1_score": 0.8436478037245547,
+      "lr_rank5_score": 0.49077689827304793
+    },
+    {
+      "case_id": "d130ef0e-dfb8-4195-9a12-ecb011129897",
+      "history_depth": 0,
+      "stratum": "S4",
+      "gt_track_id": "45b8a697-48c3-4535-ae5d-0ced01bed38b",
+      "gt_in_top20_rank": 2,
+      "lr_rank1_score": 0.5400721201174538,
+      "lr_rank5_score": 0.25143001038832685
+    },
+    {
+      "case_id": "159055da-ee0f-473a-a23e-62b0228ec08e",
+      "history_depth": 0,
+      "stratum": "S4",
+      "gt_track_id": "44dfc68d-29c8-40cf-8885-6c72aab2b828",
+      "gt_in_top20_rank": 4,
+      "lr_rank1_score": 0.15793926419484317,
+      "lr_rank5_score": -0.6293675909194875
+    },
+    {
+      "case_id": "50379e9b-f8f3-408e-83f4-5a9e17bc7842",
+      "history_depth": 0,
+      "stratum": "S4",
+      "gt_track_id": "05b84c1c-8412-4cbe-bc3c-88d30450e746",
+      "gt_in_top20_rank": 4,
+      "lr_rank1_score": 0.9889249769717926,
+      "lr_rank5_score": 0.4831733258160438
+    },
+    {
+      "case_id": "033bb08d-8964-48c4-a1fe-38474d545102",
+      "history_depth": 1,
+      "stratum": "S4",
+      "gt_track_id": "421b2783-59ed-45ee-916b-eb73151ca0b8",
+      "gt_in_top20_rank": 6,
+      "lr_rank1_score": 1.916870050505798,
+      "lr_rank5_score": 1.5722279790063345
+    },
+    {
+      "case_id": "5001da85-e24e-43be-a797-c44d5905bee7",
+      "history_depth": 6,
+      "stratum": "S4",
+      "gt_track_id": "cf4ec27d-60b2-4672-928b-e4848e8ae250",
+      "gt_in_top20_rank": 3,
+      "lr_rank1_score": 1.126605446431536,
+      "lr_rank5_score": 0.18371587543128848
+    },
+    {
+      "case_id": "a9ffbbdc-1b84-4a7f-8ff7-f7beb6817f4c",
+      "history_depth": 7,
+      "stratum": "S4",
+      "gt_track_id": "9149d63c-7c37-46b9-9c4c-99b686860105",
+      "gt_in_top20_rank": 10,
+      "lr_rank1_score": 1.9194460665112993,
+      "lr_rank5_score": 0.2808508847106383
+    },
+    {
+      "case_id": "8401fae3-2d18-4c78-b7a7-afc99cd2d7fd",
+      "history_depth": 2,
+      "stratum": "S4",
+      "gt_track_id": "cb5079db-68f3-44b2-9a9f-35793f480d7f",
+      "gt_in_top20_rank": 7,
+      "lr_rank1_score": 1.5974014993584673,
+      "lr_rank5_score": 0.9629887106136518
+    },
+    {
+      "case_id": "958d4253-f906-4dcd-a22a-db0ee074ae21",
+      "history_depth": 5,
+      "stratum": "S4",
+      "gt_track_id": "fade39c9-7b5d-4304-b120-fa340d9d2f33",
+      "gt_in_top20_rank": 2,
+      "lr_rank1_score": 2.646789216178417,
+      "lr_rank5_score": 2.256632708285304
+    },
+    {
+      "case_id": "e16a6d12-3de0-44a3-9c95-d328498e79c4",
+      "history_depth": 0,
+      "stratum": "S4",
+      "gt_track_id": "39c57975-b058-4267-aef7-4ceae6190f3e",
+      "gt_in_top20_rank": 20,
+      "lr_rank1_score": 1.6098356322304979,
+      "lr_rank5_score": 0.07078176997138737
+    },
+    {
+      "case_id": "cdd374ea-1ad9-4440-8c2d-4c76c5fb3f78",
+      "history_depth": 2,
+      "stratum": "S4",
+      "gt_track_id": "499bdead-c8ba-4eb9-abc1-2becee5b2217",
+      "gt_in_top20_rank": 3,
+      "lr_rank1_score": 0.7325085590309682,
+      "lr_rank5_score": -0.7982897875676892
+    },
+    {
+      "case_id": "028027d3-ad67-4cfb-baca-516772ae7399",
+      "history_depth": 3,
+      "stratum": "S4",
+      "gt_track_id": "bb495504-16f2-4ad3-9566-44a4dc1d800f",
+      "gt_in_top20_rank": 2,
+      "lr_rank1_score": 1.8327491851303521,
+      "lr_rank5_score": -0.31515178923737674
+    },
+    {
+      "case_id": "d8ef059b-71da-458c-b58b-822d9f4f2a9b",
+      "history_depth": 3,
+      "stratum": "S4",
+      "gt_track_id": "6f8138a1-52bb-42ac-8274-875e5187754c",
+      "gt_in_top20_rank": 2,
+      "lr_rank1_score": 2.0397129085116235,
+      "lr_rank5_score": 0.35289049442948534
+    },
+    {
+      "case_id": "dd190c2e-7346-4909-8b83-7f97460674e0",
+      "history_depth": 1,
+      "stratum": "S4",
+      "gt_track_id": "7bacbb77-26f8-4c65-b681-50e1b64db46a",
+      "gt_in_top20_rank": 14,
+      "lr_rank1_score": -0.07414560832689641,
+      "lr_rank5_score": -0.3136701227094084
+    },
+    {
+      "case_id": "5cd45ad5-c743-4ad7-a179-ec0342384cbd",
+      "history_depth": 4,
+      "stratum": "S4",
+      "gt_track_id": "4b933c66-c522-4c63-84a1-6dbea8781d8e",
+      "gt_in_top20_rank": 2,
+      "lr_rank1_score": 1.3458027452751267,
+      "lr_rank5_score": 0.5952170938801303
+    },
+    {
+      "case_id": "b2e2ef18-7ad7-4c93-a16b-8e09b90d7224",
+      "history_depth": 6,
+      "stratum": "S4",
+      "gt_track_id": "7943a347-46c6-4ad7-b9f4-953b197de104",
+      "gt_in_top20_rank": 4,
+      "lr_rank1_score": 2.4853806015417885,
+      "lr_rank5_score": 0.6967677325107394
+    },
+    {
+      "case_id": "db0164d8-2d21-471c-91e6-e15214a4811d",
+      "history_depth": 3,
+      "stratum": "S4",
+      "gt_track_id": "081f0f56-41f4-4d21-a6a3-3fdc8d071e4d",
+      "gt_in_top20_rank": 7,
+      "lr_rank1_score": 1.2403584895302056,
+      "lr_rank5_score": 0.6142894619675903
+    },
+    {
+      "case_id": "b20ab0fd-017c-4543-a0db-32b3e55e9a63",
+      "history_depth": 2,
+      "stratum": "S4",
+      "gt_track_id": "9107078a-33ea-4d1d-be05-1b01d856f1d1",
+      "gt_in_top20_rank": 10,
+      "lr_rank1_score": 1.6867770950482772,
+      "lr_rank5_score": 1.4620485107680077
+    },
+    {
+      "case_id": "9003b58e-05f2-447b-841d-3b8fdc548548",
+      "history_depth": 4,
+      "stratum": "S4",
+      "gt_track_id": "e2e108fb-89ad-4167-a2e0-fb7e9702b459",
+      "gt_in_top20_rank": 2,
+      "lr_rank1_score": 1.6065022144851424,
+      "lr_rank5_score": 0.02618222931552726
+    },
+    {
+      "case_id": "435788ed-20b2-4b37-a97d-8614cb70c570",
+      "history_depth": 6,
+      "stratum": "S4",
+      "gt_track_id": "e46f8272-9d1a-4bc4-8188-a834cdaca591",
+      "gt_in_top20_rank": 2,
+      "lr_rank1_score": 0.6253955989107888,
+      "lr_rank5_score": 0.32735602954977955
+    },
+    {
+      "case_id": "bf5ba507-154f-4e48-b5da-b8fa3d407335",
+      "history_depth": 5,
+      "stratum": "S4",
+      "gt_track_id": "a3ba5e88-a201-492a-9d13-2bf4f036a635",
+      "gt_in_top20_rank": 6,
+      "lr_rank1_score": 1.3712786708928326,
+      "lr_rank5_score": 0.3936206226405201
+    },
+    {
+      "case_id": "e17c1529-d45b-4eaf-a4dd-4e795d83c679",
+      "history_depth": 3,
+      "stratum": "S4",
+      "gt_track_id": "08b70147-82a2-4512-abbc-81c91331b2fa",
+      "gt_in_top20_rank": 17,
+      "lr_rank1_score": 1.030825483342078,
+      "lr_rank5_score": 0.721413385823194
+    },
+    {
+      "case_id": "3b1900c2-1f56-4a63-af2e-130671e4ebef",
+      "history_depth": 6,
+      "stratum": "S4",
+      "gt_track_id": "0006d4e5-3fcc-47be-b5a1-a6b7b472da19",
+      "gt_in_top20_rank": 12,
+      "lr_rank1_score": 0.06987691132033848,
+      "lr_rank5_score": -0.3519508057522022
+    },
+    {
+      "case_id": "a7414838-0039-4c7b-a4fc-c8c682c292e2",
+      "history_depth": 5,
+      "stratum": "S4",
+      "gt_track_id": "abf7abf1-f8af-4d3a-8a05-ceb3cf9436e4",
+      "gt_in_top20_rank": 6,
+      "lr_rank1_score": 2.5647334272038678,
+      "lr_rank5_score": 2.398825491472044
+    },
+    {
+      "case_id": "62fae949-5982-4acd-a0b8-a55784121023",
+      "history_depth": 1,
+      "stratum": "S4",
+      "gt_track_id": "8bab9487-9eca-4192-af84-6aef61e80946",
+      "gt_in_top20_rank": 10,
+      "lr_rank1_score": 2.5572375041021003,
+      "lr_rank5_score": 0.7200787038175855
+    },
+    {
+      "case_id": "b3cd9618-0ebc-4e13-9527-3e20a50b97c0",
+      "history_depth": 1,
+      "stratum": "S4",
+      "gt_track_id": "aa89dd27-6d0d-493f-afa3-aedca7a33e98",
+      "gt_in_top20_rank": 4,
+      "lr_rank1_score": 2.3789527357694937,
+      "lr_rank5_score": 0.6239287815758273
+    },
+    {
+      "case_id": "0e93e5bb-5730-4c07-b1ac-11c34b932b38",
+      "history_depth": 5,
+      "stratum": "S5",
+      "gt_track_id": "d48e9292-389a-455c-9d47-ff8efa5e4d6c",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 1.8330640324561465,
+      "lr_rank5_score": 1.090616456084165
+    },
+    {
+      "case_id": "907921a3-d08f-4ba1-8cce-0e760a9e7044",
+      "history_depth": 4,
+      "stratum": "S5",
+      "gt_track_id": "b4efd000-7da9-49c7-9680-9617eb2dcb9d",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.020755132629789553,
+      "lr_rank5_score": -0.7962878306996981
+    },
+    {
+      "case_id": "7c3154c5-d1c2-4f07-9b8d-96d187334f1b",
+      "history_depth": 7,
+      "stratum": "S5",
+      "gt_track_id": "6e8f89dc-874c-4433-a8ee-0f701763869f",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.7083493281852785,
+      "lr_rank5_score": -0.24491209540592535
+    },
+    {
+      "case_id": "75f851b5-41a1-4322-980f-3e2f80983620",
+      "history_depth": 0,
+      "stratum": "S5",
+      "gt_track_id": "5477da62-5d79-4c55-9107-ce211f1aac8e",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": -0.5687289739809231,
+      "lr_rank5_score": -1.02685875845443
+    },
+    {
+      "case_id": "53827aef-5204-47fb-9d6c-0d83f5924963",
+      "history_depth": 5,
+      "stratum": "S5",
+      "gt_track_id": "9b789a58-c422-4c9b-821f-592ddaffdc36",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 1.4734523844810483,
+      "lr_rank5_score": 0.20053386641949777
+    },
+    {
+      "case_id": "1111fcd7-b8d6-4e56-8e70-6c84afadc953",
+      "history_depth": 7,
+      "stratum": "S5",
+      "gt_track_id": "84d33eb2-f849-45f6-91ac-a5ae42828be9",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": -0.4153529918230499,
+      "lr_rank5_score": -0.919629772634576
+    },
+    {
+      "case_id": "0cbe51a9-9ad1-4ee8-8d0d-6aef9280a0c9",
+      "history_depth": 5,
+      "stratum": "S5",
+      "gt_track_id": "83074740-fdae-42de-b6ac-2c9de597cd32",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.640325983514207,
+      "lr_rank5_score": -0.7246622307862285
+    },
+    {
+      "case_id": "40e39f50-d49e-47de-9894-31246ca51596",
+      "history_depth": 1,
+      "stratum": "S5",
+      "gt_track_id": "ebb0abc9-7ed0-455a-8838-5e2158292824",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 1.3752685939493967,
+      "lr_rank5_score": -0.6151125394412261
+    },
+    {
+      "case_id": "4e9e92c7-c8bb-4314-9388-02b1a5f866d9",
+      "history_depth": 7,
+      "stratum": "S5",
+      "gt_track_id": "438262f0-5cba-451c-b0bb-615033f71377",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 1.0456578049655976,
+      "lr_rank5_score": -0.4233771775294733
+    },
+    {
+      "case_id": "df3eefae-098c-4c9c-93b2-eb8db20f2ce9",
+      "history_depth": 0,
+      "stratum": "S5",
+      "gt_track_id": "32963fda-6aa8-44f9-8a99-64821e75482a",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 1.1828971538079136,
+      "lr_rank5_score": -0.32058872446311426
+    },
+    {
+      "case_id": "13a70e3a-90a5-4367-9a75-15ebee52a6fe",
+      "history_depth": 6,
+      "stratum": "S5",
+      "gt_track_id": "987726c1-4aa7-486d-9f77-2fafd411fc3a",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 1.719498797236479,
+      "lr_rank5_score": 0.33964552453433194
+    },
+    {
+      "case_id": "a1ddf884-dfad-4e06-905a-368f7e7421ea",
+      "history_depth": 3,
+      "stratum": "S5",
+      "gt_track_id": "9b17c431-8e78-4158-adbb-e3314fc96a75",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.721370170626803,
+      "lr_rank5_score": 0.3636911391878682
+    },
+    {
+      "case_id": "d6469c5f-2c4a-4c58-b139-f59956a676bb",
+      "history_depth": 7,
+      "stratum": "S5",
+      "gt_track_id": "803d6aa5-0194-443f-9af0-b01501b96223",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.9629248244957206,
+      "lr_rank5_score": -0.4506653534687221
+    },
+    {
+      "case_id": "8c4d1956-cc77-42fa-b50c-7ad40b8e65a0",
+      "history_depth": 1,
+      "stratum": "S5",
+      "gt_track_id": "f2fd7b9b-ab53-49b4-9386-94a88bc21f2e",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.17258961215203586,
+      "lr_rank5_score": -0.5220099154940453
+    },
+    {
+      "case_id": "9024c499-3542-4277-bc38-eb6b0b76924d",
+      "history_depth": 6,
+      "stratum": "S5",
+      "gt_track_id": "a8a229f5-96d7-4fe6-8488-612f129cf1cd",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": -0.33745658308741233,
+      "lr_rank5_score": -0.5358050507686658
+    },
+    {
+      "case_id": "4e9d47f5-d545-4dc5-bede-38b877982515",
+      "history_depth": 0,
+      "stratum": "S5",
+      "gt_track_id": "8c7f46c8-9120-4aa2-a616-35db66bf50d5",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 1.2487418089871898,
+      "lr_rank5_score": 0.6434449291626186
+    },
+    {
+      "case_id": "5861afef-85c0-4163-b8b9-5a11e308f352",
+      "history_depth": 2,
+      "stratum": "S5",
+      "gt_track_id": "d82120d7-bfe8-47df-ad3c-dd08b3cf4286",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": -0.22053059076251463,
+      "lr_rank5_score": -0.5387531862424911
+    },
+    {
+      "case_id": "daa41438-16ae-4b1f-ac61-e059abf32787",
+      "history_depth": 6,
+      "stratum": "S5",
+      "gt_track_id": "6f3936b5-72a4-44bf-ab83-260cecb6082b",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": -0.8064097962966802,
+      "lr_rank5_score": -1.488393784810275
+    },
+    {
+      "case_id": "3f0bea58-4b1b-4bce-a965-86f7b9a88020",
+      "history_depth": 5,
+      "stratum": "S5",
+      "gt_track_id": "837d4e8f-a9df-4b1f-85c2-a652bda94906",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.4061465469395247,
+      "lr_rank5_score": -1.4541164610540676
+    },
+    {
+      "case_id": "0858f444-c9af-4f08-a9fc-2a731a24182b",
+      "history_depth": 7,
+      "stratum": "S5",
+      "gt_track_id": "7fe04e9c-0c9a-4869-8458-95b5f37f2fd5",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.42068513672649,
+      "lr_rank5_score": -0.33725744154981496
+    },
+    {
+      "case_id": "8b6e992f-182e-4bba-be7c-29c4b65eb7d8",
+      "history_depth": 3,
+      "stratum": "S5",
+      "gt_track_id": "ddd06e8c-e253-4ca6-bd3c-f0921dde6a32",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": -0.5795983442372262,
+      "lr_rank5_score": -0.8966187486461771
+    },
+    {
+      "case_id": "e6a5c30e-7083-4ff1-bbc9-c1148fa19098",
+      "history_depth": 4,
+      "stratum": "S5",
+      "gt_track_id": "c80a233f-3058-4ccb-9933-10377568a7a4",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.6226169199141397,
+      "lr_rank5_score": -0.6787669160637159
+    },
+    {
+      "case_id": "a0b44ffe-1db8-46ca-b517-ef1e118d4451",
+      "history_depth": 1,
+      "stratum": "S5",
+      "gt_track_id": "6e9217dc-ba56-4b0b-9245-e366715033d8",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.639501973623258,
+      "lr_rank5_score": 0.22709411961865233
+    },
+    {
+      "case_id": "a44f8ac3-5787-46d8-90db-439b67347624",
+      "history_depth": 3,
+      "stratum": "S5",
+      "gt_track_id": "b75bad94-5a1c-4894-92ef-976780c2408c",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.48002045004117755,
+      "lr_rank5_score": -0.13052052270057896
+    },
+    {
+      "case_id": "158b64b7-2319-4d4b-9f63-d7ecf0b2a797",
+      "history_depth": 5,
+      "stratum": "S5",
+      "gt_track_id": "24c59d51-cfce-49a6-8da0-2301bc834a7a",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.9055080291560247,
+      "lr_rank5_score": 0.5758642468344879
+    },
+    {
+      "case_id": "54b458f5-15ad-41e1-acc6-cb223e05db09",
+      "history_depth": 4,
+      "stratum": "S5",
+      "gt_track_id": "a3017443-1243-4e36-b586-b2516d2f2a2b",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.2630572169376247,
+      "lr_rank5_score": 0.011928399348627144
+    },
+    {
+      "case_id": "9f90526a-f575-48f4-93f5-3b5a196e575a",
+      "history_depth": 7,
+      "stratum": "S5",
+      "gt_track_id": "35e48cac-a35c-4c57-92b9-dc73f992f279",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.4459360669595326,
+      "lr_rank5_score": -0.2227507564653329
+    },
+    {
+      "case_id": "944f28f6-1a1a-4247-b27a-ad41251093d9",
+      "history_depth": 0,
+      "stratum": "S5",
+      "gt_track_id": "0841c849-d88e-4346-90b1-40e239d1c1f8",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 0.4449450513284804,
+      "lr_rank5_score": -0.32411364095302286
+    },
+    {
+      "case_id": "6e70b1b6-65ab-442b-9dbd-7c40c920672e",
+      "history_depth": 4,
+      "stratum": "S5",
+      "gt_track_id": "5deb262e-d7cd-4e37-ad09-633c78baa9ae",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 1.7486068115282243,
+      "lr_rank5_score": -0.35152169228398766
+    },
+    {
+      "case_id": "63948e7e-ff5f-41cf-9540-35a0ef0395b9",
+      "history_depth": 5,
+      "stratum": "S5",
+      "gt_track_id": "a0d62be3-8c95-4dc7-b034-80027e32453e",
+      "gt_in_top20_rank": null,
+      "lr_rank1_score": 2.47158240044598,
+      "lr_rank5_score": 0.05401162266265919
+    }
+  ]
+}
