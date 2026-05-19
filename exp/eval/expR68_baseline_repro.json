@@ -1,0 +1,53 @@
+{
+  "experiment": "R68 W0 baseline reproduction",
+  "created_at": "2026-05-19T23:26:34.522629",
+  "elapsed_s": 164.80378770828247,
+  "branch": "r68-large-scale-retrieval",
+  "head_sha": "451bfd1ecd212501b2155f0e42e18562ca315e2c",
+  "verdict": "PASS",
+  "epsilon_gate": 0.0005,
+  "reference_file": "exp/eval/expR59_c3_phase2_frozen_lr.json",
+  "metrics": {
+    "all_dev_ndcg20": {
+      "reference": 0.315875,
+      "reproduced": 0.3158754882808494,
+      "delta": 4.882808493644752e-07
+    },
+    "h7_ndcg20": {
+      "reference": 0.348378,
+      "reproduced": 0.34837790523461903,
+      "delta": -9.476538098684983e-08
+    },
+    "same_artist_ndcg20": {
+      "reference": 0.628214,
+      "reproduced": 0.6282143452884996,
+      "delta": 3.452884995702732e-07
+    },
+    "diff_artist_ndcg20": {
+      "reference": 0.142367,
+      "reproduced": 0.14236739680294613,
+      "delta": 3.9680294613986256e-07
+    },
+    "pool_hit_all": {
+      "reference": 0.622,
+      "reproduced": 0.622,
+      "delta": 0.0
+    },
+    "pool_hit_h7": {
+      "reference": 0.613,
+      "reproduced": 0.613,
+      "delta": 0.0
+    }
+  },
+  "max_abs_delta": 4.882808493644752e-07,
+  "n_cases": 8000,
+  "h7_n": 1000,
+  "fold_counts": [
+    1600,
+    1600,
+    1600,
+    1600,
+    1600
+  ],
+  "notes": "Wave 0 reuses cached intermediates (R58 top50, R54 phase2 OOF lists, ALS, track pop, payload maps) and the production frozen LR model. Also dumps per-case R54 reference stats for R68 OOF comparison."
+}
