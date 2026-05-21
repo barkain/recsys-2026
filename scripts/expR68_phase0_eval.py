@@ -94,7 +94,7 @@ FEAT_ALL_R68 = FEAT_R39_ALL + FEAT_R68
 
 R12_CACHE = REPO / "exp" / "eval" / "_R12_all_turns_payload.pkl"
 R21_OOF = REPO / "cache" / "r21_production" / "dev_r21_oof_lists.json"
-R54_OOF = REPO / "cache" / "r54" / "phase3_full" / "oof_r54_lists.json"
+R54_OOF = REPO / "cache" / "r54" / "phase2_full" / "oof_r54_lists.json"
 R54_LR = REPO / "cache" / "r54_phase3_lr_model.txt"
 R68_DIR = REPO / "cache" / "r68" / "phase0_fold0"
 R68_LISTS = R68_DIR / "oof_r68_lists_fold0.json"
