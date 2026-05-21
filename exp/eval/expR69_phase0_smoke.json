@@ -1,0 +1,33 @@
+{
+  "experiment": "R69 Phase 0 SMOKE (MiniLM-L-6 + h7 fold-0 + POOL_K=100)",
+  "model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+  "device": "mps",
+  "verdict": "SMOKE_NEGATIVE",
+  "scope_note": "Reduced scope for Mac MPS feasibility. Directional signal only.",
+  "pool_size": 100,
+  "n_h7_fold0": 200,
+  "n_pairs_scored": 20000,
+  "scoring_elapsed_s": 88.04662799835205,
+  "scoring_pairs_per_sec": 227.15236749753024,
+  "baseline_metrics": {
+    "h7": 0.30434128790180254,
+    "h7_same": 0.5697665433497544,
+    "h7_diff": 0.11604815796864003
+  },
+  "r69_metrics": {
+    "h7": 0.05068782219816445,
+    "h7_same": 0.10939006423508735,
+    "h7_diff": 0.009044351351458462
+  },
+  "deltas": {
+    "h7": -0.2536534657036381,
+    "h7_same": -0.46037647911466706,
+    "h7_diff": -0.10700380661718156
+  },
+  "recovered": 3,
+  "lost": 73,
+  "net": -70,
+  "top1_changed": 199,
+  "churn_per_80": 79.6,
+  "top20_overlap_mean": 4.29
+}
