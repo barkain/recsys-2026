@@ -1,9 +1,25 @@
-# R68 Large-Encoder Retriever Sprint — Summary
+# R68 Large-Encoder Retriever Sprint — Summary (updated post-R68.1)
 
 **Sprint completed:** 2026-05-21
 **Branch:** `r68-large-scale-retrieval`
-**Final verdict:** `ARCHIVE_SPRINT` — Phase 0 archived per pre-declared conversion rule. Phase 1 (full 5-fold OOF) not run.
+**Final verdict:** `ARCHIVE_SPRINT` — Phase 0 archived per pre-declared conversion rule. R68.1 corrected re-eval **confirmed the conversion wall is genuine, not a Phase 0 bias artifact**. Phase 1 (full 5-fold OOF) deferred — disambiguation answered.
 **Production status:** R63c-repair holds Blind-A at composite 0.6224 / nDCG 0.4925 / LLM 4.85 / LexDiv 0.8438
+
+## R68.1 corrected eval (post-mortem disambiguation)
+
+After the original Phase 0 archived, the open question was: did the LR conversion fail genuinely, or because of the documented `r68_cosine=0` on TRAIN cases? **R68.1 generated real train query embeddings** (from the already-trained fold-0 R68 model, ~10s on A100) **and real R68 train OOF lists** (cosine top-300 over track embeddings, ~5s on Mac CPU via chunked numpy), then re-ran the sibling LR with the bias removed.
+
+| Metric | v1 (zero-stub TRAIN cosine) | v2 (real TRAIN cosine) | Δ |
+|---|---:|---:|---:|
+| h7 nDCG vs baseline | −0.0797 | **−0.0811** | ~same |
+| same-artist nDCG | −0.1564 | **−0.1557** | ~same |
+| all-fold-0 nDCG | −0.0766 | **−0.0795** | ~same |
+| diff-artist nDCG | −0.0370 | −0.0417 | slightly worse |
+| TRAIN pool_hit | 0.6041 | 0.6269 | +0.023 (bias removed ✓) |
+
+The corrected TRAIN pool_hit jumped +0.023 (confirming the bias was eliminated), but **dev metrics are essentially unchanged**. The LR conversion wall is real for BGE-large. The retrieval signal (+0.035 h7 pool_hit, 15 unique GT recoveries net +7) exists but cannot be extracted by an LR-style ranker — even with proper OOF training features, the LR learns a calibration that buries R68's gains.
+
+**Phase 1 (full 5-fold OOF, ~2.5 GPU-hours) was deferred** because the disambiguation goal of Phase 1 (separate genuine wall from bias) has already been achieved by R68.1 on fold-0. Running Phase 1 would consume another ~$5-15 of A100 time to validate at a larger N but is unlikely to change the verdict — the bias-corrected fold-0 result already trends in the same direction as the original.
 
 ## Context
 
