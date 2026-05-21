@@ -1,0 +1,158 @@
+{
+  "experiment": "R68 Phase 0 fold-0 eval",
+  "created_at": "2026-05-21T18:09:02.256523",
+  "elapsed_s": 216.93106627464294,
+  "branch": "r68-large-scale-retrieval",
+  "head_sha": "1735349f13396049182b597c2a48639b21e9d4a9",
+  "verdict": "ARCHIVE_PHASE_0",
+  "fold": 0,
+  "n_fold0": 1600,
+  "n_fold0_h7": 200,
+  "single_source_pool_hit": {
+    "h7": {
+      "r54": 0.535,
+      "r68": 0.57,
+      "delta": 0.03499999999999992,
+      "r54_count": 107,
+      "r68_count": 114
+    },
+    "all": {
+      "r54": 0.575625,
+      "r68": 0.580625,
+      "delta": 0.004999999999999893
+    }
+  },
+  "unique_h7_recoveries": 15,
+  "lost_h7_to_r68": 8,
+  "h7_top20_rank_changes": 101,
+  "stacked_rrf_pool_hit": {
+    "all": {
+      "baseline": 0.604375,
+      "r68": 0.601875,
+      "delta": -0.0024999999999999467
+    },
+    "h7": {
+      "baseline": 0.615,
+      "r68": 0.63,
+      "delta": 0.015000000000000013
+    }
+  },
+  "fold0_metrics": {
+    "all_fold0": {
+      "n": 1600,
+      "baseline": 0.28788361352339303,
+      "r68": 0.20837951029343596,
+      "delta": -0.079504103229957
+    },
+    "h7": {
+      "n": 200,
+      "baseline": 0.30434128790180254,
+      "r68": 0.22327248189040813,
+      "delta": -0.08106880601139442
+    },
+    "same_artist": {
+      "n": 531,
+      "baseline": 0.5983678767297812,
+      "r68": 0.44268460612033744,
+      "delta": -0.15568327060944376
+    },
+    "diff_artist": {
+      "n": 1069,
+      "baseline": 0.13365803469963977,
+      "r68": 0.09199409786678986,
+      "delta": -0.041663936832849933
+    },
+    "h7_same": {
+      "n": 83,
+      "baseline": 0.5697665433497544,
+      "r68": 0.43844276920073766,
+      "delta": -0.13132377414901683
+    },
+    "h7_diff": {
+      "n": 117,
+      "baseline": 0.11604815796864003,
+      "r68": 0.07063031226000337,
+      "delta": -0.04541784570863667
+    }
+  },
+  "gates": {
+    "gate_1_recovery": {
+      "rule": "(unique_h7_recoveries >= 15) OR (r68_single_pool_hit_h7 - r54_single_pool_hit_h7 >= 0.010)",
+      "unique_h7_recoveries": 15,
+      "delta_single_h7": 0.03499999999999992,
+      "pass": true
+    },
+    "gate_2_pool_hit": {
+      "rule": "r68_stacked_RRF_pool_hit - baseline_RRF_pool_hit >= 0.005",
+      "baseline_pool_hit": 0.604375,
+      "r68_pool_hit": 0.601875,
+      "delta": -0.0024999999999999467,
+      "pass": false
+    },
+    "gate_3_ndcg": {
+      "rule": "(h7_ndcg_delta >= 0.0) AND (same_artist_delta >= -0.002)",
+      "h7_ndcg_delta": -0.08106880601139442,
+      "same_artist_delta": -0.15568327060944376,
+      "pass": false
+    }
+  },
+  "sibling_lr": {
+    "path": "cache/r68_phase0_sibling_lr.txt",
+    "feature_names": [
+      "rrf_rank_inv",
+      "last_artist_match",
+      "last_tag_jaccard",
+      "query_artist_tok_overlap",
+      "query_title_tok_overlap",
+      "query_meta_tok_overlap",
+      "is_played",
+      "recency_score",
+      "src_a_rank_inv",
+      "src_b_rank_inv",
+      "src_c_rank_inv",
+      "src_d_rank_inv",
+      "src_f_rank_inv",
+      "src_als_rank_inv",
+      "src_a_pres",
+      "src_b_pres",
+      "src_c_pres",
+      "src_d_pres",
+      "src_f_pres",
+      "src_als_pres",
+      "n_sources",
+      "als_dot",
+      "n_history",
+      "popularity",
+      "pool_artist_frac",
+      "pool_artist_count",
+      "source_count_v2",
+      "r21_rank_inv",
+      "r21_presence",
+      "same_album_last1",
+      "same_album_last3",
+      "same_album_any",
+      "album_history_count",
+      "pool_same_album_count",
+      "r68_rank_inv",
+      "r68_presence",
+      "r68_cosine"
+    ],
+    "params": {
+      "objective": "lambdarank",
+      "metric": "ndcg",
+      "eval_at": [
+        20
+      ],
+      "num_leaves": 31,
+      "learning_rate": 0.05,
+      "min_data_in_leaf": 10,
+      "verbose": -1,
+      "seed": 0
+    },
+    "num_boost_round": 300,
+    "notes": "R68.1 v2 corrected sibling LR: trained with REAL train r68_cosine (from saved fold-0 R68 model encoding the 6400 fold-0 TRAIN queries) and REAL train R68 source list (cosine top-300 over track embeddings). This removes the train-zero-cosine bias from the original Phase 0."
+  },
+  "version": "v2 (R68.1 corrected)",
+  "v2_changes": "Real train r68_cosine + real train R68 OOF lists. Train query embeddings encoded post-Phase 0 from the saved fold-0 model.",
+  "notes": "R68.1 v2: substitutes 3 LR feature columns (r54_* -> r68_*); pool admission unchanged. This is NOT matched-pool retraining. The train-time zero-cosine bias from the original Phase 0 has been removed by encoding fold-0 TRAIN queries with the saved fold-0 model and computing real top-300 via cosine search."
+}
