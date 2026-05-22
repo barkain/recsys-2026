@@ -1,0 +1,124 @@
+{
+  "experiment": "R70b \u2014 sibling LR control (37 feats, NO r68)",
+  "created_at": "2026-05-22T12:46:59.854416",
+  "elapsed_s": 185.295832157135,
+  "head_sha": "997fb2a2ef46bff9e1e50444c4e389c6ae2e9596",
+  "interpretation": "ARTIFACT_LOCKED",
+  "meaning": "Retraining 37 features regresses ~similarly to R70's 40-feature regression. \u2192 R54c is artifact-locked. Sibling LR cannot reproduce R54c from the same feature schema. Sprint pivots to frozen-ranker-compatible interfaces (stacker, candidate injection, residual rerank).",
+  "fold": 0,
+  "n_fold0": 1600,
+  "n_train": 6400,
+  "feature_stack": {
+    "names": [
+      "rrf_rank_inv",
+      "last_artist_match",
+      "last_tag_jaccard",
+      "query_artist_tok_overlap",
+      "query_title_tok_overlap",
+      "query_meta_tok_overlap",
+      "is_played",
+      "recency_score",
+      "src_a_rank_inv",
+      "src_b_rank_inv",
+      "src_c_rank_inv",
+      "src_d_rank_inv",
+      "src_f_rank_inv",
+      "src_als_rank_inv",
+      "src_a_pres",
+      "src_b_pres",
+      "src_c_pres",
+      "src_d_pres",
+      "src_f_pres",
+      "src_als_pres",
+      "n_sources",
+      "als_dot",
+      "n_history",
+      "popularity",
+      "pool_artist_frac",
+      "pool_artist_count",
+      "source_count_v2",
+      "r21_rank_inv",
+      "r21_presence",
+      "same_album_last1",
+      "same_album_last3",
+      "same_album_any",
+      "album_history_count",
+      "pool_same_album_count",
+      "r54_rank_inv",
+      "r54_presence",
+      "r54_cosine"
+    ],
+    "n_features": 37,
+    "structure": "FEAT_R39_ALL + FEAT_R54 (identical schema to R54c)"
+  },
+  "pool": {
+    "weights": {
+      "A": 1.0,
+      "B": 1.0,
+      "C": 1.0,
+      "D": 0.5,
+      "F": 1.0,
+      "ALS": 1.0,
+      "R21": 1.0,
+      "R54": 1.0
+    },
+    "K": 300,
+    "note": "R54-stacked, identical to R54c production"
+  },
+  "metrics": {
+    "all_fold0": {
+      "n": 1600,
+      "baseline": 0.28788361352339303,
+      "sibling": 0.21100906814195042,
+      "delta": -0.07687454538144262
+    },
+    "h7": {
+      "n": 200,
+      "baseline": 0.30434128790180254,
+      "sibling": 0.22131935173539474,
+      "delta": -0.0830219361664078
+    },
+    "same_artist": {
+      "n": 531,
+      "baseline": 0.5983678767297812,
+      "sibling": 0.44467455069647027,
+      "delta": -0.15369332603331093
+    },
+    "diff_artist": {
+      "n": 1069,
+      "baseline": 0.13365803469963977,
+      "sibling": 0.09494136820139847,
+      "delta": -0.038716666498241306
+    },
+    "h7_same": {
+      "n": 83,
+      "baseline": 0.5697665433497544,
+      "sibling": 0.42620174901261704,
+      "delta": -0.14356479433713737
+    },
+    "h7_diff": {
+      "n": 117,
+      "baseline": 0.11604815796864003,
+      "sibling": 0.07597542888061307,
+      "delta": -0.04007272908802696
+    }
+  },
+  "h7_recovery": {
+    "recovered": 1,
+    "lost": 15,
+    "net": -14
+  },
+  "churn": {
+    "top1_changed": 653,
+    "churn_per_80": 32.65,
+    "top20_overlap_mean": 15.99375
+  },
+  "comparison_to_R70": {
+    "R70_h7_delta": -0.0798,
+    "R70b_h7_delta": -0.0830219361664078,
+    "h7_diff_from_R70": -0.003221936166407799,
+    "R70_same_artist_delta": -0.1595,
+    "R70b_same_artist_delta": -0.15369332603331093,
+    "same_artist_diff_from_R70": 0.005806673966689074
+  }
+}
