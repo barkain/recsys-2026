@@ -1,0 +1,758 @@
+{
+  "experiment": "R73 concise-direct polish",
+  "model": "claude-opus-4-7",
+  "prompt_version": "R73 v1; targeted concise-direct regen of 15 weakest R63c-repair rows; semintelligence-style direct verdict opener with 5-archetype rotation",
+  "started_at": "2026-05-22T14:40:59.339194",
+  "elapsed_s": 75.26583099365234,
+  "target_rows": 15,
+  "n_selected": 15,
+  "n_accepted": 15,
+  "selected_indices": [
+    49,
+    36,
+    74,
+    40,
+    21,
+    75,
+    7,
+    62,
+    50,
+    46,
+    10,
+    27,
+    17,
+    48,
+    31
+  ],
+  "accepted_indices": [
+    7,
+    10,
+    17,
+    21,
+    27,
+    31,
+    36,
+    40,
+    46,
+    48,
+    49,
+    50,
+    62,
+    74,
+    75
+  ],
+  "lexdiv": {
+    "baseline": 0.8108444998441883,
+    "r73": 0.8227221956278922,
+    "delta": 0.011877695783703901,
+    "floor": 0.84,
+    "borderline_floor": 0.838,
+    "gate": "FAIL"
+  },
+  "validation": {
+    "gates": {
+      "rows_80": true,
+      "unique_sessions_80": true,
+      "tracks_20_each": true,
+      "total_tracks_1600": true,
+      "no_duplicate_tracks_within_row": true,
+      "valid_uuid_track_ids": true,
+      "track_ids_exactly_equal_to_r54c_per_position": true,
+      "prefix_leak_count_0": true,
+      "trailing_question_count_0": true,
+      "boilerplate_count_0": true,
+      "empty_or_too_short_count_0": true,
+      "target_word_range_65_95": true,
+      "first_sentence_names_top1_track_and_artist": true,
+      "lexdiv_floor_0_83": true,
+      "lexdiv_target_r54c_0_8381": true,
+      "opener_cluster_max_le_5": true
+    },
+    "counts": {
+      "rows": 80,
+      "unique_sessions": 80,
+      "duplicate_session_count": 0,
+      "track_rows_wrong_len": 0,
+      "total_tracks": 1600,
+      "rows_with_duplicate_tracks": 0,
+      "invalid_uuid_track_ids": 0,
+      "invalid_catalog_track_ids": 0,
+      "prefix_leak_count": 0,
+      "trailing_question_count": 0,
+      "boilerplate_count": 0,
+      "empty_or_too_short_count": 0,
+      "target_word_range_violations": 0,
+      "first_sentence_name_violations": 0
+    },
+    "lexdiv_distinct2": 0.839831223628692,
+    "repeated_opener_clusters": [
+      {
+        "opener": "cry out by one ok",
+        "count": 2
+      }
+    ],
+    "opener_max_cluster": 2,
+    "track_hash_comparison": {
+      "rows_compared": 80,
+      "rows_with_matching_track_sequence": 80,
+      "rows_with_mismatched_track_sequence": 0,
+      "total_tracks_compared": 1600,
+      "per_position_mismatches": 0,
+      "per_row": [
+        {
+          "session_id": "9c37dcd7-d7c2-4686-8541-1e37c4814a09",
+          "r54c_sha256": "bb0b9a10bcfdf7c119a379abddc7b5b6b731cb3d82827b31aa6b5a85b300a3cd",
+          "r63_sha256": "bb0b9a10bcfdf7c119a379abddc7b5b6b731cb3d82827b31aa6b5a85b300a3cd",
+          "matching": true
+        },
+        {
+          "session_id": "60a6fd69-33f4-4dbf-aa0d-872b27a69037",
+          "r54c_sha256": "9ef8ad60a340a6afd06a62c129c01639bf8495241af10ff72209515543052708",
+          "r63_sha256": "9ef8ad60a340a6afd06a62c129c01639bf8495241af10ff72209515543052708",
+          "matching": true
+        },
+        {
+          "session_id": "25cc9533-7c02-4781-9100-ab438e848a3d",
+          "r54c_sha256": "d06c123e195c502f6ab133aab9338d04f35339b1032da1b59ec0da7cb2f4d8fb",
+          "r63_sha256": "d06c123e195c502f6ab133aab9338d04f35339b1032da1b59ec0da7cb2f4d8fb",
+          "matching": true
+        },
+        {
+          "session_id": "39698083-bc11-4514-9e53-da76d9260b3a",
+          "r54c_sha256": "2f872c7135da4f9bac2f36b4d157a9be7a57e896d7022c047f33f3dfe068f37c",
+          "r63_sha256": "2f872c7135da4f9bac2f36b4d157a9be7a57e896d7022c047f33f3dfe068f37c",
+          "matching": true
+        },
+        {
+          "session_id": "0fedfa80-ebe2-4977-b16b-594f4a2b19b1",
+          "r54c_sha256": "9b9668b4894d9adf2801cc72655e3dd4227fcec2aecfbe5197ee9d0ed8bfd878",
+          "r63_sha256": "9b9668b4894d9adf2801cc72655e3dd4227fcec2aecfbe5197ee9d0ed8bfd878",
+          "matching": true
+        },
+        {
+          "session_id": "a1df8767-11df-44d3-a1f6-e1ba2115e8f0",
+          "r54c_sha256": "9152c8f53a83baa1cfbe5101e20c3e8a34d7bbdc00b71aa843034088a9eeaf9a",
+          "r63_sha256": "9152c8f53a83baa1cfbe5101e20c3e8a34d7bbdc00b71aa843034088a9eeaf9a",
+          "matching": true
+        },
+        {
+          "session_id": "02ec3071-bd03-4f78-91bc-96666d0e3b6b",
+          "r54c_sha256": "4366a30faadd8dc6e44a8a65d294da395a6bbdf355c4f3e8d295266d99e57e21",
+          "r63_sha256": "4366a30faadd8dc6e44a8a65d294da395a6bbdf355c4f3e8d295266d99e57e21",
+          "matching": true
+        },
+        {
+          "session_id": "4b8ed42b-39ec-4d17-9bea-507828687a0c",
+          "r54c_sha256": "24f2b425b34fc43a680f720aa65ae905aa8ab1b1cfa52cf8ae43419d89bda6b9",
+          "r63_sha256": "24f2b425b34fc43a680f720aa65ae905aa8ab1b1cfa52cf8ae43419d89bda6b9",
+          "matching": true
+        },
+        {
+          "session_id": "ca9c5de4-c2b7-4972-a524-615a400d0105",
+          "r54c_sha256": "6f5c7300d0a51bc03d779698ed9fc9313cdf4d1490c0ab21a96604df8415b2ce",
+          "r63_sha256": "6f5c7300d0a51bc03d779698ed9fc9313cdf4d1490c0ab21a96604df8415b2ce",
+          "matching": true
+        },
+        {
+          "session_id": "645670fd-b825-4c26-aba5-edcdb57e7684",
+          "r54c_sha256": "45cd50214959b50fca7ee370b2fea4d2cc798c368a9460dd4cc3de511333a173",
+          "r63_sha256": "45cd50214959b50fca7ee370b2fea4d2cc798c368a9460dd4cc3de511333a173",
+          "matching": true
+        },
+        {
+          "session_id": "d53d9457-12f1-4286-b195-aa42c23d3bce",
+          "r54c_sha256": "6af4c1d7fb1410bd01ff2194b04ae6bae4451e82a0f564c8a0276e8f3bcf54e3",
+          "r63_sha256": "6af4c1d7fb1410bd01ff2194b04ae6bae4451e82a0f564c8a0276e8f3bcf54e3",
+          "matching": true
+        },
+        {
+          "session_id": "db8ec85f-fa1f-4e88-b4d2-333b63b0d386",
+          "r54c_sha256": "96e1264265b5fb3d66eb191cd7f0475437b3a822ba15a7f75f832e9f4df6763d",
+          "r63_sha256": "96e1264265b5fb3d66eb191cd7f0475437b3a822ba15a7f75f832e9f4df6763d",
+          "matching": true
+        },
+        {
+          "session_id": "fc6ba76a-3dd8-4c11-b5af-a233253b01bf",
+          "r54c_sha256": "f6e647749c1b3c9bc9d025c045854288c532200b4f68a16b707d7cec9ed3efb3",
+          "r63_sha256": "f6e647749c1b3c9bc9d025c045854288c532200b4f68a16b707d7cec9ed3efb3",
+          "matching": true
+        },
+        {
+          "session_id": "b6457586-ddb1-4e18-a9b5-4d4926b8b46d",
+          "r54c_sha256": "fe5b3c1c2cbb542c10ad43d06555efbec4150cba41f193d293f0472bb4ed2207",
+          "r63_sha256": "fe5b3c1c2cbb542c10ad43d06555efbec4150cba41f193d293f0472bb4ed2207",
+          "matching": true
+        },
+        {
+          "session_id": "70a0e5ad-50cb-475c-95a3-adffcf04b72e",
+          "r54c_sha256": "8c2feae4b5315027a807ea1f2db7d5c223d1377ef5cca8f6d938da2085dece1b",
+          "r63_sha256": "8c2feae4b5315027a807ea1f2db7d5c223d1377ef5cca8f6d938da2085dece1b",
+          "matching": true
+        },
+        {
+          "session_id": "dc3c1b72-0520-44c6-ab2b-4935d0455e19",
+          "r54c_sha256": "ea8d87f62275b25093dca0b3b7227cbbe445db7f9db2210f1cbea7efd51d68ee",
+          "r63_sha256": "ea8d87f62275b25093dca0b3b7227cbbe445db7f9db2210f1cbea7efd51d68ee",
+          "matching": true
+        },
+        {
+          "session_id": "2a677d32-23e9-4fe7-8b8e-4875c93509a2",
+          "r54c_sha256": "a5041a857634268742d3a813db1ad2eec767ea14f310b53ed4e37ddc1ede2914",
+          "r63_sha256": "a5041a857634268742d3a813db1ad2eec767ea14f310b53ed4e37ddc1ede2914",
+          "matching": true
+        },
+        {
+          "session_id": "198470a5-db1e-4add-b04a-bee8c5945d4b",
+          "r54c_sha256": "eb02c46808868af2706aa901e9f10f2f18740c0342ce4730cdc1344f2787a704",
+          "r63_sha256": "eb02c46808868af2706aa901e9f10f2f18740c0342ce4730cdc1344f2787a704",
+          "matching": true
+        },
+        {
+          "session_id": "07aae53d-7c65-442a-a893-6ffde80efb0d",
+          "r54c_sha256": "2440fc2b1015ffe4619a3386871224c03ca1475ec433ddab6dd113954c42bba4",
+          "r63_sha256": "2440fc2b1015ffe4619a3386871224c03ca1475ec433ddab6dd113954c42bba4",
+          "matching": true
+        },
+        {
+          "session_id": "525f9f69-31e5-4fee-9813-e903ad24e39e",
+          "r54c_sha256": "64ef9411c1abe87a1deb46b30977f6a8937d7cc6ec9329fa7d80c0fc4e0f5d70",
+          "r63_sha256": "64ef9411c1abe87a1deb46b30977f6a8937d7cc6ec9329fa7d80c0fc4e0f5d70",
+          "matching": true
+        },
+        {
+          "session_id": "0802ac4a-187b-4a78-b090-0ceb7630cf12",
+          "r54c_sha256": "6c6fde41bdb9e53010fd1c970bcb5e6bfcabb79dffc7fee8253e8e471e062f47",
+          "r63_sha256": "6c6fde41bdb9e53010fd1c970bcb5e6bfcabb79dffc7fee8253e8e471e062f47",
+          "matching": true
+        },
+        {
+          "session_id": "eb4a6ef2-7a7e-448a-bfed-c94e68b01505",
+          "r54c_sha256": "785b24ecc5d76c15768a52c1179eeb4bea94b1844c134bbf018fd630b32f871c",
+          "r63_sha256": "785b24ecc5d76c15768a52c1179eeb4bea94b1844c134bbf018fd630b32f871c",
+          "matching": true
+        },
+        {
+          "session_id": "0a1f7a63-c5e4-4a2d-9285-433cd036f4e7",
+          "r54c_sha256": "24b80e913b4ba8c7ae42e22985bf146feecfed512e8c1d4162775f5a4c0ea05d",
+          "r63_sha256": "24b80e913b4ba8c7ae42e22985bf146feecfed512e8c1d4162775f5a4c0ea05d",
+          "matching": true
+        },
+        {
+          "session_id": "ca8cbe02-1def-4fca-ba48-f17f9fac0ed8",
+          "r54c_sha256": "4cbcf2e74652abaeab27a21ae8df93eb5e7a25ddc2d3485a34fc553004698624",
+          "r63_sha256": "4cbcf2e74652abaeab27a21ae8df93eb5e7a25ddc2d3485a34fc553004698624",
+          "matching": true
+        },
+        {
+          "session_id": "574f75cf-7036-4cd2-b699-93202d81e7e1",
+          "r54c_sha256": "9aa7a13c65615b2784e9ca767166c466da094f7692c7d365d145290d98e2884a",
+          "r63_sha256": "9aa7a13c65615b2784e9ca767166c466da094f7692c7d365d145290d98e2884a",
+          "matching": true
+        },
+        {
+          "session_id": "ee7bfbda-86ee-4ade-b695-dbdeb12ae063",
+          "r54c_sha256": "a952cd90480197947bae0a82afa79ae586d4abecbb74742f703fff83a0f1acfb",
+          "r63_sha256": "a952cd90480197947bae0a82afa79ae586d4abecbb74742f703fff83a0f1acfb",
+          "matching": true
+        },
+        {
+          "session_id": "9d4ef919-504b-4963-af47-777478ace477",
+          "r54c_sha256": "4cbf1962f1b0f2199f24cc80531933c81ffb2b8642c784bb411c4880c690a168",
+          "r63_sha256": "4cbf1962f1b0f2199f24cc80531933c81ffb2b8642c784bb411c4880c690a168",
+          "matching": true
+        },
+        {
+          "session_id": "c08eb2a1-8491-442d-a10f-db8d9ba831d6",
+          "r54c_sha256": "3d609e301b3c96db501a694b046948e821ec0f9887fb7b1fe85e170fc5c0c01d",
+          "r63_sha256": "3d609e301b3c96db501a694b046948e821ec0f9887fb7b1fe85e170fc5c0c01d",
+          "matching": true
+        },
+        {
+          "session_id": "38a5f361-9802-40be-9d15-15c67d5ba60a",
+          "r54c_sha256": "e67ceb7a155502ec647b5cda560c25f3df077a36abc3d5d7450b23e780d9345b",
+          "r63_sha256": "e67ceb7a155502ec647b5cda560c25f3df077a36abc3d5d7450b23e780d9345b",
+          "matching": true
+        },
+        {
+          "session_id": "fe22cfe0-f552-4d43-bf13-ea77bef4f1ce",
+          "r54c_sha256": "a9068877c31c108f804148d920aeb44120ab5ca61e6c87f13feee8adc65eee43",
+          "r63_sha256": "a9068877c31c108f804148d920aeb44120ab5ca61e6c87f13feee8adc65eee43",
+          "matching": true
+        },
+        {
+          "session_id": "40cc1c03-6db9-49db-8bbe-8b97b45adb0b",
+          "r54c_sha256": "7df961bbd51ce67052ed34c797d320c48a6d975f489d4e14e5a4824a7c7d5480",
+          "r63_sha256": "7df961bbd51ce67052ed34c797d320c48a6d975f489d4e14e5a4824a7c7d5480",
+          "matching": true
+        },
+        {
+          "session_id": "3aee4d9b-b0f1-4282-bbe6-58942c71f311",
+          "r54c_sha256": "15716deb8f7fc0a8cb7d9bfa84763a4fd4b4b01c831356886ec3c73680100b53",
+          "r63_sha256": "15716deb8f7fc0a8cb7d9bfa84763a4fd4b4b01c831356886ec3c73680100b53",
+          "matching": true
+        },
+        {
+          "session_id": "4b239a62-4435-4f39-80d6-26cffe0d1871",
+          "r54c_sha256": "9c36925677a0d829dc4ea04fef3d92e1bef4a24f739a7e1af68d291bf002b097",
+          "r63_sha256": "9c36925677a0d829dc4ea04fef3d92e1bef4a24f739a7e1af68d291bf002b097",
+          "matching": true
+        },
+        {
+          "session_id": "809d4fbc-5298-494a-8817-78b3fdc5317e",
+          "r54c_sha256": "8ef6ab61a1fc5d2d9783da7200ac99959bd1bc3eb95b4bc1984e35eff7006672",
+          "r63_sha256": "8ef6ab61a1fc5d2d9783da7200ac99959bd1bc3eb95b4bc1984e35eff7006672",
+          "matching": true
+        },
+        {
+          "session_id": "5e1f5a89-99c0-46bb-af78-005338d05858",
+          "r54c_sha256": "ed34e6d49a0b990a561a7485bd78fee4c7d1f72e356da9e8b105284633921b1a",
+          "r63_sha256": "ed34e6d49a0b990a561a7485bd78fee4c7d1f72e356da9e8b105284633921b1a",
+          "matching": true
+        },
+        {
+          "session_id": "d7426802-d075-4a49-8062-977ba656c9a2",
+          "r54c_sha256": "3b2112bbdf0832a46257f38fe7e42a8ed3c04634bd412b3f519ca80446ccbbf5",
+          "r63_sha256": "3b2112bbdf0832a46257f38fe7e42a8ed3c04634bd412b3f519ca80446ccbbf5",
+          "matching": true
+        },
+        {
+          "session_id": "d851eac7-27a7-4363-b2a4-6cb365c79d22",
+          "r54c_sha256": "ed41a9c2c9f315034fd2f99aef230a0176a083363fe539918e83882998a1b67f",
+          "r63_sha256": "ed41a9c2c9f315034fd2f99aef230a0176a083363fe539918e83882998a1b67f",
+          "matching": true
+        },
+        {
+          "session_id": "28c3ecd9-fbaa-4423-a85c-92508346e1e8",
+          "r54c_sha256": "ad1652bdab4b4273f19eadf2ae64ef90ee361fc7f2cb0c194f83cd2ebc3f68da",
+          "r63_sha256": "ad1652bdab4b4273f19eadf2ae64ef90ee361fc7f2cb0c194f83cd2ebc3f68da",
+          "matching": true
+        },
+        {
+          "session_id": "5b2f877b-a6d5-4473-879c-f5a24d4fd06f",
+          "r54c_sha256": "06d376455c3d65b3bb48f7e58b941203a61b13cbf9480089cfbc6aa9900841fa",
+          "r63_sha256": "06d376455c3d65b3bb48f7e58b941203a61b13cbf9480089cfbc6aa9900841fa",
+          "matching": true
+        },
+        {
+          "session_id": "d5c80ee5-97c2-4de1-af2e-2295e3ae34a3",
+          "r54c_sha256": "8760b266a0b4601f267d69170fd95c8a4ab1395cb49034699ebb0a4f452a7bf1",
+          "r63_sha256": "8760b266a0b4601f267d69170fd95c8a4ab1395cb49034699ebb0a4f452a7bf1",
+          "matching": true
+        },
+        {
+          "session_id": "68993adf-60d9-42f9-b21f-cdd5bf851cb1",
+          "r54c_sha256": "aa96c365521f4bed0419597b1da8ced203ff35046bd677708940886f9cd45b9e",
+          "r63_sha256": "aa96c365521f4bed0419597b1da8ced203ff35046bd677708940886f9cd45b9e",
+          "matching": true
+        },
+        {
+          "session_id": "6c54de37-9c55-4c59-b203-ec190dd07523",
+          "r54c_sha256": "845b58721e5781a846567c6cbe5ec68203ea73e6e073a669da85930708b6d8f4",
+          "r63_sha256": "845b58721e5781a846567c6cbe5ec68203ea73e6e073a669da85930708b6d8f4",
+          "matching": true
+        },
+        {
+          "session_id": "eaeca304-3ddb-4adb-8087-0f15b597f73e",
+          "r54c_sha256": "08788108817f6244f7a770fa57d8fc965fd53561289f9c398cb357567bf949f4",
+          "r63_sha256": "08788108817f6244f7a770fa57d8fc965fd53561289f9c398cb357567bf949f4",
+          "matching": true
+        },
+        {
+          "session_id": "2fe9abf6-ccea-4f05-8490-82da8bf57764",
+          "r54c_sha256": "c7f522daf09b761c0134ea8854439e5f5db299b3f620c83f7383daf28883f340",
+          "r63_sha256": "c7f522daf09b761c0134ea8854439e5f5db299b3f620c83f7383daf28883f340",
+          "matching": true
+        },
+        {
+          "session_id": "1f7b28c1-8b18-4045-be27-0475edb96857",
+          "r54c_sha256": "5c12c4367aeb53515c227a2e1a5ecdefc931b84e01448ce8e2c7cf5c0be8f781",
+          "r63_sha256": "5c12c4367aeb53515c227a2e1a5ecdefc931b84e01448ce8e2c7cf5c0be8f781",
+          "matching": true
+        },
+        {
+          "session_id": "ebad356d-d5ab-437a-81f1-6d219e532c33",
+          "r54c_sha256": "0847a75e59c08003ca73dc6b0a33737578e4c3bb238962b52daf1ad499e3833b",
+          "r63_sha256": "0847a75e59c08003ca73dc6b0a33737578e4c3bb238962b52daf1ad499e3833b",
+          "matching": true
+        },
+        {
+          "session_id": "6953ac7a-5e95-48d8-be4e-8f153ac937e2",
+          "r54c_sha256": "fdced8340a0ee446fe496e142f20427a891ba599261695db51bfed12b73eb61c",
+          "r63_sha256": "fdced8340a0ee446fe496e142f20427a891ba599261695db51bfed12b73eb61c",
+          "matching": true
+        },
+        {
+          "session_id": "49009ca7-f8da-45df-9c62-7b88d960d5d2",
+          "r54c_sha256": "a6148a85eac23ffc7f3e4341c01d98d0dd49ca942d6001440a98891b4415f637",
+          "r63_sha256": "a6148a85eac23ffc7f3e4341c01d98d0dd49ca942d6001440a98891b4415f637",
+          "matching": true
+        },
+        {
+          "session_id": "8cd8575d-4743-4235-a493-aee6039551b4",
+          "r54c_sha256": "67816376592fdef15bc714993ddc7055242136d35b66a5df4e1800ef277f2c0d",
+          "r63_sha256": "67816376592fdef15bc714993ddc7055242136d35b66a5df4e1800ef277f2c0d",
+          "matching": true
+        },
+        {
+          "session_id": "ff76b679-7d7a-4796-8f6c-929efef45428",
+          "r54c_sha256": "759abe4836097645ccc140089e6a8ea1ca332ff17b01734c3113a97aa6c1d7a2",
+          "r63_sha256": "759abe4836097645ccc140089e6a8ea1ca332ff17b01734c3113a97aa6c1d7a2",
+          "matching": true
+        },
+        {
+          "session_id": "78487c90-fda7-4723-ad4c-4557393ea95f",
+          "r54c_sha256": "8201cf1c558c333e72fd291cc03f925c014322ad277f63e0308bc64250baa5bc",
+          "r63_sha256": "8201cf1c558c333e72fd291cc03f925c014322ad277f63e0308bc64250baa5bc",
+          "matching": true
+        },
+        {
+          "session_id": "5ad7094f-3764-4e32-94c9-c0c02b65e01b",
+          "r54c_sha256": "56f05dfa5c63eb31740d64ad542d6989c0cd0775a17b1f21f259e3fea481e754",
+          "r63_sha256": "56f05dfa5c63eb31740d64ad542d6989c0cd0775a17b1f21f259e3fea481e754",
+          "matching": true
+        },
+        {
+          "session_id": "db11666f-bfb8-4d0d-b62b-075ab85d92f9",
+          "r54c_sha256": "4ed605f70f8be2545f09426da348cd0b83d9a4f41ec0278433ebfec4d7efdf41",
+          "r63_sha256": "4ed605f70f8be2545f09426da348cd0b83d9a4f41ec0278433ebfec4d7efdf41",
+          "matching": true
+        },
+        {
+          "session_id": "8998b916-97bf-406f-92db-3ae40a832f4c",
+          "r54c_sha256": "3a62b045c232a9d4e830dc9c64b304606594e91bb1cd75d7f37bd865624bb1fe",
+          "r63_sha256": "3a62b045c232a9d4e830dc9c64b304606594e91bb1cd75d7f37bd865624bb1fe",
+          "matching": true
+        },
+        {
+          "session_id": "31bf71ab-497f-4045-bc91-06552f9b69b8",
+          "r54c_sha256": "1f2b24c9fae094dc4fad507e35da152d4f6ee0f65d56b0fe68e81fe38538b40a",
+          "r63_sha256": "1f2b24c9fae094dc4fad507e35da152d4f6ee0f65d56b0fe68e81fe38538b40a",
+          "matching": true
+        },
+        {
+          "session_id": "12124711-bfe3-4634-8368-2fa1d8ddf885",
+          "r54c_sha256": "c4c79459ad3ffac2a61806af4ccc2c89dda3cbcca4d27d87f75fdb8b6e7a0f74",
+          "r63_sha256": "c4c79459ad3ffac2a61806af4ccc2c89dda3cbcca4d27d87f75fdb8b6e7a0f74",
+          "matching": true
+        },
+        {
+          "session_id": "9cd93031-ae32-4c15-99fa-fbb1b6fbac0b",
+          "r54c_sha256": "d6717ac68c8314513b79ce7c753224bd40831b379e51caee2ef3ba81efd4050f",
+          "r63_sha256": "d6717ac68c8314513b79ce7c753224bd40831b379e51caee2ef3ba81efd4050f",
+          "matching": true
+        },
+        {
+          "session_id": "789f9994-f2b6-481d-b71a-c0c6706d82c6",
+          "r54c_sha256": "c729547b74639ac988f434bd4bbc4a56b15f0cc0f9d93342ca8bd6c1cec631d9",
+          "r63_sha256": "c729547b74639ac988f434bd4bbc4a56b15f0cc0f9d93342ca8bd6c1cec631d9",
+          "matching": true
+        },
+        {
+          "session_id": "3734e44b-ca86-456b-95b1-9352effa8d3a",
+          "r54c_sha256": "6dd4ad342955b4a6870dc8af045f90cb00135c0552c731e534a1eb1a9f948226",
+          "r63_sha256": "6dd4ad342955b4a6870dc8af045f90cb00135c0552c731e534a1eb1a9f948226",
+          "matching": true
+        },
+        {
+          "session_id": "8aeb8706-f800-4827-ba71-0797bf5afb0d",
+          "r54c_sha256": "3a8e9639186d8bd45614bc464c773486ac5169a0c2362516196515a9e6c6fb98",
+          "r63_sha256": "3a8e9639186d8bd45614bc464c773486ac5169a0c2362516196515a9e6c6fb98",
+          "matching": true
+        },
+        {
+          "session_id": "ab87371b-9ebc-4fb1-9eea-b984a5b76258",
+          "r54c_sha256": "d1c815363a1be596d8d06fd16cfaa0dd5c5985f2fe067d7bd7b47df9640291da",
+          "r63_sha256": "d1c815363a1be596d8d06fd16cfaa0dd5c5985f2fe067d7bd7b47df9640291da",
+          "matching": true
+        },
+        {
+          "session_id": "46faad58-58e7-4379-978e-4de6e5cc3b4f",
+          "r54c_sha256": "56f9c46d9a32997fb56bb6d51c3c784e2d3a8e793f2580daf447bd39890486a0",
+          "r63_sha256": "56f9c46d9a32997fb56bb6d51c3c784e2d3a8e793f2580daf447bd39890486a0",
+          "matching": true
+        },
+        {
+          "session_id": "3afb9f67-a18a-4b97-81cf-ef1806fce0e9",
+          "r54c_sha256": "5ee668899511eaabf9005e1ec94cc9f378da7055f89bba74e66514a20ca64c2f",
+          "r63_sha256": "5ee668899511eaabf9005e1ec94cc9f378da7055f89bba74e66514a20ca64c2f",
+          "matching": true
+        },
+        {
+          "session_id": "2b1cbd1c-dd5b-40ab-943a-0392894babc0",
+          "r54c_sha256": "4e5024b96c91314961bfbc95d756660d69a7816e2e68e43813bfe95aad6f5bc9",
+          "r63_sha256": "4e5024b96c91314961bfbc95d756660d69a7816e2e68e43813bfe95aad6f5bc9",
+          "matching": true
+        },
+        {
+          "session_id": "164fc33f-b103-424f-836a-b7a7d565f6c2",
+          "r54c_sha256": "ee89504998cc0c25b426f94c8fa6de726c6d62e215cb9da6635c09f0ee7b7157",
+          "r63_sha256": "ee89504998cc0c25b426f94c8fa6de726c6d62e215cb9da6635c09f0ee7b7157",
+          "matching": true
+        },
+        {
+          "session_id": "ab8bc8fa-6326-47a5-afb4-3e3a30ca7360",
+          "r54c_sha256": "f16e2722529eccef9999833e7344a149de854b9c93c27f0d44180677e02a0556",
+          "r63_sha256": "f16e2722529eccef9999833e7344a149de854b9c93c27f0d44180677e02a0556",
+          "matching": true
+        },
+        {
+          "session_id": "b7d2f58e-a1e5-418d-b3bd-88e88d20908d",
+          "r54c_sha256": "66859b7f8d087e2941af9de7e5d8a3f4687165c41de67b354ca2c9c89423f875",
+          "r63_sha256": "66859b7f8d087e2941af9de7e5d8a3f4687165c41de67b354ca2c9c89423f875",
+          "matching": true
+        },
+        {
+          "session_id": "2bfd631e-7d47-4dd6-a419-7d63615833c5",
+          "r54c_sha256": "fb21e22177dcc3c72082d061fb2c6f6087f19bb352b00f788813b6889330d755",
+          "r63_sha256": "fb21e22177dcc3c72082d061fb2c6f6087f19bb352b00f788813b6889330d755",
+          "matching": true
+        },
+        {
+          "session_id": "91ce5668-ec1e-4d09-a30a-3440be9c8861",
+          "r54c_sha256": "1faaf0f0a49019a82a5ba9d6c4f13c2d13348a8a6e37871a70d43fce557928a4",
+          "r63_sha256": "1faaf0f0a49019a82a5ba9d6c4f13c2d13348a8a6e37871a70d43fce557928a4",
+          "matching": true
+        },
+        {
+          "session_id": "c4f7d055-a3cc-4d6b-be80-b90278bc0d32",
+          "r54c_sha256": "15a50aa9a42d283398ea0058a1ccad6a7e5155cb7594ea8e1e2963345e7e91b1",
+          "r63_sha256": "15a50aa9a42d283398ea0058a1ccad6a7e5155cb7594ea8e1e2963345e7e91b1",
+          "matching": true
+        },
+        {
+          "session_id": "7905bb71-efea-4210-8ad9-881f37cad50a",
+          "r54c_sha256": "7c0906129e289015eac782c94a79e7cdb2a1e331ea94a513187ecbfd6546c18f",
+          "r63_sha256": "7c0906129e289015eac782c94a79e7cdb2a1e331ea94a513187ecbfd6546c18f",
+          "matching": true
+        },
+        {
+          "session_id": "1415a335-8fa3-4ead-8f30-0f04b337d079",
+          "r54c_sha256": "ff778cf5c4e9827895caa3fcf6a8c786d993a36cb188cf73306c07465dc66d95",
+          "r63_sha256": "ff778cf5c4e9827895caa3fcf6a8c786d993a36cb188cf73306c07465dc66d95",
+          "matching": true
+        },
+        {
+          "session_id": "4831a3b4-3964-40ec-92a3-151cef2cae8f",
+          "r54c_sha256": "780b76845f35c3f56e2b4d31a5b3ecc0278770ed139bad6b3f749ceab0d13ed7",
+          "r63_sha256": "780b76845f35c3f56e2b4d31a5b3ecc0278770ed139bad6b3f749ceab0d13ed7",
+          "matching": true
+        },
+        {
+          "session_id": "d9cca604-febe-4c95-a5cc-a4318c33ec40",
+          "r54c_sha256": "c3ff73595201f3b9a78229c0599d91ad7cd82a598b6dcf155d692c35c8c9b713",
+          "r63_sha256": "c3ff73595201f3b9a78229c0599d91ad7cd82a598b6dcf155d692c35c8c9b713",
+          "matching": true
+        },
+        {
+          "session_id": "f321d88d-d809-4bcb-aca0-a1ef551a48de",
+          "r54c_sha256": "0b7fb569981994a835ade3d5c6740d0ce9141d8efed73ab923166255391440c0",
+          "r63_sha256": "0b7fb569981994a835ade3d5c6740d0ce9141d8efed73ab923166255391440c0",
+          "matching": true
+        },
+        {
+          "session_id": "c0d4e758-5dfe-41a4-b0f2-07c29e27cdce",
+          "r54c_sha256": "9ff06759694ed1796d66ce0a529d42c302c7f12e13f656bf669f281bbc8fc5e3",
+          "r63_sha256": "9ff06759694ed1796d66ce0a529d42c302c7f12e13f656bf669f281bbc8fc5e3",
+          "matching": true
+        },
+        {
+          "session_id": "4e849a6c-dfbc-4a67-82cc-6dff9076b382",
+          "r54c_sha256": "d20b594a5e622727407e8631d8ed3e81576e0a17339ede1bd67acbfe0982b276",
+          "r63_sha256": "d20b594a5e622727407e8631d8ed3e81576e0a17339ede1bd67acbfe0982b276",
+          "matching": true
+        },
+        {
+          "session_id": "bd392a56-236a-49da-8f89-46c453e97ea2",
+          "r54c_sha256": "3c8a934361bf031b0b46bc15bac2dc9f9efe4b99fa760004033aea038e9c8048",
+          "r63_sha256": "3c8a934361bf031b0b46bc15bac2dc9f9efe4b99fa760004033aea038e9c8048",
+          "matching": true
+        },
+        {
+          "session_id": "c75f8e41-fde6-4d81-9c90-6f4844dad1b5",
+          "r54c_sha256": "dbba84d67a7c0d79ddf1da5ce6031feaaff177e88d0fc29a32cac87c99f75ff2",
+          "r63_sha256": "dbba84d67a7c0d79ddf1da5ce6031feaaff177e88d0fc29a32cac87c99f75ff2",
+          "matching": true
+        },
+        {
+          "session_id": "77faef85-566c-4eb7-90b6-ee9fdeeacbe8",
+          "r54c_sha256": "fee2149169628567c8227717c246b39ab84cc95fd0997cdd0aae92bef55598ee",
+          "r63_sha256": "fee2149169628567c8227717c246b39ab84cc95fd0997cdd0aae92bef55598ee",
+          "matching": true
+        }
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "row_index": 49,
+      "session_id": "ff76b679-7d7a-4796-8f6c-929efef45428",
+      "weakness_score": 8,
+      "attempts": 2,
+      "accepted": true,
+      "word_count": 69,
+      "top1_track": "Sickness",
+      "top1_artist": "TENDER",
+      "architecture": "verdict-first"
+    },
+    {
+      "row_index": 36,
+      "session_id": "d851eac7-27a7-4363-b2a4-6cb365c79d22",
+      "weakness_score": 7,
+      "attempts": 1,
+      "accepted": true,
+      "word_count": 76,
+      "top1_track": "White Ferrari",
+      "top1_artist": "Frank Ocean",
+      "architecture": "concrete-detail-lead"
+    },
+    {
+      "row_index": 74,
+      "session_id": "f321d88d-d809-4bcb-aca0-a1ef551a48de",
+      "weakness_score": 7,
+      "attempts": 1,
+      "accepted": true,
+      "word_count": 74,
+      "top1_track": "Lambs at the Slaughter",
+      "top1_artist": "Defiance, Ohio",
+      "architecture": "album-anchor"
+    },
+    {
+      "row_index": 40,
+      "session_id": "68993adf-60d9-42f9-b21f-cdd5bf851cb1",
+      "weakness_score": 6,
+      "attempts": 1,
+      "accepted": true,
+      "word_count": 72,
+      "top1_track": "I Will Remember You - Live",
+      "top1_artist": "Sarah McLachlan",
+      "architecture": "comparison-pivot"
+    },
+    {
+      "row_index": 21,
+      "session_id": "eb4a6ef2-7a7e-448a-bfed-c94e68b01505",
+      "weakness_score": 5,
+      "attempts": 1,
+      "accepted": true,
+      "word_count": 70,
+      "top1_track": "Watching As She Reels",
+      "top1_artist": "Rafael Anton Irisarri",
+      "architecture": "single-claim"
+    },
+    {
+      "row_index": 75,
+      "session_id": "c0d4e758-5dfe-41a4-b0f2-07c29e27cdce",
+      "weakness_score": 5,
+      "attempts": 2,
+      "accepted": true,
+      "word_count": 76,
+      "top1_track": "Miami - Original Mix",
+      "top1_artist": "Jasper Byrne",
+      "architecture": "verdict-first"
+    },
+    {
+      "row_index": 7,
+      "session_id": "4b8ed42b-39ec-4d17-9bea-507828687a0c",
+      "weakness_score": 5,
+      "attempts": 1,
+      "accepted": true,
+      "word_count": 73,
+      "top1_track": "Fight To Live",
+      "top1_artist": "The Bouncing Souls",
+      "architecture": "concrete-detail-lead"
+    },
+    {
+      "row_index": 62,
+      "session_id": "3afb9f67-a18a-4b97-81cf-ef1806fce0e9",
+      "weakness_score": 5,
+      "attempts": 1,
+      "accepted": true,
+      "word_count": 67,
+      "top1_track": "American Star",
+      "top1_artist": "Shanell, Lil Wayne",
+      "architecture": "album-anchor"
+    },
+    {
+      "row_index": 50,
+      "session_id": "78487c90-fda7-4723-ad4c-4557393ea95f",
+      "weakness_score": 5,
+      "attempts": 1,
+      "accepted": true,
+      "word_count": 74,
+      "top1_track": "Cross Road Blues",
+      "top1_artist": "Robert Johnson",
+      "architecture": "comparison-pivot"
+    },
+    {
+      "row_index": 46,
+      "session_id": "6953ac7a-5e95-48d8-be4e-8f153ac937e2",
+      "weakness_score": 4,
+      "attempts": 1,
+      "accepted": true,
+      "word_count": 70,
+      "top1_track": "For Those We Loved",
+      "top1_artist": "Austin Wintory",
+      "architecture": "single-claim"
+    },
+    {
+      "row_index": 10,
+      "session_id": "d53d9457-12f1-4286-b195-aa42c23d3bce",
+      "weakness_score": 4,
+      "attempts": 1,
+      "accepted": true,
+      "word_count": 75,
+      "top1_track": "Whispers from the Ether",
+      "top1_artist": "Kognitif",
+      "architecture": "verdict-first"
+    },
+    {
+      "row_index": 27,
+      "session_id": "c08eb2a1-8491-442d-a10f-db8d9ba831d6",
+      "weakness_score": 4,
+      "attempts": 1,
+      "accepted": true,
+      "word_count": 71,
+      "top1_track": "Lenha",
+      "top1_artist": "Zeca Baleiro",
+      "architecture": "concrete-detail-lead"
+    },
+    {
+      "row_index": 17,
+      "session_id": "198470a5-db1e-4add-b04a-bee8c5945d4b",
+      "weakness_score": 4,
+      "attempts": 1,
+      "accepted": true,
+      "word_count": 73,
+      "top1_track": "We Can Talk",
+      "top1_artist": "Emma Brammer, Satin Jackets",
+      "architecture": "album-anchor"
+    },
+    {
+      "row_index": 48,
+      "session_id": "8cd8575d-4743-4235-a493-aee6039551b4",
+      "weakness_score": 4,
+      "attempts": 1,
+      "accepted": true,
+      "word_count": 77,
+      "top1_track": "Burst Synapse",
+      "top1_artist": "Full Of Hell",
+      "architecture": "comparison-pivot"
+    },
+    {
+      "row_index": 31,
+      "session_id": "3aee4d9b-b0f1-4282-bbe6-58942c71f311",
+      "weakness_score": 4,
+      "attempts": 1,
+      "accepted": true,
+      "word_count": 72,
+      "top1_track": "In Another Life",
+      "top1_artist": "The Rippingtons, Russ Freeman",
+      "architecture": "single-claim"
+    }
+  ],
+  "generation_failures": [],
+  "usage": {
+    "calls": 18,
+    "input_tokens": 26378,
+    "output_tokens": 3030
+  }
+}
