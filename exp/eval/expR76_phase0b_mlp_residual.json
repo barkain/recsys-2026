@@ -1,0 +1,93 @@
+{
+  "experiment": "R76 Phase 0B \u2014 MLP residual ranker (fold-0 inner CV)",
+  "created_at": "2026-05-22T23:16:03.971763",
+  "elapsed_s": 47.314375162124634,
+  "verdict": "ARCHIVE",
+  "hyperparams": {
+    "hidden": 64,
+    "n_layers": 3,
+    "dropout": 0.2,
+    "lr": 0.001,
+    "epochs": 30,
+    "weight_decay": 0.0001,
+    "batch_cases": 64,
+    "seed": 0
+  },
+  "metrics": {
+    "all_fold0": {
+      "n": 1600,
+      "baseline": 0.21100906814195042,
+      "r76": 0.1912934117106099,
+      "delta": -0.019715656431340517
+    },
+    "h7": {
+      "n": 200,
+      "baseline": 0.22131935173539474,
+      "r76": 0.20793223342943395,
+      "delta": -0.013387118305960788
+    },
+    "same_artist": {
+      "n": 531,
+      "baseline": 0.44467455069647027,
+      "r76": 0.39917201532453417,
+      "delta": -0.045502535371936104
+    },
+    "diff_artist": {
+      "n": 1069,
+      "baseline": 0.09494136820139847,
+      "r76": 0.08803472273119571,
+      "delta": -0.006906645470202755
+    },
+    "h7_same": {
+      "n": 83,
+      "baseline": 0.42620174901261704,
+      "r76": 0.41280071747298464,
+      "delta": -0.013401031539632402
+    },
+    "h7_diff": {
+      "n": 117,
+      "baseline": 0.07597542888061307,
+      "r76": 0.0625981806464023,
+      "delta": -0.01337724823421077
+    }
+  },
+  "h7_recovery": {
+    "recovered": 0,
+    "lost": 7,
+    "net": -7
+  },
+  "churn": {
+    "top1_changed": 930,
+    "churn_per_80": 46.5,
+    "top20_overlap_mean": 16.41875
+  },
+  "gates": {
+    "h7_delta_>=_+0.005": {
+      "value": -0.013387118305960788,
+      "pass": false
+    },
+    "same_artist_delta_>=_-0.002": {
+      "value": -0.045502535371936104,
+      "pass": false
+    },
+    "diff_artist_delta_>=_0": {
+      "value": -0.006906645470202755,
+      "pass": false
+    },
+    "h7_net_>_0": {
+      "value": -7,
+      "pass": false
+    },
+    "top20_overlap_>=_14": {
+      "value": 16.41875,
+      "pass": true
+    },
+    "top1_churn_per_80_<=_25": {
+      "value": 46.5,
+      "pass": false
+    }
+  },
+  "dataset": "/Users/nadavbarkai/dev/recsys-2026/cache/r76/top30_fold0_dataset.pkl",
+  "n_cases": 1600,
+  "feature_count_mlp": 47
+}

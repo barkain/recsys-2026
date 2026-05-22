@@ -1,0 +1,28 @@
+{
+  "experiment": "R76 Phase 0A \u2014 top-30 OOF dataset",
+  "created_at": "2026-05-22T23:12:50.684491",
+  "elapsed_s": 189.33747720718384,
+  "fold": 0,
+  "n_cases_fold0": 1600,
+  "n_cases_h7": 200,
+  "n_cases_same": 531,
+  "n_candidate_rows": 48000,
+  "gt_in_top30": {
+    "all_fold0": {
+      "count": 679,
+      "rate": 0.424375
+    },
+    "h7": {
+      "count": 87,
+      "rate": 0.435
+    }
+  },
+  "baseline_oof_r54c_top20_ndcg": {
+    "all_fold0": 0.21100906814195042,
+    "h7": 0.22131935173539474,
+    "same_artist": 0.44467455069647027,
+    "diff_artist": 0.09494136820139847
+  },
+  "dataset_path": "/Users/nadavbarkai/dev/recsys-2026/cache/r76/top30_fold0_dataset.pkl",
+  "model_path": "/Users/nadavbarkai/dev/recsys-2026/cache/r76/oof_r54c_fold0.txt"
+}
