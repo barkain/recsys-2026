@@ -1,0 +1,159 @@
+{
+  "experiment": "R70b 5-fold OOF \u2014 true OOF R54c-equivalent baseline",
+  "created_at": "2026-05-22T13:04:02.875059",
+  "elapsed_s": 304.28386998176575,
+  "head_sha": "0ff1d51a90b6d9be1a7e75b0f33cdbb6502cf1f3",
+  "interpretation": "UNCLEAR",
+  "meaning": "5-fold OOF result doesn't cleanly match either prediction. Investigate fold variance.",
+  "feature_stack": {
+    "names": [
+      "rrf_rank_inv",
+      "last_artist_match",
+      "last_tag_jaccard",
+      "query_artist_tok_overlap",
+      "query_title_tok_overlap",
+      "query_meta_tok_overlap",
+      "is_played",
+      "recency_score",
+      "src_a_rank_inv",
+      "src_b_rank_inv",
+      "src_c_rank_inv",
+      "src_d_rank_inv",
+      "src_f_rank_inv",
+      "src_als_rank_inv",
+      "src_a_pres",
+      "src_b_pres",
+      "src_c_pres",
+      "src_d_pres",
+      "src_f_pres",
+      "src_als_pres",
+      "n_sources",
+      "als_dot",
+      "n_history",
+      "popularity",
+      "pool_artist_frac",
+      "pool_artist_count",
+      "source_count_v2",
+      "r21_rank_inv",
+      "r21_presence",
+      "same_album_last1",
+      "same_album_last3",
+      "same_album_any",
+      "album_history_count",
+      "pool_same_album_count",
+      "r54_rank_inv",
+      "r54_presence",
+      "r54_cosine"
+    ],
+    "n_features": 37,
+    "structure": "FEAT_R39_ALL + FEAT_R54 (identical schema to R54c)"
+  },
+  "per_fold": {
+    "0": {
+      "n_held": 1600,
+      "n_h7": 200,
+      "n_same": 531,
+      "baseline_all": 0.28788361352339303,
+      "sibling_all": 0.21231507683785647,
+      "delta_all": -0.07556853668553656,
+      "baseline_h7": 0.30434128790180254,
+      "sibling_h7": 0.2225734642826511,
+      "delta_h7": -0.08176782361915144,
+      "baseline_same": 0.5983678767297812,
+      "sibling_same": 0.4475100178047726,
+      "delta_same": -0.15085785892500858
+    },
+    "1": {
+      "n_held": 1600,
+      "n_h7": 200,
+      "n_same": 531,
+      "baseline_all": 0.3055034011595228,
+      "sibling_all": 0.2157703893829122,
+      "delta_all": -0.08973301177661058,
+      "baseline_h7": 0.3366217258792088,
+      "sibling_h7": 0.2239291262482425,
+      "delta_h7": -0.11269259963096631,
+      "baseline_same": 0.620610647871413,
+      "sibling_same": 0.4480543801847971,
+      "delta_same": -0.17255626768661586
+    },
+    "2": {
+      "n_held": 1600,
+      "n_h7": 200,
+      "n_same": 580,
+      "baseline_all": 0.3301043513304391,
+      "sibling_all": 0.23883272321492277,
+      "delta_all": -0.09127162811551631,
+      "baseline_h7": 0.37340843657583533,
+      "sibling_h7": 0.2737493606035048,
+      "delta_h7": -0.09965907597233054,
+      "baseline_same": 0.6329181426032823,
+      "sibling_same": 0.46494860519060494,
+      "delta_same": -0.16796953741267734
+    },
+    "3": {
+      "n_held": 1600,
+      "n_h7": 200,
+      "n_same": 625,
+      "baseline_all": 0.33841278596998137,
+      "sibling_all": 0.23573652996707622,
+      "delta_all": -0.10267625600290514,
+      "baseline_h7": 0.3279215523555413,
+      "sibling_h7": 0.21544530844794552,
+      "delta_h7": -0.11247624390759581,
+      "baseline_same": 0.6303907411521426,
+      "sibling_same": 0.44535781690051646,
+      "delta_same": -0.1850329242516261
+    },
+    "4": {
+      "n_held": 1600,
+      "n_h7": 200,
+      "n_same": 590,
+      "baseline_all": 0.3174732894209108,
+      "sibling_all": 0.21552859000035263,
+      "delta_all": -0.10194469942055817,
+      "baseline_h7": 0.3995965234607072,
+      "sibling_h7": 0.28536686190079485,
+      "delta_h7": -0.11422966155991232,
+      "baseline_same": 0.6549899186373158,
+      "sibling_same": 0.4430558402997666,
+      "delta_same": -0.21193407833754924
+    }
+  },
+  "aggregate": {
+    "all_dev": {
+      "n": 8000,
+      "R54c_in_sample": 0.3158754882808494,
+      "R70b_5fold_OOF": 0.22363666188062406,
+      "delta": -0.09223882640022532
+    },
+    "h7": {
+      "n": 1000,
+      "R54c_in_sample": 0.34837790523461903,
+      "R70b_5fold_OOF": 0.24421282429662772,
+      "delta": -0.10416508093799132
+    },
+    "same_artist": {
+      "n": 2857,
+      "R54c_in_sample": 0.6282143452884995,
+      "R70b_5fold_OOF": 0.4497607517265304,
+      "delta": -0.1784535935619691
+    },
+    "diff_artist": {
+      "n": 5143,
+      "R54c_in_sample": 0.14236739680294613,
+      "R70b_5fold_OOF": 0.09802193804438947,
+      "delta": -0.044345458758556666
+    }
+  },
+  "h7_recovery": {
+    "recovered": 2,
+    "lost": 79,
+    "net": -77
+  },
+  "churn": {
+    "top1_changed": 2202,
+    "churn_per_80": 22.02
+  },
+  "note": "R70b 5-fold OOF establishes the TRUE OOF baseline for sibling experiments with 37-feature R54c schema. Frozen R54c is in-sample for all 8000 dev cases. Future sibling-OOF experiments (e.g., with r68_* features added) should compare against this baseline."
+}
