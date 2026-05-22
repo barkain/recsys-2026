@@ -1,0 +1,142 @@
+{
+  "experiment": "R70 Phase 0 \u2014 joint R54+R68 LR addition (fold-0)",
+  "created_at": "2026-05-22T10:06:41.693765",
+  "elapsed_s": 336.0305268764496,
+  "branch": "r70-joint-r54-r68-features",
+  "head_sha": "1c399fe1b594bee5e778ee64d7e259b79cc942a7",
+  "verdict": "ARCHIVE_PHASE_0",
+  "fold": 0,
+  "n_fold0": 1600,
+  "n_train": 6400,
+  "feature_stack": {
+    "names": [
+      "rrf_rank_inv",
+      "last_artist_match",
+      "last_tag_jaccard",
+      "query_artist_tok_overlap",
+      "query_title_tok_overlap",
+      "query_meta_tok_overlap",
+      "is_played",
+      "recency_score",
+      "src_a_rank_inv",
+      "src_b_rank_inv",
+      "src_c_rank_inv",
+      "src_d_rank_inv",
+      "src_f_rank_inv",
+      "src_als_rank_inv",
+      "src_a_pres",
+      "src_b_pres",
+      "src_c_pres",
+      "src_d_pres",
+      "src_f_pres",
+      "src_als_pres",
+      "n_sources",
+      "als_dot",
+      "n_history",
+      "popularity",
+      "pool_artist_frac",
+      "pool_artist_count",
+      "source_count_v2",
+      "r21_rank_inv",
+      "r21_presence",
+      "same_album_last1",
+      "same_album_last3",
+      "same_album_any",
+      "album_history_count",
+      "pool_same_album_count",
+      "r54_rank_inv",
+      "r54_presence",
+      "r54_cosine",
+      "r68_rank_inv",
+      "r68_presence",
+      "r68_cosine"
+    ],
+    "n_features": 40,
+    "structure": "FEAT_R39_ALL + FEAT_R54 + FEAT_R68"
+  },
+  "pool": {
+    "weights": {
+      "A": 1.0,
+      "B": 1.0,
+      "C": 1.0,
+      "D": 0.5,
+      "F": 1.0,
+      "ALS": 1.0,
+      "R21": 1.0,
+      "R54": 1.0
+    },
+    "K": 300,
+    "note": "R54-stacked, bitwise identical to R54c production pool"
+  },
+  "missing_r68": {
+    "train": 0,
+    "dev": 0
+  },
+  "metrics": {
+    "all_fold0": {
+      "n": 1600,
+      "baseline": 0.28788361352339303,
+      "r70": 0.209174267934093,
+      "delta": -0.07870934558930004
+    },
+    "h7": {
+      "n": 200,
+      "baseline": 0.30434128790180254,
+      "r70": 0.22454679286421356,
+      "delta": -0.07979449503758898
+    },
+    "same_artist": {
+      "n": 531,
+      "baseline": 0.5983678767297812,
+      "r70": 0.43882462261313093,
+      "delta": -0.15954325411665027
+    },
+    "diff_artist": {
+      "n": 1069,
+      "baseline": 0.13365803469963977,
+      "r70": 0.09510098604955682,
+      "delta": -0.038557048650082956
+    },
+    "h7_same": {
+      "n": 83,
+      "baseline": 0.5697665433497544,
+      "r70": 0.4405172301560615,
+      "delta": -0.12924931319369293
+    },
+    "h7_diff": {
+      "n": 117,
+      "baseline": 0.11604815796864003,
+      "r70": 0.07133699546914196,
+      "delta": -0.04471116249949807
+    }
+  },
+  "h7_recovery": {
+    "recovered": 0,
+    "lost": 17,
+    "net": -17
+  },
+  "churn": {
+    "top1_changed": 706,
+    "churn_per_80": 35.3,
+    "top20_overlap_mean": 15.326875
+  },
+  "gates": {
+    "h7_delta_>=_0.005": {
+      "value": -0.07979449503758898,
+      "pass": false
+    },
+    "same_artist_delta_>=_-0.002": {
+      "value": -0.15954325411665027,
+      "pass": false
+    },
+    "all_fold0_delta_>=_0": {
+      "value": -0.07870934558930004,
+      "pass": false
+    },
+    "h7_net_>_0": {
+      "value": -17,
+      "pass": false
+    }
+  },
+  "design": "ADDITION form: pool unchanged (R54-stacked), feature stack expanded from 37 (R54c LR) to 40 by appending R68's (rank_inv, presence, cosine) alongside R54's. Sibling LR retrained on fold-0 train; evaluated against R54c frozen LR on the SAME pool. Distinct from R68 (substitution, dropped R54 features) and R60 (matched-pool retrain with pool changes)."
+}
