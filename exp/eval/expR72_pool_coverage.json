@@ -1,0 +1,867 @@
+{
+  "experiment": "R72 pool-coverage scan (fold-0)",
+  "created_at": "2026-05-22T14:00:24.502757",
+  "elapsed_s": 23.860254287719727,
+  "verdict": "POOL_HEADROOM_MARGINAL",
+  "meaning": "R68 admission surfaces GT into top-300 of augmented pool but rank is deep (>30 mostly). Needs ranker awareness to actually convert. Less promising for late-fusion only.",
+  "n_fold0": 1600,
+  "n_h7": 200,
+  "categories_fold0": {
+    "POOL_BOTH": 811,
+    "POOL_R68_UNIQUE": 118,
+    "POOL_BASE_ONLY": 156,
+    "POOL_NEITHER": 515
+  },
+  "categories_h7": {
+    "POOL_NEITHER": 61,
+    "POOL_BOTH": 98,
+    "POOL_BASE_ONLY": 25,
+    "POOL_R68_UNIQUE": 16
+  },
+  "unique_to_r68": {
+    "fold0_total": 118,
+    "h7_total": 16
+  },
+  "aug_admission_recovery": {
+    "fold0_in_aug_pool": 35,
+    "fold0_top30": 0,
+    "fold0_top20": 0,
+    "h7_in_aug_pool": 6,
+    "h7_top30": 0,
+    "h7_top20": 0,
+    "aug_rank_distribution": {
+      "top-300": 35
+    }
+  },
+  "substitution_loss": {
+    "fold0_dropped": 35
+  },
+  "per_case_unique": [
+    {
+      "case_idx": 9,
+      "h7": false,
+      "r68_rank": 228,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 49,
+      "h7": false,
+      "r68_rank": 20,
+      "aug_rank": 129,
+      "sub_rank": 103
+    },
+    {
+      "case_idx": 166,
+      "h7": false,
+      "r68_rank": 12,
+      "aug_rank": 113,
+      "sub_rank": 103
+    },
+    {
+      "case_idx": 194,
+      "h7": false,
+      "r68_rank": 85,
+      "aug_rank": 267,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 241,
+      "h7": false,
+      "r68_rank": 236,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 264,
+      "h7": false,
+      "r68_rank": 241,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 384,
+      "h7": false,
+      "r68_rank": 203,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 453,
+      "h7": false,
+      "r68_rank": 164,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 488,
+      "h7": false,
+      "r68_rank": 13,
+      "aug_rank": 125,
+      "sub_rank": 89
+    },
+    {
+      "case_idx": 570,
+      "h7": false,
+      "r68_rank": 111,
+      "aug_rank": 286,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 571,
+      "h7": false,
+      "r68_rank": 140,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 572,
+      "h7": false,
+      "r68_rank": 209,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 574,
+      "h7": false,
+      "r68_rank": 133,
+      "aug_rank": -1,
+      "sub_rank": 288
+    },
+    {
+      "case_idx": 745,
+      "h7": false,
+      "r68_rank": 97,
+      "aug_rank": 269,
+      "sub_rank": 232
+    },
+    {
+      "case_idx": 749,
+      "h7": false,
+      "r68_rank": 40,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 751,
+      "h7": true,
+      "r68_rank": 174,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 950,
+      "h7": false,
+      "r68_rank": 161,
+      "aug_rank": 278,
+      "sub_rank": 230
+    },
+    {
+      "case_idx": 1069,
+      "h7": false,
+      "r68_rank": 125,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 1070,
+      "h7": false,
+      "r68_rank": 258,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 1218,
+      "h7": false,
+      "r68_rank": 23,
+      "aug_rank": 128,
+      "sub_rank": 151
+    },
+    {
+      "case_idx": 1219,
+      "h7": false,
+      "r68_rank": 263,
+      "aug_rank": -1,
+      "sub_rank": 256
+    },
+    {
+      "case_idx": 1223,
+      "h7": true,
+      "r68_rank": 85,
+      "aug_rank": 206,
+      "sub_rank": 228
+    },
+    {
+      "case_idx": 1451,
+      "h7": false,
+      "r68_rank": 223,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 1502,
+      "h7": false,
+      "r68_rank": 91,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 1597,
+      "h7": false,
+      "r68_rank": 67,
+      "aug_rank": 268,
+      "sub_rank": 215
+    },
+    {
+      "case_idx": 1642,
+      "h7": false,
+      "r68_rank": 98,
+      "aug_rank": 216,
+      "sub_rank": 273
+    },
+    {
+      "case_idx": 1744,
+      "h7": false,
+      "r68_rank": 195,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 1834,
+      "h7": false,
+      "r68_rank": 36,
+      "aug_rank": 154,
+      "sub_rank": 227
+    },
+    {
+      "case_idx": 1839,
+      "h7": true,
+      "r68_rank": 247,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 1840,
+      "h7": false,
+      "r68_rank": 291,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 1845,
+      "h7": false,
+      "r68_rank": 297,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 1912,
+      "h7": false,
+      "r68_rank": 225,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 2040,
+      "h7": false,
+      "r68_rank": 130,
+      "aug_rank": 263,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 2046,
+      "h7": false,
+      "r68_rank": 91,
+      "aug_rank": 276,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 2148,
+      "h7": false,
+      "r68_rank": 136,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 2149,
+      "h7": false,
+      "r68_rank": 86,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 2190,
+      "h7": false,
+      "r68_rank": 62,
+      "aug_rank": 234,
+      "sub_rank": 190
+    },
+    {
+      "case_idx": 2814,
+      "h7": false,
+      "r68_rank": 290,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 2815,
+      "h7": true,
+      "r68_rank": 255,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 2865,
+      "h7": false,
+      "r68_rank": 262,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 3000,
+      "h7": false,
+      "r68_rank": 71,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 3048,
+      "h7": false,
+      "r68_rank": 286,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 3106,
+      "h7": false,
+      "r68_rank": 53,
+      "aug_rank": -1,
+      "sub_rank": 273
+    },
+    {
+      "case_idx": 3160,
+      "h7": false,
+      "r68_rank": 54,
+      "aug_rank": 239,
+      "sub_rank": 250
+    },
+    {
+      "case_idx": 3177,
+      "h7": false,
+      "r68_rank": 231,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 3179,
+      "h7": false,
+      "r68_rank": 296,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 3249,
+      "h7": false,
+      "r68_rank": 142,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 3254,
+      "h7": false,
+      "r68_rank": 77,
+      "aug_rank": 244,
+      "sub_rank": 202
+    },
+    {
+      "case_idx": 3255,
+      "h7": true,
+      "r68_rank": 167,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 3344,
+      "h7": false,
+      "r68_rank": 102,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 3345,
+      "h7": false,
+      "r68_rank": 57,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 3544,
+      "h7": false,
+      "r68_rank": 121,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 3689,
+      "h7": false,
+      "r68_rank": 95,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 3819,
+      "h7": false,
+      "r68_rank": 249,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 3866,
+      "h7": false,
+      "r68_rank": 9,
+      "aug_rank": 116,
+      "sub_rank": 89
+    },
+    {
+      "case_idx": 3922,
+      "h7": false,
+      "r68_rank": 65,
+      "aug_rank": 177,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 4009,
+      "h7": false,
+      "r68_rank": 283,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 4010,
+      "h7": false,
+      "r68_rank": 121,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 4012,
+      "h7": false,
+      "r68_rank": 210,
+      "aug_rank": 269,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 4018,
+      "h7": false,
+      "r68_rank": 185,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 4022,
+      "h7": false,
+      "r68_rank": 165,
+      "aug_rank": -1,
+      "sub_rank": 271
+    },
+    {
+      "case_idx": 4023,
+      "h7": true,
+      "r68_rank": 43,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 4152,
+      "h7": false,
+      "r68_rank": 23,
+      "aug_rank": 143,
+      "sub_rank": 143
+    },
+    {
+      "case_idx": 4153,
+      "h7": false,
+      "r68_rank": 209,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 4159,
+      "h7": true,
+      "r68_rank": 17,
+      "aug_rank": 112,
+      "sub_rank": 128
+    },
+    {
+      "case_idx": 4208,
+      "h7": false,
+      "r68_rank": 115,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 4406,
+      "h7": false,
+      "r68_rank": 124,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 4615,
+      "h7": true,
+      "r68_rank": 168,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 4760,
+      "h7": false,
+      "r68_rank": 79,
+      "aug_rank": 212,
+      "sub_rank": 243
+    },
+    {
+      "case_idx": 4761,
+      "h7": false,
+      "r68_rank": 24,
+      "aug_rank": 142,
+      "sub_rank": 138
+    },
+    {
+      "case_idx": 4762,
+      "h7": false,
+      "r68_rank": 87,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 4766,
+      "h7": false,
+      "r68_rank": 147,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 4778,
+      "h7": false,
+      "r68_rank": 141,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 4808,
+      "h7": false,
+      "r68_rank": 174,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 4811,
+      "h7": false,
+      "r68_rank": 65,
+      "aug_rank": 296,
+      "sub_rank": 259
+    },
+    {
+      "case_idx": 4812,
+      "h7": false,
+      "r68_rank": 156,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 4819,
+      "h7": false,
+      "r68_rank": 268,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 4936,
+      "h7": false,
+      "r68_rank": 207,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 5072,
+      "h7": false,
+      "r68_rank": 299,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 5078,
+      "h7": false,
+      "r68_rank": 152,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 5079,
+      "h7": true,
+      "r68_rank": 69,
+      "aug_rank": 184,
+      "sub_rank": 232
+    },
+    {
+      "case_idx": 5276,
+      "h7": false,
+      "r68_rank": 168,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 5441,
+      "h7": false,
+      "r68_rank": 190,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 5447,
+      "h7": true,
+      "r68_rank": 169,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 5511,
+      "h7": true,
+      "r68_rank": 150,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 5601,
+      "h7": false,
+      "r68_rank": 53,
+      "aug_rank": 174,
+      "sub_rank": 139
+    },
+    {
+      "case_idx": 5605,
+      "h7": false,
+      "r68_rank": 185,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 5659,
+      "h7": false,
+      "r68_rank": 163,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 5672,
+      "h7": false,
+      "r68_rank": 130,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 5736,
+      "h7": false,
+      "r68_rank": 241,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 5814,
+      "h7": false,
+      "r68_rank": 83,
+      "aug_rank": 228,
+      "sub_rank": 244
+    },
+    {
+      "case_idx": 5828,
+      "h7": false,
+      "r68_rank": 271,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 5836,
+      "h7": false,
+      "r68_rank": 130,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 6140,
+      "h7": false,
+      "r68_rank": 214,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 6235,
+      "h7": false,
+      "r68_rank": 110,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 6258,
+      "h7": false,
+      "r68_rank": 237,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 6263,
+      "h7": true,
+      "r68_rank": 41,
+      "aug_rank": 156,
+      "sub_rank": 149
+    },
+    {
+      "case_idx": 6362,
+      "h7": false,
+      "r68_rank": 119,
+      "aug_rank": 243,
+      "sub_rank": 212
+    },
+    {
+      "case_idx": 6442,
+      "h7": false,
+      "r68_rank": 103,
+      "aug_rank": 244,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 6539,
+      "h7": false,
+      "r68_rank": 120,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 6543,
+      "h7": true,
+      "r68_rank": 6,
+      "aug_rank": 104,
+      "sub_rank": 91
+    },
+    {
+      "case_idx": 6721,
+      "h7": false,
+      "r68_rank": 293,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 6722,
+      "h7": false,
+      "r68_rank": 257,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 6723,
+      "h7": false,
+      "r68_rank": 70,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 6727,
+      "h7": true,
+      "r68_rank": 136,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 6837,
+      "h7": false,
+      "r68_rank": 262,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 6870,
+      "h7": false,
+      "r68_rank": 45,
+      "aug_rank": 204,
+      "sub_rank": 212
+    },
+    {
+      "case_idx": 6971,
+      "h7": false,
+      "r68_rank": 182,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 6972,
+      "h7": false,
+      "r68_rank": 219,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 6974,
+      "h7": false,
+      "r68_rank": 233,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 6978,
+      "h7": false,
+      "r68_rank": 107,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 6979,
+      "h7": false,
+      "r68_rank": 170,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 6982,
+      "h7": false,
+      "r68_rank": 228,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 7110,
+      "h7": false,
+      "r68_rank": 24,
+      "aug_rank": 257,
+      "sub_rank": 208
+    },
+    {
+      "case_idx": 7668,
+      "h7": false,
+      "r68_rank": 128,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 7687,
+      "h7": true,
+      "r68_rank": 91,
+      "aug_rank": 234,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 7783,
+      "h7": true,
+      "r68_rank": 207,
+      "aug_rank": -1,
+      "sub_rank": -1
+    },
+    {
+      "case_idx": 7981,
+      "h7": false,
+      "r68_rank": 169,
+      "aug_rank": -1,
+      "sub_rank": -1
+    }
+  ]
+}
