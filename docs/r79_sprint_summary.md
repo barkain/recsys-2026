@@ -127,3 +127,10 @@ Possible remaining moves:
 - `docs/r79_top_rank_retriever_design.md` — design + phased plan
 - `docs/r79_phase0a_data_audit.md` — Phase 0A audit
 - `docs/r79_sprint_summary.md` — this file
+
+## Forward pointer
+
+R79 closes the hard-negative retriever path. Future GPU-heavy nDCG work
+moves to **R80 listwise neural ranker over top-300** — a learned
+replacement for the R54c LR's top-rank decision surface, NOT a residual
+or a fresh retriever. See `docs/r80_listwise_ranker_design.md`.
