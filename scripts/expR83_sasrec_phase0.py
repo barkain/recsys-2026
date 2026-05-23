@@ -89,10 +89,12 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO))
 
 TRAINING_PAIRS = REPO / "cache" / "r79" / "training_pairs.pkl"
-CATALOG_EMBS = REPO / "cache" / "r68" / "phase0_fold0" / "track_embeddings.npy"
-CATALOG_IDS = REPO / "cache" / "r68" / "phase0_fold0" / "track_ids.json"
-QUERY_EMBS_FOLD0 = REPO / "cache" / "r68" / "phase0_fold0" / "query_embeddings_dev.npy"
-R68_LISTS = REPO / "cache" / "r68" / "phase0_fold0" / "oof_r68_lists_fold0.json"
+# Use R80's fp16 catalog (committed to git, 96 MB)
+CATALOG_EMBS_R80_FP16 = REPO / "cache" / "r80" / "catalog_track_embs_fp16.npy"
+CATALOG_IDS_R80 = REPO / "cache" / "r80" / "catalog_track_ids.json"
+# Fallback (R68 fp32 catalog, not in git)
+CATALOG_EMBS_R68 = REPO / "cache" / "r68" / "phase0_fold0" / "track_embeddings.npy"
+CATALOG_IDS_R68 = REPO / "cache" / "r68" / "phase0_fold0" / "track_ids.json"
 
 OUT_DIR = REPO / "cache" / "r83"
 OUT_RESULT = REPO / "exp" / "eval" / "expR83_phase0.json"
@@ -283,8 +285,16 @@ def main():
     print(f"  {len(pairs)} cases total")
 
     print(f"{ts()} Loading catalog BGE-large embeddings ...", flush=True)
-    catalog_embs = np.load(CATALOG_EMBS).astype(np.float32)  # (47K, 1024)
-    catalog_ids = json.load(open(CATALOG_IDS))
+    if CATALOG_EMBS_R80_FP16.exists():
+        catalog_embs = np.load(CATALOG_EMBS_R80_FP16).astype(np.float32)  # fp16→fp32
+        catalog_ids = json.load(open(CATALOG_IDS_R80))
+        print(f"  using R80 fp16 catalog (re-cast to fp32 for training)")
+    elif CATALOG_EMBS_R68.exists():
+        catalog_embs = np.load(CATALOG_EMBS_R68).astype(np.float32)
+        catalog_ids = json.load(open(CATALOG_IDS_R68))
+        print(f"  using R68 fp32 catalog")
+    else:
+        raise FileNotFoundError("Neither R80 fp16 nor R68 fp32 catalog found")
     track_to_idx = {tid: i for i, tid in enumerate(catalog_ids)}
     n_items = catalog_embs.shape[0]
     print(f"  catalog: {n_items} tracks × {catalog_embs.shape[1]} dim")
