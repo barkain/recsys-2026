@@ -1,0 +1,44 @@
+{
+  "experiment": "R80 Phase 0A \u2014 listwise dataset",
+  "created_at": "2026-05-23T11:56:13.640903",
+  "elapsed_s": 57.43165612220764,
+  "fold": 0,
+  "n_cases": 1600,
+  "n_h7": 200,
+  "pool_k": 300,
+  "gt_in_pool_count": 967,
+  "gt_in_pool_rate": 0.604375,
+  "h7_gt_in_pool_count": 123,
+  "h7_gt_in_pool_rate": 0.615,
+  "baseline_fold0": {
+    "all_fold0": {
+      "n": 1600,
+      "ndcg_at_20": 0.21100906814195042
+    },
+    "h7": {
+      "n": 200,
+      "ndcg_at_20": 0.22131935173539474
+    },
+    "same_artist": {
+      "n": 531,
+      "ndcg_at_20": 0.44467455069647027
+    },
+    "diff_artist": {
+      "n": 1069,
+      "ndcg_at_20": 0.09494136820139847
+    },
+    "h7_same": {
+      "n": 83,
+      "ndcg_at_20": 0.42620174901261704
+    },
+    "h7_diff": {
+      "n": 117,
+      "ndcg_at_20": 0.07597542888061307
+    }
+  },
+  "files": {
+    "dataset": "/Users/nadavbarkai/dev/recsys-2026/cache/r80/listwise_dataset_fold0.pkl",
+    "dataset_size_gb": 0.106790599,
+    "baseline": "/Users/nadavbarkai/dev/recsys-2026/cache/r80/eval_baseline.json"
+  }
+}

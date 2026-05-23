@@ -252,7 +252,8 @@ def main() -> None:
         artist_centroids = {a: np.mean(np.stack(es), axis=0)
                             for a, es in artist_centroids.items()}
 
-        # Build per-candidate feature matrix (47 dim numeric + 1024 track emb)
+        # Build per-candidate feature matrix (47 dim numeric)
+        # Track embeddings are referenced by track_id at training time (not duplicated here)
         # numeric part columns:
         #   0..36: 37 LR features
         #   37: r54c_score
@@ -266,7 +267,8 @@ def main() -> None:
         #   45: bge_max_artist_centroid_cos
         #   46: n_history (normalized by 10)
         numeric = np.zeros((POOL_K, 47), dtype=np.float32)
-        track_embs = np.zeros((POOL_K, 1024), dtype=np.float32)
+        # Track BGE indices (catalog rows) — Colab dereferences via catalog cache
+        track_emb_idx = np.full(POOL_K, -1, dtype=np.int32)
 
         for k_row, tid in enumerate(pool_sorted):
             numeric[k_row, :37] = feats37_sorted[k_row]
@@ -278,7 +280,7 @@ def main() -> None:
 
             tidx = r68_track_to_idx.get(str(tid))
             if tidx is not None:
-                track_embs[k_row] = r68_track_embs[tidx]
+                track_emb_idx[k_row] = tidx
                 t_emb = r68_track_embs[tidx]
                 numeric[k_row, 42] = float(np.dot(bge_query, t_emb))
                 if played_arr is not None:
@@ -301,8 +303,8 @@ def main() -> None:
             "gt": gt,
             "gt_pool_idx": gt_idx,
             "gt_in_pool": gt_idx >= 0,
-            "numeric_features": numeric,         # (300, 47)
-            "bge_track_emb": track_embs,         # (300, 1024)
+            "numeric_features": numeric,                    # (300, 47)
+            "track_emb_idx": track_emb_idx,                 # (300,) int32 → catalog
             "bge_query_emb": bge_query.astype(np.float32),  # (1024,)
             "r54c_top20_baseline": pool_sorted[:TOP_20],
             "r54c_b_ndcg_at_20": ndcg_at_k(gt_idx + 1, TOP_20) if 0 <= gt_idx < TOP_20 else 0.0,
@@ -344,7 +346,15 @@ def main() -> None:
     # ---- Save ----
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    print(f"\n{ts()} Saving listwise dataset (this is the big file ~{len(cases_out)*300*1024*4/1e9:.1f} GB) ...",
+    # Save catalog as fp16 for compact shipping (96 MB instead of 192 MB)
+    catalog_path = OUT_DIR / "catalog_track_embs_fp16.npy"
+    catalog_ids_path = OUT_DIR / "catalog_track_ids.json"
+    np.save(catalog_path, r68_track_embs.astype(np.float16))
+    catalog_ids_path.write_text(json.dumps(r68_track_ids))
+    print(f"\n{ts()} Saved catalog (fp16) → {catalog_path} "
+          f"({catalog_path.stat().st_size/1e6:.0f} MB)", flush=True)
+
+    print(f"\n{ts()} Saving compact dataset (~{sum(c['numeric_features'].nbytes for c in cases_out)/1e6:.0f} MB) ...",
           flush=True)
     with open(OUT_DATA, "wb") as f:
         pickle.dump({
