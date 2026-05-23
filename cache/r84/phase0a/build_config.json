@@ -1,0 +1,21 @@
+{
+  "experiment": "R84 Phase 0A",
+  "created_at": "2026-05-23T14:15:48.754328",
+  "query_format_template": "R54_phase3 (line refs: expR54_phase3_full5fold_train.py:102-137)",
+  "query_format_template_version": "v1",
+  "dev_exclusion_mode": "global",
+  "train_split_per_session_cap_disabled": true,
+  "train_split_global_cap_disabled": true,
+  "dev_pair_count_per_case": 1,
+  "fold_assignment_seed": 0,
+  "fold_assignment_source": "scripts.expS2_lambdarank_grouped.grouped_session_folds(sessions, seed=0)",
+  "train_dataset_uri": "talkpl-ai/TalkPlayData-Challenge-Dataset[train]",
+  "catalog_dataset_uri": "talkpl-ai/TalkPlayData-Challenge-Track-Metadata[all_tracks]",
+  "catalog_n_tracks": 47071,
+  "dev_payload_path": "exp/eval/_R12_all_turns_payload.pkl",
+  "dev_payload_sha256": "256180ee68c3d55f",
+  "fingerprint": "887d72747f8f0e1a69a050ce36fc46b8d8f9043668b255d1ce11e61f3ea70bad",
+  "manifest_path": "cache/r84/phase0a/pair_manifest.parquet",
+  "manifest_sha256": "a6ecba53726f827ad5b1f6ff121227d2cadb523b2fe17f84d8b147bd487c6734",
+  "manifest_n_rows": 153592
+}

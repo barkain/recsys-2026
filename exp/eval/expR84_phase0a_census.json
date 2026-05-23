@@ -1,0 +1,57 @@
+{
+  "experiment": "R84 Phase 0A \u2014 full-corpus pair census",
+  "created_at": "2026-05-23T14:15:48.960870",
+  "n_records_total": 153592,
+  "n_records_train_split": 121592,
+  "n_records_dev": 32000,
+  "per_fold_pair_counts": {
+    "train_split_global": 121592,
+    "fold_0_training_pairs": 147192,
+    "fold_0_dev_only_pairs": 25600,
+    "fold_1_training_pairs": 147192,
+    "fold_1_dev_only_pairs": 25600,
+    "fold_2_training_pairs": 147192,
+    "fold_2_dev_only_pairs": 25600,
+    "fold_3_training_pairs": 147192,
+    "fold_3_dev_only_pairs": 25600,
+    "fold_4_training_pairs": 147192,
+    "fold_4_dev_only_pairs": 25600
+  },
+  "r54_baseline_per_fold": 26400,
+  "r54_train_split_cap": 20000,
+  "train_split_query_length_stats": {
+    "n": 121592,
+    "char_p50": 854,
+    "char_p90": 1293,
+    "char_p99": 1725,
+    "char_max": 6719,
+    "token_p90_est": 323
+  },
+  "dev_query_length_stats": {
+    "n": 32000,
+    "char_p50": 962,
+    "char_p90": 1484,
+    "char_p99": 1940,
+    "char_max": 3379,
+    "token_p90_est": 371
+  },
+  "train_split_same_diff_artist": {
+    "n_total_train_split": 121592,
+    "same_artist": 66337,
+    "diff_artist": 40096,
+    "no_context": 15159,
+    "same_artist_rate": 0.6232747362190298
+  },
+  "manifest_path": "cache/r84/phase0a/pair_manifest.parquet",
+  "manifest_sha256": "a6ecba53726f827ad5b1f6ff121227d2cadb523b2fe17f84d8b147bd487c6734",
+  "manifest_size_mb": 18.9,
+  "build_config_path": "cache/r84/phase0a/build_config.json",
+  "build_config_fingerprint": "887d72747f8f0e1a69a050ce36fc46b8d8f9043668b255d1ce11e61f3ea70bad",
+  "gate": {
+    "rule": "min(per_fold_training_pairs) > 1.5x R54 baseline (26400) -> >39600",
+    "min_observed_per_fold": 147192,
+    "max_observed_per_fold": 147192,
+    "ratio_to_r54_baseline": 5.575454545454545,
+    "verdict": "PROCEED_TO_PHASE_0B"
+  }
+}
