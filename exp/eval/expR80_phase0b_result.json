@@ -1,0 +1,55 @@
+{
+  "experiment": "R80 Phase 0B — listwise transformer fold-0",
+  "created_at": "2026-05-23T09:06:57",
+  "elapsed_s": 351,
+  "verdict": "ARCHIVE",
+  "hyperparams": {
+    "model": "ListwiseRanker",
+    "n_layers": 4,
+    "hidden": 256,
+    "n_heads": 8,
+    "ff_dim": 512,
+    "epochs": 20,
+    "batch_cases": 8,
+    "lr": 1e-4,
+    "weight_decay": 0.01,
+    "dropout": 0.2,
+    "bf16_autocast": true,
+    "seed": 0,
+    "n_inner_folds": 5,
+    "n_params_M": 2.65
+  },
+  "training": {
+    "fold_0_final_loss": 2.4526,
+    "fold_1_final_loss": 2.4755,
+    "fold_2_final_loss": 2.4904,
+    "fold_3_final_loss": 2.4912,
+    "fold_4_final_loss": 2.4764,
+    "starting_loss_avg": 3.95,
+    "convergence_note": "Loss decreased smoothly from 3.95 to 2.45 across 20 epochs; healthy training, but predictions don't beat baseline"
+  },
+  "metrics": {
+    "all_fold0": {"n": 1600, "baseline": 0.2110, "r80": 0.1808, "delta": -0.0302},
+    "h7": {"n": 200, "baseline": 0.2213, "r80": 0.1953, "delta": -0.0260},
+    "same_artist": {"n": 531, "baseline": 0.4447, "r80": 0.4150, "delta": -0.0296},
+    "diff_artist": {"n": 1069, "baseline": 0.0949, "r80": 0.0644, "delta": -0.0305}
+  },
+  "h7_recovery": {"recovered": 6, "lost": 17, "net": -11},
+  "churn": {"top1_changed": 1012, "churn_per_80": 50.6, "top20_overlap_mean": 11.72},
+  "gates": {
+    "h7_delta_>=_+0.005": {"value": -0.0260, "pass": false},
+    "same_artist_delta_>=_-0.002": {"value": -0.0296, "pass": false},
+    "h7_net_>_0": {"value": -11, "pass": false},
+    "churn_<=_25": {"value": 50.6, "pass": false},
+    "overlap_>=_14": {"value": 11.72, "pass": false}
+  },
+  "diagnosis": "R80 trained cleanly (loss 3.95 -> 2.45) and recovered 6 h7 cases R54c missed. But it lost 17 cases R54c had right and net-regressed across all subsets. Same fundamental failure mode as R76 (small residual MLP): any neural model on these features chases semantic similarity neighbors and breaks R54c's calibrated same-artist preference. The richer architecture (transformer + cross-candidate attention) extracts MORE signal (recovery=6 vs R76's 0) but still cannot beat R54c on the same top-300 pool.",
+  "cost_estimate_usd": 3.0,
+  "phase_1_status": "CANCELLED per predeclared rule: 'if Phase 0B fails, ARCHIVE'",
+  "comparison_to_prior_archs": {
+    "R71_lightgbm_stacker": {"h7_delta": -0.005, "same_art": -0.004, "arch": "tree, 5 features"},
+    "R76_neural_residual_MLP": {"h7_delta": -0.0134, "same_art": -0.0455, "arch": "tiny MLP residual on top-30"},
+    "R80_listwise_transformer": {"h7_delta": -0.0260, "same_art": -0.0296, "arch": "4-layer Transformer on top-300, listwise CE"}
+  },
+  "interpretation": "All three neural architectures over the R54-stacked top-300 pool lose net h7 with same-artist regression. The bottleneck is FEATURE INFORMATION, not architecture. The available LR + R68 BGE + semantic features don't carry enough new signal beyond R54c LR to overcome the cost of disrupting calibration."
+}
