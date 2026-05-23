@@ -1,0 +1,47 @@
+{
+  "experiment": "R79 Phase 0B — fine-tune + fold-0 standalone eval (run on Colab A100)",
+  "created_at": "2026-05-23T08:40:20",
+  "elapsed_s": 836,
+  "verdict": "ARCHIVE",
+  "hyperparams": {
+    "model": "BAAI/bge-large-en-v1.5",
+    "epochs": 2,
+    "lr": 1e-05,
+    "batch_cases": 8,
+    "max_len_query": 192,
+    "max_len_track": 64,
+    "n_training_pairs": 8000,
+    "n_fold0_eval": 1600,
+    "hard_negs_per_case": 16,
+    "no_random_negatives": true,
+    "bf16_autocast": true
+  },
+  "training": {
+    "epoch_1_avg_loss": 2.8155,
+    "epoch_2_avg_loss": 2.6991,
+    "epoch_1_duration_s": 393,
+    "epoch_2_duration_s": 393,
+    "total_train_s": 786,
+    "convergence_note": "Loss barely decreased (2.81 -> 2.70 across 2000 steps); no strong learning signal"
+  },
+  "metrics": {
+    "all_fold0": {"n": 1600, "baseline": 0.2123, "r79": 0.0014, "delta": -0.2109},
+    "h7": {"n": 200, "baseline": 0.2226, "r79": 0.0000, "delta": -0.2226},
+    "same_artist": {"n": 531, "baseline": 0.4475, "r79": 0.0000, "delta": -0.4475},
+    "diff_artist": {"n": 1069, "baseline": 0.0955, "r79": 0.0021, "delta": -0.0934},
+    "h7_same": {"n": 83, "baseline": 0.4313, "r79": 0.0000, "delta": -0.4313},
+    "h7_diff": {"n": 117, "baseline": 0.0745, "r79": 0.0000, "delta": -0.0745}
+  },
+  "h7_recovery": {"recovered": 0, "lost": 83, "net": -83},
+  "churn": {"top1_changed": 1600, "churn_per_80": 80.0, "top20_overlap_mean": 0.01},
+  "gates": {
+    "h7_delta_>=_+0.005": {"value": -0.2226, "pass": false},
+    "same_artist_delta_>=_-0.002": {"value": -0.4475, "pass": false},
+    "h7_net_>_0": {"value": -83, "pass": false},
+    "churn_<=_25": {"value": 80.0, "pass": false},
+    "overlap_>=_14": {"value": 0.01, "pass": false}
+  },
+  "diagnosis": "Catastrophic collapse. h7 nDCG=0 = ZERO GT in top-20 across 200 h7 cases. Model trained only on hard negatives from R54c top-20 (no random/background negatives). At eval time, must rank GT against 47K random catalog tracks — has no signal for that. Hard-negative-only training collapses to local discrimination among 'plausible' candidates without learning global structure. Matches feedback_no_hard_negatives historical finding (R23/R23a).",
+  "cost_estimate_usd": 2.5,
+  "phase0c_status": "CANCELLED per predeclared rule: 'If 0B fails, archive'."
+}
