@@ -67,11 +67,13 @@ OUT_JSON = REPO / "exp" / "eval" / "expR79_phase0b_result.json"
 OUT_DOC = REPO / "docs" / "r79_phase0b_result.md"
 
 MODEL_NAME = "BAAI/bge-large-en-v1.5"
-MAX_LEN_QUERY = 256
-MAX_LEN_TRACK = 96
-BATCH_CASES = 16
+MAX_LEN_QUERY = 192
+MAX_LEN_TRACK = 64
+BATCH_CASES = 8
 N_EPOCHS = 2
 LR = 1e-5
+USE_BF16 = True
+HARD_NEGS_PER_CASE = 16  # cap from 19 to bound memory
 WEIGHT_DECAY = 0.01
 WARMUP_FRAC = 0.05
 CATALOG_BATCH = 128
@@ -178,6 +180,10 @@ def fine_tune(
         else max(0.0, 1.0 - (step - warmup_steps) / max(total_steps - warmup_steps, 1)),
     )
 
+    autocast_ctx = (torch.amp.autocast(device_type="cuda", dtype=torch.bfloat16)
+                    if USE_BF16 and device.type == "cuda"
+                    else torch.amp.autocast(device_type="cpu", enabled=False))
+
     global_step = 0
     for epoch in range(epochs):
         random.shuffle(training_pairs)
@@ -190,54 +196,55 @@ def fine_tune(
             # Build text lists for this batch
             queries = []
             pos_texts = []
-            neg_texts_per_case = []  # list of lists
+            all_neg_texts = []      # flat list of all negs across batch
+            neg_counts = []         # per-case neg count for split
             for case in batch:
                 queries.append(build_query_text(case))
                 pos_texts.append(build_track_text(case["gt"], catalog))
-                neg_texts_per_case.append([
-                    build_track_text(neg, catalog) for neg in case["hard_negs"][:19]
-                ])
+                negs = case["hard_negs"][:HARD_NEGS_PER_CASE]
+                neg_counts.append(len(negs))
+                all_neg_texts.extend([build_track_text(neg, catalog) for neg in negs])
 
-            # Encode queries
-            q_inputs = tokenizer(queries, padding=True, truncation=True,
-                                 max_length=MAX_LEN_QUERY, return_tensors="pt").to(device)
-            q_out = model(**q_inputs)
-            q_emb = q_out.last_hidden_state[:, 0, :]  # CLS pooling
-            q_emb = F.normalize(q_emb, p=2, dim=-1)
-
-            # Encode positives
-            p_inputs = tokenizer(pos_texts, padding=True, truncation=True,
-                                 max_length=MAX_LEN_TRACK, return_tensors="pt").to(device)
-            p_out = model(**p_inputs)
-            p_emb = p_out.last_hidden_state[:, 0, :]
-            p_emb = F.normalize(p_emb, p=2, dim=-1)
-
-            # Encode hard negatives (per-case)
-            loss = torch.tensor(0.0, device=device)
-            n_valid = 0
-            for ci, negs in enumerate(neg_texts_per_case):
-                if not negs:
-                    n_skipped += 1
-                    continue
-                n_inputs = tokenizer(negs, padding=True, truncation=True,
-                                     max_length=MAX_LEN_TRACK, return_tensors="pt").to(device)
-                n_out = model(**n_inputs)
-                n_emb = n_out.last_hidden_state[:, 0, :]
-                n_emb = F.normalize(n_emb, p=2, dim=-1)
-                # Compute scores
-                q_i = q_emb[ci]
-                pos_score = (q_i * p_emb[ci]).sum()  # cosine
-                neg_scores = n_emb @ q_i  # (n_negs,)
-                all_scores = torch.cat([pos_score.unsqueeze(0), neg_scores])  # (1+n,)
-                # InfoNCE with temperature
-                logits = all_scores * 20.0  # temperature 0.05
-                target = torch.tensor(0, device=device)  # positive is index 0
-                case_loss = F.cross_entropy(logits.unsqueeze(0), target.unsqueeze(0))
-                loss = loss + case_loss
-                n_valid += 1
+            n_total_negs = len(all_neg_texts)
+            n_valid = sum(1 for c in neg_counts if c > 0)
             if n_valid == 0:
+                n_skipped += len(batch)
                 continue
-            loss = loss / n_valid
+
+            with autocast_ctx:
+                # Encode queries
+                q_inputs = tokenizer(queries, padding=True, truncation=True,
+                                     max_length=MAX_LEN_QUERY, return_tensors="pt").to(device)
+                q_emb = F.normalize(model(**q_inputs).last_hidden_state[:, 0, :], p=2, dim=-1)
+
+                # Encode positives
+                p_inputs = tokenizer(pos_texts, padding=True, truncation=True,
+                                     max_length=MAX_LEN_TRACK, return_tensors="pt").to(device)
+                p_emb = F.normalize(model(**p_inputs).last_hidden_state[:, 0, :], p=2, dim=-1)
+
+                # Encode ALL negatives in one batch
+                n_inputs = tokenizer(all_neg_texts, padding=True, truncation=True,
+                                     max_length=MAX_LEN_TRACK, return_tensors="pt").to(device)
+                n_emb_flat = F.normalize(model(**n_inputs).last_hidden_state[:, 0, :], p=2, dim=-1)
+
+                # Compute losses per-case
+                loss = torch.tensor(0.0, device=device)
+                offset = 0
+                for ci, k in enumerate(neg_counts):
+                    if k == 0:
+                        n_skipped += 1
+                        continue
+                    q_i = q_emb[ci]
+                    pos_score = (q_i * p_emb[ci]).sum()  # cosine
+                    n_i = n_emb_flat[offset:offset + k]
+                    offset += k
+                    neg_scores = n_i @ q_i
+                    all_scores = torch.cat([pos_score.unsqueeze(0), neg_scores])
+                    logits = all_scores * 20.0  # temperature 0.05
+                    target = torch.tensor(0, device=device)
+                    case_loss = F.cross_entropy(logits.unsqueeze(0), target.unsqueeze(0))
+                    loss = loss + case_loss
+                loss = loss / n_valid
 
             optimizer.zero_grad()
             loss.backward()
@@ -261,7 +268,10 @@ def encode_texts(model, tokenizer, texts: list[str], device, batch: int,
     """Encode texts in batches, return (N, D) normalized."""
     model.eval()
     embs = []
-    with torch.no_grad():
+    autocast_ctx = (torch.amp.autocast(device_type="cuda", dtype=torch.bfloat16)
+                    if USE_BF16 and device.type == "cuda"
+                    else torch.amp.autocast(device_type="cpu", enabled=False))
+    with torch.no_grad(), autocast_ctx:
         for i in range(0, len(texts), batch):
             chunk = texts[i:i+batch]
             inp = tokenizer(chunk, padding=True, truncation=True,
@@ -269,7 +279,7 @@ def encode_texts(model, tokenizer, texts: list[str], device, batch: int,
             out = model(**inp)
             emb = out.last_hidden_state[:, 0, :]
             emb = F.normalize(emb, p=2, dim=-1)
-            embs.append(emb.cpu().numpy())
+            embs.append(emb.float().cpu().numpy())  # cast bf16 → fp32 for numpy
             if (i // batch) % 20 == 0:
                 print(f"    encoded {i+len(chunk)}/{len(texts)}", flush=True)
     return np.concatenate(embs, axis=0)
