@@ -1,0 +1,49 @@
+{
+  "experiment": "R83 Phase 0 — SASRec sequence model (A100)",
+  "created_at": "2026-05-23T10:25:47",
+  "elapsed_s": 65,
+  "verdict": "ARCHIVE",
+  "hyperparams": {
+    "model": "SASRec",
+    "item_dim": 128,
+    "n_layers": 2,
+    "n_heads": 4,
+    "ff_dim": 256,
+    "seq_len": 10,
+    "epochs": 20,
+    "batch_cases": 64,
+    "lr": 1e-3,
+    "weight_decay": 0.01,
+    "k_in_batch": 64,
+    "k_random": 64,
+    "k_hard": 16,
+    "k_same_artist": 4,
+    "bf16_autocast": true,
+    "init_from_bge_large_proj": true,
+    "n_params_M": 6.42
+  },
+  "training": {
+    "epoch_2_loss": 144.66,
+    "epoch_20_loss": 4.57,
+    "convergence_note": "Loss decreased smoothly 144 → 4.6 over 20 epochs; model learned its sampled-softmax objective but did NOT generalize to retrieval against full 47K catalog"
+  },
+  "metrics": {
+    "all_fold0": {"n": 1600, "baseline": 0.2123, "r83": 0.0312, "delta": -0.1811},
+    "h7": {"n": 200, "baseline": 0.2226, "r83": 0.0261, "delta": -0.1964},
+    "same_artist": {"n": 531, "baseline": 0.4475, "r83": 0.0724, "delta": -0.3751},
+    "diff_artist": {"n": 1069, "baseline": 0.0955, "r83": 0.0107, "delta": -0.0848}
+  },
+  "h7_recovery": {
+    "recovered": 0, "lost": 71, "net": -71,
+    "top30_hits": 14, "top30_unique": 1
+  },
+  "churn": {"top1_changed": 1562, "churn_per_80": 78.1, "top20_overlap_mean": 1.9},
+  "gates": {
+    "h7_recov_gt_lost_or_h7_delta_geq_0": {"value": [0, 71, -0.1964], "pass": false},
+    "same_artist_delta_geq_neg0.005": {"value": -0.3751, "pass": false},
+    "overlap_geq_10": {"value": 1.9, "pass": false}
+  },
+  "diagnosis": "Sessions too short (~5-7 played tracks) for sequence model to extract behavioral signal beyond what R54c LR captures from same data. SASRec/GRU4Rec architectures work on long histories (hundreds of interactions); ours has 7. Loss converged on the sampled-softmax objective but model failed to discriminate GT from random catalog tracks (similar mechanism to R79 hard-negative collapse — too few inductive constraints).",
+  "cost_estimate_usd": 0.5,
+  "behavioral_signal_class_verdict": "EXHAUSTED at this dataset scale"
+}
