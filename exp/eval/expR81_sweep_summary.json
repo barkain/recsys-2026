@@ -1,0 +1,76 @@
+{
+  "experiment": "R81 constrained-swap ranker — hyperparameter sweep on fold-0",
+  "created_at": "2026-05-23",
+  "verdict": "ARCHIVE_ALL_CONFIGS",
+  "total_a100_cost_usd": 12,
+  "configs_tested": [
+    {
+      "tag": "default",
+      "max_swaps": 2, "swap_threshold": 0.0, "anchor_lambda": 0.5,
+      "h7_delta": -0.0022, "same_artist_delta": -0.0188,
+      "all_fold0_delta": -0.0127,
+      "h7_recovered": 2, "h7_lost": 1, "h7_net": 1,
+      "top1_churn_per_80": 44.4, "top20_overlap_mean": 18.09,
+      "swap_distribution": {"0": 17, "1": 117, "2": 1466},
+      "verdict": "ARCHIVE", "primary_gate_pass": true
+    },
+    {
+      "tag": "conservative",
+      "max_swaps": 1, "swap_threshold": 1.0, "anchor_lambda": 1.0,
+      "h7_delta": -0.0074, "same_artist_delta": -0.0217,
+      "all_fold0_delta": -0.0122,
+      "h7_recovered": 1, "h7_lost": 2, "h7_net": -1,
+      "top1_churn_per_80": 42.1, "top20_overlap_mean": 19.22,
+      "swap_distribution": {"0": 348, "1": 1252, "2": 0},
+      "verdict": "ARCHIVE", "primary_gate_pass": false
+    },
+    {
+      "tag": "very_conservative",
+      "max_swaps": 1, "swap_threshold": 2.0, "anchor_lambda": 1.0,
+      "h7_delta": -0.0080, "same_artist_delta": -0.0211,
+      "all_fold0_delta": -0.0122,
+      "h7_recovered": 1, "h7_lost": 1, "h7_net": 0,
+      "top1_churn_per_80": 42.0, "top20_overlap_mean": 19.49,
+      "swap_distribution": {"0": 788, "1": 812, "2": 0},
+      "verdict": "ARCHIVE", "primary_gate_pass": false
+    },
+    {
+      "tag": "moderate",
+      "max_swaps": 2, "swap_threshold": 0.5, "anchor_lambda": 1.0,
+      "h7_delta": -0.0103, "same_artist_delta": -0.0217,
+      "all_fold0_delta": -0.0134,
+      "h7_recovered": 1, "h7_lost": 3, "h7_net": -2,
+      "top1_churn_per_80": 42.0, "top20_overlap_mean": 18.44,
+      "swap_distribution": {"0": 174, "1": 356, "2": 1070},
+      "verdict": "ARCHIVE", "primary_gate_pass": false
+    }
+  ],
+  "key_observation": "Top-1 churn stays ~42/80 across ALL configs even when no swaps happen. The model's per-candidate score ordering within the existing top-20 disagrees with R54c's calibrated ordering. Internal churn dominates external churn from swaps.",
+  "interpretation": "Feature set is the ceiling, not architecture. Four neural architectures over the R54-stacked top-300 pool (R76 residual MLP, R80 listwise transformer, R81 constrained-swap × 3 configs) all net-negative or marginal. Same-artist canary fires in every variant. Available features (37 LR + BGE track/query + 5 semantic scalars) do not carry enough new signal beyond R54c LR.",
+  "comparison_to_prior_neural_attempts": {
+    "R71_lightgbm_stacker": {"h7_delta": -0.005, "same_art": -0.004, "arch": "tree, 5 feats top-30"},
+    "R76_neural_residual_MLP": {"h7_delta": -0.013, "same_art": -0.046, "arch": "tiny MLP residual top-30"},
+    "R80_listwise_transformer": {"h7_delta": -0.026, "same_art": -0.030, "arch": "4-layer Transformer top-300", "rec_lost": "6/17"},
+    "R81_default": {"h7_delta": -0.002, "same_art": -0.019, "rec_lost": "2/1"},
+    "R81_conservative": {"h7_delta": -0.007, "same_art": -0.022, "rec_lost": "1/2"},
+    "R81_very_conservative": {"h7_delta": -0.008, "same_art": -0.021, "rec_lost": "1/1"},
+    "R81_moderate": {"h7_delta": -0.010, "same_art": -0.022, "rec_lost": "1/3"}
+  },
+  "all_paths_closed": [
+    "R56 (rule-based reranks)",
+    "R58 (LightGBM stage-2 specialist)",
+    "R59 C3 (matched-pool LR retrain)",
+    "R60 (matched-pool LambdaRank)",
+    "R66 (full ensemble redistribution)",
+    "R67 (frontier LLM rerank)",
+    "R68 (BGE-large fine-tune as R54 substitution)",
+    "R68.1 (substitution corrected eval)",
+    "R69 (cross-encoder rerank)",
+    "R70 (joint R54+R68 LR addition)",
+    "R71 (stacker over R54c top-30)",
+    "R76 (neural residual MLP)",
+    "R79 (hard-negative retriever — catastrophic)",
+    "R80 (listwise transformer learned LR replacement)",
+    "R81 (constrained-swap ranker — 4 configs)"
+  ]
+}
