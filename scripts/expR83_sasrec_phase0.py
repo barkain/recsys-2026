@@ -341,11 +341,26 @@ def main():
     case_same = []
     case_played_artists = []
     track_artist_map = None
-    # Load track_artist from payload for same-artist decoys
+    # Try R12 payload first; if not available, build from HF catalog
     R12_PAYLOAD = REPO / "exp" / "eval" / "_R12_all_turns_payload.pkl"
-    with open(R12_PAYLOAD, "rb") as f:
-        _p = pickle.load(f)
-    track_artist_map = _p.get("track_artist", {})
+    if R12_PAYLOAD.exists():
+        with open(R12_PAYLOAD, "rb") as f:
+            _p = pickle.load(f)
+        track_artist_map = _p.get("track_artist", {})
+        print(f"  track_artist from R12 payload: {len(track_artist_map)}")
+    else:
+        print(f"  R12 payload not found; building track_artist from HF catalog")
+        from datasets import DownloadConfig, load_dataset
+        ds = load_dataset("talkpl-ai/TalkPlayData-Challenge-Track-Metadata",
+                          download_config=DownloadConfig())["all_tracks"]
+        track_artist_map = {}
+        for item in ds:
+            tid = str(item["track_id"])
+            a = item.get("artist_name")
+            if isinstance(a, list):
+                a = a[0] if a else ""
+            track_artist_map[tid] = a if a else ""
+        print(f"  track_artist from HF: {len(track_artist_map)}")
 
     for p in pairs:
         played = p.get("played_tracks", [])
