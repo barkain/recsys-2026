@@ -1,0 +1,1637 @@
+{
+  "3855": {
+    "raw": "{\"mood\":[\"dark\",\"somber\",\"cosmic\"],\"genre\":[\"melodic death metal\"],\"era\":\"any\",\"language\":\"english\",\"energy\":\"medium\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"profound dark lyrical content\",\"mythological or historical themes\",\"classic or highly influential\",\"different band from previous\"]}",
+    "parsed": {
+      "mood": [
+        "dark",
+        "somber",
+        "cosmic"
+      ],
+      "genre": [
+        "melodic death metal"
+      ],
+      "era": "any",
+      "language": "english",
+      "energy": "medium",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "profound dark lyrical content",
+        "mythological or historical themes",
+        "classic or highly influential",
+        "different band from previous"
+      ]
+    },
+    "played_artists": [
+      "['at the gates']",
+      "['at the gates']",
+      "['at the gates']",
+      "['insomnium']",
+      "['leprous']",
+      "['insomnium']",
+      "['insomnium']"
+    ]
+  },
+  "7783": {
+    "raw": "{\"mood\":[\"gritty\",\"raw\"],\"genre\":[\"hip hop\",\"east coast rap\"],\"era\":\"1990s\",\"language\":\"english\",\"energy\":\"high\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"group (not solo)\",\"raw gritty sound\",\"not already played\"]}",
+    "parsed": {
+      "mood": [
+        "gritty",
+        "raw"
+      ],
+      "genre": [
+        "hip hop",
+        "east coast rap"
+      ],
+      "era": "1990s",
+      "language": "english",
+      "energy": "high",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "group (not solo)",
+        "raw gritty sound",
+        "not already played"
+      ]
+    },
+    "played_artists": [
+      "['wu-tang clan']",
+      "['method man']",
+      "['queen latifah']",
+      "['nas', 'ms. lauryn hill']",
+      "['the notorious b.i.g.']",
+      "['busta rhymes']",
+      "['lords of the underground']"
+    ]
+  },
+  "4031": {
+    "raw": "{\"mood\":[\"smooth\",\"delicate\",\"effortless\"],\"genre\":[\"r&b\",\"neo-soul\"],\"era\":\"any\",\"language\":\"english\",\"energy\":\"low\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"female vocals\",\"delicate flowing vocal delivery\",\"gentle effortless style\"]}",
+    "parsed": {
+      "mood": [
+        "smooth",
+        "delicate",
+        "effortless"
+      ],
+      "genre": [
+        "r&b",
+        "neo-soul"
+      ],
+      "era": "any",
+      "language": "english",
+      "energy": "low",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "female vocals",
+        "delicate flowing vocal delivery",
+        "gentle effortless style"
+      ]
+    },
+    "played_artists": [
+      "['amel larrieux']",
+      "['jill scott']",
+      "['tamia']",
+      "['isaiah rashad', 'sza']",
+      "['amel larrieux']",
+      "['amel larrieux']",
+      "['amel larrieux']"
+    ]
+  },
+  "343": {
+    "raw": "{\"mood\":[\"dark\",\"trippy\",\"intense\"],\"genre\":[\"experimental electronic\",\"idm\"],\"era\":\"any\",\"language\":\"any\",\"energy\":\"high\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"heavy bass\",\"experimental\",\"no hip-hop elements\",\"purely electronic\"]}",
+    "parsed": {
+      "mood": [
+        "dark",
+        "trippy",
+        "intense"
+      ],
+      "genre": [
+        "experimental electronic",
+        "idm"
+      ],
+      "era": "any",
+      "language": "any",
+      "energy": "high",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "heavy bass",
+        "experimental",
+        "no hip-hop elements",
+        "purely electronic"
+      ]
+    },
+    "played_artists": [
+      "['cabaret nocturne']",
+      "['andy stott']",
+      "['aphex twin']",
+      "['clark']",
+      "['el-p']",
+      "['moderat']",
+      "['mount kimbie']"
+    ]
+  },
+  "2615": {
+    "raw": "{\"mood\":[\"dark\",\"moody\",\"experimental\"],\"genre\":[\"hip-hop\",\"rap\"],\"era\":\"any\",\"language\":\"english\",\"energy\":\"medium\",\"artist_relation\":\"same as previous\",\"novelty\":\"any\",\"constraints\":[\"A$AP Rocky tracks only\",\"essential/popular tracks\",\"focus on experimental or darker songs\",\"playlist format\"]}",
+    "parsed": {
+      "mood": [
+        "dark",
+        "moody",
+        "experimental"
+      ],
+      "genre": [
+        "hip-hop",
+        "rap"
+      ],
+      "era": "any",
+      "language": "english",
+      "energy": "medium",
+      "artist_relation": "same as previous",
+      "novelty": "any",
+      "constraints": [
+        "A$AP Rocky tracks only",
+        "essential/popular tracks",
+        "focus on experimental or darker songs",
+        "playlist format"
+      ]
+    },
+    "played_artists": [
+      "['a$ap rocky', 'lil wayne']",
+      "['a$ap rocky', 'joe fox', 'kanye west']",
+      "['a$ap rocky']",
+      "['a$ap rocky']",
+      "['birdy nam nam', 'a$ap rocky', 'skrillex', 'lord flacko']",
+      "['a$ap rocky', 'joe fox', 'future', 'm.i.a.']",
+      "['a$ap rocky']"
+    ]
+  },
+  "5047": {
+    "raw": "{\"mood\":[\"dark\",\"occult\",\"horror\"],\"genre\":[\"rock\",\"metal\"],\"era\":\"any\",\"language\":\"english\",\"energy\":\"high\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"exclude Ghost B.C.\",\"exclude Roky Erickson\",\"exclude Immortal\",\"horror/supernatural themes\",\"new artist not previously discussed\"]}",
+    "parsed": {
+      "mood": [
+        "dark",
+        "occult",
+        "horror"
+      ],
+      "genre": [
+        "rock",
+        "metal"
+      ],
+      "era": "any",
+      "language": "english",
+      "energy": "high",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "exclude Ghost B.C.",
+        "exclude Roky Erickson",
+        "exclude Immortal",
+        "horror/supernatural themes",
+        "new artist not previously discussed"
+      ]
+    },
+    "played_artists": [
+      "['roky erickson']",
+      "['immortal']",
+      "['ghost b.c.', 'ghost']",
+      "['roky erickson']",
+      "['immortal']",
+      "['ghost b.c.', 'ghost']",
+      "['roky erickson']"
+    ]
+  },
+  "4815": {
+    "raw": "{\"mood\":[\"powerful\",\"intense\",\"empowering\"],\"genre\":[\"hard rock\",\"heavy metal\",\"gothic rock\"],\"era\":\"any\",\"language\":\"english\",\"energy\":\"high\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"female vocalists\",\"heavy sound\",\"strong riffs\"]}",
+    "parsed": {
+      "mood": [
+        "powerful",
+        "intense",
+        "empowering"
+      ],
+      "genre": [
+        "hard rock",
+        "heavy metal",
+        "gothic rock"
+      ],
+      "era": "any",
+      "language": "english",
+      "energy": "high",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "female vocalists",
+        "heavy sound",
+        "strong riffs"
+      ]
+    },
+    "played_artists": [
+      "['meg myers', 'meg myers']",
+      "['halestorm']",
+      "['hole', 'eric erlandson']",
+      "['the moxy']",
+      "['lacey sturm']",
+      "['lacuna coil']",
+      "['system of a down']"
+    ]
+  },
+  "3983": {
+    "raw": "{\"mood\":[\"influential\",\"raw\",\"intense\"],\"genre\":[\"alternative rock\",\"grunge\"],\"era\":\"1990s\",\"language\":\"english\",\"energy\":\"high\",\"artist_relation\":\"completely new\",\"novelty\":\"any\",\"constraints\":[\"influential 90s alternative rock or grunge\"]}",
+    "parsed": {
+      "mood": [
+        "influential",
+        "raw",
+        "intense"
+      ],
+      "genre": [
+        "alternative rock",
+        "grunge"
+      ],
+      "era": "1990s",
+      "language": "english",
+      "energy": "high",
+      "artist_relation": "completely new",
+      "novelty": "any",
+      "constraints": [
+        "influential 90s alternative rock or grunge"
+      ]
+    },
+    "played_artists": [
+      "['jimi hendrix']",
+      "['a tribe called quest']",
+      "['a tribe called quest']",
+      "['weval']",
+      "['jimi hendrix']",
+      "['jimi hendrix']",
+      "['a tribe called quest']"
+    ]
+  },
+  "3007": {
+    "raw": "{\"mood\":[\"smooth\",\"soulful\",\"romantic\"],\"genre\":[\"r&b\",\"soul\"],\"era\":\"any\",\"language\":\"english\",\"energy\":\"low\",\"artist_relation\":\"different but similar\",\"novelty\":\"any\",\"constraints\":[\"similar to John Legend or Marvin Gaye\",\"authentic R&B/Soul\",\"exclude rock and pop\"]}",
+    "parsed": {
+      "mood": [
+        "smooth",
+        "soulful",
+        "romantic"
+      ],
+      "genre": [
+        "r&b",
+        "soul"
+      ],
+      "era": "any",
+      "language": "english",
+      "energy": "low",
+      "artist_relation": "different but similar",
+      "novelty": "any",
+      "constraints": [
+        "similar to John Legend or Marvin Gaye",
+        "authentic R&B/Soul",
+        "exclude rock and pop"
+      ]
+    },
+    "played_artists": [
+      "['kings of leon']",
+      "['kings of leon']",
+      "['kings of leon']",
+      "['seal']",
+      "['big mountain', 'tom lord-alge']",
+      "['elton john']",
+      "['samantha ronson']"
+    ]
+  },
+  "4767": {
+    "raw": "{\"mood\":[\"upbeat\",\"danceable\",\"infectious\"],\"genre\":[\"funk\",\"disco\"],\"era\":\"1970s\",\"language\":\"english\",\"energy\":\"high\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"late 70s or early 80s\",\"dance-ready groove\"]}",
+    "parsed": {
+      "mood": [
+        "upbeat",
+        "danceable",
+        "infectious"
+      ],
+      "genre": [
+        "funk",
+        "disco"
+      ],
+      "era": "1970s",
+      "language": "english",
+      "energy": "high",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "late 70s or early 80s",
+        "dance-ready groove"
+      ]
+    },
+    "played_artists": [
+      "['alphonse mouzon']",
+      "['sister sledge']",
+      "['dexter wansel']",
+      "['toto', 'toto']",
+      "['the real thing']",
+      "['rick james']",
+      "['ray parker jr.', 'ray parker, jr.']"
+    ]
+  },
+  "3551": {
+    "raw": "{\"mood\":[\"raw\",\"gritty\",\"poetic\"],\"genre\":[\"latin rock\"],\"era\":\"any\",\"language\":\"spanish\",\"energy\":\"high\",\"artist_relation\":\"completely new\",\"novelty\":\"discover\",\"constraints\":[\"influential bands\",\"strong lyrical/poetic quality\",\"raw or gritty sound\"]}",
+    "parsed": {
+      "mood": [
+        "raw",
+        "gritty",
+        "poetic"
+      ],
+      "genre": [
+        "latin rock"
+      ],
+      "era": "any",
+      "language": "spanish",
+      "energy": "high",
+      "artist_relation": "completely new",
+      "novelty": "discover",
+      "constraints": [
+        "influential bands",
+        "strong lyrical/poetic quality",
+        "raw or gritty sound"
+      ]
+    },
+    "played_artists": [
+      "['caifanes']",
+      "['el cuarteto de nos']",
+      "['fobia']",
+      "['real de catorce']",
+      "['el cuarteto de nos']",
+      "['fobia']",
+      "['gorka urbizu', 'la maravillosa orquesta del alcohol']"
+    ]
+  },
+  "5679": {
+    "raw": "{\"mood\":[\"energetic\",\"powerful\",\"unique\"],\"genre\":[\"alternative rock\",\"funk rock\"],\"era\":\"1990s\",\"language\":\"english\",\"energy\":\"high\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"90s or early 2000s\",\"high-energy\",\"unique and powerful sound\",\"not Kansas-style classic rock\"]}",
+    "parsed": {
+      "mood": [
+        "energetic",
+        "powerful",
+        "unique"
+      ],
+      "genre": [
+        "alternative rock",
+        "funk rock"
+      ],
+      "era": "1990s",
+      "language": "english",
+      "energy": "high",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "90s or early 2000s",
+        "high-energy",
+        "unique and powerful sound",
+        "not Kansas-style classic rock"
+      ]
+    },
+    "played_artists": [
+      "['anna calvi']",
+      "['patti smith']",
+      "['foster the people']",
+      "['young guns']",
+      "['nirvana']",
+      "['placebo']",
+      "['kansas']"
+    ]
+  },
+  "2263": {
+    "raw": "{\"mood\":[\"quirky\",\"laid-back\"],\"genre\":[\"alternative rock\"],\"era\":\"any\",\"language\":\"english\",\"energy\":\"medium\",\"artist_relation\":\"same as previous\",\"novelty\":\"any\",\"constraints\":[\"artist: Cake\",\"signature style\",\"exclude Motorcade of Generosity\"]}",
+    "parsed": {
+      "mood": [
+        "quirky",
+        "laid-back"
+      ],
+      "genre": [
+        "alternative rock"
+      ],
+      "era": "any",
+      "language": "english",
+      "energy": "medium",
+      "artist_relation": "same as previous",
+      "novelty": "any",
+      "constraints": [
+        "artist: Cake",
+        "signature style",
+        "exclude Motorcade of Generosity"
+      ]
+    },
+    "played_artists": [
+      "['cake', 'cake']",
+      "['cake', 'cake']",
+      "['cake', 'cake']",
+      "['cake', 'cake']",
+      "['cake', 'cake']",
+      "['cake', 'cake']",
+      "['cake', 'cake']"
+    ]
+  },
+  "5039": {
+    "raw": "{\"mood\":[\"raw\",\"rebellious\",\"intense\"],\"genre\":[\"punk\",\"hardcore\"],\"era\":\"any\",\"language\":\"english\",\"energy\":\"high\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"late 70s or early 80s\",\"influential/boundary-pushing\",\"not already played\"]}",
+    "parsed": {
+      "mood": [
+        "raw",
+        "rebellious",
+        "intense"
+      ],
+      "genre": [
+        "punk",
+        "hardcore"
+      ],
+      "era": "any",
+      "language": "english",
+      "energy": "high",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "late 70s or early 80s",
+        "influential/boundary-pushing",
+        "not already played"
+      ]
+    },
+    "played_artists": [
+      "['black flag']",
+      "['minor threat']",
+      "['bad religion']",
+      "['dead kennedys']",
+      "['the clash']",
+      "['glenn danzig', 'misfits']",
+      "['black flag']"
+    ]
+  },
+  "1455": {
+    "raw": "{\"mood\":[\"mellow\",\"smooth\",\"sophisticated\"],\"genre\":[\"bossa nova\",\"brazilian jazz\"],\"era\":\"any\",\"language\":\"any\",\"energy\":\"low\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"instrumental\",\"classic bossa nova or brazilian jazz\",\"suitable for dinner party\"]}",
+    "parsed": {
+      "mood": [
+        "mellow",
+        "smooth",
+        "sophisticated"
+      ],
+      "genre": [
+        "bossa nova",
+        "brazilian jazz"
+      ],
+      "era": "any",
+      "language": "any",
+      "energy": "low",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "instrumental",
+        "classic bossa nova or brazilian jazz",
+        "suitable for dinner party"
+      ]
+    },
+    "played_artists": [
+      "['djavan']",
+      "['djavan']",
+      "['djavan']",
+      "['lenine']",
+      "['nature sounds nature music']",
+      "['natural sound makers']",
+      "['djavan']"
+    ]
+  },
+  "2903": {
+    "raw": "{\"mood\":[\"gritty\",\"raw\"],\"genre\":[\"east coast hip-hop\",\"boom-bap\"],\"era\":\"late 1990s-early 2000s\",\"language\":\"english\",\"energy\":\"medium\",\"artist_relation\":\"completely new\",\"novelty\":\"discover\",\"constraints\":[\"east coast hip-hop\",\"gritty lyrics or boom-bap sound\",\"not Tech N9ne\",\"influential artist\"]}",
+    "parsed": {
+      "mood": [
+        "gritty",
+        "raw"
+      ],
+      "genre": [
+        "east coast hip-hop",
+        "boom-bap"
+      ],
+      "era": "late 1990s-early 2000s",
+      "language": "english",
+      "energy": "medium",
+      "artist_relation": "completely new",
+      "novelty": "discover",
+      "constraints": [
+        "east coast hip-hop",
+        "gritty lyrics or boom-bap sound",
+        "not Tech N9ne",
+        "influential artist"
+      ]
+    },
+    "played_artists": [
+      "['tech n9ne']",
+      "['eminem']",
+      "['eminem']",
+      "['action bronson']",
+      "['2 chainz', 'b.o.b', 'tech n9ne']",
+      "['tech n9ne']",
+      "['tech n9ne']"
+    ]
+  },
+  "7551": {
+    "raw": "{\"mood\":[\"melancholic\",\"atmospheric\",\"reflective\"],\"genre\":[\"gothic metal\"],\"era\":\"any\",\"language\":\"english\",\"energy\":\"medium\",\"artist_relation\":\"same as previous\",\"novelty\":\"discover\",\"constraints\":[\"lacuna coil only\",\"thoughtful introspective lyrics\"]}",
+    "parsed": {
+      "mood": [
+        "melancholic",
+        "atmospheric",
+        "reflective"
+      ],
+      "genre": [
+        "gothic metal"
+      ],
+      "era": "any",
+      "language": "english",
+      "energy": "medium",
+      "artist_relation": "same as previous",
+      "novelty": "discover",
+      "constraints": [
+        "lacuna coil only",
+        "thoughtful introspective lyrics"
+      ]
+    },
+    "played_artists": [
+      "['lacuna coil']",
+      "['lacuna coil']",
+      "['lacuna coil']",
+      "['lacuna coil']",
+      "['lacuna coil']",
+      "['lacuna coil']",
+      "['lacuna coil']"
+    ]
+  },
+  "871": {
+    "raw": "{\"mood\":[\"classic\",\"iconic\"],\"genre\":[\"hip-hop\"],\"era\":\"1990s\",\"language\":\"english\",\"energy\":\"medium\",\"artist_relation\":\"completely new\",\"novelty\":\"familiar\",\"constraints\":[\"well-known\",\"iconic 90s hip-hop\",\"not already played\"]}",
+    "parsed": {
+      "mood": [
+        "classic",
+        "iconic"
+      ],
+      "genre": [
+        "hip-hop"
+      ],
+      "era": "1990s",
+      "language": "english",
+      "energy": "medium",
+      "artist_relation": "completely new",
+      "novelty": "familiar",
+      "constraints": [
+        "well-known",
+        "iconic 90s hip-hop",
+        "not already played"
+      ]
+    },
+    "played_artists": [
+      "['blackstreet', 'dr. dre', 'queen pen']",
+      "['mobb deep']",
+      "['nas', 'ms. lauryn hill']",
+      "['n.w.a.']",
+      "['dj jazzy jeff & the fresh prince', 'the fresh prince']",
+      "['vanilla ice']",
+      "['ludacris', 'mystikal', 'i-20', 'disturbing tha peace']"
+    ]
+  },
+  "6143": {
+    "raw": "{\"mood\":[\"atmospheric\",\"immersive\",\"reflective\"],\"genre\":[\"soundtrack\",\"ambient\",\"orchestral\"],\"era\":\"any\",\"language\":\"instrumental\",\"energy\":\"low\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"instrumental\",\"deep atmosphere\",\"good for gaming or chilling\"]}",
+    "parsed": {
+      "mood": [
+        "atmospheric",
+        "immersive",
+        "reflective"
+      ],
+      "genre": [
+        "soundtrack",
+        "ambient",
+        "orchestral"
+      ],
+      "era": "any",
+      "language": "instrumental",
+      "energy": "low",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "instrumental",
+        "deep atmosphere",
+        "good for gaming or chilling"
+      ]
+    },
+    "played_artists": [
+      "['jeremy soule']",
+      "['jeremy soule']",
+      "['jeremy soule']",
+      "['jeremy soule']",
+      "['marcin przyby\u0142owicz']",
+      "['piotr musia\u0142']",
+      "['jeremy soule']"
+    ]
+  },
+  "2551": {
+    "raw": "{\"mood\":[\"romantic\",\"smooth\",\"melodic\"],\"genre\":[\"bachata\",\"latin pop\"],\"era\":\"any\",\"language\":\"spanish\",\"energy\":\"medium\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[]}",
+    "parsed": {
+      "mood": [
+        "romantic",
+        "smooth",
+        "melodic"
+      ],
+      "genre": [
+        "bachata",
+        "latin pop"
+      ],
+      "era": "any",
+      "language": "spanish",
+      "energy": "medium",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": []
+    },
+    "played_artists": [
+      "['aventura']",
+      "['prince royce']",
+      "['prince royce']",
+      "['enrique iglesias', 'romeo santos']",
+      "['romeo santos', 'juan luis guerra 4.40']",
+      "['cnco']",
+      "['zacarias ferreira']"
+    ]
+  },
+  "5279": {
+    "raw": "{\"mood\":[\"dark\",\"melancholic\",\"aggressive\"],\"genre\":[\"industrial metal\",\"experimental metal\"],\"era\":\"any\",\"language\":\"english\",\"energy\":\"high\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"industrial or experimental metal sound\",\"dark and aggressive lyrical themes\"]}",
+    "parsed": {
+      "mood": [
+        "dark",
+        "melancholic",
+        "aggressive"
+      ],
+      "genre": [
+        "industrial metal",
+        "experimental metal"
+      ],
+      "era": "any",
+      "language": "english",
+      "energy": "high",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "industrial or experimental metal sound",
+        "dark and aggressive lyrical themes"
+      ]
+    },
+    "played_artists": [
+      "['pantera']",
+      "['sepultura']",
+      "['slayer']",
+      "['pantera']",
+      "['overkill']",
+      "['slayer']",
+      "['marilyn manson']"
+    ]
+  },
+  "5831": {
+    "raw": "{\"mood\":[\"clever\",\"reflective\",\"confident\"],\"genre\":[\"rap\"],\"era\":\"any\",\"language\":\"english\",\"energy\":\"medium\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"strong storytelling\",\"clever lyrics\",\"lyrical\"]}",
+    "parsed": {
+      "mood": [
+        "clever",
+        "reflective",
+        "confident"
+      ],
+      "genre": [
+        "rap"
+      ],
+      "era": "any",
+      "language": "english",
+      "energy": "medium",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "strong storytelling",
+        "clever lyrics",
+        "lyrical"
+      ]
+    },
+    "played_artists": [
+      "['gucci mane', 'migos']",
+      "['nipsey hussle', 'rick ross']",
+      "['miguel', 'french montana']",
+      "['a$ap mob', 'juicy j']",
+      "['a$ap ferg', 'meek mill']",
+      "['vic mensa', 'vic mensa']",
+      "['jay-z', 'rick ross']"
+    ]
+  },
+  "1551": {
+    "raw": "{\"mood\":[\"driving\",\"intense\",\"melodic\"],\"genre\":[\"alternative rock\"],\"era\":\"2010s\",\"language\":\"any\",\"energy\":\"high\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"modern (last decade)\",\"strong driving melody\",\"experimental or heavy sound\",\"Muse-inspired\",\"not vintage\"]}",
+    "parsed": {
+      "mood": [
+        "driving",
+        "intense",
+        "melodic"
+      ],
+      "genre": [
+        "alternative rock"
+      ],
+      "era": "2010s",
+      "language": "any",
+      "energy": "high",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "modern (last decade)",
+        "strong driving melody",
+        "experimental or heavy sound",
+        "Muse-inspired",
+        "not vintage"
+      ]
+    },
+    "played_artists": [
+      "['fleetwood mac']",
+      "['eminem']",
+      "['alex izenberg']",
+      "['sheer agony', 'drugdealer']",
+      "['gustavo cerati']",
+      "['eddie hazel']",
+      "['peanut butter wolf', 'witch']"
+    ]
+  },
+  "3055": {
+    "raw": "{\"mood\":[\"dark\",\"intense\",\"progressive\"],\"genre\":[\"progressive metal\",\"death metal\"],\"era\":\"any\",\"language\":\"english\",\"energy\":\"high\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"european\",\"heavy\",\"progressive edge\"]}",
+    "parsed": {
+      "mood": [
+        "dark",
+        "intense",
+        "progressive"
+      ],
+      "genre": [
+        "progressive metal",
+        "death metal"
+      ],
+      "era": "any",
+      "language": "english",
+      "energy": "high",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "european",
+        "heavy",
+        "progressive edge"
+      ]
+    },
+    "played_artists": [
+      "['cannibal corpse']",
+      "['bolt thrower']",
+      "['amon amarth']",
+      "['obituary']",
+      "['cryptopsy']",
+      "['gorguts']",
+      "['opeth']"
+    ]
+  },
+  "951": {
+    "raw": "{\"mood\":[\"aggressive\",\"intense\",\"driving\"],\"genre\":[\"thrash metal\"],\"era\":\"any\",\"language\":\"english\",\"energy\":\"high\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"heavy distorted guitars\",\"pounding drums\",\"fast-paced\",\"relentless\"]}",
+    "parsed": {
+      "mood": [
+        "aggressive",
+        "intense",
+        "driving"
+      ],
+      "genre": [
+        "thrash metal"
+      ],
+      "era": "any",
+      "language": "english",
+      "energy": "high",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "heavy distorted guitars",
+        "pounding drums",
+        "fast-paced",
+        "relentless"
+      ]
+    },
+    "played_artists": [
+      "['slayer']",
+      "['exodus']",
+      "['slayer']",
+      "['slayer']",
+      "['exodus']",
+      "['sepultura']",
+      "['testament']"
+    ]
+  },
+  "639": {
+    "raw": "{\"mood\":[\"raw\",\"grimy\",\"hard-hitting\"],\"genre\":[\"east coast hip-hop\"],\"era\":\"2000s\",\"language\":\"english\",\"energy\":\"high\",\"artist_relation\":\"different but similar\",\"novelty\":\"any\",\"constraints\":[\"exclude r. kelly\",\"similar to jay-z and 50 cent\",\"early 2000s\"]}",
+    "parsed": {
+      "mood": [
+        "raw",
+        "grimy",
+        "hard-hitting"
+      ],
+      "genre": [
+        "east coast hip-hop"
+      ],
+      "era": "2000s",
+      "language": "english",
+      "energy": "high",
+      "artist_relation": "different but similar",
+      "novelty": "any",
+      "constraints": [
+        "exclude r. kelly",
+        "similar to jay-z and 50 cent",
+        "early 2000s"
+      ]
+    },
+    "played_artists": [
+      "['sean paul']",
+      "['sean paul']",
+      "['jay-z', 'jay z']",
+      "['jay-z', 'jay z']",
+      "['mark curry', 'black rob', 'diddy']",
+      "['50 cent']",
+      "['r. kelly']"
+    ]
+  },
+  "3167": {
+    "raw": "{\"mood\":[\"classic\",\"strong\",\"anthemic\"],\"genre\":[\"classic rock\"],\"era\":\"1970s\",\"language\":\"english\",\"energy\":\"medium\",\"artist_relation\":\"completely new\",\"novelty\":\"discover\",\"constraints\":[\"male artist or band\",\"strong vocals\",\"late 70s or early 80s\"]}",
+    "parsed": {
+      "mood": [
+        "classic",
+        "strong",
+        "anthemic"
+      ],
+      "genre": [
+        "classic rock"
+      ],
+      "era": "1970s",
+      "language": "english",
+      "energy": "medium",
+      "artist_relation": "completely new",
+      "novelty": "discover",
+      "constraints": [
+        "male artist or band",
+        "strong vocals",
+        "late 70s or early 80s"
+      ]
+    },
+    "played_artists": [
+      "['supertramp']",
+      "['aimee mann']",
+      "['rachael yamagata']",
+      "['rachael yamagata']",
+      "['aimee mann']",
+      "['rachael yamagata']",
+      "['aimee mann']"
+    ]
+  },
+  "4703": {
+    "raw": "{\"mood\":[\"nostalgic\",\"warm\",\"atmospheric\"],\"genre\":[\"electronic\",\"ambient\"],\"era\":\"any\",\"language\":\"any\",\"energy\":\"low\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"vintage electronic sound\",\"old nature documentary vibe\",\"Four Tet tracks or similar artists\"]}",
+    "parsed": {
+      "mood": [
+        "nostalgic",
+        "warm",
+        "atmospheric"
+      ],
+      "genre": [
+        "electronic",
+        "ambient"
+      ],
+      "era": "any",
+      "language": "any",
+      "energy": "low",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "vintage electronic sound",
+        "old nature documentary vibe",
+        "Four Tet tracks or similar artists"
+      ]
+    },
+    "played_artists": [
+      "['boards of canada']",
+      "['boards of canada']",
+      "['boards of canada']",
+      "['boards of canada']",
+      "['boards of canada']",
+      "['boards of canada']",
+      "['four tet']"
+    ]
+  },
+  "5535": {
+    "raw": "{\"mood\":[\"chill\",\"mellow\",\"laid-back\"],\"genre\":[\"instrumental hip-hop\"],\"era\":\"any\",\"language\":\"any\",\"energy\":\"low\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"instrumental only\",\"high quality production\",\"boom-bap or jazzy hip-hop feel\"]}",
+    "parsed": {
+      "mood": [
+        "chill",
+        "mellow",
+        "laid-back"
+      ],
+      "genre": [
+        "instrumental hip-hop"
+      ],
+      "era": "any",
+      "language": "any",
+      "energy": "low",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "instrumental only",
+        "high quality production",
+        "boom-bap or jazzy hip-hop feel"
+      ]
+    },
+    "played_artists": [
+      "['mf doom']",
+      "['mf doom']",
+      "['mf doom']",
+      "['mf doom']",
+      "['mf doom']",
+      "['wagon christ']",
+      "['mf doom']"
+    ]
+  },
+  "6855": {
+    "raw": "{\"mood\":[\"raw\",\"classic\",\"underground\"],\"genre\":[\"hip-hop\",\"boom-bap\"],\"era\":\"1990s\",\"language\":\"english\",\"energy\":\"medium\",\"artist_relation\":\"different but similar\",\"novelty\":\"any\",\"constraints\":[\"group act\",\"late 90s to early 2000s\",\"strong distinct beat\"]}",
+    "parsed": {
+      "mood": [
+        "raw",
+        "classic",
+        "underground"
+      ],
+      "genre": [
+        "hip-hop",
+        "boom-bap"
+      ],
+      "era": "1990s",
+      "language": "english",
+      "energy": "medium",
+      "artist_relation": "different but similar",
+      "novelty": "any",
+      "constraints": [
+        "group act",
+        "late 90s to early 2000s",
+        "strong distinct beat"
+      ]
+    },
+    "played_artists": [
+      "['nas']",
+      "['jedi mind tricks']",
+      "['the notorious b.i.g.']",
+      "['d12']",
+      "['kastro', 'young noble', '2pac']",
+      "['outlawz', '2pac']",
+      "['jedi mind tricks']"
+    ]
+  },
+  "3399": {
+    "raw": "{\"mood\":[\"atmospheric\",\"innovative\"],\"genre\":[\"electronic\",\"alternative\"],\"era\":\"any\",\"language\":\"english\",\"energy\":\"medium\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"genre-blending\",\"experimental\"]}",
+    "parsed": {
+      "mood": [
+        "atmospheric",
+        "innovative"
+      ],
+      "genre": [
+        "electronic",
+        "alternative"
+      ],
+      "era": "any",
+      "language": "english",
+      "energy": "medium",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "genre-blending",
+        "experimental"
+      ]
+    },
+    "played_artists": [
+      "['oliver koletzki']",
+      "['zhu']",
+      "['oliver koletzki', 'hvob']",
+      "['lorde']",
+      "['blah blah blah']",
+      "['jessie reyez']",
+      "['twenty one pilots']"
+    ]
+  },
+  "4159": {
+    "raw": "{\"mood\":[\"epic\",\"adventurous\",\"heroic\"],\"genre\":[\"orchestral\",\"soundtrack\"],\"era\":\"any\",\"language\":\"instrumental\",\"energy\":\"high\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"grand fantasy adventure feel\",\"journey or battle preparation theme\",\"strong melodic lines\",\"instrumental\"]}",
+    "parsed": {
+      "mood": [
+        "epic",
+        "adventurous",
+        "heroic"
+      ],
+      "genre": [
+        "orchestral",
+        "soundtrack"
+      ],
+      "era": "any",
+      "language": "instrumental",
+      "energy": "high",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "grand fantasy adventure feel",
+        "journey or battle preparation theme",
+        "strong melodic lines",
+        "instrumental"
+      ]
+    },
+    "played_artists": [
+      "['audiomachine']",
+      "['era']",
+      "['vangelis']",
+      "['enya']",
+      "['brunuhville']",
+      "['klaus badelt']",
+      "['hans zimmer', 'nick glennie-smith', 'joshua bell']"
+    ]
+  },
+  "3071": {
+    "raw": "{\"mood\":[\"aggressive\",\"chaotic\",\"intense\"],\"genre\":[\"metalcore\",\"hardcore\"],\"era\":\"any\",\"language\":\"english\",\"energy\":\"high\",\"artist_relation\":\"same as previous\",\"novelty\":\"familiar\",\"constraints\":[\"artist: Converge\",\"track: Eagles Become Vultures\"]}",
+    "parsed": {
+      "mood": [
+        "aggressive",
+        "chaotic",
+        "intense"
+      ],
+      "genre": [
+        "metalcore",
+        "hardcore"
+      ],
+      "era": "any",
+      "language": "english",
+      "energy": "high",
+      "artist_relation": "same as previous",
+      "novelty": "familiar",
+      "constraints": [
+        "artist: Converge",
+        "track: Eagles Become Vultures"
+      ]
+    },
+    "played_artists": [
+      "['converge']",
+      "['converge']",
+      "['converge']",
+      "['converge']",
+      "['converge']",
+      "['converge']",
+      "['converge']"
+    ]
+  },
+  "6095": {
+    "raw": "{\"mood\":[\"introspective\",\"creative\",\"thought-provoking\"],\"genre\":[\"hip-hop\",\"alternative rap\"],\"era\":\"any\",\"language\":\"english\",\"energy\":\"high\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"unique production\",\"thoughtful lyrics\"]}",
+    "parsed": {
+      "mood": [
+        "introspective",
+        "creative",
+        "thought-provoking"
+      ],
+      "genre": [
+        "hip-hop",
+        "alternative rap"
+      ],
+      "era": "any",
+      "language": "english",
+      "energy": "high",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "unique production",
+        "thoughtful lyrics"
+      ]
+    },
+    "played_artists": [
+      "['kid cudi']",
+      "['kevin abstract']",
+      "['kevin abstract']",
+      "['tyler, the creator', 'rex orange county']",
+      "['tyler, the creator']",
+      "['kendrick lamar']",
+      "['brockhampton']"
+    ]
+  },
+  "6367": {
+    "raw": "{\"mood\":[\"dark\",\"aggressive\",\"menacing\"],\"genre\":[\"hip-hop\",\"underground hip-hop\"],\"era\":\"1990s-2000s\",\"language\":\"english\",\"energy\":\"high\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"heavy beats\",\"raw production\",\"unfiltered aggression\",\"East Coast underground\"]}",
+    "parsed": {
+      "mood": [
+        "dark",
+        "aggressive",
+        "menacing"
+      ],
+      "genre": [
+        "hip-hop",
+        "underground hip-hop"
+      ],
+      "era": "1990s-2000s",
+      "language": "english",
+      "energy": "high",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "heavy beats",
+        "raw production",
+        "unfiltered aggression",
+        "East Coast underground"
+      ]
+    },
+    "played_artists": [
+      "['jedi mind tricks']",
+      "['jedi mind tricks']",
+      "['gang starr']",
+      "['outerspace']",
+      "['big l']",
+      "['jedi mind tricks']",
+      "['dmx']"
+    ]
+  },
+  "2151": {
+    "raw": "{\"mood\":[\"atmospheric\",\"soulful\",\"introspective\"],\"genre\":[\"underground hip-hop\"],\"era\":\"any\",\"language\":\"english\",\"energy\":\"medium\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"thought-provoking lyrics\",\"smooth atmospheric beat\",\"good for deep focus\",\"intellectual vibe\"]}",
+    "parsed": {
+      "mood": [
+        "atmospheric",
+        "soulful",
+        "introspective"
+      ],
+      "genre": [
+        "underground hip-hop"
+      ],
+      "era": "any",
+      "language": "english",
+      "energy": "medium",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "thought-provoking lyrics",
+        "smooth atmospheric beat",
+        "good for deep focus",
+        "intellectual vibe"
+      ]
+    },
+    "played_artists": [
+      "['hollywood undead']",
+      "['hieroglyphics']",
+      "['czarface']",
+      "['jedi mind tricks']",
+      "['the d.o.c.']",
+      "['funkdoobiest']",
+      "['oddisee']"
+    ]
+  },
+  "5447": {
+    "raw": "{\"mood\":[\"lively\",\"danceable\"],\"genre\":[\"samba\",\"pagode\"],\"era\":\"any\",\"language\":\"portuguese\",\"energy\":\"high\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"exclude pixote\",\"exclude os travessos\",\"exclude exaltasamba\",\"legendary or popular artists\",\"new artists not yet played\"]}",
+    "parsed": {
+      "mood": [
+        "lively",
+        "danceable"
+      ],
+      "genre": [
+        "samba",
+        "pagode"
+      ],
+      "era": "any",
+      "language": "portuguese",
+      "energy": "high",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "exclude pixote",
+        "exclude os travessos",
+        "exclude exaltasamba",
+        "legendary or popular artists",
+        "new artists not yet played"
+      ]
+    },
+    "played_artists": [
+      "['soweto']",
+      "['thiaguinho']",
+      "['pixote']",
+      "['os travessos']",
+      "['exaltasamba']",
+      "['pixote']",
+      "['pixote']"
+    ]
+  },
+  "7647": {
+    "raw": "{\"mood\":[\"epic\",\"atmospheric\",\"heavy\"],\"genre\":[\"progressive metal\"],\"era\":\"2000s\",\"language\":\"english\",\"energy\":\"high\",\"artist_relation\":\"same as previous\",\"novelty\":\"any\",\"constraints\":[\"from Octavarium album\",\"Dream Theater\",\"heavy feel\",\"epic or atmospheric elements\"]}",
+    "parsed": {
+      "mood": [
+        "epic",
+        "atmospheric",
+        "heavy"
+      ],
+      "genre": [
+        "progressive metal"
+      ],
+      "era": "2000s",
+      "language": "english",
+      "energy": "high",
+      "artist_relation": "same as previous",
+      "novelty": "any",
+      "constraints": [
+        "from Octavarium album",
+        "Dream Theater",
+        "heavy feel",
+        "epic or atmospheric elements"
+      ]
+    },
+    "played_artists": [
+      "['dream theater']",
+      "['dream theater']",
+      "['dream theater']",
+      "['dream theater']",
+      "['dream theater']",
+      "['dream theater']",
+      "['dream theater']"
+    ]
+  },
+  "4263": {
+    "raw": "{\"mood\":[\"smooth\",\"soulful\",\"laid-back\"],\"genre\":[\"jazz-hop\",\"hip-hop\"],\"era\":\"1990s\",\"language\":\"english\",\"energy\":\"medium\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"not Native Tongues collective\",\"intelligent lyricism\",\"jazz-infused production\",\"early 90s golden age sound\"]}",
+    "parsed": {
+      "mood": [
+        "smooth",
+        "soulful",
+        "laid-back"
+      ],
+      "genre": [
+        "jazz-hop",
+        "hip-hop"
+      ],
+      "era": "1990s",
+      "language": "english",
+      "energy": "medium",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "not Native Tongues collective",
+        "intelligent lyricism",
+        "jazz-infused production",
+        "early 90s golden age sound"
+      ]
+    },
+    "played_artists": [
+      "['a tribe called quest']",
+      "['a tribe called quest']",
+      "['a tribe called quest']",
+      "['large professor']",
+      "['a tribe called quest']",
+      "['a tribe called quest']",
+      "['a tribe called quest']"
+    ]
+  },
+  "5119": {
+    "raw": "{\"mood\":[\"uplifting\",\"thoughtful\",\"driving\"],\"genre\":[\"indie rock\"],\"era\":\"2000s\",\"language\":\"english\",\"energy\":\"medium\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"not phoenix\",\"not death cab for cutie\",\"good for driving\"]}",
+    "parsed": {
+      "mood": [
+        "uplifting",
+        "thoughtful",
+        "driving"
+      ],
+      "genre": [
+        "indie rock"
+      ],
+      "era": "2000s",
+      "language": "english",
+      "energy": "medium",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "not phoenix",
+        "not death cab for cutie",
+        "good for driving"
+      ]
+    },
+    "played_artists": [
+      "['phoenix']",
+      "['phoenix']",
+      "['phoenix']",
+      "['death cab for cutie']",
+      "['death cab for cutie']",
+      "['phoenix']",
+      "['phoenix']"
+    ]
+  },
+  "7799": {
+    "raw": "{\"mood\":[\"gritty\",\"dark\",\"atmospheric\"],\"genre\":[\"hardcore hip-hop\",\"east coast hip-hop\"],\"era\":\"1990s\",\"language\":\"english\",\"energy\":\"medium\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"east coast\",\"hardcore\",\"gritty lyrics\",\"dark atmospheric beats\",\"boom-bap\"]}",
+    "parsed": {
+      "mood": [
+        "gritty",
+        "dark",
+        "atmospheric"
+      ],
+      "genre": [
+        "hardcore hip-hop",
+        "east coast hip-hop"
+      ],
+      "era": "1990s",
+      "language": "english",
+      "energy": "medium",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "east coast",
+        "hardcore",
+        "gritty lyrics",
+        "dark atmospheric beats",
+        "boom-bap"
+      ]
+    },
+    "played_artists": [
+      "['a tribe called quest']",
+      "['a tribe called quest']",
+      "['pete rock & c.l. smooth', 'c.l. smooth']",
+      "['smif-n-wessun']",
+      "['the notorious b.i.g.']",
+      "['nas', 'diddy']",
+      "['das efx']"
+    ]
+  },
+  "495": {
+    "raw": "{\"mood\":[\"atmospheric\",\"deep\",\"experimental\"],\"genre\":[\"hip-hop\"],\"era\":\"2000s\",\"language\":\"english\",\"energy\":\"medium\",\"artist_relation\":\"different but similar\",\"novelty\":\"any\",\"constraints\":[\"released between 2000-2005\",\"well-known artist\",\"experimental production\",\"atmospheric sound\"]}",
+    "parsed": {
+      "mood": [
+        "atmospheric",
+        "deep",
+        "experimental"
+      ],
+      "genre": [
+        "hip-hop"
+      ],
+      "era": "2000s",
+      "language": "english",
+      "energy": "medium",
+      "artist_relation": "different but similar",
+      "novelty": "any",
+      "constraints": [
+        "released between 2000-2005",
+        "well-known artist",
+        "experimental production",
+        "atmospheric sound"
+      ]
+    },
+    "played_artists": [
+      "['outkast', 'outkast']",
+      "['kanye west']",
+      "['black thought', 'john legend', 'the roots']",
+      "['frank ocean']",
+      "['chance the rapper']",
+      "['lcd soundsystem']",
+      "['gucci mane']"
+    ]
+  },
+  "5391": {
+    "raw": "{\"mood\":[\"epic\",\"powerful\",\"anthemic\"],\"genre\":[\"heavy metal\",\"power metal\"],\"era\":\"1980s\",\"language\":\"english\",\"energy\":\"high\",\"artist_relation\":\"same as previous\",\"novelty\":\"any\",\"constraints\":[\"true metal\",\"strong vocals\",\"driving riffs\"]}",
+    "parsed": {
+      "mood": [
+        "epic",
+        "powerful",
+        "anthemic"
+      ],
+      "genre": [
+        "heavy metal",
+        "power metal"
+      ],
+      "era": "1980s",
+      "language": "english",
+      "energy": "high",
+      "artist_relation": "same as previous",
+      "novelty": "any",
+      "constraints": [
+        "true metal",
+        "strong vocals",
+        "driving riffs"
+      ]
+    },
+    "played_artists": [
+      "['manowar']",
+      "['manowar']",
+      "['manowar']",
+      "['manowar']",
+      "['manowar']",
+      "['manowar']",
+      "['manowar']"
+    ]
+  },
+  "127": {
+    "raw": "{\"mood\":[\"fun\",\"humorous\"],\"genre\":[\"comedy\",\"parody\"],\"era\":\"any\",\"language\":\"english\",\"energy\":\"high\",\"artist_relation\":\"same as previous\",\"novelty\":\"any\",\"constraints\":[\"artist: Weird Al Yankovic\",\"not already played\"]}",
+    "parsed": {
+      "mood": [
+        "fun",
+        "humorous"
+      ],
+      "genre": [
+        "comedy",
+        "parody"
+      ],
+      "era": "any",
+      "language": "english",
+      "energy": "high",
+      "artist_relation": "same as previous",
+      "novelty": "any",
+      "constraints": [
+        "artist: Weird Al Yankovic",
+        "not already played"
+      ]
+    },
+    "played_artists": [
+      "['\"weird al\" yankovic']",
+      "['\"weird al\" yankovic']",
+      "['\"weird al\" yankovic']",
+      "['\"weird al\" yankovic']",
+      "['\"weird al\" yankovic']",
+      "['\"weird al\" yankovic']",
+      "['\"weird al\" yankovic']"
+    ]
+  },
+  "783": {
+    "raw": "{\"mood\":\"classic\",\"genre\":\"classic rock\",\"era\":\"1960s\",\"language\":\"english\",\"energy\":\"any\",\"artist_relation\":\"same as previous\",\"novelty\":\"familiar\",\"constraints\":[\"must be from The Beatles' Abbey Road album\",\"any song from Abbey Road\"]}",
+    "parsed": {
+      "mood": "classic",
+      "genre": "classic rock",
+      "era": "1960s",
+      "language": "english",
+      "energy": "any",
+      "artist_relation": "same as previous",
+      "novelty": "familiar",
+      "constraints": [
+        "must be from The Beatles' Abbey Road album",
+        "any song from Abbey Road"
+      ]
+    },
+    "played_artists": [
+      "['the beatles']",
+      "['the beatles']",
+      "['the beatles']",
+      "['the beatles']",
+      "['pink floyd']",
+      "['legi\u00e3o urbana']",
+      "['maximo park']"
+    ]
+  },
+  "3943": {
+    "raw": "{\"mood\":[\"brutal\",\"disturbing\",\"aggressive\"],\"genre\":[\"brutal death metal\"],\"era\":\"any\",\"language\":\"english\",\"energy\":\"high\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"graphic violent lyrics\",\"gore themes\",\"from Suffocation or Dying Fetus\",\"exclude Cannibal Corpse\"]}",
+    "parsed": {
+      "mood": [
+        "brutal",
+        "disturbing",
+        "aggressive"
+      ],
+      "genre": [
+        "brutal death metal"
+      ],
+      "era": "any",
+      "language": "english",
+      "energy": "high",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "graphic violent lyrics",
+        "gore themes",
+        "from Suffocation or Dying Fetus",
+        "exclude Cannibal Corpse"
+      ]
+    },
+    "played_artists": [
+      "['cannibal corpse']",
+      "['cannibal corpse']",
+      "['cannibal corpse']",
+      "['cannibal corpse']",
+      "['cannibal corpse']",
+      "['obituary']",
+      "['cannibal corpse']"
+    ]
+  },
+  "15": {
+    "raw": "{\"mood\":[\"abrasive\",\"unhinged\",\"aggressive\"],\"genre\":[\"hardcore punk\",\"noise rock\"],\"era\":\"1980s\",\"language\":\"english\",\"energy\":\"high\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"noisy\",\"heavily distorted\",\"dissonant\",\"american\",\"not melodic\"]}",
+    "parsed": {
+      "mood": [
+        "abrasive",
+        "unhinged",
+        "aggressive"
+      ],
+      "genre": [
+        "hardcore punk",
+        "noise rock"
+      ],
+      "era": "1980s",
+      "language": "english",
+      "energy": "high",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "noisy",
+        "heavily distorted",
+        "dissonant",
+        "american",
+        "not melodic"
+      ]
+    },
+    "played_artists": [
+      "['cro-mags']",
+      "['wasted youth']",
+      "['dead kennedys']",
+      "['dead kennedys']",
+      "['gorilla biscuits']",
+      "['fugazi']",
+      "['fugazi']"
+    ]
+  },
+  "4887": {
+    "raw": "{\"mood\":[\"intense\",\"philosophical\",\"chaotic\"],\"genre\":[\"mathcore\",\"experimental hardcore\",\"post-hardcore\"],\"era\":\"any\",\"language\":\"english\",\"energy\":\"high\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"abstract or philosophical lyrics\",\"experimental or chaotic sound\",\"similar to Converge or Botch\"]}",
+    "parsed": {
+      "mood": [
+        "intense",
+        "philosophical",
+        "chaotic"
+      ],
+      "genre": [
+        "mathcore",
+        "experimental hardcore",
+        "post-hardcore"
+      ],
+      "era": "any",
+      "language": "english",
+      "energy": "high",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "abstract or philosophical lyrics",
+        "experimental or chaotic sound",
+        "similar to Converge or Botch"
+      ]
+    },
+    "played_artists": [
+      "['mewithoutyou']",
+      "['every time i die']",
+      "['every time i die']",
+      "['every time i die']",
+      "['the dillinger escape plan']",
+      "['mewithoutyou']",
+      "['mewithoutyou']"
+    ]
+  },
+  "3183": {
+    "raw": "{\"mood\":[\"melancholic\",\"awe-inspiring\",\"emotional\"],\"genre\":[\"orchestral\",\"cinematic\",\"soundtrack\"],\"era\":\"any\",\"language\":\"instrumental\",\"energy\":\"medium\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"instrumental only\",\"orchestral style\",\"strong emotional impact\"]}",
+    "parsed": {
+      "mood": [
+        "melancholic",
+        "awe-inspiring",
+        "emotional"
+      ],
+      "genre": [
+        "orchestral",
+        "cinematic",
+        "soundtrack"
+      ],
+      "era": "any",
+      "language": "instrumental",
+      "energy": "medium",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "instrumental only",
+        "orchestral style",
+        "strong emotional impact"
+      ]
+    },
+    "played_artists": [
+      "['hans zimmer']",
+      "['howard shore']",
+      "['steve jablonsky']",
+      "['audiomachine']",
+      "['mick gordon']",
+      "['harry gregson-williams']",
+      "['howard shore']"
+    ]
+  },
+  "2479": {
+    "raw": "{\"mood\":[\"defiant\",\"empowering\",\"intense\"],\"genre\":[\"gothic metal\",\"industrial metal\"],\"era\":\"any\",\"language\":\"english\",\"energy\":\"high\",\"artist_relation\":\"different but similar\",\"novelty\":\"discover\",\"constraints\":[\"female vocalist\",\"dynamic vocals clean to aggressive\",\"anthemic choruses\",\"heavy instrumentation\",\"empowering lyrics\"]}",
+    "parsed": {
+      "mood": [
+        "defiant",
+        "empowering",
+        "intense"
+      ],
+      "genre": [
+        "gothic metal",
+        "industrial metal"
+      ],
+      "era": "any",
+      "language": "english",
+      "energy": "high",
+      "artist_relation": "different but similar",
+      "novelty": "discover",
+      "constraints": [
+        "female vocalist",
+        "dynamic vocals clean to aggressive",
+        "anthemic choruses",
+        "heavy instrumentation",
+        "empowering lyrics"
+      ]
+    },
+    "played_artists": [
+      "['in this moment']",
+      "['in this moment']",
+      "['in this moment']",
+      "['in this moment']",
+      "['in this moment']",
+      "['in this moment']",
+      "['in this moment']"
+    ]
+  }
+}

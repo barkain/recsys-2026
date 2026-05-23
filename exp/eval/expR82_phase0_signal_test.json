@@ -1,0 +1,30 @@
+{
+  "verdict": "ARCHIVE",
+  "elapsed_s": 6.420592784881592,
+  "sample_size": 50,
+  "n_valid": 50,
+  "metrics": {
+    "gt_mean_total": 3.463333333333333,
+    "top1_fp_mean_total": 3.72,
+    "all_fp_mean_total": 3.6891480730223125,
+    "gt_win_rate_vs_top1_fp": 0.24,
+    "gt_beats_all_fps_rate": 0.02,
+    "gt_beats_any_fp_rate": 0.62,
+    "per_feature_gt_means": {
+      "mood_match": 0.11333333333333333,
+      "genre_match": 0.75,
+      "era_match": 0.51,
+      "language_match": 0.56,
+      "energy_match": 0.19,
+      "artist_rel_match": 0.84
+    },
+    "per_feature_fp_means": {
+      "mood_match": 0.16396213657876943,
+      "genre_match": 0.8385733603786342,
+      "era_match": 0.5502028397565923,
+      "language_match": 0.5806288032454361,
+      "energy_match": 0.2150101419878296,
+      "artist_rel_match": 0.8407707910750507
+    }
+  }
+}
