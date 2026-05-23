@@ -38,7 +38,23 @@ from scripts.expR54_phase3_full5fold_train import (  # noqa: E402
     build_query_structured_from_session,
     load_catalog,
 )
-from scripts.expS2_lambdarank_grouped import grouped_session_folds  # noqa: E402
+# Inlined from scripts.expS2_lambdarank_grouped to avoid pulling in `implicit`
+# (heavy compiled dep, unneeded for R84). Source: expS2_lambdarank_grouped.py:44-60.
+import numpy as _np_for_folds  # type: ignore[reportMissingImports]
+
+
+def grouped_session_folds(sessions, seed, k=5):
+    """Split by unique session_id — all turns of a session go to the same fold."""
+    unique_sessions = sorted(set(sessions))
+    rng = _np_for_folds.random.RandomState(seed)
+    rng.shuffle(unique_sessions)
+    session_to_fold = {}
+    for i, sid in enumerate(unique_sessions):
+        session_to_fold[sid] = i % k
+    folds = [[] for _ in range(k)]
+    for case_idx, sid in enumerate(sessions):
+        folds[session_to_fold[sid]].append(case_idx)
+    return [_np_for_folds.asarray(f, dtype=_np_for_folds.int64) for f in folds]
 
 PHASE0A_DIR = REPO / "cache" / "r84" / "phase0a"
 MANIFEST_PATH = PHASE0A_DIR / "pair_manifest.parquet"

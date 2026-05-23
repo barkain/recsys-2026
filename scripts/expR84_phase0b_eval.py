@@ -36,7 +36,7 @@ from scripts.expR54_phase3_full5fold_train import (  # noqa: E402
     build_track_text,
     load_catalog,
 )
-from scripts.expS2_lambdarank_grouped import grouped_session_folds  # noqa: E402
+from scripts.expR84_phase0a_census import grouped_session_folds  # noqa: E402
 
 MAX_SEQ_LEN_QUERY = 384
 MAX_SEQ_LEN_TRACK = 256
