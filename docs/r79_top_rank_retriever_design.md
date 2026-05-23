@@ -112,6 +112,81 @@ the **retriever's training objective** rather than its features or backbone.
 But the empirical history is unfavorable. Expected probability of success:
 < 25%.
 
-## Parked
+## Phased plan (UPDATED 2026-05-23 per user direction)
 
-Not implementing without explicit user go.
+### Phase 0A — Mac-side prep (build now, no GPU)
+
+- Build hard-negative training pairs on fold-0 train:
+  - Use OOF R54c sibling LR (trained on folds 1-4) to score fold-0 train
+  - Wait — train cases are folds 1-4 themselves. We need an LR that hasn't
+    seen each train case. Better: for each train case, use the OOF R54c
+    output that excludes its own fold. That requires 5 separate sibling LRs.
+  - Pragmatic: for Phase 0 smoke, build a SINGLE sibling LR on folds 0-3
+    and use its top-20 on fold-4 cases as one batch of training data.
+    Then rotate.
+  - Simpler still: train sibling LR on folds 1-4 (we already have this from
+    R71), use its top-20 on fold-0 dev as "hard negatives" alongside GT.
+    Then we train R79 on fold-0 dev itself — but that breaks OOF for fold-0
+    eval. So we need MORE training data than fold-0 dev.
+- **Cleanest Phase 0A approach**: Use ALL 8000 dev cases for training data
+  generation. For each case, build hard negatives from the R54c LR top-20
+  EXCLUDING the case's own fold (use folds-the-case-is-not-in for the LR
+  source). This requires 5 sibling LRs (one per held-out fold). Each LR
+  scores cases NOT in its training set → produces OOF top-20 → those become
+  hard negatives for that case. ~15 min total LR training (5 × 3 min) +
+  ~5 min scoring.
+- **Eval baseline**: OOF R54c-style sibling LR top-20 on fold-0 dev
+  (we already have this from R71, h7=0.2213, all=0.2110).
+- Output: `cache/r79/training_pairs.pkl`, `cache/r79/eval_baseline.json`,
+  `scripts/expR79_phase0a_build_data.py`, `scripts/expR79_phase0b_train_eval.py`.
+- ZERO GPU. ~30 min on Mac.
+
+### Phase 0B — Colab A100 fine-tune (CONDITIONAL, ~$5-10, ~2 hours)
+
+- Fine-tune BGE-large with InfoNCE + hard negatives weighted
+- Encode fold-0 dev queries + full catalog
+- Score by cosine, take standalone top-20
+- Compare to OOF R54c sibling baseline:
+  - h7 nDCG Δ ≥ +0.005 (hard gate)
+  - same-artist Δ ≥ -0.002 (hard gate, canary)
+  - recovered > lost (h7)
+  - top-1 churn /80 ≤ 25 (sanity bound)
+- If ALL gates pass → Phase 1 (5-fold OOF on A100)
+- If ANY gate fails → ARCHIVE, stop Blind-A modeling
+
+**Phase 0B does NOT involve LR conversion.** Standalone retriever top-20
+direct comparison. This avoids R76's failure mode (residual ranker
+chasing semantic similarity).
+
+### Phase 1 — 5-fold OOF (CONDITIONAL on Phase 0B pass, ~$30-50)
+
+- Train 5 BGE-large variants on per-fold training data
+- Encode catalog, score per-fold dev
+- Aggregate metrics across folds
+- Same gates as Phase 0B but evaluated on all 8000 dev cases
+
+### Phase 2 — Blind candidate (CONDITIONAL on Phase 1 pass)
+
+- Train production R79 on all 8000 dev with hard negatives from any single
+  sibling LR (in-sample for some cases, OOF for others)
+- Encode blind test queries + catalog
+- Submit standalone R79 top-20 as the candidate
+
+## Strict no-go conditions
+
+R79 stays parked / does not advance to Phase 0B if:
+
+- LexDiv at submission time has degraded > 0.005 below R78's 0.8845 (we'd
+  be giving up response-side gains)
+- R78 is not safely preserved as fallback production
+- Same-artist canary fails in Phase 0B (stop immediately)
+- Hard-negative training shows signs of "semantic neighbor" overfitting
+  (high cosine similarity to wrong-track-same-artist)
+
+## Recommended trigger order
+
+1. **Build Phase 0A on Mac TODAY** (~30 min, no cost). Locks data + harness.
+2. **Brief user on Phase 0A artifacts**, get sign-off for Phase 0B.
+3. **Phase 0B** (~2 hours, ~$10). Decide based on gates.
+4. **Phase 1** only if Phase 0B clearly passes.
+5. **Phase 2 (blind)** only if Phase 1 passes and there's an open submission window.
