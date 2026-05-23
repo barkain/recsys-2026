@@ -546,7 +546,7 @@ def main():
             top_300 = scores.topk(TOP_300, dim=-1).indices.cpu().numpy()
             for i, ci in enumerate(batch_ids):
                 r83_top30_per_case[ci] = top_300[i, :TOP_30].tolist()
-                r83_top20_per_case[ci] = top_300[i, :TOP_20].tolist()
+                r83_top20_per_case[ci] = top_300[i, :TOP_K].tolist()
             if (bs // args.batch_cases) % 5 == 0:
                 print(f"    eval {bs+len(batch_ids)}/{len(fold0_indices)} "
                       f"({time.time() - eval_t:.0f}s)", flush=True)
@@ -565,7 +565,7 @@ def main():
         if r_in_top20:
             r_gt_rank = r83_top20.index(gt_idx) + 1
         # Baseline
-        b_top20 = [track_to_idx.get(t, -1) for t in pair["oof_top20"][:TOP_20]]
+        b_top20 = [track_to_idx.get(t, -1) for t in pair["oof_top20"][:TOP_K]]
         b_in_top20 = gt_idx in b_top20
         b_gt_rank = b_top20.index(gt_idx) + 1 if b_in_top20 else -1
         results.append({
