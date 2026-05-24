@@ -1,0 +1,52 @@
+{
+  "experiment": "R84c margin transferability check",
+  "created_at": "2026-05-24T22:45:47.497586",
+  "n_cases": 8000,
+  "oof_sibling_margin_stats": {
+    "mean": 0.4561328119140853,
+    "std": 0.5297644168426794,
+    "min": 0.0,
+    "max": 4.158606627275174,
+    "p10": 0.03628852828449024,
+    "p25": 0.10516286324025058,
+    "p50": 0.2632399446780247,
+    "p75": 0.6019684996086146,
+    "p90": 1.1636387566737842,
+    "p95": 1.5598006946119862
+  },
+  "frozen_r54c_margin_stats": {
+    "mean": 0.48636533995000386,
+    "std": 0.555657299441052,
+    "min": 0.0,
+    "max": 4.406668505807637,
+    "p10": 0.040439795158797746,
+    "p25": 0.11152299325435173,
+    "p50": 0.28090124674448214,
+    "p75": 0.6489847334060626,
+    "p90": 1.2475469342660794,
+    "p95": 1.6699499135053868
+  },
+  "raw_thresholds": {
+    "low": 0.5,
+    "high": 2.0
+  },
+  "raw_route_rates": {
+    "oof_sibling": 0.724,
+    "frozen_r54c": 0.703,
+    "jaccard": 0.743965780629392
+  },
+  "quantile_mapped_thresholds": {
+    "low": 0.5472921962594627,
+    "high": 2.067767361506688,
+    "frozen_route_rate": 0.724,
+    "jaccard_with_oof": 0.7634343126807733
+  },
+  "recommendation": {
+    "rule": "USE_RAW_THRESHOLDS",
+    "rationale": "Raw transfer is acceptable; QM doesn't help much",
+    "thresholds_to_use": {
+      "low": 0.5,
+      "high": 2.0
+    }
+  }
+}
