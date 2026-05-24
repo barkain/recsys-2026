@@ -1,0 +1,190 @@
+{
+  "experiment": "R84 Phase 1 \u2014 5-fold OOF sibling LR (R84 vs R54 features)",
+  "created_at": "2026-05-24T21:20:23.837875",
+  "elapsed_s": 463.6339089870453,
+  "head_sha": "8697379466e7b40fb59fd90a27548952bcdf4354",
+  "verdict": "INVESTIGATE",
+  "n_folds": 5,
+  "n_cases_total": 8000,
+  "n_h7": 1000,
+  "feature_stack_r84": {
+    "names": [
+      "rrf_rank_inv",
+      "last_artist_match",
+      "last_tag_jaccard",
+      "query_artist_tok_overlap",
+      "query_title_tok_overlap",
+      "query_meta_tok_overlap",
+      "is_played",
+      "recency_score",
+      "src_a_rank_inv",
+      "src_b_rank_inv",
+      "src_c_rank_inv",
+      "src_d_rank_inv",
+      "src_f_rank_inv",
+      "src_als_rank_inv",
+      "src_a_pres",
+      "src_b_pres",
+      "src_c_pres",
+      "src_d_pres",
+      "src_f_pres",
+      "src_als_pres",
+      "n_sources",
+      "als_dot",
+      "n_history",
+      "popularity",
+      "pool_artist_frac",
+      "pool_artist_count",
+      "source_count_v2",
+      "r21_rank_inv",
+      "r21_presence",
+      "same_album_last1",
+      "same_album_last3",
+      "same_album_any",
+      "album_history_count",
+      "pool_same_album_count",
+      "r84_rank_inv",
+      "r84_presence",
+      "r84_cosine"
+    ],
+    "n_features": 37,
+    "structure": "FEAT_R39_ALL + [r84_rank_inv, r84_presence, r84_cosine]"
+  },
+  "pool": {
+    "weights": {
+      "A": 1.0,
+      "B": 1.0,
+      "C": 1.0,
+      "D": 0.5,
+      "F": 1.0,
+      "ALS": 1.0,
+      "R21": 1.0,
+      "R54": 1.0
+    },
+    "K": 300,
+    "note": "R54-stacked, identical to R54c production and Phase 0B"
+  },
+  "metrics_aggregate": {
+    "all": {
+      "n": 8000,
+      "frozen_r54c_baseline": 0.3158754882808494,
+      "sibling_r54": 0.2246008227503862,
+      "sibling_r84": 0.22559362296089402,
+      "delta_r84_vs_sibling_r54": 0.0009928002105078215,
+      "delta_r84_vs_frozen_r54c": -0.09028186531995536
+    },
+    "h7": {
+      "n": 1000,
+      "frozen_r54c_baseline": 0.34837790523461903,
+      "sibling_r54": 0.24510813715302016,
+      "sibling_r84": 0.2492969920008086,
+      "delta_r84_vs_sibling_r54": 0.004188854847788442,
+      "delta_r84_vs_frozen_r54c": -0.09908091323381044
+    },
+    "same_artist": {
+      "n": 2857,
+      "frozen_r54c_baseline": 0.6282143452884995,
+      "sibling_r54": 0.4485478622563259,
+      "sibling_r84": 0.4457874998032929,
+      "delta_r84_vs_sibling_r54": -0.002760362453033016,
+      "delta_r84_vs_frozen_r54c": -0.1824268454852066
+    },
+    "diff_artist": {
+      "n": 5143,
+      "frozen_r54c_baseline": 0.14236739680294613,
+      "sibling_r54": 0.10019547725778077,
+      "sibling_r84": 0.10327320566773178,
+      "delta_r84_vs_sibling_r54": 0.0030777284099510055,
+      "delta_r84_vs_frozen_r54c": -0.039094191135214354
+    },
+    "h7_same": {
+      "n": 467,
+      "frozen_r54c_baseline": 0.6316111628608804,
+      "sibling_r54": 0.4562330523405707,
+      "sibling_r84": 0.46124524389814103,
+      "delta_r84_vs_sibling_r54": 0.005012191557570322,
+      "delta_r84_vs_frozen_r54c": -0.17036591896273934
+    },
+    "h7_diff": {
+      "n": 533,
+      "frozen_r54c_baseline": 0.10021668326189094,
+      "sibling_r54": 0.060126269624715976,
+      "sibling_r84": 0.06359373940033157,
+      "delta_r84_vs_sibling_r54": 0.0034674697756155934,
+      "delta_r84_vs_frozen_r54c": -0.03662294386155937
+    }
+  },
+  "metrics_per_fold_h7": {
+    "0": {
+      "n": 200,
+      "sibling_r54": 0.22131935173539474,
+      "sibling_r84": 0.22558356321921566,
+      "delta": 0.004264211483820918
+    },
+    "1": {
+      "n": 200,
+      "sibling_r54": 0.22935250190553325,
+      "sibling_r84": 0.23101349848820252,
+      "delta": 0.0016609965826692719
+    },
+    "2": {
+      "n": 200,
+      "sibling_r54": 0.28021732403711447,
+      "sibling_r84": 0.28193469720148856,
+      "delta": 0.001717373164374092
+    },
+    "3": {
+      "n": 200,
+      "sibling_r54": 0.2106227414245526,
+      "sibling_r84": 0.20933086062539805,
+      "delta": -0.0012918807991545433
+    },
+    "4": {
+      "n": 200,
+      "sibling_r54": 0.28402876666250587,
+      "sibling_r84": 0.2986223404697382,
+      "delta": 0.014593573807232307
+    }
+  },
+  "h7_recovery": {
+    "recovered": 28,
+    "lost": 31,
+    "net": -3
+  },
+  "churn": {
+    "overlap_r54_r84_mean": 14.513625,
+    "overlap_b_r84_mean": 14.320375,
+    "top1_match_rate_r54_r84": 0.5275,
+    "churn_per_80": 37.800000000000004
+  },
+  "gates": {
+    "A1_h7_delta_ge_p005": {
+      "value": 0.004188854847788442,
+      "pass": false
+    },
+    "A2_h7_recov_gt_lost": {
+      "value": [
+        28,
+        31
+      ],
+      "pass": false
+    },
+    "B1_same_artist_delta_ge_n005": {
+      "value": -0.002760362453033016,
+      "pass": true
+    },
+    "B2_diff_artist_delta_ge_n005": {
+      "value": 0.0030777284099510055,
+      "pass": true
+    },
+    "B3_overlap_ge_8": {
+      "value": 14.513625,
+      "pass": true
+    }
+  },
+  "phase0b_reference": {
+    "h7_delta": -0.0059,
+    "same_artist_delta": -0.0112,
+    "note": "Phase 0B was fold-0 only, partial-OOF probe (sibling LR trained with R54 features, R84 swapped only at eval). Phase 1 is proper 5-fold OOF: sibling LRs trained per fold with R84 features available throughout."
+  }
+}

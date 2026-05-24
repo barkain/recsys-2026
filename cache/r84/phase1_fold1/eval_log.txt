@@ -1,0 +1,25 @@
+[2026-05-23 20:25:28] R84 Phase 0B eval start. fold=1 model_dir=/content/recsys-2026/cache/r84/phase1_fold1/model
+[2026-05-23 20:25:28] Loading dev payload...
+[2026-05-23 20:25:28]   fold-1 val cases: 1600
+[2026-05-23 20:25:28] Loading catalog...
+[2026-05-23 20:25:32]   47071 tracks
+[2026-05-23 20:25:41] Loading model from /content/recsys-2026/cache/r84/phase1_fold1/model
+[2026-05-23 20:25:42]   bf16=True
+[2026-05-23 20:25:42] Logging eval-query truncation...
+[2026-05-23 20:25:43]   dev queries: P90=343 P99=436 max=755 trunc@256=0.395 trunc@384=0.041
+[2026-05-23 20:25:43] Encoding 47071 tracks (max_seq=256, bs=128)...
+[2026-05-23 20:26:13]   catalog encoded in 29.8 s, shape=(47071, 1024), dtype=float32
+[2026-05-23 20:26:13]   saved -> r84_catalog_embs.fp16.npy (96.4 MB)
+[2026-05-23 20:26:13] Encoding 1600 dev queries (max_seq=384)...
+[2026-05-23 20:26:17]   queries encoded in 4.3 s, shape=(1600, 1024)
+[2026-05-23 20:26:17] Retrieving top-300...
+[2026-05-23 20:26:18]   retrieval done in 0.3 s
+[2026-05-23 20:26:18] R84 source-alone fold-0 metrics (quick snapshot):
+[2026-05-23 20:26:18]   hit@20 all = 0.2888
+[2026-05-23 20:26:18]   hit@300 all = 0.6525
+[2026-05-23 20:26:18]   hit@20 h7 = 0.2350  (n_h7=200)
+[2026-05-23 20:26:18]   hit@30 h7 = 0.3150
+[2026-05-23 20:26:18]   hit@300 h7 = 0.6250
+[2026-05-23 20:26:20] Wrote oof_r84_lists.json (29.8 MB)
+[2026-05-23 20:26:20] Wrote r84_features.npy shape=(1600, 3)
+[2026-05-23 20:26:20] R84 Phase 0B eval complete.
