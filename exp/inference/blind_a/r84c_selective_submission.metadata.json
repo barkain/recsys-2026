@@ -1,0 +1,13 @@
+{
+  "experiment": "R84c selective deployment Blind-A candidate",
+  "created_at": "2026-05-25T07:38:17.806347",
+  "head_sha": "edc685aee1766172c68aa140274b0dfbab9a9196",
+  "model": "claude-opus-4-7",
+  "n_cases": 80,
+  "n_responses_regenerated": 17,
+  "n_responses_reused_from_r78": 63,
+  "tracks_from": "R84c selective routing (R84 if R54c LR top-1 margin < 0.5 OR >= 2.0, else R54c)",
+  "responses_changed_when": "R84c top-1 != R78 top-1",
+  "submission_sha256": "e0461d531b0aa0ba7fe0d88c7f03958b8c45a5898a1bc1ed66a402ebf36c1ead",
+  "submission_path": "exp/inference/blind_a/r84c_selective_submission.zip"
+}
