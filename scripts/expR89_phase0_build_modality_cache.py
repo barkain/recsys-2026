@@ -51,7 +51,7 @@ def l2_normalize(arr: np.ndarray) -> np.ndarray:
 
 
 def load_hf_modalities() -> tuple[list, dict[str, np.ndarray]]:
-    """Load image/lyrics/audio from talkpl-ai/TalkPlayData-Challenge-Track-Embeddings."""
+    """Load image/lyrics/attrs/audio from talkpl-ai/TalkPlayData-Challenge-Track-Embeddings."""
     from datasets import DownloadConfig, load_dataset  # type: ignore
     try:
         ds = load_dataset(
@@ -67,6 +67,7 @@ def load_hf_modalities() -> tuple[list, dict[str, np.ndarray]]:
     col_map = {
         "image": "image-siglip2",
         "lyrics": "lyrics-qwen3_embedding_0.6b",
+        "attrs": "attributes-qwen3_embedding_0.6b",
         "audio": "audio-laion_clap",
     }
     tids = []
@@ -121,31 +122,12 @@ def main():
     # text mask: all present
     text_mask = np.ones(n_tracks, dtype=np.float16)
 
-    # 2. Load attributes Qwen (from local R12 cache) — re-align to text_ids ordering
-    print(f"\n{ts()} Loading attributes Qwen (local R12 cache, will re-align)...")
-    attrs_raw = np.load(META_QWEN_DIR / "vectors.npy").astype(np.float32)
-    attrs_ids = json.load(open(META_QWEN_DIR / "track_ids.json"))
-    attrs_id_to_row = {tid: i for i, tid in enumerate(attrs_ids)}
-    attrs_dim = attrs_raw.shape[1]
-    attrs_aligned = np.zeros((n_tracks, attrs_dim), dtype=np.float32)
-    attrs_mask = np.zeros(n_tracks, dtype=np.float16)
-    n_attrs_found = 0
-    for i, tid in enumerate(text_ids):
-        src_idx = attrs_id_to_row.get(tid)
-        if src_idx is not None:
-            attrs_aligned[i] = attrs_raw[src_idx]
-            attrs_mask[i] = 1.0
-            n_attrs_found += 1
-    attrs_aligned = l2_normalize(attrs_aligned).astype(np.float16)
-    print(f"  attrs: {attrs_aligned.shape} ({attrs_dim}-dim), coverage {n_attrs_found}/{n_tracks}")
-    np.save(OUT_DIR / "attrs.fp16.npy", attrs_aligned)
-
-    # 3. Load HF modalities (image, lyrics, audio) and align to text_ids
-    print(f"\n{ts()} Loading HF modalities (image/lyrics/audio)...")
+    # 2. Load HF modalities (image, lyrics, attrs, audio) and align to text_ids
+    print(f"\n{ts()} Loading HF modalities (image/lyrics/attrs/audio)...")
     hf_ids, hf_mods = load_hf_modalities()
     hf_id_to_row = {tid: i for i, tid in enumerate(hf_ids)}
 
-    masks = {"text": text_mask, "attrs": attrs_mask}
+    masks = {"text": text_mask}
     for key, src_arr in hf_mods.items():
         dim = src_arr.shape[1]
         aligned = np.zeros((n_tracks, dim), dtype=np.float32)
@@ -181,7 +163,7 @@ def main():
         "text": text_dim,
         "image": int(np.load(OUT_DIR / "image.fp16.npy").shape[1]),
         "lyrics": int(np.load(OUT_DIR / "lyrics.fp16.npy").shape[1]),
-        "attrs": attrs_dim,
+        "attrs": int(np.load(OUT_DIR / "attrs.fp16.npy").shape[1]),
         "audio": int(np.load(OUT_DIR / "audio.fp16.npy").shape[1]),
     }
     with open(OUT_DIR / "dims.json", "w") as f:
