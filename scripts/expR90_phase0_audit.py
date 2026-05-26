@@ -297,16 +297,25 @@ def main() -> None:
         return out
     summary["per_fold_h7"] = per_fold_h7(rows)
 
-    # ---- Phase 1 ROI prediction ----
-    # Upper bound on h7 nDCG if R84 retrieved every R84-win at rank 1
-    # AND ALSO every R54-win at rank 1 (i.e., perfect routing).
+    # ---- Phase 1 ROI prediction (RETRIEVAL LAYER, not LR-scored layer) ----
+    # These numbers are RETRIEVAL-ONLY nDCG (GT rank in retriever top-K).
+    # They are NOT comparable to R84c selective routing dev numbers
+    # (`exp/eval/expR84c_selective.json`), which are LR-scored top-20 nDCG
+    # and live on a different scale (~2.3x larger because the LR concentrates
+    # GT into top-20 of the RRF pool).
     perfect_route_h7 = float(np.mean([
         max(ndcg_at_k(r["r54_rank"], 20), ndcg_at_k(r["r84_rank"], 20))
         for r in h7_rows
     ]))
-    summary["perfect_routing_ceiling_h7_ndcg20"] = perfect_route_h7
-    summary["r84c_observed_h7_ndcg20"] = summary["h7"]["r84_ndcg20"]  # source-alone proxy
-    summary["routing_headroom_h7_ndcg20"] = perfect_route_h7 - summary["h7"]["r84_ndcg20"]
+    summary["retrieval_perfect_route_ceiling_h7_ndcg20"] = perfect_route_h7
+    summary["r84_source_alone_h7_ndcg20"] = summary["h7"]["r84_ndcg20"]
+    summary["retrieval_headroom_h7_ndcg20"] = perfect_route_h7 - summary["h7"]["r84_ndcg20"]
+    summary["scale_note"] = (
+        "All nDCG values in this audit are retrieval-layer (GT rank within "
+        "the retriever's top-K, no LR rerank). The R84c selective sweep "
+        "(expR84c_selective.json) reports LR-scored top-20 nDCG and is on "
+        "a different scale; do not directly compare deltas across the two."
+    )
 
     # h7 cases where neither R54 nor R84 has GT in top-300 (retrieval bottleneck)
     retrieval_bottleneck_h7 = sum(

@@ -1,7 +1,7 @@
 {
   "experiment": "R90 Phase 0 audit",
-  "created_at": "2026-05-26T21:54:36.248178",
-  "elapsed_s": 9.864738941192627,
+  "created_at": "2026-05-26T22:12:17.247793",
+  "elapsed_s": 10.51825213432312,
   "summary": {
     "n_cases": 8000,
     "n_h7": 1000,
@@ -260,9 +260,10 @@
         "delta_ndcg20": 0.014107910246424549
       }
     },
-    "perfect_routing_ceiling_h7_ndcg20": 0.14806781855022338,
-    "r84c_observed_h7_ndcg20": 0.1099834962804519,
-    "routing_headroom_h7_ndcg20": 0.03808432226977149,
+    "retrieval_perfect_route_ceiling_h7_ndcg20": 0.14806781855022338,
+    "r84_source_alone_h7_ndcg20": 0.1099834962804519,
+    "retrieval_headroom_h7_ndcg20": 0.03808432226977149,
+    "scale_note": "All nDCG values in this audit are retrieval-layer (GT rank within the retriever's top-K, no LR rerank). The R84c selective sweep (expR84c_selective.json) reports LR-scored top-20 nDCG and is on a different scale; do not directly compare deltas across the two.",
     "retrieval_bottleneck_h7_count": 313,
     "retrieval_bottleneck_h7_pct": 31.3
   }

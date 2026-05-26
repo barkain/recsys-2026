@@ -165,11 +165,16 @@ uv run python scripts/expR84c_blind_replay.py --blind-name blind_b --tracks-only
 ```
 
 **Routing thresholds**: R84c shipped on Blind-A at `low=0.5/high=2.0` (predeclared).
-The R84c selective sweep (5-fold OOF, dev) showed `low=0.25/high=2.0` strictly
-dominates the shipped rule: h7 Δ +0.0061 vs +0.0056, churn 25.5 vs 33.8/80,
-same-artist Δ −0.0011 vs −0.0017. R90 Phase 0 audit re-confirms this is the
-optimal observable rule (no retraining required). See
-[[project_r90_phase0_audit]] and `exp/eval/expR84c_selective.json`.
+The R84c selective sweep (5-fold OOF, dev) shows `low=0.25/high=2.0` is the
+**h7/churn-favorable tradeoff** — not strict dominance:
+  - h7 Δ: +0.0061 vs +0.0056
+  - churn: 25.5 vs 33.8 / 80
+  - same-artist Δ: −0.0011 vs −0.0017
+  - rec/lost: 15/18 vs 23/24 (more conservative; smaller in both directions)
+
+For Blind-B, the lower churn and better same-artist Δ argue for `0.25/2.0`,
+at the cost of fewer raw R84 recoveries. See `docs/r90_phase0_audit.md` and
+`exp/eval/expR84c_selective.json`.
 
 ## Step 6 — Generate Blind-B responses (Mac, ~10 min Opus)
 
