@@ -19,43 +19,49 @@ uv run python scripts/expR84c_blind_dryrun.py    # full Blind-A reproducibility 
 
 When the Blind-B dataset drops, build the per-case source list cache.
 
-**Inputs needed:** Blind-B raw conversations + GT placeholders (no GTs in blind).
-
-**Source list pipeline** (re-use the existing Blind-A scripts; they're written
-to take an arbitrary input dataset):
+`scripts/expR55_blind_source_cache.py` is now parameterized for arbitrary blind splits:
 
 ```bash
-# Adjust paths to whatever the Blind-B dataset comes as
-uv run python scripts/build_blind_source_cache.py \
-    --input <path-to-blind-b-jsonl-or-hf-dataset> \
-    --output cache/blind_b/source_cache.pkl
+uv run python scripts/expR55_blind_source_cache.py \
+    --blind-name blind_b \
+    --blind-dataset talkpl-ai/TalkPlayData-Challenge-Blind-B
 ```
 
-If `build_blind_source_cache.py` doesn't exist yet (Blind-A used `run_inference_blind_*.py` for this), reuse those:
+Defaults derive output paths from `--blind-name`:
+- `cache/blind_b/source_cache/<sid>.pkl` (per-session)
+- `cache/blind_b/source_cache.pkl` (consolidated)
+- `cache/blind_b/source_cache_manifest.json`
+
+R54b sanity validation is auto-skipped for non-blind_a runs (no R54b
+submission to compare against). To override paths:
 
 ```bash
-# Per-source builders (each writes into cache/blind_b/source_cache/<source>.pkl)
-uv run python run_inference_blind_r3_det.py --input <blind-b> --out cache/blind_b/
-uv run python run_inference_blind_f1.py     --input <blind-b> --out cache/blind_b/
-uv run python run_inference_blind_r21.py    --input <blind-b> --out cache/blind_b/
-# Then aggregate into cache/blind_b/source_cache.pkl matching cache/blind_a/source_cache.pkl format
+uv run python scripts/expR55_blind_source_cache.py \
+    --blind-name blind_b \
+    --blind-dataset <hf_dataset_id> \
+    --output-dir cache/blind_b/source_cache \
+    --output-cache cache/blind_b/source_cache.pkl \
+    --skip-r54b-validation
 ```
 
-**Verify:** `cache/blind_b/source_cache.pkl` should be ~2-5 MB depending on Blind-B size, with keys = blind sids and values containing `session_id, turn_number, user_query, history, music_turns, src_a, src_b, src_c, src_d, src_f, als_tracks, als_vec, r21_list, r21_rank_map`.
+**Verify:** the consolidated pickle should have keys = blind sids and values containing `session_id, turn_number, user_query, history, music_turns, src_a, src_b, src_c, src_d, src_f, als_tracks, als_vec, r21_list, r21_rank_map`. Size ~2-5 MB depending on Blind-B session count.
 
-## Step 2 — R54 5-fold ensemble blind retrieval (Colab A100, ~10 min wall)
+## Step 2 — R54 5-fold ensemble blind retrieval (Mac OR Colab, ~10 min wall)
 
-R54's 5 phase3 fold models are needed. If they're in `cache/r54/phase2_full/fold_{0..4}/model/`, skip the retraining. Otherwise:
+R54's 5 phase3 fold models live in `cache/r54/phase3_full/fold_{1..4}/` and `cache/r54/phase3_smoke/fold_0/`. If they're present (they should be — committed), this runs on Mac CPU in ~10 min. Otherwise restore from prior R54 phase3 training.
+
+`scripts/expR54_phase3_ensemble_blind.py` is now parameterized:
 
 ```bash
-# On Colab A100
-uv run python scripts/expR54_phase3_full5fold_train.py --device cuda   # if needed
-uv run python scripts/expR54_phase3_ensemble_blind.py \
-    --blind-cache cache/blind_b/source_cache.pkl \
-    --output cache/r54_production/blind_b_r54_lists.json
+uv run python scripts/expR54_phase3_ensemble_blind.py --blind-name blind_b
+# Writes: cache/r54_production/blind_b_r54_lists.json
 ```
 
-(For Blind-A, the output was `blind_r54_lists.json`. For Blind-B, name-mangled.)
+By default it derives:
+- `--blind-dataset` → `talkpl-ai/TalkPlayData-Challenge-Blind-B`
+- `--output` → `cache/r54_production/blind_b_r54_lists.json`
+
+Override with `--blind-dataset` / `--output` flags if needed.
 
 ## Step 3 — R84 5-fold ensemble blind retrieval (Colab A100, ~3 hours wall)
 
@@ -134,7 +140,7 @@ with tarfile.open(tar, "w:gz") as tf:
 print(f"\nTarball: {tar} ({tar.stat().st_size/1e6:.1f} MB)")
 ```
 
-**IMPORTANT — `scripts/expR84_blind_encode.py` currently hardcodes `BLIND_SRC = REPO / "cache/blind_a/source_cache.pkl"`.** Before Blind-B day, edit it to honor the `BLIND_SRC` env var or add a `--blind-cache` flag.
+`scripts/expR84_blind_encode.py` now honors `--blind-cache` flag and the `BLIND_SRC` env var (set in the Colab loop above). Default unchanged for backwards compat.
 
 ## Step 4 — Download R84 Blind-B artifacts to Mac
 
@@ -161,20 +167,26 @@ uv run python scripts/expR84c_blind_replay.py --blind-name blind_b --tracks-only
 
 Since Blind-B has no R78 baseline, ALL responses must be generated fresh.
 
-**Use the R87 prompt (best current LLM-judge prompt):**
+`scripts/expR84c_blind_b_responses.py` uses **R78-style prompting** — empirically the best response generator across this cycle. **NOT R87-style** because R87's evidence-injection variant slightly REGRESSED LexDiv on R84c (0.8720 → 0.8706, blind sub 757667). See [[project_r87_outcome]].
 
 ```bash
-# Adapt scripts/expR87_llm_push.py to operate on Blind-B tracks instead of R84c.
-# Or write a fresh scripts/expR87_blind_b_responses.py that reads
-# r84c_replay_blind_b_track_lists.json and generates one response per case.
-
 ANTHROPIC_RECSYS_API_KEY=sk-... \
-    uv run python scripts/expR87_blind_b_responses.py \
+    uv run python scripts/expR84c_blind_b_responses.py \
         --tracks-json exp/inference/blind_b/r84c_replay_blind_b_track_lists.json \
-        --output-zip exp/inference/blind_b/r84c_blind_b_submission.zip
+        --blind-cache cache/blind_b/source_cache.pkl \
+        --output-zip exp/inference/blind_b/r84c_blind_b_submission.zip \
+        --blind-name blind_b
 ```
 
-(`expR87_blind_b_responses.py` doesn't exist yet — write it on Blind-B day by adapting `expR87_llm_push.py`. The prompt structure should be the same as R87, but generates fresh for every case rather than only the weakest.)
+Optional flags:
+- `--dry-run` — list cases + print first 2 prompts, no API calls.
+- `--limit N` — only generate first N (smoke test before full run).
+
+Validation gates (built in):
+- Track IDs unchanged from input (hash check before submission write).
+- Word count 60-110 per response.
+- No banned phrases (R78 inherited list).
+- Empty/invalid responses are counted in metadata for review.
 
 ## Step 7 — Audit + manual upload
 
@@ -196,14 +208,13 @@ cat exp/eval/expR84c_replay_blind_b_audit.json
 - `cache/r84/phase0a/pair_manifest.parquet` + sha256 + build_config — frozen training data spec (READ-ONLY)
 - `exp/inference/blind_a/r84c_selective_submission.zip` — current production (READ-ONLY)
 
-## Pre-existing fixes needed before Blind-B day
+## Pre-day hardening (all complete as of 2026-05-26)
 
-These should be done IN ADVANCE so day-of is clean:
-
-1. **`scripts/expR84_blind_encode.py`** — replace hardcoded `BLIND_SRC` constant with CLI flag or env var lookup.
-2. **`scripts/expR54_phase3_ensemble_blind.py`** — verify it accepts `--blind-cache` / `--output` parameters; add if missing.
-3. **Source cache builder** — verify the inference pipeline scripts (`run_inference_blind_*.py`) can be parameterized for Blind-B. Test on a synthetic small dataset.
-4. **`scripts/expR87_blind_b_responses.py`** — write the fresh-response variant of R87 ahead of time. Tested against Blind-A as a smoke test.
+1. ✓ `scripts/expR84_blind_encode.py` — accepts `--blind-cache` flag + `BLIND_SRC` env var.
+2. ✓ `scripts/expR54_phase3_ensemble_blind.py` — accepts `--blind-name`, `--blind-dataset`, `--output`.
+3. ✓ `scripts/expR55_blind_source_cache.py` — accepts `--blind-name`, `--blind-dataset`, `--output-dir`, `--output-cache`, `--manifest-path`.
+4. ✓ `scripts/expR84c_blind_b_responses.py` — fresh-response generator for Blind-B (R78-style per R87 lesson).
+5. ✓ Blind-A dry-run regression: `scripts/expR84c_blind_dryrun.py` reports `HASH MATCH` (track hash `cfcda2ae309f79e5...`).
 
 ## Estimated total wall (Blind-B day)
 

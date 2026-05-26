@@ -106,8 +106,37 @@ def encode_queries(model_dir, queries):
 
 
 def main():
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--blind-name", default="blind_a",
+                    help="Blind split label, used in default output filename "
+                         "and the HF dataset name (default: blind_a).")
+    ap.add_argument("--blind-dataset", default=None,
+                    help="HF dataset name for the blind split. Default: "
+                         "talkpl-ai/TalkPlayData-Challenge-Blind-A for blind_a; "
+                         "talkpl-ai/TalkPlayData-Challenge-Blind-B for blind_b.")
+    ap.add_argument("--output", type=Path, default=None,
+                    help="Output JSON path. Default: cache/r54_production/"
+                         "blind_r54_lists.json for blind_a, "
+                         "<blind_name>_r54_lists.json otherwise.")
+    args = ap.parse_args()
+
+    # Resolve dataset + output paths
+    blind_dataset = args.blind_dataset or (
+        "talkpl-ai/TalkPlayData-Challenge-Blind-A" if args.blind_name == "blind_a"
+        else f"talkpl-ai/TalkPlayData-Challenge-Blind-B"
+        if args.blind_name == "blind_b"
+        else f"talkpl-ai/TalkPlayData-Challenge-{args.blind_name.upper()}"
+    )
+    output_path = args.output if args.output is not None else (
+        OUT_DIR / ("blind_r54_lists.json" if args.blind_name == "blind_a"
+                    else f"{args.blind_name}_r54_lists.json")
+    )
+
     t0 = time.time()
     print(f"{ts()} R54 Phase 3 ensemble blind retrieval (5-fold local)")
+    print(f"  blind_name={args.blind_name}  blind_dataset={blind_dataset}")
+    print(f"  output={output_path.relative_to(REPO)}")
     print("=" * 70)
 
     # Verify all fold artifacts present
@@ -126,11 +155,15 @@ def main():
     n_tracks = len(all_track_ids)
     print(f"  {n_tracks} tracks")
 
-    # Load blind-A
-    print(f"{ts()} Loading blind-A test set...")
+    # Load blind dataset
+    print(f"{ts()} Loading {blind_dataset} test set...")
     from datasets import DownloadConfig, load_dataset  # type: ignore[reportMissingImports]
-    db = load_dataset("talkpl-ai/TalkPlayData-Challenge-Blind-A", split="test",
-                      download_config=DownloadConfig(local_files_only=True))
+    try:
+        db = load_dataset(blind_dataset, split="test",
+                          download_config=DownloadConfig(local_files_only=True))
+    except Exception:
+        print(f"  HF cache miss, downloading {blind_dataset}...")
+        db = load_dataset(blind_dataset, split="test")
     blind_items = list(db)
     print(f"  {len(blind_items)} blind sessions")
 
@@ -177,12 +210,14 @@ def main():
         blind_lists[sid] = [(all_track_ids[j], float(scores[j])) for j in top_idx]
 
     # Save
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    out_path = OUT_DIR / "blind_r54_lists.json"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path = output_path
     out_payload = {
         "lists": blind_lists,
         "manifest": {
             "experiment": "R54 Phase 3 ensemble blind retrieval (5-fold)",
+            "blind_name": args.blind_name,
+            "blind_dataset": blind_dataset,
             "fold_dirs": [str(d.relative_to(REPO)) for d in FOLD_DIRS],
             "n_blind_sessions": len(blind_lists),
             "topk": TOPK,

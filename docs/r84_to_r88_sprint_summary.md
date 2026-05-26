@@ -71,6 +71,32 @@ Vs R84 5-fold OOF, all 4 modalities passed the headroom gate:
 
 **Conclusion: multimodal source signal is real (86 unique recoveries) but does NOT convert at the LR layer.** The conversion wall is structural for cross-feature-class signals. R84-class signal converts because text retrieval upgrades the SAME feature class R54 LR was already calibrated for.
 
+### R89 — learned multimodal dual-encoder retriever (Colab A100)
+Frozen everything + ~3.5M-param fusion MLP. **All gates fail catastrophically.**
+- h7 nDCG Δ = −0.041 (worse than R84 source-alone)
+- same-artist Δ = **−0.119** (catastrophic regression)
+- Unique h7 top-30 = 13 vs LOST 39 (net −26)
+
+**Diagnosis:** fusion MLP bottleneck destroys signal each modality had alone. R85 image_siglip standalone produced 86 unique recoveries; R89 with ALL 5 modalities fused produced only 13. Compression through small projections is lossy.
+
+**Multimodal CLOSED across all 3 architectures** (R85 features, R88 constrained LR, R89 learned fusion).
+
+### R87 — evidence-injection LLM push (blind sub 757667, 2026-05-26)
+On R84c production base, regenerated 12 weakest responses with stronger evidence prompt.
+
+| metric | R84c | R87 | Δ |
+|---|---:|---:|---:|
+| composite | 0.6362 | **0.6360** | −0.0002 |
+| LLM judge | 4.90 | 4.90 | 0 |
+| LexDiv | 0.8720 | 0.8706 | −0.0014 |
+| nDCG@20 | 0.5069 | 0.5069 | 0 |
+
+**LLM 4.90 ceiling CONFIRMED** across R78 / R84c / R86 / R87. semintelligence's 4.95 uses a categorically different prompt shape our audit+regen pattern cannot reach. Evidence-injection (R87) slightly REGRESSED LexDiv vs R78-style.
+
+**Empirical lesson for Blind-B:** use **R78-style prompting** for fresh response generation. NOT R87-style.
+
+**Response side fully saturated under R84c tracks. No more Blind-A response polish.**
+
 ## Cost ledger (the entire post-R63c → R84c → R88 arc)
 
 | sprint | $ | what |

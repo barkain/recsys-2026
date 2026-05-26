@@ -59,9 +59,14 @@ from scripts.expR54_phase3_blind_submission import (  # noqa: E402
     parse_last_turn_local,
 )
 
-CACHE_DIR = REPO / "cache" / "blind_a" / "source_cache"
-CACHE_CONSOLIDATED = REPO / "cache" / "blind_a" / "source_cache.pkl"
-MANIFEST = REPO / "cache" / "blind_a" / "source_cache_manifest.json"
+# Defaults for Blind-A (preserved for backwards-compatible reruns)
+DEFAULT_BLIND_NAME = "blind_a"
+DEFAULT_BLIND_DATASET = "talkpl-ai/TalkPlayData-Challenge-Blind-A"
+
+# Module-level paths kept for backwards compat with imports; populated in main()
+CACHE_DIR = REPO / "cache" / DEFAULT_BLIND_NAME / "source_cache"
+CACHE_CONSOLIDATED = REPO / "cache" / DEFAULT_BLIND_NAME / "source_cache.pkl"
+MANIFEST = REPO / "cache" / DEFAULT_BLIND_NAME / "source_cache_manifest.json"
 
 R54_BLIND_LISTS = REPO / "cache" / "r54_production" / "blind_r54_lists.json"
 R54B_SUBMISSION = REPO / "exp" / "inference" / "blind_a" / "r54b_aligned_submission.json"
@@ -167,20 +172,27 @@ def load_retrievers():
             als_factors, als_to_idx, als_ids, query_parts)
 
 
-def build_cache(force=False):
+def build_cache(force=False, blind_dataset=DEFAULT_BLIND_DATASET,
+                cache_dir=None, cache_consolidated=None):
     from datasets import DownloadConfig, load_dataset  # type: ignore[reportMissingImports]
 
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    db = load_dataset("talkpl-ai/TalkPlayData-Challenge-Blind-A", split="test",
-                      download_config=DownloadConfig(local_files_only=True))
+    cache_dir = cache_dir if cache_dir is not None else CACHE_DIR
+    cache_consolidated = cache_consolidated if cache_consolidated is not None else CACHE_CONSOLIDATED
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    try:
+        db = load_dataset(blind_dataset, split="test",
+                          download_config=DownloadConfig(local_files_only=True))
+    except Exception:
+        print(f"{ts()} HF cache miss; downloading {blind_dataset}...")
+        db = load_dataset(blind_dataset, split="test")
     blind_items = list(db)
-    print(f"{ts()} Blind-A: {len(blind_items)} sessions")
+    print(f"{ts()} {blind_dataset}: {len(blind_items)} sessions")
 
     # Resumable: skip sessions already cached unless --force
     pending = []
     for item in blind_items:
         sid = str(item["session_id"])
-        per_sid_path = CACHE_DIR / f"{sid}.pkl"
+        per_sid_path = cache_dir / f"{sid}.pkl"
         if not force and per_sid_path.exists():
             continue
         pending.append(item)
@@ -194,8 +206,8 @@ def build_cache(force=False):
         for i, item in enumerate(pending):
             sid = str(item["session_id"])
             record = build_one_session(item, retrievers)
-            tmp = CACHE_DIR / f"{sid}.pkl.tmp"
-            final = CACHE_DIR / f"{sid}.pkl"
+            tmp = cache_dir / f"{sid}.pkl.tmp"
+            final = cache_dir / f"{sid}.pkl"
             with open(tmp, "wb") as f:
                 pickle.dump(record, f)
             tmp.rename(final)
@@ -211,14 +223,14 @@ def build_cache(force=False):
     consolidated = {}
     for item in blind_items:
         sid = str(item["session_id"])
-        per_sid_path = CACHE_DIR / f"{sid}.pkl"
+        per_sid_path = cache_dir / f"{sid}.pkl"
         if not per_sid_path.exists():
             raise RuntimeError(f"Missing per-session cache for {sid}")
         with open(per_sid_path, "rb") as f:
             consolidated[sid] = pickle.load(f)
-    with open(CACHE_CONSOLIDATED, "wb") as f:
+    with open(cache_consolidated, "wb") as f:
         pickle.dump(consolidated, f)
-    print(f"  Wrote {CACHE_CONSOLIDATED}  ({len(consolidated)} sessions)")
+    print(f"  Wrote {cache_consolidated}  ({len(consolidated)} sessions)")
     return consolidated
 
 
@@ -340,30 +352,66 @@ def validate_against_r54b(cache):
 
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--blind-name", default=DEFAULT_BLIND_NAME,
+                    help=f"Blind split label, used to derive output paths "
+                         f"(default: {DEFAULT_BLIND_NAME}).")
+    ap.add_argument("--blind-dataset", default=DEFAULT_BLIND_DATASET,
+                    help=f"HF dataset name for the blind split (default: "
+                         f"{DEFAULT_BLIND_DATASET}).")
+    ap.add_argument("--output-dir", type=Path, default=None,
+                    help="Per-session pickle directory. "
+                         "Default: cache/<blind_name>/source_cache/")
+    ap.add_argument("--output-cache", type=Path, default=None,
+                    help="Consolidated pickle path. "
+                         "Default: cache/<blind_name>/source_cache.pkl")
+    ap.add_argument("--manifest-path", type=Path, default=None,
+                    help="Manifest JSON path. "
+                         "Default: cache/<blind_name>/source_cache_manifest.json")
     ap.add_argument("--force", action="store_true",
                     help="Rebuild all per-session caches.")
     ap.add_argument("--skip-r54b-validation", action="store_true",
-                    help="Don't reproduce R54b after building cache.")
+                    help="Don't reproduce R54b after building cache "
+                         "(automatic for non-blind_a runs).")
     args = ap.parse_args()
 
+    # Resolve output paths (default to <blind_name> derived layout)
+    cache_dir = args.output_dir if args.output_dir is not None else (
+        REPO / "cache" / args.blind_name / "source_cache"
+    )
+    cache_consolidated = args.output_cache if args.output_cache is not None else (
+        REPO / "cache" / args.blind_name / "source_cache.pkl"
+    )
+    manifest_path = args.manifest_path if args.manifest_path is not None else (
+        REPO / "cache" / args.blind_name / "source_cache_manifest.json"
+    )
+
+    # R54b validation only meaningful for blind_a (the original training/blind split)
+    skip_validation = args.skip_r54b_validation or args.blind_name != DEFAULT_BLIND_NAME
+
     t0 = time.time()
-    cache = build_cache(force=args.force)
+    cache = build_cache(
+        force=args.force, blind_dataset=args.blind_dataset,
+        cache_dir=cache_dir, cache_consolidated=cache_consolidated,
+    )
 
     sanity = None
-    if not args.skip_r54b_validation:
+    if not skip_validation:
         sanity = validate_against_r54b(cache)
 
     manifest = {
+        "blind_name": args.blind_name,
+        "blind_dataset": args.blind_dataset,
         "n_sessions": len(cache),
-        "consolidated_path": str(CACHE_CONSOLIDATED),
-        "per_session_dir": str(CACHE_DIR),
+        "consolidated_path": str(cache_consolidated),
+        "per_session_dir": str(cache_dir),
         "sanity": sanity,
         "elapsed_s": time.time() - t0,
         "created_at": datetime.now().isoformat(),
     }
-    with open(MANIFEST, "w") as f:
+    manifest_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(manifest_path, "w") as f:
         json.dump(manifest, f, indent=2)
-    print(f"\n{ts()} Done. Manifest: {MANIFEST}  elapsed={time.time() - t0:.0f}s")
+    print(f"\n{ts()} Done. Manifest: {manifest_path}  elapsed={time.time() - t0:.0f}s")
 
     if sanity and sanity["quality"] != "PASS":
         print(f"\n  ⚠️ Sanity check did not fully match R54b. Inspect manifest before using cache.")
