@@ -1,0 +1,12 @@
+{
+  "experiment": "R84c blind replay tracks-only (blind_a)",
+  "created_at": "2026-05-26T21:10:50.222230",
+  "head_sha": "f7783699e2b1eaddab0fc5351aa2641ae8a48287",
+  "blind_name": "blind_a",
+  "n_cases": 80,
+  "n_routed_r84": 48,
+  "n_routed_r54": 32,
+  "routed_r84_rate": 0.6,
+  "track_hash_sha256": "cfcda2ae309f79e54d59ec527361426314305d9bf2a25b7484beb6487fda0703",
+  "elapsed_s": 7.28397798538208
+}

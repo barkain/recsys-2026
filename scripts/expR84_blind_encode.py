@@ -30,7 +30,7 @@ MAX_SEQ_LEN_QUERY = 384
 MAX_SEQ_LEN_TRACK = 256
 TOP_K = 300
 
-BLIND_SRC = REPO / "cache" / "blind_a" / "source_cache.pkl"
+DEFAULT_BLIND_SRC = REPO / "cache" / "blind_a" / "source_cache.pkl"
 
 
 def ts() -> str:
@@ -42,15 +42,28 @@ def main():
     p.add_argument("--model-dir", type=Path, required=True)
     p.add_argument("--output-path", type=Path, required=True,
                    help="JSON file: top-300 per blind sid")
+    p.add_argument("--blind-cache", type=Path, default=None,
+                   help="Path to blind source_cache.pkl. "
+                        "Default: BLIND_SRC env var or cache/blind_a/source_cache.pkl.")
     p.add_argument("--batch-size", type=int, default=128)
     p.add_argument("--device", default="cuda")
     p.add_argument("--no-bf16", action="store_true")
     args = p.parse_args()
 
-    print(f"{ts()} R84 blind encode  model={args.model_dir.name}")
+    # Resolve blind cache path: CLI > env > default
+    if args.blind_cache:
+        blind_src = args.blind_cache
+    elif os.environ.get("BLIND_SRC"):
+        env_path = os.environ["BLIND_SRC"]
+        blind_src = Path(env_path) if Path(env_path).is_absolute() else REPO / env_path
+    else:
+        blind_src = DEFAULT_BLIND_SRC
+
+    print(f"{ts()} R84 blind encode  model={args.model_dir.name}  blind={blind_src}")
+    assert blind_src.exists(), f"blind source cache missing: {blind_src}"
 
     # Load blind cases
-    with open(BLIND_SRC, "rb") as f:
+    with open(blind_src, "rb") as f:
         blind = pickle.load(f)
     blind_sids = sorted(blind.keys())
     print(f"  blind cases: {len(blind_sids)}")
