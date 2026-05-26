@@ -1,0 +1,1006 @@
+{
+  "experiment": "R87 LLM push audit",
+  "created_at": "2026-05-26T07:42:41.025717",
+  "r84c_distinct2": 0.9346609979861267,
+  "n_unique_bigrams": 4177,
+  "banned_corpus_bigrams_top20": [
+    "rather than",
+    "you wanted",
+    "you asked",
+    "you locked",
+    "given your",
+    "you praised",
+    "thread you",
+    "locked onto",
+    "keeps you",
+    "you just",
+    "lyrics about",
+    "hip hop",
+    "mid tempo",
+    "fingerpicked acoustic",
+    "singer songwriter",
+    "acoustic guitar",
+    "you're chasing",
+    "rhythm section",
+    "slow burning",
+    "late night"
+  ],
+  "scored_rows": [
+    {
+      "session_id": "0a1f7a63-c5e4-4a2d-9285-433cd036f4e7",
+      "turn_number": 1,
+      "response": "Servants Of Death by Refused channels the rebellious fire you're chasing, tearing into themes of control and liberation right from the album titled Freedom. The track snarls with aggressive post-hardcore guitars and shouted, defiant vocals, the kind of confrontational punk energy built for breaking chains rather than wearing them. While it sits outside your Outlaw Americana roots, the spirit of resistance translates directly, offering a harder-edged companion to the storytelling rebels you already favor.",
+      "audit_score": 7,
+      "diagnosis": [
+        "no_causal",
+        "no_session_anchor",
+        "banned:you're chasing",
+        "mid_bigram_density(3)"
+      ],
+      "n_words": 74
+    },
+    {
+      "session_id": "4b8ed42b-39ec-4d17-9bea-507828687a0c",
+      "turn_number": 4,
+      "response": "Galloping drum kicks and a shout-along chorus power Fight To Live by The Bouncing Souls, pulled from the same 1997 Hopeless Romantic album that just clicked. Gang-vocal hooks supply the singalong punch the Defiance, Ohio folk-punk picks couldn't, while the lyrics dig into scrappy hold-tight-to-the-good-times resilience. That melodic punk drive and reflective streak slot it directly next to Hopeless Romantic on your road trip queue, keeping the nostalgic momentum intact across both tracks.",
+      "audit_score": 7,
+      "diagnosis": [
+        "no_causal",
+        "no_session_anchor",
+        "vague_descriptor"
+      ],
+      "n_words": 73
+    },
+    {
+      "session_id": "5b2f877b-a6d5-4473-879c-f5a24d4fd06f",
+      "turn_number": 1,
+      "response": "Trying To Stop Your Leaving by Dierks Bentley speaks directly to that struggle of holding onto something rare, echoing your memory of lyrics about love being hard to find. Though it sits in country territory rather than the UK bass world you usually gravitate toward, its aching steel-guitar warmth and Bentley's pleading vocal carry the same emotional weight as a track wrestling with a \"one-track mind\" for someone. A tender detour worth a listen.",
+      "audit_score": 7,
+      "diagnosis": [
+        "no_causal",
+        "no_session_anchor",
+        "banned:rather than",
+        "mid_bigram_density(3)"
+      ],
+      "n_words": 74
+    },
+    {
+      "session_id": "9c37dcd7-d7c2-4686-8541-1e37c4814a09",
+      "turn_number": 1,
+      "response": "Glossy late-2010s dance-pop comes through cleanly on Eyes on Me by Desired, opening with a four-on-the-floor kick, bright synth stabs, and a flirtatious hook about locking eyes across the floor. Released on 2017's The Sweetest Dream, its polished production sits close to the K-pop sensibility you lean toward from Germany. Given your opening ask for something that makes you want to dance and feel good, the buoyant tempo and shimmering synth layers earn the top slot before stacking more uplifting cuts behind it.",
+      "audit_score": 7,
+      "diagnosis": [
+        "no_causal",
+        "no_session_anchor",
+        "vague_descriptor"
+      ],
+      "n_words": 83
+    },
+    {
+      "session_id": "0fedfa80-ebe2-4977-b16b-594f4a2b19b1",
+      "turn_number": 7,
+      "response": "Slide guitar moans over a swampy, slow-burning groove on Who the Devil by The Wood Brothers, a deeper cut from 2013's The Muse that pushes harder into bluesy rock terrain than their folkier material. I know fresh names are the ask, but the gravelly vocal delivery and dirt-under-the-nails rhythm section answer your call for grit. New artists land next; consider this a worthy detour through gritty Americana.",
+      "audit_score": 6,
+      "diagnosis": [
+        "no_causal",
+        "no_session_anchor",
+        "mid_bigram_density(3)"
+      ],
+      "n_words": 67
+    },
+    {
+      "session_id": "164fc33f-b103-424f-836a-b7a7d565f6c2",
+      "turn_number": 5,
+      "response": "Viewpoint by LTJ Bukem keeps you anchored in the Good Looking aesthetic you've championed across Rainfall, Undress Your Mind, and Rhodes to Freedom, with cover art leaning on that abstract, silhouette-forward look you've been chasing. Pulled from his 2000 album, it weaves jazzy Rhodes chords through rolling atmospheric breaks, sitting comfortably alongside the intelligent drum & bass thread running through your session. Expect liquid textures and a hazy, late-night pulse throughout.",
+      "audit_score": 6,
+      "diagnosis": [
+        "no_session_anchor",
+        "vague_descriptor",
+        "high_bigram_density(5)"
+      ],
+      "n_words": 71
+    },
+    {
+      "session_id": "38a5f361-9802-40be-9d15-15c67d5ba60a",
+      "turn_number": 2,
+      "response": "The Bug by Pig Destroyer burrows straight into the decay and existential dread you're chasing, its lyrics fixating on parasitic imagery and bodily rot that gnaws under the skin. The grindcore assault tears past in a blast-beat frenzy, with shredded male vocals and a corrosive guitar tone amplifying the disturbing visuals. Coming off Book Burner, it carries the same visceral punch as The Diplomat while leaning harder into bleak, festering subject matter.",
+      "audit_score": 6,
+      "diagnosis": [
+        "no_causal",
+        "no_session_anchor",
+        "banned:you're chasing"
+      ],
+      "n_words": 72
+    },
+    {
+      "session_id": "ab8bc8fa-6326-47a5-afb4-3e3a30ca7360",
+      "turn_number": 1,
+      "response": "Alone by SISTAR fits that memory of a K-Pop hit everyone seemed to know \u2014 released in April 2012, it dominated Korean charts and crossed over into international playlists during the era you're describing. The track pairs a sultry, mid-tempo groove with SISTAR's polished female vocals and a hook built around a steady heartbeat pulse, which is likely why it stuck in your head years later without the title coming back.",
+      "audit_score": 6,
+      "diagnosis": [
+        "no_causal",
+        "no_session_anchor",
+        "banned:fits that"
+      ],
+      "n_words": 71
+    },
+    {
+      "session_id": "d5c80ee5-97c2-4de1-af2e-2295e3ae34a3",
+      "turn_number": 7,
+      "response": "Where Escape From Xenon dropped you into a sci-fi shooter, Bits With Byte by 8 Bit Weapon pushes deeper into that galaxy-exploration feeling you just asked about, staying with the artist who finally nailed the brief. Built around bright square-wave melodies and a steady electro pulse, it carries the triumphant arcade-theme quality you loved in Lil' Fighter without tipping into Chipzel's frenetic intensity. The melodic focus also echoes why 2D Racer Level 1 first cracked things open for you.",
+      "audit_score": 6,
+      "diagnosis": [
+        "no_attribute",
+        "no_session_anchor",
+        "mid_bigram_density(4)"
+      ],
+      "n_words": 79
+    },
+    {
+      "session_id": "eaeca304-3ddb-4adb-8087-0f15b597f73e",
+      "turn_number": 7,
+      "response": "Witness by Wage War digs into that self-reckoning territory you're after, with lyrics about confronting who you really are and refusing to hide behind anyone else's expectations. After connecting so strongly with the resilience in Misery and the cutting-ties defiance of Deathwish, this one carries a similar empowering charge through pounding breakdowns and melodic clean choruses that lift the heavier sections. The contrast between crushing instrumentation and introspective writing should resonate with your metalcore taste.",
+      "audit_score": 6,
+      "diagnosis": [
+        "no_attribute",
+        "no_session_anchor",
+        "banned:you're after"
+      ],
+      "n_words": 75
+    },
+    {
+      "session_id": "2a677d32-23e9-4fe7-8b8e-4875c93509a2",
+      "turn_number": 4,
+      "response": "The Cry Of My People - 2003 Digital Remaster by Calvin Massey and Lee Morgan moves your Blue Note exploration toward another titan of the era, with Lee Morgan's trumpet anchoring a soulful Hard Bop session from \"The Sixth Sense.\" Its smoldering horn arrangements and rich Latin-tinged grooves echo the instrumental depth you've enjoyed across the Shorter cuts, while keeping that authentic 60s Blue Note character central to your listening so far.",
+      "audit_score": 5,
+      "diagnosis": [
+        "no_causal",
+        "no_session_anchor"
+      ],
+      "n_words": 72
+    },
+    {
+      "session_id": "2fe9abf6-ccea-4f05-8490-82da8bf57764",
+      "turn_number": 5,
+      "response": "Buzzsaw HM-2 guitar tone frames Brave New Hell by Bloodbath, answering your early Entombed and Dismember itch with mournful tremolo riffing in minor keys. Lifted from 2005's Nightmares Made Flesh, it threads Stockholm-school melodicism through Peter T\u00e4gtgren's crushing roar, so the chorus blooms into actual harmonized melody where Bastard Son of God stayed monolithic. Bloodbath consciously channels Sunlight Studios production here rather than their Floridian mode, granting memorable riffs without sacrificing weight.",
+      "audit_score": 5,
+      "diagnosis": [
+        "no_session_anchor",
+        "vague_descriptor",
+        "banned:rather than"
+      ],
+      "n_words": 72
+    },
+    {
+      "session_id": "6953ac7a-5e95-48d8-be4e-8f153ac937e2",
+      "turn_number": 5,
+      "response": "For Those We Loved by Austin Wintory is the slow, grieving counterweight to The Assassin Two-Step you just praised. Mourning strings and sparse piano draw the same industrial melancholy line you loved in Cathedrals of Steel, but stripped to chamber-scale intimacy. The orchestration sits closer to a Victorian funeral march than an action cue, lingering on sustained low brass and quiet harp figures. A fitting elegy beneath London's smoke-stained skyline.",
+      "audit_score": 5,
+      "diagnosis": [
+        "no_causal",
+        "no_session_anchor"
+      ],
+      "n_words": 70
+    },
+    {
+      "session_id": "9d4ef919-504b-4963-af47-777478ace477",
+      "turn_number": 3,
+      "response": "Slow-burning dread cracking open into full black-metal fury, that's the architecture of Ulvinde by Myrkur. Amalie Bruun layers ritualistic Nordic folk vocals and traditional instrumentation against tremolo-picked guitars and blast beats, the 2017 Mareridt-era production keeping both worlds equally present in the mix. Since Crown gave you the haunting beauty and Mareridt the melancholic weight, this is the one track where those halves collide inside a single song rather than across the record, which is likely why it surfaced first in your mind.",
+      "audit_score": 5,
+      "diagnosis": [
+        "no_session_anchor",
+        "banned:rather than",
+        "high_bigram_density(5)"
+      ],
+      "n_words": 83
+    },
+    {
+      "session_id": "c75f8e41-fde6-4d81-9c90-6f4844dad1b5",
+      "turn_number": 3,
+      "response": "The Christmas Song by Beegie Adair continues that elegant holiday thread you've loved through \"The Christmas Waltz\" and \"Have Yourself A Merry Little Christmas.\" I know you were hoping for vocals or saxophone this round, but her warm piano touch and gentle swing on this classic carry the same festive glow that's been working for your playlist. Consider it a familiar comfort while we keep searching for a vocalist or sax-led track to mix things up.",
+      "audit_score": 5,
+      "diagnosis": [
+        "no_causal",
+        "vague_descriptor"
+      ],
+      "n_words": 76
+    },
+    {
+      "session_id": "db11666f-bfb8-4d0d-b62b-075ab85d92f9",
+      "turn_number": 1,
+      "response": "Kool Thing by Sonic Youth pulls off that distinct sonic quality you're craving, with its 1990 production trading polish for raw, dissonant electric guitar riffs that scrape and chime in ways few alt-rock tracks dare. Kim Gordon's half-spoken vocals cut against the noise with a laid-back swagger, while the band's experimental edge keeps the energy unpredictable. As a teen exploring Anglo-American alternative styles, this one opens a door to Sonic Youth's wider catalog.",
+      "audit_score": 5,
+      "diagnosis": [
+        "no_causal",
+        "no_session_anchor"
+      ],
+      "n_words": 73
+    },
+    {
+      "session_id": "f321d88d-d809-4bcb-aca0-a1ef551a48de",
+      "turn_number": 1,
+      "response": "Off The Great Depression, Lambs at the Slaughter by Defiance, Ohio is the rawest cut to chase after naming the band as your benchmark. Acoustic strings scrape against shouted group vocals, locking folk-punk urgency to an anarcho-punk backbone. The rhythm section drives hard while fiddle and guitar trade scrappy runs, and the lyrics swing directly at power structures. Rough production keeps every shout and string scratch unpolished, exactly the territory your request maps onto.",
+      "audit_score": 5,
+      "diagnosis": [
+        "no_session_anchor",
+        "vague_descriptor",
+        "mid_bigram_density(3)"
+      ],
+      "n_words": 74
+    },
+    {
+      "session_id": "fc6ba76a-3dd8-4c11-b5af-a233253b01bf",
+      "turn_number": 1,
+      "response": "Close to the source by LTJ Bukem suits that wind-down mood because it threads liquid drum and bass under floating Rhodes-style keys and airy pads, so the tempo hums in the background while the atmosphere stays unhurried. Pulled from Journey Inwards, it leans on the smoother end of late-90s Good Looking productions, where shuffled breakbeats are softened by jazz-tinged chords. The rhythm gives your room quiet momentum, anchoring focus without pulling attention away from whatever you're doing.",
+      "audit_score": 5,
+      "diagnosis": [
+        "no_session_anchor",
+        "vague_descriptor",
+        "banned:journey"
+      ],
+      "n_words": 77
+    },
+    {
+      "session_id": "3aee4d9b-b0f1-4282-bbe6-58942c71f311",
+      "turn_number": 6,
+      "response": "Since Bella Luna and Northern Lights kept this Rippingtons run rolling, In Another Life by The Rippingtons, Russ Freeman is the obvious next pull. Drawn from the Black Diamond album, it's jazz fusion with a soft rock undercurrent, anchored by Russ Freeman's warm electric guitar lead and a polished, melody-first arrangement. After Kilimanjaro, Morocco, and Oceansong, this track stretches the same mellow instrumental thread with a bit more harmonic depth and lift.",
+      "audit_score": 4,
+      "diagnosis": [
+        "no_session_anchor",
+        "vague_descriptor"
+      ],
+      "n_words": 72
+    },
+    {
+      "session_id": "60a6fd69-33f4-4dbf-aa0d-872b27a69037",
+      "turn_number": 1,
+      "response": "Where your recollection points toward smooth flows and laid-back warmth, On and On by Pete Rock & C.L. Smooth nails it. Pete Rock chops a soul-jazz horn loop over dusty boom-bap kicks, while C.L. Smooth threads a conversational cadence across the groove. Off Mecca And The Soul Brother, few cuts crystallize East Coast Golden Age jazz-rap so cleanly, which speaks directly to your hunt for a half-remembered early 90s classic rooted in American hip-hop.",
+      "audit_score": 4,
+      "diagnosis": [
+        "no_session_anchor",
+        "high_bigram_density(5)"
+      ],
+      "n_words": 74
+    },
+    {
+      "session_id": "68993adf-60d9-42f9-b21f-cdd5bf851cb1",
+      "turn_number": 1,
+      "response": "What It Feels Like - Original Mix by Sons Of Maria threads a quiet melancholy through a deep house frame, since its mid-tempo four-on-the-floor pulse moves like chapters turning rather than a peak-time rush. Released in 2016, the production layers a wistful piano motif over filtered pads and a subdued vocal hook, where the arrangement gradually opens up to suggest a life-story arc. That slow-building emotional contour matches the unfolding, slightly downcast narrative you're after.",
+      "audit_score": 4,
+      "diagnosis": [
+        "no_session_anchor",
+        "banned:matches the",
+        "mid_bigram_density(3)"
+      ],
+      "n_words": 75
+    },
+    {
+      "session_id": "7905bb71-efea-4210-8ad9-881f37cad50a",
+      "turn_number": 1,
+      "response": "Somebody's Hero by Jamie O'Neal is a mid-2000s country single that should brighten the mood you're after. It threads bright acoustic guitar and polished Nashville production around a steady, mid-tempo pulse, while O'Neal's clear vocal carries lyrics celebrating everyday family role models across three generations. Since you wanted something happy and uplifting, the affirming storyline anchors the feel-good payoff without tipping into saccharine, and the radio-friendly pop-country sheen keeps it bouncing along.",
+      "audit_score": 4,
+      "diagnosis": [
+        "vague_descriptor",
+        "banned:you're after",
+        "mid_bigram_density(4)"
+      ],
+      "n_words": 72
+    },
+    {
+      "session_id": "ab87371b-9ebc-4fb1-9eea-b984a5b76258",
+      "turn_number": 1,
+      "response": "m.A.A.d city by MC Eiht works for a creative block because its two-part structure shifts gears mid-track, jolting your focus when attention drifts. The first half rides a frantic, distorted West Coast beat with siren-like synths, while Eiht's guttural ad-libs anchor the second half over a slower, menacing G-funk pulse. Released in 2012 on Kendrick's good kid, m.A.A.d city, it threads Compton storytelling through raw production that keeps the urban tension you need to stay locked in.",
+      "audit_score": 4,
+      "diagnosis": [
+        "no_session_anchor",
+        "vague_descriptor"
+      ],
+      "n_words": 77
+    },
+    {
+      "session_id": "b7d2f58e-a1e5-418d-b3bd-88e88d20908d",
+      "turn_number": 6,
+      "response": "Where Good Times Roll Pt. 2 pushed funkier turntablism, The Proxy by RJD2 drifts into calmer, more experimental terrain from Deadringer: Deluxe. A warm electric bass riff anchors the cut while spacey guitar textures and chopped samples float overhead, all strictly instrumental to protect your deep-work focus. Its unhurried, slightly meditative pulse sits a half-step outside the funk-heavier picks you've enjoyed, keeping firmly within underground hip-hop while easing your study session into quieter headspace.",
+      "audit_score": 4,
+      "diagnosis": [
+        "no_session_anchor",
+        "vague_descriptor"
+      ],
+      "n_words": 74
+    },
+    {
+      "session_id": "bd392a56-236a-49da-8f89-46c453e97ea2",
+      "turn_number": 6,
+      "response": "Horik's Forces Attack by Trevor Morris should hit the grand, sweeping scale you're chasing after Jarl Borg's assault. Pulled from The Vikings II soundtrack, it pairs surging orchestral swells with thunderous percussion that suggests massed warriors crossing open ground toward a decisive clash. Given how vividly you described feeling planted in the shield wall, this one widens the lens to something more cinematic and territorial, while keeping Morris's signature Norse weight intact.",
+      "audit_score": 4,
+      "diagnosis": [
+        "no_session_anchor",
+        "banned:you're chasing",
+        "mid_bigram_density(3)"
+      ],
+      "n_words": 72
+    },
+    {
+      "session_id": "d53d9457-12f1-4286-b195-aa42c23d3bce",
+      "turn_number": 5,
+      "response": "Drifting synth pads and a patient, hypnotic pulse anchor Whispers from the Ether by Kognitif, the cleanest bridge from his Hip-Hop catalog into the Electronic territory you just opened. Off Monometric, it's instrumental, trading bars for textured production that holds room for reflection without tipping melancholic. After \"Common Ground\" and \"That's Where It All Started,\" Kognitif stays in rotation while shifting register toward late-night electronic introspection with a forward-tilted, resilient pulse.",
+      "audit_score": 4,
+      "diagnosis": [
+        "no_session_anchor",
+        "high_bigram_density(5)"
+      ],
+      "n_words": 71
+    },
+    {
+      "session_id": "d7426802-d075-4a49-8062-977ba656c9a2",
+      "turn_number": 8,
+      "response": "Aching pedal steel and fingerpicked acoustic frame When The Stars Come Out by Chris Stapleton, another deep cut from Traveller, the 2015 album you confirmed by its stark black-and-white cover. Following Might As Well Get Stoned, it slows the tempo into a six-minute western ballad, with Morgane Stapleton's harmony lifting lyrics about chasing dreams out west. Among Stapleton's most cinematic recordings, it offers a welcome breather between rowdier cuts already played.",
+      "audit_score": 4,
+      "diagnosis": [
+        "no_session_anchor",
+        "high_bigram_density(5)"
+      ],
+      "n_words": 71
+    },
+    {
+      "session_id": "02ec3071-bd03-4f78-91bc-96666d0e3b6b",
+      "turn_number": 3,
+      "response": "Good Friday by Josh Garrels belongs in this thread before we pivot to another artist, extending the reflective Americana arc from Million Miles through Fire By Night. Fingerpicked acoustic guitar frames the piece while his hushed, soulful tenor threads lyrics tracing sorrow toward resurrection. The quiet resilience you praised in Fire By Night ripens here into hard-won peace, rooted in singer/songwriter folk with faint country shading. A worthy closing chapter with Garrels.",
+      "audit_score": 3,
+      "diagnosis": [
+        "vague_descriptor",
+        "mid_bigram_density(4)"
+      ],
+      "n_words": 72
+    },
+    {
+      "session_id": "25cc9533-7c02-4781-9100-ab438e848a3d",
+      "turn_number": 1,
+      "response": "Where your search centered on the Grace/Wastelands track singled out across 2009 year-end lists, I Am The Rain by Peter Doherty is the cut you want, since critics repeatedly flagged it as the album's standout. Recorded in late 2008 with Stephen Street producing, it pairs fingerpicked acoustic guitar with brushed percussion and weather-soaked, confessional lyricism rooted in British folk tradition. The arrangement stays sparse throughout, anchoring Doherty's bruised vocal in unhurried late-2000s indie-folk restraint.",
+      "audit_score": 3,
+      "diagnosis": [
+        "no_session_anchor",
+        "mid_bigram_density(3)"
+      ],
+      "n_words": 74
+    },
+    {
+      "session_id": "28c3ecd9-fbaa-4423-a85c-92508346e1e8",
+      "turn_number": 6,
+      "response": "Shame by King Woman extends the doom-gaze thread you locked onto with Burn, since it pairs Kristina Esfandiari's hymnal, half-buried vocals with downtuned guitars that crawl rather than charge. The drumming sits in a funeral-slow pulse while the production smears reverb across every chord, framing the kind of brooding, immersive heaviness you described after Akira. It stays contemplative instead of aggressive, holding that melancholic weight you wanted for deep introspection without veering into the chaos that derailed earlier picks.",
+      "audit_score": 3,
+      "diagnosis": [
+        "banned:you described",
+        "high_bigram_density(6)"
+      ],
+      "n_words": 79
+    },
+    {
+      "session_id": "2b1cbd1c-dd5b-40ab-943a-0392894babc0",
+      "turn_number": 2,
+      "response": "Fangs by Man Man is the sharpest cut on that tigers-on-a-boat record you just pinpointed. Hailing from On Oni Pond, it threads clattering junkyard percussion against warped saloon piano while Honus Honus barks theatrical lyrics about obsession and predatory romance. Stylistically it stretches early-2010s Philadelphia indie rock toward cabaret and art-punk territory, weirder than Pyramids and richer in texture. Since the surreal cover hooked you, Fangs rewards that instinct with its oddest interior moment.",
+      "audit_score": 3,
+      "diagnosis": [
+        "no_session_anchor",
+        "mid_bigram_density(3)"
+      ],
+      "n_words": 74
+    },
+    {
+      "session_id": "3734e44b-ca86-456b-95b1-9352effa8d3a",
+      "turn_number": 5,
+      "response": "Problems & Selfless by PARTYNEXTDOOR is another deep cut from P3 worth spinning on your late-night rotation. It leans into the dark, atmospheric mood you've been gravitating toward across Temptations and High Hopes, with hushed production and aching vocals tracing those familiar threads of love and longing. The slow-burning groove and layered harmonies keep that sensual R&B feel intact, so it should sit naturally beside the tracks already pulling you into this album.",
+      "audit_score": 3,
+      "diagnosis": [
+        "no_session_anchor",
+        "banned:leans into"
+      ],
+      "n_words": 73
+    },
+    {
+      "session_id": "3afb9f67-a18a-4b97-81cf-ef1806fce0e9",
+      "turn_number": 1,
+      "response": "From Wayne's 2010 Rebirth, American Star by Shanell, Lil Wayne is the rock-rap experiment you're half-remembering, built on grinding electric guitar chords and a duet where Shanell's melodic hook answers his auto-tuned verses about chasing fame. The album swapped trap drums for power chords across the board, a sharp turn from the hip-hop catalog you grew up on. Nothing else in his run sounds quite this guitar-driven.",
+      "audit_score": 3,
+      "diagnosis": [
+        "no_session_anchor",
+        "mid_bigram_density(3)"
+      ],
+      "n_words": 67
+    },
+    {
+      "session_id": "4831a3b4-3964-40ec-92a3-151cef2cae8f",
+      "turn_number": 1,
+      "response": "Wolf Like Me by Anna Calvi matches that painterly, image-first memory you described, where the artwork itself feels like a standalone canvas worth framing. Since the cover left an impression closer to fine art than typical sleeve design, Calvi's stark, theatrical imagery should ring a bell. Musically, it carries a smoldering rock intensity with a haunting vocal performance, mirroring the surreal, solitary mood you're trying to pin down from that striking visual.",
+      "audit_score": 3,
+      "diagnosis": [
+        "no_session_anchor",
+        "banned:you're trying"
+      ],
+      "n_words": 72
+    },
+    {
+      "session_id": "574f75cf-7036-4cd2-b699-93202d81e7e1",
+      "turn_number": 2,
+      "response": "Gloryhole by TR/ST threads the darker, synth-driven path forward while pulling it deeper into the gothic register you're after. Released in early 2012 on TRST, it sits squarely in that early-2010s darkwave moment, anchoring brooding analog synth pulses against Robert Alfons's smudged, half-whispered vocals. The mid-tempo EBM thump keeps a danceable pulse alive after Dressed For Space, since the chord work leans melancholic and the production stays murky rather than glossy, bridging synthpop hooks with nihilistic dancefloor weight.",
+      "audit_score": 3,
+      "diagnosis": [
+        "no_session_anchor",
+        "banned:you're after"
+      ],
+      "n_words": 78
+    },
+    {
+      "session_id": "78487c90-fda7-4723-ad4c-4557393ea95f",
+      "turn_number": 1,
+      "response": "Where your request zeroed in on kneeling and begging for mercy, Cross Road Blues by Robert Johnson is the exact 1937 Delta blues recording behind those lines. Cut for King Of The Delta Blues Singers, it pairs Johnson's bottleneck slide guitar with a cracked, pleading vocal steeped in supernatural dread. The lyrics trace a stranded traveler flagging rides as dusk falls, no one stopping. A foundational text on isolation, fear, and the blues itself.",
+      "audit_score": 3,
+      "diagnosis": [
+        "no_session_anchor",
+        "mid_bigram_density(3)"
+      ],
+      "n_words": 74
+    },
+    {
+      "session_id": "809d4fbc-5298-494a-8817-78b3fdc5317e",
+      "turn_number": 8,
+      "response": "A Country Boy Can Survive by Hank Williams, Jr. carries that biographical thread you're chasing, with Bocephus weaving in the death of a New York friend alongside his own rural defiance, name-checking his late father Hank Sr. toward the end. Built on a smoldering country-rock groove with a gritty acoustic backbone and a low, talk-sung drawl, it tells a real story rooted in early '80s America while honoring a country legend.",
+      "audit_score": 3,
+      "diagnosis": [
+        "no_session_anchor",
+        "banned:carries that"
+      ],
+      "n_words": 71
+    },
+    {
+      "session_id": "8aeb8706-f800-4827-ba71-0797bf5afb0d",
+      "turn_number": 2,
+      "response": "The Way Up: Opening & Part One by Pat Metheny Group should hit the mark for the innovative guitar work and melodic complexity you're after. This long-form composition is widely regarded among fusion enthusiasts as one of Metheny's most ambitious statements, weaving intricate harmonic shifts with his signature lyrical phrasing. The interplay between his guitar lines and the ensemble's layered arrangements gives it the depth that serious listeners tend to revisit again and again.",
+      "audit_score": 3,
+      "diagnosis": [
+        "no_session_anchor",
+        "banned:you're after"
+      ],
+      "n_words": 74
+    },
+    {
+      "session_id": "b6457586-ddb1-4e18-a9b5-4d4926b8b46d",
+      "turn_number": 2,
+      "response": "Brushed acoustic strumming, pedal-steel accents, and a co-write from Shane McAnally anchor Silver Lining by Kacey Musgraves, a 2013 singer-songwriter cut from Same Trailer Different Park. The lyric trades in wry life-lesson storytelling, where rain-and-rainbow imagery frames a measured, slightly weary vocal. I am circling back to the country thread because you confirmed It Is What It Is landed perfectly, before the conversation turns toward darker alt-rock territory. This sits squarely inside that established Musgraves storytelling lane.",
+      "audit_score": 3,
+      "diagnosis": [
+        "no_session_anchor",
+        "mid_bigram_density(4)"
+      ],
+      "n_words": 77
+    },
+    {
+      "session_id": "c08eb2a1-8491-442d-a10f-db8d9ba831d6",
+      "turn_number": 7,
+      "response": "Brass-led pop rock nacional with free-jazz horn flares anchors Lenha by Zeca Baleiro, pulled from his 1999 album V\u00f4 Imbol\u00e1. The steady percussive push extends the driving rhythm Pontual finally nailed for you, now stretched into pavement-friendly tempo for an evening run. Playful Maranh\u00e3o-rooted lyrics keep your Brazilian thread intact, sitting comfortably beside Chico Buarque and Cartola while dodging the harder rock energy you waved off earlier. Lace up and go.",
+      "audit_score": 3,
+      "diagnosis": [
+        "imperative",
+        "mid_bigram_density(3)"
+      ],
+      "n_words": 71
+    },
+    {
+      "session_id": "ca9c5de4-c2b7-4972-a524-615a400d0105",
+      "turn_number": 2,
+      "response": "Off Stranger Things, Vol. 2, Still Pretty by Kyle Dixon, Kyle Dixon & Michael Stein delivers slow-burning dread at a simmer. An arpeggiated sequence threads beneath swelling analogue pads, answering your request for tension built from deep synth textures and minor-key melodic figures. Where Abilities opened things atmospherically, Still Pretty tilts further into Carpenter-school early-80s sci-fi menace, suiting the darker corner of soundtrack culture mapped across this session.",
+      "audit_score": 3,
+      "diagnosis": [
+        "no_session_anchor",
+        "mid_bigram_density(3)"
+      ],
+      "n_words": 68
+    },
+    {
+      "session_id": "d9cca604-febe-4c95-a5cc-a4318c33ec40",
+      "turn_number": 2,
+      "response": "Fake Drugs by Hollerado keeps you inside the same band's catalog after you flagged Got To Lose as a hit, so it threads directly from that request for more Hollerado. The track sits in their early Record In A Bag run, where scrappy power-chord guitars and a galloping backbeat carry the same indie-rock push you responded to. Since you singled out the energy, the chugging rhythm guitar and shout-along hook here follow the same blueprint.",
+      "audit_score": 3,
+      "diagnosis": [
+        "no_session_anchor",
+        "mid_bigram_density(4)"
+      ],
+      "n_words": 75
+    },
+    {
+      "session_id": "ee7bfbda-86ee-4ade-b695-dbdeb12ae063",
+      "turn_number": 3,
+      "response": "La Lune by Billie Marten continues the Marten thread you responded to, since her fingerpicked acoustic guitar and hushed vocal layering frame lyrics that sit with loneliness and self-doubt rather than resolving them. The sparse 2016 production leaves wide breathing room between phrases, which anchors the introspective mood you've been gravitating toward. It matches the quiet-struggle territory of \"Lost It All\" while staying inside the indie singer-songwriter lane you've called working for you.",
+      "audit_score": 3,
+      "diagnosis": [
+        "banned:matches the",
+        "high_bigram_density(6)"
+      ],
+      "n_words": 73
+    },
+    {
+      "session_id": "ff76b679-7d7a-4796-8f6c-929efef45428",
+      "turn_number": 1,
+      "response": "Sickness by TENDER is the album you're picturing, since Modern Addiction's sleeve is built from flat geometric color blocks with a screen-printed texture. The track itself is late-2010s alt-electronic: hushed falsetto, glassy synth pads, and a slow brooding pulse instead of upfront drums. Given your American hip-hop lean, the rhythmic restraint and obsession-driven lyrics still translate, and the abstract painted cover answers the visual memory from your opening message.",
+      "audit_score": 3,
+      "diagnosis": [
+        "no_session_anchor",
+        "mid_bigram_density(3)"
+      ],
+      "n_words": 69
+    },
+    {
+      "session_id": "0802ac4a-187b-4a78-b090-0ceb7630cf12",
+      "turn_number": 6,
+      "response": "End of an Empire by Turisas continues the battle-metal thread you locked onto with \"Ten More Miles,\" since it comes from the same Finnish outfit and leans harder into the folk textures you asked about next. Orchestral strings and choral chants frame galloping double-kick rhythms, while the progressive structure stretches past seven minutes into siege-like crescendos. Given your pull toward Norse and pagan themes from Amon Amarth onward, the imperial-collapse narrative here anchors the epic scope you've been chasing.",
+      "audit_score": 2,
+      "diagnosis": [
+        "high_bigram_density(8)"
+      ],
+      "n_words": 79
+    },
+    {
+      "session_id": "12124711-bfe3-4634-8368-2fa1d8ddf885",
+      "turn_number": 3,
+      "response": "Pas n'importe quel toon by Casseurs Flowters keeps you locked into the Comment c'est loin tracklist you've been digging through after Wondercash and C'est toujours 2 connards dans un abribus. Orelsan and Gringe trade verses over a dusty boom-bap loop, leaning on self-deprecating punchlines about chasing rap fame. Since you're still circling the soundtrack before jumping to other buzzing French rappers, this one specifically because it's the most film-tied cut left, tightening your grip on the album before widening the net.",
+      "audit_score": 2,
+      "diagnosis": [
+        "high_bigram_density(5)"
+      ],
+      "n_words": 81
+    },
+    {
+      "session_id": "1415a335-8fa3-4ead-8f30-0f04b337d079",
+      "turn_number": 2,
+      "response": "Where End of an Empire framed imperial collapse, Hunting Pirates by Turisas swings the lens toward maritime warfare, its Stand Up and Fight cover brandishing cutlass-wielding raiders mid-charge. Galloping double-kick anchors the arrangement while symphonic strings and brass thread between roared gang choruses, classic Finnish battle metal at full tilt. Given your Viking-culture leanings and the warrior-art thread running through this session, Turisas's seafaring brawler slots in cleanly beside the previous pick.",
+      "audit_score": 2,
+      "diagnosis": [
+        "no_session_anchor"
+      ],
+      "n_words": 72
+    },
+    {
+      "session_id": "198470a5-db1e-4add-b04a-bee8c5945d4b",
+      "turn_number": 5,
+      "response": "From the 2016 Satin Jackets catalog, We Can Talk by Emma Brammer, Satin Jackets extends the Olivia thread you locked onto with sun-warmed nu-disco house and a soft four-on-the-floor pulse. Brammer's airy vocal drifts over the groove while the lyrics sit in quiet late-night conversation, carrying the Feel Alright poolside warmth into evening. Same producer DNA as Olivia, just a touch more vocal-forward, keeping your chill electronic set moving without breaking the mood.",
+      "audit_score": 2,
+      "diagnosis": [
+        "high_bigram_density(5)"
+      ],
+      "n_words": 73
+    },
+    {
+      "session_id": "2bfd631e-7d47-4dd6-a419-7d63615833c5",
+      "turn_number": 8,
+      "response": "Lou Makes Friends - Rarities Version by Sublime delivers another bullseye from the Everything Under The Sun rarities catalog you've zeroed in on. Following Johnny Too Bad Freestyle, it threads reggae-punk fusion through scrappy upstroke guitar, a propulsive backbeat, and rough-edged late-90s production. The looseness of these B-side sessions frames Bradley Nowell's off-the-cuff delivery, while driving rhythm and a hook-forward riff anchor the catchy guitar work powering your album-specific hunt.",
+      "audit_score": 2,
+      "diagnosis": [
+        "no_session_anchor"
+      ],
+      "n_words": 70
+    },
+    {
+      "session_id": "31bf71ab-497f-4045-bc91-06552f9b69b8",
+      "turn_number": 1,
+      "response": "Absolute Bearing by Work Drugs stays close to License to Drive, leaning on the same hazy synth-pop production and clean indie-rock guitar lines the duo built their sound around. Since you asked for Work Drugs directly rather than a genre, this specifically works because it's another title track from the band, holding that same nocturnal, coastal mood without pulling you toward a different artist. The relaxed tempo and laid-back vocal delivery keep the listening session cohesive with your initial pick.",
+      "audit_score": 2,
+      "diagnosis": [
+        "banned:rather than",
+        "mid_bigram_density(4)"
+      ],
+      "n_words": 80
+    },
+    {
+      "session_id": "39698083-bc11-4514-9e53-da76d9260b3a",
+      "turn_number": 5,
+      "response": "From the 35xxxv record, Cry Out by ONE OK ROCK answers your hunt for collective, shout-it-back unity after \"We Are.\" Alternative J-rock framed by palm-muted guitar attack, stacked gang vocals flooding the chorus, and Taka threading bilingual lyrics about pushing forward as one. It centers the communal call you craved, unlike the solo defiance of \"Kanzen kankaku Dreamer\" or the wordless adrenaline of \"3xxxv5.\" A mid-decade anthem built for arenas.",
+      "audit_score": 2,
+      "diagnosis": [
+        "no_session_anchor"
+      ],
+      "n_words": 70
+    },
+    {
+      "session_id": "46faad58-58e7-4379-978e-4de6e5cc3b4f",
+      "turn_number": 2,
+      "response": "Tearing the Veil from Grace by Cradle Of Filth keeps you tethered to Dani Filth's theatrical venom while pivoting toward the anti-religious provocation you're after, its \"fuck your god\" defiance reading as pointed social commentary against dogma rather than pure gothic horror. The Midian-era production pairs blistering double-kick drumming with that signature dark-beauty orchestration, so the atmosphere you praised in \"Her Ghost in the Fog\" stays intact even as the lyrical target shifts outward.",
+      "audit_score": 2,
+      "diagnosis": [
+        "banned:you're after",
+        "mid_bigram_density(4)"
+      ],
+      "n_words": 74
+    },
+    {
+      "session_id": "4b239a62-4435-4f39-80d6-26cffe0d1871",
+      "turn_number": 2,
+      "response": "Smoldering brass stabs over brushed drums and an unhurried shuffle anchor You Got Me There by Parov Stelar, a 2012 nu-jazz, downtempo cut from The Princess where a soulful female vocal traces a melancholy lyrical thread. Since you're weighing whether rhythm or instrumentation drives your pull toward Parov Stelar, this track thins the percussion enough to isolate each layer against the vocal. That separation should sharpen your read on your Chill & Electronic instincts.",
+      "audit_score": 2,
+      "diagnosis": [
+        "no_session_anchor"
+      ],
+      "n_words": 74
+    },
+    {
+      "session_id": "4e849a6c-dfbc-4a67-82cc-6dff9076b382",
+      "turn_number": 4,
+      "response": "Virtual Lust by Infinity Frequencies answers your pivot toward darker, introspective electronic with a heavier hand than Lost Dreams. Off Shrines, it frames slowed synth pads against a brooding sub-bass pulse, threading muffled vocal fragments through cassette-grade tape hiss. The lo-fi production preserves your early 2010s chillwave throughline, while warped pitch-shifts and reverb-drowned loops push toward vaporwave's more reflective edge. Melancholic and dim-lit, it weighs more than the Dreams West cuts without abandoning that hazy aesthetic.",
+      "audit_score": 2,
+      "diagnosis": [
+        "no_session_anchor"
+      ],
+      "n_words": 76
+    },
+    {
+      "session_id": "525f9f69-31e5-4fee-9813-e903ad24e39e",
+      "turn_number": 8,
+      "response": "Twin-guitar harmonies and a widescreen, epic build frame White Palace by Omnium Gatherum, pulled from Beyond. Now that you've solved the Mors Principium Est puzzle and want broader Finnish melodeath picks, this cut threads soaring leads with growled vocals and a polished, late-2000s production sheen. It sits naturally next to ...and Death Said Live without retreading Norther's more frantic energy, anchoring your rotation in heavier, atmospheric territory.",
+      "audit_score": 2,
+      "diagnosis": [
+        "no_session_anchor"
+      ],
+      "n_words": 67
+    },
+    {
+      "session_id": "5ad7094f-3764-4e32-94c9-c0c02b65e01b",
+      "turn_number": 4,
+      "response": "Let It Roll by Hieroglyphics threads the introspective edge you're now chasing, since the crew trades verses weighing loyalty, self-doubt, and the grind of staying independent in the game. Domino's dusty boom-bap drums and a looping jazz-tinged sample anchor the philosophical bars without crowding them, while the rotating cadences keep the lyrical focus front and center. After Pet Peeves sharpened the wordplay angle, this one shifts toward inward reflection across the Hiero roster, giving the storytelling a more meditative tone.",
+      "audit_score": 2,
+      "diagnosis": [
+        "no_session_anchor"
+      ],
+      "n_words": 80
+    },
+    {
+      "session_id": "645670fd-b825-4c26-aba5-edcdb57e7684",
+      "turn_number": 6,
+      "response": "Intimate Connection by Kleeer is the obvious escalation since you already locked in with \"Tonight\" but wanted a harder dancefloor push. Cut in 1984, this boogie track snaps with a slap-bass lead, clipped jazz-funk rhythm guitar, and syncopated electronic handclaps driving the groove. The lyrical theme stays squarely on romantic pursuit, but the tempo lifts it well past the mellow zone where \"Oh Honey\" landed. It stands as one of the definitive 80s soul-funk dance cuts.",
+      "audit_score": 2,
+      "diagnosis": [
+        "no_session_anchor"
+      ],
+      "n_words": 76
+    },
+    {
+      "session_id": "6c54de37-9c55-4c59-b203-ec190dd07523",
+      "turn_number": 2,
+      "response": "Live Room by Tim Hecker extends the Hecker thread you responded to, since you praised Prism's atmosphere and asked for something more drone-heavy from 2011\u20132013. Released in October 2013 on Virgins, it threads processed piano figures through dense walls of distortion, where minimalist phrasing decays into expansive drone. The raw, room-recorded production anchors the swells in a physical space, while the slow harmonic shifts give the track the wider, contemporary-classical scale you're after.",
+      "audit_score": 2,
+      "diagnosis": [
+        "banned:you're after",
+        "mid_bigram_density(4)"
+      ],
+      "n_words": 73
+    },
+    {
+      "session_id": "8998b916-97bf-406f-92db-3ae40a832f4c",
+      "turn_number": 3,
+      "response": "My Name Is God (I Hate You) by Eyehategod keeps you locked inside the Dopesick record you just confirmed as the era-defining sludge moment. Since the eye-operation cover and that raw, sick atmosphere are what stuck with you, this cut leans into feedback-soaked riffs and Mike Williams' shredded howl, dragging the tempo through tar before snapping into hardcore punk bursts. A core piece of the 90s NOLA filth you were chasing.",
+      "audit_score": 2,
+      "diagnosis": [
+        "banned:leans into",
+        "mid_bigram_density(3)"
+      ],
+      "n_words": 71
+    },
+    {
+      "session_id": "8cd8575d-4743-4235-a493-aee6039551b4",
+      "turn_number": 2,
+      "response": "Where Coven of the Larynx churned at mid-tempo grind, Burst Synapse by Full Of Hell rips harder into hardcore punk territory with relentless blast beats and shorter, punchier song structures. The blackened hardcore tagging sharpens those guttural vocals into something more feral, while the Merzbow collaboration context bleeds harsh noise into the guitar tone for extra abrasion. It hits the driving rhythm you asked about without losing the raw extreme metal weight of earlier Full Of Hell.",
+      "audit_score": 2,
+      "diagnosis": [
+        "high_bigram_density(7)"
+      ],
+      "n_words": 77
+    },
+    {
+      "session_id": "c0d4e758-5dfe-41a4-b0f2-07c29e27cdce",
+      "turn_number": 1,
+      "response": "Miami - Original Mix by Jasper Byrne is the closest match to that moonlit, retro-futuristic memory you're tracing. The 2012 Hotline Miami EP cut is instrumental synthwave, built on hazy analog pads and a slow arpeggiated bassline beneath washed-out drum machine hits. Given your VGM tastes, Byrne's score shares a pixel-era electronic lineage with Jim Guthrie's Sword & Sworcery work, only pushed deeper into 80s neon-noir. A solid stepping stone toward the album in your head.",
+      "audit_score": 2,
+      "diagnosis": [
+        "no_session_anchor"
+      ],
+      "n_words": 76
+    },
+    {
+      "session_id": "d851eac7-27a7-4363-b2a4-6cb365c79d22",
+      "turn_number": 1,
+      "response": "Hushed falsetto over drifting ambient guitar shapes White Ferrari by Frank Ocean, alternative R&B at its most spacious. The 2016 Blonde sleeve answers your call for striking design directly, that fluorescent green-lit portrait standing as one of the decade's boldest covers. A subtle Beatles interpolation from \"Here, There and Everywhere\" threads through the tender lyrical drift. For a UK indie listener in your twenties chasing aesthetic-forward picks, the cover and the weightless production hold equal weight.",
+      "audit_score": 2,
+      "diagnosis": [
+        "no_session_anchor"
+      ],
+      "n_words": 76
+    },
+    {
+      "session_id": "db8ec85f-fa1f-4e88-b4d2-333b63b0d386",
+      "turn_number": 7,
+      "response": "Tak 1 by Plaid threads a hushed, drifting synth pad through its short runtime, which suits the unobtrusive soundscape you locked onto with Light Rain. Since you flagged anything too rhythmic or vocal as distracting, this interlude works well because percussion stays absent and no melodic line steps forward to grab focus. The production leans on sustained tones and soft analog haze, framing background space rather than filling it, while keeping that ambient electronic character you wanted carried over.",
+      "audit_score": 2,
+      "diagnosis": [
+        "banned:soundscape",
+        "mid_bigram_density(4)"
+      ],
+      "n_words": 79
+    },
+    {
+      "session_id": "dc3c1b72-0520-44c6-ab2b-4935d0455e19",
+      "turn_number": 7,
+      "response": "Broken Doll by Paloma Faith pulls directly from the album cover you referenced, where its torch-song sweep frames the bruised heroine you've been chasing across this conversation. Sparse piano figures and swelling strings anchor her vocal in cabaret territory, while a slow waltz-leaning pulse gives the track that grand-stage gravity you found in Stone Cold Sober. Because the arrangement builds like a third-act soliloquy, it carries the theatrical, art-house weight the upbeat singles kept missing.",
+      "audit_score": 2,
+      "diagnosis": [
+        "no_session_anchor"
+      ],
+      "n_words": 75
+    },
+    {
+      "session_id": "ebad356d-d5ab-437a-81f1-6d219e532c33",
+      "turn_number": 2,
+      "response": "Where Los Caligaris brought ska-tinged romance, Personalmente by Las Pelotas escalates the wattage with rugged Argentine rock muscle. Released on 2010's Despierta, it threads jangling electric guitars over a propulsive rhythm section, channeling Sumo's barrio-bred swagger into something raucous and floor-ready. Lyrics chase raw personal conviction, while frontman delivery roars with full-throated grit. Given your taste for passionate, party-fueled energy after Los Caligaris, this Latin rock anthem hits harder without sacrificing groove.",
+      "audit_score": 2,
+      "diagnosis": [
+        "no_session_anchor"
+      ],
+      "n_words": 72
+    },
+    {
+      "session_id": "fe22cfe0-f552-4d43-bf13-ea77bef4f1ce",
+      "turn_number": 7,
+      "response": "Under Watch by Noisia earns the slot because you asked for brooding suspense and melancholy after Grave Calling, and this DmC bonus cut pulls back the neurofunk aggression of Hunter Theme in favor of sustained industrial pads, half-time techstep drums, and a sparse ambient low end. Melodic synth lines hold single notes long enough to register as mournful rather than combative. It remains a Noisia track, so treat it as a transitional anchor before a full catalog shift.",
+      "audit_score": 2,
+      "diagnosis": [
+        "banned:rather than",
+        "mid_bigram_density(3)"
+      ],
+      "n_words": 78
+    },
+    {
+      "session_id": "40cc1c03-6db9-49db-8bbe-8b97b45adb0b",
+      "turn_number": 6,
+      "response": "Sinner by Lincoln Durham brings you back to the artist behind Last Red Dawn, which already hooked you with its raw intensity. This 2013 cut from Exodus of the Deemed Unrighteous leans harder into scorched slide guitar and a hoarse, sermon-style vocal about damnation and judgment. Pick this specifically because you wanted grittier blues rock energy after the Quaker City Night Hawks softened things \u2014 Durham's one-man-band stomp keeps the outlaw menace from Blues Saraceno alive while staying tied to the haunted Gothic Americana thread.",
+      "audit_score": 1,
+      "diagnosis": [
+        "mid_bigram_density(3)"
+      ],
+      "n_words": 85
+    },
+    {
+      "session_id": "49009ca7-f8da-45df-9c62-7b88d960d5d2",
+      "turn_number": 3,
+      "response": "Where Ravnens Banner foregrounded blunt force, Frosne Vind by Myrkur threads choral Nordic vocals through tremolo-picked atmospheric black metal. Off her 2014 self-titled debut, it frames hushed folk passages against icy guitar shimmer, then erupts into shrieks echoing the raw bite you praised in Sk\u00f8gen Skulle D\u00f8. The contrast lands harder here because the production lets the classical phrasing breathe before the blast beats hit, exposing her genre fusion at its most deliberate.",
+      "audit_score": 1,
+      "diagnosis": [
+        "mid_bigram_density(4)"
+      ],
+      "n_words": 73
+    },
+    {
+      "session_id": "5e1f5a89-99c0-46bb-af78-005338d05858",
+      "turn_number": 2,
+      "response": "East of Eden by Leif Vollebekk carries that distinct geographical pull you're after, its title nodding to Steinbeck's Salinas Valley while the song itself drifts through a more wistful, introspective terrain. Staying with Leif keeps the singer-songwriter intimacy from \"Cairo Blues\" intact, but here the hushed piano lines and his weathered, unhurried vocal lean further into the melancholic reflection you wanted, sketching a place that feels both literary and quietly personal.",
+      "audit_score": 1,
+      "diagnosis": [
+        "banned:carries that"
+      ],
+      "n_words": 71
+    },
+    {
+      "session_id": "9cd93031-ae32-4c15-99fa-fbb1b6fbac0b",
+      "turn_number": 3,
+      "response": "Sink Ships by Ryan Adams & The Cardinals threads the same introspective, acoustic-driven mood that drew you to \"Let Us Down Easy,\" while leaning a little further into the alt-country side you wanted to explore. Fingerpicked guitar anchors the arrangement, and the late-2000s production keeps drums and pedal steel low in the mix so the lyric stays front and center. The melody drifts between resignation and quiet hope, which suits a thoughtful evening of slow listening.",
+      "audit_score": 1,
+      "diagnosis": [
+        "mid_bigram_density(4)"
+      ],
+      "n_words": 76
+    },
+    {
+      "session_id": "a1df8767-11df-44d3-a1f6-e1ba2115e8f0",
+      "turn_number": 5,
+      "response": "Saturn III by Fu Manchu sits at the psychedelic edge of The Action Is Go, the 1997 album you asked to have dissected. Since Urethane and Blue Tile Fever showcase the skate-park sprint, Saturn III slows into hypnotic fuzz bass, a drifting downtuned riff, and cosmic motor-obsessed lyrics threading sci-fi imagery through donkey-rock heaviness. That contrast is where the record's range lives, distinguishing its desert-psych flank from the punkier cuts you already know.",
+      "audit_score": 1,
+      "diagnosis": [
+        "mid_bigram_density(3)"
+      ],
+      "n_words": 73
+    },
+    {
+      "session_id": "eb4a6ef2-7a7e-448a-bfed-c94e68b01505",
+      "turn_number": 4,
+      "response": "Watching As She Reels by Rafael Anton Irisarri extends the wordless, drifting ambience you confirmed on A Thousand-Yard Stare. Pulled from his 2015 album Hopes And Past Desires, the track works through slow processed drones and minimal modern-classical textures that recede into the room. After flagging Maus as too foreground-heavy and Arthur Russell as too vocal, this hushed instrumental patience holds the background thread without tugging your focus back up.",
+      "audit_score": 1,
+      "diagnosis": [
+        "mid_bigram_density(3)"
+      ],
+      "n_words": 70
+    },
+    {
+      "session_id": "07aae53d-7c65-442a-a893-6ffde80efb0d",
+      "turn_number": 6,
+      "response": "Rudolph, the Red-Nosed Reindeer by Dean Martin is the clear answer since you asked directly for a Dean Martin parallel after landing on She & Him's \"Let It Snow.\" Recorded in 1959 for A Winter Romance, this lounge-pop oldie pairs Martin's velvet baritone with brushed percussion, muted horns, and a swaying easy-listening arrangement. The lyric retells the reindeer's underdog story with a wink, holding the nostalgic mid-century Christmas pop tone you favor. It remains a defining holiday vocal performance.",
+      "audit_score": 0,
+      "diagnosis": [],
+      "n_words": 79
+    },
+    {
+      "session_id": "1f7b28c1-8b18-4045-be27-0475edb96857",
+      "turn_number": 8,
+      "response": "The Black Mill Video Tape by Pye Corner Audio extends the beatless, drone-centered path you've been carving out since \"Sad Alron.\" Building on your enthusiasm for Pye Corner Audio's darker industrial textures in \"Verberation Lab,\" this one drifts through hazy analog synth haze and slow, decaying tones, holding a mournful, abstract edge without resorting to rhythm. The shifting drones feel like static-bathed transmissions from an unlit room, dim and quietly unsettling throughout.",
+      "audit_score": 0,
+      "diagnosis": [],
+      "n_words": 72
+    },
+    {
+      "session_id": "70a0e5ad-50cb-475c-95a3-adffcf04b72e",
+      "turn_number": 3,
+      "response": "From the 2008 Primavera anticipada record, Del modo m\u00e1s sincero by Laura Pausini extends the album sequence you've been working through since En cambio no anchored your initial search. The arrangement layers sustained piano chords, restrained string pads, and close-mic'd lead vocal production typical of late-2000s Latin Pop balladry, while the lyric examines romantic honesty and vulnerability. The confessional register holds steady with the emotional depth you praised in M\u00e1s que ayer.",
+      "audit_score": 0,
+      "diagnosis": [],
+      "n_words": 72
+    },
+    {
+      "session_id": "77faef85-566c-4eb7-90b6-ee9fdeeacbe8",
+      "turn_number": 1,
+      "response": "Santa Claus Is Coming to Town by The Crystals threads the Santa narrative through wider winter imagery\u2014kids sleeping, snow-laced anticipation, small-town watchfulness\u2014so it stretches beyond the title figure even while anchoring on him. Phil Spector's 1963 Wall of Sound production stacks sleigh bells, layered backing harmonies, and a rolling girl-group rhythm section, framing the lyric in a dense midwinter atmosphere. Since you wanted traditional seasonal themes alongside the Santa motif, this sits comfortably in that overlap without leaning novelty.",
+      "audit_score": 0,
+      "diagnosis": [],
+      "n_words": 79
+    },
+    {
+      "session_id": "789f9994-f2b6-481d-b71a-c0c6706d82c6",
+      "turn_number": 2,
+      "response": "Blodsvept by Finntroll pushes harder into the black metal side of their catalog since the title track stacks tremolo-picked guitar riffs and blast-beat passages against Mathias Lillm\u00e5ns's rasping vocals, while the humppa-style accordion still threads through the arrangement to keep the troll-folk identity intact. Released in 2013, the production frames the percussion with sharper attack than Fanskapsfylld, giving the song a denser, more aggressive weight that should scratch the heavier itch after the previous pick.",
+      "audit_score": 0,
+      "diagnosis": [],
+      "n_words": 75
+    },
+    {
+      "session_id": "91ce5668-ec1e-4d09-a30a-3440be9c8861",
+      "turn_number": 3,
+      "response": "Off the Superposition LP, Lil' Fighter by Zalza extends the neon, abstract cover aesthetic that clicked for you on Superman Lost. Zalza frames punchy synth stabs against a bouncy club rhythm, threading playful melodic hooks through crisp electronic percussion. The Superposition artwork pushes saturated color-blocking, mirroring the visual hit you wanted paired with sound. A clean fit for a Polish teen rooted in EDM, balancing upbeat propulsion with bold, eye-popping graphic design.",
+      "audit_score": 0,
+      "diagnosis": [],
+      "n_words": 72
+    },
+    {
+      "session_id": "c4f7d055-a3cc-4d6b-be80-b90278bc0d32",
+      "turn_number": 7,
+      "response": "C.h.a.o.s.m.y.t.h. by ONE OK ROCK threads together the elements you locked onto across Clock Strikes, Kanzen Kankaku Dreamer, and We Are. It opens with restrained guitar and piano-tinted verses before propulsive double-time drums anchor a chorus where Taka's voice climbs into that raw, throat-forward register you tied to emotional weight. Coming from 2011's Zanky\u014d Reference, the arrangement frames a slow build into an anthemic payoff, since the band saves its loudest dynamic shift for the final refrain.",
+      "audit_score": 0,
+      "diagnosis": [],
+      "n_words": 77
+    },
+    {
+      "session_id": "ca8cbe02-1def-4fca-ba48-f17f9fac0ed8",
+      "turn_number": 6,
+      "response": "From the 2012 Fight Like a Girl record, Girls! Girls! Girls! by Emilie Autumn delivers the driving industrial rhythm you asked for after Time for Tea. The track stacks pounding electronic percussion, distorted synth basslines, and a circus-tinged punk cabaret swagger, while her lyrics confront themes of female defiance and institutional cruelty. Since you gravitated toward the victorian industrial weight of 306, this one extends that aggression with sharper tempo and theatrical menace.",
+      "audit_score": 0,
+      "diagnosis": [],
+      "n_words": 73
+    }
+  ],
+  "selected_for_regen": [
+    {
+      "session_id": "0a1f7a63-c5e4-4a2d-9285-433cd036f4e7",
+      "turn_number": 1,
+      "score": 7,
+      "diagnosis": [
+        "no_causal",
+        "no_session_anchor",
+        "banned:you're chasing",
+        "mid_bigram_density(3)"
+      ]
+    },
+    {
+      "session_id": "4b8ed42b-39ec-4d17-9bea-507828687a0c",
+      "turn_number": 4,
+      "score": 7,
+      "diagnosis": [
+        "no_causal",
+        "no_session_anchor",
+        "vague_descriptor"
+      ]
+    },
+    {
+      "session_id": "5b2f877b-a6d5-4473-879c-f5a24d4fd06f",
+      "turn_number": 1,
+      "score": 7,
+      "diagnosis": [
+        "no_causal",
+        "no_session_anchor",
+        "banned:rather than",
+        "mid_bigram_density(3)"
+      ]
+    },
+    {
+      "session_id": "9c37dcd7-d7c2-4686-8541-1e37c4814a09",
+      "turn_number": 1,
+      "score": 7,
+      "diagnosis": [
+        "no_causal",
+        "no_session_anchor",
+        "vague_descriptor"
+      ]
+    },
+    {
+      "session_id": "0fedfa80-ebe2-4977-b16b-594f4a2b19b1",
+      "turn_number": 7,
+      "score": 6,
+      "diagnosis": [
+        "no_causal",
+        "no_session_anchor",
+        "mid_bigram_density(3)"
+      ]
+    },
+    {
+      "session_id": "164fc33f-b103-424f-836a-b7a7d565f6c2",
+      "turn_number": 5,
+      "score": 6,
+      "diagnosis": [
+        "no_session_anchor",
+        "vague_descriptor",
+        "high_bigram_density(5)"
+      ]
+    },
+    {
+      "session_id": "38a5f361-9802-40be-9d15-15c67d5ba60a",
+      "turn_number": 2,
+      "score": 6,
+      "diagnosis": [
+        "no_causal",
+        "no_session_anchor",
+        "banned:you're chasing"
+      ]
+    },
+    {
+      "session_id": "ab8bc8fa-6326-47a5-afb4-3e3a30ca7360",
+      "turn_number": 1,
+      "score": 6,
+      "diagnosis": [
+        "no_causal",
+        "no_session_anchor",
+        "banned:fits that"
+      ]
+    },
+    {
+      "session_id": "d5c80ee5-97c2-4de1-af2e-2295e3ae34a3",
+      "turn_number": 7,
+      "score": 6,
+      "diagnosis": [
+        "no_attribute",
+        "no_session_anchor",
+        "mid_bigram_density(4)"
+      ]
+    },
+    {
+      "session_id": "eaeca304-3ddb-4adb-8087-0f15b597f73e",
+      "turn_number": 7,
+      "score": 6,
+      "diagnosis": [
+        "no_attribute",
+        "no_session_anchor",
+        "banned:you're after"
+      ]
+    },
+    {
+      "session_id": "2a677d32-23e9-4fe7-8b8e-4875c93509a2",
+      "turn_number": 4,
+      "score": 5,
+      "diagnosis": [
+        "no_causal",
+        "no_session_anchor"
+      ]
+    },
+    {
+      "session_id": "2fe9abf6-ccea-4f05-8490-82da8bf57764",
+      "turn_number": 5,
+      "score": 5,
+      "diagnosis": [
+        "no_session_anchor",
+        "vague_descriptor",
+        "banned:rather than"
+      ]
+    }
+  ]
+}
