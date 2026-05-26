@@ -156,12 +156,20 @@ tar -xzf ~/Downloads/r84_blind_b_artifacts.tar.gz -C /Users/nadavbarkai/dev/recs
 uv run python scripts/expR84c_blind_preflight.py --blind-name blind_b
 # All required artifacts must be present before continuing
 
-uv run python scripts/expR84c_blind_replay.py --blind-name blind_b --tracks-only
+uv run python scripts/expR84c_blind_replay.py --blind-name blind_b --tracks-only \
+    --route-low 0.25 --route-high 2.0
 # Produces:
 #  - cache/r84_production/blind_b_r84_ensemble_lists.json
 #  - exp/inference/blind_b/r84c_replay_blind_b_track_lists.json
 #  - exp/eval/expR84c_replay_blind_b_audit.json
 ```
+
+**Routing thresholds**: R84c shipped on Blind-A at `low=0.5/high=2.0` (predeclared).
+The R84c selective sweep (5-fold OOF, dev) showed `low=0.25/high=2.0` strictly
+dominates the shipped rule: h7 Δ +0.0061 vs +0.0056, churn 25.5 vs 33.8/80,
+same-artist Δ −0.0011 vs −0.0017. R90 Phase 0 audit re-confirms this is the
+optimal observable rule (no retraining required). See
+[[project_r90_phase0_audit]] and `exp/eval/expR84c_selective.json`.
 
 ## Step 6 — Generate Blind-B responses (Mac, ~10 min Opus)
 

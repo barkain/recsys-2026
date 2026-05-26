@@ -193,7 +193,17 @@ def main():
                    help="Don't write a ZIP; useful for hash-check dry-runs")
     p.add_argument("--allow-no-r78", action="store_true",
                    help="Permit Blind-A run without R78 (responses will all be regen)")
+    p.add_argument("--route-low", type=float, default=None,
+                   help="Lower R54c LR margin threshold for selective routing. "
+                        "If margin < route_low -> use R84 (low-confidence). "
+                        "Default 0.5 (R84c-shipped predeclared rule).")
+    p.add_argument("--route-high", type=float, default=None,
+                   help="Upper R54c LR margin threshold for selective routing. "
+                        "If margin >= route_high -> use R84 (high-confidence). "
+                        "Default 2.0 (R84c-shipped predeclared rule).")
     args = p.parse_args()
+    route_low = args.route_low if args.route_low is not None else ROUTE_LOW
+    route_high = args.route_high if args.route_high is not None else ROUTE_HIGH
 
     t0 = time.time()
     print(f"{ts()} R84c blind replay — target: {args.blind_name}")
@@ -250,7 +260,7 @@ def main():
     )
 
     # --- 4. Score + route + extract top-20 ---
-    print(f"\n{ts()} Scoring + routing per R84c rule (margin < {ROUTE_LOW} OR >= {ROUTE_HIGH})...")
+    print(f"\n{ts()} Scoring + routing per R84c rule (margin < {route_low} OR >= {route_high})...")
     track_lists = []
     audit_rows = []
     n_r84 = n_r54 = 0
@@ -260,7 +270,7 @@ def main():
         s_r84 = r84c_lr.predict(bf["feats_r84"])
         s_r54_sorted = np.sort(s_r54)[::-1]
         margin = float(s_r54_sorted[0] - s_r54_sorted[1]) if len(s_r54_sorted) >= 2 else 0.0
-        use_r84 = (margin < ROUTE_LOW) or (margin >= ROUTE_HIGH)
+        use_r84 = (margin < route_low) or (margin >= route_high)
         if use_r84:
             n_r84 += 1
             order = np.argsort(-s_r84, kind="mergesort")
@@ -315,6 +325,8 @@ def main():
             "head_sha": head_sha(),
             "blind_name": args.blind_name,
             "n_cases": n,
+            "route_low": route_low,
+            "route_high": route_high,
             "n_routed_r84": n_r84,
             "n_routed_r54": n_r54,
             "routed_r84_rate": routed_r84_rate,
@@ -419,6 +431,8 @@ def main():
         "head_sha": head_sha(),
         "blind_name": args.blind_name,
         "n_cases": n,
+        "route_low": route_low,
+        "route_high": route_high,
         "n_routed_r84": n_r84,
         "n_routed_r54": n_r54,
         "routed_r84_rate": routed_r84_rate,
