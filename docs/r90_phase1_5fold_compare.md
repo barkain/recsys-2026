@@ -1,11 +1,11 @@
 # R90 Phase 1 Variant A — 5-fold OOF compare
 
-Date: 2026-05-27T17:08:58.351065  
+Date: 2026-05-27T17:13:14.800704  
 Baseline: **R84_5fold** (R84 5-fold OOF)  
 Candidate: **R90_varA_5fold** (R90 Variant A 5-fold OOF)  
 n cases: 8000  h7: 1000
 
-## Verdict: **PROCEED_TO_BLIND_B**
+## Verdict: **PROCEED_TO_LR_CONVERSION_TEST**
 
 ### Gate summary (aggregate across all 5 folds)
 | gate | result | detail |

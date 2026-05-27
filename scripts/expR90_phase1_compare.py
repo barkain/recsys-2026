@@ -411,7 +411,12 @@ def compute_5fold_gates(rows: list[dict]) -> dict:
     diff_b = float(np.mean([r["b_ndcg20"] for r in diff_h7])) if diff_h7 else 0.0
 
     overall_pass = g1_pass and g2_pass and g3_pass and g4_pass
-    verdict = "PROCEED_TO_BLIND_B" if overall_pass else (
+    # NOTE: this compare is SOURCE-ALONE retrieval (R84 OOF lists vs R90 OOF
+    # lists). It does NOT test the R84c production mechanism (LR scoring +
+    # selective routing). Passing here only justifies the next test, not blind
+    # packaging. See feedback_lr_conversion_wall_confirmed for why retrieval
+    # gains do not automatically convert through the LR layer.
+    verdict = "PROCEED_TO_LR_CONVERSION_TEST" if overall_pass else (
         "INVESTIGATE" if (g1_pass and g2_pass and not (g3_pass and g4_pass))
         else "ARCHIVE_VARIANT_A"
     )
@@ -451,6 +456,12 @@ def compute_5fold_gates(rows: list[dict]) -> dict:
         "diff_artist_h7": {
             "a_ndcg20": diff_a, "b_ndcg20": diff_b, "delta": diff_b - diff_a,
         },
+        "scope_note": (
+            "Source-alone retrieval compare only. Does NOT test LR scoring "
+            "+ selective routing. Verdict PROCEED_TO_LR_CONVERSION_TEST means "
+            "the source-alone gates passed; the LR conversion test is the "
+            "real blind-readiness gate (see expR90_phase1_lr_conversion.py)."
+        ),
         "overall_pass": overall_pass,
         "verdict": verdict,
     }
