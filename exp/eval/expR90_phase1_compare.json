@@ -1,0 +1,88 @@
+{
+  "experiment": "R90 Phase 1 Variant A vs R84 fold-0 compare",
+  "created_at": "2026-05-27T06:54:31.586406",
+  "elapsed_s": 8.221561908721924,
+  "baseline": "cache/r84/phase0b_fold0/oof_r84_lists.json",
+  "candidate": "cache/r90/phase1_fold0_varA/oof_r84_lists.json",
+  "gates": {
+    "n_cases": 1600,
+    "n_h7": 200,
+    "n_same_artist_h7": 83,
+    "n_diff_artist_h7": 117,
+    "gate_thresholds": {
+      "G1_same_artist_min": -0.005,
+      "G2_h7_ndcg_min": 0.003,
+      "G2_net_recovery_min": 5,
+      "G3_history_bucket_min": -0.005,
+      "G4_per_fold_min": -0.005
+    },
+    "G1_same_artist": {
+      "a_ndcg20": 0.20265159316448447,
+      "b_ndcg20": 0.22563563242279647,
+      "delta": 0.022984039258311995,
+      "pass": true
+    },
+    "G2_h7_aggregate": {
+      "a_ndcg20": 0.09630563702563812,
+      "b_ndcg20": 0.10375294997455521,
+      "delta": 0.007447312948917095,
+      "recovered": 9,
+      "lost": 9,
+      "net": 0,
+      "pass_by_delta": true,
+      "pass_by_recovery": false,
+      "pass": true
+    },
+    "G3_history_buckets": {
+      "buckets": {
+        "2": {
+          "n": 200,
+          "a_ndcg20": 0.1598547135140395,
+          "b_ndcg20": 0.1703999561654306,
+          "delta": 0.010545242651391118,
+          "pass": true
+        },
+        "3": {
+          "n": 200,
+          "a_ndcg20": 0.11743817090376168,
+          "b_ndcg20": 0.12644738618605902,
+          "delta": 0.00900921528229734,
+          "pass": true
+        },
+        "4": {
+          "n": 200,
+          "a_ndcg20": 0.12519873565907544,
+          "b_ndcg20": 0.1338716661939703,
+          "delta": 0.008672930534894874,
+          "pass": true
+        },
+        "5": {
+          "n": 200,
+          "a_ndcg20": 0.1043109141119787,
+          "b_ndcg20": 0.11109886387461962,
+          "delta": 0.006787949762640924,
+          "pass": true
+        },
+        "6": {
+          "n": 200,
+          "a_ndcg20": 0.09637384514165342,
+          "b_ndcg20": 0.11254172422880941,
+          "delta": 0.016167879087155987,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    "G4_per_fold_sanity": {
+      "fold0_h7_delta": 0.007447312948917095,
+      "pass": true
+    },
+    "diff_artist_h7": {
+      "a_ndcg20": 0.0208636339527813,
+      "b_ndcg20": 0.017289166699307138,
+      "delta": -0.003574467253474163
+    },
+    "overall_pass": true,
+    "verdict": "PROCEED_TO_5FOLD"
+  }
+}
