@@ -112,6 +112,18 @@ def pack_eval_artifacts(repo: Path, fold: int, drive_dir: Path) -> tuple[Path, s
     return tar_path, sha256_of(tar_path)
 
 
+def pack_model_artifacts(repo: Path, fold: int, drive_dir: Path) -> tuple[Path, str]:
+    """Tar fold's model weights to Drive. Separate from eval tarball because
+    much larger (~1.2 GB compressed). Returns (tar_path, sha)."""
+    model_dir = repo / f"cache/r90/phase1_fold{fold}_varA/model"
+    tar_path = drive_dir / f"r90_phase1_fold{fold}_varA_model.tar.gz"
+    if not model_dir.exists():
+        raise FileNotFoundError(f"model_dir missing: {model_dir}")
+    with tarfile.open(tar_path, "w:gz") as tf:
+        tf.add(str(model_dir), arcname=str(model_dir.relative_to(repo)))
+    return tar_path, sha256_of(tar_path)
+
+
 def run_fold(repo: Path, fold: int, drive_dir: Path, batch_size: int,
               folds_state: dict, env_overrides: dict) -> bool:
     """Run train + eval + backup for one fold. Returns True on success."""
@@ -121,15 +133,19 @@ def run_fold(repo: Path, fold: int, drive_dir: Path, batch_size: int,
 
     env = {**os.environ, **env_overrides, "PYTHONPATH": str(repo)}
 
-    # Idempotent resume: skip if tarball already in Drive
-    expected_tar = drive_dir / f"r90_phase1_fold{fold}_varA_eval.tar.gz"
-    if expected_tar.exists():
-        supervisor_log(drive_dir, f"fold {fold}: SKIP (tarball already in Drive: "
-                                   f"{expected_tar.stat().st_size/1e6:.1f} MB)")
+    # Idempotent resume: skip if BOTH eval AND model tarballs already in Drive
+    expected_eval_tar = drive_dir / f"r90_phase1_fold{fold}_varA_eval.tar.gz"
+    expected_model_tar = drive_dir / f"r90_phase1_fold{fold}_varA_model.tar.gz"
+    if expected_eval_tar.exists() and expected_model_tar.exists():
+        supervisor_log(drive_dir, f"fold {fold}: SKIP (both tarballs already in Drive: "
+                                   f"eval {expected_eval_tar.stat().st_size/1e6:.1f} MB, "
+                                   f"model {expected_model_tar.stat().st_size/1e6:.1f} MB)")
         folds_state[str(fold)] = {
-            "state": "eval_done", "resumed": True,
-            "tarball": expected_tar.name,
-            "tarball_sha256": sha256_of(expected_tar),
+            "state": "completed", "resumed": True,
+            "eval_tarball": expected_eval_tar.name,
+            "eval_sha256": sha256_of(expected_eval_tar),
+            "model_tarball": expected_model_tar.name,
+            "model_sha256": sha256_of(expected_model_tar),
         }
         return True
 
@@ -214,20 +230,47 @@ def run_fold(repo: Path, fold: int, drive_dir: Path, batch_size: int,
         es = json.loads(es_path.read_text())
         folds_state[str(fold)]["metrics"] = es.get("source_alone_metrics", {})
 
-    # ---- BACKUP ----
-    supervisor_log(drive_dir, f"fold {fold}: BACKUP -> Drive")
+    # ---- BACKUP EVAL ARTIFACTS ----
+    folds_state[str(fold)].update({"state": "eval_backup"})
+    write_status(drive_dir, {"current_fold": fold, "folds": folds_state})
+    supervisor_log(drive_dir, f"fold {fold}: EVAL BACKUP -> Drive")
     t0 = time.time()
-    tar_path, sha = pack_eval_artifacts(repo, fold, drive_dir)
+    eval_tar, eval_sha = pack_eval_artifacts(repo, fold, drive_dir)
     folds_state[str(fold)].update({
-        "tarball": tar_path.name,
-        "tarball_sha256": sha,
-        "tarball_mb": round(tar_path.stat().st_size / 1e6, 2),
-        "backup_s": round(time.time() - t0, 1),
+        "eval_tarball": eval_tar.name,
+        "eval_sha256": eval_sha,
+        "eval_tarball_mb": round(eval_tar.stat().st_size / 1e6, 2),
+        "eval_backup_s": round(time.time() - t0, 1),
+    })
+    write_status(drive_dir, {"current_fold": fold, "folds": folds_state})
+    supervisor_log(drive_dir, f"fold {fold}: EVAL BACKUP done -> {eval_tar.name} "
+                              f"({eval_tar.stat().st_size/1e6:.1f} MB, sha {eval_sha[:12]}...)")
+
+    # ---- BACKUP MODEL WEIGHTS (per user direction: include models this run) ----
+    folds_state[str(fold)].update({"state": "model_backup"})
+    write_status(drive_dir, {"current_fold": fold, "folds": folds_state})
+    supervisor_log(drive_dir, f"fold {fold}: MODEL BACKUP -> Drive (~1.2 GB)")
+    t0 = time.time()
+    try:
+        model_tar, model_sha = pack_model_artifacts(repo, fold, drive_dir)
+    except FileNotFoundError as e:
+        folds_state[str(fold)].update({
+            "state": "failed", "phase": "model_backup", "error": str(e),
+        })
+        write_status(drive_dir, {"current_fold": fold, "folds": folds_state})
+        supervisor_log(drive_dir, f"fold {fold}: MODEL BACKUP FAIL {e}")
+        return False
+    folds_state[str(fold)].update({
+        "state": "completed",
+        "model_tarball": model_tar.name,
+        "model_sha256": model_sha,
+        "model_tarball_mb": round(model_tar.stat().st_size / 1e6, 2),
+        "model_backup_s": round(time.time() - t0, 1),
         "completed_at": utcnow(),
     })
     write_status(drive_dir, {"current_fold": fold, "folds": folds_state})
-    supervisor_log(drive_dir, f"fold {fold}: BACKUP done -> {tar_path.name} "
-                              f"({tar_path.stat().st_size/1e6:.1f} MB, sha {sha[:12]}...)")
+    supervisor_log(drive_dir, f"fold {fold}: MODEL BACKUP done -> {model_tar.name} "
+                              f"({model_tar.stat().st_size/1e6:.1f} MB, sha {model_sha[:12]}...)")
 
     # Free GPU between folds
     try:
