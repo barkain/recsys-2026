@@ -1,0 +1,10 @@
+{
+  "experiment": "R99 GTE-Qwen2-7B-instruct zero-shot retrieval (A100)",
+  "model": "Alibaba-NLP/gte-Qwen2-7B-instruct (3584-dim, zero-shot, no fine-tune)",
+  "query_format": "Instruct: <task>\nQuery: <natural-language conversation summary>",
+  "doc_format": "raw track text (name by artist. Album. Tags)",
+  "dev_recall": {"at20": 0.208, "at30": 0.247, "at100": 0.371, "at300": 0.507},
+  "baselines": {"r54c_lr_recall_at20": 0.479, "r84_at300": 0.672, "e5large_ft_at300": 0.594, "complete_union_at300": 0.777},
+  "verdict": "STOP. Zero-shot GTE-7B is worse than ALL our retrievers (below zero-shot E5-large, far below fine-tuned BGE-large). Recall is driven by task fine-tuning, NOT model scale. Model-swapping is not the competitors' nDCG edge. The real bottleneck is RANKING: union@300=0.777 but recall@20=0.48 -- 30pts of in-pool GT ranked too deep.",
+  "remaining_options": ["LoRA fine-tune GTE-7B (fits 40GB; uncertain it beats fine-tuned BGE-large; heavy)", "attack the ranking bottleneck (78%@300 -> 48%@20) rather than retrieval", "accept R98 +0.0008 and stop nDCG chase"]
+}
