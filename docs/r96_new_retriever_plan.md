@@ -114,3 +114,28 @@ text-recoverable.** GO for Phase 0b (A100). Production stays R92 p11 (0.5073).
   union. Report same-artist vs diff-artist, rank distribution, history split.
 - **Stop:** recoveries mostly rank 50–300, recoveries duplicate the union, or no
   new coverage on the absent set.
+
+## Phase 0b SMOKE RESULT (A100, fold-0) — STOP
+
+E5-large-v2 + structured query, fold-0 dev pairs (no train-split), in-batch
+random negatives. On the **348 union-absent fold-0 cases**:
+
+| recovery depth | count |
+|---|---|
+| top-20 | **0** |
+| top-30 | **0** |
+| top-100 | 7 |
+| top-300 | 27 (all rank 30–300) |
+
+Overall fold-0 E5 recall: hit@300 = 0.594, GT@30 = 0.334 (≈ R54, below R84/R90).
+**Verdict: STOP this config.** Zero usable (top-30) unique recoveries — the
+absent GTs are not surfaced at usable ranks; the 27 deep recoveries are rank
+30–300. Per the escalation rule (escalate only on nontrivial top-30 recoveries),
+do NOT go to E5-mistral. Result: `exp/eval/expR96_phase0b_smoke_result.json`.
+
+The one pre-authorized lever left is **query reformulation** (E5 prefers
+natural-language queries; the bracketed `[QUERY][HISTORY][CONTEXT]` format is
+likely off-distribution for E5 — a plausible cause of the weak recall). If that
+also fails, the retrieval lever closes: the union-absent 22% appears unreachable
+by query→track text retrieval (BGE *or* E5), and the nDCG-via-retrieval path is
+exhausted.

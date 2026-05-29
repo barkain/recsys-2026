@@ -1,0 +1,27 @@
+{
+  "experiment": "R96 Phase 0b E5-large-v2 fold-0 smoke (unique-recovery on union-absent set)",
+  "model": "intfloat/e5-large-v2",
+  "query_format": "structured + e5 query:/passage: prefixes",
+  "negatives": "in-batch random only (no hard negatives)",
+  "training": "fold-0 smoke: dev pairs only (folds 1-4, 6400 pairs, 1 epoch), no 20k train-split",
+  "device": "A100-SXM4-40GB",
+  "fold0_overall": {
+    "hit_at_300": 0.5938,
+    "gt_at_30": 0.334,
+    "note": "on par with R54 (0.591@300), below R84/R90 (~0.68@300)"
+  },
+  "union_absent_fold0_cases": 348,
+  "e5_unique_recovery_on_absent": {
+    "top20": 0,
+    "top30": 0,
+    "top100": 7,
+    "top300": 27,
+    "rank_buckets": {"30-50": 1, "50-100": 6, "100-300": 20, "miss": 321}
+  },
+  "top30_unique_recoveries": {"same_artist_in_history": 0, "new_artist": 0},
+  "verdict": "STOP for this config: 0 top-30 unique recoveries; the 27 absent recoveries are all deep (rank 30-300). E5-large-v2 + structured query does NOT surface union-absent GT at usable ranks. Per the escalation rule (escalate only if nontrivial top-30 recoveries), do NOT go to E5-mistral.",
+  "optional_followups": [
+    "query reformulation (E5 prefers natural-language queries; the bracketed [QUERY][HISTORY][CONTEXT] format is likely off-distribution for E5) -- the only pre-authorized 'change query' lever",
+    "otherwise R96 retrieval lever closes: the union-absent 22% appears unreachable by query->track text retrieval (BGE or E5)"
+  ]
+}
