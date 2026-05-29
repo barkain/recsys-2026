@@ -1,0 +1,9 @@
+{
+  "experiment": "R101 ColBERT late-interaction (colbert-ir/colbertv2.0) full-corpus retrieval, fold-0, A100",
+  "zero_shot": {"recall20": 0.0544, "recall30": 0.0669, "recall300": 0.1437, "ndcg20": 0.0272, "unique_vs_union_top30": 1},
+  "fine_tuned_fold0": {"recall20": 0.1019, "recall30": 0.1175, "recall300": 0.2194, "ndcg20": 0.0496, "unique_vs_union_top20": 5, "unique_vs_union_top30": 6},
+  "baselines": {"prod_r54c_lr_recall20": 0.479, "prod_ndcg20": 0.2879, "bge_large_ft_recall300": 0.68, "union_ceiling300": 0.6245, "r100_crossenc_ndcg20": 0.1133},
+  "verdict": "STOP. Late interaction fails both zero-shot and fine-tuned: 3-5x worse than our existing retrievers, negligible unique recoveries (6/1600). Fold-0 filter; no 5-fold escalation.",
+  "mechanism": "Late-interaction MaxSim helps on long span-rich documents; our track docs are ~24-39 tokens, too short for token-level matching to beat single-vector. The GT-vs-neighbor wall is a SIGNAL limitation (track text lacks distinguishing info for next-track), not a model-granularity problem (confirms R82).",
+  "implication": "Retrieval lever now closed across ALL families+mechanisms (BGE/E5/GTE single-vector, cross-encoder rerank, ColBERT late-interaction). With ranking (R100) and response (R98) also closed, every nDCG lever is exhausted. R92 p11 (composite 0.6364) is the documented ceiling. Competitor nDCG 0.54-0.60 uses a method we cannot identify or reproduce."
+}
