@@ -1,0 +1,9 @@
+{
+  "experiment": "R102 GTE-Qwen2-7B-instruct + LoRA fine-tune (single-vector retriever), fold-0, A100",
+  "progression_recall": {"zero_shot_at20": 0.208, "zero_shot_at300": 0.507,
+                         "lora_2ep_dev_at20": 0.278, "lora_2ep_dev_at300": 0.591, "lora_2ep_dev_unique30": 31,
+                         "lora_fulldata_4ep_at20": 0.2656, "lora_fulldata_4ep_at300": 0.5894, "lora_fulldata_unique30": 32},
+  "baselines": {"prod_recall20": 0.479, "prod_ndcg20": 0.2879, "bge_large_at300": 0.68, "union_ceiling300": 0.6245, "colbert_ft_at300": 0.426},
+  "verdict": "GTE-7B+LoRA is the strongest NEW retriever signal of the session: ~32 unique top-30 recoveries vs the complete union (ColBERT got 4-8). But overall it PLATEAUS at recall@300 0.59 / recall@20 0.27 -- below fine-tuned BGE-large (0.68) and production (0.48@20). Full-data + more epochs did not lift it (mild overfit). Likely limited by decoder+last-token pooling + LoRA-only (vs BGE full FT bidirectional).",
+  "implication": "Not a standalone replacement. Its value is ORTHOGONAL recall (~32/1600 unique top-30 GTs) -> candidate for ADDING as a retrieval source to the union (R84 playbook), but those uniques then face the same ranking-conversion bottleneck (union 0.78@300 -> 0.48@20) and the LR-conversion wall (R68/R90). Realistic nDCG gain small + uncertain. Heavy-model retrieval campaign (7B single-vector, ColBERT late-interaction, cross-encoder) all underperform fine-tuned BGE-large overall."
+}
