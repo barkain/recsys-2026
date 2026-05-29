@@ -1,0 +1,55 @@
+{
+  "experiment": "R93 policy-probe score analysis",
+  "base_ndcg20_prod": 0.5073,
+  "base_ndcg20_r84c": 0.5069,
+  "positive_threshold": 5e-05,
+  "n_scored": 3,
+  "n_positive": 0,
+  "additive_delta_vs_prod": 0,
+  "projected_prod_ndcg": 0.5073,
+  "warnings": [],
+  "rows": [
+    {
+      "probe_id": "r93p01_574f75cf_t2",
+      "bucket": "A_reorder_keep_top1",
+      "action_source": "r90_keep_top1",
+      "ndcg20": 0.5073,
+      "delta_vs_prod": 0.0,
+      "delta_vs_r84c": 0.0004,
+      "keep": false,
+      "session_id": "574f75cf-7036-4cd2-b699-93202d81e7e1",
+      "turn_number": 2,
+      "top1_changed": false,
+      "overlap_20": 19,
+      "zip": "exp/inference/blind_a/r93_policy_probes/r93p01_574f75cf_t2.zip"
+    },
+    {
+      "probe_id": "r93p02_68993adf_t1",
+      "bucket": "A_reorder_keep_top1",
+      "action_source": "r90_keep_top1",
+      "ndcg20": 0.5073,
+      "delta_vs_prod": 0.0,
+      "delta_vs_r84c": 0.0004,
+      "keep": false,
+      "session_id": "68993adf-60d9-42f9-b21f-cdd5bf851cb1",
+      "turn_number": 1,
+      "top1_changed": false,
+      "overlap_20": 18,
+      "zip": "exp/inference/blind_a/r93_policy_probes/r93p02_68993adf_t1.zip"
+    },
+    {
+      "probe_id": "r93p03_ee7bfbda_t3",
+      "bucket": "A_reorder_keep_top1",
+      "action_source": "r90_keep_top1",
+      "ndcg20": 0.5073,
+      "delta_vs_prod": 0.0,
+      "delta_vs_r84c": 0.0004,
+      "keep": false,
+      "session_id": "ee7bfbda-86ee-4ade-b695-dbdeb12ae063",
+      "turn_number": 3,
+      "top1_changed": false,
+      "overlap_20": 18,
+      "zip": "exp/inference/blind_a/r93_policy_probes/r93p03_ee7bfbda_t3.zip"
+    }
+  ]
+}

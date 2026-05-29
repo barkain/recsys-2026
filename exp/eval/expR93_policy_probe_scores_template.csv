@@ -1,7 +1,7 @@
 probe_id,ndcg20
-r93p01_574f75cf_t2,
-r93p02_68993adf_t1,
-r93p03_ee7bfbda_t3,
+r93p01_574f75cf_t2,0.5073
+r93p02_68993adf_t1,0.5073
+r93p03_ee7bfbda_t3,0.5073
 r93p04_3aee4d9b_t6,
 r93p05_d9cca604_t2,
 r93p06_6c54de37_t2,

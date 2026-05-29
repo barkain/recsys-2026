@@ -1,0 +1,5631 @@
+{
+  "experiment": "R94 hidden-GT miss-candidate ranking",
+  "base_submission": "exp/inference/blind_a/r92_p11_oracle_submission.zip",
+  "base_ndcg20": 0.5073,
+  "voter_fields": [
+    "src_b",
+    "src_c",
+    "r21_list",
+    "als_tracks",
+    "src_f",
+    "src_a",
+    "src_d"
+  ],
+  "consensus_depth": 50,
+  "note": "candidate_score and probe_priority use NO R84/R90 lineage; R54 cosine is a weak corroborator only.",
+  "n_rows": 80,
+  "n_rows_with_candidate": 80,
+  "n_already_probed": 12,
+  "rows": [
+    {
+      "session_id": "46faad58-58e7-4379-978e-4de6e5cc3b4f",
+      "turn_number": 2,
+      "current_top1": "0971b5fc-22b1-48ac-a54b-ab2e66efe749",
+      "current_top1_artist": "cradle of filth",
+      "has_history": true,
+      "n_played": 1,
+      "r54_margin": 0.14849062847659034,
+      "top1_voter_support": 3,
+      "n_new_candidates": 216,
+      "best_candidate": {
+        "track_id": "dcd46e49-3828-4b65-b544-67198915b015",
+        "consensus": 5,
+        "sources": [
+          "r21_list",
+          "src_a",
+          "src_b",
+          "src_c",
+          "src_d"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 12.5
+      },
+      "top3_candidates": [
+        {
+          "track_id": "dcd46e49-3828-4b65-b544-67198915b015",
+          "consensus": 5,
+          "sources": [
+            "r21_list",
+            "src_a",
+            "src_b",
+            "src_c",
+            "src_d"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 12.5
+        },
+        {
+          "track_id": "bbeea7af-8538-4141-a5d3-a51691f99a91",
+          "consensus": 5,
+          "sources": [
+            "r21_list",
+            "src_a",
+            "src_b",
+            "src_c",
+            "src_d"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 12.46
+        },
+        {
+          "track_id": "d709837d-37a5-4229-a15c-514ac32e3a92",
+          "consensus": 4,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c",
+            "src_f"
+          ],
+          "best_rank": 3,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 10.94
+        }
+      ],
+      "probe_priority": 13.426,
+      "suggested_insert": "top1",
+      "already_probed": "R92:r92p04_46faad58_t2"
+    },
+    {
+      "session_id": "9d4ef919-504b-4963-af47-777478ace477",
+      "turn_number": 3,
+      "current_top1": "52604ca3-85ff-4852-ba67-2dffdf9bcf9b",
+      "current_top1_artist": "myrkur",
+      "has_history": true,
+      "n_played": 2,
+      "r54_margin": 0.044516569896690505,
+      "top1_voter_support": 6,
+      "n_new_candidates": 210,
+      "best_candidate": {
+        "track_id": "db987b16-6369-4a17-9b61-376aa7623516",
+        "consensus": 5,
+        "sources": [
+          "r21_list",
+          "src_a",
+          "src_b",
+          "src_c",
+          "src_d"
+        ],
+        "best_rank": 7,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 12.36
+      },
+      "top3_candidates": [
+        {
+          "track_id": "db987b16-6369-4a17-9b61-376aa7623516",
+          "consensus": 5,
+          "sources": [
+            "r21_list",
+            "src_a",
+            "src_b",
+            "src_c",
+            "src_d"
+          ],
+          "best_rank": 7,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 12.36
+        },
+        {
+          "track_id": "81158d04-6cb5-4ca0-a023-2e476df63905",
+          "consensus": 5,
+          "sources": [
+            "r21_list",
+            "src_a",
+            "src_b",
+            "src_d",
+            "src_f"
+          ],
+          "best_rank": 11,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 12.28
+        },
+        {
+          "track_id": "c9edec63-dbac-47b8-b6d7-143665c1b80b",
+          "consensus": 4,
+          "sources": [
+            "r21_list",
+            "src_a",
+            "src_b",
+            "src_d"
+          ],
+          "best_rank": 13,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 10.74
+        }
+      ],
+      "probe_priority": 13.338,
+      "suggested_insert": "top1",
+      "already_probed": null
+    },
+    {
+      "session_id": "4b239a62-4435-4f39-80d6-26cffe0d1871",
+      "turn_number": 2,
+      "current_top1": "d469984d-5dbc-4e1b-89a8-4a964554d062",
+      "current_top1_artist": "parov stelar",
+      "has_history": true,
+      "n_played": 1,
+      "r54_margin": 0.1787378329339374,
+      "top1_voter_support": 6,
+      "n_new_candidates": 184,
+      "best_candidate": {
+        "track_id": "2431cae4-ec3f-4eae-a728-bad8639d0fbd",
+        "consensus": 5,
+        "sources": [
+          "r21_list",
+          "src_a",
+          "src_b",
+          "src_c",
+          "src_d"
+        ],
+        "best_rank": 4,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 12.42
+      },
+      "top3_candidates": [
+        {
+          "track_id": "2431cae4-ec3f-4eae-a728-bad8639d0fbd",
+          "consensus": 5,
+          "sources": [
+            "r21_list",
+            "src_a",
+            "src_b",
+            "src_c",
+            "src_d"
+          ],
+          "best_rank": 4,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 12.42
+        },
+        {
+          "track_id": "4427f3cd-af94-4068-8f0a-e9041bba76b4",
+          "consensus": 5,
+          "sources": [
+            "r21_list",
+            "src_a",
+            "src_b",
+            "src_c",
+            "src_d"
+          ],
+          "best_rank": 7,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 12.36
+        },
+        {
+          "track_id": "214abeb6-9b08-4ca6-b563-48bd0c5561ec",
+          "consensus": 5,
+          "sources": [
+            "r21_list",
+            "src_a",
+            "src_b",
+            "src_c",
+            "src_d"
+          ],
+          "best_rank": 9,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 12.32
+        }
+      ],
+      "probe_priority": 13.331,
+      "suggested_insert": "top1",
+      "already_probed": "R92:r92p05_4b239a62_t2"
+    },
+    {
+      "session_id": "bd392a56-236a-49da-8f89-46c453e97ea2",
+      "turn_number": 6,
+      "current_top1": "c9316688-3cee-4f53-9602-11000d32af59",
+      "current_top1_artist": "trevor morris",
+      "has_history": true,
+      "n_played": 5,
+      "r54_margin": 0.32915797818352666,
+      "top1_voter_support": 6,
+      "n_new_candidates": 142,
+      "best_candidate": {
+        "track_id": "50cbc11a-7da2-4fa5-beba-9841e24f5447",
+        "consensus": 5,
+        "sources": [
+          "als_tracks",
+          "r21_list",
+          "src_a",
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 3,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 12.44
+      },
+      "top3_candidates": [
+        {
+          "track_id": "50cbc11a-7da2-4fa5-beba-9841e24f5447",
+          "consensus": 5,
+          "sources": [
+            "als_tracks",
+            "r21_list",
+            "src_a",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 3,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 12.44
+        },
+        {
+          "track_id": "c4c041f0-67bc-4e21-bf3d-8f5605e9df39",
+          "consensus": 5,
+          "sources": [
+            "als_tracks",
+            "r21_list",
+            "src_a",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 4,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 12.42
+        },
+        {
+          "track_id": "480ea5ad-a61a-405f-8400-d36ea1d3d659",
+          "consensus": 5,
+          "sources": [
+            "als_tracks",
+            "r21_list",
+            "src_a",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 4,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 12.42
+        }
+      ],
+      "probe_priority": 13.275,
+      "suggested_insert": "top1",
+      "already_probed": null
+    },
+    {
+      "session_id": "49009ca7-f8da-45df-9c62-7b88d960d5d2",
+      "turn_number": 3,
+      "current_top1": "ff41bc47-7a51-4179-9451-96453e8860fc",
+      "current_top1_artist": "myrkur",
+      "has_history": true,
+      "n_played": 2,
+      "r54_margin": 0.37782284169598856,
+      "top1_voter_support": 5,
+      "n_new_candidates": 211,
+      "best_candidate": {
+        "track_id": "050f591a-035c-41db-bd51-57839f635705",
+        "consensus": 5,
+        "sources": [
+          "r21_list",
+          "src_a",
+          "src_b",
+          "src_c",
+          "src_d"
+        ],
+        "best_rank": 3,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 12.44
+      },
+      "top3_candidates": [
+        {
+          "track_id": "050f591a-035c-41db-bd51-57839f635705",
+          "consensus": 5,
+          "sources": [
+            "r21_list",
+            "src_a",
+            "src_b",
+            "src_c",
+            "src_d"
+          ],
+          "best_rank": 3,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 12.44
+        },
+        {
+          "track_id": "e6ba70ed-f42b-4819-acde-ff01c9bfc265",
+          "consensus": 2,
+          "sources": [
+            "als_tracks",
+            "r21_list"
+          ],
+          "best_rank": 16,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 7.68
+        },
+        {
+          "track_id": "db987b16-6369-4a17-9b61-376aa7623516",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        }
+      ],
+      "probe_priority": 13.251,
+      "suggested_insert": "top1",
+      "already_probed": null
+    },
+    {
+      "session_id": "0802ac4a-187b-4a78-b090-0ceb7630cf12",
+      "turn_number": 6,
+      "current_top1": "a3eac6df-31fe-454f-b2a3-76fb74eb9bbd",
+      "current_top1_artist": "turisas",
+      "has_history": true,
+      "n_played": 5,
+      "r54_margin": 0.04032641582747398,
+      "top1_voter_support": 2,
+      "n_new_candidates": 124,
+      "best_candidate": {
+        "track_id": "b53973eb-0b44-4f20-b934-d0724f615b4a",
+        "consensus": 5,
+        "sources": [
+          "als_tracks",
+          "r21_list",
+          "src_a",
+          "src_c",
+          "src_f"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": false,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 11.3
+      },
+      "top3_candidates": [
+        {
+          "track_id": "b53973eb-0b44-4f20-b934-d0724f615b4a",
+          "consensus": 5,
+          "sources": [
+            "als_tracks",
+            "r21_list",
+            "src_a",
+            "src_c",
+            "src_f"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 11.3
+        },
+        {
+          "track_id": "133f6ec4-7a5d-4f68-9622-755d629398cd",
+          "consensus": 5,
+          "sources": [
+            "als_tracks",
+            "r21_list",
+            "src_a",
+            "src_c",
+            "src_f"
+          ],
+          "best_rank": 5,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 11.2
+        },
+        {
+          "track_id": "44ae2405-c5bd-4fa3-a0ad-11d3a6a85a57",
+          "consensus": 5,
+          "sources": [
+            "als_tracks",
+            "r21_list",
+            "src_b",
+            "src_c",
+            "src_f"
+          ],
+          "best_rank": 6,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 11.18
+        }
+      ],
+      "probe_priority": 12.78,
+      "suggested_insert": "rank2",
+      "already_probed": "R92:r92p03_0802ac4a_t6"
+    },
+    {
+      "session_id": "b6457586-ddb1-4e18-a9b5-4d4926b8b46d",
+      "turn_number": 2,
+      "current_top1": "44f57858-04d2-4901-9b79-af790b5eae10",
+      "current_top1_artist": "kacey musgraves",
+      "has_history": true,
+      "n_played": 1,
+      "r54_margin": 0.19811913817399263,
+      "top1_voter_support": 2,
+      "n_new_candidates": 250,
+      "best_candidate": {
+        "track_id": "bde3f340-72b7-4007-9a6e-320ff93030c1",
+        "consensus": 5,
+        "sources": [
+          "als_tracks",
+          "src_a",
+          "src_b",
+          "src_c",
+          "src_d"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": false,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 11.3
+      },
+      "top3_candidates": [
+        {
+          "track_id": "bde3f340-72b7-4007-9a6e-320ff93030c1",
+          "consensus": 5,
+          "sources": [
+            "als_tracks",
+            "src_a",
+            "src_b",
+            "src_c",
+            "src_d"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 11.3
+        },
+        {
+          "track_id": "4e83bc81-f324-46b0-a3b1-bae4fb886aad",
+          "consensus": 5,
+          "sources": [
+            "als_tracks",
+            "src_a",
+            "src_b",
+            "src_c",
+            "src_d"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 10.48
+        },
+        {
+          "track_id": "f7ab9d44-ecbc-4921-ae24-f1a4b1107d37",
+          "consensus": 4,
+          "sources": [
+            "als_tracks",
+            "src_b",
+            "src_c",
+            "src_f"
+          ],
+          "best_rank": 4,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 9.72
+        }
+      ],
+      "probe_priority": 12.701,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "ca8cbe02-1def-4fca-ba48-f17f9fac0ed8",
+      "turn_number": 6,
+      "current_top1": "a9550ed3-9e75-4763-a630-a3a13a6e95c8",
+      "current_top1_artist": "emilie autumn",
+      "has_history": true,
+      "n_played": 5,
+      "r54_margin": 1.8022779635083872,
+      "top1_voter_support": 3,
+      "n_new_candidates": 240,
+      "best_candidate": {
+        "track_id": "746ec84b-da8c-44c8-9fac-292a473edbbc",
+        "consensus": 5,
+        "sources": [
+          "als_tracks",
+          "r21_list",
+          "src_a",
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 3,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 12.44
+      },
+      "top3_candidates": [
+        {
+          "track_id": "746ec84b-da8c-44c8-9fac-292a473edbbc",
+          "consensus": 5,
+          "sources": [
+            "als_tracks",
+            "r21_list",
+            "src_a",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 3,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 12.44
+        },
+        {
+          "track_id": "b5864edf-9ce7-40d3-8e89-d351ea61be58",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 9.46
+        },
+        {
+          "track_id": "2d4b6470-1a21-475a-8a0d-dba729eb104b",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 8,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 9.34
+        }
+      ],
+      "probe_priority": 12.539,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "2fe9abf6-ccea-4f05-8490-82da8bf57764",
+      "turn_number": 5,
+      "current_top1": "a6fb2fd2-1340-4844-9fa4-6af04ab4286b",
+      "current_top1_artist": "bloodbath",
+      "has_history": true,
+      "n_played": 4,
+      "r54_margin": 2.2604959852107047,
+      "top1_voter_support": 5,
+      "n_new_candidates": 286,
+      "best_candidate": {
+        "track_id": "d7f58a6c-f2bf-46ac-8610-f78914e1f3ef",
+        "consensus": 5,
+        "sources": [
+          "r21_list",
+          "src_b",
+          "src_c",
+          "src_d",
+          "src_f"
+        ],
+        "best_rank": 1,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 12.48
+      },
+      "top3_candidates": [
+        {
+          "track_id": "d7f58a6c-f2bf-46ac-8610-f78914e1f3ef",
+          "consensus": 5,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c",
+            "src_d",
+            "src_f"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 12.48
+        },
+        {
+          "track_id": "f6398378-32d5-42aa-a199-b4d3612c7cc4",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "daf0423f-f382-463f-92cf-227c0e92397d",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 23,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 6.34
+        }
+      ],
+      "probe_priority": 12.48,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "9cd93031-ae32-4c15-99fa-fbb1b6fbac0b",
+      "turn_number": 3,
+      "current_top1": "f6643fd4-c8b2-4e34-83d2-11c6475755a2",
+      "current_top1_artist": "ryan adams & the cardinals",
+      "has_history": true,
+      "n_played": 2,
+      "r54_margin": 0.04724473416086461,
+      "top1_voter_support": 3,
+      "n_new_candidates": 207,
+      "best_candidate": {
+        "track_id": "bdec8ed7-74b0-4939-a245-7d5b760b6cd7",
+        "consensus": 4,
+        "sources": [
+          "r21_list",
+          "src_a",
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 11.0
+      },
+      "top3_candidates": [
+        {
+          "track_id": "bdec8ed7-74b0-4939-a245-7d5b760b6cd7",
+          "consensus": 4,
+          "sources": [
+            "r21_list",
+            "src_a",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 11.0
+        },
+        {
+          "track_id": "fe97d247-87d6-4ac5-8f0d-69c84e600ccf",
+          "consensus": 4,
+          "sources": [
+            "r21_list",
+            "src_a",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 12,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 7.56
+        },
+        {
+          "track_id": "fff9842a-c9be-4b7e-800f-5e4df03e66d1",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        }
+      ],
+      "probe_priority": 11.976,
+      "suggested_insert": "top1",
+      "already_probed": null
+    },
+    {
+      "session_id": "6c54de37-9c55-4c59-b203-ec190dd07523",
+      "turn_number": 2,
+      "current_top1": "8a0d6cfd-ad06-44e6-abd8-949a583db664",
+      "current_top1_artist": "tim hecker",
+      "has_history": true,
+      "n_played": 1,
+      "r54_margin": 0.007993826904123758,
+      "top1_voter_support": 5,
+      "n_new_candidates": 159,
+      "best_candidate": {
+        "track_id": "1d8df8fa-9d91-4948-997c-fc7e6d13ac5d",
+        "consensus": 4,
+        "sources": [
+          "src_a",
+          "src_b",
+          "src_c",
+          "src_d"
+        ],
+        "best_rank": 15,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 10.7
+      },
+      "top3_candidates": [
+        {
+          "track_id": "1d8df8fa-9d91-4948-997c-fc7e6d13ac5d",
+          "consensus": 4,
+          "sources": [
+            "src_a",
+            "src_b",
+            "src_c",
+            "src_d"
+          ],
+          "best_rank": 15,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 10.7
+        },
+        {
+          "track_id": "8dc6af93-7468-4cb1-9fdc-bb8f0e251377",
+          "consensus": 3,
+          "sources": [
+            "src_b",
+            "src_c",
+            "src_f"
+          ],
+          "best_rank": 4,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 9.42
+        },
+        {
+          "track_id": "d4fc32f8-9ab7-474b-bb7c-26791f98c005",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_f"
+          ],
+          "best_rank": 5,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 7.9
+        }
+      ],
+      "probe_priority": 11.696,
+      "suggested_insert": "top1",
+      "already_probed": null
+    },
+    {
+      "session_id": "70a0e5ad-50cb-475c-95a3-adffcf04b72e",
+      "turn_number": 3,
+      "current_top1": "cbc91a29-9394-4b73-9166-46f32afb4fac",
+      "current_top1_artist": "laura pausini",
+      "has_history": true,
+      "n_played": 2,
+      "r54_margin": 0.9962494570884488,
+      "top1_voter_support": 3,
+      "n_new_candidates": 180,
+      "best_candidate": {
+        "track_id": "204d98cd-c410-4126-a7ed-0f126640327c",
+        "consensus": 4,
+        "sources": [
+          "r21_list",
+          "src_a",
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 1,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 10.98
+      },
+      "top3_candidates": [
+        {
+          "track_id": "204d98cd-c410-4126-a7ed-0f126640327c",
+          "consensus": 4,
+          "sources": [
+            "r21_list",
+            "src_a",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 10.98
+        },
+        {
+          "track_id": "a6967cbf-a8f0-46b7-9a58-3037f9e48ffe",
+          "consensus": 3,
+          "sources": [
+            "src_a",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 4,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 9.42
+        },
+        {
+          "track_id": "792449c5-04cf-4df2-8847-22fceec1143f",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        }
+      ],
+      "probe_priority": 11.482,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "db8ec85f-fa1f-4e88-b4d2-333b63b0d386",
+      "turn_number": 7,
+      "current_top1": "aacb7b57-35a7-44e3-8525-bedd3c045064",
+      "current_top1_artist": "plaid",
+      "has_history": true,
+      "n_played": 6,
+      "r54_margin": 0.014674291019045604,
+      "top1_voter_support": 3,
+      "n_new_candidates": 227,
+      "best_candidate": {
+        "track_id": "2c998fa6-fbf5-4dfa-b7d3-5eda491a519b",
+        "consensus": 4,
+        "sources": [
+          "src_a",
+          "src_b",
+          "src_c",
+          "src_d"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 10.2
+      },
+      "top3_candidates": [
+        {
+          "track_id": "2c998fa6-fbf5-4dfa-b7d3-5eda491a519b",
+          "consensus": 4,
+          "sources": [
+            "src_a",
+            "src_b",
+            "src_c",
+            "src_d"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 10.2
+        },
+        {
+          "track_id": "6ffa2f40-35de-44c1-8b4f-5682fa31f6c4",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "167af39c-123a-4fb9-88c5-c78c8b7a3a81",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        }
+      ],
+      "probe_priority": 11.193,
+      "suggested_insert": "top1",
+      "already_probed": "R92:r92p06_db8ec85f_t7"
+    },
+    {
+      "session_id": "d7426802-d075-4a49-8062-977ba656c9a2",
+      "turn_number": 8,
+      "current_top1": "b2aa66ca-4f74-43ab-b9fc-2ecb256211b5",
+      "current_top1_artist": "chris stapleton",
+      "has_history": true,
+      "n_played": 7,
+      "r54_margin": 0.9764578233227699,
+      "top1_voter_support": 4,
+      "n_new_candidates": 264,
+      "best_candidate": {
+        "track_id": "f02d6c95-80de-40d7-aac3-45b090011c0c",
+        "consensus": 4,
+        "sources": [
+          "src_a",
+          "src_b",
+          "src_c",
+          "src_d"
+        ],
+        "best_rank": 2,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 10.16
+      },
+      "top3_candidates": [
+        {
+          "track_id": "f02d6c95-80de-40d7-aac3-45b090011c0c",
+          "consensus": 4,
+          "sources": [
+            "src_a",
+            "src_b",
+            "src_c",
+            "src_d"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 10.16
+        },
+        {
+          "track_id": "35ae409b-f25b-4705-adfd-c9b100097206",
+          "consensus": 4,
+          "sources": [
+            "src_a",
+            "src_b",
+            "src_c",
+            "src_d"
+          ],
+          "best_rank": 3,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 10.14
+        },
+        {
+          "track_id": "820e1c60-ba11-4b04-a43e-b77e2882988b",
+          "consensus": 3,
+          "sources": [
+            "src_b",
+            "src_c",
+            "src_d"
+          ],
+          "best_rank": 8,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 9.34
+        }
+      ],
+      "probe_priority": 10.672,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "1f7b28c1-8b18-4045-be27-0475edb96857",
+      "turn_number": 8,
+      "current_top1": "5731da30-a079-4ee5-8719-86d1dc05f2a1",
+      "current_top1_artist": "pye corner audio",
+      "has_history": true,
+      "n_played": 7,
+      "r54_margin": 0.28151579907309077,
+      "top1_voter_support": 0,
+      "n_new_candidates": 311,
+      "best_candidate": {
+        "track_id": "8d52a85c-9262-41a9-8cc2-8eebd847295c",
+        "consensus": 3,
+        "sources": [
+          "r21_list",
+          "src_a",
+          "src_f"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": false,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 8.3
+      },
+      "top3_candidates": [
+        {
+          "track_id": "8d52a85c-9262-41a9-8cc2-8eebd847295c",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_a",
+            "src_f"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 8.3
+        },
+        {
+          "track_id": "67d79eeb-7d62-4b39-baff-fe532bf4918c",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_a",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 8.28
+        },
+        {
+          "track_id": "7354b955-a098-4592-a90a-b5f840373e58",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_a",
+            "src_c"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 8.26
+        }
+      ],
+      "probe_priority": 10.659,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "07aae53d-7c65-442a-a893-6ffde80efb0d",
+      "turn_number": 6,
+      "current_top1": "4e5764ae-5f86-4886-849c-5bc50c601d22",
+      "current_top1_artist": "dean martin",
+      "has_history": true,
+      "n_played": 5,
+      "r54_margin": 0.8462884802300061,
+      "top1_voter_support": 3,
+      "n_new_candidates": 210,
+      "best_candidate": {
+        "track_id": "232a1597-d0b2-4d3e-b002-e9ddefcd02d2",
+        "consensus": 4,
+        "sources": [
+          "als_tracks",
+          "r21_list",
+          "src_a",
+          "src_c"
+        ],
+        "best_rank": 2,
+        "same_artist_top1": false,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 9.76
+      },
+      "top3_candidates": [
+        {
+          "track_id": "232a1597-d0b2-4d3e-b002-e9ddefcd02d2",
+          "consensus": 4,
+          "sources": [
+            "als_tracks",
+            "r21_list",
+            "src_a",
+            "src_c"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 9.76
+        },
+        {
+          "track_id": "8986fc7b-52c8-4ee8-80f1-60e00a9aac88",
+          "consensus": 5,
+          "sources": [
+            "als_tracks",
+            "src_a",
+            "src_b",
+            "src_c",
+            "src_d"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 9.28
+        },
+        {
+          "track_id": "85bb5b7a-9162-45c8-bf87-b6ae5d3871aa",
+          "consensus": 3,
+          "sources": [
+            "als_tracks",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 15,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 8.0
+        }
+      ],
+      "probe_priority": 10.337,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "40cc1c03-6db9-49db-8bbe-8b97b45adb0b",
+      "turn_number": 6,
+      "current_top1": "94c987d0-cd80-499c-b4f4-50958be00452",
+      "current_top1_artist": "lincoln durham",
+      "has_history": true,
+      "n_played": 5,
+      "r54_margin": 0.2134431130941835,
+      "top1_voter_support": 1,
+      "n_new_candidates": 229,
+      "best_candidate": {
+        "track_id": "a2265769-7d46-475c-8e53-3d536c408cc6",
+        "consensus": 3,
+        "sources": [
+          "src_a",
+          "src_b",
+          "src_d"
+        ],
+        "best_rank": 1,
+        "same_artist_top1": false,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 8.28
+      },
+      "top3_candidates": [
+        {
+          "track_id": "a2265769-7d46-475c-8e53-3d536c408cc6",
+          "consensus": 3,
+          "sources": [
+            "src_a",
+            "src_b",
+            "src_d"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 8.28
+        },
+        {
+          "track_id": "5ee397be-a6a2-45c3-9051-b60df1454590",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 6.0
+        },
+        {
+          "track_id": "f4fd94db-f5d3-44b3-9518-26e870e7a7c5",
+          "consensus": 1,
+          "sources": [
+            "src_c"
+          ],
+          "best_rank": 9,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 5.52
+        }
+      ],
+      "probe_priority": 10.173,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "ca9c5de4-c2b7-4972-a524-615a400d0105",
+      "turn_number": 2,
+      "current_top1": "19d984a3-530a-4b83-82e4-4f7bb72931c7",
+      "current_top1_artist": "kyle dixon",
+      "has_history": true,
+      "n_played": 1,
+      "r54_margin": 1.1343418775176846,
+      "top1_voter_support": 2,
+      "n_new_candidates": 71,
+      "best_candidate": {
+        "track_id": "ffd7409b-601c-4d2b-9338-f198b1555d21",
+        "consensus": 3,
+        "sources": [
+          "r21_list",
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 13,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 9.24
+      },
+      "top3_candidates": [
+        {
+          "track_id": "ffd7409b-601c-4d2b-9338-f198b1555d21",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 13,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 9.24
+        },
+        {
+          "track_id": "d6e4c698-b00c-4106-8431-c74147fe1e8d",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 16,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 9.18
+        },
+        {
+          "track_id": "113c9a7e-92c3-4f4c-846b-c9c9ef4c22d3",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 19,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 9.12
+        }
+      ],
+      "probe_priority": 10.173,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "5ad7094f-3764-4e32-94c9-c0c02b65e01b",
+      "turn_number": 4,
+      "current_top1": "06dbde2c-185f-437a-aa92-8ece8094fe83",
+      "current_top1_artist": "hieroglyphics",
+      "has_history": true,
+      "n_played": 3,
+      "r54_margin": 0.23896293623278053,
+      "top1_voter_support": 1,
+      "n_new_candidates": 95,
+      "best_candidate": {
+        "track_id": "d8fcdda7-03a6-4cb1-8494-dd729cebe10a",
+        "consensus": 3,
+        "sources": [
+          "r21_list",
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 1,
+        "same_artist_top1": false,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 8.28
+      },
+      "top3_candidates": [
+        {
+          "track_id": "d8fcdda7-03a6-4cb1-8494-dd729cebe10a",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 8.28
+        },
+        {
+          "track_id": "9bf94b8b-ec15-4361-aecf-0a02b473b95f",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 5,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 8.2
+        },
+        {
+          "track_id": "b5c1e9fc-0012-469c-a6d8-20536dc7da7d",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        }
+      ],
+      "probe_priority": 10.161,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "b7d2f58e-a1e5-418d-b3bd-88e88d20908d",
+      "turn_number": 6,
+      "current_top1": "811f35ae-5cb5-4e1c-bf17-847b3f9e0371",
+      "current_top1_artist": "rjd2",
+      "has_history": true,
+      "n_played": 5,
+      "r54_margin": 0.8408509166740026,
+      "top1_voter_support": 3,
+      "n_new_candidates": 220,
+      "best_candidate": {
+        "track_id": "a2fc33ba-3eae-4486-9c1f-68c9fb38119c",
+        "consensus": 3,
+        "sources": [
+          "r21_list",
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 9.5
+      },
+      "top3_candidates": [
+        {
+          "track_id": "a2fc33ba-3eae-4486-9c1f-68c9fb38119c",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 9.5
+        },
+        {
+          "track_id": "225d5697-303b-4df7-bf0d-288a83a85a0b",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 10,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 9.3
+        },
+        {
+          "track_id": "f3dcf57f-e57e-4392-a1a8-abf18d9862cd",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 11,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 9.28
+        }
+      ],
+      "probe_priority": 10.08,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "3734e44b-ca86-456b-95b1-9352effa8d3a",
+      "turn_number": 5,
+      "current_top1": "8855ee9f-3e91-4de6-be75-3cdf3ea99668",
+      "current_top1_artist": "partynextdoor",
+      "has_history": true,
+      "n_played": 4,
+      "r54_margin": 1.146102244159921,
+      "top1_voter_support": 3,
+      "n_new_candidates": 65,
+      "best_candidate": {
+        "track_id": "5adc21a7-9b56-4c6b-8b63-6810a3fee3d4",
+        "consensus": 3,
+        "sources": [
+          "r21_list",
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 5,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 9.4
+      },
+      "top3_candidates": [
+        {
+          "track_id": "5adc21a7-9b56-4c6b-8b63-6810a3fee3d4",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 5,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 9.4
+        },
+        {
+          "track_id": "ea5b9b72-e23d-4c77-a348-33840fc35ada",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 7,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 9.36
+        },
+        {
+          "track_id": "21762537-afb0-487c-8fca-e4f84d057545",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 7,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 9.36
+        }
+      ],
+      "probe_priority": 9.827,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "525f9f69-31e5-4fee-9813-e903ad24e39e",
+      "turn_number": 8,
+      "current_top1": "612a81d1-1cb2-4dbe-b6b4-2fc3c2fec20c",
+      "current_top1_artist": "omnium gatherum",
+      "has_history": true,
+      "n_played": 7,
+      "r54_margin": 0.6269623100385009,
+      "top1_voter_support": 3,
+      "n_new_candidates": 229,
+      "best_candidate": {
+        "track_id": "be696932-d84a-42e8-ac50-bd4c9a64c665",
+        "consensus": 5,
+        "sources": [
+          "als_tracks",
+          "r21_list",
+          "src_a",
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 8,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": true,
+        "cand_score": 9.14
+      },
+      "top3_candidates": [
+        {
+          "track_id": "be696932-d84a-42e8-ac50-bd4c9a64c665",
+          "consensus": 5,
+          "sources": [
+            "als_tracks",
+            "r21_list",
+            "src_a",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 8,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 9.14
+        },
+        {
+          "track_id": "8d9e0678-e017-4e3a-b0fb-30779210212b",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "aa4ea9df-334a-45f9-b279-a2459ad448c3",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        }
+      ],
+      "probe_priority": 9.827,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "4e849a6c-dfbc-4a67-82cc-6dff9076b382",
+      "turn_number": 4,
+      "current_top1": "9313e715-4c01-4275-a1ee-c74511b5bc69",
+      "current_top1_artist": null,
+      "has_history": true,
+      "n_played": 3,
+      "r54_margin": 0.3117821312762643,
+      "top1_voter_support": 1,
+      "n_new_candidates": 260,
+      "best_candidate": {
+        "track_id": "9f8d6179-4bcb-42c5-af9c-be9ad257e708",
+        "consensus": 4,
+        "sources": [
+          "src_a",
+          "src_b",
+          "src_c",
+          "src_d"
+        ],
+        "best_rank": 1,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": true,
+        "cand_score": 7.78
+      },
+      "top3_candidates": [
+        {
+          "track_id": "9f8d6179-4bcb-42c5-af9c-be9ad257e708",
+          "consensus": 4,
+          "sources": [
+            "src_a",
+            "src_b",
+            "src_c",
+            "src_d"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 7.78
+        },
+        {
+          "track_id": "8b3687ea-d6c9-4f31-90c5-20935c8e6d64",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 6.0
+        },
+        {
+          "track_id": "6944382d-6494-4993-8638-c8c30d560690",
+          "consensus": 3,
+          "sources": [
+            "src_a",
+            "src_b",
+            "src_d"
+          ],
+          "best_rank": 16,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 5.98
+        }
+      ],
+      "probe_priority": 9.624,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "c4f7d055-a3cc-4d6b-be80-b90278bc0d32",
+      "turn_number": 7,
+      "current_top1": "9d9ca4fe-fa41-482c-b3ca-af1ed38d62fc",
+      "current_top1_artist": "one ok rock",
+      "has_history": true,
+      "n_played": 6,
+      "r54_margin": 0.19509682905875403,
+      "top1_voter_support": 3,
+      "n_new_candidates": 191,
+      "best_candidate": {
+        "track_id": "da9c05b6-88eb-4629-a245-f7da1c4ceed3",
+        "consensus": 3,
+        "sources": [
+          "src_a",
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 2,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 8.66
+      },
+      "top3_candidates": [
+        {
+          "track_id": "da9c05b6-88eb-4629-a245-f7da1c4ceed3",
+          "consensus": 3,
+          "sources": [
+            "src_a",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 8.66
+        },
+        {
+          "track_id": "ef5bc36d-ea99-4246-beea-a7b5a5f866d4",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "03298a4c-c20c-49a9-8bce-ccb571fe198f",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        }
+      ],
+      "probe_priority": 9.562,
+      "suggested_insert": "top1",
+      "already_probed": "R92:r92p11_c4f7d055_t7"
+    },
+    {
+      "session_id": "198470a5-db1e-4add-b04a-bee8c5945d4b",
+      "turn_number": 5,
+      "current_top1": "db4bfcb8-2043-46f3-8bce-c0499720b819",
+      "current_top1_artist": "emma brammer",
+      "has_history": true,
+      "n_played": 4,
+      "r54_margin": 0.6441077467624503,
+      "top1_voter_support": 2,
+      "n_new_candidates": 249,
+      "best_candidate": {
+        "track_id": "d706c3b5-ce9e-444c-a2be-ff0f234d14fb",
+        "consensus": 3,
+        "sources": [
+          "r21_list",
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": false,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 8.3
+      },
+      "top3_candidates": [
+        {
+          "track_id": "d706c3b5-ce9e-444c-a2be-ff0f234d14fb",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 8.3
+        },
+        {
+          "track_id": "16f6c9f8-63b4-46a8-8030-ad5b2ced82c1",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 8.28
+        },
+        {
+          "track_id": "d2bce223-3868-4e96-9220-ec0ec03566d0",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 8.26
+        }
+      ],
+      "probe_priority": 9.478,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "ab87371b-9ebc-4fb1-9eea-b984a5b76258",
+      "turn_number": 1,
+      "current_top1": "58f968de-875b-4cd1-9c6e-5364010c1203",
+      "current_top1_artist": "mc eiht",
+      "has_history": false,
+      "n_played": 0,
+      "r54_margin": 0.03962930050018859,
+      "top1_voter_support": 0,
+      "n_new_candidates": 89,
+      "best_candidate": {
+        "track_id": "13d2e6f5-fe1a-444c-93d0-2f01867d93b6",
+        "consensus": 3,
+        "sources": [
+          "r21_list",
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 6,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": true,
+        "cand_score": 6.18
+      },
+      "top3_candidates": [
+        {
+          "track_id": "13d2e6f5-fe1a-444c-93d0-2f01867d93b6",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 6,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 6.18
+        },
+        {
+          "track_id": "20c5bef6-a817-4265-b347-f2136c5096c6",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 15,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 6.0
+        },
+        {
+          "track_id": "ae39c1bb-77aa-427e-b4ee-fe22d46a3a41",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 34,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.12
+        }
+      ],
+      "probe_priority": 8.66,
+      "suggested_insert": "rank2",
+      "already_probed": "R92:r92p02_ab87371b_t1"
+    },
+    {
+      "session_id": "574f75cf-7036-4cd2-b699-93202d81e7e1",
+      "turn_number": 2,
+      "current_top1": "2c9265cb-b42c-4897-8eb3-82ba2cf0cb46",
+      "current_top1_artist": "tr/st",
+      "has_history": true,
+      "n_played": 1,
+      "r54_margin": 0.10944224404681813,
+      "top1_voter_support": 2,
+      "n_new_candidates": 121,
+      "best_candidate": {
+        "track_id": "99ec929b-ecf4-4328-8109-4dd69d7bfdae",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 7.2
+      },
+      "top3_candidates": [
+        {
+          "track_id": "99ec929b-ecf4-4328-8109-4dd69d7bfdae",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "0f7fb793-ba1a-4e23-b0e5-23b6fb6b0244",
+          "consensus": 2,
+          "sources": [
+            "r21_list",
+            "src_c"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.76
+        },
+        {
+          "track_id": "fbc633e1-2164-4730-9072-af09dce34f56",
+          "consensus": 2,
+          "sources": [
+            "r21_list",
+            "src_c"
+          ],
+          "best_rank": 4,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.72
+        }
+      ],
+      "probe_priority": 8.645,
+      "suggested_insert": "top1",
+      "already_probed": "R93:r93p01_574f75cf_t2"
+    },
+    {
+      "session_id": "1415a335-8fa3-4ead-8f30-0f04b337d079",
+      "turn_number": 2,
+      "current_top1": "5ee789d5-0ca1-4aa5-88b2-1463ab242155",
+      "current_top1_artist": "turisas",
+      "has_history": true,
+      "n_played": 1,
+      "r54_margin": 0.6158071232482005,
+      "top1_voter_support": 3,
+      "n_new_candidates": 94,
+      "best_candidate": {
+        "track_id": "daa97f27-394d-435b-bb49-2fc81e2f2c55",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 5,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 7.9
+      },
+      "top3_candidates": [
+        {
+          "track_id": "daa97f27-394d-435b-bb49-2fc81e2f2c55",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 5,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 7.9
+        },
+        {
+          "track_id": "82e57bce-ac49-481b-a2b0-039552f7d23a",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 8,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 7.84
+        },
+        {
+          "track_id": "bc0b9cca-0e59-442f-a481-19b9aff12dc8",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 10,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 7.8
+        }
+      ],
+      "probe_priority": 8.592,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "0fedfa80-ebe2-4977-b16b-594f4a2b19b1",
+      "turn_number": 7,
+      "current_top1": "f88c7884-6c2c-4ab8-9e98-6ed4ee49673e",
+      "current_top1_artist": "the wood brothers",
+      "has_history": true,
+      "n_played": 6,
+      "r54_margin": 0.6589518348874779,
+      "top1_voter_support": 4,
+      "n_new_candidates": 252,
+      "best_candidate": {
+        "track_id": "032ca23f-2d8f-4ca3-a6ba-509aa463635b",
+        "consensus": 2,
+        "sources": [
+          "r21_list",
+          "src_c"
+        ],
+        "best_rank": 5,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 7.9
+      },
+      "top3_candidates": [
+        {
+          "track_id": "032ca23f-2d8f-4ca3-a6ba-509aa463635b",
+          "consensus": 2,
+          "sources": [
+            "r21_list",
+            "src_c"
+          ],
+          "best_rank": 5,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 7.9
+        },
+        {
+          "track_id": "e26a304d-1b37-4135-a539-26caf366ddf0",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "684c9a88-2685-43bf-aa6e-75b7d0959f00",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        }
+      ],
+      "probe_priority": 8.571,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "eb4a6ef2-7a7e-448a-bfed-c94e68b01505",
+      "turn_number": 4,
+      "current_top1": "520ec886-e8e8-4ad0-9df7-a329b6e62c91",
+      "current_top1_artist": "rafael anton irisarri",
+      "has_history": true,
+      "n_played": 3,
+      "r54_margin": 0.2750289637989374,
+      "top1_voter_support": 2,
+      "n_new_candidates": 128,
+      "best_candidate": {
+        "track_id": "03e2e1a0-222a-4b30-993f-883d1cb88226",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 7.2
+      },
+      "top3_candidates": [
+        {
+          "track_id": "03e2e1a0-222a-4b30-993f-883d1cb88226",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "81691240-c552-4b8e-b0e8-57416c5171c3",
+          "consensus": 1,
+          "sources": [
+            "r21_list"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 5.28
+        },
+        {
+          "track_id": "f0172791-38a4-4e1e-8513-6396ee79527f",
+          "consensus": 1,
+          "sources": [
+            "r21_list"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 5.26
+        }
+      ],
+      "probe_priority": 8.562,
+      "suggested_insert": "top1",
+      "already_probed": null
+    },
+    {
+      "session_id": "789f9994-f2b6-481d-b71a-c0c6706d82c6",
+      "turn_number": 2,
+      "current_top1": "6d3f0eea-87fd-4d83-932c-ef8ea443e648",
+      "current_top1_artist": "finntroll",
+      "has_history": true,
+      "n_played": 1,
+      "r54_margin": 0.10103856405726486,
+      "top1_voter_support": 7,
+      "n_new_candidates": 231,
+      "best_candidate": {
+        "track_id": "f02508b3-c22e-4a9b-bc4d-40fe531e95b3",
+        "consensus": 4,
+        "sources": [
+          "r21_list",
+          "src_b",
+          "src_c",
+          "src_f"
+        ],
+        "best_rank": 12,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": true,
+        "cand_score": 7.56
+      },
+      "top3_candidates": [
+        {
+          "track_id": "f02508b3-c22e-4a9b-bc4d-40fe531e95b3",
+          "consensus": 4,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c",
+            "src_f"
+          ],
+          "best_rank": 12,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 7.56
+        },
+        {
+          "track_id": "2e04b932-0f81-4662-b379-fddeae8aa372",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "ed5c9953-3ba6-4bb9-80e4-7bedcc4a1833",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 5,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 6.2
+        }
+      ],
+      "probe_priority": 8.509,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "91ce5668-ec1e-4d09-a30a-3440be9c8861",
+      "turn_number": 3,
+      "current_top1": "026092d9-76d5-4cc0-ae9d-1c8c51710e04",
+      "current_top1_artist": "zalza",
+      "has_history": true,
+      "n_played": 2,
+      "r54_margin": 0.2752297459744718,
+      "top1_voter_support": 0,
+      "n_new_candidates": 141,
+      "best_candidate": {
+        "track_id": "cf43eb3b-e74b-4aba-9e57-94874f828ce8",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": false,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 6.0
+      },
+      "top3_candidates": [
+        {
+          "track_id": "cf43eb3b-e74b-4aba-9e57-94874f828ce8",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 6.0
+        },
+        {
+          "track_id": "735b1e39-d0c3-4afa-bc2a-9c84831e33d2",
+          "consensus": 1,
+          "sources": [
+            "src_c"
+          ],
+          "best_rank": 3,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 4.44
+        },
+        {
+          "track_id": "cd844372-2e59-49b9-85e3-534a80fd6720",
+          "consensus": 1,
+          "sources": [
+            "r21_list"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 3.26
+        }
+      ],
+      "probe_priority": 8.362,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "c08eb2a1-8491-442d-a10f-db8d9ba831d6",
+      "turn_number": 7,
+      "current_top1": "ccc856f6-0525-472e-9b60-4217f9180050",
+      "current_top1_artist": "zeca baleiro",
+      "has_history": true,
+      "n_played": 6,
+      "r54_margin": 0.03931886443764221,
+      "top1_voter_support": 2,
+      "n_new_candidates": 245,
+      "best_candidate": {
+        "track_id": "d3970060-84b8-49cc-98f4-9b8459091019",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 4,
+        "same_artist_top1": false,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 6.72
+      },
+      "top3_candidates": [
+        {
+          "track_id": "d3970060-84b8-49cc-98f4-9b8459091019",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 4,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 6.72
+        },
+        {
+          "track_id": "1c490ba4-66ab-4ce7-abb9-f2576f4548d1",
+          "consensus": 2,
+          "sources": [
+            "als_tracks",
+            "src_c"
+          ],
+          "best_rank": 9,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 6.62
+        },
+        {
+          "track_id": "2b0f4039-ce97-4284-b94f-c96f1f27becd",
+          "consensus": 2,
+          "sources": [
+            "als_tracks",
+            "src_c"
+          ],
+          "best_rank": 11,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 6.58
+        }
+      ],
+      "probe_priority": 8.2,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "dc3c1b72-0520-44c6-ab2b-4935d0455e19",
+      "turn_number": 7,
+      "current_top1": "1250e5eb-b03e-4516-8690-49a1bca393d8",
+      "current_top1_artist": "paloma faith",
+      "has_history": true,
+      "n_played": 6,
+      "r54_margin": 0.007758105098163437,
+      "top1_voter_support": 3,
+      "n_new_candidates": 256,
+      "best_candidate": {
+        "track_id": "918a16e1-367c-4a53-802e-aefb6a48de0e",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 7.2
+      },
+      "top3_candidates": [
+        {
+          "track_id": "918a16e1-367c-4a53-802e-aefb6a48de0e",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "e1b97a90-15eb-42ed-9be1-72967a337b3a",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "311af67e-25dc-4cc3-b6b3-cf7e545dcfd0",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.18
+        }
+      ],
+      "probe_priority": 8.196,
+      "suggested_insert": "top1",
+      "already_probed": "R92:r92p07_dc3c1b72_t7"
+    },
+    {
+      "session_id": "d5c80ee5-97c2-4de1-af2e-2295e3ae34a3",
+      "turn_number": 7,
+      "current_top1": "983dbea0-db39-423f-b734-c9a18f384620",
+      "current_top1_artist": "8 bit weapon",
+      "has_history": true,
+      "n_played": 6,
+      "r54_margin": 1.1597246222869693,
+      "top1_voter_support": 2,
+      "n_new_candidates": 150,
+      "best_candidate": {
+        "track_id": "5ac09ead-5d91-49dc-9dcb-5105013bd82e",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 7.2
+      },
+      "top3_candidates": [
+        {
+          "track_id": "5ac09ead-5d91-49dc-9dcb-5105013bd82e",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "e7095f1b-ba92-4b54-b304-ab9b637343bb",
+          "consensus": 3,
+          "sources": [
+            "als_tracks",
+            "r21_list",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 6.3
+        },
+        {
+          "track_id": "1afe24a2-ae24-414b-a024-73f347af1e3e",
+          "consensus": 3,
+          "sources": [
+            "als_tracks",
+            "r21_list",
+            "src_c"
+          ],
+          "best_rank": 4,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 6.22
+        }
+      ],
+      "probe_priority": 8.12,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "eaeca304-3ddb-4adb-8087-0f15b597f73e",
+      "turn_number": 7,
+      "current_top1": "7626955d-9250-4515-8f0e-2ae91e912e57",
+      "current_top1_artist": "wage war",
+      "has_history": true,
+      "n_played": 6,
+      "r54_margin": 0.2614690498939669,
+      "top1_voter_support": 1,
+      "n_new_candidates": 263,
+      "best_candidate": {
+        "track_id": "7b8dfc41-fb63-4531-aec0-8b210e441852",
+        "consensus": 3,
+        "sources": [
+          "r21_list",
+          "src_a",
+          "src_c"
+        ],
+        "best_rank": 4,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": true,
+        "cand_score": 6.22
+      },
+      "top3_candidates": [
+        {
+          "track_id": "7b8dfc41-fb63-4531-aec0-8b210e441852",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_a",
+            "src_c"
+          ],
+          "best_rank": 4,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 6.22
+        },
+        {
+          "track_id": "92c3bec7-b08a-48d0-8139-d1db9774446b",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 6.0
+        },
+        {
+          "track_id": "31aa1781-03f9-47f8-b664-78129d907288",
+          "consensus": 2,
+          "sources": [
+            "src_a",
+            "src_b"
+          ],
+          "best_rank": 7,
+          "same_artist_top1": true,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 5.86
+        }
+      ],
+      "probe_priority": 8.089,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "d9cca604-febe-4c95-a5cc-a4318c33ec40",
+      "turn_number": 2,
+      "current_top1": "b922ae05-791b-4a09-8bf1-443787c89fd9",
+      "current_top1_artist": "hollerado",
+      "has_history": true,
+      "n_played": 1,
+      "r54_margin": 0.2363101939856489,
+      "top1_voter_support": 3,
+      "n_new_candidates": 132,
+      "best_candidate": {
+        "track_id": "605c4871-494b-4650-ba87-9df39c673e8d",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 7.2
+      },
+      "top3_candidates": [
+        {
+          "track_id": "605c4871-494b-4650-ba87-9df39c673e8d",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "ad35fcf4-098d-46a7-bfdf-e01b7f31f01c",
+          "consensus": 1,
+          "sources": [
+            "r21_list"
+          ],
+          "best_rank": 3,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 3.24
+        },
+        {
+          "track_id": "20e8763e-b6e9-48d8-9e2d-1e8da89344d7",
+          "consensus": 1,
+          "sources": [
+            "r21_list"
+          ],
+          "best_rank": 4,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 3.22
+        }
+      ],
+      "probe_priority": 8.082,
+      "suggested_insert": "top1",
+      "already_probed": "R92:r92p12_d9cca604_t2"
+    },
+    {
+      "session_id": "3afb9f67-a18a-4b97-81cf-ef1806fce0e9",
+      "turn_number": 1,
+      "current_top1": "5ec10c67-dfe6-46c9-aa80-32584053c165",
+      "current_top1_artist": "shanell",
+      "has_history": false,
+      "n_played": 0,
+      "r54_margin": 0.13740700181891718,
+      "top1_voter_support": 1,
+      "n_new_candidates": 57,
+      "best_candidate": {
+        "track_id": "03f9a810-1fd5-4896-a59b-af57bbc523ec",
+        "consensus": 3,
+        "sources": [
+          "r21_list",
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 8,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": true,
+        "cand_score": 6.14
+      },
+      "top3_candidates": [
+        {
+          "track_id": "03f9a810-1fd5-4896-a59b-af57bbc523ec",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 8,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 6.14
+        },
+        {
+          "track_id": "99ba81f4-d472-4e9e-a815-7af3400fb3df",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 9,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 6.12
+        },
+        {
+          "track_id": "f9afccc2-69f6-480d-975e-bf069eac40d2",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 10,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 6.1
+        }
+      ],
+      "probe_priority": 8.071,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "3aee4d9b-b0f1-4282-bbe6-58942c71f311",
+      "turn_number": 6,
+      "current_top1": "88649eb5-d2d4-43d4-8d86-a738931d97fe",
+      "current_top1_artist": "the rippingtons",
+      "has_history": true,
+      "n_played": 5,
+      "r54_margin": 0.27805842071965703,
+      "top1_voter_support": 3,
+      "n_new_candidates": 77,
+      "best_candidate": {
+        "track_id": "0aaee03e-7294-45b3-863b-8abe357070d0",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 7.2
+      },
+      "top3_candidates": [
+        {
+          "track_id": "0aaee03e-7294-45b3-863b-8abe357070d0",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "697a4797-275c-4581-85ae-e2dacfe68aaf",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "64b277e6-5467-4478-bdf4-c8001d004208",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.18
+        }
+      ],
+      "probe_priority": 8.061,
+      "suggested_insert": "top1",
+      "already_probed": null
+    },
+    {
+      "session_id": "39698083-bc11-4514-9e53-da76d9260b3a",
+      "turn_number": 5,
+      "current_top1": "9d9ca4fe-fa41-482c-b3ca-af1ed38d62fc",
+      "current_top1_artist": "one ok rock",
+      "has_history": true,
+      "n_played": 4,
+      "r54_margin": 0.6391177624800264,
+      "top1_voter_support": 3,
+      "n_new_candidates": 108,
+      "best_candidate": {
+        "track_id": "ef5bc36d-ea99-4246-beea-a7b5a5f866d4",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 7.2
+      },
+      "top3_candidates": [
+        {
+          "track_id": "ef5bc36d-ea99-4246-beea-a7b5a5f866d4",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "f458b2c5-4338-4f07-8232-e7029f835d58",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "8be7129a-8b80-41a5-bd1d-9aaef0ae6ca1",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.18
+        }
+      ],
+      "probe_priority": 7.88,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "fe22cfe0-f552-4d43-bf13-ea77bef4f1ce",
+      "turn_number": 7,
+      "current_top1": "925a524f-1620-400a-80a5-9ce16bbf0423",
+      "current_top1_artist": "noisia",
+      "has_history": true,
+      "n_played": 6,
+      "r54_margin": 0.6999498271354962,
+      "top1_voter_support": 4,
+      "n_new_candidates": 138,
+      "best_candidate": {
+        "track_id": "f12e5a94-bcaa-4aa0-b58e-3c986a4b4feb",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 7.2
+      },
+      "top3_candidates": [
+        {
+          "track_id": "f12e5a94-bcaa-4aa0-b58e-3c986a4b4feb",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "200141fb-39ab-443a-86a1-f6a6b771fb93",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "cac9d62f-402c-4fd6-a4c8-39e4747ab253",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.16
+        }
+      ],
+      "probe_priority": 7.85,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "8aeb8706-f800-4827-ba71-0797bf5afb0d",
+      "turn_number": 2,
+      "current_top1": "78232982-4b6f-4108-8407-fa3255cb4bdf",
+      "current_top1_artist": "pat metheny group",
+      "has_history": true,
+      "n_played": 1,
+      "r54_margin": 0.7233382823153556,
+      "top1_voter_support": 3,
+      "n_new_candidates": 112,
+      "best_candidate": {
+        "track_id": "08436a25-cc00-4d8b-bc11-a4dc79faf6e0",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 7.2
+      },
+      "top3_candidates": [
+        {
+          "track_id": "08436a25-cc00-4d8b-bc11-a4dc79faf6e0",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "e1c25c6c-50c4-40bb-b599-ce2684cd6a2e",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 11,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 5.28
+        },
+        {
+          "track_id": "89e6c645-553d-409d-9d2e-0db99b980745",
+          "consensus": 2,
+          "sources": [
+            "r21_list",
+            "src_c"
+          ],
+          "best_rank": 30,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.2
+        }
+      ],
+      "probe_priority": 7.838,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "2bfd631e-7d47-4dd6-a419-7d63615833c5",
+      "turn_number": 8,
+      "current_top1": "a3819f53-078f-4cc6-b7f1-3e6820914541",
+      "current_top1_artist": "sublime",
+      "has_history": true,
+      "n_played": 7,
+      "r54_margin": 3.137610235458752,
+      "top1_voter_support": 3,
+      "n_new_candidates": 131,
+      "best_candidate": {
+        "track_id": "6b0b7f72-7f50-4efe-b2f2-6f3f5afc5fc1",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 9,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 7.82
+      },
+      "top3_candidates": [
+        {
+          "track_id": "6b0b7f72-7f50-4efe-b2f2-6f3f5afc5fc1",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 9,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 7.82
+        },
+        {
+          "track_id": "bcba1fcf-6ac7-4c31-9c1a-5f21603f4ebb",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "74b0756a-d65f-4dba-8c0a-ccaca0230735",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.16
+        }
+      ],
+      "probe_priority": 7.82,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "5e1f5a89-99c0-46bb-af78-005338d05858",
+      "turn_number": 2,
+      "current_top1": "54707406-6eb2-41b8-b36f-65b969e093f6",
+      "current_top1_artist": "leif vollebekk",
+      "has_history": true,
+      "n_played": 1,
+      "r54_margin": 1.8827531382760891,
+      "top1_voter_support": 2,
+      "n_new_candidates": 125,
+      "best_candidate": {
+        "track_id": "42a5382f-943b-40bb-a1cd-c96c0736090d",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 7.2
+      },
+      "top3_candidates": [
+        {
+          "track_id": "42a5382f-943b-40bb-a1cd-c96c0736090d",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "f66562fe-7224-4fc3-a0d2-40da3fcb776c",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 31,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.38
+        },
+        {
+          "track_id": "bdb7afcf-652b-4cd1-8789-14dfb314d310",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 39,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.22
+        }
+      ],
+      "probe_priority": 7.759,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "2b1cbd1c-dd5b-40ab-943a-0392894babc0",
+      "turn_number": 2,
+      "current_top1": "43736aec-7c69-4a74-bf67-978a6dbdf15e",
+      "current_top1_artist": "man man",
+      "has_history": true,
+      "n_played": 1,
+      "r54_margin": 2.7789872241608893,
+      "top1_voter_support": 2,
+      "n_new_candidates": 135,
+      "best_candidate": {
+        "track_id": "dde45ac4-9c21-49a3-8239-d47c5c14f0aa",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 7.2
+      },
+      "top3_candidates": [
+        {
+          "track_id": "dde45ac4-9c21-49a3-8239-d47c5c14f0aa",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "67b724d0-458d-4c34-8163-53cb6b0e74b8",
+          "consensus": 2,
+          "sources": [
+            "r21_list",
+            "src_b"
+          ],
+          "best_rank": 16,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.48
+        },
+        {
+          "track_id": "04be2eea-442f-4a99-8378-268541bf10a4",
+          "consensus": 2,
+          "sources": [
+            "r21_list",
+            "src_c"
+          ],
+          "best_rank": 8,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.84
+        }
+      ],
+      "probe_priority": 7.7,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "d53d9457-12f1-4286-b195-aa42c23d3bce",
+      "turn_number": 5,
+      "current_top1": "dbc800fa-1a95-4300-861e-907b30dda303",
+      "current_top1_artist": null,
+      "has_history": true,
+      "n_played": 4,
+      "r54_margin": 0.6068906741529646,
+      "top1_voter_support": 1,
+      "n_new_candidates": 134,
+      "best_candidate": {
+        "track_id": "07616e96-7b98-4a43-b4d5-1f03a27f271b",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": false,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 6.0
+      },
+      "top3_candidates": [
+        {
+          "track_id": "07616e96-7b98-4a43-b4d5-1f03a27f271b",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 6.0
+        },
+        {
+          "track_id": "03701bdd-7aa7-4d6b-b452-f5b5e35fd1e4",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 6.0
+        },
+        {
+          "track_id": "85f4e7e0-95e5-466b-9fdb-5d30d87e5226",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 5.98
+        }
+      ],
+      "probe_priority": 7.697,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "8cd8575d-4743-4235-a493-aee6039551b4",
+      "turn_number": 2,
+      "current_top1": "0550c249-1fa8-4df8-ad07-756e08856a3e",
+      "current_top1_artist": "full of hell",
+      "has_history": true,
+      "n_played": 1,
+      "r54_margin": 1.0339938693618895,
+      "top1_voter_support": 3,
+      "n_new_candidates": 115,
+      "best_candidate": {
+        "track_id": "fb826d1e-0ba0-4905-af52-7db2bc4408e8",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 7.2
+      },
+      "top3_candidates": [
+        {
+          "track_id": "fb826d1e-0ba0-4905-af52-7db2bc4408e8",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "e8b3f1df-02b4-453f-b3b5-2f762adb553b",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 4,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.72
+        },
+        {
+          "track_id": "c4a14074-2815-4d14-afeb-ce0e6841893e",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 17,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.46
+        }
+      ],
+      "probe_priority": 7.683,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "28c3ecd9-fbaa-4423-a85c-92508346e1e8",
+      "turn_number": 6,
+      "current_top1": "bcf7955e-d232-4b86-a733-b670f7fd8e0e",
+      "current_top1_artist": "king woman",
+      "has_history": true,
+      "n_played": 5,
+      "r54_margin": 0.04002109415261712,
+      "top1_voter_support": 1,
+      "n_new_candidates": 182,
+      "best_candidate": {
+        "track_id": "60360690-b39f-4347-850e-75668cc89243",
+        "consensus": 1,
+        "sources": [
+          "src_b"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 5.7
+      },
+      "top3_candidates": [
+        {
+          "track_id": "60360690-b39f-4347-850e-75668cc89243",
+          "consensus": 1,
+          "sources": [
+            "src_b"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 5.7
+        },
+        {
+          "track_id": "44660b14-c850-415b-9717-a77651bc47ef",
+          "consensus": 1,
+          "sources": [
+            "src_c"
+          ],
+          "best_rank": 6,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 5.18
+        },
+        {
+          "track_id": "810cf7a1-6e73-4580-a570-7d542acac9bc",
+          "consensus": 1,
+          "sources": [
+            "src_c"
+          ],
+          "best_rank": 7,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 5.16
+        }
+      ],
+      "probe_priority": 7.68,
+      "suggested_insert": "top1",
+      "already_probed": null
+    },
+    {
+      "session_id": "c75f8e41-fde6-4d81-9c90-6f4844dad1b5",
+      "turn_number": 3,
+      "current_top1": "6e9ace56-0fe8-43bd-9117-b2e5eba4d117",
+      "current_top1_artist": "beegie adair",
+      "has_history": true,
+      "n_played": 2,
+      "r54_margin": 1.1087132075684831,
+      "top1_voter_support": 3,
+      "n_new_candidates": 68,
+      "best_candidate": {
+        "track_id": "f2a60a6b-978a-4cc8-a071-ad3f80349f09",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 7.2
+      },
+      "top3_candidates": [
+        {
+          "track_id": "f2a60a6b-978a-4cc8-a071-ad3f80349f09",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "87727b49-ad60-49da-bf0d-b53624601646",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.18
+        },
+        {
+          "track_id": "55feb3e5-4ee6-46f6-9ff4-599b7e6c39cc",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 9,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 6.12
+        }
+      ],
+      "probe_priority": 7.646,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "77faef85-566c-4eb7-90b6-ee9fdeeacbe8",
+      "turn_number": 1,
+      "current_top1": "b0f7d7c6-6b81-4320-82f6-e0bb2b28391b",
+      "current_top1_artist": "the crystals",
+      "has_history": false,
+      "n_played": 0,
+      "r54_margin": 0.31625209761980366,
+      "top1_voter_support": 2,
+      "n_new_candidates": 68,
+      "best_candidate": {
+        "track_id": "e5ebdc4c-b79e-405e-a30a-2aa3d1eb8d58",
+        "consensus": 3,
+        "sources": [
+          "r21_list",
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": true,
+        "cand_score": 6.3
+      },
+      "top3_candidates": [
+        {
+          "track_id": "e5ebdc4c-b79e-405e-a30a-2aa3d1eb8d58",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 6.3
+        },
+        {
+          "track_id": "8b64ed42-8db6-4a17-8bec-5658f04e3734",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 6.28
+        },
+        {
+          "track_id": "6cf9cd52-d59a-4343-82c9-9e9df9f1743d",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 4,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 6.22
+        }
+      ],
+      "probe_priority": 7.642,
+      "suggested_insert": "rank2",
+      "already_probed": "R92:r92p01_77faef85_t1"
+    },
+    {
+      "session_id": "ebad356d-d5ab-437a-81f1-6d219e532c33",
+      "turn_number": 2,
+      "current_top1": "28849df9-dcc2-430b-a80a-2570bef3a37b",
+      "current_top1_artist": "las pelotas",
+      "has_history": true,
+      "n_played": 1,
+      "r54_margin": 0.802350367593226,
+      "top1_voter_support": 1,
+      "n_new_candidates": 137,
+      "best_candidate": {
+        "track_id": "874e3067-9b10-4a2c-8216-b2111d47e265",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": false,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 6.0
+      },
+      "top3_candidates": [
+        {
+          "track_id": "874e3067-9b10-4a2c-8216-b2111d47e265",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 6.0
+        },
+        {
+          "track_id": "a7c06491-e885-4523-ad10-87a3f1dfb5a0",
+          "consensus": 1,
+          "sources": [
+            "r21_list"
+          ],
+          "best_rank": 8,
+          "same_artist_top1": true,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.34
+        },
+        {
+          "track_id": "eaf49841-7673-4509-b974-7ce9fc10af8e",
+          "consensus": 1,
+          "sources": [
+            "r21_list"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 3.28
+        }
+      ],
+      "probe_priority": 7.599,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "8998b916-97bf-406f-92db-3ae40a832f4c",
+      "turn_number": 3,
+      "current_top1": "6461fa09-953d-4f1a-9394-3265a843c347",
+      "current_top1_artist": "eyehategod",
+      "has_history": true,
+      "n_played": 2,
+      "r54_margin": 1.2039203454375926,
+      "top1_voter_support": 3,
+      "n_new_candidates": 103,
+      "best_candidate": {
+        "track_id": "1395fac2-9498-4ae4-95ab-b5b5cdf5fe10",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 7.2
+      },
+      "top3_candidates": [
+        {
+          "track_id": "1395fac2-9498-4ae4-95ab-b5b5cdf5fe10",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "66fa11d7-9e21-456f-b959-9c4351b5000a",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "4f4e09fc-8e16-417d-8fd6-1814246327fb",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 4,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 6.22
+        }
+      ],
+      "probe_priority": 7.598,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "ee7bfbda-86ee-4ade-b695-dbdeb12ae063",
+      "turn_number": 3,
+      "current_top1": "9ec96f46-8044-48ad-8297-1a027fdc5cf9",
+      "current_top1_artist": "billie marten",
+      "has_history": true,
+      "n_played": 2,
+      "r54_margin": 0.24573785498941458,
+      "top1_voter_support": 1,
+      "n_new_candidates": 136,
+      "best_candidate": {
+        "track_id": "6ce8f027-c4ea-4bbb-8bbd-f0b8ca1f9957",
+        "consensus": 1,
+        "sources": [
+          "src_b"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 5.7
+      },
+      "top3_candidates": [
+        {
+          "track_id": "6ce8f027-c4ea-4bbb-8bbd-f0b8ca1f9957",
+          "consensus": 1,
+          "sources": [
+            "src_b"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 5.7
+        },
+        {
+          "track_id": "6a2537f1-5a99-4937-8d6f-87c094de8a0a",
+          "consensus": 1,
+          "sources": [
+            "src_c"
+          ],
+          "best_rank": 34,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 3.82
+        },
+        {
+          "track_id": "0d806b0f-2c6c-496a-9b35-18ed1312a60c",
+          "consensus": 1,
+          "sources": [
+            "src_c"
+          ],
+          "best_rank": 5,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 3.2
+        }
+      ],
+      "probe_priority": 7.577,
+      "suggested_insert": "top1",
+      "already_probed": "R93:r93p03_ee7bfbda_t3"
+    },
+    {
+      "session_id": "60a6fd69-33f4-4dbf-aa0d-872b27a69037",
+      "turn_number": 1,
+      "current_top1": "21e1c53a-90e9-495c-8fcb-f3c93b2ae868",
+      "current_top1_artist": "pete rock & c.l. smooth",
+      "has_history": false,
+      "n_played": 0,
+      "r54_margin": 0.652163093181083,
+      "top1_voter_support": 1,
+      "n_new_candidates": 82,
+      "best_candidate": {
+        "track_id": "939e7b02-7754-4c1f-bd6f-8fb8f76739aa",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 12,
+        "same_artist_top1": true,
+        "same_artist_history": false,
+        "r54_corroborated": true,
+        "cand_score": 5.76
+      },
+      "top3_candidates": [
+        {
+          "track_id": "939e7b02-7754-4c1f-bd6f-8fb8f76739aa",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 12,
+          "same_artist_top1": true,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 5.76
+        },
+        {
+          "track_id": "ca156151-6f1b-4a51-99b3-f26c55e3282f",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 11,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.58
+        },
+        {
+          "track_id": "91c4113c-bea6-4b6b-a642-dd127e97c9bb",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 13,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.54
+        }
+      ],
+      "probe_priority": 7.434,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "4b8ed42b-39ec-4d17-9bea-507828687a0c",
+      "turn_number": 4,
+      "current_top1": "621c763c-4a32-4696-82e6-866b36eb2ac8",
+      "current_top1_artist": "the bouncing souls",
+      "has_history": true,
+      "n_played": 3,
+      "r54_margin": 1.7030196428020883,
+      "top1_voter_support": 3,
+      "n_new_candidates": 124,
+      "best_candidate": {
+        "track_id": "aaa5f9c0-97bf-4e22-8184-58787750f5b9",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 7.2
+      },
+      "top3_candidates": [
+        {
+          "track_id": "aaa5f9c0-97bf-4e22-8184-58787750f5b9",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "61bff533-8fa5-46dd-934d-f2f4e2925c20",
+          "consensus": 1,
+          "sources": [
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 4.5
+        },
+        {
+          "track_id": "10a4eb6f-2914-4798-bdef-14360ae154d7",
+          "consensus": 1,
+          "sources": [
+            "src_c"
+          ],
+          "best_rank": 3,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 4.44
+        }
+      ],
+      "probe_priority": 7.348,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "02ec3071-bd03-4f78-91bc-96666d0e3b6b",
+      "turn_number": 3,
+      "current_top1": "69ab3de6-b138-4708-b9a0-eac472b2ac40",
+      "current_top1_artist": "josh garrels",
+      "has_history": true,
+      "n_played": 2,
+      "r54_margin": 1.8396984512318335,
+      "top1_voter_support": 3,
+      "n_new_candidates": 108,
+      "best_candidate": {
+        "track_id": "3908be19-2209-4fb5-b5a8-ea7dddaf01c2",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 7.2
+      },
+      "top3_candidates": [
+        {
+          "track_id": "3908be19-2209-4fb5-b5a8-ea7dddaf01c2",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "4ac9a3d8-4d35-4024-9a2b-8369de1bf18f",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.18
+        },
+        {
+          "track_id": "f2341b5c-5bd4-4e98-ba72-c97f47796cf6",
+          "consensus": 2,
+          "sources": [
+            "r21_list",
+            "src_b"
+          ],
+          "best_rank": 10,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.6
+        }
+      ],
+      "probe_priority": 7.28,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "38a5f361-9802-40be-9d15-15c67d5ba60a",
+      "turn_number": 2,
+      "current_top1": "b53c14b4-fe0f-42c0-8058-67a1c21f2c24",
+      "current_top1_artist": "pig destroyer",
+      "has_history": true,
+      "n_played": 1,
+      "r54_margin": 1.856392651056712,
+      "top1_voter_support": 3,
+      "n_new_candidates": 100,
+      "best_candidate": {
+        "track_id": "3fe50b3c-6817-4c24-8662-28e194c3aa35",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 7.2
+      },
+      "top3_candidates": [
+        {
+          "track_id": "3fe50b3c-6817-4c24-8662-28e194c3aa35",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "940e3fcc-f941-4401-8eb6-f16c2a649721",
+          "consensus": 2,
+          "sources": [
+            "r21_list",
+            "src_c"
+          ],
+          "best_rank": 3,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.74
+        },
+        {
+          "track_id": "11850c32-8cd2-497d-b906-8b150ab6cac4",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 6,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.68
+        }
+      ],
+      "probe_priority": 7.272,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "f321d88d-d809-4bcb-aca0-a1ef551a48de",
+      "turn_number": 1,
+      "current_top1": "61bff533-8fa5-46dd-934d-f2f4e2925c20",
+      "current_top1_artist": "defiance, ohio",
+      "has_history": false,
+      "n_played": 0,
+      "r54_margin": 0.037383581689943046,
+      "top1_voter_support": 3,
+      "n_new_candidates": 82,
+      "best_candidate": {
+        "track_id": "e19c5ad5-4d4e-41f3-87cb-0d37256beff8",
+        "consensus": 3,
+        "sources": [
+          "r21_list",
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 4,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": true,
+        "cand_score": 6.22
+      },
+      "top3_candidates": [
+        {
+          "track_id": "e19c5ad5-4d4e-41f3-87cb-0d37256beff8",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 4,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 6.22
+        },
+        {
+          "track_id": "3fb06bdf-96f9-4d40-a8d1-50cf9922e905",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 8,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.64
+        },
+        {
+          "track_id": "822f10ba-04fe-4cb5-b8a7-2a220478debb",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 28,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.24
+        }
+      ],
+      "probe_priority": 7.201,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "164fc33f-b103-424f-836a-b7a7d565f6c2",
+      "turn_number": 5,
+      "current_top1": "0739a3e7-93bd-4063-9018-f8fdd071b2bd",
+      "current_top1_artist": "ltj bukem",
+      "has_history": true,
+      "n_played": 4,
+      "r54_margin": 2.20130983834962,
+      "top1_voter_support": 3,
+      "n_new_candidates": 101,
+      "best_candidate": {
+        "track_id": "e43ddc27-925e-43ea-9edf-63e3a9dab7d6",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 7.2
+      },
+      "top3_candidates": [
+        {
+          "track_id": "e43ddc27-925e-43ea-9edf-63e3a9dab7d6",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "476986d8-1951-44ba-bb0b-89afca7483d2",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.18
+        },
+        {
+          "track_id": "93bd2280-004b-45a9-a514-c130ec4b3c3c",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.16
+        }
+      ],
+      "probe_priority": 7.2,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "6953ac7a-5e95-48d8-be4e-8f153ac937e2",
+      "turn_number": 5,
+      "current_top1": "2cce80ee-09b3-4e74-a3ac-bdd9766aea3d",
+      "current_top1_artist": "austin wintory",
+      "has_history": true,
+      "n_played": 4,
+      "r54_margin": 2.315649348015032,
+      "top1_voter_support": 3,
+      "n_new_candidates": 56,
+      "best_candidate": {
+        "track_id": "e4f8f386-4650-4e6f-8b5f-d6ae76890a9f",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 7.2
+      },
+      "top3_candidates": [
+        {
+          "track_id": "e4f8f386-4650-4e6f-8b5f-d6ae76890a9f",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "54db6fa5-ad28-422e-96e6-7a05d3bfce2b",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "f223debe-4d0d-4383-bc72-22e91a3967e9",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.16
+        }
+      ],
+      "probe_priority": 7.2,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "a1df8767-11df-44d3-a1f6-e1ba2115e8f0",
+      "turn_number": 5,
+      "current_top1": "91c0deb1-4c48-49d6-b7e3-c16a380b30a8",
+      "current_top1_artist": "fu manchu",
+      "has_history": true,
+      "n_played": 4,
+      "r54_margin": 2.041995699204781,
+      "top1_voter_support": 3,
+      "n_new_candidates": 132,
+      "best_candidate": {
+        "track_id": "d802fa0d-d5b5-420b-bfc3-2b851eff6e00",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": true,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 7.2
+      },
+      "top3_candidates": [
+        {
+          "track_id": "d802fa0d-d5b5-420b-bfc3-2b851eff6e00",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.2
+        },
+        {
+          "track_id": "f3b090f1-40d5-464b-90da-591a9515b524",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.18
+        },
+        {
+          "track_id": "fade54a7-aa8c-42ae-b21b-b39e347f4228",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 3,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 7.14
+        }
+      ],
+      "probe_priority": 7.2,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "2a677d32-23e9-4fe7-8b8e-4875c93509a2",
+      "turn_number": 4,
+      "current_top1": "ca099284-3199-4cca-b04b-b64e7591df8c",
+      "current_top1_artist": "calvin massey",
+      "has_history": true,
+      "n_played": 3,
+      "r54_margin": 0.2573198315261264,
+      "top1_voter_support": 3,
+      "n_new_candidates": 89,
+      "best_candidate": {
+        "track_id": "faaa5819-e9a7-48de-a717-f4793ec26261",
+        "consensus": 3,
+        "sources": [
+          "r21_list",
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": true,
+        "cand_score": 6.3
+      },
+      "top3_candidates": [
+        {
+          "track_id": "faaa5819-e9a7-48de-a717-f4793ec26261",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 6.3
+        },
+        {
+          "track_id": "2075d54c-9b24-41c4-bdaa-b880b3cf1dbe",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 6.26
+        },
+        {
+          "track_id": "d001e46a-0546-4209-846f-5801cf219ab4",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 6.26
+        }
+      ],
+      "probe_priority": 7.171,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "645670fd-b825-4c26-aba5-edcdb57e7684",
+      "turn_number": 6,
+      "current_top1": "f6756025-861a-49a6-b8e5-d5e7d4653507",
+      "current_top1_artist": "kleeer",
+      "has_history": true,
+      "n_played": 5,
+      "r54_margin": 0.9185934195864669,
+      "top1_voter_support": 2,
+      "n_new_candidates": 263,
+      "best_candidate": {
+        "track_id": "08ca49f3-6e1b-426e-b12f-9f39fa20a6c4",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": false,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 6.0
+      },
+      "top3_candidates": [
+        {
+          "track_id": "08ca49f3-6e1b-426e-b12f-9f39fa20a6c4",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 6.0
+        },
+        {
+          "track_id": "91dc9803-c2e7-4119-a9e0-87134666e719",
+          "consensus": 1,
+          "sources": [
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": true,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 5.68
+        },
+        {
+          "track_id": "41e43bb8-ebf2-4cc0-a149-149e360707b5",
+          "consensus": 1,
+          "sources": [
+            "src_a"
+          ],
+          "best_rank": 23,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 4.84
+        }
+      ],
+      "probe_priority": 7.041,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "809d4fbc-5298-494a-8817-78b3fdc5317e",
+      "turn_number": 8,
+      "current_top1": "2cc68e19-fa18-4c4a-8bfc-f3823e639260",
+      "current_top1_artist": "hank williams, jr.",
+      "has_history": true,
+      "n_played": 7,
+      "r54_margin": 1.3793491483465403,
+      "top1_voter_support": 3,
+      "n_new_candidates": 93,
+      "best_candidate": {
+        "track_id": "c1e792f0-75ea-48f7-9484-51ae6757ed52",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 6,
+        "same_artist_top1": false,
+        "same_artist_history": true,
+        "r54_corroborated": true,
+        "cand_score": 6.68
+      },
+      "top3_candidates": [
+        {
+          "track_id": "c1e792f0-75ea-48f7-9484-51ae6757ed52",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 6,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 6.68
+        },
+        {
+          "track_id": "fa1810d4-9845-4dc3-ab24-e90c42db56dd",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 10,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": true,
+          "cand_score": 6.6
+        },
+        {
+          "track_id": "4382f9ce-0ade-4854-95a7-2632520d7c41",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 3,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 6.24
+        }
+      ],
+      "probe_priority": 6.99,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "78487c90-fda7-4723-ad4c-4557393ea95f",
+      "turn_number": 1,
+      "current_top1": "0b2d5184-4a6a-4037-8d5d-f2217c9231fc",
+      "current_top1_artist": "robert johnson",
+      "has_history": false,
+      "n_played": 0,
+      "r54_margin": 0.367566447127633,
+      "top1_voter_support": 3,
+      "n_new_candidates": 75,
+      "best_candidate": {
+        "track_id": "fdf47355-1e3c-44b3-a1eb-98850fd95ee4",
+        "consensus": 3,
+        "sources": [
+          "r21_list",
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 21,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": true,
+        "cand_score": 5.88
+      },
+      "top3_candidates": [
+        {
+          "track_id": "fdf47355-1e3c-44b3-a1eb-98850fd95ee4",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 21,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 5.88
+        },
+        {
+          "track_id": "80f0d1cf-d4c7-459e-9759-8264c8f4d6ec",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 22,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 5.86
+        },
+        {
+          "track_id": "93aeb7e9-c10e-43f8-aa49-28636841fbba",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 23,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 5.84
+        }
+      ],
+      "probe_priority": 6.696,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "25cc9533-7c02-4781-9100-ab438e848a3d",
+      "turn_number": 1,
+      "current_top1": "01b5a2bf-1e7b-4b95-b490-4429b1dcc3f1",
+      "current_top1_artist": "peter doherty",
+      "has_history": false,
+      "n_played": 0,
+      "r54_margin": 0.3215365585236767,
+      "top1_voter_support": 3,
+      "n_new_candidates": 73,
+      "best_candidate": {
+        "track_id": "f0b979aa-4af4-4c70-9c71-d54fc6fd8945",
+        "consensus": 3,
+        "sources": [
+          "r21_list",
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 38,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": true,
+        "cand_score": 5.54
+      },
+      "top3_candidates": [
+        {
+          "track_id": "f0b979aa-4af4-4c70-9c71-d54fc6fd8945",
+          "consensus": 3,
+          "sources": [
+            "r21_list",
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 38,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 5.54
+        },
+        {
+          "track_id": "fa54cb5e-dfa0-492b-a646-e6ff5cd5e105",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 8,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.64
+        },
+        {
+          "track_id": "741f7d83-bf2d-40cc-90c3-882fb790fdee",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 7,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.86
+        }
+      ],
+      "probe_priority": 6.379,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "db11666f-bfb8-4d0d-b62b-075ab85d92f9",
+      "turn_number": 1,
+      "current_top1": "ff77be40-4e37-4dc4-b9f5-964749016301",
+      "current_top1_artist": "sonic youth",
+      "has_history": false,
+      "n_played": 0,
+      "r54_margin": 0.2527611958130811,
+      "top1_voter_support": 1,
+      "n_new_candidates": 91,
+      "best_candidate": {
+        "track_id": "b8adef01-8259-48f1-b520-4026fa575764",
+        "consensus": 1,
+        "sources": [
+          "r21_list"
+        ],
+        "best_rank": 2,
+        "same_artist_top1": true,
+        "same_artist_history": false,
+        "r54_corroborated": true,
+        "cand_score": 4.46
+      },
+      "top3_candidates": [
+        {
+          "track_id": "b8adef01-8259-48f1-b520-4026fa575764",
+          "consensus": 1,
+          "sources": [
+            "r21_list"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": true,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.46
+        },
+        {
+          "track_id": "a5f2935c-f3a5-473f-87c8-bc686e79d7bb",
+          "consensus": 1,
+          "sources": [
+            "r21_list"
+          ],
+          "best_rank": 3,
+          "same_artist_top1": true,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.44
+        },
+        {
+          "track_id": "102e57b2-3f00-4869-a520-3b88690adb62",
+          "consensus": 1,
+          "sources": [
+            "r21_list"
+          ],
+          "best_rank": 4,
+          "same_artist_top1": true,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.42
+        }
+      ],
+      "probe_priority": 6.334,
+      "suggested_insert": "top1",
+      "already_probed": null
+    },
+    {
+      "session_id": "c0d4e758-5dfe-41a4-b0f2-07c29e27cdce",
+      "turn_number": 1,
+      "current_top1": "89931a15-5bad-49c3-9b4e-aad4bfac0c44",
+      "current_top1_artist": "jasper byrne",
+      "has_history": false,
+      "n_played": 0,
+      "r54_margin": 0.2561453985110217,
+      "top1_voter_support": 1,
+      "n_new_candidates": 89,
+      "best_candidate": {
+        "track_id": "11b0cd6c-5757-499d-b456-e388c2e21d2a",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 17,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": true,
+        "cand_score": 4.46
+      },
+      "top3_candidates": [
+        {
+          "track_id": "11b0cd6c-5757-499d-b456-e388c2e21d2a",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 17,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.46
+        },
+        {
+          "track_id": "be6ed06a-2cb1-4598-895c-70b9b936d0b9",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.98
+        },
+        {
+          "track_id": "53d10c79-badb-4e4f-8595-fb9631294e64",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.96
+        }
+      ],
+      "probe_priority": 6.332,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "ab8bc8fa-6326-47a5-afb4-3e3a30ca7360",
+      "turn_number": 1,
+      "current_top1": "c1e824ff-b2d1-4f82-bde1-3c601b1ed224",
+      "current_top1_artist": "sistar",
+      "has_history": false,
+      "n_played": 0,
+      "r54_margin": 0.4738386597806461,
+      "top1_voter_support": 1,
+      "n_new_candidates": 86,
+      "best_candidate": {
+        "track_id": "b7cf1c5e-a5e8-4129-8881-53d2c0aea289",
+        "consensus": 1,
+        "sources": [
+          "r21_list"
+        ],
+        "best_rank": 1,
+        "same_artist_top1": true,
+        "same_artist_history": false,
+        "r54_corroborated": true,
+        "cand_score": 4.48
+      },
+      "top3_candidates": [
+        {
+          "track_id": "b7cf1c5e-a5e8-4129-8881-53d2c0aea289",
+          "consensus": 1,
+          "sources": [
+            "r21_list"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": true,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.48
+        },
+        {
+          "track_id": "f3a04028-1d78-41a0-a22e-9cc81debc4f3",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 4.0
+        },
+        {
+          "track_id": "df9cdba8-8470-4f65-b5fe-3ab7d24d685b",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.98
+        }
+      ],
+      "probe_priority": 6.243,
+      "suggested_insert": "top1",
+      "already_probed": null
+    },
+    {
+      "session_id": "ff76b679-7d7a-4796-8f6c-929efef45428",
+      "turn_number": 1,
+      "current_top1": "529ac9f8-032d-43e2-8ce2-f63185a043c8",
+      "current_top1_artist": "tender",
+      "has_history": false,
+      "n_played": 0,
+      "r54_margin": 0.38315490818031006,
+      "top1_voter_support": 1,
+      "n_new_candidates": 84,
+      "best_candidate": {
+        "track_id": "ce71ebb7-7349-4aa6-a637-558a6a051724",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 20,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": true,
+        "cand_score": 4.4
+      },
+      "top3_candidates": [
+        {
+          "track_id": "ce71ebb7-7349-4aa6-a637-558a6a051724",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 20,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.4
+        },
+        {
+          "track_id": "d0df4d53-e56e-47b1-bf59-49ee9f3a139e",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 4.0
+        },
+        {
+          "track_id": "37683355-0b68-46c1-852e-a39578abc422",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.98
+        }
+      ],
+      "probe_priority": 6.208,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "12124711-bfe3-4634-8368-2fa1d8ddf885",
+      "turn_number": 3,
+      "current_top1": "83f59691-b422-4ede-a6c4-587e7964db66",
+      "current_top1_artist": null,
+      "has_history": true,
+      "n_played": 2,
+      "r54_margin": 1.9296281960820556,
+      "top1_voter_support": 3,
+      "n_new_candidates": 130,
+      "best_candidate": {
+        "track_id": "63627c3c-3063-4242-9c48-b3a5867fe0ff",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 1,
+        "same_artist_top1": false,
+        "same_artist_history": true,
+        "r54_corroborated": false,
+        "cand_score": 5.98
+      },
+      "top3_candidates": [
+        {
+          "track_id": "63627c3c-3063-4242-9c48-b3a5867fe0ff",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": false,
+          "same_artist_history": true,
+          "r54_corroborated": false,
+          "cand_score": 5.98
+        },
+        {
+          "track_id": "b9b3f53c-200c-4d3f-9712-d019112aa96e",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 4.0
+        },
+        {
+          "track_id": "03f9a810-1fd5-4896-a59b-af57bbc523ec",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 4,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.92
+        }
+      ],
+      "probe_priority": 6.015,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "7905bb71-efea-4210-8ad9-881f37cad50a",
+      "turn_number": 1,
+      "current_top1": "c4c3ff79-b439-4efd-820c-723b8227b7ae",
+      "current_top1_artist": "jamie o'neal",
+      "has_history": false,
+      "n_played": 0,
+      "r54_margin": 0.10142144110385198,
+      "top1_voter_support": 2,
+      "n_new_candidates": 87,
+      "best_candidate": {
+        "track_id": "6d759d51-5fe4-47e4-b1da-248910cb3981",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 17,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": true,
+        "cand_score": 4.46
+      },
+      "top3_candidates": [
+        {
+          "track_id": "6d759d51-5fe4-47e4-b1da-248910cb3981",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 17,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.46
+        },
+        {
+          "track_id": "bfd243c2-283c-41a6-9ad0-d281114786bd",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.98
+        },
+        {
+          "track_id": "380d74c2-c761-4e0a-a113-46e3047675fe",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.96
+        }
+      ],
+      "probe_priority": 5.909,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "d851eac7-27a7-4363-b2a4-6cb365c79d22",
+      "turn_number": 1,
+      "current_top1": "425c0307-9479-41c8-9910-0006480c156a",
+      "current_top1_artist": "frank ocean",
+      "has_history": false,
+      "n_played": 0,
+      "r54_margin": 0.2717057853124121,
+      "top1_voter_support": 1,
+      "n_new_candidates": 88,
+      "best_candidate": {
+        "track_id": "284e8181-b017-4ee2-b45f-d4b09b77c433",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": false,
+        "cand_score": 4.0
+      },
+      "top3_candidates": [
+        {
+          "track_id": "284e8181-b017-4ee2-b45f-d4b09b77c433",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 4.0
+        },
+        {
+          "track_id": "4c6bfd6a-b394-42bd-864d-6a80e9c7fcfe",
+          "consensus": 1,
+          "sources": [
+            "r21_list"
+          ],
+          "best_rank": 25,
+          "same_artist_top1": true,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.0
+        },
+        {
+          "track_id": "57461d6d-0af6-4d59-a850-d4aa9bed8eb3",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.98
+        }
+      ],
+      "probe_priority": 5.864,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "4831a3b4-3964-40ec-92a3-151cef2cae8f",
+      "turn_number": 1,
+      "current_top1": "f1188e8e-d575-4fcf-8768-91f5df790a95",
+      "current_top1_artist": "anna calvi",
+      "has_history": false,
+      "n_played": 0,
+      "r54_margin": 0.8429551850718373,
+      "top1_voter_support": 2,
+      "n_new_candidates": 87,
+      "best_candidate": {
+        "track_id": "e89d6c8f-e427-4d1f-8c01-71a7767cfc46",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 5,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": true,
+        "cand_score": 4.7
+      },
+      "top3_candidates": [
+        {
+          "track_id": "e89d6c8f-e427-4d1f-8c01-71a7767cfc46",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 5,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.7
+        },
+        {
+          "track_id": "c9fd6b95-da57-471e-83ea-846ec959df5f",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 29,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.22
+        },
+        {
+          "track_id": "c42042d0-b268-42c2-ab31-165ffa825ce9",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 4.0
+        }
+      ],
+      "probe_priority": 5.779,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "0a1f7a63-c5e4-4a2d-9285-433cd036f4e7",
+      "turn_number": 1,
+      "current_top1": "355097ba-4f0d-43fc-8461-622ba93fe116",
+      "current_top1_artist": "refused",
+      "has_history": false,
+      "n_played": 0,
+      "r54_margin": 0.6481683683302923,
+      "top1_voter_support": 1,
+      "n_new_candidates": 84,
+      "best_candidate": {
+        "track_id": "c125338c-a9a7-44f2-8080-12856badf55e",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": false,
+        "cand_score": 4.0
+      },
+      "top3_candidates": [
+        {
+          "track_id": "c125338c-a9a7-44f2-8080-12856badf55e",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 4.0
+        },
+        {
+          "track_id": "2b028a14-e57c-4fd0-b495-c1584abea859",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.98
+        },
+        {
+          "track_id": "8016395e-3c2e-424b-9b9e-3d3a94bdd151",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.96
+        }
+      ],
+      "probe_priority": 5.676,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "68993adf-60d9-42f9-b21f-cdd5bf851cb1",
+      "turn_number": 1,
+      "current_top1": "93140c81-0c14-4b06-98e3-228c3b9867e4",
+      "current_top1_artist": "sons of maria",
+      "has_history": false,
+      "n_played": 0,
+      "r54_margin": 0.11332918393491986,
+      "top1_voter_support": 2,
+      "n_new_candidates": 86,
+      "best_candidate": {
+        "track_id": "7d0affd0-dd07-449c-90bf-9d34fd842c5e",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 29,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": true,
+        "cand_score": 4.22
+      },
+      "top3_candidates": [
+        {
+          "track_id": "7d0affd0-dd07-449c-90bf-9d34fd842c5e",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 29,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.22
+        },
+        {
+          "track_id": "e55d3998-1de9-46d2-aad5-c77d77c68452",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 39,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.02
+        },
+        {
+          "track_id": "16316020-a0fa-408c-accb-bb056bfd560c",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.98
+        }
+      ],
+      "probe_priority": 5.663,
+      "suggested_insert": "rank2",
+      "already_probed": "R93:r93p02_68993adf_t1"
+    },
+    {
+      "session_id": "9c37dcd7-d7c2-4686-8541-1e37c4814a09",
+      "turn_number": 1,
+      "current_top1": "f8d00364-1708-4b78-8ca3-786fd53de9ae",
+      "current_top1_artist": "desired",
+      "has_history": false,
+      "n_played": 0,
+      "r54_margin": 0.8644701703048845,
+      "top1_voter_support": 1,
+      "n_new_candidates": 86,
+      "best_candidate": {
+        "track_id": "7f8fcc2c-2038-4b11-a877-90371c0f89ae",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 39,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": true,
+        "cand_score": 4.02
+      },
+      "top3_candidates": [
+        {
+          "track_id": "7f8fcc2c-2038-4b11-a877-90371c0f89ae",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 39,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": true,
+          "cand_score": 4.02
+        },
+        {
+          "track_id": "e101c612-7603-4dfe-afb7-3ce4b7bd379a",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 4.0
+        },
+        {
+          "track_id": "55e6cff9-2132-47dd-ae3c-fbd6ef1b3660",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 1,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.98
+        }
+      ],
+      "probe_priority": 5.588,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "fc6ba76a-3dd8-4c11-b5af-a233253b01bf",
+      "turn_number": 1,
+      "current_top1": "476986d8-1951-44ba-bb0b-89afca7483d2",
+      "current_top1_artist": "ltj bukem",
+      "has_history": false,
+      "n_played": 0,
+      "r54_margin": 0.01640738717498269,
+      "top1_voter_support": 2,
+      "n_new_candidates": 89,
+      "best_candidate": {
+        "track_id": "f3d0ddbf-ea60-49cb-8043-4e596063826c",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 0,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": false,
+        "cand_score": 4.0
+      },
+      "top3_candidates": [
+        {
+          "track_id": "f3d0ddbf-ea60-49cb-8043-4e596063826c",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 0,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 4.0
+        },
+        {
+          "track_id": "a153c401-cef3-4f49-bd7d-bfa2ee85c056",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.96
+        },
+        {
+          "track_id": "bf282501-fc68-4150-90d9-038904f0e8bf",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 3,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.94
+        }
+      ],
+      "probe_priority": 5.492,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "5b2f877b-a6d5-4473-879c-f5a24d4fd06f",
+      "turn_number": 1,
+      "current_top1": "8afa3c6a-b9a0-4259-899e-38ecb5b71b0e",
+      "current_top1_artist": "dierks bentley",
+      "has_history": false,
+      "n_played": 0,
+      "r54_margin": 0.5502727967158196,
+      "top1_voter_support": 2,
+      "n_new_candidates": 89,
+      "best_candidate": {
+        "track_id": "bd52f00d-e8fb-4427-bde5-840855af4781",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 2,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": false,
+        "cand_score": 3.96
+      },
+      "top3_candidates": [
+        {
+          "track_id": "bd52f00d-e8fb-4427-bde5-840855af4781",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 2,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.96
+        },
+        {
+          "track_id": "c1581985-0d90-4134-b82e-082847f59644",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 5,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.9
+        },
+        {
+          "track_id": "22ab45ee-175e-4db0-83b9-0bc533fecf77",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 6,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.88
+        }
+      ],
+      "probe_priority": 5.185,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    },
+    {
+      "session_id": "31bf71ab-497f-4045-bc91-06552f9b69b8",
+      "turn_number": 1,
+      "current_top1": "676f59fc-1bd0-42cf-a80a-3b9d846f7810",
+      "current_top1_artist": null,
+      "has_history": false,
+      "n_played": 0,
+      "r54_margin": 0.25176261236977115,
+      "top1_voter_support": 3,
+      "n_new_candidates": 87,
+      "best_candidate": {
+        "track_id": "51b3dbcf-f8bd-44bf-9bd6-a8887634ed8a",
+        "consensus": 2,
+        "sources": [
+          "src_b",
+          "src_c"
+        ],
+        "best_rank": 3,
+        "same_artist_top1": false,
+        "same_artist_history": false,
+        "r54_corroborated": false,
+        "cand_score": 3.94
+      },
+      "top3_candidates": [
+        {
+          "track_id": "51b3dbcf-f8bd-44bf-9bd6-a8887634ed8a",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 3,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.94
+        },
+        {
+          "track_id": "efc0ea84-7f88-4e80-b60c-87ad33187d11",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 5,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.9
+        },
+        {
+          "track_id": "b972af91-4972-4f12-923a-8438bec8b0ea",
+          "consensus": 2,
+          "sources": [
+            "src_b",
+            "src_c"
+          ],
+          "best_rank": 6,
+          "same_artist_top1": false,
+          "same_artist_history": false,
+          "r54_corroborated": false,
+          "cand_score": 3.88
+        }
+      ],
+      "probe_priority": 4.814,
+      "suggested_insert": "rank2",
+      "already_probed": null
+    }
+  ]
+}
