@@ -36,6 +36,7 @@ R21_OOF = REPO / "cache/r21_production/dev_r21_oof_lists.json"
 CATALOG = REPO / "cache" / "metadata" / "track_metadata_all_tracks.json"
 PAYLOAD = REPO / "cache" / "r54_phase3_payload_maps.pkl"
 OUT = REPO / "exp" / "eval" / "expR96_complete_union.json"
+OUT_ABSENT = REPO / "exp" / "eval" / "expR96_absent_set.json"
 
 DEPTHS = [20, 30, 100, 300]
 LIVE_TOKENS = ("live", "remix", "acoustic", "version", "edit", "mix", "remaster")
@@ -195,6 +196,9 @@ def main():
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     json.dump(report, open(OUT, "w"), indent=2)
+    # Sidecar: per-case absent target set for Phase 0b eval (E5 unique-recovery).
+    absent_map = {str(i): {"gt": gt, "history_depth": hd} for i, gt, hd, _ in absent}
+    json.dump({"n_absent": n_abs, "absent": absent_map}, open(OUT_ABSENT, "w"))
 
     print(f"\ndev cases: {N}")
     print("Per-source GT recall by depth:")
