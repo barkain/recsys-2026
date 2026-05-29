@@ -41,13 +41,31 @@ which *did* include BM25 — had ~39% absent; BGE roughly halved that to 24%.
 Adding the orthogonal families would shrink 24% somewhat, so it is an **upper
 bound** on headroom for the dense union. Exact headroom needs Phase 0a.2.
 
-## Phase 0a.2 — complete union (CPU, next, gating)
+## Phase 0a.2 — complete union (DONE, CPU, no slots)
 
-Before A100 spend, build the FULL 8000-case dev union including BM25/ALS/CFBPR/
-qwen3 so the absent-GT set is exact. Deliverable: the precise list of dev cases
-whose GT no current source contains — this is the target a new retriever must
-hit. If the complete union already covers (say) >90%, the recall lever is
-smaller than it looks and we reconsider; if it leaves a solid absent set, proceed.
+`scripts/expR96_complete_union.py` → `exp/eval/expR96_complete_union.json`.
+The production pool (`case_features.pkl['pool']`, 300-deep R54-stacked RRF) is
+itself the multi-source union and already fuses BM25/ALS/CFBPR/qwen3, so the
+complete current universe is `pool ∪ R54 ∪ R84 ∪ R90 ∪ R21` (each @300):
+
+| source | @20 | @30 | @100 | @300 |
+|---|---|---|---|---|
+| prod pool (incl BM25/ALS/CFBPR/qwen3) | 0.346 | 0.395 | 0.519 | 0.622 |
+| R84 | 0.302 | 0.372 | 0.538 | 0.672 |
+| R90 | 0.324 | 0.384 | 0.555 | 0.682 |
+| **COMPLETE UNION** | **0.453** | **0.502** | **0.650** | **0.777** |
+
+- **Complete-union @300 coverage = 0.777 → 22.3% (1784 cases) GT absent from EVERY
+  current source.** Adding the orthogonal pools to the dense union moved it only
+  24.1% → 22.3%: the headroom did **not** collapse.
+- Absent set is clean: **GT in catalog 100%, usable title+artist 99.9%**; only
+  1.3% non-English, 12% live/remix, 7% rare-tags.
+- **GT artist absent from the pool in 89%** of absent cases → genuine recall
+  miss, not alias/ranking.
+
+**Decision resolved: the absent set did not collapse, so re-routing existing
+sources cannot recover it → PROCEED to A100.** Target = the 1783 text-recoverable
+absent dev cases.
 
 ## Phase 0b — new retriever on A100 (GPU; only if 0a.2 confirms headroom)
 
@@ -80,7 +98,19 @@ re-rank known pools.
 
 ## Status
 
-Phase 0a complete and committed. Recall headroom confirmed (≤24% absent, dense
-union). Awaiting decision: build the complete union (Phase 0a.2) next, or scope
-the A100 model. A100 is available (`reference_colab_a100`). Production stays
-R92 p11 (0.5073) untouched.
+Phase 0a + 0a.2 complete and committed. **Recall headroom confirmed robust:
+22.3% of dev GT absent from the complete 8-source union, clean and
+text-recoverable.** GO for Phase 0b (A100). Production stays R92 p11 (0.5073).
+
+## Phase 0b proposal (A100)
+
+- **Model:** E5-large-v2 query-side fine-tune (orthogonal pretraining to the
+  BGE/ST family that produced R54/R84/R90/R21; qwen3 already in pool and did not
+  help, so not qwen3). Full-corpus positives + in-batch **random negatives only**
+  (hard_neg_weight=0, per `feedback_no_hardneg_aux_first_run`).
+- **Encode** all 47071 catalog tracks + dev queries (OOF, 5-fold) on A100; bf16.
+- **Eval (the only thing that matters):** unique recoveries on the 1783-case
+  absent set — GT in the new retriever's top-20/30 AND absent from the complete
+  union. Report same-artist vs diff-artist, rank distribution, history split.
+- **Stop:** recoveries mostly rank 50–300, recoveries duplicate the union, or no
+  new coverage on the absent set.

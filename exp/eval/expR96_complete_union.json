@@ -1,0 +1,95 @@
+{
+  "experiment": "R96 Phase 0a.2 complete-union recall gate + forensics",
+  "n_dev_cases": 8000,
+  "union_sources": [
+    "prod_pool(RRF: incl BM25/ALS/CFBPR/qwen3)",
+    "R54",
+    "R84",
+    "R90",
+    "R21"
+  ],
+  "per_source_recall": {
+    "pool": {
+      "20": 0.3459,
+      "30": 0.3945,
+      "100": 0.5191,
+      "300": 0.622
+    },
+    "R54": {
+      "20": 0.2816,
+      "30": 0.3361,
+      "100": 0.4791,
+      "300": 0.5909
+    },
+    "R84": {
+      "20": 0.3025,
+      "30": 0.3719,
+      "100": 0.5376,
+      "300": 0.6723
+    },
+    "R90": {
+      "20": 0.3237,
+      "30": 0.3835,
+      "100": 0.5555,
+      "300": 0.6817
+    },
+    "R21": {
+      "20": 0.2435,
+      "30": 0.2875,
+      "100": 0.4209,
+      "300": 0.5329
+    },
+    "UNION": {
+      "20": 0.4531,
+      "30": 0.5016,
+      "100": 0.6501,
+      "300": 0.777
+    }
+  },
+  "complete_union_top300_coverage": 0.777,
+  "gt_absent_from_complete_union": 0.223,
+  "dense_only_union_absent_was": 0.241,
+  "absent_forensics": {
+    "n_absent": 1784,
+    "history_depth_split": {
+      "h3-6": 924,
+      "h7+": 253,
+      "h0": 256,
+      "h1-2": 351
+    },
+    "gt_artist_present_in_pool": 0.1065,
+    "gt_in_catalog": 1.0,
+    "gt_has_usable_text(title+artist)": 0.9994,
+    "of_text_recoverable__non_english_title": 0.0135,
+    "of_text_recoverable__live_remix_version": 0.12,
+    "of_text_recoverable__rare_or_no_tags": 0.0707,
+    "n_text_recoverable_targets": 1783
+  },
+  "target_recoverable_sample": [
+    "bb241864-6485-448f-9078-44ba8fb65438",
+    "456869fe-6510-487b-b01f-9a5f5a7c2ca2",
+    "78f888bd-9a93-479a-ad16-0b7fa63a498b",
+    "8656f399-fa35-4828-9413-bd670548610b",
+    "80199ba0-7e60-476c-9506-80bcfcc19ff6",
+    "f97c6480-8068-4a8f-918a-76a1bee2f215",
+    "c279dcb2-23eb-4570-aa28-9280de2bad8e",
+    "4d7b1dd2-76dc-4cd3-8298-1d15b0c3854e",
+    "5d9abd56-481e-4be7-885e-4b583ed5c1e6",
+    "bc574b94-ae6b-4290-84b0-ca933493eb8c",
+    "204081c2-f732-4590-b685-f2e5c28c2296",
+    "ad379f6e-da41-4ae0-926f-7c65e4b49f3f",
+    "bdc01b49-a4db-479f-8298-fd2f2d8c0b71",
+    "d9bf3f56-2635-466c-89aa-e598a7ea0896",
+    "14e37d3e-34c7-4add-83e9-55695e68fd79",
+    "cf9fbb54-d112-42c5-a67c-72fcc1cb637d",
+    "7a341b55-d50b-4c94-936a-8987f710c349",
+    "d4b066ae-6075-4b1e-9a21-fb749559f9e5",
+    "d089f1e7-5cd0-4bd8-8c15-227edef8d5cb",
+    "39f8b9b1-57de-4485-9dc1-492a7239c761",
+    "b225eb85-84c7-4b30-b731-06f84aa9bc5e",
+    "80b39c1a-eac9-472c-a573-926edfd3f750",
+    "ec0f841f-c058-43f5-88bb-0f644307bc4c",
+    "08c81b4c-c7cf-4080-90ff-a1c4e2cd1e2b",
+    "4e6dc98c-e2ff-4bed-bd41-4f4703a52c16"
+  ]
+}
