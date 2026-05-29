@@ -1,9 +1,10 @@
 {
-  "experiment": "R101 ColBERT late-interaction (colbert-ir/colbertv2.0) full-corpus retrieval, fold-0, A100",
-  "zero_shot": {"recall20": 0.0544, "recall30": 0.0669, "recall300": 0.1437, "ndcg20": 0.0272, "unique_vs_union_top30": 1},
-  "fine_tuned_fold0": {"recall20": 0.1019, "recall30": 0.1175, "recall300": 0.2194, "ndcg20": 0.0496, "unique_vs_union_top20": 5, "unique_vs_union_top30": 6},
-  "baselines": {"prod_r54c_lr_recall20": 0.479, "prod_ndcg20": 0.2879, "bge_large_ft_recall300": 0.68, "union_ceiling300": 0.6245, "r100_crossenc_ndcg20": 0.1133},
-  "verdict": "STOP. Late interaction fails both zero-shot and fine-tuned: 3-5x worse than our existing retrievers, negligible unique recoveries (6/1600). Fold-0 filter; no 5-fold escalation.",
-  "mechanism": "Late-interaction MaxSim helps on long span-rich documents; our track docs are ~24-39 tokens, too short for token-level matching to beat single-vector. The GT-vs-neighbor wall is a SIGNAL limitation (track text lacks distinguishing info for next-track), not a model-granularity problem (confirms R82).",
-  "implication": "Retrieval lever now closed across ALL families+mechanisms (BGE/E5/GTE single-vector, cross-encoder rerank, ColBERT late-interaction). With ranking (R100) and response (R98) also closed, every nDCG lever is exhausted. R92 p11 (composite 0.6364) is the documented ceiling. Competitor nDCG 0.54-0.60 uses a method we cannot identify or reproduce."
+  "experiment": "R101 ColBERT late-interaction retrieval, fold-0, A100 (CORRECTED after user pushback)",
+  "note": "First run was UNDER-POWERED (query truncated to 32 tokens; 1 epoch). User correctly flagged it. Fixed: query_length=128, more epochs, +20k train-split (matching BGE regime).",
+  "colbertv2_progression_recall300": {"zero_shot": 0.1437, "1ep_truncated_query": 0.2194, "3ep_fullquery_devonly": 0.3969, "6ep_devonly": 0.4131, "3ep_fulldata_dev+20k": 0.4263},
+  "colbertv2_fulldata_fold0": {"recall20": 0.1756, "recall30": 0.2094, "recall300": 0.4263, "ndcg20": 0.0814, "unique_vs_union_top30": 7},
+  "baselines": {"prod_r54c_lr_recall20": 0.479, "prod_ndcg20": 0.2879, "bge_large_ft_recall300": 0.68, "union_ceiling300": 0.6245},
+  "verdict": "colbertv2.0 (BERT-base late-interaction), fairly tested + full-data, PLATEAUS at recall@300 0.43 -- ~63% of fine-tuned BGE-large (0.68), recall@20 0.18 << prod 0.48, 7 unique recoveries. Loses clearly. The limiter is base-encoder strength (BERT-base 110M vs BGE-large 335M), NOT the late-interaction mechanism or doc length (earlier 'docs too short' hypothesis was WRONG).",
+  "caveat_blocked": "GTE-ModernColBERT (strong ModernBERT base + late interaction) is the truly fair test but is BLOCKED in this env: needs sentence-transformers>=4 (kernel has 3.0.1) + kernel restart + full re-run. torch.compile import bug already fixed via no-op monkeypatch; only the ST-version wall remains.",
+  "pattern": "Every retriever tested now underperforms fine-tuned BGE-large: E5-large, GTE-Qwen2-7B (zero-shot), cross-encoder rerank (R100), ColBERT-v2 (R101). BGE-large remains best. nDCG ceiling for our methods holds at production R92 p11 (0.5073)."
 }
