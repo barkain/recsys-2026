@@ -1,0 +1,83 @@
+{
+  "experiment": "R98b response-style repair",
+  "created_at": "2026-05-29T17:36:06.237702",
+  "base": "exp/inference/blind_a/r92_p11_oracle_submission.zip",
+  "r98_source": "exp/inference/blind_a/r98_lexdiv_safe.zip",
+  "reason": "R98 raised LexDiv but dropped blind LLM 4.90->4.85; repair rolls back risky rewrites.",
+  "tracks_identical_to_p11": true,
+  "p11_lexical_diversity": 0.871988,
+  "r98_lexical_diversity": 0.880205,
+  "variants": [
+    {
+      "name": "ultra",
+      "path": "exp/inference/blind_a/r98b_style_repair_ultra.zip",
+      "sha256": "ba22578a66cc3d3b4e4a4b53dca24513e918bd2dd09ac76c9213924443a55562",
+      "n_kept_r98_rewrites": 4,
+      "kept_rows": [
+        {
+          "session_id": "0802ac4a-187b-4a78-b090-0ceb7630cf12",
+          "turn_number": 6
+        },
+        {
+          "session_id": "28c3ecd9-fbaa-4423-a85c-92508346e1e8",
+          "turn_number": 6
+        },
+        {
+          "session_id": "789f9994-f2b6-481d-b71a-c0c6706d82c6",
+          "turn_number": 2
+        },
+        {
+          "session_id": "d9cca604-febe-4c95-a5cc-a4318c33ec40",
+          "turn_number": 2
+        }
+      ],
+      "lexical_diversity": 0.876218,
+      "catalog_diversity": 0.030146,
+      "predicted_composite_if_llm_4_90": 0.6368,
+      "predicted_delta_if_llm_4_90": 0.0004
+    },
+    {
+      "name": "conservative",
+      "path": "exp/inference/blind_a/r98b_style_repair_conservative.zip",
+      "sha256": "0e869a4c100d6bc3b5a11439eccfba99a9c4f902ffa0b185edcdcfeefbab4c57",
+      "n_kept_r98_rewrites": 6,
+      "kept_rows": [
+        {
+          "session_id": "0802ac4a-187b-4a78-b090-0ceb7630cf12",
+          "turn_number": 6
+        },
+        {
+          "session_id": "28c3ecd9-fbaa-4423-a85c-92508346e1e8",
+          "turn_number": 6
+        },
+        {
+          "session_id": "5ad7094f-3764-4e32-94c9-c0c02b65e01b",
+          "turn_number": 4
+        },
+        {
+          "session_id": "6c54de37-9c55-4c59-b203-ec190dd07523",
+          "turn_number": 2
+        },
+        {
+          "session_id": "789f9994-f2b6-481d-b71a-c0c6706d82c6",
+          "turn_number": 2
+        },
+        {
+          "session_id": "d9cca604-febe-4c95-a5cc-a4318c33ec40",
+          "turn_number": 2
+        }
+      ],
+      "lexical_diversity": 0.878674,
+      "catalog_diversity": 0.030146,
+      "predicted_composite_if_llm_4_90": 0.6371,
+      "predicted_delta_if_llm_4_90": 0.0007
+    }
+  ],
+  "rolled_back_by_design": [
+    "c4f7d055-a3cc-4d6b-be80-b90278bc0d32:t7",
+    "ee7bfbda-86ee-4ade-b695-dbdeb12ae063:t3",
+    "fc6ba76a-3dd8-4c11-b5af-a233253b01bf:t1",
+    "77faef85-566c-4eb7-90b6-ee9fdeeacbe8:t1"
+  ],
+  "recommendation": "Upload ultra first if slot-constrained; conservative has more LexDiv but slightly more LLM risk."
+}
