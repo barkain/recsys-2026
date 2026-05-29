@@ -85,7 +85,12 @@ def prep_env():
     call once at startup; harmless if torchao absent."""
     subprocess.run([sys.executable, "-m", "pip", "install", "-q", "peft"], check=False)
     subprocess.run([sys.executable, "-m", "pip", "uninstall", "-y", "-q", "torchao"], check=False)
-    for m in [x for x in list(sys.modules) if x.startswith("torchao")]:
+    # torchvision (even the torch-matched wheel) can fail to register its C++ ops on some
+    # Colab torch builds -> transformers' model loader crashes ("operator torchvision::nms
+    # does not exist"). We never need it for a text retriever; remove so transformers'
+    # is_torchvision_available() guard skips it.
+    subprocess.run([sys.executable, "-m", "pip", "uninstall", "-y", "-q", "torchvision"], check=False)
+    for m in [x for x in list(sys.modules) if x.startswith(("torchao", "torchvision"))]:
         del sys.modules[m]
 
 
