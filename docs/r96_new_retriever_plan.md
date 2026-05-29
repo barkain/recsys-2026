@@ -135,7 +135,28 @@ do NOT go to E5-mistral. Result: `exp/eval/expR96_phase0b_smoke_result.json`.
 
 The one pre-authorized lever left is **query reformulation** (E5 prefers
 natural-language queries; the bracketed `[QUERY][HISTORY][CONTEXT]` format is
-likely off-distribution for E5 — a plausible cause of the weak recall). If that
-also fails, the retrieval lever closes: the union-absent 22% appears unreachable
-by query→track text retrieval (BGE *or* E5), and the nDCG-via-retrieval path is
-exhausted.
+likely off-distribution for E5 — a plausible cause of the weak recall).
+
+## Phase 0c (natural-language query) — ARCHIVE E5
+
+Changed ONLY the query text to E5-native natural language; passages, split,
+positives, negatives held fixed. Result on the 348 union-absent fold-0 cases is
+~identical to 0b:
+
+| | top-20 | top-30 | top-100 | top-300 | overall GT@30 |
+|---|---|---|---|---|---|
+| 0b structured | 0 | 0 | 7 | 27 | 0.334 |
+| 0c natural-lang | 0 | **0** | 7 | 30 | 0.331 |
+
+**The query format was NOT the confound.** Both phrasings give 0 top-30 unique
+recoveries; E5's inability to surface union-absent GT at usable ranks is
+intrinsic.
+
+## R96 FINAL VERDICT — ARCHIVED, retrieval-side nDCG lever closed
+
+A new retriever family (E5-large-v2), trained identically, recovers **0** of the
+union-absent GT in top-30 under **both** query formats. Combined with BGE-family
+exhaustion (R84/R90 retrieval upgrades that don't convert) and R95 (ranking
+exhausted), the union-absent ~22% is **unreachable by query→track text
+retrieval**. The retrieval-side nDCG lever is closed. **Production stays R92 p11
+(0.5073).** Result: `exp/eval/expR96_phase0b_smoke_result.json`.
