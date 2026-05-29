@@ -321,17 +321,30 @@ def run_one_fold(fold_i, cases_by_fold, cand_by_idx, meta, _tt, _q,
     print(f"\n{ts()} ===== R103 GTE FOLD {fold_i} (held out) =====", flush=True)
 
     val_cases = cases_by_fold[fold_i]
-    train_cases = [c for k, v in cases_by_fold.items() if k != fold_i for c in v]
-    dev_trip = build_dev_trip(train_cases, cand_by_idx, meta, _tt, _q)
-    print(f"  train cases={len(train_cases)} dev_trip={len(dev_trip)} "
-          f"val cases={len(val_cases)}", flush=True)
+    adapter_dir = fold_dir / "lora_adapter"
 
-    # Fresh base + LoRA per fold (no adapter carryover -> clean OOF)
+    # Fresh base per fold (no adapter carryover -> clean OOF)
     base, tok = load_base(device)
-    model = make_lora(base)
+    if (adapter_dir / "adapter_config.json").exists():
+        # durable resume: the trained adapter is already on Drive -> skip retraining
+        from peft import PeftModel  # type: ignore[reportMissingImports]
+        model = PeftModel.from_pretrained(base, str(adapter_dir))
+        model.eval()
+        print(f"  resumed: loaded saved LoRA adapter {adapter_dir} (skip training)", flush=True)
+    else:
+        train_cases = [c for k, v in cases_by_fold.items() if k != fold_i for c in v]
+        dev_trip = build_dev_trip(train_cases, cand_by_idx, meta, _tt, _q)
+        print(f"  train cases={len(train_cases)} dev_trip={len(dev_trip)} "
+              f"val cases={len(val_cases)}", flush=True)
+        model = make_lora(base)
+        embed = make_embed(model, tok, device)
+        train_fold(model, embed, dev_trip, device, epochs=epochs)
+        try:
+            model.save_pretrained(str(adapter_dir))      # durable: adapter -> Drive
+            print(f"  saved LoRA adapter -> {adapter_dir}", flush=True)
+        except Exception as e:
+            print(f"  WARN adapter save failed: {e}", flush=True)
     embed = make_embed(model, tok, device)
-
-    train_fold(model, embed, dev_trip, device, epochs=epochs)
     cat = encode_catalog(embed, _tt, all_track_ids, device)
     fold_lists = retrieve(embed, _q, val_cases, cat, all_track_ids, device)
 
