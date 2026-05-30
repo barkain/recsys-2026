@@ -207,6 +207,14 @@ def main():
         per_fold[c["case_idx"]] = defaultdict(list)
     adir = Path(args.adapters)
     for k in range(N_FOLDS):
+        # durable resume: per-fold blind lists saved to Drive; skip if already done
+        fpath = adir / f"blind_fold_{k}.json"
+        if fpath.exists():
+            d = json.load(open(fpath))
+            for ci, lst in d["lists"].items():
+                for tid, cos in lst:
+                    per_fold[int(ci)][tid].append(float(cos))
+            print(f"  fold {k}: loaded saved {fpath.name} — skip encode", flush=True); continue
         ad = adir / f"fold_{k}" / "lora_adapter"
         if not (ad / "adapter_config.json").exists():
             print(f"  fold {k}: adapter MISSING at {ad} — skip", flush=True); continue
@@ -217,6 +225,9 @@ def main():
         embed = make_embed(model, tok, args.device)
         cat = encode_catalog(embed, _tt, ids, args.device)
         lists = retrieve(embed, _q, cases, cat, ids, args.device)
+        json.dump({"fold": k, "lists": {str(ci): [[t, c] for t, c in lst] for ci, lst in lists.items()}},
+                  open(fpath, "w"))
+        print(f"  fold {k} saved -> {fpath.name}", flush=True)
         for ci, lst in lists.items():
             for tid, cos in lst:
                 per_fold[ci][tid].append(cos)
