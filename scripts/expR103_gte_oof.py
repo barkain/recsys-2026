@@ -369,7 +369,7 @@ def run_one_fold(fold_i, cases_by_fold, cand_by_idx, meta, _tt, _q,
     nv = len(val_cases)
     manifest = {
         "fold": fold_i, "model": MID, "epochs": epochs,
-        "n_train_trip": len(dev_trip), "n_val": nv,
+        "n_train_trip": (len(dev_trip) if "dev_trip" in locals() else -1), "n_val": nv,
         "query_format": "_q conversational + Instruct wrapper",
         "negatives": "1 union-candidate neg + in-batch (R102 Cell B)",
         "recall20": round(hit20 / nv, 4), "recall300": round(hit300 / nv, 4),
