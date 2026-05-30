@@ -154,10 +154,11 @@ def retrieve(embed, _q, cases, cat_cpu, ids, device, topk=TOPK):
     out = {}
     with torch.no_grad():
         for c in cases:
+            qtext = c["q"] if c.get("q") else _q(c)          # pre-built query or build from history
             with torch.autocast("cuda", dtype=torch.bfloat16):
-                q = embed([gq(_q(c))])
+                q = embed([gq(qtext)])
             sims = (q.float() @ cat.T).squeeze(0).cpu().numpy()
-            played = set(str(t) for t in (c.get("music_turns") or []))
+            played = set(str(t) for t in (c.get("played") or c.get("music_turns") or []))
             order = np.argsort(-sims)
             top = []
             for j in order:
@@ -196,7 +197,8 @@ def main():
     meta = load_meta()
     ids = list(meta.keys())
     _tt, _short, _q = make_builders(meta)
-    print(f"  catalog {len(ids)} | sample q: {_q(cases[0])[:90]}", flush=True)
+    sample_q = cases[0]["q"] if cases[0].get("q") else _q(cases[0])
+    print(f"  catalog {len(ids)} | sample q: {sample_q[:90]}", flush=True)
 
     from peft import PeftModel
     import torch
