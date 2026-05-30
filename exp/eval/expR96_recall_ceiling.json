@@ -1,0 +1,56 @@
+{
+  "experiment": "R96 Phase 0a recall-ceiling gate",
+  "n_dev_cases": 8000,
+  "union_sources": [
+    "R54",
+    "R84",
+    "R90",
+    "R21"
+  ],
+  "note": "LOWER BOUND on union coverage (no BM25/ALS/CFBPR/qwen3 dev pools).",
+  "production_recall_at_20_r54c_lr": 0.4794,
+  "per_source_recall": {
+    "R54": {
+      "20": 0.2816,
+      "30": 0.3361,
+      "50": 0.4002,
+      "300": 0.5909
+    },
+    "R84": {
+      "20": 0.3025,
+      "30": 0.3719,
+      "50": 0.4475,
+      "300": 0.6723
+    },
+    "R90": {
+      "20": 0.3237,
+      "30": 0.3835,
+      "50": 0.4629,
+      "300": 0.6817
+    },
+    "R21": {
+      "20": 0.2435,
+      "30": 0.2875,
+      "50": 0.347,
+      "300": 0.5329
+    },
+    "UNION": {
+      "20": 0.4143,
+      "30": 0.4708,
+      "50": 0.5433,
+      "300": 0.7585
+    }
+  },
+  "union_top300_coverage": 0.7585,
+  "gt_absent_from_full_union": 0.2415,
+  "union_top30_coverage": 0.4708,
+  "in_union300_but_deep_only_(30-300)": 0.2878,
+  "gt_absent_from_r54_but_recovered_by_union": 0.1676,
+  "rescue_rank_distribution_min_across_sources": {
+    "top20": 0.4143,
+    "50-100": 0.0839,
+    "100-300": 0.1314,
+    "20-30": 0.0565,
+    "30-50": 0.0725
+  }
+}

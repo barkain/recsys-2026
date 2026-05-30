@@ -1,0 +1,9 @@
+{
+  "experiment": "R100 cross-encoder reranker (bge-reranker-v2-m3, fine-tuned fold-0) over union-200",
+  "fold0": {"reranker_ndcg20": 0.1133, "reranker_recall20": 0.2594, "reranker_recall30": 0.3119,
+            "baseline_prod_r54c_lr_ndcg20": 0.2879, "baseline_prod_recall20": 0.479,
+            "union_rrf_norerank_ndcg20": 0.1483, "candidate_ceiling_gt_in": 0.6245},
+  "segments": {"same_artist_hit20": "293/541", "diff_artist_hit20": "122/436", "deep_rrf_ge20_recovered20": "88/483"},
+  "verdict": "STOP. Fine-tuned text cross-encoder is WORSE than both production LR (0.2879) and the naive union order (0.1483); recall@20 0.259 vs 0.479. Text reranking cannot beat the LR's source-rank/RRF features; confirms R82 (GT scores like its textual neighbors). Do not escalate to 5-fold.",
+  "implication": "Ranking lever CLOSED too. Retrieval (BGE/E5/GTE), ranking (LR/neural/oracle-probe/cross-encoder), and response (LexDiv/LLM saddle) all exhausted. R92 p11 (0.6364) is the documented ceiling. Competitor nDCG 0.54-0.60 achieved by a method we have not identified."
+}

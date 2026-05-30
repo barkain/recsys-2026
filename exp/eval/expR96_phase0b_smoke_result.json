@@ -1,0 +1,33 @@
+{
+  "experiment": "R96 Phase 0b E5-large-v2 fold-0 smoke (unique-recovery on union-absent set)",
+  "model": "intfloat/e5-large-v2",
+  "query_format": "structured + e5 query:/passage: prefixes",
+  "negatives": "in-batch random only (no hard negatives)",
+  "training": "fold-0 smoke: dev pairs only (folds 1-4, 6400 pairs, 1 epoch), no 20k train-split",
+  "device": "A100-SXM4-40GB",
+  "fold0_overall": {
+    "hit_at_300": 0.5938,
+    "gt_at_30": 0.334,
+    "note": "on par with R54 (0.591@300), below R84/R90 (~0.68@300)"
+  },
+  "union_absent_fold0_cases": 348,
+  "e5_unique_recovery_on_absent": {
+    "top20": 0,
+    "top30": 0,
+    "top100": 7,
+    "top300": 27,
+    "rank_buckets": {"30-50": 1, "50-100": 6, "100-300": 20, "miss": 321}
+  },
+  "top30_unique_recoveries": {"same_artist_in_history": 0, "new_artist": 0},
+  "verdict": "STOP for this config: 0 top-30 unique recoveries; the 27 absent recoveries are all deep (rank 30-300). E5-large-v2 + structured query does NOT surface union-absent GT at usable ranks. Per the escalation rule (escalate only if nontrivial top-30 recoveries), do NOT go to E5-mistral.",
+  "phase0c_query_reformulation": {
+    "change": "ONLY query text -> E5-native natural language; passages/split/positives/negatives held fixed",
+    "fold0_overall": {"hit_at_300": 0.5944, "gt_at_30": 0.331},
+    "e5_unique_recovery_on_absent": {
+      "top20": 0, "top30": 0, "top100": 7, "top300": 30,
+      "rank_buckets": {"30-50": 2, "50-100": 5, "100-300": 23, "miss": 318}
+    },
+    "verdict": "ARCHIVE E5. Natural-language query is ~identical to structured (0 top-30 both). The query format was NOT the confound; E5's failure to surface union-absent GT at usable ranks is intrinsic."
+  },
+  "final_verdict": "R96 ARCHIVED. A new retriever family (E5-large-v2), trained the same way, recovers 0 of the union-absent GT in top-30 under BOTH query formats. Combined with BGE-family exhaustion and R95 (ranking exhausted), the union-absent ~22% is unreachable by query->track text retrieval. The retrieval-side nDCG lever is closed. Production stays R92 p11 (0.5073)."
+}

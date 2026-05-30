@@ -1,0 +1,182 @@
+{
+  "experiment": "R84 Phase 0B compare \u2014 r84 sibling LR vs r70b r54 sibling LR",
+  "created_at": "2026-05-23T17:54:47.352595",
+  "elapsed_s": 428.56511902809143,
+  "head_sha": "2bbee59881cc30296eb23096fc190e9207c9965e",
+  "verdict": "ARCHIVE_SPRINT",
+  "fold": 0,
+  "n_fold0": 1600,
+  "n_train": 6400,
+  "n_h7": 200,
+  "feature_stack": {
+    "names": [
+      "rrf_rank_inv",
+      "last_artist_match",
+      "last_tag_jaccard",
+      "query_artist_tok_overlap",
+      "query_title_tok_overlap",
+      "query_meta_tok_overlap",
+      "is_played",
+      "recency_score",
+      "src_a_rank_inv",
+      "src_b_rank_inv",
+      "src_c_rank_inv",
+      "src_d_rank_inv",
+      "src_f_rank_inv",
+      "src_als_rank_inv",
+      "src_a_pres",
+      "src_b_pres",
+      "src_c_pres",
+      "src_d_pres",
+      "src_f_pres",
+      "src_als_pres",
+      "n_sources",
+      "als_dot",
+      "n_history",
+      "popularity",
+      "pool_artist_frac",
+      "pool_artist_count",
+      "source_count_v2",
+      "r21_rank_inv",
+      "r21_presence",
+      "same_album_last1",
+      "same_album_last3",
+      "same_album_any",
+      "album_history_count",
+      "pool_same_album_count",
+      "r84_rank_inv",
+      "r84_presence",
+      "r84_cosine"
+    ],
+    "n_features": 37,
+    "structure": "FEAT_R39_ALL + [r84_rank_inv, r84_presence, r84_cosine]",
+    "note": "sibling LR trained on fold-{1..4} with R54 features (no R84 lists for those folds); r84 features swapped in at fold-0 eval only. Partial-OOF probe of R84 conversion."
+  },
+  "pool": {
+    "weights": {
+      "A": 1.0,
+      "B": 1.0,
+      "C": 1.0,
+      "D": 0.5,
+      "F": 1.0,
+      "ALS": 1.0,
+      "R21": 1.0,
+      "R54": 1.0
+    },
+    "K": 300,
+    "note": "R54-stacked, identical to R54c production"
+  },
+  "metrics": {
+    "all_fold0": {
+      "n": 1600,
+      "frozen_r54c_baseline": 0.28788361352339303,
+      "sibling_r54_R70b": 0.21100906814195042,
+      "sibling_r84": 0.20843447755096572,
+      "delta_r84_vs_sibling_r54": -0.0025745905909846933,
+      "delta_r84_vs_frozen_r54c": -0.07944913597242731
+    },
+    "h7": {
+      "n": 200,
+      "frozen_r54c_baseline": 0.30434128790180254,
+      "sibling_r54_R70b": 0.22131935173539474,
+      "sibling_r84": 0.21539637783389046,
+      "delta_r84_vs_sibling_r54": -0.005922973901504286,
+      "delta_r84_vs_frozen_r54c": -0.08894491006791208
+    },
+    "same_artist": {
+      "n": 531,
+      "frozen_r54c_baseline": 0.5983678767297812,
+      "sibling_r54_R70b": 0.44467455069647027,
+      "sibling_r84": 0.4334834598803212,
+      "delta_r84_vs_sibling_r54": -0.011191090816149052,
+      "delta_r84_vs_frozen_r54c": -0.16488441684945998
+    },
+    "diff_artist": {
+      "n": 1069,
+      "frozen_r54c_baseline": 0.13365803469963977,
+      "sibling_r54_R70b": 0.09494136820139847,
+      "sibling_r84": 0.09664681654358709,
+      "delta_r84_vs_sibling_r54": 0.001705448342188623,
+      "delta_r84_vs_frozen_r54c": -0.03701121815605268
+    },
+    "h7_same": {
+      "n": 83,
+      "frozen_r54c_baseline": 0.5697665433497544,
+      "sibling_r54_R70b": 0.42620174901261704,
+      "sibling_r84": 0.4107067863423944,
+      "delta_r84_vs_sibling_r54": -0.015494962670222656,
+      "delta_r84_vs_frozen_r54c": -0.15905975700736003
+    },
+    "h7_diff": {
+      "n": 117,
+      "frozen_r54c_baseline": 0.11604815796864003,
+      "sibling_r54_R70b": 0.07597542888061307,
+      "sibling_r84": 0.07684284017401162,
+      "delta_r84_vs_sibling_r54": 0.0008674112933985539,
+      "delta_r84_vs_frozen_r54c": -0.03920531779462841
+    }
+  },
+  "source_alone_h7": {
+    "r54_hit20": 0.215,
+    "r84_hit20": 0.22,
+    "r54_hit30": 0.245,
+    "r84_hit30": 0.31,
+    "delta_hit20": 0.0050000000000000044,
+    "delta_hit30": 0.065
+  },
+  "pool_diagnostics": {
+    "baseline_8src": 0.604375,
+    "add_9src": 0.63625,
+    "replace_8src": 0.630625,
+    "add_delta": 0.03187499999999999,
+    "replace_delta": 0.026249999999999996
+  },
+  "h7_recovery_r84_vs_r54_sibling": {
+    "recovered_top20": 3,
+    "lost_top20": 5,
+    "net_top20": -2,
+    "top30_unique_source_alone": 21
+  },
+  "churn_b_vs_r84sibling": {
+    "top1_changed": 760,
+    "churn_per_80": 38.0,
+    "top20_overlap_mean": 14.899375
+  },
+  "gates": {
+    "A1_h7_delta_ge_p005": {
+      "value": -0.005922973901504286,
+      "pass": false
+    },
+    "A2_h7_recov_gt_lost": {
+      "value": [
+        3,
+        5
+      ],
+      "pass": false
+    },
+    "A3_h7_top30_unique_ge_10": {
+      "value": 21,
+      "pass": true
+    },
+    "A4_ambig_positive": {
+      "pass": false
+    },
+    "B1_same_artist_delta_ge_n005": {
+      "value": -0.011191090816149052,
+      "pass": false
+    },
+    "B2_diff_artist_delta_ge_n005": {
+      "value": 0.001705448342188623,
+      "pass": true
+    },
+    "B3_overlap_ge_8": {
+      "value": 14.899375,
+      "pass": true
+    }
+  },
+  "r70b_reference": {
+    "h7_delta_vs_frozen_r54c": -0.0830219361664078,
+    "same_artist_delta_vs_frozen_r54c": -0.15369332603331093,
+    "note": "R70b is the OOF R54 sibling baseline (same features, same pool, retrained on fold-{1..4}). R84 sibling here should be compared against R70b sibling for apples-to-apples per feedback_lr_wall_was_artifact."
+  }
+}

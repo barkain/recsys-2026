@@ -1,0 +1,198 @@
+{
+  "experiment": "R90 Phase 1 Variant A vs R84 5-fold OOF compare",
+  "created_at": "2026-05-27T17:13:14.800704",
+  "elapsed_s": 15.511888027191162,
+  "r84_root": "/Users/nadavbarkai/dev/recsys-2026",
+  "r90_root": "/Users/nadavbarkai/dev/recsys-2026",
+  "fold_pattern_r84": {
+    "0": "cache/r84/phase0b_fold0",
+    "1": "cache/r84/phase1_fold1",
+    "2": "cache/r84/phase1_fold2",
+    "3": "cache/r84/phase1_fold3",
+    "4": "cache/r84/phase1_fold4"
+  },
+  "fold_pattern_r90": {
+    "0": "cache/r90/phase1_fold0_varA",
+    "1": "cache/r90/phase1_fold1_varA",
+    "2": "cache/r90/phase1_fold2_varA",
+    "3": "cache/r90/phase1_fold3_varA",
+    "4": "cache/r90/phase1_fold4_varA"
+  },
+  "gates": {
+    "n_cases": 8000,
+    "n_h7": 1000,
+    "n_same_artist_h7": 467,
+    "n_diff_artist_h7": 533,
+    "gate_thresholds": {
+      "G1_same_artist_min": -0.005,
+      "G2_h7_ndcg_min": 0.003,
+      "G2_net_recovery_min": 5,
+      "G3_history_bucket_min": -0.005,
+      "G4_per_fold_min": -0.005
+    },
+    "G1_same_artist": {
+      "a_ndcg20": 0.2091764407529528,
+      "b_ndcg20": 0.20969397312779617,
+      "delta": 0.0005175323748433658,
+      "pass": true
+    },
+    "G2_h7_aggregate": {
+      "a_ndcg20": 0.1099834962804519,
+      "b_ndcg20": 0.11112137522775355,
+      "delta": 0.0011378789473016487,
+      "recovered": 47,
+      "lost": 35,
+      "net": 12,
+      "pass_by_delta": false,
+      "pass_by_recovery": true,
+      "pass": true
+    },
+    "G3_history_buckets": {
+      "buckets": {
+        "0": {
+          "n": 1000,
+          "a_ndcg20": 0.14595733056022936,
+          "b_ndcg20": 0.16534707549471858,
+          "delta": 0.019389744934489223,
+          "gated": false,
+          "pass": true
+        },
+        "1": {
+          "n": 1000,
+          "a_ndcg20": 0.17316185029137096,
+          "b_ndcg20": 0.18495449597713784,
+          "delta": 0.011792645685766878,
+          "gated": false,
+          "pass": true
+        },
+        "2": {
+          "n": 1000,
+          "a_ndcg20": 0.14718899697532395,
+          "b_ndcg20": 0.15523023992796345,
+          "delta": 0.008041242952639499,
+          "gated": true,
+          "pass": true
+        },
+        "3": {
+          "n": 1000,
+          "a_ndcg20": 0.12191937264684918,
+          "b_ndcg20": 0.12555323184635284,
+          "delta": 0.003633859199503653,
+          "gated": true,
+          "pass": true
+        },
+        "4": {
+          "n": 1000,
+          "a_ndcg20": 0.12188358542684258,
+          "b_ndcg20": 0.1273029625389195,
+          "delta": 0.005419377112076934,
+          "gated": true,
+          "pass": true
+        },
+        "5": {
+          "n": 1000,
+          "a_ndcg20": 0.10457444243572818,
+          "b_ndcg20": 0.11629338469243106,
+          "delta": 0.011718942256702877,
+          "gated": true,
+          "pass": true
+        },
+        "6": {
+          "n": 1000,
+          "a_ndcg20": 0.10042738049851783,
+          "b_ndcg20": 0.1110403991184841,
+          "delta": 0.01061301861996626,
+          "gated": true,
+          "pass": true
+        },
+        "7": {
+          "n": 1000,
+          "a_ndcg20": 0.1099834962804519,
+          "b_ndcg20": 0.11112137522775355,
+          "delta": 0.0011378789473016487,
+          "gated": false,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    "G4_per_fold_sanity": {
+      "per_fold": {
+        "0": {
+          "n_h7": 200,
+          "h7_a": 0.09630563702563812,
+          "h7_b": 0.10375294997455521,
+          "h7_delta": 0.007447312948917095,
+          "same_a": 0.20265159316448447,
+          "same_b": 0.22563563242279647,
+          "same_delta": 0.022984039258311995,
+          "diff_a": 0.0208636339527813,
+          "diff_b": 0.017289166699307138,
+          "diff_delta": -0.003574467253474163,
+          "pass": true
+        },
+        "1": {
+          "n_h7": 200,
+          "h7_a": 0.09757079088668022,
+          "h7_b": 0.09292108120863013,
+          "h7_delta": -0.00464970967805009,
+          "same_a": 0.18708804482283628,
+          "same_b": 0.18224262771720484,
+          "same_delta": -0.004845417105631439,
+          "diff_a": 0.03140586406430397,
+          "diff_b": 0.02690080770229226,
+          "diff_delta": -0.004505056362011709,
+          "pass": true
+        },
+        "2": {
+          "n_h7": 200,
+          "h7_a": 0.11425666361402502,
+          "h7_b": 0.11679305557220009,
+          "h7_delta": 0.002536391958175066,
+          "same_a": 0.20521906959992986,
+          "same_b": 0.203407127458766,
+          "same_delta": -0.0018119421411638692,
+          "diff_a": 0.025095493390217303,
+          "diff_b": 0.031894113822001774,
+          "diff_delta": 0.006798620431784471,
+          "pass": true
+        },
+        "3": {
+          "n_h7": 200,
+          "h7_a": 0.10231586136753532,
+          "h7_b": 0.10393301668495578,
+          "h7_delta": 0.00161715531742046,
+          "same_a": 0.19173934178390092,
+          "same_b": 0.1837341209320744,
+          "same_delta": -0.008005220851826533,
+          "diff_a": 0.023015793828494117,
+          "diff_b": 0.03316599971109593,
+          "diff_delta": 0.01015020588260181,
+          "pass": true
+        },
+        "4": {
+          "n_h7": 200,
+          "h7_a": 0.13946852850838082,
+          "h7_b": 0.13820677269842654,
+          "h7_delta": -0.0012617558099542736,
+          "same_a": 0.2511570355750559,
+          "same_b": 0.24811690205276857,
+          "same_delta": -0.0030401335222873527,
+          "diff_a": 0.013521914156598319,
+          "diff_b": 0.014265563000977059,
+          "diff_delta": 0.0007436488443787401,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    "diff_artist_h7": {
+      "a_ndcg20": 0.023073355438692184,
+      "b_ndcg20": 0.024754765060173985,
+      "delta": 0.0016814096214818018
+    },
+    "scope_note": "Source-alone retrieval compare only. Does NOT test LR scoring + selective routing. Verdict PROCEED_TO_LR_CONVERSION_TEST means the source-alone gates passed; the LR conversion test is the real blind-readiness gate (see expR90_phase1_lr_conversion.py).",
+    "overall_pass": true,
+    "verdict": "PROCEED_TO_LR_CONVERSION_TEST"
+  }
+}

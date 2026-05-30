@@ -1,0 +1,105 @@
+[2026-05-23 14:07:35] R84 Phase 0B start. fold=0 output=/content/recsys-2026/cache/r84/phase0b_fold0
+[2026-05-23 14:07:35] hyperparams: model=BAAI/bge-large-en-v1.5 max_seq_q=384 max_seq_t=256 batch=32 grad_accum=1 lr=1e-05 epochs=1 tau=0.05 k_neg=64 hard_neg_weight=0.0 bf16=True
+[2026-05-23 14:07:35] Verifying Phase 0A manifest...
+[2026-05-23 14:07:35]   manifest fingerprint = 887d72747f8f0e1a
+[2026-05-23 14:07:35]   manifest n_rows = 153592
+[2026-05-23 14:07:35] Loading manifest...
+[2026-05-23 14:07:35]   fold 0: 127992 training pairs (train_split=121592 + dev_fold=6400)
+[2026-05-23 14:07:36]   loaded 127992 pairs
+[2026-05-23 14:07:36] Loading catalog...
+[2026-05-23 14:07:42]   47071 tracks in catalog
+[2026-05-23 14:07:42] Pre-building GT track texts...
+[2026-05-23 14:08:04] Loading SentenceTransformer(BAAI/bge-large-en-v1.5) on cuda...
+[2026-05-23 14:08:11]   hidden_dim = 1024
+[2026-05-23 14:08:11]   max_position_embeddings = 512
+[2026-05-23 14:08:11] Logging query truncation rates (Codex requirement)...
+[2026-05-23 14:08:14]   train queries: median=204 P90=302 P99=404 max=878
+[2026-05-23 14:08:14]   truncation @256=0.247  @384=0.014  @512=0.002
+[2026-05-23 14:08:14]   gt track texts: median=47 P90=59 max=107  trunc @256=0.000
+[2026-05-23 14:08:14] autocast dtype = torch.bfloat16
+[2026-05-23 14:08:14] batches_per_epoch=4000  total_steps=4000
+[2026-05-23 14:08:14] Starting training...
+[2026-05-23 14:08:37]   epoch 0 batch 50/4000 loss_avg=1.8533 rate=2.20 b/s eta=30.0 min
+[2026-05-23 14:08:58]   epoch 0 batch 100/4000 loss_avg=1.5731 rate=2.29 b/s eta=28.4 min
+[2026-05-23 14:09:19]   epoch 0 batch 150/4000 loss_avg=1.5268 rate=2.33 b/s eta=27.6 min
+[2026-05-23 14:09:40]   epoch 0 batch 200/4000 loss_avg=1.4370 rate=2.34 b/s eta=27.0 min
+[2026-05-23 14:10:01]   epoch 0 batch 250/4000 loss_avg=1.4676 rate=2.36 b/s eta=26.5 min
+[2026-05-23 14:10:22]   epoch 0 batch 300/4000 loss_avg=1.3939 rate=2.36 b/s eta=26.2 min
+[2026-05-23 14:10:43]   epoch 0 batch 350/4000 loss_avg=1.4134 rate=2.36 b/s eta=25.8 min
+[2026-05-23 14:11:04]   epoch 0 batch 400/4000 loss_avg=1.4004 rate=2.36 b/s eta=25.4 min
+[2026-05-23 14:11:24]   epoch 0 batch 450/4000 loss_avg=1.4222 rate=2.37 b/s eta=25.0 min
+[2026-05-23 14:11:45]   epoch 0 batch 500/4000 loss_avg=1.5064 rate=2.37 b/s eta=24.6 min
+[2026-05-23 14:12:06]   epoch 0 batch 550/4000 loss_avg=1.3563 rate=2.37 b/s eta=24.2 min
+[2026-05-23 14:12:27]   epoch 0 batch 600/4000 loss_avg=1.4081 rate=2.37 b/s eta=23.9 min
+[2026-05-23 14:12:48]   epoch 0 batch 650/4000 loss_avg=1.3401 rate=2.37 b/s eta=23.5 min
+[2026-05-23 14:13:09]   epoch 0 batch 700/4000 loss_avg=1.3363 rate=2.37 b/s eta=23.2 min
+[2026-05-23 14:13:30]   epoch 0 batch 750/4000 loss_avg=1.2924 rate=2.37 b/s eta=22.8 min
+[2026-05-23 14:13:51]   epoch 0 batch 800/4000 loss_avg=1.3897 rate=2.37 b/s eta=22.5 min
+[2026-05-23 14:14:12]   epoch 0 batch 850/4000 loss_avg=1.3457 rate=2.38 b/s eta=22.1 min
+[2026-05-23 14:14:33]   epoch 0 batch 900/4000 loss_avg=1.3878 rate=2.38 b/s eta=21.7 min
+[2026-05-23 14:14:54]   epoch 0 batch 950/4000 loss_avg=1.3815 rate=2.38 b/s eta=21.4 min
+[2026-05-23 14:15:15]   epoch 0 batch 1000/4000 loss_avg=1.4034 rate=2.38 b/s eta=21.0 min
+[2026-05-23 14:15:36]   epoch 0 batch 1050/4000 loss_avg=1.3198 rate=2.38 b/s eta=20.7 min
+[2026-05-23 14:15:57]   epoch 0 batch 1100/4000 loss_avg=1.3442 rate=2.38 b/s eta=20.3 min
+[2026-05-23 14:16:17]   epoch 0 batch 1150/4000 loss_avg=1.2481 rate=2.38 b/s eta=19.9 min
+[2026-05-23 14:16:38]   epoch 0 batch 1200/4000 loss_avg=1.3557 rate=2.38 b/s eta=19.6 min
+[2026-05-23 14:16:59]   epoch 0 batch 1250/4000 loss_avg=1.3030 rate=2.38 b/s eta=19.2 min
+[2026-05-23 14:17:20]   epoch 0 batch 1300/4000 loss_avg=1.2984 rate=2.38 b/s eta=18.9 min
+[2026-05-23 14:17:41]   epoch 0 batch 1350/4000 loss_avg=1.3094 rate=2.38 b/s eta=18.5 min
+[2026-05-23 14:18:02]   epoch 0 batch 1400/4000 loss_avg=1.3537 rate=2.38 b/s eta=18.2 min
+[2026-05-23 14:18:23]   epoch 0 batch 1450/4000 loss_avg=1.3011 rate=2.38 b/s eta=17.8 min
+[2026-05-23 14:18:44]   epoch 0 batch 1500/4000 loss_avg=1.2944 rate=2.38 b/s eta=17.5 min
+[2026-05-23 14:19:05]   epoch 0 batch 1550/4000 loss_avg=1.3136 rate=2.38 b/s eta=17.1 min
+[2026-05-23 14:19:26]   epoch 0 batch 1600/4000 loss_avg=1.3380 rate=2.38 b/s eta=16.8 min
+[2026-05-23 14:19:47]   epoch 0 batch 1650/4000 loss_avg=1.3101 rate=2.38 b/s eta=16.4 min
+[2026-05-23 14:20:07]   epoch 0 batch 1700/4000 loss_avg=1.3085 rate=2.38 b/s eta=16.1 min
+[2026-05-23 14:20:28]   epoch 0 batch 1750/4000 loss_avg=1.3055 rate=2.38 b/s eta=15.7 min
+[2026-05-23 14:20:49]   epoch 0 batch 1800/4000 loss_avg=1.2503 rate=2.38 b/s eta=15.4 min
+[2026-05-23 14:21:10]   epoch 0 batch 1850/4000 loss_avg=1.3058 rate=2.38 b/s eta=15.0 min
+[2026-05-23 14:21:31]   epoch 0 batch 1900/4000 loss_avg=1.2857 rate=2.38 b/s eta=14.7 min
+[2026-05-23 14:21:52]   epoch 0 batch 1950/4000 loss_avg=1.2918 rate=2.38 b/s eta=14.3 min
+[2026-05-23 14:22:13]   epoch 0 batch 2000/4000 loss_avg=1.3508 rate=2.38 b/s eta=14.0 min
+[2026-05-23 14:22:34]   epoch 0 batch 2050/4000 loss_avg=1.2376 rate=2.38 b/s eta=13.6 min
+[2026-05-23 14:22:55]   epoch 0 batch 2100/4000 loss_avg=1.3341 rate=2.38 b/s eta=13.3 min
+[2026-05-23 14:23:16]   epoch 0 batch 2150/4000 loss_avg=1.2156 rate=2.38 b/s eta=12.9 min
+[2026-05-23 14:23:37]   epoch 0 batch 2200/4000 loss_avg=1.3512 rate=2.38 b/s eta=12.6 min
+[2026-05-23 14:23:58]   epoch 0 batch 2250/4000 loss_avg=1.1886 rate=2.38 b/s eta=12.2 min
+[2026-05-23 14:24:19]   epoch 0 batch 2300/4000 loss_avg=1.3194 rate=2.38 b/s eta=11.9 min
+[2026-05-23 14:24:40]   epoch 0 batch 2350/4000 loss_avg=1.2611 rate=2.38 b/s eta=11.5 min
+[2026-05-23 14:25:01]   epoch 0 batch 2400/4000 loss_avg=1.2903 rate=2.38 b/s eta=11.2 min
+[2026-05-23 14:25:22]   epoch 0 batch 2450/4000 loss_avg=1.2564 rate=2.38 b/s eta=10.8 min
+[2026-05-23 14:25:43]   epoch 0 batch 2500/4000 loss_avg=1.2113 rate=2.38 b/s eta=10.5 min
+[2026-05-23 14:26:04]   epoch 0 batch 2550/4000 loss_avg=1.2831 rate=2.38 b/s eta=10.1 min
+[2026-05-23 14:26:25]   epoch 0 batch 2600/4000 loss_avg=1.2916 rate=2.38 b/s eta=9.8 min
+[2026-05-23 14:26:46]   epoch 0 batch 2650/4000 loss_avg=1.2692 rate=2.38 b/s eta=9.4 min
+[2026-05-23 14:27:07]   epoch 0 batch 2700/4000 loss_avg=1.2149 rate=2.38 b/s eta=9.1 min
+[2026-05-23 14:27:28]   epoch 0 batch 2750/4000 loss_avg=1.3263 rate=2.38 b/s eta=8.7 min
+[2026-05-23 14:27:49]   epoch 0 batch 2800/4000 loss_avg=1.1671 rate=2.38 b/s eta=8.4 min
+[2026-05-23 14:28:10]   epoch 0 batch 2850/4000 loss_avg=1.2935 rate=2.38 b/s eta=8.0 min
+[2026-05-23 14:28:31]   epoch 0 batch 2900/4000 loss_avg=1.3183 rate=2.38 b/s eta=7.7 min
+[2026-05-23 14:28:52]   epoch 0 batch 2950/4000 loss_avg=1.2740 rate=2.38 b/s eta=7.3 min
+[2026-05-23 14:29:13]   epoch 0 batch 3000/4000 loss_avg=1.2349 rate=2.38 b/s eta=7.0 min
+[2026-05-23 14:29:34]   epoch 0 batch 3050/4000 loss_avg=1.2665 rate=2.38 b/s eta=6.6 min
+[2026-05-23 14:29:55]   epoch 0 batch 3100/4000 loss_avg=1.3051 rate=2.38 b/s eta=6.3 min
+[2026-05-23 14:30:15]   epoch 0 batch 3150/4000 loss_avg=1.2279 rate=2.38 b/s eta=5.9 min
+[2026-05-23 14:30:37]   epoch 0 batch 3200/4000 loss_avg=1.2157 rate=2.38 b/s eta=5.6 min
+[2026-05-23 14:30:58]   epoch 0 batch 3250/4000 loss_avg=1.2449 rate=2.38 b/s eta=5.2 min
+[2026-05-23 14:31:18]   epoch 0 batch 3300/4000 loss_avg=1.1952 rate=2.38 b/s eta=4.9 min
+[2026-05-23 14:31:39]   epoch 0 batch 3350/4000 loss_avg=1.2370 rate=2.38 b/s eta=4.5 min
+[2026-05-23 14:32:00]   epoch 0 batch 3400/4000 loss_avg=1.2703 rate=2.39 b/s eta=4.2 min
+[2026-05-23 14:32:21]   epoch 0 batch 3450/4000 loss_avg=1.2720 rate=2.38 b/s eta=3.8 min
+[2026-05-23 14:32:42]   epoch 0 batch 3500/4000 loss_avg=1.1785 rate=2.38 b/s eta=3.5 min
+[2026-05-23 14:33:03]   epoch 0 batch 3550/4000 loss_avg=1.2436 rate=2.38 b/s eta=3.1 min
+[2026-05-23 14:33:24]   epoch 0 batch 3600/4000 loss_avg=1.2682 rate=2.38 b/s eta=2.8 min
+[2026-05-23 14:33:45]   epoch 0 batch 3650/4000 loss_avg=1.1898 rate=2.38 b/s eta=2.4 min
+[2026-05-23 14:34:06]   epoch 0 batch 3700/4000 loss_avg=1.2599 rate=2.38 b/s eta=2.1 min
+[2026-05-23 14:34:27]   epoch 0 batch 3750/4000 loss_avg=1.2695 rate=2.39 b/s eta=1.7 min
+[2026-05-23 14:34:48]   epoch 0 batch 3800/4000 loss_avg=1.1804 rate=2.39 b/s eta=1.4 min
+[2026-05-23 14:35:09]   epoch 0 batch 3850/4000 loss_avg=1.2591 rate=2.39 b/s eta=1.0 min
+[2026-05-23 14:35:30]   epoch 0 batch 3900/4000 loss_avg=1.1510 rate=2.38 b/s eta=0.7 min
+[2026-05-23 14:35:51]   epoch 0 batch 3950/4000 loss_avg=1.1868 rate=2.38 b/s eta=0.3 min
+[2026-05-23 14:36:11]   epoch 0 batch 4000/4000 loss_avg=1.1592 rate=2.39 b/s eta=0.0 min
+[2026-05-23 14:36:11] Training done in 27.9 min. Final loss avg = 1.1592
+[2026-05-23 14:36:11] Saving model -> /content/recsys-2026/cache/r84/phase0b_fold0/model
+[2026-05-23 14:36:13] Wrote summary -> /content/recsys-2026/cache/r84/phase0b_fold0/training_summary.json
+[2026-05-23 14:36:13] R84 Phase 0B training complete.

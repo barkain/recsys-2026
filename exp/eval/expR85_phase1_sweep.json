@@ -1,0 +1,88 @@
+{
+  "experiment": "R85 Phase 1 \u2014 multimodal integration sweep",
+  "created_at": "2026-05-25T23:20:44.344166",
+  "elapsed_s": 785.633672952652,
+  "head_sha": "e4a4ac12113ca451a2422ff7e0b3f8e0cacfda48",
+  "winner": null,
+  "n_cases": 8000,
+  "baseline_h7_ndcg": 0.2492969920008086,
+  "baseline_all_ndcg": 0.22559362296089402,
+  "R85b": {
+    "summary": {
+      "h7": {
+        "n": 1000,
+        "test": 0.24183150260248726,
+        "baseline": 0.2492969920008086,
+        "delta": -0.00746548939832134
+      },
+      "all": {
+        "n": 8000,
+        "test": 0.2243448267439973,
+        "baseline": 0.22559362296089402,
+        "delta": -0.0012487962168967193
+      },
+      "same_artist": {
+        "n": 2857,
+        "test": 0.44138856311053853,
+        "baseline": 0.4457874998032929,
+        "delta": -0.004398936692754374
+      },
+      "diff_artist": {
+        "n": 5143,
+        "test": 0.10377435137957805,
+        "baseline": 0.10327320566773178,
+        "delta": 0.0005011457118462709
+      },
+      "h7_recovery": {
+        "recovered": 23,
+        "lost": 30,
+        "net": -7
+      },
+      "overlap_mean": 17.079125
+    },
+    "passes_gate": false
+  },
+  "R85a": {
+    "summary": {
+      "h7": {
+        "n": 1000,
+        "test": 0.24953443999788408,
+        "baseline": 0.2492969920008086,
+        "delta": 0.00023744799707547948
+      },
+      "all": {
+        "n": 8000,
+        "test": 0.2265447078227994,
+        "baseline": 0.22559362296089402,
+        "delta": 0.0009510848619053713
+      },
+      "same_artist": {
+        "n": 2857,
+        "test": 0.44788811167805176,
+        "baseline": 0.4457874998032929,
+        "delta": 0.002100611874758851
+      },
+      "diff_artist": {
+        "n": 5143,
+        "test": 0.10358571408092582,
+        "baseline": 0.10327320566773178,
+        "delta": 0.00031250841319403755
+      },
+      "h7_recovery": {
+        "recovered": 29,
+        "lost": 20,
+        "net": 9
+      },
+      "overlap_mean": 16.96025
+    },
+    "passes_gate": false
+  },
+  "gate_definition": {
+    "h7_delta_ge": 0.005,
+    "all_delta_ge": 0.0,
+    "same_artist_delta_ge": -0.005,
+    "diff_artist_delta_ge": 0.0,
+    "recov_ge_lost": true,
+    "overlap_ge": 14.0
+  }
+}

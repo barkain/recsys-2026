@@ -1,0 +1,73 @@
+{
+  "experiment": "R89 Phase 0 fold-0 \u2014 learned multimodal vs R84 OOF",
+  "created_at": "2026-05-26T07:37:13.719219",
+  "head_sha": "65cd70614df98b34476aa57d3103c58a9dcd5338",
+  "fold": 0,
+  "n_val": 1600,
+  "n_h7": 200,
+  "verdict": "ARCHIVE_LEARNED_MM",
+  "h7_hits_R89_vs_R84": {
+    "r89_h7_hit@20": 0.14,
+    "r89_h7_hit@30": 0.18,
+    "r89_h7_hit@300": 0.54,
+    "r84_h7_hit@20": 0.22,
+    "r84_h7_hit@30": 0.31,
+    "r84_h7_hit@300": 0.66
+  },
+  "unique_recoveries": {
+    "h7_top20_r89_only": 12,
+    "h7_top30_r89_only": 13,
+    "h7_top300_r89_only": 10,
+    "h7_top30_lost_to_r84": 39,
+    "h7_top30_net": -26,
+    "h7_top30_same_artist": 6,
+    "h7_top30_diff_artist": 7
+  },
+  "ndcg20_source_alone": {
+    "h7": {
+      "r89": 0.055129020803353586,
+      "r84": 0.09630563702563812,
+      "delta": -0.04117661622228453
+    },
+    "all": {
+      "r89": 0.07844590369947627,
+      "r84": 0.12587453558512451,
+      "delta": -0.04742863188564825
+    },
+    "same_artist": {
+      "r89": 0.15860135888350113,
+      "r84": 0.27801328885205756,
+      "delta": -0.11941192996855643
+    },
+    "diff_artist": {
+      "r89": 0.038630612116017704,
+      "r84": 0.0503032746078173,
+      "delta": -0.011672662491799594
+    }
+  },
+  "gates": {
+    "A1_h7_delta_ge_p005": {
+      "value": -0.04117661622228453,
+      "pass": false
+    },
+    "A2_unique_ge_10_recov": {
+      "value": [
+        13,
+        39
+      ],
+      "pass": false
+    },
+    "A3_ambig_positive": {
+      "pass": false
+    },
+    "canary_same": {
+      "value": -0.11941192996855643,
+      "pass": false
+    },
+    "canary_diff": {
+      "value": -0.011672662491799594,
+      "pass": false
+    },
+    "overall_pass": false
+  }
+}

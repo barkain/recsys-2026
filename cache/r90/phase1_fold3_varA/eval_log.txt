@@ -1,0 +1,22 @@
+[2026-05-27 06:56:21] R90 Phase 1 Variant A eval start. fold=3 model_dir=/content/recsys-2026/cache/r90/phase1_fold3_varA/model dry_run=False
+[2026-05-27 06:56:21] Loading dev payload...
+[2026-05-27 06:56:21]   fold-3 val cases: 1600
+[2026-05-27 06:56:21] Loading catalog...
+[2026-05-27 06:56:25]   47071 tracks
+[2026-05-27 06:56:34] Loading model from /content/recsys-2026/cache/r90/phase1_fold3_varA/model
+[2026-05-27 06:56:35]   bf16=True
+[2026-05-27 06:56:35] Logging eval-query truncation...
+[2026-05-27 06:56:36]   dev queries: P90=334 max=877 trunc@384=0.035
+[2026-05-27 06:56:36] Encoding 47071 tracks (max_seq=256, bs=128)...
+[2026-05-27 06:57:06]   catalog encoded in 29.8 s, shape=(47071, 1024)
+[2026-05-27 06:57:06]   saved -> r84_catalog_embs.fp16.npy
+[2026-05-27 06:57:06] Encoding 1600 dev queries (max_seq=384)...
+[2026-05-27 06:57:11]   queries encoded in 4.3 s, shape=(1600, 1024)
+[2026-05-27 06:57:11] Retrieving top-300...
+[2026-05-27 06:57:11]   retrieval done in 0.3 s
+[2026-05-27 06:57:11] R90 source-alone fold-0 metrics (vs R84 phase0b_fold0 hit@20_h7=0.22):
+[2026-05-27 06:57:11]   hit@20 all = 0.3519
+[2026-05-27 06:57:11]   hit@20 h7 = 0.2650
+[2026-05-27 06:57:11]   hit@30 h7 = 0.3400
+[2026-05-27 06:57:11]   hit@300 h7 = 0.6750
+[2026-05-27 06:57:13] R90 Phase 1 Variant A eval complete.

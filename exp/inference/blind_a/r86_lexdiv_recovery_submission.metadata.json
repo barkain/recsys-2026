@@ -1,0 +1,18 @@
+{
+  "experiment": "R86 LexDiv recovery on R84c (tracks identical, responses only)",
+  "created_at": "2026-05-25T21:37:35.072612",
+  "head_sha": "a597ee23f5bbd670ca6dd626f20fc9abf84a75f9",
+  "model": "claude-opus-4-7",
+  "base_submission": "r84c_selective_submission.zip",
+  "n_cases": 80,
+  "n_responses_regenerated": 12,
+  "n_responses_unchanged": 68,
+  "tracks_identical_to_r84c": true,
+  "r84c_local_distinct2": 0.9346609979861267,
+  "r86_local_distinct2": 0.942230183609494,
+  "distinct2_lift": 0.0075691856233672805,
+  "gate_lift_required": 0.01,
+  "gate_passed": false,
+  "submission_sha256": "a51ca4c8f376ca069063f2d69e7c5f1715b8723dcce34c8baced0727b8263e1f",
+  "submission_path": "exp/inference/blind_a/r86_lexdiv_recovery_submission.zip"
+}

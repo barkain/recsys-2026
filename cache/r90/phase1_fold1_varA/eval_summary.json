@@ -1,0 +1,32 @@
+{
+  "experiment": "R90 Phase 1 Variant A fold-0 eval (R84-schema output)",
+  "fold": 1,
+  "n_val_cases": 1600,
+  "n_h7": 200,
+  "top_k": 300,
+  "source_alone_metrics": {
+    "hit_at_20_all": 0.2994,
+    "hit_at_300_all": 0.6625,
+    "hit_at_20_h7": 0.25,
+    "hit_at_30_h7": 0.32,
+    "hit_at_300_h7": 0.645
+  },
+  "truncation_eval_queries": {
+    "n": 1600,
+    "median": 229,
+    "p90": 343,
+    "p99": 436,
+    "max": 755,
+    "trunc_rate_at_256": 0.395,
+    "trunc_rate_at_384": 0.040625,
+    "trunc_rate_at_512": 0.0025
+  },
+  "feature_schema": [
+    "r84_rank_inv",
+    "r84_presence",
+    "r84_cosine"
+  ],
+  "lists_path": "oof_r84_lists.json",
+  "features_path": "r84_features.npy",
+  "created_at": "2026-05-27T05:23:05.310969"
+}

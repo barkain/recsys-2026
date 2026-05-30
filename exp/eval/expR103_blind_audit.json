@@ -1,0 +1,22 @@
+{
+  "created_at": "2026-05-30T21:04:03.433461",
+  "threshold": 0.6195,
+  "gates_R103a": {
+    "top1_churn_le_30": false,
+    "top20_overlap_ge_16": false
+  },
+  "R103a": {
+    "candidate": "R103a_rowbudget",
+    "n_cases": 80,
+    "n_patched": 60,
+    "top1_churn": 38,
+    "top20_overlap_mean": 12.05
+  },
+  "R103b": {
+    "candidate": "R103b_hybrid",
+    "n_cases": 80,
+    "n_patched": 55,
+    "top1_churn": 21,
+    "top20_overlap_mean": 13.812
+  }
+}
