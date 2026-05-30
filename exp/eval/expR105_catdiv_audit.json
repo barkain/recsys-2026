@@ -1,0 +1,73 @@
+{
+  "experiment": "R105 CatalogDiv tail-rank audit on R92 p11",
+  "created_at": "2026-05-30T23:30:29.678031",
+  "scorer": "exact (scripts/lexdiv_scorer.py)",
+  "baseline": {
+    "catalog_diversity": 0.03014594973550594,
+    "lexical_diversity": 0.8719876944112117,
+    "unique_tracks": 1419,
+    "dup_slots": 181
+  },
+  "variants": {
+    "A": {
+      "window": [
+        20,
+        20
+      ],
+      "n_swapped": 11,
+      "skipped_response_ref": 0,
+      "no_replacement": 0,
+      "replacements_from_deep_pool": 11,
+      "catalog_diversity": 0.030379639268339316,
+      "delta_catdiv": 0.00023368953283337685,
+      "lexical_diversity": 0.8719876944112117,
+      "lex_unchanged": true,
+      "top1_changed": 0,
+      "top5_changed": 0,
+      "top10_changed": 0,
+      "top20_overlap_mean": 19.8625,
+      "valid_20_unique": true,
+      "zip": "exp/inference/blind_a/r105_catdiv_A_submission.zip"
+    },
+    "B": {
+      "window": [
+        16,
+        20
+      ],
+      "n_swapped": 59,
+      "skipped_response_ref": 1,
+      "no_replacement": 0,
+      "replacements_from_deep_pool": 59,
+      "catalog_diversity": 0.031399375411612244,
+      "delta_catdiv": 0.0012534256761063053,
+      "lexical_diversity": 0.8719876944112117,
+      "lex_unchanged": true,
+      "top1_changed": 0,
+      "top5_changed": 0,
+      "top10_changed": 0,
+      "top20_overlap_mean": 19.2625,
+      "valid_20_unique": true,
+      "zip": "exp/inference/blind_a/r105_catdiv_B_submission.zip"
+    },
+    "C": {
+      "window": [
+        11,
+        20
+      ],
+      "n_swapped": 112,
+      "skipped_response_ref": 2,
+      "no_replacement": 0,
+      "replacements_from_deep_pool": 112,
+      "catalog_diversity": 0.03252533406980944,
+      "delta_catdiv": 0.0023793843343035,
+      "lexical_diversity": 0.8719876944112117,
+      "lex_unchanged": true,
+      "top1_changed": 0,
+      "top5_changed": 0,
+      "top10_changed": 0,
+      "top20_overlap_mean": 18.6,
+      "valid_20_unique": true,
+      "zip": "exp/inference/blind_a/r105_catdiv_C_submission.zip"
+    }
+  }
+}
