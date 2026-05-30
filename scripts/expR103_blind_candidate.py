@@ -254,6 +254,12 @@ def main():
                      "c_top1_diff_artist": c0_diff_artist, "c_top1_base_absent": c0_base_absent,
                      "a_margin": a_margin})
 
+    # dump per-blind-row data (base_list, arm-C list, GT-independent signals) for offline
+    # threshold/edit frontier analysis vs R92 p11 (no slot cost)
+    json.dump({"n": len(rows), "rows": rows},
+              open(REPO / "exp/eval/expR103_blind_rows.json", "w"))
+    print(f"{ts()} dumped {len(rows)} blind rows -> expR103_blind_rows.json", flush=True)
+
     # ---- selectors ----
     def sel_rowbudget(r):
         return (r["c_top1_gte_cos"] * (1.0 + r["c_top1_diff_artist"] + 2.0 * r["c_top1_base_absent"])) >= args.threshold
