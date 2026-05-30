@@ -1,0 +1,219 @@
+{
+  "experiment": "R103 \u2014 GTE-7B added source (R84 playbook), 5-fold OOF",
+  "created_at": "2026-05-30T10:54:31.299865",
+  "elapsed_s": 705.9132552146912,
+  "head_sha": "b46005c139ae1a64993b149ce8b9582cf51e35c6",
+  "gte_oof": "/Users/nadavbarkai/dev/recsys-2026/cache/r103_gte/oof_gte_lists.json",
+  "gte_weight": 1.0,
+  "verdict": "PROCEED_TO_BLIND",
+  "feature_stacks": {
+    "A_B": [
+      "rrf_rank_inv",
+      "last_artist_match",
+      "last_tag_jaccard",
+      "query_artist_tok_overlap",
+      "query_title_tok_overlap",
+      "query_meta_tok_overlap",
+      "is_played",
+      "recency_score",
+      "src_a_rank_inv",
+      "src_b_rank_inv",
+      "src_c_rank_inv",
+      "src_d_rank_inv",
+      "src_f_rank_inv",
+      "src_als_rank_inv",
+      "src_a_pres",
+      "src_b_pres",
+      "src_c_pres",
+      "src_d_pres",
+      "src_f_pres",
+      "src_als_pres",
+      "n_sources",
+      "als_dot",
+      "n_history",
+      "popularity",
+      "pool_artist_frac",
+      "pool_artist_count",
+      "source_count_v2",
+      "r21_rank_inv",
+      "r21_presence",
+      "same_album_last1",
+      "same_album_last3",
+      "same_album_any",
+      "album_history_count",
+      "pool_same_album_count",
+      "r84_rank_inv",
+      "r84_presence",
+      "r84_cosine"
+    ],
+    "C": [
+      "rrf_rank_inv",
+      "last_artist_match",
+      "last_tag_jaccard",
+      "query_artist_tok_overlap",
+      "query_title_tok_overlap",
+      "query_meta_tok_overlap",
+      "is_played",
+      "recency_score",
+      "src_a_rank_inv",
+      "src_b_rank_inv",
+      "src_c_rank_inv",
+      "src_d_rank_inv",
+      "src_f_rank_inv",
+      "src_als_rank_inv",
+      "src_a_pres",
+      "src_b_pres",
+      "src_c_pres",
+      "src_d_pres",
+      "src_f_pres",
+      "src_als_pres",
+      "n_sources",
+      "als_dot",
+      "n_history",
+      "popularity",
+      "pool_artist_frac",
+      "pool_artist_count",
+      "source_count_v2",
+      "r21_rank_inv",
+      "r21_presence",
+      "same_album_last1",
+      "same_album_last3",
+      "same_album_any",
+      "album_history_count",
+      "pool_same_album_count",
+      "r84_rank_inv",
+      "r84_presence",
+      "r84_cosine",
+      "gte_rank_inv",
+      "gte_presence",
+      "gte_cosine"
+    ]
+  },
+  "pool_hit": {
+    "base": 4976,
+    "aug": 5315,
+    "delta": 339,
+    "n": 8000
+  },
+  "gte_orthogonal_recall_at30": 204,
+  "metrics": {
+    "all": {
+      "n": 8000,
+      "A_base_r84": 0.22559362296089402,
+      "B_augpool": 0.23089639139446796,
+      "C_r103_gte": 0.23892606243089856,
+      "dC_vs_A": 0.013332439470004537,
+      "dC_vs_B": 0.008029671036430597,
+      "dB_vs_A": 0.00530276843357394
+    },
+    "h7": {
+      "n": 1000,
+      "A_base_r84": 0.2492969920008086,
+      "B_augpool": 0.24790764619110767,
+      "C_r103_gte": 0.24866185329239418,
+      "dC_vs_A": -0.0006351387084144178,
+      "dC_vs_B": 0.0007542071012865137,
+      "dB_vs_A": -0.0013893458097009315
+    },
+    "same_artist": {
+      "n": 2857,
+      "A_base_r84": 0.4457874998032929,
+      "B_augpool": 0.44594097521458886,
+      "C_r103_gte": 0.45288260586502277,
+      "dC_vs_A": 0.007095106061729861,
+      "dC_vs_B": 0.006941630650433905,
+      "dB_vs_A": 0.00015347541129595577
+    },
+    "diff_artist": {
+      "n": 5143,
+      "A_base_r84": 0.10327320566773178,
+      "B_augpool": 0.11143646995288028,
+      "C_r103_gte": 0.12007056085763534,
+      "dC_vs_A": 0.016797355189903565,
+      "dC_vs_B": 0.00863409090475506,
+      "dB_vs_A": 0.008163264285148505
+    }
+  },
+  "metrics_per_fold_h7": {
+    "0": {
+      "n": 200,
+      "A": 0.22558356321921566,
+      "C": 0.22732340887794628,
+      "dC_vs_A": 0.0017398456587306155
+    },
+    "1": {
+      "n": 200,
+      "A": 0.23101349848820252,
+      "C": 0.23746558048908,
+      "dC_vs_A": 0.00645208200087749
+    },
+    "2": {
+      "n": 200,
+      "A": 0.28193469720148856,
+      "C": 0.2809195374390614,
+      "dC_vs_A": -0.0010151597624271647
+    },
+    "3": {
+      "n": 200,
+      "A": 0.20933086062539805,
+      "C": 0.20166352957203224,
+      "dC_vs_A": -0.007667331053365811
+    },
+    "4": {
+      "n": 200,
+      "A": 0.2986223404697382,
+      "C": 0.29593721008385104,
+      "dC_vs_A": -0.0026851303858871356
+    }
+  },
+  "h7_recovery_C_vs_A": {
+    "recovered": 34,
+    "lost": 29,
+    "net": 5
+  },
+  "churn": {
+    "overlap_AC": 13.4895,
+    "top1_churn_per_80": 40.58
+  },
+  "gte_unique_conversion": {
+    "n_unique_all": 204,
+    "converted_top20_all": 79,
+    "n_unique_h7": 20,
+    "converted_top20_h7": 6
+  },
+  "gte_feature_importance_gain": {
+    "gte_rank_inv": 83568.13171553612,
+    "gte_presence": 0.0,
+    "gte_cosine": 67931.8258676529
+  },
+  "gte_feature_importance_frac": 0.08574446654913254,
+  "gates": {
+    "A1": [
+      -0.0006351387084144178,
+      false
+    ],
+    "A2": [
+      [
+        34,
+        29
+      ],
+      true
+    ],
+    "B1": [
+      0.007095106061729861,
+      true
+    ],
+    "B2": [
+      0.016797355189903565,
+      true
+    ],
+    "B3": [
+      13.4895,
+      true
+    ],
+    "gte_used": [
+      0.08574446654913254,
+      true
+    ]
+  }
+}

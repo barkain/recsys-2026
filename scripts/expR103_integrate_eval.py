@@ -156,7 +156,9 @@ def main() -> None:
                     help="RRF weight for GTE source in the augmented pool")
     ap.add_argument("--gte-rank-cap", type=int, default=POOL_K,
                     help="how deep into GTE list to use as an RRF source")
+    ap.add_argument("--out", default=str(OUT_JSON), help="output JSON path")
     args = ap.parse_args()
+    out_json = Path(args.out)
     SW_AUG = {**SW_BASELINE, "GTE": args.gte_weight}
 
     t0 = time.time()
@@ -457,9 +459,9 @@ def main() -> None:
             return o.tolist()
         return float(o)
 
-    OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
-    json.dump(out, open(OUT_JSON, "w"), indent=2, default=_ser)
-    print(f"\n{ts()} Saved {OUT_JSON}")
+    out_json.parent.mkdir(parents=True, exist_ok=True)
+    json.dump(out, open(out_json, "w"), indent=2, default=_ser)
+    print(f"\n{ts()} Saved {out_json}")
 
 
 if __name__ == "__main__":
