@@ -243,8 +243,9 @@ def main():
         # GT-independent selector signals (vs the deployed R92 base)
         c0_gte_cos = gmaps["scores"].get(c0, 0.0) if c0 else 0.0
         c0_present = 1 if (c0 and c0 in gmaps["ranks"]) else 0
-        c0_diff_artist = int(c0 and base_top1 and artist_of(maps, c0) and artist_of(maps, base_top1)
-                             and artist_of(maps, c0) != artist_of(maps, base_top1))
+        c0_art = artist_of(maps, c0) if c0 else ""
+        base_art = artist_of(maps, base_top1) if base_top1 else ""
+        c0_diff_artist = int(bool(c0_art) and bool(base_art) and c0_art != base_art)
         c0_base_absent = int(c0 is not None and c0 not in set(base_list))
         a_margin = float(np.sort(sA)[::-1][0] - np.sort(sA)[::-1][1]) if len(sA) > 1 else 0.0
         rows.append({"sid": sid, "turn": case["turn_number"], "n_prior_music": int(case.get("n_prior_music", len(case.get("music_turns", [])))),
