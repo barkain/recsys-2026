@@ -84,6 +84,10 @@ def prep_env():
     peft import (a stale torchao breaks peft's LoRA dispatch -> import crash). Safe to
     call once at startup; harmless if torchao absent."""
     subprocess.run([sys.executable, "-m", "pip", "install", "-q", "peft"], check=False)
+    # GTE-Qwen2 remote code imports transformers.models.qwen2.tokenization_qwen2_fast,
+    # which was REMOVED in transformers 5.0 (Colab now ships 5.0). Pin to the known-good
+    # 4.57.6 so the remote tokenizer/model code loads.
+    subprocess.run([sys.executable, "-m", "pip", "install", "-q", "transformers==4.57.6"], check=False)
     subprocess.run([sys.executable, "-m", "pip", "uninstall", "-y", "-q", "torchao"], check=False)
     # torchvision (even the torch-matched wheel) can fail to register its C++ ops on some
     # Colab torch builds -> transformers' model loader crashes ("operator torchvision::nms
