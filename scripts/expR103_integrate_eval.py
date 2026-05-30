@@ -341,6 +341,8 @@ def main() -> None:
             c_top1_gte_present = float(c["feats_C"][cidx0, 38]) if cidx0 >= 0 else 0.0
             c_top1_gte_cos = float(c["feats_C"][cidx0, 39]) if cidx0 >= 0 else 0.0
             c_top3_gte = int(sum(c["feats_C"][int(oC[k]), 38] for k in range(min(3, len(oC)))))
+            # production (arm A) top-1 vs top-2 score gap = confidence margin (GT-independent)
+            a_margin = float(sA[int(oA[0])] - sA[int(oA[1])]) if len(oA) > 1 else 0.0
 
             rec = {
                 "case_idx": i, "fold": fk,
@@ -356,8 +358,17 @@ def main() -> None:
                 "c_top1_gte_present": c_top1_gte_present,
                 "c_top1_gte_cos": c_top1_gte_cos,
                 "c_top3_gte": c_top3_gte,
+                "a_margin": a_margin,
             }
             if args.dump_percase:
+                a0 = topA[0] if topA else None
+                c0 = topC[0] if topC else None
+                a0_art = maps["track_artist"].get(a0, "") if a0 else ""
+                c0_art = maps["track_artist"].get(c0, "") if c0 else ""
+                # GT-independent: does C's top-1 differ in artist from base top-1, and is it
+                # absent from the base top-20 (an orthogonal surfaced candidate)?
+                rec["c_top1_diff_artist"] = int(bool(a0_art) and bool(c0_art) and a0_art != c0_art)
+                rec["c_top1_base_absent"] = int(c0 is not None and c0 not in set(topA))
                 rec["topA"] = topA; rec["topC"] = topC; rec["gt"] = c["gt"]
             results.append(rec)
         del lrA, lrB, lrC
