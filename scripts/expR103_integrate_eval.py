@@ -157,6 +157,9 @@ def main() -> None:
     ap.add_argument("--gte-rank-cap", type=int, default=POOL_K,
                     help="how deep into GTE list to use as an RRF source")
     ap.add_argument("--out", default=str(OUT_JSON), help="output JSON path")
+    ap.add_argument("--dump-percase", action="store_true",
+                    help="also dump per-case A/C records + GT-independent GTE signals "
+                         "(for offline selective-deployment design)")
     args = ap.parse_args()
     out_json = Path(args.out)
     SW_AUG = {**SW_BASELINE, "GTE": args.gte_weight}
@@ -332,7 +335,14 @@ def main() -> None:
             topA = [pb[int(j)] for j in oA[:TOP_K]]
             topC = [pa[int(j)] for j in oC[:TOP_K]]
 
-            results.append({
+            # GT-INDEPENDENT signals on arm C's top of ranking (for selective rules):
+            # does C promote GTE-surfaced candidates? cols 37/38/39 = gte rank_inv/presence/cosine
+            cidx0 = int(oC[0]) if len(oC) else -1
+            c_top1_gte_present = float(c["feats_C"][cidx0, 38]) if cidx0 >= 0 else 0.0
+            c_top1_gte_cos = float(c["feats_C"][cidx0, 39]) if cidx0 >= 0 else 0.0
+            c_top3_gte = int(sum(c["feats_C"][int(oC[k]), 38] for k in range(min(3, len(oC)))))
+
+            rec = {
                 "case_idx": i, "fold": fk,
                 "n_prior_music": int(cases[i]["n_prior_music"]),
                 "same_artist": same_artist_case(cases[i], maps["track_artist"]),
@@ -343,7 +353,13 @@ def main() -> None:
                 "A_in20": 0 < rA <= TOP_K, "B_in20": 0 < rB <= TOP_K, "C_in20": 0 < rC <= TOP_K,
                 "overlap_AC": len(set(topA) & set(topC)),
                 "top1_AC_eq": int(bool(topA) and bool(topC) and topA[0] == topC[0]),
-            })
+                "c_top1_gte_present": c_top1_gte_present,
+                "c_top1_gte_cos": c_top1_gte_cos,
+                "c_top3_gte": c_top3_gte,
+            }
+            if args.dump_percase:
+                rec["topA"] = topA; rec["topC"] = topC; rec["gt"] = c["gt"]
+            results.append(rec)
         del lrA, lrB, lrC
 
     # --- Aggregate ---
@@ -462,6 +478,12 @@ def main() -> None:
     out_json.parent.mkdir(parents=True, exist_ok=True)
     json.dump(out, open(out_json, "w"), indent=2, default=_ser)
     print(f"\n{ts()} Saved {out_json}")
+
+    if args.dump_percase:
+        pc_path = out_json.with_name(out_json.stem + "_percase.json")
+        json.dump({"weight": args.gte_weight, "cap": args.gte_rank_cap,
+                   "n": len(results), "results": results}, open(pc_path, "w"), default=_ser)
+        print(f"{ts()} Dumped per-case ({len(results)}) -> {pc_path}")
 
 
 if __name__ == "__main__":
