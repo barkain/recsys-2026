@@ -1,0 +1,219 @@
+{
+  "experiment": "R103 \u2014 GTE-7B added source (R84 playbook), 5-fold OOF",
+  "created_at": "2026-06-01T22:08:05.526622",
+  "elapsed_s": 1232.7325942516327,
+  "head_sha": "0ab10e05f89922709cff1d3f55b0018b80ac41ca",
+  "gte_oof": "cache/r400/r401_as_gte.json",
+  "gte_weight": 1.0,
+  "verdict": "ARCHIVE_NO_LIFT",
+  "feature_stacks": {
+    "A_B": [
+      "rrf_rank_inv",
+      "last_artist_match",
+      "last_tag_jaccard",
+      "query_artist_tok_overlap",
+      "query_title_tok_overlap",
+      "query_meta_tok_overlap",
+      "is_played",
+      "recency_score",
+      "src_a_rank_inv",
+      "src_b_rank_inv",
+      "src_c_rank_inv",
+      "src_d_rank_inv",
+      "src_f_rank_inv",
+      "src_als_rank_inv",
+      "src_a_pres",
+      "src_b_pres",
+      "src_c_pres",
+      "src_d_pres",
+      "src_f_pres",
+      "src_als_pres",
+      "n_sources",
+      "als_dot",
+      "n_history",
+      "popularity",
+      "pool_artist_frac",
+      "pool_artist_count",
+      "source_count_v2",
+      "r21_rank_inv",
+      "r21_presence",
+      "same_album_last1",
+      "same_album_last3",
+      "same_album_any",
+      "album_history_count",
+      "pool_same_album_count",
+      "r84_rank_inv",
+      "r84_presence",
+      "r84_cosine"
+    ],
+    "C": [
+      "rrf_rank_inv",
+      "last_artist_match",
+      "last_tag_jaccard",
+      "query_artist_tok_overlap",
+      "query_title_tok_overlap",
+      "query_meta_tok_overlap",
+      "is_played",
+      "recency_score",
+      "src_a_rank_inv",
+      "src_b_rank_inv",
+      "src_c_rank_inv",
+      "src_d_rank_inv",
+      "src_f_rank_inv",
+      "src_als_rank_inv",
+      "src_a_pres",
+      "src_b_pres",
+      "src_c_pres",
+      "src_d_pres",
+      "src_f_pres",
+      "src_als_pres",
+      "n_sources",
+      "als_dot",
+      "n_history",
+      "popularity",
+      "pool_artist_frac",
+      "pool_artist_count",
+      "source_count_v2",
+      "r21_rank_inv",
+      "r21_presence",
+      "same_album_last1",
+      "same_album_last3",
+      "same_album_any",
+      "album_history_count",
+      "pool_same_album_count",
+      "r84_rank_inv",
+      "r84_presence",
+      "r84_cosine",
+      "gte_rank_inv",
+      "gte_presence",
+      "gte_cosine"
+    ]
+  },
+  "pool_hit": {
+    "base": 4976,
+    "aug": 5055,
+    "delta": 79,
+    "n": 8000
+  },
+  "gte_orthogonal_recall_at30": 72,
+  "metrics": {
+    "all": {
+      "n": 8000,
+      "A_base_r84": 0.22559362296089402,
+      "B_augpool": 0.22689366410615927,
+      "C_r103_gte": 0.22870603076351462,
+      "dC_vs_A": 0.0031124078026205926,
+      "dC_vs_B": 0.0018123666573553465,
+      "dB_vs_A": 0.001300041145265246
+    },
+    "h7": {
+      "n": 1000,
+      "A_base_r84": 0.2492969920008086,
+      "B_augpool": 0.24410290829506345,
+      "C_r103_gte": 0.24346175377787754,
+      "dC_vs_A": -0.005835238222931055,
+      "dC_vs_B": -0.0006411545171859101,
+      "dB_vs_A": -0.005194083705745145
+    },
+    "same_artist": {
+      "n": 2857,
+      "A_base_r84": 0.4457874998032929,
+      "B_augpool": 0.4472772800149773,
+      "C_r103_gte": 0.4480499240273715,
+      "dC_vs_A": 0.002262424224078574,
+      "dC_vs_B": 0.0007726440123941858,
+      "dB_vs_A": 0.0014897802116843883
+    },
+    "diff_artist": {
+      "n": 5143,
+      "A_base_r84": 0.10327320566773178,
+      "B_augpool": 0.10446784441891582,
+      "C_r103_gte": 0.10685778984287699,
+      "dC_vs_A": 0.0035845841751452057,
+      "dC_vs_B": 0.0023899454239611623,
+      "dB_vs_A": 0.0011946387511840434
+    }
+  },
+  "metrics_per_fold_h7": {
+    "0": {
+      "n": 200,
+      "A": 0.22558356321921566,
+      "C": 0.21676712471901735,
+      "dC_vs_A": -0.00881643850019831
+    },
+    "1": {
+      "n": 200,
+      "A": 0.23101349848820252,
+      "C": 0.23610251415892272,
+      "dC_vs_A": 0.005089015670720204
+    },
+    "2": {
+      "n": 200,
+      "A": 0.28193469720148856,
+      "C": 0.26219902524462985,
+      "dC_vs_A": -0.019735671956858714
+    },
+    "3": {
+      "n": 200,
+      "A": 0.20933086062539805,
+      "C": 0.21704193922071408,
+      "dC_vs_A": 0.007711078595316029
+    },
+    "4": {
+      "n": 200,
+      "A": 0.2986223404697382,
+      "C": 0.28519816554610367,
+      "dC_vs_A": -0.013424174923634513
+    }
+  },
+  "h7_recovery_C_vs_A": {
+    "recovered": 26,
+    "lost": 32,
+    "net": -6
+  },
+  "churn": {
+    "overlap_AC": 16.069,
+    "top1_churn_per_80": 30.9
+  },
+  "gte_unique_conversion": {
+    "n_unique_all": 72,
+    "converted_top20_all": 23,
+    "n_unique_h7": 8,
+    "converted_top20_h7": 0
+  },
+  "gte_feature_importance_gain": {
+    "gte_rank_inv": 27949.718470573425,
+    "gte_presence": 0.0,
+    "gte_cosine": 0.0
+  },
+  "gte_feature_importance_frac": 0.016535663310031173,
+  "gates": {
+    "A1": [
+      -0.005835238222931055,
+      false
+    ],
+    "A2": [
+      [
+        26,
+        32
+      ],
+      false
+    ],
+    "B1": [
+      0.002262424224078574,
+      true
+    ],
+    "B2": [
+      0.0035845841751452057,
+      true
+    ],
+    "B3": [
+      16.069,
+      true
+    ],
+    "gte_used": [
+      0.016535663310031173,
+      true
+    ]
+  }
+}
