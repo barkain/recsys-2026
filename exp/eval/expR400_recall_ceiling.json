@@ -1,0 +1,85 @@
+{
+  "n_cases": 8000,
+  "n_user_in_train_cases": 5896,
+  "n_h7_cases": 1000,
+  "distinct_dev_users": 500,
+  "distinct_train_users": 8591,
+  "(a)_production_union_recall": {
+    "@20": 0.3658,
+    "@100": 0.5807,
+    "@300": 0.7174,
+    "@1000": 0.7174
+  },
+  "(b)_user_history_cf_recall_over_uitrain": {
+    "n_eval": 5896,
+    "@20": 0.0329,
+    "@100": 0.0862,
+    "@300": 0.1498,
+    "@1000": 0.2542
+  },
+  "(b)_user_history_metadata_recall_over_uitrain": {
+    "n_eval": 5896,
+    "@20": 0.0154,
+    "@100": 0.0336,
+    "@300": 0.0472,
+    "@1000": 0.0741
+  },
+  "(b)_user_history_cf_recall_h7": {
+    "n_eval": 737,
+    "@20": 0.0244,
+    "@100": 0.0746,
+    "@300": 0.1343,
+    "@1000": 0.2524
+  },
+  "(b)_user_history_UNIQUE_vs_prod_union300": {
+    "cf_unique@300_absent_from_prod300": 181,
+    "cf_unique@1000_absent_from_prod300": 366,
+    "md_unique@300_absent_from_prod300": 36,
+    "md_unique@1000_absent_from_prod300": 71,
+    "cf_unique@300_as_recall_lift_over_8000": 0.0226,
+    "cf_unique@1000_as_recall_lift_over_8000": 0.0457
+  },
+  "(c)_GT_in_train_history_DIRECT": {
+    "overall_rate_over_8000": 0.0529,
+    "overall_count": 423,
+    "h7_rate_over_h7": 0.045,
+    "h7_count": 45,
+    "user_in_train_rate": 0.0717,
+    "user_in_train_count": "423/5896",
+    "user_NOT_in_train_count": "0/2104",
+    "h7_user_in_train_rate": 0.0611,
+    "h7_user_in_train_count": "45/737"
+  },
+  "(d)_combined_union_recall": {
+    "prod_union_only": {
+      "@300": 0.7174,
+      "@1000": 0.7174
+    },
+    "prod+played_NN(cf)": {
+      "@300": 0.7361,
+      "@1000": 0.7555
+    },
+    "prod+played_NN+user_history(cf)": {
+      "@300": 0.7528,
+      "@1000": 0.7861
+    },
+    "combined_h7": {
+      "@300": 0.724,
+      "@1000": 0.765
+    }
+  },
+  "artist_buckets_prod_union@300": {
+    "same_artist": {
+      "recall": 0.98,
+      "n": 2857
+    },
+    "diff_artist": {
+      "recall": 0.5715,
+      "n": 5143
+    },
+    "h7": {
+      "recall": 0.687,
+      "n": 1000
+    }
+  }
+}

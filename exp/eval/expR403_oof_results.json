@@ -1,0 +1,307 @@
+{
+  "experiment": "R400 Model B \u2014 per-user taste prior as ranker features, 5-fold OOF",
+  "created_at": "2026-06-01T21:05:27.193369",
+  "elapsed_s": 666.7625048160553,
+  "head_sha": "ef5bccab2ce4f824b037aaa940245783500a7ee2",
+  "verdict": "PROCEED_TO_BLIND",
+  "feature_stacks": {
+    "A": [
+      "rrf_rank_inv",
+      "last_artist_match",
+      "last_tag_jaccard",
+      "query_artist_tok_overlap",
+      "query_title_tok_overlap",
+      "query_meta_tok_overlap",
+      "is_played",
+      "recency_score",
+      "src_a_rank_inv",
+      "src_b_rank_inv",
+      "src_c_rank_inv",
+      "src_d_rank_inv",
+      "src_f_rank_inv",
+      "src_als_rank_inv",
+      "src_a_pres",
+      "src_b_pres",
+      "src_c_pres",
+      "src_d_pres",
+      "src_f_pres",
+      "src_als_pres",
+      "n_sources",
+      "als_dot",
+      "n_history",
+      "popularity",
+      "pool_artist_frac",
+      "pool_artist_count",
+      "source_count_v2",
+      "r21_rank_inv",
+      "r21_presence",
+      "same_album_last1",
+      "same_album_last3",
+      "same_album_any",
+      "album_history_count",
+      "pool_same_album_count",
+      "r84_rank_inv",
+      "r84_presence",
+      "r84_cosine"
+    ],
+    "D": [
+      "rrf_rank_inv",
+      "last_artist_match",
+      "last_tag_jaccard",
+      "query_artist_tok_overlap",
+      "query_title_tok_overlap",
+      "query_meta_tok_overlap",
+      "is_played",
+      "recency_score",
+      "src_a_rank_inv",
+      "src_b_rank_inv",
+      "src_c_rank_inv",
+      "src_d_rank_inv",
+      "src_f_rank_inv",
+      "src_als_rank_inv",
+      "src_a_pres",
+      "src_b_pres",
+      "src_c_pres",
+      "src_d_pres",
+      "src_f_pres",
+      "src_als_pres",
+      "n_sources",
+      "als_dot",
+      "n_history",
+      "popularity",
+      "pool_artist_frac",
+      "pool_artist_count",
+      "source_count_v2",
+      "r21_rank_inv",
+      "r21_presence",
+      "same_album_last1",
+      "same_album_last3",
+      "same_album_any",
+      "album_history_count",
+      "pool_same_album_count",
+      "r84_rank_inv",
+      "r84_presence",
+      "r84_cosine",
+      "direct_in_history",
+      "user_taste_cfbpr_cos",
+      "user_taste_meta_cos",
+      "played_nn_cfbpr_cos",
+      "user_in_train"
+    ]
+  },
+  "userh_features": [
+    "direct_in_history",
+    "user_taste_cfbpr_cos",
+    "user_taste_meta_cos",
+    "played_nn_cfbpr_cos",
+    "user_in_train"
+  ],
+  "pool_hit": {
+    "base": 4976,
+    "n": 8000,
+    "frac": 0.622
+  },
+  "gt_in_user_train_history": 423,
+  "cases_user_in_train": 5896,
+  "metrics": {
+    "all": {
+      "n": 8000,
+      "A_base": 0.22559362296089402,
+      "D_userh": 0.22836430681545322,
+      "dD_vs_A": 0.002770683854559197
+    },
+    "h7": {
+      "n": 1000,
+      "A_base": 0.2492969920008086,
+      "D_userh": 0.24662933099259077,
+      "dD_vs_A": -0.002667661008217831
+    },
+    "same_artist": {
+      "n": 2857,
+      "A_base": 0.4457874998032929,
+      "D_userh": 0.4471851416626069,
+      "dD_vs_A": 0.0013976418593140139
+    },
+    "diff_artist": {
+      "n": 5143,
+      "A_base": 0.10327320566773178,
+      "D_userh": 0.10680663130343336,
+      "dD_vs_A": 0.0035334256357015814
+    },
+    "user_in_train": {
+      "n": 5896,
+      "A_base": 0.22549417582366868,
+      "D_userh": 0.22737642845958694,
+      "dD_vs_A": 0.0018822526359182634
+    },
+    "user_not_in_train": {
+      "n": 2104,
+      "A_base": 0.2258723018207234,
+      "D_userh": 0.23113261992675915,
+      "dD_vs_A": 0.0052603181060357496
+    }
+  },
+  "metrics_by_history_bucket": {
+    "0": {
+      "n": 2104,
+      "A_base": 0.2258723018207234,
+      "D_userh": 0.23113261992675915,
+      "dD_vs_A": 0.0052603181060357496
+    },
+    "1-8": {
+      "n": 368,
+      "A_base": 0.201915698112371,
+      "D_userh": 0.20493130043786986,
+      "dD_vs_A": 0.003015602325498856
+    },
+    "9-32": {
+      "n": 1344,
+      "A_base": 0.23692402037118812,
+      "D_userh": 0.23775028532274473,
+      "dD_vs_A": 0.0008262649515566045
+    },
+    "33-64": {
+      "n": 1576,
+      "A_base": 0.23398076652602093,
+      "D_userh": 0.23807866192564814,
+      "dD_vs_A": 0.0040978953996272105
+    },
+    "65+": {
+      "n": 2608,
+      "A_base": 0.21780257374505832,
+      "D_userh": 0.218730195156441,
+      "dD_vs_A": 0.0009276214113826675
+    }
+  },
+  "metrics_per_fold_h7": {
+    "0": {
+      "n": 200,
+      "A": 0.22558356321921566,
+      "D": 0.22603772571517367,
+      "dD_vs_A": 0.00045416249595800484
+    },
+    "1": {
+      "n": 200,
+      "A": 0.23101349848820252,
+      "D": 0.23774923075201485,
+      "dD_vs_A": 0.006735732263812327
+    },
+    "2": {
+      "n": 200,
+      "A": 0.28193469720148856,
+      "D": 0.2711355103556989,
+      "dD_vs_A": -0.010799186845789677
+    },
+    "3": {
+      "n": 200,
+      "A": 0.20933086062539805,
+      "D": 0.21743262522579876,
+      "dD_vs_A": 0.008101764600400713
+    },
+    "4": {
+      "n": 200,
+      "A": 0.2986223404697382,
+      "D": 0.2807915629142678,
+      "dD_vs_A": -0.017830777555470356
+    }
+  },
+  "recovery_D_vs_A": {
+    "recovered_all": 213,
+    "lost_all": 155,
+    "net_all": 58,
+    "recovered_h7": 30,
+    "lost_h7": 21,
+    "net_h7": 9
+  },
+  "churn": {
+    "overlap_AD": 16.426125,
+    "top1_churn_per_80": 30.700000000000003
+  },
+  "userh_feature_importance_gain": {
+    "direct_in_history": 5914.391077041626,
+    "user_taste_cfbpr_cos": 40097.36218500137,
+    "user_taste_meta_cos": 25989.61866903305,
+    "played_nn_cfbpr_cos": 43105.037199258804,
+    "user_in_train": 2408.701930999756
+  },
+  "userh_feature_importance_frac": 0.06848528114773635,
+  "all_feature_importance_gain": {
+    "rrf_rank_inv": 137324.65844655037,
+    "last_artist_match": 1150.2867212295532,
+    "last_tag_jaccard": 27428.833778858185,
+    "query_artist_tok_overlap": 693.5063796043396,
+    "query_title_tok_overlap": 9361.329963445663,
+    "query_meta_tok_overlap": 12964.792163133621,
+    "is_played": 25612.415316820145,
+    "recency_score": 49846.18677401543,
+    "src_a_rank_inv": 13908.684228181839,
+    "src_b_rank_inv": 26734.413335323334,
+    "src_c_rank_inv": 39642.476546764374,
+    "src_d_rank_inv": 11671.273900985718,
+    "src_f_rank_inv": 17879.473905563354,
+    "src_als_rank_inv": 32509.085305452347,
+    "src_a_pres": 19.201669692993164,
+    "src_b_pres": 4.990019798278809,
+    "src_c_pres": 0.0,
+    "src_d_pres": 0.0,
+    "src_f_pres": 0.0,
+    "src_als_pres": 0.0,
+    "n_sources": 4874.150273799896,
+    "als_dot": 52222.58253669739,
+    "n_history": 20551.36405658722,
+    "popularity": 204939.266528368,
+    "pool_artist_frac": 26790.558396100998,
+    "pool_artist_count": 0.0,
+    "source_count_v2": 0.0,
+    "r21_rank_inv": 32158.420803546906,
+    "r21_presence": 0.0,
+    "same_album_last1": 3949.1243891716003,
+    "same_album_last3": 1513.1571431159973,
+    "same_album_any": 41352.6622877121,
+    "album_history_count": 18461.493944644928,
+    "pool_same_album_count": 25023.526410102844,
+    "r84_rank_inv": 54831.33403325081,
+    "r84_presence": 0.0,
+    "r84_cosine": 704983.4119651318,
+    "direct_in_history": 5914.391077041626,
+    "user_taste_cfbpr_cos": 40097.36218500137,
+    "user_taste_meta_cos": 25989.61866903305,
+    "played_nn_cfbpr_cos": 43105.037199258804,
+    "user_in_train": 2408.701930999756
+  },
+  "deltas": {
+    "all": 0.002770683854559197,
+    "h7": -0.002667661008217831,
+    "same_artist": 0.0013976418593140139,
+    "diff_artist": 0.0035334256357015814
+  },
+  "gates": {
+    "A1": [
+      -0.002667661008217831,
+      false
+    ],
+    "A2": [
+      [
+        30,
+        21
+      ],
+      true
+    ],
+    "B1": [
+      0.0013976418593140139,
+      true
+    ],
+    "B2": [
+      0.0035334256357015814,
+      true
+    ],
+    "B3": [
+      16.426125,
+      true
+    ],
+    "userh_used": [
+      0.06848528114773635,
+      true
+    ]
+  }
+}
