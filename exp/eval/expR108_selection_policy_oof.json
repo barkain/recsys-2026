@@ -1,0 +1,29 @@
+{
+  "metrics": {
+    "nDCG@20": 0.2178643955399139,
+    "base_nDCG@20": 0.3158754882808494,
+    "dNDCG_all": -0.09801109274093547,
+    "dNDCG_same": -0.1600534760311899,
+    "dNDCG_diff": -0.06354578279338403,
+    "dNDCG_h7": -0.1107826989076264,
+    "hit@1": 0.1135,
+    "hit@5": 0.24175,
+    "hit@20": 0.37375,
+    "recall@20": 0.36575,
+    "recall@100": 0.58075,
+    "recall@300": 0.717375,
+    "churn_top1_per80": 38.78,
+    "overlap@20": 8.733,
+    "n_same": 2857,
+    "n_diff": 5143,
+    "n_h7": 1000,
+    "all_gates_pass": false
+  },
+  "gates": {
+    "same_artist_ge_-005": false,
+    "diff_artist_ge_-005": false,
+    "churn_top1_le_30/80": false,
+    "overlap20_ge_16": false,
+    "ndcg_lift_positive": false
+  }
+}
