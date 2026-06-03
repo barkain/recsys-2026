@@ -1,0 +1,7 @@
+{
+  "best_tag": "gap3.0 rcap50 pos3 m1",
+  "best_dNDCG": -0.0016723964357431324,
+  "n_recoverable": 1980,
+  "rec_top1": 17,
+  "rec_top3": 45
+}
