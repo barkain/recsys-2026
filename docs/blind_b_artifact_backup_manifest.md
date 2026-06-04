@@ -17,9 +17,9 @@ packages them for off-machine backup to Google Drive.
 | `r54_phase3_fold0_model_and_embs.tar.gz` | 538.6 MB | 16 | `6c599f8d4f02ea57f2fc` | `cache/r54/phase3_smoke/fold_0/` (model + track_embs.npy + oof_lists) |
 | `r54_phase3_lr_support.tar.gz` | 36.4 MB | 4 | `3c48207b2ae64fbd3286` | R54c LR (`r54_phase3_lr_model.txt`) + `als.npz` + `payload_maps.pkl` + `track_pop.json` |
 | `production_retrieval_lists.tar.gz` | 2.7 MB | 5 | `d610fb9eebc7d1b08fb1` | `cache/r54_production/` + `cache/r84_production/` + `cache/blind_a/source_cache.pkl` |
-| `r21_production.tar.gz` | 815.4 MB | 32 | `b572f493583f49ba7f3e` | `cache/r21_production/` (R21/R39 source, 1 of 8) |
+| `r21_production.tar.gz` | 1.81 GB | 32 | `b117dd289e0fb740ee77` | `cache/r21_production/` (R21/R39 source, 1 of 8) |
 
-Total local: ~1.4 GB. Full sha256 in `SHA256SUMS.txt`.
+Total local: ~2.4 GB. Full sha256 in `SHA256SUMS.txt`.
 
 ## Already on Drive (NOT re-duplicated)
 

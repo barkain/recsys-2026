@@ -1,0 +1,47 @@
+{
+  "backup_name": "recsys_critical_artifacts_2026_06",
+  "created": "2026-06-04",
+  "purpose": "Off-machine backup of single-copy production / Blind-B-critical cache artifacts (Mac disk is tight; these are not in git and not otherwise duplicated).",
+  "drive_target": "MyDrive/recsys_critical_artifacts_2026_06/",
+  "local_staging": ".scratch/backup_critical_artifacts_2026_06/",
+  "restore": "Extract each tarball at the repo root: `tar -xzf <name>.tar.gz` (paths are repo-relative, e.g. cache/...).",
+  "tarballs": [
+    {
+      "name": "r54_phase3_fold0_model_and_embs.tar.gz",
+      "bytes": 538602591,
+      "sha256": "6c599f8d4f02ea57f2fc7b20395cca9db345b47f825e0b807d8109e8ed2f8769",
+      "entries": 16,
+      "sources": ["cache/r54/phase3_smoke/fold_0/ (model/, track_embs.npy, oof_lists.json, heartbeat.json)"],
+      "why": "Fold 0 of the R54 phase-3 5-fold ensemble retriever. SINGLE-COPY (folds 1-4 are separately backed up as r54_phase3_full_folds1_4.zip)."
+    },
+    {
+      "name": "r54_phase3_lr_support.tar.gz",
+      "bytes": 36372517,
+      "sha256": "3c48207b2ae64fbd328638a28da62e51ad5d71ddb66df92290095fb5ad13e270",
+      "entries": 4,
+      "sources": ["cache/r54_phase3_lr_model.txt", "cache/r54_phase3_als.npz", "cache/r54_phase3_payload_maps.pkl", "cache/r54_phase3_track_pop.json"],
+      "why": "The R54c LightGBM ranker + ALS factors + payload maps + track popularity. The ranker is irreplaceable without a full retrain."
+    },
+    {
+      "name": "production_retrieval_lists.tar.gz",
+      "bytes": 2719450,
+      "sha256": "d610fb9eebc7d1b08fb19a6096c6a7d9469627b0f039eac0252c36d6633d76b3",
+      "entries": 5,
+      "sources": ["cache/r54_production/", "cache/r84_production/", "cache/blind_a/source_cache.pkl"],
+      "why": "Production R54/R84 blind retrieval lists (Blind-A) + the Blind-A source cache used for replay."
+    },
+    {
+      "name": "r21_production.tar.gz",
+      "bytes": 1809721371,
+      "sha256": "b117dd289e0fb740ee7728609263611dbe876dbcb43bc0a09554ff86ae69a223",
+      "entries": 32,
+      "sources": ["cache/r21_production/ (R21/R39 OOF + production retrieval index/lists)"],
+      "why": "R21/R39 retriever source (1 of 8 production sources; feeds the R54 LR and ensemble). 2.1GB on disk, compressed to ~1.81GB (npy index data compresses poorly)."
+    }
+  ],
+  "already_on_drive": {
+    "r54_phase3_full_folds1_4.zip": "Folds 1-4 of the R54 phase-3 ensemble (model.safetensors + track_embs.npy + oof_lists.json each). Restored + validated 2026-06-04 (reproduces Blind-A R54 lists 80/80 identical). NOT re-duplicated here.",
+    "r54_phase3_artifacts.zip": "Earlier R54 phase-3 artifact bundle (also on Drive)."
+  },
+  "total_local_bytes": 2387415929
+}
