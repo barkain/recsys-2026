@@ -113,9 +113,16 @@ for license/privacy reasons — worse on every axis.
   **source-data access, not modeling skill.**
 - We hold the **composite-optimal profile** (best LexDiv + tied-best LLM). R106 A-clean (0.6377)
   is a legitimately strong, defensible position.
+- **Do NOT chase the leakage** via unofficial LFM-2b mirrors or de-anonymization: reconstructing
+  test candidate pools is effectively answer-key leakage and likely disqualifying if audited,
+  even though the rules don't explicitly forbid external data. Top nDCG here may reflect
+  source-session access, not better recommender modeling.
 - **Stop the nDCG chase** (conclusively closed) and **focus on Blind-B** (the final ranking, Jun
-  23). Known hard blocker: **R54 phase-3 fold 1–4 model weights are missing** and must be
-  retrained so the production pipeline reproduces R106 bit-for-bit on the Blind-B set.
+  23). The prior hard blocker — R54 phase-3 fold 1–4 model weights — is **RESOLVED (2026-06-04)**:
+  the weights were restored from a Drive backup (`r54_phase3_full_folds1_4.zip`, not lost), and the
+  ensemble now reproduces the Blind-A R54 lists **80/80 sessions bit-for-bit**. All 5 ensemble folds
+  are present locally and backed up off-machine (see `docs/blind_b_artifact_backup_manifest.md`).
+  Blind-B replay is a one-line run: `expR54_phase3_ensemble_blind.py --blind-name blind_b`.
 
 ## 8. Reusable assets from this investigation
 - `scripts/judge_gemini_pro.py`, `scripts/judge_gemini_pairwise.py` — Gemini-2.5-Pro judges
