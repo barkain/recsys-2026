@@ -1,12 +1,14 @@
 {
   "experiment": "R84c blind replay tracks-only (blind_a)",
-  "created_at": "2026-05-26T21:10:50.222230",
-  "head_sha": "f7783699e2b1eaddab0fc5351aa2641ae8a48287",
+  "created_at": "2026-05-31T07:37:08.113402",
+  "head_sha": "3b8d966bdae42f4d0e59c70fef7bc0a364cdf9e6",
   "blind_name": "blind_a",
   "n_cases": 80,
+  "route_low": 0.5,
+  "route_high": 2.0,
   "n_routed_r84": 48,
   "n_routed_r54": 32,
   "routed_r84_rate": 0.6,
   "track_hash_sha256": "cfcda2ae309f79e54d59ec527361426314305d9bf2a25b7484beb6487fda0703",
-  "elapsed_s": 7.28397798538208
+  "elapsed_s": 10.744972944259644
 }
