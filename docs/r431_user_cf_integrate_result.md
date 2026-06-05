@@ -74,8 +74,41 @@ All three agree: **recall-positive, precision-poor, non-converting.**
 - **Production remains R106 A-clean (0.6377).** No more Mac integration sweeps; no weight sweep
   (w=1.0 is clearly negative, so per spec we do not sweep {0.15,0.3,0.5}).
 
+## R431b — pool-admission-only (Arm B) + GT-independent selective rule (2026-06-05)
+
+Arm B (user-cf expands the pool, LR ranks with the existing 37 features — no user-cf features)
+was the cleaner half of R431 (ΔB-vs-A h7 +0.0042 vs C's +0.0004). R431b recomputed only arms
+A/B (`scripts/expR431b_pool_only_selective.py`, 5-fold OOF, reproduced ΔB-A all +0.0013 / h7
++0.0042 exactly), dumped per-case A/B nDCG + **B-side GT-independent signals**, and searched for
+a selective deployment that keeps B's wins (`scripts/expR431b_rule_search.py`).
+
+**The oracle reframes it: this is NOT a ceiling problem — it is a discoverability problem.**
+
+| selection | dAll | dH7 | churn/80 | note |
+|---|---|---|---|---|
+| always-B | +0.0013 | +0.0042 | 28.4 | baseline B |
+| **ORACLE** (keep ndB>ndA) | **+0.0236** | **+0.0252** | 5.2 | the wins exist, well above targets |
+| best GT-indep rule (dAll) | +0.0014 | +0.0042 | 28.4 | = always-B; selection adds nothing |
+| `has_ucf_in_b20` (cleanest) | +0.0010 | +0.0039 | 2.6 | safe but 4× short of +0.004 |
+| target | ≥+0.004 | ≥+0.006 | safe | — |
+
+The oracle (1143 cases where B truly beats A) reaches **+0.0236 all / +0.0252 h7** — comfortably
+above both submit targets. But **no GT-independent signal locates those cases.** Every rule built
+on user-cf cosine / user-cf rank / presence / production confidence margin (`a_margin`) either
+collapses to always-B (+0.0013, churn 28) or cuts churn while shrinking the gain proportionally
+(+0.0002–0.0010) — it never *concentrates* the wins. always-B's +0.0042 h7 comes with 28.4/80
+churn and slightly negative same-artist: the unsafe, non-transferable R90/R107 profile.
+
+**Verdict: FAIL → ARCHIVE R431b.** The cases where user-cf admission helps are, at submit time,
+indistinguishable from where it hurts — the fast-policy 0.06%-precision wall, confirmed one level
+deeper (after LR re-ranking, not just raw injection). **Public user embeddings are fully closed
+for nDCG.** Production remains R106 A-clean (0.6377). No selective user-cf candidate is built.
+
 ### Artifacts
-- `exp/eval/expR431_user_cf_integrate_w1.json` — full metrics (this run)
+- `exp/eval/expR431_user_cf_integrate_w1.json` — full 3-arm (A/B/C) metrics
+- `exp/eval/expR431b_pool_only.json` + `_percase.json` — R431b A/B aggregate + per-case dump
+- `exp/eval/expR431b_rule_search.json` — selective-rule search (oracle + all rules)
+- `scripts/expR431b_pool_only_selective.py`, `scripts/expR431b_rule_search.py`
 - `exp/eval/expR180_user_embedding_audit.json` — recall audit
 - `exp/eval/expR431_fast_policy_eval.json`, `docs/r431_user_cf_fast_policy.md` — fast policy
 - `cache/r431_user_cf/user_cf_oof_lists.json` — user-cf source lists (119 MB, local only)
