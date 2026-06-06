@@ -124,3 +124,28 @@ beats R106 (promote). If 4.85 again, the reordered list itself draws 4.85 (judge
 stable); archive THIS package but keep R432 as the source for scaled reorder-only nDCG candidates
 (reorder ranks 2-20 on more cases, top-1 + responses fixed). Leaderboard keeps best per phase, so a
 repeat 4.85 doesn't hurt standing. Production stays R106 A-clean (0.6377) until a draw beats it.
+
+---
+
+## R432 CLOSED — diffuse LLM penalty on any list change (2026-06-06)
+
+Final probe R432s (drop the 2 incoherent reorders, keep 6 coherent reorder-only patches):
+
+| package | #changes | nDCG | LLM | composite |
+|---|---|---|---|---|
+| R106 production | 0 | 0.5073 | 4.90 | 0.6377 |
+| full goal-only | 10 | 0.5075 | 4.85 | 0.6342 |
+| reorders-only | 8 | 0.5090 | 4.85 | 0.6349 |
+| R432s targeted (6 coherent) | 6 | **0.5092** | 4.85 | 0.6349 |
+
+**Decisive:** R106's lists score LLM 4.90; **any** perturbation — 6, 8, or 10 changes, even coherent
+reorders that keep top-1 and responses byte-identical — scores **4.85**. The −0.05 LLM penalty
+(−0.0038 composite) is **diffuse** (triggered by any list change, not localized to incoherent rows)
+and exceeds every nDCG gain achieved (+0.0019 max = +0.0010 composite). **Reordering to improve nDCG
+is always a net composite loss.**
+
+**Conclusion: R432 is fully closed.** R106 A-clean (0.6377) sits at a joint nDCG×LLM optimum on the
+provided data — perturbing the recommendation lists in any direction loses more on the (deterministic,
+full-list-reading) LLM judge than it gains on nDCG. This is the cleanest evidence yet that nDCG and
+LLM are coupled, and that our composite is at its ceiling under the allowed data. Remaining headroom:
+Blind-B (final ranking, Jun 23). Production unchanged: **R106 A-clean (0.6377)**.
