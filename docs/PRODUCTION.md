@@ -1,54 +1,72 @@
 # Blind-A Production — Source of Truth
 
-Last updated: 2026-05-29
+Last updated: 2026-06-06
 
-## Current production: R92 p11
+> **2026-06-06:** R431 (public user-CF) and R432 (goal-aware retrieval) both explored and CLOSED —
+> real nDCG signal but non-converting on composite (R432 reorders gave +0.0019 blind nDCG yet every
+> variant drew LLM 4.85 vs R106's 4.90; the goal-reorders move off R106's LLM-coherence optimum).
+> nDCG lever comprehensively closed under provided data. **Production unchanged: R106 A-clean (0.6377).**
+> See `docs/r432_conversion_result.md`, `docs/blind_a_nDCG_investigation_findings.md`.
+
+## Current production: R106 A-clean
 
 | field | value |
 |---|---|
-| artifact | `exp/inference/blind_a/r92_p11_oracle_submission.zip` |
-| sha256 | `d386db7d6bfb7631a20d6aa6aa974bae565d384b6599077f610050721bcd39e8` |
+| artifact | `exp/inference/blind_a/r106_lexdiv_Aclean_submission.zip` |
+| **inner `prediction.json` sha256** | `5cd7b7b384546f15bac33e2a9212d3b0c32e1b3accc513f0d0e523c636c33370` |
+| composite | **0.6377** |
 | nDCG@20 | **0.5073** |
-| composite | **0.6364** |
-| CatalogDiv / LexDiv / LLM | 0.0301 / 0.8720 / 4.90 |
-| metadata | `exp/inference/blind_a/r92_p11_oracle_submission.metadata.json` |
+| CatalogDiv / LexDiv / LLM | 0.0301 / 0.8859 / 4.90 |
+| builder | `scripts/expR106_lexdiv_build.py` + `exp/eval/r106_edits_Aclean.json` (git-tracked) |
 
-**Do not regenerate responses.** This ZIP is a bitwise copy of the already-scored
-probe `r92_probes/r92p11_c4f7d055_t7.zip`; it has passed the real Blind-A scorer.
-
-Verify integrity:
+**Integrity anchor = the INNER `prediction.json` sha256, NOT the outer zip sha** (the
+outer zip hash is non-deterministic — it embeds a timestamp). Verify:
 ```
-shasum -a 256 exp/inference/blind_a/r92_p11_oracle_submission.zip
-# -> d386db7d6bfb7631a20d6aa6aa974bae565d384b6599077f610050721bcd39e8
+python -c "import zipfile,hashlib; print(hashlib.sha256(zipfile.ZipFile('exp/inference/blind_a/r106_lexdiv_Aclean_submission.zip').read('prediction.json')).hexdigest())"
+# -> 5cd7b7b384546f15bac33e2a9212d3b0c32e1b3accc513f0d0e523c636c33370
 ```
+Rebuilds byte-identical from the builder: `python scripts/expR106_lexdiv_build.py`.
 
-## How it was built (reproducible)
+## Lineage (verified by byte-diff)
 
-R92 p11 = **R84c selective submission with exactly one row swapped**:
-- Base: `exp/inference/blind_a/r84c_selective_submission.zip` (nDCG 0.5069, composite 0.6362).
-- Change: session `c4f7d055-a3cc-4d6b-be80-b90278bc0d32` turn 7 → R90 track list
-  (`exp/inference/blind_a/r90_blind_track_lists.json`), which promoted an in-pool
-  rank-5 GT (`9d9ca4fe…`) to rank 1. Responses reused from R84c (unchanged).
-- This single-row swap was found by black-box oracle probing (R92) and is the
-  only positive of 14 scored single-row probes (+0.0004 nDCG).
+- **R84c** (composite 0.6362) = the **track engine**: 5-fold R84 BGE-large ensemble +
+  selective routing (R54c LR margin <0.5 or >=2.0 → R84 LR, else R54c) over an 8-source
+  RRF union. `scripts/expR84c_blind_replay.py`, `cache/r84c_production_lr.txt`.
+- **R92 p11** (0.6364) = R84c with **exactly one track swap** (session `c4f7d055…` turn 7
+  → R90 list, an oracle-probed row). Responses unchanged.
+- **R106 A-clean** (0.6377, PRODUCTION) = R92 p11 with **0 track changes** (tracks
+  byte-identical) + **15 response-only LexDiv micro-edits** (+0.0139 LexDiv, LLM held 4.90).
+  R106b (30-row LexDiv push) FAILED — dropped LLM 4.90→4.85 (composite 0.6346); the safe
+  edit capacity is ~15 genuinely-repetitive rows.
 
-R84c itself = 5-fold R84 BGE-large ensemble + selective routing over the R54
-stack (see `cache/r84c_production_lr.txt`, `scripts/expR84c_selective_deployment.py`).
+## ⚠️ BLIND-B: what does NOT carry over
 
-## Why this is the ceiling (under current allowed data)
+Blind-B is a **new case set**. The **R92 p11 oracle swap** (hardcoded Blind-A session)
+and the **15 R106 LexDiv edits** (positional row indices, hand-authored Blind-A text)
+are **100% Blind-A-case-specific and MUST be dropped**. Blind-B production =
 
-Both within-data nDCG levers are empirically exhausted:
-- **Ranking** — R92–R95: 14 oracle probes, 1 tiny win, no offline feature predicts
-  a win (`docs/r95_oracle_forensics.md`).
-- **Text-encoder recall** — R96: the complete 8-source union misses 22% of dev GT,
-  but a new family (E5-large-v2) recovers 0 of them in top-30 under both structured
-  and natural-language queries (`docs/r96_new_retriever_plan.md`). Query→track text
-  encoders are exhausted; this is NOT "all retrieval impossible."
-- **Multimodal** — closed earlier (R85/R88/R89). **Response side** — saturated (R78/R87).
+> **R84c pipeline replay over the new cases (NO oracle swap) + freshly generated
+> responses + a fresh ≤15-row LexDiv pass.**
+
+Routing thresholds for Blind-B = the predeclared **0.5 / 2.0** (what the validated
+Blind-A production used and the dry-run reproduces) — do not silently switch to 0.25
+without re-validating. See `docs/blind_b_checklist.md` for the runbook + the hard
+pre-release blocker (R54 fold models must be restored before Blind-B opens).
+
+## Why 0.6377 is the ceiling (current allowed data)
+
+Both within-data nDCG levers are empirically exhausted, and external reconstruction is
+NOT viable — see memory `project_goal65_outcome` and `docs/goal65_investigation.md`
+(branch `goal65-investigation`): nDCG ranking is structurally capped (the Gemini GT is
+not the max-relevance track; arc-conditioned Opus scores GT above the production FP only
+33%), recall is un-findable (text 5%, CF 0.308), LexDiv closed (R106b dropped the judge),
+the LLM-judge push is negative-EV, CatalogDiv dead. 0.65 needs a real nDCG gain that no
+tested lever delivers.
 
 ## Next move policy
 
-Do NOT run more Blind-A nDCG model-training sprints (no E5-mistral / more BGE /
-Qwen variants / rerankers / probe variants). Reserve submissions for a genuinely
-new evidence source allowed by competition rules, or Blind-B replay when it
-arrives. See memory: `feedback_retrieval_lever_closed`, `feedback_oracle_probing_exhausted`.
+Do NOT spend Blind-A slots on more nDCG sprints or LexDiv pushes. Hold prod (R106 A-clean,
+0.6377) and prepare a clean **Blind-B replay** (`docs/blind_b_checklist.md`). Reserve any
+new submission for a genuinely new, rules-legal evidence source — none currently exists.
+See memory: `feedback_retrieval_lever_closed`, `feedback_ndcg_ranking_structural_ceiling`,
+`feedback_lexdiv_edit_capacity`.
