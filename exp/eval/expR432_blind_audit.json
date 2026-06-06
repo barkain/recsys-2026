@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-06-06T09:25:19.774597",
+  "cos_thr": 0.65,
+  "n_cases": 80,
+  "n_first_turn": 20,
+  "n_patched": 10,
+  "top1_churn": 7,
+  "top20_overlap_mean": 18.525,
+  "gates": {
+    "top1_churn_le_30": true,
+    "overlap_ge_16": true,
+    "patched_only_first_turn": true
+  }
+}
