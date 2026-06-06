@@ -1,0 +1,248 @@
+{
+  "n_changed_top1": 5,
+  "rows": [
+    {
+      "sid": "60a6fd69-33f4-4dbf-aa0d-872b27a69037",
+      "turn": 1,
+      "query": "I'm trying to remember a track with that distinctive, soulful early 90s hip-hop feel, with smooth flows and a laid-back vibe.",
+      "old_top1": {
+        "tid": "21e1c53a-90e9-495c-8fcb-f3c93b2ae868",
+        "title": "On and On",
+        "artist": "Pete Rock & C.L. Smooth",
+        "album": "Mecca And The Soul Brother",
+        "year": "",
+        "tags": [
+          "my theme songs",
+          "loved",
+          "think hop",
+          "beatbox",
+          "Alternative Rap",
+          "90s",
+          "old school rap",
+          "american",
+          "ill shit",
+          "hip hop groove",
+          "classic hip hop",
+          "new york"
+        ]
+      },
+      "new_top1": {
+        "tid": "cc2e9fd9-42a8-4978-b88c-5b68351d3d66",
+        "title": "Sparkle",
+        "artist": "Camp Lo",
+        "album": "Uptown Saturday Night",
+        "year": "1997-01-28",
+        "tags": [
+          "strictly for the undergound",
+          "east coast rap",
+          "siehe auch the avalanches",
+          "1997",
+          "jazzy jam",
+          "jazz-rap",
+          "da real underground old skool hip hop",
+          "buckshot",
+          "g-eazy",
+          "smooth",
+          "smooth n groovy",
+          "hip hop hooray"
+        ]
+      },
+      "old_response": "Where your recollection points toward smooth flows and laid-back warmth, On and On by Pete Rock & C.L. Smooth nails it. Pete Rock chops a soul-jazz horn loop over dusty boom-bap kicks, while C.L. Smooth glides a conversational cadence across the pocket. Off Mecca And The Soul Brother, few cuts crystallize East Coast Golden Age jazz-rap so cleanly, which speaks straight to your hunt for a half-remembered early 90s classic rooted in American hip-hop.",
+      "new_top20_titles": [
+        "Sparkle",
+        "No Shame In My Game",
+        "Electric Relaxation",
+        "Trust Me",
+        "Center of Attention"
+      ]
+    },
+    {
+      "sid": "78487c90-fda7-4723-ad4c-4557393ea95f",
+      "turn": 1,
+      "query": "Play a Robert Johnson song about going to the crossroad and asking for mercy.",
+      "old_top1": {
+        "tid": "0b2d5184-4a6a-4037-8d5d-f2217c9231fc",
+        "title": "Cross Road Blues",
+        "artist": "Robert Johnson",
+        "album": "King Of The Delta Blues Singers",
+        "year": "1937-01-01",
+        "tags": [
+          "blues",
+          "Blues",
+          "supernatural"
+        ]
+      },
+      "new_top1": {
+        "tid": "9ae38d4e-22a3-424f-8e2b-1d5962f0af96",
+        "title": "Church, I'm Fully Saved Today",
+        "artist": "Blind Willie Johnson",
+        "album": "Dark Was The Night (Mojo Workin'- Blues For The Next Generation)",
+        "year": "1928-01-01",
+        "tags": [
+          "blues",
+          "1308fh",
+          "cooper was here",
+          "john peel",
+          "blind willie johnson",
+          "delta blues",
+          "gospel blues",
+          "gospel",
+          "Blues",
+          "classic blues",
+          "old blues"
+        ]
+      },
+      "old_response": "Where your request zeroed in on kneeling and begging for mercy, Cross Road Blues by Robert Johnson is the exact 1937 Delta blues recording behind those lines. Cut for King Of The Delta Blues Singers, it pairs Johnson's bottleneck slide guitar with a cracked, pleading vocal steeped in supernatural dread. The lyrics trace a stranded traveler flagging rides as dusk falls, no one stopping. A foundational text on isolation, fear, and the blues itself.",
+      "new_top20_titles": [
+        "Church, I'm Fully Saved Today",
+        "Lord I Just Can't Keep From Crying",
+        "Cross Road Blues",
+        "The Soul of a Man",
+        "Jesus Make Up My Dying Bed"
+      ]
+    },
+    {
+      "sid": "7905bb71-efea-4210-8ad9-881f37cad50a",
+      "turn": 1,
+      "query": "I need some happy, feel-good music right now to lift my spirits.",
+      "old_top1": {
+        "tid": "c4c3ff79-b439-4efd-820c-723b8227b7ae",
+        "title": "Somebody's Hero",
+        "artist": "Jamie O'Neal",
+        "album": "Brave",
+        "year": "2005-01-01",
+        "tags": [
+          "cmt",
+          "country",
+          "00s",
+          "forgotten until now",
+          "good female country music",
+          "country music television",
+          "good lyrics",
+          "happy girl",
+          "pop",
+          "female country",
+          "happy",
+          "linedance"
+        ]
+      },
+      "new_top1": {
+        "tid": "9f7d407f-4172-4de9-bca0-58d14fd406e6",
+        "title": "Hujan di Mimpi",
+        "artist": "Banda Neira",
+        "album": "Berjalan Lebih Jauh",
+        "year": "2013-04-13",
+        "tags": [
+          "galant",
+          "Others"
+        ]
+      },
+      "old_response": "Somebody's Hero by Jamie O'Neal is a mid-2000s country single that should brighten the mood you're after. It threads bright acoustic guitar and polished Nashville production around a steady, mid-tempo pulse, while O'Neal's clear vocal carries lyrics celebrating everyday family role models across three generations. Since you wanted something happy and uplifting, the affirming storyline anchors the feel-good payoff without tipping into saccharine, and the radio-friendly pop-country sheen keeps it bouncing along.",
+      "new_top20_titles": [
+        "Hujan di Mimpi",
+        "Somebody's Hero",
+        "Tegar",
+        "Untuk Perempuan Yang Sedang Di Pelukan",
+        "Akhir Cerita Cinta - Ost. Cinta Silver (Re-arrange Version)"
+      ]
+    },
+    {
+      "sid": "c0d4e758-5dfe-41a4-b0f2-07c29e27cdce",
+      "turn": 1,
+      "query": "Do you know any soundtracks that have a really unique, almost retro-futuristic vibe, perhaps with a moon on the album cover?",
+      "old_top1": {
+        "tid": "89931a15-5bad-49c3-9b4e-aad4bfac0c44",
+        "title": "Miami - Original Mix",
+        "artist": "Jasper Byrne",
+        "album": "Hotline Miami EP",
+        "year": "2012-10-24",
+        "tags": [
+          "chill",
+          "hotline miami",
+          "electronic",
+          "ost",
+          "soundtrack",
+          "retrowave",
+          "instrumental",
+          "game music",
+          "electro",
+          "vgm",
+          "video game music",
+          "Electronic"
+        ]
+      },
+      "new_top1": {
+        "tid": "62852fdf-929a-4e94-bb13-e14021454e4f",
+        "title": "The Whirling Infinite",
+        "artist": "Jim Guthrie",
+        "album": "Sword & Sworcery Lp: The Ballad Of The Space Babies",
+        "year": "",
+        "tags": [
+          "Instrumental",
+          "6 of 10 stars",
+          "Soundtracks"
+        ]
+      },
+      "old_response": "Miami - Original Mix by Jasper Byrne is the closest match to that moonlit, retro-futuristic memory you're tracing. The 2012 Hotline Miami EP cut is instrumental synthwave, built on hazy analog pads and a slow arpeggiated bassline beneath washed-out drum machine hits. Given your VGM tastes, Byrne's score shares a pixel-era electronic lineage with Jim Guthrie's Sword & Sworcery work, only pushed deeper into 80s neon-noir. A solid stepping stone toward the album in your head.",
+      "new_top20_titles": [
+        "The Whirling Infinite",
+        "Perhaps, Perhaps, Perhaps",
+        "Shoot the Moon",
+        "Dance of the Moonlight Jellies",
+        "The Spire"
+      ]
+    },
+    {
+      "sid": "77faef85-566c-4eb7-90b6-ee9fdeeacbe8",
+      "turn": 1,
+      "query": "Can you recommend some holiday music with traditional winter themes in the lyrics, beyond just Santa Claus?",
+      "old_top1": {
+        "tid": "b0f7d7c6-6b81-4320-82f6-e0bb2b28391b",
+        "title": "Santa Claus Is Coming to Town",
+        "artist": "The Crystals",
+        "album": "A Christmas Gift For You From Phil Spector",
+        "year": "1963-01-01",
+        "tags": [
+          "pop",
+          "girl group",
+          "rock",
+          "classic rock",
+          "Holiday",
+          "easy listening",
+          "soul",
+          "phoebexmas",
+          "christmas"
+        ]
+      },
+      "new_top1": {
+        "tid": "e5ebdc4c-b79e-405e-a30a-2aa3d1eb8d58",
+        "title": "Santa Claus Is Coming To Town",
+        "artist": "Straight No Chaser",
+        "album": "Holiday Spirits",
+        "year": "2008-10-27",
+        "tags": [
+          "a capella",
+          "ambient",
+          "vocals",
+          "Holiday",
+          "straight no chaser",
+          "seasonal",
+          "vocal harmonies",
+          "male vocalists",
+          "secular christmas",
+          "vocalizations",
+          "classic",
+          "christmas"
+        ]
+      },
+      "old_response": "Santa Claus Is Coming to Town by The Crystals threads the Santa narrative through wider winter imagery—kids sleeping, snow-laced anticipation, small-town watchfulness—so it stretches beyond the title figure even while anchoring on him. Phil Spector's 1963 Wall of Sound production stacks sleigh bells, layered backing harmonies, and a rolling girl-group rhythm section, framing the lyric in a dense midwinter atmosphere. Since you wanted traditional seasonal themes alongside the Santa motif, this sits comfortably in that overlap without leaning novelty.",
+      "new_top20_titles": [
+        "Santa Claus Is Coming To Town",
+        "The Christmas Song",
+        "White Christmas",
+        "White Christmas - 1999 - Remaster",
+        "Santa Claus Is Coming to Town"
+      ]
+    }
+  ]
+}

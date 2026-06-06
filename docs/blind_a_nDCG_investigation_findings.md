@@ -44,6 +44,7 @@ Composite formula (recovered, RMSE 5.6e-5): `0.506·nDCG + 0.095·LexDiv + 0.305
 | collaborative filtering / behavioral | R104, R400/R401 | re-rank-dominated, zero conversion |
 | popularity / selection-policy | **R108/R109/R420** | real GT-correlate, non-convertible |
 | pool broadening / admission | R59–R62, R103 | recovered < lost through frozen LR |
+| public user embeddings (cf-bpr) | R180/R431 | real recall (257 GTs), but full LR integration +0.0017 all-cases (gate +0.010), non-converting |
 
 ## 3. R421 — the cross-encoder deep-dive (the most thorough ranking attempt)
 

@@ -1,0 +1,45 @@
+{
+  "checks": {
+    "80_rows": true,
+    "20_unique_each": true,
+    "track_changes_eq_6": true,
+    "top1_changes_eq_0": true,
+    "resp_changes_eq_0": true,
+    "responses_byte_identical_R106": true,
+    "row_order_identical_R106": true,
+    "dropped_reverted_to_R106": true
+  },
+  "track_changes": 6,
+  "changed_sids": [
+    "25cc9533",
+    "31bf71ab",
+    "3afb9f67",
+    "db11666f",
+    "f321d88d",
+    "fc6ba76a"
+  ],
+  "overlap20": [
+    17,
+    13,
+    16,
+    16,
+    16,
+    12
+  ],
+  "lexdiv": 0.8858611825192803,
+  "catdiv": 0.030188438741475643,
+  "sha256": "f55e73861995c4834edbb6adaca71444111cc4ae4c098d1a1a561a7b343c2965",
+  "keep": [
+    "25cc9533",
+    "31bf71ab",
+    "3afb9f67",
+    "db11666f",
+    "f321d88d",
+    "fc6ba76a"
+  ],
+  "drop": [
+    "4831a3b4",
+    "ab8bc8fa"
+  ],
+  "all_pass": true
+}

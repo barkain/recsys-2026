@@ -1,0 +1,747 @@
+{
+  "experiment": "R180 official user embedding recall audit",
+  "payload": "exp/eval/_R12_all_turns_payload.pkl",
+  "user_root": "/Users/nadavbarkai/.cache/huggingface/datasets/talkpl-ai___talk_play_data-challenge-user-embeddings/default/0.0.0/97495c48e7757e3b2fef357e5ac3cb24b8860ca6",
+  "track_root": "/Users/nadavbarkai/.cache/huggingface/datasets/talkpl-ai___talk_play_data-challenge-track-embeddings/default/0.0.0/e946dc86e6b245cddd2c6ebf74929176682919ef",
+  "n_cases": 8000,
+  "n_unique_case_users": 500,
+  "user_columns": {
+    "cf-bpr": {
+      "dim": 128,
+      "n_users": 8616
+    }
+  },
+  "pairs": {
+    "cf-bpr__to__cf-bpr": {
+      "n_query_cases": 6368,
+      "coverage": 0.796,
+      "all": {
+        "n_cases": 6368,
+        "hit20": 155,
+        "hit30": 222,
+        "hit100": 531,
+        "hit300": 1000,
+        "recall20": 0.024340452261306534,
+        "recall30": 0.03486180904522613,
+        "recall100": 0.0833856783919598,
+        "recall300": 0.157035175879397,
+        "median_rank_if_hit300": 91.0,
+        "union_absent_recoveries": {
+          "20": 29,
+          "30": 44,
+          "100": 124,
+          "300": 257
+        },
+        "h7_hits": {
+          "20": 15,
+          "30": 25,
+          "100": 65,
+          "300": 127
+        },
+        "same_artist_hits": {
+          "20": 77,
+          "30": 110,
+          "100": 237,
+          "300": 444
+        },
+        "diff_artist_hits": {
+          "20": 78,
+          "30": 112,
+          "100": 294,
+          "300": 556
+        },
+        "union_absent_examples": [
+          {
+            "case_idx": 104,
+            "user_id": "0ed08f5c-4b0a-461f-99c3-79aaf98733c1",
+            "rank": 98,
+            "n_prior": 0,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 144,
+            "user_id": "44a4c26c-193f-4b7a-a011-2c6447b8e4e4",
+            "rank": 277,
+            "n_prior": 0,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 161,
+            "user_id": "44a4c26c-193f-4b7a-a011-2c6447b8e4e4",
+            "rank": 230,
+            "n_prior": 1,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 164,
+            "user_id": "44a4c26c-193f-4b7a-a011-2c6447b8e4e4",
+            "rank": 193,
+            "n_prior": 4,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 179,
+            "user_id": "44a4c26c-193f-4b7a-a011-2c6447b8e4e4",
+            "rank": 58,
+            "n_prior": 3,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 194,
+            "user_id": "3ab2990e-eeec-4f50-a82c-bceacb62df0c",
+            "rank": 185,
+            "n_prior": 2,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 230,
+            "user_id": "338c15eb-9ce7-4f4e-8105-6bee0dccc82f",
+            "rank": 113,
+            "n_prior": 6,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 243,
+            "user_id": "9714f0ab-d995-4da6-845e-b7aa556b1340",
+            "rank": 81,
+            "n_prior": 3,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 285,
+            "user_id": "42b8b0b3-845a-49d7-9e81-e4eb2f7edecc",
+            "rank": 81,
+            "n_prior": 5,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 329,
+            "user_id": "cf76f702-c12c-44dc-98c6-ed6210faff54",
+            "rank": 42,
+            "n_prior": 1,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 404,
+            "user_id": "efef9e3b-1860-4a63-9020-81e735c1db40",
+            "rank": 55,
+            "n_prior": 4,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 405,
+            "user_id": "efef9e3b-1860-4a63-9020-81e735c1db40",
+            "rank": 193,
+            "n_prior": 5,
+            "same_artist_history": true
+          },
+          {
+            "case_idx": 407,
+            "user_id": "efef9e3b-1860-4a63-9020-81e735c1db40",
+            "rank": 112,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 459,
+            "user_id": "15864de2-83d8-46c4-abd4-c360006a1045",
+            "rank": 213,
+            "n_prior": 3,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 485,
+            "user_id": "15864de2-83d8-46c4-abd4-c360006a1045",
+            "rank": 213,
+            "n_prior": 5,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 487,
+            "user_id": "15864de2-83d8-46c4-abd4-c360006a1045",
+            "rank": 257,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 515,
+            "user_id": "cd071c7f-a485-486a-a1e2-de437cc22502",
+            "rank": 243,
+            "n_prior": 3,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 688,
+            "user_id": "792d1e7e-b811-4d85-b070-66ea6e1123bd",
+            "rank": 59,
+            "n_prior": 0,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 704,
+            "user_id": "faf399e9-c002-4954-983d-26a38560338a",
+            "rank": 4,
+            "n_prior": 0,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 706,
+            "user_id": "faf399e9-c002-4954-983d-26a38560338a",
+            "rank": 82,
+            "n_prior": 2,
+            "same_artist_history": false
+          }
+        ]
+      },
+      "union_miss_only": {
+        "n_cases": 2327,
+        "hit20": 29,
+        "hit30": 44,
+        "hit100": 124,
+        "hit300": 257,
+        "recall20": 0.012462397937258273,
+        "recall30": 0.018908465835840136,
+        "recall100": 0.05328749462827675,
+        "recall300": 0.11044262999570262,
+        "median_rank_if_hit300": 104.0,
+        "union_absent_recoveries": {
+          "20": 29,
+          "30": 44,
+          "100": 124,
+          "300": 257
+        },
+        "h7_hits": {
+          "20": 3,
+          "30": 5,
+          "100": 11,
+          "300": 27
+        },
+        "same_artist_hits": {
+          "20": 0,
+          "30": 1,
+          "100": 3,
+          "300": 6
+        },
+        "diff_artist_hits": {
+          "20": 29,
+          "30": 43,
+          "100": 121,
+          "300": 251
+        },
+        "union_absent_examples": [
+          {
+            "case_idx": 104,
+            "user_id": "0ed08f5c-4b0a-461f-99c3-79aaf98733c1",
+            "rank": 98,
+            "n_prior": 0,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 144,
+            "user_id": "44a4c26c-193f-4b7a-a011-2c6447b8e4e4",
+            "rank": 277,
+            "n_prior": 0,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 161,
+            "user_id": "44a4c26c-193f-4b7a-a011-2c6447b8e4e4",
+            "rank": 230,
+            "n_prior": 1,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 164,
+            "user_id": "44a4c26c-193f-4b7a-a011-2c6447b8e4e4",
+            "rank": 193,
+            "n_prior": 4,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 179,
+            "user_id": "44a4c26c-193f-4b7a-a011-2c6447b8e4e4",
+            "rank": 58,
+            "n_prior": 3,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 194,
+            "user_id": "3ab2990e-eeec-4f50-a82c-bceacb62df0c",
+            "rank": 185,
+            "n_prior": 2,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 230,
+            "user_id": "338c15eb-9ce7-4f4e-8105-6bee0dccc82f",
+            "rank": 113,
+            "n_prior": 6,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 243,
+            "user_id": "9714f0ab-d995-4da6-845e-b7aa556b1340",
+            "rank": 81,
+            "n_prior": 3,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 285,
+            "user_id": "42b8b0b3-845a-49d7-9e81-e4eb2f7edecc",
+            "rank": 81,
+            "n_prior": 5,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 329,
+            "user_id": "cf76f702-c12c-44dc-98c6-ed6210faff54",
+            "rank": 42,
+            "n_prior": 1,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 404,
+            "user_id": "efef9e3b-1860-4a63-9020-81e735c1db40",
+            "rank": 55,
+            "n_prior": 4,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 405,
+            "user_id": "efef9e3b-1860-4a63-9020-81e735c1db40",
+            "rank": 193,
+            "n_prior": 5,
+            "same_artist_history": true
+          },
+          {
+            "case_idx": 407,
+            "user_id": "efef9e3b-1860-4a63-9020-81e735c1db40",
+            "rank": 112,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 459,
+            "user_id": "15864de2-83d8-46c4-abd4-c360006a1045",
+            "rank": 213,
+            "n_prior": 3,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 485,
+            "user_id": "15864de2-83d8-46c4-abd4-c360006a1045",
+            "rank": 213,
+            "n_prior": 5,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 487,
+            "user_id": "15864de2-83d8-46c4-abd4-c360006a1045",
+            "rank": 257,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 515,
+            "user_id": "cd071c7f-a485-486a-a1e2-de437cc22502",
+            "rank": 243,
+            "n_prior": 3,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 688,
+            "user_id": "792d1e7e-b811-4d85-b070-66ea6e1123bd",
+            "rank": 59,
+            "n_prior": 0,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 704,
+            "user_id": "faf399e9-c002-4954-983d-26a38560338a",
+            "rank": 4,
+            "n_prior": 0,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 706,
+            "user_id": "faf399e9-c002-4954-983d-26a38560338a",
+            "rank": 82,
+            "n_prior": 2,
+            "same_artist_history": false
+          }
+        ]
+      },
+      "h7_only": {
+        "n_cases": 796,
+        "hit20": 15,
+        "hit30": 25,
+        "hit100": 65,
+        "hit300": 127,
+        "recall20": 0.018844221105527637,
+        "recall30": 0.031407035175879394,
+        "recall100": 0.08165829145728644,
+        "recall300": 0.15954773869346733,
+        "median_rank_if_hit300": 91.0,
+        "union_absent_recoveries": {
+          "20": 3,
+          "30": 5,
+          "100": 11,
+          "300": 27
+        },
+        "h7_hits": {
+          "20": 15,
+          "30": 25,
+          "100": 65,
+          "300": 127
+        },
+        "same_artist_hits": {
+          "20": 7,
+          "30": 15,
+          "100": 37,
+          "300": 67
+        },
+        "diff_artist_hits": {
+          "20": 8,
+          "30": 10,
+          "100": 28,
+          "300": 60
+        },
+        "union_absent_examples": [
+          {
+            "case_idx": 407,
+            "user_id": "efef9e3b-1860-4a63-9020-81e735c1db40",
+            "rank": 112,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 487,
+            "user_id": "15864de2-83d8-46c4-abd4-c360006a1045",
+            "rank": 257,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 1055,
+            "user_id": "2f02ac45-a8c5-4abc-8d79-abd14c6c1a04",
+            "rank": 39,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 1223,
+            "user_id": "e3562157-5f43-4410-9ff9-a9e70a4f9406",
+            "rank": 161,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 1791,
+            "user_id": "3ebad20a-6155-4b76-8d3a-1eb4fefa8d1a",
+            "rank": 157,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 2383,
+            "user_id": "29c66d75-c3e8-453a-bb7f-f597fcbd55a5",
+            "rank": 207,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 3727,
+            "user_id": "14cd5366-7004-4657-80e3-e255f7d013b1",
+            "rank": 5,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 3743,
+            "user_id": "586a3e95-7bdf-4e6f-8095-762d994825be",
+            "rank": 126,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 3807,
+            "user_id": "9e91b0a4-92d6-48ce-93ad-dd38ef226670",
+            "rank": 53,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 4303,
+            "user_id": "c9a263f3-4748-430d-9178-8786f84d6dd0",
+            "rank": 103,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 4599,
+            "user_id": "c891733d-866c-4938-a9ca-cd8d81048cca",
+            "rank": 121,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 4663,
+            "user_id": "0d81662c-f7c9-4dfc-a93b-78dae641994d",
+            "rank": 54,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 4927,
+            "user_id": "43b70076-674a-4fd0-8d12-39e1560406f2",
+            "rank": 3,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 4991,
+            "user_id": "388acecd-3092-46dc-aa58-5443e2301af4",
+            "rank": 91,
+            "n_prior": 7,
+            "same_artist_history": true
+          },
+          {
+            "case_idx": 4999,
+            "user_id": "388acecd-3092-46dc-aa58-5443e2301af4",
+            "rank": 204,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 5047,
+            "user_id": "956f816b-9ca0-4eb9-8380-c68f99dd23d4",
+            "rank": 4,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 5095,
+            "user_id": "87a20600-3805-4880-879c-52c6a839049c",
+            "rank": 25,
+            "n_prior": 7,
+            "same_artist_history": true
+          },
+          {
+            "case_idx": 5775,
+            "user_id": "badb1471-6b47-4831-8be2-438f75684dc2",
+            "rank": 138,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 6071,
+            "user_id": "45527694-1e4f-41c3-a2f7-0fd67440a5dc",
+            "rank": 157,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 6455,
+            "user_id": "6913c5b7-a2cb-49e2-a90a-ac9568cef820",
+            "rank": 288,
+            "n_prior": 7,
+            "same_artist_history": false
+          }
+        ]
+      },
+      "diff_artist_only": {
+        "n_cases": 4038,
+        "hit20": 78,
+        "hit30": 112,
+        "hit100": 294,
+        "hit300": 556,
+        "recall20": 0.019316493313521546,
+        "recall30": 0.02773650321941555,
+        "recall100": 0.07280832095096583,
+        "recall300": 0.13769192669638436,
+        "median_rank_if_hit300": 95.0,
+        "union_absent_recoveries": {
+          "20": 29,
+          "30": 43,
+          "100": 121,
+          "300": 251
+        },
+        "h7_hits": {
+          "20": 8,
+          "30": 10,
+          "100": 28,
+          "300": 60
+        },
+        "same_artist_hits": {
+          "20": 0,
+          "30": 0,
+          "100": 0,
+          "300": 0
+        },
+        "diff_artist_hits": {
+          "20": 78,
+          "30": 112,
+          "100": 294,
+          "300": 556
+        },
+        "union_absent_examples": [
+          {
+            "case_idx": 104,
+            "user_id": "0ed08f5c-4b0a-461f-99c3-79aaf98733c1",
+            "rank": 98,
+            "n_prior": 0,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 144,
+            "user_id": "44a4c26c-193f-4b7a-a011-2c6447b8e4e4",
+            "rank": 277,
+            "n_prior": 0,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 161,
+            "user_id": "44a4c26c-193f-4b7a-a011-2c6447b8e4e4",
+            "rank": 230,
+            "n_prior": 1,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 164,
+            "user_id": "44a4c26c-193f-4b7a-a011-2c6447b8e4e4",
+            "rank": 193,
+            "n_prior": 4,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 179,
+            "user_id": "44a4c26c-193f-4b7a-a011-2c6447b8e4e4",
+            "rank": 58,
+            "n_prior": 3,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 194,
+            "user_id": "3ab2990e-eeec-4f50-a82c-bceacb62df0c",
+            "rank": 185,
+            "n_prior": 2,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 230,
+            "user_id": "338c15eb-9ce7-4f4e-8105-6bee0dccc82f",
+            "rank": 113,
+            "n_prior": 6,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 243,
+            "user_id": "9714f0ab-d995-4da6-845e-b7aa556b1340",
+            "rank": 81,
+            "n_prior": 3,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 285,
+            "user_id": "42b8b0b3-845a-49d7-9e81-e4eb2f7edecc",
+            "rank": 81,
+            "n_prior": 5,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 329,
+            "user_id": "cf76f702-c12c-44dc-98c6-ed6210faff54",
+            "rank": 42,
+            "n_prior": 1,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 404,
+            "user_id": "efef9e3b-1860-4a63-9020-81e735c1db40",
+            "rank": 55,
+            "n_prior": 4,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 407,
+            "user_id": "efef9e3b-1860-4a63-9020-81e735c1db40",
+            "rank": 112,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 459,
+            "user_id": "15864de2-83d8-46c4-abd4-c360006a1045",
+            "rank": 213,
+            "n_prior": 3,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 485,
+            "user_id": "15864de2-83d8-46c4-abd4-c360006a1045",
+            "rank": 213,
+            "n_prior": 5,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 487,
+            "user_id": "15864de2-83d8-46c4-abd4-c360006a1045",
+            "rank": 257,
+            "n_prior": 7,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 515,
+            "user_id": "cd071c7f-a485-486a-a1e2-de437cc22502",
+            "rank": 243,
+            "n_prior": 3,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 688,
+            "user_id": "792d1e7e-b811-4d85-b070-66ea6e1123bd",
+            "rank": 59,
+            "n_prior": 0,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 704,
+            "user_id": "faf399e9-c002-4954-983d-26a38560338a",
+            "rank": 4,
+            "n_prior": 0,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 706,
+            "user_id": "faf399e9-c002-4954-983d-26a38560338a",
+            "rank": 82,
+            "n_prior": 2,
+            "same_artist_history": false
+          },
+          {
+            "case_idx": 742,
+            "user_id": "9e2439e0-cc8e-45f9-ada9-7e0b7a2f5ac5",
+            "rank": 294,
+            "n_prior": 6,
+            "same_artist_history": false
+          }
+        ]
+      }
+    }
+  },
+  "leaderboard": [
+    {
+      "pair": "cf-bpr__to__cf-bpr",
+      "n_query_cases": 6368,
+      "coverage": 0.796,
+      "all_recall20": 0.024340452261306534,
+      "all_recall30": 0.03486180904522613,
+      "all_recall300": 0.157035175879397,
+      "union_absent_top20": 29,
+      "union_absent_top30": 44,
+      "union_absent_top100": 124,
+      "union_absent_top300": 257
+    }
+  ],
+  "verdict": "PROCEED_R181_USER_SOURCE_INTEGRATION"
+}
