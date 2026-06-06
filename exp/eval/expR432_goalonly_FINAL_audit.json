@@ -1,0 +1,47 @@
+{
+  "checks": {
+    "80_rows": true,
+    "20_unique_tracks_each": true,
+    "track_changes_eq_10": true,
+    "top1_churn_eq_2": true,
+    "resp_changes_eq_2": true,
+    "reverts_match_R106": true,
+    "repaired_name_new_not_old": true
+  },
+  "consistency": {
+    "60a6fd69": {
+      "has_new": true,
+      "no_old": true
+    },
+    "c0d4e758": {
+      "has_new": true,
+      "no_old": true
+    }
+  },
+  "lexdiv": 0.8867924528301887,
+  "base_lexdiv": 0.8858611825192803,
+  "track_changes": 10,
+  "top1_churn": 2,
+  "resp_changes": 2,
+  "sha256": "b1b41acc2bfd426f452ccb420e8e1337f373654aa2243f4a4699aa42d825dcb4",
+  "all_pass": true,
+  "reorder_sids": [
+    "25cc9533-7c02-4781-9100-ab438e848a3d",
+    "fc6ba76a-3dd8-4c11-b5af-a233253b01bf",
+    "db11666f-bfb8-4d0d-b62b-075ab85d92f9",
+    "31bf71ab-497f-4045-bc91-06552f9b69b8",
+    "3afb9f67-a18a-4b97-81cf-ef1806fce0e9",
+    "ab8bc8fa-6326-47a5-afb4-3e3a30ca7360",
+    "4831a3b4-3964-40ec-92a3-151cef2cae8f",
+    "f321d88d-d809-4bcb-aca0-a1ef551a48de"
+  ],
+  "swap_sids": [
+    "60a6fd69-33f4-4dbf-aa0d-872b27a69037",
+    "c0d4e758-5dfe-41a4-b0f2-07c29e27cdce"
+  ],
+  "revert_sids": [
+    "78487c90-fda7-4723-ad4c-4557393ea95f",
+    "7905bb71-efea-4210-8ad9-881f37cad50a",
+    "77faef85-566c-4eb7-90b6-ee9fdeeacbe8"
+  ]
+}

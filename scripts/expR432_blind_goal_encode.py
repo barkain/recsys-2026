@@ -15,12 +15,13 @@ import time
 from pathlib import Path
 import numpy as np  # type: ignore[reportMissingImports]
 
+import argparse
 REPO = Path(__file__).resolve().parent.parent
 FOLD_DIRS = {0: REPO / "cache/r54/phase3_smoke/fold_0",
              **{k: REPO / f"cache/r54/phase3_full/fold_{k}" for k in range(1, 5)}}
-OUT = REPO / "cache/r432_goal/blind_goal_lists.json"
 BLIND_DATASET = "talkpl-ai/TalkPlayData-Challenge-Blind-A"
 TOPK = 300
+USE_PROFILE = True  # --no-profile -> goal-only
 
 
 def ts():
@@ -62,7 +63,7 @@ def goal_query(item):
     parts = [f"[QUERY] {norm(last_user)}"]
     if goal_text:
         parts.append(f"[GOAL] {goal_text}")
-    if profile_text:
+    if USE_PROFILE and profile_text:
         parts.append(f"[PROFILE] {profile_text}")
     return " ".join(parts), played
 
@@ -75,8 +76,17 @@ def encode(model_dir, queries):
 
 
 def main():
+    global USE_PROFILE
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--no-profile", action="store_true")
+    ap.add_argument("--out", default=None)
+    args = ap.parse_args()
+    USE_PROFILE = not args.no_profile
+    out_path = Path(args.out) if args.out else (
+        REPO / ("cache/r432_goal/blind_goal_lists.json" if USE_PROFILE
+                else "cache/r432_goal_only/blind_goal_lists.json"))
     t0 = time.time()
-    print(f"{ts()} R432 blind goal source — R54 5-fold ensemble")
+    print(f"{ts()} R432 blind goal source — R54 5-fold ensemble (USE_PROFILE={USE_PROFILE})")
     from datasets import DownloadConfig, load_dataset  # type: ignore[reportMissingImports]
     try:
         db = load_dataset(BLIND_DATASET, split="test",
@@ -122,12 +132,12 @@ def main():
                 break
         lists[ci] = out
 
-    OUT.parent.mkdir(parents=True, exist_ok=True)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
     json.dump({"lists": {str(k): v for k, v in lists.items()},
                "sid": {str(k): sids[k] for k in range(len(items))},
                "meta": {"query_variant": "query_goal_profile_structured", "topk": TOPK}},
-              open(OUT, "w"))
-    print(f"{ts()} Saved {OUT} ({len(lists)} cases, {time.time()-t0:.0f}s)")
+              open(out_path, "w"))
+    print(f"{ts()} Saved {out_path} ({len(lists)} cases, {time.time()-t0:.0f}s)")
 
 
 if __name__ == "__main__":

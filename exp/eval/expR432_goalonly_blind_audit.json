@@ -1,0 +1,16 @@
+{
+  "created_at": "2026-06-06T14:49:35.170022",
+  "cos_thr": 0.65,
+  "tag": "goalonly",
+  "n_cases": 80,
+  "n_first_turn": 20,
+  "n_patched": 13,
+  "top1_churn": 5,
+  "n_changed_top1_need_repair": 5,
+  "top20_overlap_mean": 18.738,
+  "gates": {
+    "top1_churn_le_30": true,
+    "overlap_ge_16": true,
+    "patched_only_first_turn": true
+  }
+}

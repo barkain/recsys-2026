@@ -25,6 +25,8 @@ import numpy as np  # type: ignore[reportMissingImports]
 import pyarrow as pa  # type: ignore[reportMissingImports]
 import pyarrow.ipc as ipc  # type: ignore[reportMissingImports]
 
+import argparse
+
 REPO = Path(__file__).resolve().parent.parent
 PAYLOAD = REPO / "exp/eval/_R12_all_turns_payload.pkl"
 W0_STATS = REPO / "exp/eval/expR68_r54_reference_stats.pkl"
@@ -34,9 +36,9 @@ TEST_ARROW = (Path.home() / ".cache/huggingface/datasets/"
               "talk_play_data-challenge-dataset-test.arrow")
 FOLD_DIRS = {0: REPO / "cache/r54/phase3_smoke/fold_0",
              **{k: REPO / f"cache/r54/phase3_full/fold_{k}" for k in range(1, 5)}}
-OUT = REPO / "cache/r432_goal/goal_oof_lists.json"
 TOPK = 300
 N_FOLDS = 5
+USE_PROFILE = True  # set False via --no-profile (goal-only, removes demographic override)
 
 
 def ts():
@@ -79,7 +81,7 @@ def goal_query(case, sf):
     parts = [f"[QUERY] {norm(case['user_query'])}"]
     if goal_text:
         parts.append(f"[GOAL] {goal_text}")
-    if profile_text:
+    if USE_PROFILE and profile_text:
         parts.append(f"[PROFILE] {profile_text}")
     return " ".join(parts)
 
@@ -92,8 +94,17 @@ def encode(model_dir, queries):
 
 
 def main():
+    global USE_PROFILE
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--no-profile", action="store_true", help="goal-only query (drop [PROFILE])")
+    ap.add_argument("--out", default=None)
+    args = ap.parse_args()
+    USE_PROFILE = not args.no_profile
+    out_path = Path(args.out) if args.out else (
+        REPO / ("cache/r432_goal/goal_oof_lists.json" if USE_PROFILE
+                else "cache/r432_goal_only/goal_oof_lists.json"))
     t0 = time.time()
-    print(f"{ts()} R432 Phase 1 — goal-aware R54 OOF source")
+    print(f"{ts()} R432 Phase 1 — goal-aware R54 OOF source (USE_PROFILE={USE_PROFILE})")
     payload = pickle.load(open(PAYLOAD, "rb"))
     cases = payload["cases"]
     n = len(cases)
@@ -140,11 +151,11 @@ def main():
         del track_embs, q_embs
         print(f"{ts()} fold {fk} done ({time.time()-t0:.0f}s elapsed)", flush=True)
 
-    OUT.parent.mkdir(parents=True, exist_ok=True)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
     json.dump({"lists": {str(k): v for k, v in lists.items()},
                "meta": {"query_variant": "query_goal_profile_structured", "topk": TOPK,
-                        "n": n, "built_s": time.time() - t0}}, open(OUT, "w"))
-    print(f"\n{ts()} Saved {OUT} ({len(lists)} cases, {time.time()-t0:.0f}s)")
+                        "n": n, "built_s": time.time() - t0}}, open(out_path, "w"))
+    print(f"\n{ts()} Saved {out_path} ({len(lists)} cases, {time.time()-t0:.0f}s)")
 
 
 if __name__ == "__main__":

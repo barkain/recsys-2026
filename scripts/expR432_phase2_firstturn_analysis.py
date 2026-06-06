@@ -14,8 +14,9 @@ import json
 from pathlib import Path
 import numpy as np  # type: ignore[reportMissingImports]
 
+import sys
 REPO = Path(__file__).resolve().parent.parent
-PC = REPO / "exp/eval/expR432_integrate_w1_percase.json"
+PC = Path(sys.argv[1]) if len(sys.argv) > 1 else REPO / "exp/eval/expR432_integrate_w1_percase.json"
 
 
 def stat(rows):

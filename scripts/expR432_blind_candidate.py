@@ -48,14 +48,13 @@ LR_ROUNDS = 300
 
 R84_OOF = [REPO / "cache/r84/phase0b_fold0/oof_r84_lists.json"] + \
     [REPO / f"cache/r84/phase1_fold{k}/oof_r84_lists.json" for k in range(1, 5)]
-GOAL_OOF = REPO / "cache/r432_goal/goal_oof_lists.json"
 W0_STATS = REPO / "exp/eval/expR68_r54_reference_stats.pkl"
 BLIND_SRC = REPO / "cache/blind_a/source_cache.pkl"
 R54_BLIND = REPO / "cache/r54_production/blind_r54_lists.json"
 R84_BLIND_ENS = REPO / "cache/r84_production/blind_r84_ensemble_lists.json"
-GOAL_BLIND = REPO / "cache/r432_goal/blind_goal_lists.json"
 BASE_ZIP = REPO / "exp/inference/blind_a/r106_lexdiv_Aclean_submission.zip"
-OUT_ZIP = REPO / "exp/inference/blind_a/r432_blind_candidate_submission.zip"
+META_JSON = REPO / "cache/metadata/track_metadata_all_tracks.json"
+# GOAL_OOF / GOAL_BLIND / OUT_ZIP set from CLI in main()
 
 
 def ts():
@@ -101,11 +100,26 @@ def goal_cols(pool, ranks, scores):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--cos-thr", type=float, default=0.65, help="goal top-1 cosine threshold")
+    ap.add_argument("--goal-oof", default=str(REPO / "cache/r432_goal_only/goal_oof_lists.json"))
+    ap.add_argument("--goal-blind", default=str(REPO / "cache/r432_goal_only/blind_goal_lists.json"))
+    ap.add_argument("--tag", default="goalonly", help="output filename tag")
     args = ap.parse_args()
+    GOAL_OOF = Path(args.goal_oof); GOAL_BLIND = Path(args.goal_blind)
+    OUT_ZIP = REPO / f"exp/inference/blind_a/r432_{args.tag}_PROVISIONAL.zip"
+    MANIFEST = REPO / f"exp/eval/expR432_{args.tag}_repair_manifest.json"
     t0 = datetime.now()
-    print(f"{ts()} R432 blind candidate — first-turn selective goal patch (cos-thr={args.cos_thr})")
+    print(f"{ts()} R432 blind candidate [{args.tag}] — first-turn selective goal patch (cos-thr={args.cos_thr})")
     if not GOAL_BLIND.exists():
-        sys.exit(f"MISSING blind goal source: {GOAL_BLIND} (run expR432_blind_goal_encode.py)")
+        sys.exit(f"MISSING blind goal source: {GOAL_BLIND} (run expR432_blind_goal_encode.py --no-profile)")
+    meta = json.load(open(META_JSON))
+
+    def tinfo(tid):
+        m = meta.get(tid, {})
+        def g(k):
+            v = m.get(k, "")
+            return (v[0] if isinstance(v, list) and v else v) or ""
+        return {"title": g("track_name"), "artist": g("artist_name"), "album": g("album_name"),
+                "year": str(g("release_date"))[:10], "tags": (m.get("tag_list") or [])[:12]}
 
     # ---- dev: train all-data arm A (37) + arm C (40) ----
     print(f"{ts()} loading dev payload + sources ...", flush=True)
@@ -249,26 +263,58 @@ def main():
                     "predicted_response": be["predicted_response"],  # R106 A-clean response, unchanged
                     "_patched": int(use_c)})
 
+    # ---- repair manifest: every CHANGED-TOP-1 row needs a response rewrite ----
+    blind_items = {str(it["session_id"]): it for it in __import__("datasets").load_dataset(
+        "talkpl-ai/TalkPlayData-Challenge-Blind-A", split="test",
+        download_config=__import__("datasets").DownloadConfig(local_files_only=True))}
+
+    def last_user(sid):
+        conv = sorted(blind_items[sid]["conversations"], key=lambda x: x["turn_number"])
+        us = [c["content"] for c in conv if c["role"] == "user"]
+        return us[-1] if us else ""
+
+    manifest = []
+    for o, r in zip(out, rows):
+        if not o["_patched"]:
+            continue
+        new_top1 = o["predicted_track_ids"][0]
+        old_top1 = r["base_list"][0]
+        if new_top1 == old_top1:
+            continue  # reorder-only: top-1 unchanged, response still valid
+        sid = o["session_id"]
+        manifest.append({
+            "sid": sid, "turn": o["turn_number"],
+            "query": last_user(sid),
+            "old_top1": {"tid": old_top1, **tinfo(old_top1)},
+            "new_top1": {"tid": new_top1, **tinfo(new_top1)},
+            "old_response": base_by_sid[sid]["predicted_response"],
+            "new_top20_titles": [tinfo(t)["title"] for t in o["predicted_track_ids"][:5]],
+        })
+    json.dump({"n_changed_top1": len(manifest), "rows": manifest}, open(MANIFEST, "w"), indent=2, ensure_ascii=False)
+
     n_ft = sum(1 for r in rows if r["turn"] == 1)
-    audit = {"created_at": datetime.now().isoformat(), "cos_thr": args.cos_thr,
+    audit = {"created_at": datetime.now().isoformat(), "cos_thr": args.cos_thr, "tag": args.tag,
              "n_cases": len(rows), "n_first_turn": n_ft, "n_patched": patched,
-             "top1_churn": changed, "top20_overlap_mean": round(float(np.mean(overlaps)), 3),
+             "top1_churn": changed, "n_changed_top1_need_repair": len(manifest),
+             "top20_overlap_mean": round(float(np.mean(overlaps)), 3),
              "gates": {"top1_churn_le_30": changed <= 30, "overlap_ge_16": float(np.mean(overlaps)) >= 16,
                        "patched_only_first_turn": all(r["turn"] == 1 for r, o in zip(rows, out) if o["_patched"])}}
-    json.dump(audit, open(REPO / "exp/eval/expR432_blind_audit.json", "w"), indent=2)
+    json.dump(audit, open(REPO / f"exp/eval/expR432_{args.tag}_blind_audit.json", "w"), indent=2)
 
-    # write candidate zip (HELD — preflight only)
+    # PROVISIONAL zip (OLD responses — NOT submittable; for churn audit + repair input only)
     prediction = [{k: e[k] for k in ("session_id", "turn_number", "predicted_track_ids", "predicted_response")}
                   for e in out]
     with zipfile.ZipFile(OUT_ZIP, "w", zipfile.ZIP_DEFLATED) as zf:
         zf.writestr("prediction.json", json.dumps(prediction))
 
-    print(f"\n{ts()} === R432 blind preflight (vs R106 A-clean) ===")
+    print(f"\n{ts()} === R432 [{args.tag}] blind preflight (vs R106 A-clean) ===")
     print(f"  first-turn cases: {n_ft}/80   patched: {patched}   top1_churn: {changed}/80   "
           f"overlap: {audit['top20_overlap_mean']:.2f}/20")
+    print(f"  CHANGED-TOP-1 needing response repair: {len(manifest)}")
     print(f"  gates: churn<=30 {audit['gates']['top1_churn_le_30']}  overlap>=16 {audit['gates']['overlap_ge_16']}  "
           f"patched_only_first_turn {audit['gates']['patched_only_first_turn']}")
-    print(f"  wrote {OUT_ZIP.name} (HELD — not submitted), expR432_blind_audit.json, expR432_blind_rows.json")
+    print(f"  wrote {OUT_ZIP.name} (PROVISIONAL — old responses, NOT submittable)")
+    print(f"  repair manifest -> {MANIFEST.name}")
     print(f"  elapsed {(datetime.now()-t0).total_seconds():.0f}s")
 
 
