@@ -71,3 +71,27 @@ Production stays R106 A-clean (0.6377) until a blind candidate clears preflight.
 Artifacts: `exp/eval/expR432_integrate_w1.json`(+`_percase.json`),
 `exp/eval/expR432_phase2_firstturn.json`, `exp/eval/expR432_phase3_firstturn_selective.json`,
 `cache/r432_goal/goal_oof_lists.json`.
+
+---
+
+## BLIND RESULT (2026-06-06): NEGATIVE — ARCHIVE
+
+The goal-only FINAL conservative candidate was scored on Blind-A:
+
+| metric | R106 (prod) | R432 goal-only | Δ | composite impact |
+|---|---|---|---|---|
+| nDCG@20 | 0.5073 | 0.5075 | +0.0002 | +0.0001 |
+| LexDiv | 0.8859 | 0.8868 | +0.0009 | +0.0001 |
+| LLM judge | 4.90 | 4.85 | −0.05 | −0.0038 |
+| **composite** | **0.6377** | **0.6342** | **−0.0035** | |
+
+**The entire composite loss is the LLM judge** (4.90→4.85). The nDCG bet — the whole point —
+moved **+0.0002** (≈ +0.0001 composite). Strong dev signal (first-turn +0.0159) did not transfer
+to blind (+0.0002 nDCG@20): another dev→blind nDCG non-transfer.
+
+**Verdict: ARCHIVE the whole R432 family** (profile + goal-only). Production stays **R106 A-clean
+(0.6377)**. Two durable lessons:
+1. Goal-aware retrieval converts on dev but not on blind — the nDCG recall ceiling holds.
+2. Bounded few-case nDCG bets are dominated by LLM-judge variance (±0.05 ≈ ±0.0038 composite).
+   A blind nDCG gain must be ≥ ~+0.02 to clear the judge noise floor. See
+   `feedback_small_ndcg_bets_dominated_by_llm_variance`.
