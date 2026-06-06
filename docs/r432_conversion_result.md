@@ -138,14 +138,18 @@ Final probe R432s (drop the 2 incoherent reorders, keep 6 coherent reorder-only 
 | reorders-only | 8 | 0.5090 | 4.85 | 0.6349 |
 | R432s targeted (6 coherent) | 6 | **0.5092** | 4.85 | 0.6349 |
 
-**Decisive:** R106's lists score LLM 4.90; **any** perturbation — 6, 8, or 10 changes, even coherent
-reorders that keep top-1 and responses byte-identical — scores **4.85**. The −0.05 LLM penalty
-(−0.0038 composite) is **diffuse** (triggered by any list change, not localized to incoherent rows)
-and exceeds every nDCG gain achieved (+0.0019 max = +0.0010 composite). **Reordering to improve nDCG
-is always a net composite loss.**
+**Decisive (for this family):** R106's lists score LLM 4.90; **every R432 reorder variant** — 6, 8,
+or 10 changes, even coherent reorders that keep top-1 and responses byte-identical — scores **4.85**.
+The −0.05 LLM penalty (−0.0038 composite) is **diffuse across these R432 perturbations** (not
+localized to the 2 incoherent rows) and exceeds every nDCG gain achieved (+0.0019 max = +0.0010
+composite). For R432, reordering to improve nDCG is a net composite loss.
 
-**Conclusion: R432 is fully closed.** R106 A-clean (0.6377) sits at a joint nDCG×LLM optimum on the
-provided data — perturbing the recommendation lists in any direction loses more on the (deterministic,
-full-list-reading) LLM judge than it gains on nDCG. This is the cleanest evidence yet that nDCG and
-LLM are coupled, and that our composite is at its ceiling under the allowed data. Remaining headroom:
-Blind-B (final ranking, Jun 23). Production unchanged: **R106 A-clean (0.6377)**.
+**Scope of the claim (narrow):** proven for the **R432 goal-reorder variants**, NOT as a universal
+law that *any* list perturbation drops LLM. Strong enough to stop spending Blind-A slots on this path;
+a genuinely different list-construction mechanism is not ruled out.
+
+**Conclusion: R432 is fully closed.** R106 A-clean (0.6377) holds. Working interpretation: R106's
+specific lists sit at a high LLM-coherence point that R432's goal-reorders move away from — nDCG and
+LLM are coupled enough here that goal-reordering can't win composite. Remaining headroom: Blind-B
+(final ranking, Jun 23), and — only with a genuinely new mechanism — Blind-A. Production unchanged:
+**R106 A-clean (0.6377)**.
