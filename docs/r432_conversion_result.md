@@ -95,3 +95,32 @@ to blind (+0.0002 nDCG@20): another dev→blind nDCG non-transfer.
 2. Bounded few-case nDCG bets are dominated by LLM-judge variance (±0.05 ≈ ±0.0038 composite).
    A blind nDCG gain must be ≥ ~+0.02 to clear the judge noise floor. See
    `feedback_small_ndcg_bets_dominated_by_llm_variance`.
+
+---
+
+## CORRECTION — reorders-only control: R432 has REAL nDCG signal (2026-06-06)
+
+The "archive the whole family" verdict above was premature. A second submission isolated the
+**reorder-only** part (8 first-turn rank-2-20 reorders, **0 top-1 changes, responses byte-identical
+to R106**):
+
+| submission | nDCG@20 | LexDiv | LLM | composite |
+|---|---|---|---|---|
+| R106 prod | 0.5073 | 0.8859 | 4.90 | 0.6377 |
+| R432 full goal-only (8 reorder + 2 top1-swap) | 0.5075 | 0.8868 | 4.85 | 0.6342 |
+| **R432 reorders-only** (8 reorder, identical responses) | **0.5090** | 0.8859 | 4.85 | 0.6349 |
+
+**Findings:**
+1. **The 2 top-1 swaps COST nDCG** (full +0.0002 vs reorders-only **+0.0017**; swaps ≈ −0.0015).
+   R106's top-1 is well-calibrated — the goal lever works by **reordering ranks 2-20, never top-1**.
+2. **Reorder-only gives a real +0.0017 blind nDCG** — the first genuine blind nDCG transfer this cycle.
+3. **The LLM judge is NOT deterministic on (top-1 + response):** reorders-only kept both identical yet
+   scored 4.85, not 4.90. Either the judge reads the FULL track list, or it is stochastic.
+4. If the LLM redraws **4.90**, reorders-only → composite **0.6391 > R106 0.6377 (+0.0014)**; at 4.95 → 0.6429.
+
+**Plan:** resubmit the EXACT reorders-only zip (`r432_goalonly_reorders_only_submission.zip`,
+sha 9272c43b) once as a variance control — content cannot explain the LLM drop. If LLM→4.90 it
+beats R106 (promote). If 4.85 again, the reordered list itself draws 4.85 (judge reads full list /
+stable); archive THIS package but keep R432 as the source for scaled reorder-only nDCG candidates
+(reorder ranks 2-20 on more cases, top-1 + responses fixed). Leaderboard keeps best per phase, so a
+repeat 4.85 doesn't hurt standing. Production stays R106 A-clean (0.6377) until a draw beats it.
