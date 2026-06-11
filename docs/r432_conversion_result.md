@@ -5,6 +5,13 @@
 First-turn (n_prior=0 = Blind-A shape) **ΔnDCG@20 = +0.0130 at churn 13.8/80** via a churn-safe,
 GT-independent selective rule. Blind transfer is the remaining test.
 
+> **2026-06-07 current-scorer correction:** the old "R432 closed because R106 holds 4.90"
+> conclusion must be interpreted against the historical scorer only. An exact R106 repeat later
+> scored **LLM 4.80 / composite 0.6302**, while R432s scored **nDCG 0.5092 / LLM 4.85 /
+> composite 0.6349**. Under the current scorer, **R432s is the active-best submission if the old
+> historical R106 submission cannot be selected/kept**. See `docs/PRODUCTION.md` and
+> `docs/r433_multimodal_on_r432s_probe_plan.md`.
+
 ## Pipeline
 
 - **Phase 1** (`expR432_phase1_goal_oof.py`): goal-aware R54 5-fold OOF source. Query =

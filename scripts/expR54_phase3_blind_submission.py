@@ -66,6 +66,7 @@ R21_TRACK_EMBS = REPO / "cache" / "r21_production" / "track_embeddings.npy"
 R54_OOF = REPO / "cache" / "r54" / "phase3_full" / "oof_r54_lists.json"
 R54_BLIND_LISTS = REPO / "cache" / "r54_production" / "blind_r54_lists.json"
 BLIND_OUT = REPO / "exp" / "inference" / "blind_a"
+LOCAL_TRACK_METADATA = REPO / "cache" / "metadata" / "track_metadata_all_tracks.json"
 
 RRF_K = 20
 POOL_K = 300
@@ -99,6 +100,18 @@ def ts():
 
 
 def load_track_albums():
+    def first_value(value):
+        if isinstance(value, list):
+            return str(value[0]) if value else ""
+        return str(value) if value else ""
+
+    if LOCAL_TRACK_METADATA.exists():
+        raw = json.load(open(LOCAL_TRACK_METADATA))
+        return {
+            str(tid): first_value(meta.get("album_id")) or first_value(meta.get("album_name"))
+            for tid, meta in raw.items()
+        }
+
     from datasets import DownloadConfig, load_dataset
     ds = load_dataset("talkpl-ai/TalkPlayData-Challenge-Track-Metadata",
                       download_config=DownloadConfig(local_files_only=True))["all_tracks"]
