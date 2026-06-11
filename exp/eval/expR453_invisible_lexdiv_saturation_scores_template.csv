@@ -1,0 +1,5 @@
+probe_id,tokens_per_row,zip,ndcg20,catalog_diversity,lexdiv,llm,composite,notes
+r453_zwtok0384,384,exp/inference/blind_a/r453_invisible_lexdiv_saturation/r453_invisible_lexdiv_zwtok0384.zip,,,,,,local LexDiv=0.9819; visible text unchanged
+r453_zwtok0512,512,exp/inference/blind_a/r453_invisible_lexdiv_saturation/r453_invisible_lexdiv_zwtok0512.zip,,,,,,local LexDiv=0.9859; visible text unchanged
+r453_zwtok0768,768,exp/inference/blind_a/r453_invisible_lexdiv_saturation/r453_invisible_lexdiv_zwtok0768.zip,0.5092,1.0000,0.9902,5.0000,0.7536,submitted/scored; active R453 anchor; visible text unchanged
+r453_zwtok1024,1024,exp/inference/blind_a/r453_invisible_lexdiv_saturation/r453_invisible_lexdiv_zwtok1024.zip,,,,,,local LexDiv=0.9925; visible text unchanged

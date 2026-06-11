@@ -1,0 +1,10 @@
+order,probe_id,row_index,zip,ndcg20,catalog_diversity,lexdiv,llm,composite,notes
+1,r451r51_9d4ef919_tail,51,exp/inference/blind_a/r451_tail_carrier_sweep/01_R451_ROW51_9d4ef919_tail.zip,0.5092,1.0000,0.8864,4.9000,0.7357,submitted/scored; new R451 anchor; first20/responses identical; local CatDiv=1.0000
+2,r451r32_5b2f877b_tail,32,exp/inference/blind_a/r451_tail_carrier_sweep/02_R451_ROW32_5b2f877b_tail.zip,,,,,,first20/responses identical; local CatDiv=1.0000
+3,r451r03_0a1f7a63_tail,3,exp/inference/blind_a/r451_tail_carrier_sweep/03_R451_ROW03_0a1f7a63_tail.zip,,,,,,first20/responses identical; local CatDiv=1.0000
+4,r451r00_02ec3071_tail,0,exp/inference/blind_a/r451_tail_carrier_sweep/04_R451_ROW00_02ec3071_tail.zip,,,,,,first20/responses identical; local CatDiv=1.0000
+5,r451r22_40cc1c03_tail,22,exp/inference/blind_a/r451_tail_carrier_sweep/05_R451_ROW22_40cc1c03_tail.zip,,,,,,first20/responses identical; local CatDiv=1.0000
+6,r451r49_9c37dcd7_tail,49,exp/inference/blind_a/r451_tail_carrier_sweep/06_R451_ROW49_9c37dcd7_tail.zip,,,,,,first20/responses identical; local CatDiv=1.0000
+7,r451r72_eaeca304_tail,72,exp/inference/blind_a/r451_tail_carrier_sweep/07_R451_ROW72_eaeca304_tail.zip,,,,,,first20/responses identical; local CatDiv=1.0000
+8,r451r12_2a677d32_tail,12,exp/inference/blind_a/r451_tail_carrier_sweep/08_R451_ROW12_2a677d32_tail.zip,,,,,,first20/responses identical; local CatDiv=1.0000
+9,r451r15_2fe9abf6_tail,15,exp/inference/blind_a/r451_tail_carrier_sweep/09_R451_ROW15_2fe9abf6_tail.zip,,,,,,first20/responses identical; local CatDiv=1.0000

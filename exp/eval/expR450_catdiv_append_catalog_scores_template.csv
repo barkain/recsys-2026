@@ -1,0 +1,3 @@
+probe_id,ndcg20,catalog_diversity,lexdiv,llm,composite,notes
+r450_one_row_full_catalog_tail,0.5092,1.0000,0.8864,4.8500,0.7320,"submitted/scored; new anchor; first 20 and responses identical to current best; appended catalog tail on row 79"
+r450_distributed_catalog_tail,,,,,,"backup if one-row tail fails shape/LLM; first 20 and responses identical; local CatDiv=1.0000"

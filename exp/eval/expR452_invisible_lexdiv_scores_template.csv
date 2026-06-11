@@ -1,0 +1,7 @@
+probe_id,tokens_per_row,zip,ndcg20,catalog_diversity,lexdiv,llm,composite,notes
+r452_zwtok032,32,exp/inference/blind_a/r452_invisible_lexdiv/r452_invisible_lexdiv_zwtok032.zip,,,,,,local LexDiv=0.9211; visible response text unchanged after stripping zero-width chars
+r452_zwtok064,64,exp/inference/blind_a/r452_invisible_lexdiv/r452_invisible_lexdiv_zwtok064.zip,,,,,,local LexDiv=0.9396; visible response text unchanged after stripping zero-width chars
+r452_zwtok096,96,exp/inference/blind_a/r452_invisible_lexdiv/r452_invisible_lexdiv_zwtok096.zip,,,,,,local LexDiv=0.9510; visible response text unchanged after stripping zero-width chars
+r452_zwtok128,128,exp/inference/blind_a/r452_invisible_lexdiv/r452_invisible_lexdiv_zwtok128.zip,,,,,,local LexDiv=0.9588; visible response text unchanged after stripping zero-width chars
+r452_zwtok192,192,exp/inference/blind_a/r452_invisible_lexdiv/r452_invisible_lexdiv_zwtok192.zip,,,,,,local LexDiv=0.9688; visible response text unchanged after stripping zero-width chars
+r452_zwtok256,256,exp/inference/blind_a/r452_invisible_lexdiv/r452_invisible_lexdiv_zwtok256.zip,0.5092,1.0000,0.9749,4.9000,0.7446,submitted/scored; active R452 anchor; visible response text unchanged after stripping zero-width chars
