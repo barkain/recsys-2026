@@ -10,19 +10,17 @@ on new cases (NO oracle swap, NO R106 hand-edits) + fresh responses + fresh ≤1
 ---
 ## PRE-RELEASE TODO — do NOW, before Jun 23 (ranked by risk)
 
-- [ ] **P0 — FIX THE HARD BLOCKER: restore R54 phase3 fold_1..4 model weights.**
-  `cache/r54/phase3_full/fold_{1..4}/{model,track_embs.npy}` are **MISSING** (verified;
-  `cache/r54/phase3_full/` does not exist — only `phase3_smoke/fold_0` + per-fold
-  `oof_lists.json` survive). They are gitignored and NOT recoverable from git, and the
-  documented Colab restore flow only restores `oof_lists.json`. Without them
-  `scripts/expR54_phase3_ensemble_blind.py` (runbook Step 2) FAILS → the R54 retriever
-  source (1 of 8) can't be built → pipeline breaks / Blind-A reproducibility lost.
-  **FIX:** (a) restore the 4 fold dirs from Colab Drive if present, OR (b) re-run
-  `scripts/expR54_phase3_full5fold_train.py` on Colab A100 and download `model/` +
-  `track_embs.npy` for folds 1–4 (~few hours). THEN confirm
-  `expR54_phase3_ensemble_blind.py --blind-name blind_a` reproduces
-  `cache/r54_production/blind_r54_lists.json`. **This is the only item that can derail
-  Blind-B day-of.**
+- [x] **P0 — R54 phase3 fold weights: RESOLVED (re-verified present on Mac 2026-06-12).**
+  The 2025-05-31 "MISSING" note was stale — the 2026-06-04 restore persisted. Current local state
+  (verified 2026-06-12): all 5 folds present + complete where `expR54_phase3_ensemble_blind.py`
+  expects them — `cache/r54/phase3_smoke/fold_0/` + `cache/r54/phase3_full/fold_{1..4}/`, each with
+  `model/model.safetensors` (418M) + `track_embs.npy` (138M) + `oof_lists.json`.
+  Backup insurance also on Drive: `r54_phase3_full_folds1_4.zip` (2.15 GB, id
+  `1hgsoWFQAgaEoeVCf4pkSOViDvPrFs4Q7`) + `r54_phase3_fold0_model_and_embs.tar.gz` (538 MB, id
+  `1TaqY8Q3_VyDtTmr7h7ZtYr7xJ2uHyFyH`) + `r54_phase3_lr_support.tar.gz` + `SHA256SUMS.txt`.
+  **Re-verified 2026-06-12:** `expR54_phase3_ensemble_blind.py --blind-name blind_a` reproduces
+  `cache/r54_production/blind_r54_lists.json` — **80/80 session lists IDENTICAL** (CPU, ~10 min).
+  Pipeline intact; re-run once more on Blind-B day as the final sanity check.
 - [x] **P0 — docs/PRODUCTION.md updated** to R106 A-clean (was stale at R92 p11).
 - [ ] **P1 — back up untracked single-copy artifacts to Drive** (`cache/` is gitignored;
   disk loss = unrecoverable for several): `cache/r54_phase3_lr_model.txt` (R54c LR — no
