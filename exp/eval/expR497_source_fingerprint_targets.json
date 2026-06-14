@@ -1,0 +1,5558 @@
+{
+  "summary": {
+    "rows": 80,
+    "by_strength": {
+      "STRONG": 35,
+      "WEAK": 25,
+      "NONE": 20
+    },
+    "by_bucket": {
+      "MLHD_STRONG": 8,
+      "LFM2B_ONLY_STRONG": 27,
+      "MLHD_WEAK": 9,
+      "LFM2B_ONLY_WEAK": 16,
+      "NO_PLAYED_TRACKS": 20
+    },
+    "by_year": {
+      "2009": 2,
+      "2010": 1,
+      "2011": 3,
+      "2012": 8,
+      "2013": 3,
+      "2014": 10,
+      "2015": 8,
+      "2016": 6,
+      "2017": 18,
+      "2018": 21
+    },
+    "mlhd_era_rows": 27,
+    "mlhd_strong_rows": 8,
+    "played_track_isrc_coverage": {
+      "tracks": 210,
+      "with_isrc": 206
+    },
+    "interpretation": "Only MLHD_STRONG rows are plausible legal-era feasibility targets without LFM-2b. LFM2B_ONLY_STRONG rows have enough fingerprint signal but require the withdrawn full-coverage source or organizer-approved equivalent data."
+  },
+  "targets": [
+    {
+      "row_index": 67,
+      "session_id": "2bfd631e-7d47-4dd6-a419-7d63615833c5",
+      "session_prefix": "2bfd631e",
+      "session_date": "2010-02-26",
+      "year": 2010,
+      "turns": 22,
+      "user_turns": 8,
+      "n_played": 7,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "MLHD_STRONG",
+      "profile_key": [
+        "20s",
+        "US",
+        "female",
+        "Alternative Music Culture"
+      ],
+      "query": "Yes! 'Johnny Too Bad Freestyle' is exactly what I was looking for from 'Everything Under The Sun'. This is great! These tracks hit exactly the sound I was looking for. Play 'Johnny Too Bad Freestyle - Rarities Version'.",
+      "played_tracks": [
+        {
+          "track_id": "74b0756a-d65f-4dba-8c0a-ccaca0230735",
+          "track_name": "STP - Rarities Version",
+          "artist_name": "Sublime",
+          "album_name": "Everything Under The Sun",
+          "isrc": [
+            "USUM70614846"
+          ],
+          "artist_id": [
+            "f7133142-626b-4a3a-83cd-16104b3c1591"
+          ],
+          "album_id": [
+            "28a09f34-ab1b-413c-acf9-ff727aaed0cb"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 24.0
+        },
+        {
+          "track_id": "d50111b2-71cb-48a7-8beb-3a05420125d9",
+          "track_name": "5446 Thats My Number/ Ball And Chain",
+          "artist_name": "Sublime",
+          "album_name": "40oz To Freedom (Explicit Version)",
+          "isrc": [
+            "USMC19544449"
+          ],
+          "artist_id": [
+            "f7133142-626b-4a3a-83cd-16104b3c1591"
+          ],
+          "album_id": [
+            "63bb2842-222c-4b1d-88b0-5ffcccba4177",
+            "f8d79b9f-a10b-472a-a82a-a39bbc255cb2"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 56.0
+        },
+        {
+          "track_id": "4a3bad54-69c5-4907-8b9a-2265081e186f",
+          "track_name": "Scarlet Begonias",
+          "artist_name": "Sublime",
+          "album_name": "40oz To Freedom (Explicit Version)",
+          "isrc": [
+            "USGA19244453"
+          ],
+          "artist_id": [
+            "f7133142-626b-4a3a-83cd-16104b3c1591"
+          ],
+          "album_id": [
+            "63bb2842-222c-4b1d-88b0-5ffcccba4177",
+            "f8d79b9f-a10b-472a-a82a-a39bbc255cb2"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 60.0
+        },
+        {
+          "track_id": "50f9048f-7b3a-4d0a-bc32-16f5124d5bf5",
+          "track_name": "Smoke Two Joints",
+          "artist_name": "Sublime",
+          "album_name": "40oz To Freedom (Explicit Version)",
+          "isrc": [
+            "USGA19244446"
+          ],
+          "artist_id": [
+            "f7133142-626b-4a3a-83cd-16104b3c1591"
+          ],
+          "album_id": [
+            "63bb2842-222c-4b1d-88b0-5ffcccba4177",
+            "f8d79b9f-a10b-472a-a82a-a39bbc255cb2"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 66.0
+        },
+        {
+          "track_id": "2456ac67-03db-4897-a976-e0e6c8d99b47",
+          "track_name": "Ebin",
+          "artist_name": "Sublime",
+          "album_name": "40oz To Freedom (Explicit Version)",
+          "isrc": [
+            "USGA19244460"
+          ],
+          "artist_id": [
+            "f7133142-626b-4a3a-83cd-16104b3c1591"
+          ],
+          "album_id": [
+            "63bb2842-222c-4b1d-88b0-5ffcccba4177",
+            "f8d79b9f-a10b-472a-a82a-a39bbc255cb2"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 49.0
+        },
+        {
+          "track_id": "008db103-8bdc-4674-b992-19575aa23ea6",
+          "track_name": "Right Back",
+          "artist_name": "Sublime",
+          "album_name": "40oz To Freedom (Explicit Version)",
+          "isrc": [
+            "USGA19244457"
+          ],
+          "artist_id": [
+            "f7133142-626b-4a3a-83cd-16104b3c1591"
+          ],
+          "album_id": [
+            "63bb2842-222c-4b1d-88b0-5ffcccba4177",
+            "f8d79b9f-a10b-472a-a82a-a39bbc255cb2"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 50.0
+        },
+        {
+          "track_id": "bcba1fcf-6ac7-4c31-9c1a-5f21603f4ebb",
+          "track_name": "Johnny Too Bad Freestyle - Rarities Version",
+          "artist_name": "Sublime",
+          "album_name": "Everything Under The Sun",
+          "isrc": [
+            "USUM70614681"
+          ],
+          "artist_id": [
+            "f7133142-626b-4a3a-83cd-16104b3c1591"
+          ],
+          "album_id": [
+            "28a09f34-ab1b-413c-acf9-ff727aaed0cb"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 25.0
+        }
+      ]
+    },
+    {
+      "row_index": 19,
+      "session_id": "525f9f69-31e5-4fee-9813-e903ad24e39e",
+      "session_prefix": "525f9f69",
+      "session_date": "2014-11-07",
+      "year": 2014,
+      "turns": 22,
+      "user_turns": 8,
+      "n_played": 7,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "MLHD_STRONG",
+      "profile_key": [
+        "20s",
+        "RS",
+        "male",
+        "Finnish Metal"
+      ],
+      "query": "Okay, while Omnium Gatherum is excellent, it's not the album with the skull art I was trying to recall. However, I definitely found one of the albums I was looking for, Mors Principium Est's \"...and Death Said Live\"! That artwork was exactly what I had in mind. Thank you for helping me remember that one! Can you just give me some more general recommendations for Finnish melodic death metal now?",
+      "played_tracks": [
+        {
+          "track_id": "becafff4-e735-4424-aeaf-e6845509eb2c",
+          "track_name": "Departure",
+          "artist_name": "Mors Principium Est",
+          "album_name": "...and Death Said Live",
+          "isrc": [
+            "DEU601204209"
+          ],
+          "artist_id": [
+            "562f01df-8970-48ff-afa1-a0380ce57d28"
+          ],
+          "album_id": [
+            "15f2f3c7-0fe6-405b-af54-08b1b4973ec3",
+            "25656b32-e02a-4a03-9d8b-7ba5dc15ac81"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 22.0
+        },
+        {
+          "track_id": "a1a50d16-1d26-4c98-8376-6064f2f1d6e4",
+          "track_name": "Break Myself Away",
+          "artist_name": "Norther",
+          "album_name": "Circle Regenerated",
+          "isrc": [
+            "US4E41168305"
+          ],
+          "artist_id": [
+            "88813a6f-2e3d-4f9d-9a3f-1a72331d1f32"
+          ],
+          "album_id": [
+            "e74f8f61-b1e7-4cbf-b5ff-4efef807d4c9"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 16.0
+        },
+        {
+          "track_id": "b753af54-a187-466f-b524-99fb5c64ac8c",
+          "track_name": "Frozen Angel",
+          "artist_name": "Norther",
+          "album_name": "N",
+          "isrc": [
+            "US4E40847202"
+          ],
+          "artist_id": [
+            "a86c79a7-e491-4e41-a044-2e6c744735b0"
+          ],
+          "album_id": [
+            "916f3a47-d231-476c-9e2b-26eab3b95b51",
+            "fbebb079-d8e0-416e-9948-364f15e74f9d"
+          ],
+          "release_date": "2008-07-13",
+          "duration": 246826,
+          "popularity": 38.0
+        },
+        {
+          "track_id": "aa4ea9df-334a-45f9-b279-a2459ad448c3",
+          "track_name": "New Dynamic",
+          "artist_name": "Omnium Gatherum",
+          "album_name": "Beyond",
+          "isrc": [
+            "US94P1313202"
+          ],
+          "artist_id": [
+            "a117919f-8ba8-4dde-bc81-c1da56713fd2"
+          ],
+          "album_id": [
+            "51a8ef50-ca2d-4fde-8cdc-c10be3091ef3"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 38.0
+        },
+        {
+          "track_id": "061762b6-9438-4e71-9872-2aaddeb5019a",
+          "track_name": "Nightwalkers",
+          "artist_name": "Omnium Gatherum",
+          "album_name": "Beyond",
+          "isrc": [
+            "US94P1313204"
+          ],
+          "artist_id": [
+            "a117919f-8ba8-4dde-bc81-c1da56713fd2"
+          ],
+          "album_id": [
+            "51a8ef50-ca2d-4fde-8cdc-c10be3091ef3"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 21.0
+        },
+        {
+          "track_id": "10196b1e-a490-49b5-9dd9-3a6f52d27409",
+          "track_name": "The Unknowing",
+          "artist_name": "Omnium Gatherum",
+          "album_name": "The Unknowing",
+          "isrc": [
+            "US94P1313208"
+          ],
+          "artist_id": [
+            "a117919f-8ba8-4dde-bc81-c1da56713fd2"
+          ],
+          "album_id": [
+            "0496e370-8de5-48ce-be90-3c54c8c4e6a9",
+            "51a8ef50-ca2d-4fde-8cdc-c10be3091ef3"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 33.0
+        },
+        {
+          "track_id": "8d9e0678-e017-4e3a-b0fb-30779210212b",
+          "track_name": "Living in Me",
+          "artist_name": "Omnium Gatherum",
+          "album_name": "Beyond",
+          "isrc": [
+            "US94P1313209"
+          ],
+          "artist_id": [
+            "a117919f-8ba8-4dde-bc81-c1da56713fd2"
+          ],
+          "album_id": [
+            "51a8ef50-ca2d-4fde-8cdc-c10be3091ef3"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 30.0
+        }
+      ]
+    },
+    {
+      "row_index": 31,
+      "session_id": "3aee4d9b-b0f1-4282-bbe6-58942c71f311",
+      "session_prefix": "3aee4d9b",
+      "session_date": "2009-07-30",
+      "year": 2009,
+      "turns": 16,
+      "user_turns": 6,
+      "n_played": 5,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "MLHD_STRONG",
+      "profile_key": [
+        "20s",
+        "PL",
+        "male",
+        "Western"
+      ],
+      "query": "Yes, 'Bella Luna' is wonderful! The Rippingtons always deliver. Please play another great smooth jazz track by them.",
+      "played_tracks": [
+        {
+          "track_id": "697a4797-275c-4581-85ae-e2dacfe68aaf",
+          "track_name": "Kilimanjaro",
+          "artist_name": "The Rippingtons",
+          "album_name": "Kilimanjaro",
+          "isrc": [
+            "USGR18900016"
+          ],
+          "artist_id": [
+            "7ba892f3-1b54-485c-9ce6-2eb9da4ad51a",
+            "126c640b-950f-498a-ab5d-36e0494c2a97"
+          ],
+          "album_id": [
+            "febc7849-ca6c-4ed9-a0b9-35542b3a3730"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 27.0
+        },
+        {
+          "track_id": "94bff1ae-9825-4d03-ba9c-c5e67b3bf3c2",
+          "track_name": "Morocco",
+          "artist_name": "The Rippingtons",
+          "album_name": "Kilimanjaro",
+          "isrc": [
+            "USGR19905801"
+          ],
+          "artist_id": [
+            "7ba892f3-1b54-485c-9ce6-2eb9da4ad51a",
+            "126c640b-950f-498a-ab5d-36e0494c2a97"
+          ],
+          "album_id": [
+            "febc7849-ca6c-4ed9-a0b9-35542b3a3730"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 29.0
+        },
+        {
+          "track_id": "e0dfc0c6-8614-49f1-bb1c-8c17d8891d71",
+          "track_name": "Oceansong",
+          "artist_name": "The Rippingtons",
+          "album_name": "Kilimanjaro",
+          "isrc": [
+            "USGR19905808"
+          ],
+          "artist_id": [
+            "7ba892f3-1b54-485c-9ce6-2eb9da4ad51a",
+            "126c640b-950f-498a-ab5d-36e0494c2a97"
+          ],
+          "album_id": [
+            "febc7849-ca6c-4ed9-a0b9-35542b3a3730"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 24.0
+        },
+        {
+          "track_id": "64b277e6-5467-4478-bdf4-c8001d004208",
+          "track_name": "Northern Lights",
+          "artist_name": "The Rippingtons",
+          "album_name": "Kilimanjaro",
+          "isrc": [
+            "USGR19905802"
+          ],
+          "artist_id": [
+            "7ba892f3-1b54-485c-9ce6-2eb9da4ad51a",
+            "126c640b-950f-498a-ab5d-36e0494c2a97"
+          ],
+          "album_id": [
+            "febc7849-ca6c-4ed9-a0b9-35542b3a3730"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 31.0
+        },
+        {
+          "track_id": "0aaee03e-7294-45b3-863b-8abe357070d0",
+          "track_name": "Bella Luna",
+          "artist_name": "The Rippingtons",
+          "album_name": "Let It Ripp!",
+          "isrc": [
+            "USC4R0302095"
+          ],
+          "artist_id": [
+            "7ba892f3-1b54-485c-9ce6-2eb9da4ad51a"
+          ],
+          "album_id": [
+            "e236757c-d441-4fca-a54c-d7232f5359b7"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 28.0
+        }
+      ]
+    },
+    {
+      "row_index": 23,
+      "session_id": "ca8cbe02-1def-4fca-ba48-f17f9fac0ed8",
+      "session_prefix": "ca8cbe02",
+      "session_date": "2013-06-09",
+      "year": 2013,
+      "turns": 16,
+      "user_turns": 6,
+      "n_played": 5,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "MLHD_STRONG",
+      "profile_key": [
+        "20s",
+        "IN",
+        "female",
+        "Gothic Western"
+      ],
+      "query": "Time for Tea\" is superb! The theatricality and storytelling are just mesmerizing. I'm completely drawn into it. Do you have another recommendation that's equally dramatic and theatrical, but perhaps with a really strong, driving beat or more prominent industrial rhythm?",
+      "played_tracks": [
+        {
+          "track_id": "1e20b21e-75b3-4d96-9cc4-093333627ccc",
+          "track_name": "Shalott",
+          "artist_name": "Emilie Autumn",
+          "album_name": "Opheliac -- The Deluxe Edition",
+          "isrc": [
+            "USHM21079035"
+          ],
+          "artist_id": [
+            "3d3d9966-6b78-467e-948e-33801c4c23e8"
+          ],
+          "album_id": [
+            "07d74887-c207-4783-be23-baed115e1193"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 32.0
+        },
+        {
+          "track_id": "46eda0e7-4e48-4fc6-abfb-780f6cb39381",
+          "track_name": "306",
+          "artist_name": "Emilie Autumn",
+          "album_name": "Opheliac -- The Deluxe Edition",
+          "isrc": [
+            "USHM21079043"
+          ],
+          "artist_id": [
+            "3d3d9966-6b78-467e-948e-33801c4c23e8"
+          ],
+          "album_id": [
+            "07d74887-c207-4783-be23-baed115e1193"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 21.0
+        },
+        {
+          "track_id": "60fd71b1-c45f-496c-957a-04364da9d64d",
+          "track_name": "Swallow",
+          "artist_name": "Emilie Autumn",
+          "album_name": "Opheliac -- The Deluxe Edition",
+          "isrc": [
+            "USHM21079029"
+          ],
+          "artist_id": [
+            "3d3d9966-6b78-467e-948e-33801c4c23e8"
+          ],
+          "album_id": [
+            "07d74887-c207-4783-be23-baed115e1193"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 30.0
+        },
+        {
+          "track_id": "82088dc4-8068-4140-af55-7edc9a59ab30",
+          "track_name": "Castle Down",
+          "artist_name": "Emilie Autumn",
+          "album_name": "Enchant",
+          "isrc": [
+            "USHM90512406"
+          ],
+          "artist_id": [
+            "3d3d9966-6b78-467e-948e-33801c4c23e8"
+          ],
+          "album_id": [
+            "4bc59436-99f4-40f7-bc43-940e34461377"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 21.0
+        },
+        {
+          "track_id": "1599aa9f-09d3-4ef4-8079-2cccb1d73423",
+          "track_name": "Time for Tea",
+          "artist_name": "Emilie Autumn",
+          "album_name": "Fight Like a Girl",
+          "isrc": [
+            "QMN2K1200002"
+          ],
+          "artist_id": [
+            "3d3d9966-6b78-467e-948e-33801c4c23e8"
+          ],
+          "album_id": [
+            "bad64403-9b38-4025-abf5-60bac077292d"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 28.0
+        }
+      ]
+    },
+    {
+      "row_index": 5,
+      "session_id": "a1df8767-11df-44d3-a1f6-e1ba2115e8f0",
+      "session_prefix": "a1df8767",
+      "session_date": "2014-11-19",
+      "year": 2014,
+      "turns": 13,
+      "user_turns": 5,
+      "n_played": 4,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "MLHD_STRONG",
+      "profile_key": [
+        "20s",
+        "UK",
+        "male",
+        "Stoner Rock Culture"
+      ],
+      "query": "Urethane\" is a classic! Thanks for that. So 'The Action Is Go' has that raw energy and heavy riffs. Can you tell me more about what specific themes Fu Manchu explores on that album, or any particular musical elements that make it distinct from their other work?",
+      "played_tracks": [
+        {
+          "track_id": "fade54a7-aa8c-42ae-b21b-b39e347f4228",
+          "track_name": "Evil Eye",
+          "artist_name": "Fu Manchu",
+          "album_name": "The Action Is Go",
+          "isrc": [
+            "USMA20215044"
+          ],
+          "artist_id": [
+            "76fa3d35-ec91-498a-b5fc-d0d0e92ff796"
+          ],
+          "album_id": [
+            "1c7c64b6-b0db-433b-8469-bb847512d36b"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 49.0
+        },
+        {
+          "track_id": "961d3531-d6c0-4fde-a3e4-2fc1e6889ea4",
+          "track_name": "King Of The Road",
+          "artist_name": "Fu Manchu",
+          "album_name": "King Of The Road",
+          "isrc": [
+            "USMA20215280"
+          ],
+          "artist_id": [
+            "76fa3d35-ec91-498a-b5fc-d0d0e92ff796"
+          ],
+          "album_id": [
+            "794f3869-5981-42c3-a825-0610f880be78"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 40.0
+        },
+        {
+          "track_id": "f3b090f1-40d5-464b-90da-591a9515b524",
+          "track_name": "Blue Tile Fever",
+          "artist_name": "Fu Manchu",
+          "album_name": "King Of The Road",
+          "isrc": [
+            "USMA20215223"
+          ],
+          "artist_id": [
+            "76fa3d35-ec91-498a-b5fc-d0d0e92ff796"
+          ],
+          "album_id": [
+            "794f3869-5981-42c3-a825-0610f880be78"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 22.0
+        },
+        {
+          "track_id": "d802fa0d-d5b5-420b-bfc3-2b851eff6e00",
+          "track_name": "Urethane",
+          "artist_name": "Fu Manchu",
+          "album_name": "The Action Is Go",
+          "isrc": [
+            "USMA20215045"
+          ],
+          "artist_id": [
+            "76fa3d35-ec91-498a-b5fc-d0d0e92ff796"
+          ],
+          "album_id": [
+            "1c7c64b6-b0db-433b-8469-bb847512d36b"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 35.0
+        }
+      ]
+    },
+    {
+      "row_index": 16,
+      "session_id": "2a677d32-23e9-4fe7-8b8e-4875c93509a2",
+      "session_prefix": "2a677d32",
+      "session_date": "2012-05-25",
+      "year": 2012,
+      "turns": 10,
+      "user_turns": 4,
+      "n_played": 3,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "MLHD_STRONG",
+      "profile_key": [
+        "30s",
+        "DK",
+        "male",
+        "Blue Note Jazz"
+      ],
+      "query": "502 Blues\" is fantastic, a strong track from another great Wayne Shorter album. That's exactly the kind of seminal Blue Note record I'm after. Could you recommend another classic Blue Note album, perhaps from a different legendary saxophonist of that era, like Jackie McLean or Dexter Gordon?",
+      "played_tracks": [
+        {
+          "track_id": "b2a18968-8952-47e6-934f-83e0296fbbad",
+          "track_name": "Oriental Folk Song - 2004 - Remaster",
+          "artist_name": "McCoy Tyner",
+          "album_name": "Night Dreamer (The Rudy Van Gelder Edition)",
+          "isrc": [
+            "USBN20400543"
+          ],
+          "artist_id": [
+            "86070e49-c00d-49bc-9b60-3a181d954175",
+            "f1fa98f0-654a-4d31-bf59-d8693ce790c8",
+            "ebfbbb85-f723-47b1-8a1e-3094631d6f23",
+            "bcf49568-38f7-43c0-9661-948952b5b19d",
+            "cd6441e1-4297-49e0-a9bd-ab009a80c36e"
+          ],
+          "album_id": [
+            "22480312-2a61-4772-b1c1-5c2b430400b2",
+            "7a05c7f5-fb24-4caa-bb33-d4a6e8e8c4d3"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 29.0
+        },
+        {
+          "track_id": "7948c458-e7e3-484b-a2bd-9b01fed66555",
+          "track_name": "Black Nile - 2004 - Remaster",
+          "artist_name": "McCoy Tyner",
+          "album_name": "Night Dreamer (The Rudy Van Gelder Edition)",
+          "isrc": [
+            "USBN20400545"
+          ],
+          "artist_id": [
+            "86070e49-c00d-49bc-9b60-3a181d954175",
+            "bcf49568-38f7-43c0-9661-948952b5b19d",
+            "f1fa98f0-654a-4d31-bf59-d8693ce790c8",
+            "ebfbbb85-f723-47b1-8a1e-3094631d6f23"
+          ],
+          "album_id": [
+            "22480312-2a61-4772-b1c1-5c2b430400b2",
+            "7a05c7f5-fb24-4caa-bb33-d4a6e8e8c4d3"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 37.0
+        },
+        {
+          "track_id": "dc87b313-e1bc-49a6-8a23-64b76ea73b4c",
+          "track_name": "502 Blues (Drinkin' And Drivin') - 2000 Digital Remaster",
+          "artist_name": "Jimmy Rowles",
+          "album_name": "Adam's Apple",
+          "isrc": [
+            "USBN20000447"
+          ],
+          "artist_id": [
+            "77b8ea8e-f568-47d8-b863-e2e7f369e591",
+            "f1fa98f0-654a-4d31-bf59-d8693ce790c8"
+          ],
+          "album_id": [
+            "97ca155a-d08c-48e5-910b-0a6552fa0210",
+            "3ea2d9db-2f94-4e0f-a3e0-b77dcc42b10c"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 44.0
+        }
+      ]
+    },
+    {
+      "row_index": 51,
+      "session_id": "5ad7094f-3764-4e32-94c9-c0c02b65e01b",
+      "session_prefix": "5ad7094f",
+      "session_date": "2012-11-16",
+      "year": 2012,
+      "turns": 10,
+      "user_turns": 4,
+      "n_played": 3,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "MLHD_STRONG",
+      "profile_key": [
+        "20s",
+        "EE",
+        "male",
+        "90s Underground Hip-Hop Culture"
+      ],
+      "query": "Excellent! This selection, especially Del's track, truly highlights the lyrical depth and wordplay I wanted to discover. These tracks perfectly align with the characteristics I was searching for. What else do you have for me in the realm of underground hip-hop with strong lyrical focus, perhaps something with a more introspective or philosophical edge now?",
+      "played_tracks": [
+        {
+          "track_id": "58122c73-c29d-44fd-acb0-627ca52f0e68",
+          "track_name": "One Life One Love",
+          "artist_name": "Hieroglyphics",
+          "album_name": "3rd Eye Vision",
+          "isrc": [
+            "US28M0410241"
+          ],
+          "artist_id": [
+            "b10d4abc-e9ef-4464-a1a6-701c639c5384"
+          ],
+          "album_id": [
+            "7a3f9f58-2785-4da5-8522-812ba3b0dadc"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 22.0
+        },
+        {
+          "track_id": "b5c1e9fc-0012-469c-a6d8-20536dc7da7d",
+          "track_name": "7 Sixes",
+          "artist_name": "Hieroglyphics",
+          "album_name": "Full Circle",
+          "isrc": [
+            "US28M0410059"
+          ],
+          "artist_id": [
+            "b10d4abc-e9ef-4464-a1a6-701c639c5384"
+          ],
+          "album_id": [
+            "2f171e87-5b3e-4f1a-961a-67f761bb06ad"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 21.0
+        },
+        {
+          "track_id": "887a2c82-4c55-4664-9fef-d18e53c80a92",
+          "track_name": "Pet Peeves",
+          "artist_name": "Del The Funky Homosapien",
+          "album_name": "Both Sides Of The Brain",
+          "isrc": [
+            "US28M0410204"
+          ],
+          "artist_id": [
+            "aec3e525-ee78-40a1-b510-422065c6c1bb"
+          ],
+          "album_id": [
+            "9a09f8e8-533e-4818-98ce-ce2a568a9141"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 22.0
+        }
+      ]
+    },
+    {
+      "row_index": 76,
+      "session_id": "4e849a6c-dfbc-4a67-82cc-6dff9076b382",
+      "session_prefix": "4e849a6c",
+      "session_date": "2014-09-17",
+      "year": 2014,
+      "turns": 10,
+      "user_turns": 4,
+      "n_played": 3,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "MLHD_STRONG",
+      "profile_key": [
+        "10s",
+        "BR",
+        "male",
+        "Western"
+      ],
+      "query": "Yes! \"Lost Dreams\" totally completes the picture. These tracks really hit that specific early 2010s lo-fi chillwave sound I was looking for. Excellent work! Now that we've found that, do you have any other electronic tracks that have introspective or melancholic lyrics, maybe something with a slightly darker feel?",
+      "played_tracks": [
+        {
+          "track_id": "b88bc69d-7122-40ae-8170-5ef534694dc6",
+          "track_name": "Omni Island",
+          "artist_name": "Dreams West",
+          "album_name": "12:56",
+          "isrc": [
+            "USQY51367195"
+          ],
+          "artist_id": [
+            "0a64cb24-b285-42e4-ace6-1cdf7dfa4089"
+          ],
+          "album_id": [
+            "27af400c-b92d-487e-93c7-57c0c0214e7a"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 22.0
+        },
+        {
+          "track_id": "586507c2-dd82-4337-85c0-5df9b6e46585",
+          "track_name": "Tribes",
+          "artist_name": "Dreams West",
+          "album_name": "12:56",
+          "isrc": [
+            "USQY51367196"
+          ],
+          "artist_id": [
+            "0a64cb24-b285-42e4-ace6-1cdf7dfa4089"
+          ],
+          "album_id": [
+            "27af400c-b92d-487e-93c7-57c0c0214e7a"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 33.0
+        },
+        {
+          "track_id": "8b3687ea-d6c9-4f31-90c5-20935c8e6d64",
+          "track_name": "Lost Dreams",
+          "artist_name": "Infinity Frequencies",
+          "album_name": "Shrines",
+          "isrc": [
+            "GBXS51312801"
+          ],
+          "artist_id": [
+            "812ff63d-cd56-4ee1-ae2a-2ac164ef0423"
+          ],
+          "album_id": [
+            "a635e79e-b03f-479d-9e59-0556145b52cd"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 36.0
+        }
+      ]
+    },
+    {
+      "row_index": 35,
+      "session_id": "d7426802-d075-4a49-8062-977ba656c9a2",
+      "session_prefix": "d7426802",
+      "session_date": "2016-07-27",
+      "year": 2016,
+      "turns": 22,
+      "user_turns": 8,
+      "n_played": 7,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "20s",
+        "US",
+        "male",
+        "American Country Music"
+      ],
+      "query": "That's it, 'Might As Well Get Stoned' is awesome. This album just keeps delivering. How about 'Sometimes I Cry' next?",
+      "played_tracks": [
+        {
+          "track_id": "35b1f359-863f-4edf-8f58-3fd9f067118e",
+          "track_name": "Guys Like Me",
+          "artist_name": "Eric Church",
+          "album_name": "Sinners Like Me",
+          "isrc": [
+            "USCN10500391"
+          ],
+          "artist_id": [
+            "0c96582d-9ad4-4f91-b791-9ab8382b4d32"
+          ],
+          "album_id": [
+            "a021cc07-2d77-44a0-bf91-7df96ac6e244"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 58.0
+        },
+        {
+          "track_id": "8ac1746c-3633-4f62-a77c-45af6bd7de55",
+          "track_name": "How 'Bout You",
+          "artist_name": "Eric Church",
+          "album_name": "Sinners Like Me",
+          "isrc": [
+            "USCN10500367"
+          ],
+          "artist_id": [
+            "0c96582d-9ad4-4f91-b791-9ab8382b4d32"
+          ],
+          "album_id": [
+            "a021cc07-2d77-44a0-bf91-7df96ac6e244"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 52.0
+        },
+        {
+          "track_id": "35ae409b-f25b-4705-adfd-c9b100097206",
+          "track_name": "Fire Away",
+          "artist_name": "Chris Stapleton",
+          "album_name": "Traveller",
+          "isrc": [
+            "USUM71418078"
+          ],
+          "artist_id": [
+            "c89a42a8-1c6d-49f0-b8ad-6b564d343349",
+            "e95fe6d3-70bc-4716-9510-d898db155ce3"
+          ],
+          "album_id": [
+            "1ee26b19-6154-4d2d-9bcc-e8db6c65bc3f",
+            "c49f8a96-4468-4cd2-b56d-03204ec80e41"
+          ],
+          "release_date": "2015-05-04",
+          "duration": 244333,
+          "popularity": 76.0
+        },
+        {
+          "track_id": "f02d6c95-80de-40d7-aac3-45b090011c0c",
+          "track_name": "Whiskey And You",
+          "artist_name": "Chris Stapleton",
+          "album_name": "Traveller",
+          "isrc": [
+            "USUM71418085"
+          ],
+          "artist_id": [
+            "eba93af9-a09a-458e-a689-908bedb54de6"
+          ],
+          "album_id": [
+            "e4fc773e-c766-4d29-955f-89948d733b44"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 68.0
+        },
+        {
+          "track_id": "70b3f057-8b3b-41c5-a4ff-9a5f2736de20",
+          "track_name": "Traveller",
+          "artist_name": "Chris Stapleton",
+          "album_name": "Traveller",
+          "isrc": [
+            "USUM71418080"
+          ],
+          "artist_id": [
+            "c89a42a8-1c6d-49f0-b8ad-6b564d343349",
+            "e95fe6d3-70bc-4716-9510-d898db155ce3"
+          ],
+          "album_id": [
+            "1ee26b19-6154-4d2d-9bcc-e8db6c65bc3f",
+            "891a7bbd-b0cf-4247-8868-db4d848024de"
+          ],
+          "release_date": "2015-05-04",
+          "duration": 222413,
+          "popularity": 75.0
+        },
+        {
+          "track_id": "7308c7be-d11d-45c2-a890-29e052203eb7",
+          "track_name": "Nobody To Blame",
+          "artist_name": "Chris Stapleton",
+          "album_name": "Traveller",
+          "isrc": [
+            "USUM71418076"
+          ],
+          "artist_id": [
+            "c89a42a8-1c6d-49f0-b8ad-6b564d343349",
+            "e95fe6d3-70bc-4716-9510-d898db155ce3"
+          ],
+          "album_id": [
+            "1ee26b19-6154-4d2d-9bcc-e8db6c65bc3f",
+            "c49f8a96-4468-4cd2-b56d-03204ec80e41"
+          ],
+          "release_date": "2015-05-04",
+          "duration": 244146,
+          "popularity": 67.0
+        },
+        {
+          "track_id": "75cf0f75-717a-4d8b-b716-ca1dac108fc7",
+          "track_name": "Might As Well Get Stoned",
+          "artist_name": "Chris Stapleton",
+          "album_name": "Traveller",
+          "isrc": [
+            "USUM71418082"
+          ],
+          "artist_id": [
+            "c89a42a8-1c6d-49f0-b8ad-6b564d343349",
+            "e95fe6d3-70bc-4716-9510-d898db155ce3"
+          ],
+          "album_id": [
+            "1ee26b19-6154-4d2d-9bcc-e8db6c65bc3f",
+            "c49f8a96-4468-4cd2-b56d-03204ec80e41"
+          ],
+          "release_date": "2015-05-04",
+          "duration": 277066,
+          "popularity": 60.0
+        }
+      ]
+    },
+    {
+      "row_index": 33,
+      "session_id": "809d4fbc-5298-494a-8817-78b3fdc5317e",
+      "session_prefix": "809d4fbc",
+      "session_date": "2016-11-19",
+      "year": 2016,
+      "turns": 22,
+      "user_turns": 8,
+      "n_played": 7,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "30s",
+        "US",
+        "male",
+        "Country & Americana"
+      ],
+      "query": "Now *that's* what I'm talking about! A song about Hank Williams himself, that's a fantastic example of a biographical narrative. I love hearing stories like that. Can you find me some more songs that tell stories about real people or historical events in the country or Americana genres?",
+      "played_tracks": [
+        {
+          "track_id": "706f3af7-8f1c-4b79-9991-1ee0789cceaf",
+          "track_name": "Me and Bobby McGee",
+          "artist_name": "Kris Kristofferson",
+          "album_name": "Kristofferson",
+          "isrc": [
+            "USSM10016813"
+          ],
+          "artist_id": [
+            "5c68f718-275c-4c75-9ef9-6cad250504c4"
+          ],
+          "album_id": [
+            "21c37f1f-1e2d-428b-aefb-46f0bdd1ee4b"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 44.0
+        },
+        {
+          "track_id": "5bf6ec88-bd2e-425e-8e44-938d5defe091",
+          "track_name": "The Junkie and the Juicehead, Minus Me",
+          "artist_name": "Kris Kristofferson",
+          "album_name": "Extras",
+          "isrc": [
+            "USSM10017305"
+          ],
+          "artist_id": [
+            "5c68f718-275c-4c75-9ef9-6cad250504c4"
+          ],
+          "album_id": [
+            "4814c980-92a9-4673-877a-e56e2c999c39",
+            "21c37f1f-1e2d-428b-aefb-46f0bdd1ee4b"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 19.0
+        },
+        {
+          "track_id": "c7249241-183b-403c-8cf6-f92d033c251d",
+          "track_name": "Bottle In My Hand",
+          "artist_name": "Hayes Carll",
+          "album_name": "KMAG YOYO (& Other American Stories)",
+          "isrc": [
+            "USUM71026441"
+          ],
+          "artist_id": [
+            "e210a4ea-161f-407e-97c1-4837f19869c0"
+          ],
+          "album_id": [
+            "b603b75e-7aea-4773-9acf-6b940509f35d"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 25.0
+        },
+        {
+          "track_id": "6d933def-76b2-4cf5-9c95-91e114f09dba",
+          "track_name": "Mr. Bojangles",
+          "artist_name": "Jerry Jeff Walker",
+          "album_name": "Mr. Bojangles",
+          "isrc": [
+            "USAT20106431"
+          ],
+          "artist_id": [
+            "a6fa45bf-f9c0-4bd3-b0d3-2ea65c1b08c6"
+          ],
+          "album_id": [
+            "a0936c3c-9c57-4fd6-8f48-23449b7cfbd1"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 46.0
+        },
+        {
+          "track_id": "ff92dc67-84b6-40d8-83c0-a623472fbbaf",
+          "track_name": "London Homesick Blues",
+          "artist_name": "Jerry Jeff Walker",
+          "album_name": "Viva Terlingua",
+          "isrc": [
+            "USMC17336125"
+          ],
+          "artist_id": [
+            "a6fa45bf-f9c0-4bd3-b0d3-2ea65c1b08c6"
+          ],
+          "album_id": [
+            "49917904-5869-4f27-ac89-2d2b1e3af58d"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 37.0
+        },
+        {
+          "track_id": "71a387f0-86a5-4b13-9e5c-5d55917f4a93",
+          "track_name": "Sangria Wine",
+          "artist_name": "Jerry Jeff Walker",
+          "album_name": "Viva Terlingua",
+          "isrc": [
+            "USMC17302076"
+          ],
+          "artist_id": [
+            "a6fa45bf-f9c0-4bd3-b0d3-2ea65c1b08c6"
+          ],
+          "album_id": [
+            "49917904-5869-4f27-ac89-2d2b1e3af58d"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 41.0
+        },
+        {
+          "track_id": "777d91e0-556c-486a-ac26-ea5b113e691c",
+          "track_name": "If You Don't Like Hank Williams",
+          "artist_name": "Kris Kristofferson",
+          "album_name": "Surreal Thing",
+          "isrc": [
+            "USSM17500590"
+          ],
+          "artist_id": [
+            "5c68f718-275c-4c75-9ef9-6cad250504c4"
+          ],
+          "album_id": [
+            "b8a73688-bca5-4f0b-949d-8a1ffda87528",
+            "b2c88d75-03ac-4252-9513-d49e01b869b7"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 40.0
+        }
+      ]
+    },
+    {
+      "row_index": 44,
+      "session_id": "1f7b28c1-8b18-4045-be27-0475edb96857",
+      "session_prefix": "1f7b28c1",
+      "session_date": "2018-09-10",
+      "year": 2018,
+      "turns": 22,
+      "user_turns": 8,
+      "n_played": 7,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "20s",
+        "RU",
+        "male",
+        "Underground Electronic Music"
+      ],
+      "query": "Yes, this is fantastic! \"Sad Alron\" captures that vast, continuous drone and melancholic texture perfectly. I'm really drawn into this sound. Can you recommend something similar but perhaps with an even darker, more abstract edge to the drone, maintaining that pure, evolving soundscape without any beats?",
+      "played_tracks": [
+        {
+          "track_id": "8f2bb25d-1ea9-4e47-804f-1aea80ccd0ac",
+          "track_name": "Chukhung",
+          "artist_name": "Biosphere",
+          "album_name": "Substrata",
+          "isrc": [
+            "NOBIP1701030"
+          ],
+          "artist_id": [
+            "ac4843de-13db-4b11-98d7-03033d385220"
+          ],
+          "album_id": [
+            "d6358dab-518a-4756-b801-d8d75b28b180"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 39.0
+        },
+        {
+          "track_id": "2341d699-9757-43f8-b589-f5259bbc3368",
+          "track_name": "Anthropocene",
+          "artist_name": "Loscil",
+          "album_name": "Monument Builders",
+          "isrc": [
+            "USNCB1620406"
+          ],
+          "artist_id": [
+            "44db4c85-f549-4a4f-9f60-b30471e71c42"
+          ],
+          "album_id": [
+            "d0473f0e-5ba5-4600-ada2-dfd1cdaf6e47"
+          ],
+          "release_date": "2016-11-11",
+          "duration": 279971,
+          "popularity": 27.0
+        },
+        {
+          "track_id": "5693a8c4-a033-4186-a591-ad5178a1e476",
+          "track_name": "On Oath",
+          "artist_name": "Andy Stott",
+          "album_name": "Faith in Strangers",
+          "isrc": [
+            "USA2Z1411279"
+          ],
+          "artist_id": [
+            "839c49f4-6653-4839-b912-9aaebf31a993"
+          ],
+          "album_id": [
+            "263b14c6-408d-4c30-a0b4-037a7cac133e"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 25.0
+        },
+        {
+          "track_id": "fbc46248-9d29-4b8c-8d3d-b3959bded116",
+          "track_name": "Verberation Lab",
+          "artist_name": "Pye Corner Audio",
+          "album_name": "Stasis",
+          "isrc": [
+            "GBGSV1600384"
+          ],
+          "artist_id": [
+            "6450dfbd-68bf-4717-ab47-ca7a1f3f9713"
+          ],
+          "album_id": [
+            "7f224bbc-73f1-48d4-8f2b-564306e196b4"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 11.0
+        },
+        {
+          "track_id": "31e0fcf9-f54a-41f8-bb58-1659c1f879fa",
+          "track_name": "The Highest Flood",
+          "artist_name": "Forest Swords",
+          "album_name": "Compassion",
+          "isrc": [
+            "GBCFB1700008"
+          ],
+          "artist_id": [
+            "a486d444-00c1-4551-9c31-5bb1ed88eba3"
+          ],
+          "album_id": [
+            "088f503b-b895-4eb5-af13-dcc59a313a2a",
+            "b2c73e21-9ac2-4eb2-ad6a-89b514304d9c"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 34.0
+        },
+        {
+          "track_id": "e9aafe6c-f661-4413-b3ec-36f0d85a425f",
+          "track_name": "Raw Language",
+          "artist_name": "Forest Swords",
+          "album_name": "Compassion",
+          "isrc": [
+            "GBCFB1700015"
+          ],
+          "artist_id": [
+            "a486d444-00c1-4551-9c31-5bb1ed88eba3"
+          ],
+          "album_id": [
+            "088f503b-b895-4eb5-af13-dcc59a313a2a"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 28.0
+        },
+        {
+          "track_id": "23b4451e-2539-4fdf-a1f8-47636bc5eed3",
+          "track_name": "Sad Alron",
+          "artist_name": "Mark Pritchard",
+          "album_name": "Sad Alron",
+          "isrc": [
+            "GBBPW1500240"
+          ],
+          "artist_id": [
+            "8fd42957-6db4-4bb7-a8b1-9a06bb6766ab"
+          ],
+          "album_id": [
+            "f47fc69a-8fac-4086-a33b-ab523f646d97",
+            "7f06c267-e958-4334-8a2b-30fceed07d5b",
+            "e861e186-d448-41ba-ae2a-7cc2b88260ee"
+          ],
+          "release_date": "2016-05-13",
+          "duration": 156920,
+          "popularity": 0.0
+        }
+      ]
+    },
+    {
+      "row_index": 15,
+      "session_id": "dc3c1b72-0520-44c6-ab2b-4935d0455e19",
+      "session_prefix": "dc3c1b72",
+      "session_date": "2015-10-10",
+      "year": 2015,
+      "turns": 19,
+      "user_turns": 7,
+      "n_played": 6,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "20s",
+        "CZ",
+        "female",
+        "British Pop"
+      ],
+      "query": "Yes, \"Stone Cold Sober\" is great! It definitely has that raw energy and a more dramatic feel, which starts to capture that unique blend of visual artistry and her distinctive sound. Amazing, I love how the music paints such a vivid picture. Are there any more like these that feel like a grand stage performance?",
+      "played_tracks": [
+        {
+          "track_id": "535bafd4-f16b-4af2-a96f-fc65215e4e88",
+          "track_name": "New York - Radio Edit",
+          "artist_name": "Paloma Faith",
+          "album_name": "Do You Want The Truth Or Something Beautiful?",
+          "isrc": [
+            "GBARL0900791"
+          ],
+          "artist_id": [
+            "d9e048e1-9f89-4835-b378-98da237970ba"
+          ],
+          "album_id": [
+            "ade3c4bb-6b88-4a78-9b80-357f32500084",
+            "3e754907-a9cf-453c-a439-28f426221f9e"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 47.0
+        },
+        {
+          "track_id": "d98c3f7f-ab65-41d5-834d-01f73f8b7b2b",
+          "track_name": "Trouble with My Baby",
+          "artist_name": "Paloma Faith",
+          "album_name": "A Perfect Contradiction Outsiders' Edition (Deluxe)",
+          "isrc": [
+            "GBARL1301428"
+          ],
+          "artist_id": [
+            "d9e048e1-9f89-4835-b378-98da237970ba"
+          ],
+          "album_id": [
+            "72c5a098-29cc-4c3c-9818-55422a383e0b",
+            "12a57abc-3f2e-4a57-a9a9-50b8bd9407d7"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 39.0
+        },
+        {
+          "track_id": "311af67e-25dc-4cc3-b6b3-cf7e545dcfd0",
+          "track_name": "The Bigger You Love (The Harder You Fall)",
+          "artist_name": "Paloma Faith",
+          "album_name": "A Perfect Contradiction Outsiders' Edition (Deluxe)",
+          "isrc": [
+            "GBARL1301429"
+          ],
+          "artist_id": [
+            "d9e048e1-9f89-4835-b378-98da237970ba"
+          ],
+          "album_id": [
+            "72c5a098-29cc-4c3c-9818-55422a383e0b",
+            "12a57abc-3f2e-4a57-a9a9-50b8bd9407d7"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 31.0
+        },
+        {
+          "track_id": "75c17dd1-fed5-4406-a15d-b1c5a2e83c27",
+          "track_name": "Ready for the Good Life",
+          "artist_name": "Paloma Faith",
+          "album_name": "A Perfect Contradiction Outsiders' Edition (Deluxe)",
+          "isrc": [
+            "GBARL1401335"
+          ],
+          "artist_id": [
+            "d9e048e1-9f89-4835-b378-98da237970ba"
+          ],
+          "album_id": [
+            "72c5a098-29cc-4c3c-9818-55422a383e0b",
+            "0bb7a1ce-c372-4fd6-ba56-1eb660cbb7c6"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 36.0
+        },
+        {
+          "track_id": "e1b97a90-15eb-42ed-9be1-72967a337b3a",
+          "track_name": "Mouth to Mouth",
+          "artist_name": "Paloma Faith",
+          "album_name": "A Perfect Contradiction Outsiders' Edition (Deluxe)",
+          "isrc": [
+            "GBARL1400022"
+          ],
+          "artist_id": [
+            "d9e048e1-9f89-4835-b378-98da237970ba"
+          ],
+          "album_id": [
+            "72c5a098-29cc-4c3c-9818-55422a383e0b",
+            "12a57abc-3f2e-4a57-a9a9-50b8bd9407d7"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 31.0
+        },
+        {
+          "track_id": "918a16e1-367c-4a53-802e-aefb6a48de0e",
+          "track_name": "Stone Cold Sober",
+          "artist_name": "Paloma Faith",
+          "album_name": "Do You Want The Truth Or Something Beautiful?",
+          "isrc": [
+            "GBARL0901135"
+          ],
+          "artist_id": [
+            "d9e048e1-9f89-4835-b378-98da237970ba"
+          ],
+          "album_id": [
+            "ade3c4bb-6b88-4a78-9b80-357f32500084",
+            "ecb867f7-842d-4fd5-aa68-6057192cacd3"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 45.0
+        }
+      ]
+    },
+    {
+      "row_index": 39,
+      "session_id": "d5c80ee5-97c2-4de1-af2e-2295e3ae34a3",
+      "session_prefix": "d5c80ee5",
+      "session_date": "2015-10-30",
+      "year": 2015,
+      "turns": 19,
+      "user_turns": 7,
+      "n_played": 6,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "20s",
+        "PL",
+        "male",
+        "Chiptune Culture"
+      ],
+      "query": "Oh, this is also fantastic! 'Escape From Xenon' has that perfect classic arcade sci-fi shooter vibe. It reminds me of games where you're blasting through space. I really like how it combines the 8-bit sound with a sense of adventure. Do you have any other tracks that lean into that retro space-themed arcade game feeling, maybe something that feels like exploring a new galaxy or battling an alien boss?",
+      "played_tracks": [
+        {
+          "track_id": "3bfe564c-2c4f-4189-aa2e-bea09327f78b",
+          "track_name": "Audio Avenue",
+          "artist_name": "FantomenK",
+          "album_name": "FantomenK",
+          "isrc": [
+            "SEYOK1105718"
+          ],
+          "artist_id": [
+            "4a1ed458-5ae6-4f4a-b140-e212ea5b5710"
+          ],
+          "album_id": [
+            "2b1d6a85-50c1-496c-919b-fb1c14a71b68"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 31.0
+        },
+        {
+          "track_id": "67a8bde7-7ba9-4a14-92d3-ee443e2026b8",
+          "track_name": "Goodbye Summer, Hello Winter",
+          "artist_name": "FantomenK",
+          "album_name": "FantomenK",
+          "isrc": [
+            "SEYOK1105724"
+          ],
+          "artist_id": [
+            "4a1ed458-5ae6-4f4a-b140-e212ea5b5710"
+          ],
+          "album_id": [
+            "2b1d6a85-50c1-496c-919b-fb1c14a71b68"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 30.0
+        },
+        {
+          "track_id": "716db849-5bb6-4913-bdea-8ba255f9157d",
+          "track_name": "Otis",
+          "artist_name": "Chipzel",
+          "album_name": "Super Hexagon",
+          "isrc": [
+            "USCGH1311769"
+          ],
+          "artist_id": [
+            "ccfe99f3-b689-41e2-bfae-e557f8a70894"
+          ],
+          "album_id": [
+            "c379dbce-f31c-4e61-a77e-00347a33217a"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 27.0
+        },
+        {
+          "track_id": "3c07d728-042e-43f4-9ba2-e693e4e7a199",
+          "track_name": "2D Racer Level 1",
+          "artist_name": "Dubmood",
+          "album_name": "Lost Floppies Vol 2",
+          "isrc": [
+            "GBSMU1397366"
+          ],
+          "artist_id": [
+            "8f001d00-fe7a-4676-b4fe-7bd73fb59bfd"
+          ],
+          "album_id": [
+            "e22b4744-6f2b-4d85-9978-2f1c7658328a"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 16.0
+        },
+        {
+          "track_id": "026092d9-76d5-4cc0-ae9d-1c8c51710e04",
+          "track_name": "Lil' Fighter",
+          "artist_name": "Zalza",
+          "album_name": "Superposition",
+          "isrc": [
+            "SEYOK1508789"
+          ],
+          "artist_id": [
+            "e77d135a-c212-4fa3-a450-c26dc88a645c"
+          ],
+          "album_id": [
+            "3db47dfb-ba9e-42e7-9608-0da5222ac038"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 21.0
+        },
+        {
+          "track_id": "5ac09ead-5d91-49dc-9dcb-5105013bd82e",
+          "track_name": "Escape From Xenon",
+          "artist_name": "8 Bit Weapon",
+          "album_name": "Bits With Byte",
+          "isrc": [
+            "USCGH1207889"
+          ],
+          "artist_id": [
+            "d35e37c2-a8e3-4372-b1f7-58a182cff6e4"
+          ],
+          "album_id": [
+            "969697dd-27d1-47f6-9aa5-2041083b9a45"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 3.0
+        }
+      ]
+    },
+    {
+      "row_index": 29,
+      "session_id": "fe22cfe0-f552-4d43-bf13-ea77bef4f1ce",
+      "session_prefix": "fe22cfe0",
+      "session_date": "2016-08-17",
+      "year": 2016,
+      "turns": 19,
+      "user_turns": 7,
+      "n_played": 6,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "20s",
+        "US",
+        "male",
+        "Video Game Music Culture"
+      ],
+      "query": "I appreciate the continued focus on dark intensity with \"Grave Calling\" and Noisia. However, I've now heard several tracks from the DmC soundtrack. I'm really looking to branch out. Can you please recommend tracks from a *completely different artist* and *another game soundtrack* that feature intense, driving electronic music, but also strongly emphasize a brooding, suspenseful atmosphere and deeper emotional resonance, maybe with a touch of melancholy?",
+      "played_tracks": [
+        {
+          "track_id": "200141fb-39ab-443a-86a1-f6a6b771fb93",
+          "track_name": "Hunter Theme",
+          "artist_name": "Noisia",
+          "album_name": "DmC Devil May Cry (Original Game Soundtrack) [Bonus Version]",
+          "isrc": [
+            "USA2P1296133"
+          ],
+          "artist_id": [
+            "478d02d1-3fea-4a3f-8820-f1f278a1f9a3"
+          ],
+          "album_id": [
+            "a7be95ae-ce78-431f-9e4c-44b039f9214b",
+            "bb1239ac-b275-426b-8c54-6c7eac840e4b"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 29.0
+        },
+        {
+          "track_id": "cac9d62f-402c-4fd6-a4c8-39e4747ab253",
+          "track_name": "Poison Theme",
+          "artist_name": "Noisia",
+          "album_name": "DmC Devil May Cry (Original Game Soundtrack) [Bonus Version]",
+          "isrc": [
+            "USA2P1296135"
+          ],
+          "artist_id": [
+            "478d02d1-3fea-4a3f-8820-f1f278a1f9a3"
+          ],
+          "album_id": [
+            "a7be95ae-ce78-431f-9e4c-44b039f9214b",
+            "bb1239ac-b275-426b-8c54-6c7eac840e4b"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 25.0
+        },
+        {
+          "track_id": "5e437d93-df89-42f9-b60a-ba9cfd0e2d72",
+          "track_name": "Crush Him - Original",
+          "artist_name": "Noisia",
+          "album_name": "DmC Devil May Cry (Original Game Soundtrack) [Bonus Version]",
+          "isrc": [
+            "USA2P1296131"
+          ],
+          "artist_id": [
+            "478d02d1-3fea-4a3f-8820-f1f278a1f9a3"
+          ],
+          "album_id": [
+            "a7be95ae-ce78-431f-9e4c-44b039f9214b",
+            "bb1239ac-b275-426b-8c54-6c7eac840e4b"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 20.0
+        },
+        {
+          "track_id": "497fad4a-62bf-4728-a7da-a4b4a607fce7",
+          "track_name": "Mass Recall",
+          "artist_name": "Noisia",
+          "album_name": "DmC Devil May Cry (Original Game Soundtrack) [Bonus Version]",
+          "isrc": [
+            "USA2P1296157"
+          ],
+          "artist_id": [
+            "478d02d1-3fea-4a3f-8820-f1f278a1f9a3"
+          ],
+          "album_id": [
+            "a7be95ae-ce78-431f-9e4c-44b039f9214b",
+            "bb1239ac-b275-426b-8c54-6c7eac840e4b"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 7.0
+        },
+        {
+          "track_id": "af0c9380-7d68-41fb-8f6b-8c1f7a92cf1e",
+          "track_name": "Road Collapse",
+          "artist_name": "Noisia",
+          "album_name": "DmC Devil May Cry (Original Game Soundtrack) [Bonus Version]",
+          "isrc": [
+            "USA2P1296153"
+          ],
+          "artist_id": [
+            "478d02d1-3fea-4a3f-8820-f1f278a1f9a3"
+          ],
+          "album_id": [
+            "a7be95ae-ce78-431f-9e4c-44b039f9214b",
+            "bb1239ac-b275-426b-8c54-6c7eac840e4b"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 8.0
+        },
+        {
+          "track_id": "f12e5a94-bcaa-4aa0-b58e-3c986a4b4feb",
+          "track_name": "Grave Calling",
+          "artist_name": "Noisia",
+          "album_name": "DmC Devil May Cry (Original Game Soundtrack) [Bonus Version]",
+          "isrc": [
+            "USA2P1296145"
+          ],
+          "artist_id": [
+            "478d02d1-3fea-4a3f-8820-f1f278a1f9a3"
+          ],
+          "album_id": [
+            "a7be95ae-ce78-431f-9e4c-44b039f9214b",
+            "bb1239ac-b275-426b-8c54-6c7eac840e4b"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 14.0
+        }
+      ]
+    },
+    {
+      "row_index": 27,
+      "session_id": "c08eb2a1-8491-442d-a10f-db8d9ba831d6",
+      "session_prefix": "c08eb2a1",
+      "session_date": "2017-01-28",
+      "year": 2017,
+      "turns": 19,
+      "user_turns": 7,
+      "n_played": 6,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "30s",
+        "BR",
+        "female",
+        "Brazilian"
+      ],
+      "query": "Yes! 'Pontual' is absolutely fantastic for a productive afternoon! This is exactly the kind of energetic, driving beat I was looking for. With 'Sushi' and now 'Pontual', I have some great tracks to keep me focused while working. And for chilling out, I have a wonderful selection too. My goal is definitely achieved! Thank you for these great recommendations. What else do you have for me? Maybe something for an evening run?",
+      "played_tracks": [
+        {
+          "track_id": "8be10f19-839e-4dd1-a8e6-9eb81dacae82",
+          "track_name": "Folhas Secas",
+          "artist_name": "Beth Carvalho",
+          "album_name": "Para Sempre",
+          "isrc": [
+            "BREMI7300346"
+          ],
+          "artist_id": [
+            "511135ac-2a70-4804-ad7f-115948c1c416"
+          ],
+          "album_id": [
+            "21fb9657-1377-47df-ba66-bcd0eff6278f",
+            "6be943ac-fb9d-4d16-b8e6-86484dcb38ef"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 0.0
+        },
+        {
+          "track_id": "8da28038-18f6-426e-8764-265a101fa959",
+          "track_name": "A Rita",
+          "artist_name": "Chico Buarque",
+          "album_name": "Chico Buarque de Hollanda",
+          "isrc": [
+            "BRSGL6600003"
+          ],
+          "artist_id": [
+            "3e53ae73-758a-4062-b7c1-f462c477ed16"
+          ],
+          "album_id": [
+            "6fab94eb-a9b5-4dc5-a7f2-9a69bc1a5e14"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 45.0
+        },
+        {
+          "track_id": "15211c5a-fdd2-4340-9038-9d06d4d3d987",
+          "track_name": "O Sol Nascerá (A Sorrir)",
+          "artist_name": "Cartola",
+          "album_name": "Raizes Do Samba",
+          "isrc": [
+            "BREMI7400190"
+          ],
+          "artist_id": [
+            "b1c11090-b032-457e-ab98-3b883a849fab"
+          ],
+          "album_id": [
+            "d78a6007-1f80-458d-8b67-a8537f8a4989",
+            "731c03ae-4c71-47c4-b13a-ff72cd3f2cc0"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 63.0
+        },
+        {
+          "track_id": "b8d55151-9ec2-4bf5-9608-dc2b693533c7",
+          "track_name": "Pra Sonhar",
+          "artist_name": "Marcelo Jeneci",
+          "album_name": "Feito Pra Acabar",
+          "isrc": [
+            "BR4P51000006"
+          ],
+          "artist_id": [
+            "a7b28cf1-e052-4c1a-acd6-e13703997af3"
+          ],
+          "album_id": [
+            "20ba2e5c-9df0-48f7-8574-d25a50fc6013"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 64.0
+        },
+        {
+          "track_id": "9ba76477-ab22-4bf2-bb99-aba98e454c24",
+          "track_name": "Dar-te-ei",
+          "artist_name": "Marcelo Jeneci",
+          "album_name": "Feito Pra Acabar",
+          "isrc": [
+            "BR4P51000008"
+          ],
+          "artist_id": [
+            "a7b28cf1-e052-4c1a-acd6-e13703997af3"
+          ],
+          "album_id": [
+            "20ba2e5c-9df0-48f7-8574-d25a50fc6013"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 39.0
+        },
+        {
+          "track_id": "06270b68-9570-44b9-b0bf-ed4f2b30179a",
+          "track_name": "Pontual",
+          "artist_name": "Tulipa Ruiz",
+          "album_name": "Efêmera",
+          "isrc": [
+            "BRAGL1000028"
+          ],
+          "artist_id": [
+            "2faae39c-7ea4-4578-ad78-357a2541d954"
+          ],
+          "album_id": [
+            "f7ff43b1-1b8f-4aa4-873f-819cb0bf595f"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 27.0
+        }
+      ]
+    },
+    {
+      "row_index": 42,
+      "session_id": "eaeca304-3ddb-4adb-8087-0f15b597f73e",
+      "session_prefix": "eaeca304",
+      "session_date": "2017-09-17",
+      "year": 2017,
+      "turns": 19,
+      "user_turns": 7,
+      "n_played": 6,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "10s",
+        "BE",
+        "female",
+        "Metal Culture"
+      ],
+      "query": "Yes! \"Deathwish\" is fantastic and totally hits the mark. The lyrics about a toxic influence being a \"deathwish\" and cutting ties resonate so much. It's intense and empowering! Now, do you have any metalcore songs that focus on themes of self-discovery or embracing your true self, even if it means going against expectations?",
+      "played_tracks": [
+        {
+          "track_id": "60b3262f-fd44-4251-a668-d5deacdf8c53",
+          "track_name": "Oxygen",
+          "artist_name": "Oh, Sleeper",
+          "album_name": "Oxygen",
+          "isrc": [
+            "QMEU31619319"
+          ],
+          "artist_id": [
+            "de5e9184-ba3f-4579-80b2-a2a0e28f903f"
+          ],
+          "album_id": [
+            "24597aba-30b4-417a-8802-c2f1cdc74808"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 44.0
+        },
+        {
+          "track_id": "427a4c90-7ec6-452f-a8e7-8e6902383019",
+          "track_name": "Damaged Goods",
+          "artist_name": "Kingdom Of Giants",
+          "album_name": "All the Hell You've Got to Spare",
+          "isrc": [
+            "QMUYR1700052"
+          ],
+          "artist_id": [
+            "5b4da944-8641-42b8-b761-fb9393a4a45d"
+          ],
+          "album_id": [
+            "09282369-6caa-4997-9198-710fa65da213",
+            "40ef4bc1-2c24-4844-881f-7f18a598cd38"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 42.0
+        },
+        {
+          "track_id": "931f7a9d-a3dd-4feb-b327-54a23477c1d4",
+          "track_name": "Invisible Enemy",
+          "artist_name": "August Burns Red",
+          "album_name": "Invisible Enemy",
+          "isrc": [
+            "US5261722676"
+          ],
+          "artist_id": [
+            "f94ed170-36fe-416d-855f-2b06fbf79bda"
+          ],
+          "album_id": [
+            "06d1e17d-d505-4b3b-a723-a57bdc9b2eef",
+            "49d0c8c0-1736-4f4f-bfdb-7bf4f8289e55",
+            "3d18afbd-7c7b-4188-b948-9e05c87af3e5"
+          ],
+          "release_date": "2017-10-06",
+          "duration": 277693,
+          "popularity": 45.0
+        },
+        {
+          "track_id": "f44e5fef-06f6-4454-99dc-37a3f23f5558",
+          "track_name": "Misery",
+          "artist_name": "The Word Alive",
+          "album_name": "Misery",
+          "isrc": [
+            "US5261722533"
+          ],
+          "artist_id": [
+            "a7c18446-f729-453f-93a1-3dac63b5dfe0"
+          ],
+          "album_id": [
+            "d3709d32-7814-4652-a339-2d3f38030862"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 49.0
+        },
+        {
+          "track_id": "b7d48da3-250b-4104-ac40-3d8b55ad4695",
+          "track_name": "Dead Again",
+          "artist_name": "The Dead Rabbitts",
+          "album_name": "This Emptiness",
+          "isrc": [
+            "USF281756001"
+          ],
+          "artist_id": [
+            "4acb77b9-3eb1-4745-b025-181d7c011106"
+          ],
+          "album_id": [
+            "d802d72f-dd7d-4376-aea7-06eb163f7ba0",
+            "dfa03a46-fcba-4db7-834d-c25b1d13855b"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 30.0
+        },
+        {
+          "track_id": "92c3bec7-b08a-48d0-8139-d1db9774446b",
+          "track_name": "Deathwish",
+          "artist_name": "Northern Ghost",
+          "album_name": "Deathwish",
+          "isrc": [
+            "USF281616801"
+          ],
+          "artist_id": [
+            "f438cccc-c204-4d8e-85a0-c7616079300b"
+          ],
+          "album_id": [
+            "c833d8b3-98dc-4675-b057-6eeaaddefca0",
+            "8e20a39b-e4f8-47e1-9b86-224a672878b9"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 28.0
+        }
+      ]
+    },
+    {
+      "row_index": 69,
+      "session_id": "c4f7d055-a3cc-4d6b-be80-b90278bc0d32",
+      "session_prefix": "c4f7d055",
+      "session_date": "2017-11-27",
+      "year": 2017,
+      "turns": 19,
+      "user_turns": 7,
+      "n_played": 6,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "10s",
+        "FR",
+        "female",
+        "Japanese"
+      ],
+      "query": "Yes, 'We Are' is exactly it! I've got it! It's definitely the driving, anthemic drum beat combined with the powerful, soaring chorus and Taka's passionate vocal delivery that hooks me. The way his voice carries that emotional weight with such intensity over those instruments is what truly resonates. This is amazing, thank you so much! Please find me more ONE OK ROCK songs with similar energetic drum patterns, anthemic choruses, and intense vocal performances that convey strong emotions!",
+      "played_tracks": [
+        {
+          "track_id": "e4ae522e-2e38-4dfb-8a83-045d2bc269a4",
+          "track_name": "Clock Strikes",
+          "artist_name": "ONE OK ROCK",
+          "album_name": "JINSEI KAKETE BOKU WA",
+          "isrc": [
+            "JPJ221200410"
+          ],
+          "artist_id": [
+            "5af31ccd-fb95-4264-9176-3a2f9159346d"
+          ],
+          "album_id": [
+            "fbcf11a0-5019-4ec6-b61c-7712dfcd83e2"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 60.0
+        },
+        {
+          "track_id": "da9c05b6-88eb-4629-a245-f7da1c4ceed3",
+          "track_name": "Deeper Deeper",
+          "artist_name": "ONE OK ROCK",
+          "album_name": "JINSEI KAKETE BOKU WA",
+          "isrc": [],
+          "artist_id": [
+            "7fa528cd-0473-472c-be86-8c3cbc76549e"
+          ],
+          "album_id": [
+            "2331eaba-4463-4ddb-a112-e43cd19add3a"
+          ],
+          "release_date": "2013-03-06",
+          "duration": 216453,
+          "popularity": 52.0
+        },
+        {
+          "track_id": "03298a4c-c20c-49a9-8bce-ccb571fe198f",
+          "track_name": "Liar",
+          "artist_name": "ONE OK ROCK",
+          "album_name": "Niche Syndrome",
+          "isrc": [
+            "JPJ221000171"
+          ],
+          "artist_id": [
+            "5af31ccd-fb95-4264-9176-3a2f9159346d"
+          ],
+          "album_id": [
+            "1db860a7-53b1-47fe-a6dd-9ce956b9c3f4",
+            "9f8434a8-e611-493c-8f3b-ce47cb80fdb2"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 51.0
+        },
+        {
+          "track_id": "7ce1ed9d-5ec8-4584-aa71-5a67db2781ea",
+          "track_name": "Kanzen kankaku Dreamer",
+          "artist_name": "ONE OK ROCK",
+          "album_name": "Niche Syndrome",
+          "isrc": [],
+          "artist_id": [
+            "7fa528cd-0473-472c-be86-8c3cbc76549e"
+          ],
+          "album_id": [
+            "1dbae2bd-6e27-46fb-b43e-d43cd7dbe6ab"
+          ],
+          "release_date": "2010-06-09",
+          "duration": 252200,
+          "popularity": 58.0
+        },
+        {
+          "track_id": "fd3a653c-ad0d-4ae5-adcc-c20e72fc6043",
+          "track_name": "Jibun ROCK",
+          "artist_name": "ONE OK ROCK",
+          "album_name": "Niche Syndrome",
+          "isrc": [
+            "JPJ221000166"
+          ],
+          "artist_id": [
+            "7fa528cd-0473-472c-be86-8c3cbc76549e"
+          ],
+          "album_id": [
+            "791c3f01-2ac1-409c-afe6-70985b1f5a79",
+            "ddc0606f-0390-4178-96f0-3af2c8c574fc",
+            "1dbae2bd-6e27-46fb-b43e-d43cd7dbe6ab"
+          ],
+          "release_date": "2010-06-09",
+          "duration": 227040,
+          "popularity": 47.0
+        },
+        {
+          "track_id": "ef5bc36d-ea99-4246-beea-a7b5a5f866d4",
+          "track_name": "We Are",
+          "artist_name": "ONE OK ROCK",
+          "album_name": "Ambitions",
+          "isrc": [
+            "USAT21603322"
+          ],
+          "artist_id": [
+            "5af31ccd-fb95-4264-9176-3a2f9159346d"
+          ],
+          "album_id": [
+            "2b83aa6a-3ca1-4816-b514-cd1f774719be"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 63.0
+        }
+      ]
+    },
+    {
+      "row_index": 11,
+      "session_id": "db8ec85f-fa1f-4e88-b4d2-333b63b0d386",
+      "session_prefix": "db8ec85f",
+      "session_date": "2017-12-26",
+      "year": 2017,
+      "turns": 19,
+      "user_turns": 7,
+      "n_played": 6,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "30s",
+        "RU",
+        "female",
+        "Western Electronic Music Culture"
+      ],
+      "query": "Twin Home\" is good for a general listen. Since \"Light Rain\" was so perfect for focus, could you suggest more tracks with that really smooth, ambient electronic vibe, even if it's from different artists? I'm looking for more instrumental soundscapes that are great for background listening.",
+      "played_tracks": [
+        {
+          "track_id": "2e4445d2-f0bd-4d77-bfc3-1396ae47d495",
+          "track_name": "Eyen",
+          "artist_name": "Plaid",
+          "album_name": "Double Figure",
+          "isrc": [
+            "GBBPW0100017"
+          ],
+          "artist_id": [
+            "0ea8a4a0-9f33-41b9-a612-702dd8e28836",
+            "10a15cba-f719-4999-93d1-f9f8310fe0c6",
+            "12ff20f2-8473-42bd-ad14-60ac1204f5e9"
+          ],
+          "album_id": [
+            "af7b2661-7150-4911-8a2b-398ca47fb76f"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 36.0
+        },
+        {
+          "track_id": "2194a589-aeb4-4a82-be8c-23f3887b3613",
+          "track_name": "Assault On Precinct Zero",
+          "artist_name": "Plaid",
+          "album_name": "Double Figure",
+          "isrc": [
+            "GBBPW0100019"
+          ],
+          "artist_id": [
+            "0ea8a4a0-9f33-41b9-a612-702dd8e28836"
+          ],
+          "album_id": [
+            "af7b2661-7150-4911-8a2b-398ca47fb76f"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 26.0
+        },
+        {
+          "track_id": "2c998fa6-fbf5-4dfa-b7d3-5eda491a519b",
+          "track_name": "New Family",
+          "artist_name": "Plaid",
+          "album_name": "Double Figure",
+          "isrc": [
+            "GBBPW0100025"
+          ],
+          "artist_id": [
+            "0ea8a4a0-9f33-41b9-a612-702dd8e28836"
+          ],
+          "album_id": [
+            "af7b2661-7150-4911-8a2b-398ca47fb76f"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 27.0
+        },
+        {
+          "track_id": "167af39c-123a-4fb9-88c5-c78c8b7a3a81",
+          "track_name": "Manyme",
+          "artist_name": "Plaid",
+          "album_name": "Double Figure",
+          "isrc": [
+            "GBBPW0100035"
+          ],
+          "artist_id": [
+            "0ea8a4a0-9f33-41b9-a612-702dd8e28836",
+            "2a396b1d-9a7c-457d-b027-b274df1135c1",
+            "b39a52d2-3ee4-49ba-9e61-a4af7466ef2d"
+          ],
+          "album_id": [
+            "af7b2661-7150-4911-8a2b-398ca47fb76f"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 0.0
+        },
+        {
+          "track_id": "3ee683ea-65c1-4559-bdc8-d4f5122a7621",
+          "track_name": "Light Rain",
+          "artist_name": "Plaid",
+          "album_name": "Double Figure",
+          "isrc": [
+            "GBBPW0100023"
+          ],
+          "artist_id": [
+            "0ea8a4a0-9f33-41b9-a612-702dd8e28836"
+          ],
+          "album_id": [
+            "af7b2661-7150-4911-8a2b-398ca47fb76f"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 24.0
+        },
+        {
+          "track_id": "6ffa2f40-35de-44c1-8b4f-5682fa31f6c4",
+          "track_name": "Twin Home",
+          "artist_name": "Plaid",
+          "album_name": "Double Figure",
+          "isrc": [
+            "GBBPW0100027"
+          ],
+          "artist_id": [
+            "0ea8a4a0-9f33-41b9-a612-702dd8e28836"
+          ],
+          "album_id": [
+            "af7b2661-7150-4911-8a2b-398ca47fb76f"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 16.0
+        }
+      ]
+    },
+    {
+      "row_index": 4,
+      "session_id": "0fedfa80-ebe2-4977-b16b-594f4a2b19b1",
+      "session_prefix": "0fedfa80",
+      "session_date": "2018-11-26",
+      "year": 2018,
+      "turns": 19,
+      "user_turns": 7,
+      "n_played": 6,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "20s",
+        "CO",
+        "male",
+        "North American Roots"
+      ],
+      "query": "Okay, I really do love The Wood Brothers, but I've now heard plenty from them! I'm genuinely trying to discover *new artists* that have that powerful, authentic roots rock and bluesy Americana sound, the kind that's well-loved in the community but not necessarily topping the charts. Please, no more Wood Brothers for now. Who else embodies that gritty, soulful vibe?",
+      "played_tracks": [
+        {
+          "track_id": "1e52fdac-0bf8-4892-b86a-448084eab5a1",
+          "track_name": "Poor Man's Poison",
+          "artist_name": "Poor Mans Poison",
+          "album_name": "Providence",
+          "isrc": [
+            "TCABT1415412"
+          ],
+          "artist_id": [
+            "7bad2eff-a721-4144-9644-64d41cbacdb1"
+          ],
+          "album_id": [
+            "56ab3788-62ba-4ce5-98c3-32b8a045e725"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 46.0
+        },
+        {
+          "track_id": "b89e34f1-150b-4e3c-aa8e-8c1e5390f1a2",
+          "track_name": "On the Road Again",
+          "artist_name": "Jack Broadbent",
+          "album_name": "Along the Trail of Tears",
+          "isrc": [
+            "UST8K1545906"
+          ],
+          "artist_id": [
+            "764a3a4c-c875-4b38-8531-03d022f9e97d"
+          ],
+          "album_id": [
+            "3a50b211-497a-4127-b3e8-2bb109962f1f"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 48.0
+        },
+        {
+          "track_id": "36475e05-b9ac-417f-935d-5f493dee2cb7",
+          "track_name": "Postcards From Hell",
+          "artist_name": "The Wood Brothers",
+          "album_name": "Loaded",
+          "isrc": [
+            "USBN20800017"
+          ],
+          "artist_id": [
+            "ffc018d9-cf2c-4c80-a3cc-99a3cecaeecc"
+          ],
+          "album_id": [
+            "28772091-bad0-4609-a882-87200a81f2d8"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 53.0
+        },
+        {
+          "track_id": "eb5a2e9d-3331-4eb5-ba29-c7fb71486012",
+          "track_name": "The Muse",
+          "artist_name": "The Wood Brothers",
+          "album_name": "The Muse",
+          "isrc": [
+            "QMZ6E1300117"
+          ],
+          "artist_id": [
+            "ffc018d9-cf2c-4c80-a3cc-99a3cecaeecc"
+          ],
+          "album_id": [
+            "a78953fc-092b-4384-9c3a-9d91c33cbbbd"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 52.0
+        },
+        {
+          "track_id": "684c9a88-2685-43bf-aa6e-75b7d0959f00",
+          "track_name": "Sing About It",
+          "artist_name": "The Wood Brothers",
+          "album_name": "The Muse",
+          "isrc": [
+            "QMZ6E1300115"
+          ],
+          "artist_id": [
+            "ffc018d9-cf2c-4c80-a3cc-99a3cecaeecc"
+          ],
+          "album_id": [
+            "a78953fc-092b-4384-9c3a-9d91c33cbbbd"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 48.0
+        },
+        {
+          "track_id": "e26a304d-1b37-4135-a539-26caf366ddf0",
+          "track_name": "Never and Always",
+          "artist_name": "The Wood Brothers",
+          "album_name": "Never and Always",
+          "isrc": [
+            "USCTT1500007"
+          ],
+          "artist_id": [
+            "ffc018d9-cf2c-4c80-a3cc-99a3cecaeecc"
+          ],
+          "album_id": [
+            "2320719c-bde5-4c55-a2e1-2ceb9385f212",
+            "088110f1-2db9-4131-ae96-67369d7eb78b"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 29.0
+        }
+      ]
+    },
+    {
+      "row_index": 66,
+      "session_id": "b7d2f58e-a1e5-418d-b3bd-88e88d20908d",
+      "session_prefix": "b7d2f58e",
+      "session_date": "2015-06-07",
+      "year": 2015,
+      "turns": 16,
+      "user_turns": 6,
+      "n_played": 5,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "20s",
+        "DE",
+        "male",
+        "Underground Hip Hop"
+      ],
+      "query": "Absolutely! \"Thine Planetarium\" is another excellent track that fits perfectly. Keep them coming! I'm really enjoying this chill instrumental flow.",
+      "played_tracks": [
+        {
+          "track_id": "5e48bed4-eeb7-48ee-943e-6523bcf2dc48",
+          "track_name": "Smoke & Mirrors",
+          "artist_name": "RJD2",
+          "album_name": "Deadringer: Deluxe",
+          "isrc": [
+            "USA4T0403503"
+          ],
+          "artist_id": [
+            "beaac313-4bca-42bb-bca9-32c5943491c4"
+          ],
+          "album_id": [
+            "7f986be1-a858-4ddb-8ea7-b946fd10a572"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 52.0
+        },
+        {
+          "track_id": "92f5d4f5-d2b6-4e36-bd52-cb0be9936d0f",
+          "track_name": "Final Frontier",
+          "artist_name": "RJD2",
+          "album_name": "Deadringer: Deluxe",
+          "isrc": [
+            "USA4T0403505"
+          ],
+          "artist_id": [
+            "beaac313-4bca-42bb-bca9-32c5943491c4"
+          ],
+          "album_id": [
+            "7f986be1-a858-4ddb-8ea7-b946fd10a572"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 34.0
+        },
+        {
+          "track_id": "5fae0cb9-eb65-4283-a4fd-b29cde521006",
+          "track_name": "2 More Dead",
+          "artist_name": "RJD2",
+          "album_name": "Deadringer: Deluxe",
+          "isrc": [
+            "USA4T0403512"
+          ],
+          "artist_id": [
+            "beaac313-4bca-42bb-bca9-32c5943491c4"
+          ],
+          "album_id": [
+            "7f986be1-a858-4ddb-8ea7-b946fd10a572"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 28.0
+        },
+        {
+          "track_id": "5d9c32e5-7a26-44ea-b97e-547223960aec",
+          "track_name": "Good Times Roll Pt. 2",
+          "artist_name": "RJD2",
+          "album_name": "Deadringer: Deluxe",
+          "isrc": [
+            "USA4T0403504"
+          ],
+          "artist_id": [
+            "e10d2f2a-ca1a-415d-81a1-fd09b6c186db"
+          ],
+          "album_id": [
+            "1e130b9c-3a75-4f01-9734-36a83a9e86a8"
+          ],
+          "release_date": "2002-01-01",
+          "duration": 297226,
+          "popularity": 32.0
+        },
+        {
+          "track_id": "28464be8-860b-497e-9048-9a8432ec4524",
+          "track_name": "Thine Planetarium",
+          "artist_name": "RJD2",
+          "album_name": "Deadringer: Deluxe",
+          "isrc": [
+            "USA4T0403517"
+          ],
+          "artist_id": [
+            "beaac313-4bca-42bb-bca9-32c5943491c4"
+          ],
+          "album_id": [
+            "7f986be1-a858-4ddb-8ea7-b946fd10a572"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 24.0
+        }
+      ]
+    },
+    {
+      "row_index": 9,
+      "session_id": "645670fd-b825-4c26-aba5-edcdb57e7684",
+      "session_prefix": "645670fd",
+      "session_date": "2017-01-22",
+      "year": 2017,
+      "turns": 16,
+      "user_turns": 6,
+      "n_played": 5,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "20s",
+        "RU",
+        "male",
+        "African-American (US)"
+      ],
+      "query": "Oh Honey\" is a nice track, and definitely from the right era, but it's a bit more on the mellow side. I'm looking for something with a bit more energy and a stronger, more danceable groove. Can you recommend some funky 70s or 80s tracks?",
+      "played_tracks": [
+        {
+          "track_id": "d8baebc1-ade6-4568-83aa-6c780776f9fb",
+          "track_name": "Treat U Rite",
+          "artist_name": "Angela Winbush",
+          "album_name": "Angela Winbush",
+          "isrc": [
+            "USEE10183512"
+          ],
+          "artist_id": [
+            "74f7fda5-c151-41e3-bf98-033e8884f9f0"
+          ],
+          "album_id": [
+            "92fe147b-7cdc-4be9-8449-3d7cd9155a5b"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 34.0
+        },
+        {
+          "track_id": "fe6ef1cd-577f-4569-85b4-a8820f9cf737",
+          "track_name": "Mothership Connection (Star Child)",
+          "artist_name": "Parliament",
+          "album_name": "Mothership Connection",
+          "isrc": [
+            "USPR37503005"
+          ],
+          "artist_id": [
+            "f8e8c80d-a150-4c9d-8225-5a195b05167e"
+          ],
+          "album_id": [
+            "91b9aba9-777c-44a7-a719-aa17ee927b94",
+            "5a590a68-fd3e-4ef9-b29b-9eda83452dc6"
+          ],
+          "release_date": "1975-12-15",
+          "duration": 373213,
+          "popularity": 48.0
+        },
+        {
+          "track_id": "7b94fbee-5261-4e3d-b14f-c57d6978793d",
+          "track_name": "Nights Over Egypt",
+          "artist_name": "The Jones Girls",
+          "album_name": "Get as Much Love as You Can",
+          "isrc": [
+            "GBBLG8100072"
+          ],
+          "artist_id": [
+            "71461290-6e15-4f2b-9986-1de2b0e65a8a"
+          ],
+          "album_id": [
+            "f075bf36-3bbe-483a-ba0b-b668c532c3f8"
+          ],
+          "release_date": "1981-01-01",
+          "duration": 279800,
+          "popularity": 54.0
+        },
+        {
+          "track_id": "91dc9803-c2e7-4119-a9e0-87134666e719",
+          "track_name": "Tonight",
+          "artist_name": "Kleeer",
+          "album_name": "Intimate Connection",
+          "isrc": [
+            "USAT20109457"
+          ],
+          "artist_id": [
+            "e9e49560-7e82-4bbc-b551-d5030a2b57e3"
+          ],
+          "album_id": [
+            "c1c7b3af-8a67-411a-9dea-6ef9923947e3"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 39.0
+        },
+        {
+          "track_id": "08ca49f3-6e1b-426e-b12f-9f39fa20a6c4",
+          "track_name": "Oh Honey",
+          "artist_name": "Delegation",
+          "album_name": "Oh Honey",
+          "isrc": [
+            "GBBHK7800065"
+          ],
+          "artist_id": [
+            "78875aa6-1f4e-4e61-8e7f-8e5ad7ae49db"
+          ],
+          "album_id": [
+            "bac8a076-eaca-4b02-938a-a52a253cdd54"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 68.0
+        }
+      ]
+    },
+    {
+      "row_index": 20,
+      "session_id": "0802ac4a-187b-4a78-b090-0ceb7630cf12",
+      "session_prefix": "0802ac4a",
+      "session_date": "2017-02-14",
+      "year": 2017,
+      "turns": 16,
+      "user_turns": 6,
+      "n_played": 5,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "20s",
+        "PL",
+        "male",
+        "Gaming"
+      ],
+      "query": "Oh, \"Ten More Miles\" is really good! This \"battle metal\" sound is exactly what I was hoping for. It's got that heavy, driving feel and the epic themes are spot on. Turisas is a cool discovery. Do you have more recommendations like this, maybe with some folk elements mixed in, like a Viking or pagan metal style?",
+      "played_tracks": [
+        {
+          "track_id": "4b88f989-5f1b-4790-9bd0-32e73aa704f6",
+          "track_name": "The Path",
+          "artist_name": "Miracle Of Sound",
+          "album_name": "Level 7",
+          "isrc": [
+            "QZ4JJ1655647"
+          ],
+          "artist_id": [
+            "2ee808a7-1068-425c-936d-7a72237b3c83"
+          ],
+          "album_id": [
+            "245a137d-c4ff-4cab-a6ae-3d7de661e390"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 37.0
+        },
+        {
+          "track_id": "15e27871-dfc8-420a-b0bb-52af24dfa691",
+          "track_name": "Free Will Sacrifice",
+          "artist_name": "Amon Amarth",
+          "album_name": "Twilight Of The Thunder God",
+          "isrc": [
+            "USMBR0805965"
+          ],
+          "artist_id": [
+            "e0cd36c5-0d0b-47ce-be7c-eb0f09173741"
+          ],
+          "album_id": [
+            "a017d76d-ea3d-44b0-b441-4026bde294a4",
+            "18c598c3-ced9-4dae-ab40-86b34f5b9807"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 51.0
+        },
+        {
+          "track_id": "b7ec6e25-46fa-41f3-8997-26726713bd31",
+          "track_name": "War of the Gods",
+          "artist_name": "Amon Amarth",
+          "album_name": "Surtur Rising",
+          "isrc": [
+            "USMBR1107976"
+          ],
+          "artist_id": [
+            "0b1e3926-e2b4-4d10-968a-6997f483edbc"
+          ],
+          "album_id": [
+            "8315766d-cdac-4007-b46b-584403fe0a75",
+            "cc5deb55-5f2a-444f-9506-511d70d18758"
+          ],
+          "release_date": "2011-03-29",
+          "duration": 273253,
+          "popularity": 52.0
+        },
+        {
+          "track_id": "ed7ae8c1-86b9-473d-a774-720cd202f821",
+          "track_name": "My Revolution",
+          "artist_name": "Miracle Of Sound",
+          "album_name": "My Revolution",
+          "isrc": [
+            "TCABZ1494686"
+          ],
+          "artist_id": [
+            "2ee808a7-1068-425c-936d-7a72237b3c83"
+          ],
+          "album_id": [
+            "7bf81769-ebeb-4d5e-8f19-ffdd6b043a36"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 33.0
+        },
+        {
+          "track_id": "6caba9e2-1287-4a3f-8c8e-39905ad40638",
+          "track_name": "Ten More Miles",
+          "artist_name": "Turisas",
+          "album_name": "Turisas2013",
+          "isrc": [
+            "US4E41301802"
+          ],
+          "artist_id": [
+            "695d92d5-0301-4a36-bcca-3d07fd80dede"
+          ],
+          "album_id": [
+            "e69c24f9-9c5c-4d86-b658-e8dec548e95f"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 28.0
+        }
+      ]
+    },
+    {
+      "row_index": 30,
+      "session_id": "40cc1c03-6db9-49db-8bbe-8b97b45adb0b",
+      "session_prefix": "40cc1c03",
+      "session_date": "2017-11-17",
+      "year": 2017,
+      "turns": 16,
+      "user_turns": 6,
+      "n_played": 5,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "20s",
+        "CZ",
+        "male",
+        "Gothic Americana"
+      ],
+      "query": "That's a good one, with a nice soulful touch. Can you find something else with a bit more of that gritty, raw blues rock energy?",
+      "played_tracks": [
+        {
+          "track_id": "26b0d8a5-e968-49c7-9feb-c31e7bd908a8",
+          "track_name": "God Will Cut You Down",
+          "artist_name": "Jay Hawke",
+          "album_name": "Dark Country",
+          "isrc": [
+            "TCABI1217375"
+          ],
+          "artist_id": [
+            "ef851b3a-c052-45d8-abc0-9e78d15b2fb1",
+            "b8cc0147-2a32-4f50-8dfe-fefae5f85a8e"
+          ],
+          "album_id": [
+            "da259361-418c-4fe2-bcf4-f61faea9e1b7"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 41.0
+        },
+        {
+          "track_id": "f4fd94db-f5d3-44b3-9518-26e870e7a7c5",
+          "track_name": "Last Red Dawn",
+          "artist_name": "Lincoln Durham",
+          "album_name": "The Shovel vs. The Howling Bones",
+          "isrc": [
+            "US9SN1100014"
+          ],
+          "artist_id": [
+            "0a51b0f4-0781-42d6-950b-efcc7fb1b9c4"
+          ],
+          "album_id": [
+            "9cf3ad1e-99f4-4feb-971a-c618155fac21"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 39.0
+        },
+        {
+          "track_id": "fceeb56e-4cc0-4c57-89b4-243f8fc552b3",
+          "track_name": "The Wicked",
+          "artist_name": "Blues Saraceno",
+          "album_name": "Dark Country 3",
+          "isrc": [
+            "GBBPP1407209"
+          ],
+          "artist_id": [
+            "44cb8698-2cd3-4059-b985-0a0c0bc4f46b"
+          ],
+          "album_id": [
+            "0545d92f-203c-45e0-bf20-abb5665fa794"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 38.0
+        },
+        {
+          "track_id": "d99f9e5b-ba96-4b5b-97c2-e7e818646803",
+          "track_name": "Dark Rollin' Skies",
+          "artist_name": "Rob Coffinshaker",
+          "album_name": "Dark Rollin' Skies EP",
+          "isrc": [
+            "SEYOK1119308"
+          ],
+          "artist_id": [
+            "ecd45ace-b20a-452d-9bc0-19273f840be3"
+          ],
+          "album_id": [
+            "b95956c2-425c-4dde-a87b-9878b01500ea"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 34.0
+        },
+        {
+          "track_id": "5ee397be-a6a2-45c3-9051-b60df1454590",
+          "track_name": "Some Of Adam's Blues",
+          "artist_name": "Quaker City Night Hawks",
+          "album_name": "¡ Torquila Torquila !",
+          "isrc": [
+            "TCAAY1122777"
+          ],
+          "artist_id": [
+            "b8707d0a-c9ce-4492-83d4-05bf04a0b4b8"
+          ],
+          "album_id": [
+            "2af15a94-6eb3-4a69-879b-aaa3ee5f16ae"
+          ],
+          "release_date": "2011-08-01",
+          "duration": 326066,
+          "popularity": 44.0
+        }
+      ]
+    },
+    {
+      "row_index": 37,
+      "session_id": "28c3ecd9-fbaa-4423-a85c-92508346e1e8",
+      "session_prefix": "28c3ecd9",
+      "session_date": "2018-07-16",
+      "year": 2018,
+      "turns": 16,
+      "user_turns": 6,
+      "n_played": 5,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "20s",
+        "NO",
+        "male",
+        "Anglophone Indie/Alternative Rock Culture"
+      ],
+      "query": "Yes, 'Burn' is fantastic! This is exactly the kind of heavy, immersive, and brooding sound I'm after, hitting that post-metal edge perfectly. Keep them coming! Do you have any other tracks with this dark, atmospheric, and deeply reflective quality, maybe leaning further into that heavy, almost doom-gaze sound?",
+      "played_tracks": [
+        {
+          "track_id": "ab211d1e-e325-4225-b23a-f5872abe943b",
+          "track_name": "Stand Inside Your Love",
+          "artist_name": "The Smashing Pumpkins",
+          "album_name": "Machina / The Machines Of God",
+          "isrc": [
+            "USVI29900299"
+          ],
+          "artist_id": [
+            "34348320-0ee0-4830-90eb-d0a5ab6d6128"
+          ],
+          "album_id": [
+            "4a3c7c0a-8d18-411d-86e2-db8b514f0813"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 58.0
+        },
+        {
+          "track_id": "b6c74822-de67-4e66-b83c-bfed16f4bd79",
+          "track_name": "Mantra",
+          "artist_name": "Dave Grohl",
+          "album_name": "Sound City - Real to Reel",
+          "isrc": [
+            "USRW31200014"
+          ],
+          "artist_id": [
+            "4e36161d-9c58-4b02-b97e-894c1f4d0b08",
+            "a6061bbf-2480-40ad-9a65-d79711a24841",
+            "71903559-c4de-49d1-a6da-64ff11cdcf43"
+          ],
+          "album_id": [
+            "8fe5e6ea-4b71-4969-b0d7-578b2f6f2c6b"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 46.0
+        },
+        {
+          "track_id": "602ee143-0bdd-4e0c-a6c6-710fb090043d",
+          "track_name": "The Shit Sisters",
+          "artist_name": "These Arms Are Snakes",
+          "album_name": "Oxeneers or The Lion Sleeps When Its Antelope Go Home",
+          "isrc": [
+            "USA6M0409701"
+          ],
+          "artist_id": [
+            "e196dacd-1591-4869-834b-6b1f2b30ab22"
+          ],
+          "album_id": [
+            "5815d4c4-df7c-4018-88a4-d240b18879ce"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 29.0
+        },
+        {
+          "track_id": "8deaa199-f78d-4626-be6d-57fd5bb730a7",
+          "track_name": "Akira",
+          "artist_name": "Deafcult",
+          "album_name": "Deafcult",
+          "isrc": [
+            "USDY41535217"
+          ],
+          "artist_id": [
+            "7b4ab182-f581-4e29-bff3-23b9a3da8db2"
+          ],
+          "album_id": [
+            "555d243e-a40a-4a87-8297-da072b11db24"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 34.0
+        },
+        {
+          "track_id": "60360690-b39f-4347-850e-75668cc89243",
+          "track_name": "Burn",
+          "artist_name": "King Woman",
+          "album_name": "Doubt",
+          "isrc": [
+            "USA2Z1510073"
+          ],
+          "artist_id": [
+            "d893917b-5b06-4bcf-9ab4-6e50110e96fc"
+          ],
+          "album_id": [
+            "6cd87490-4041-43b6-846c-f728a9e4af5d"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 36.0
+        }
+      ]
+    },
+    {
+      "row_index": 77,
+      "session_id": "bd392a56-236a-49da-8f89-46c453e97ea2",
+      "session_prefix": "bd392a56",
+      "session_date": "2018-11-05",
+      "year": 2018,
+      "turns": 16,
+      "user_turns": 6,
+      "n_played": 5,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "10s",
+        "UK",
+        "female",
+        "Norse/Viking"
+      ],
+      "query": "Yes! This is fantastic, the intensity is just what I love from Trevor Morris! It really paints a picture of a major attack. Do you have any other epic instrumental pieces that are really grand and sweeping, maybe like a journey across vast lands or a moment of great discovery?",
+      "played_tracks": [
+        {
+          "track_id": "f1ad81f2-0bb4-4275-9010-36532ac40980",
+          "track_name": "Vikings Mourn Their Dead",
+          "artist_name": "Trevor Morris",
+          "album_name": "The Vikings II (Original Motion Picture Soundtrack)",
+          "isrc": [
+            "USSM11402860"
+          ],
+          "artist_id": [
+            "7d521252-817c-41a9-a8d4-e67efcabf9aa"
+          ],
+          "album_id": [
+            "3930cd05-44c4-47de-b4eb-d5a097db0167"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 23.0
+        },
+        {
+          "track_id": "860e5109-4089-46ae-81bd-a8bc7fba1754",
+          "track_name": "Ragnar Says Goodbye to Gyda",
+          "artist_name": "Trevor Morris",
+          "album_name": "The Vikings II (Original Motion Picture Soundtrack)",
+          "isrc": [
+            "USSM11402845"
+          ],
+          "artist_id": [
+            "7d521252-817c-41a9-a8d4-e67efcabf9aa"
+          ],
+          "album_id": [
+            "3930cd05-44c4-47de-b4eb-d5a097db0167"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 40.0
+        },
+        {
+          "track_id": "7b2b59c8-1250-42e0-a08b-2c691bec65ee",
+          "track_name": "Battle of Brothers",
+          "artist_name": "Trevor Morris",
+          "album_name": "The Vikings II (Original Motion Picture Soundtrack)",
+          "isrc": [
+            "USSM11402841"
+          ],
+          "artist_id": [
+            "7d521252-817c-41a9-a8d4-e67efcabf9aa"
+          ],
+          "album_id": [
+            "3930cd05-44c4-47de-b4eb-d5a097db0167"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 36.0
+        },
+        {
+          "track_id": "a42d339a-9f4a-4370-8d50-26de62dcdfc7",
+          "track_name": "Vikings Battle Brihtwulf's Army",
+          "artist_name": "Trevor Morris",
+          "album_name": "The Vikings III (Music from the TV Series)",
+          "isrc": [
+            "USSM11503785"
+          ],
+          "artist_id": [
+            "7d521252-817c-41a9-a8d4-e67efcabf9aa"
+          ],
+          "album_id": [
+            "16e1ad93-f734-456a-b835-ec98814bb491"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 26.0
+        },
+        {
+          "track_id": "dbd30d51-8577-442f-9f31-c42ca811d86c",
+          "track_name": "Jarl Borg Attacks Kattegat",
+          "artist_name": "Trevor Morris",
+          "album_name": "The Vikings II (Original Motion Picture Soundtrack)",
+          "isrc": [
+            "USSM11402848"
+          ],
+          "artist_id": [
+            "7d521252-817c-41a9-a8d4-e67efcabf9aa"
+          ],
+          "album_id": [
+            "3930cd05-44c4-47de-b4eb-d5a097db0167"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 34.0
+        }
+      ]
+    },
+    {
+      "row_index": 18,
+      "session_id": "07aae53d-7c65-442a-a893-6ffde80efb0d",
+      "session_prefix": "07aae53d",
+      "session_date": "2018-12-24",
+      "year": 2018,
+      "turns": 16,
+      "user_turns": 6,
+      "n_played": 5,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "20s",
+        "CZ",
+        "female",
+        "Holiday Music"
+      ],
+      "query": "Yes! \"Let It Snow\" is definitely the song I was trying to think of! That perfectly captures the snowy, cozy feeling with people gathering. Thank you! Now that we found it, do you have any other classic holiday songs that are cheerful and have that warm, nostalgic Pop feel, maybe something similar to Dean Martin?",
+      "played_tracks": [
+        {
+          "track_id": "b06917c1-a131-4b9f-bf77-4020381f628a",
+          "track_name": "Christmas (Baby Please Come Home)",
+          "artist_name": "Mariah Carey",
+          "album_name": "Merry Christmas",
+          "isrc": [
+            "USSM19402077"
+          ],
+          "artist_id": [
+            "063c8390-15db-419b-91ec-0ec19d0a2c3b"
+          ],
+          "album_id": [
+            "9e702a01-ff19-4ecf-ac28-1b70aa4b4f2f"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 75.0
+        },
+        {
+          "track_id": "7463ac95-f211-4abf-ba5d-d7dadce2183e",
+          "track_name": "All I Want for Christmas Is You",
+          "artist_name": "Mariah Carey",
+          "album_name": "Merry Christmas",
+          "isrc": [
+            "USSM19400325"
+          ],
+          "artist_id": [
+            "4cbf9bcb-4713-4577-90b6-78ff445b1c27"
+          ],
+          "album_id": [
+            "a5fadcef-5e7f-4fd1-b8a5-a2760981e3c4",
+            "e59a0d1e-7a34-4024-902a-d0b6c949226b"
+          ],
+          "release_date": "1994-10-28",
+          "duration": 241106,
+          "popularity": 72.0
+        },
+        {
+          "track_id": "d434d5ba-4afd-4346-bef2-bd657fe4e1d0",
+          "track_name": "It's the Most Wonderful Time of the Year",
+          "artist_name": "Andy Williams",
+          "album_name": "The Most Wonderful Time Of The Year",
+          "isrc": [
+            "USSM16300086"
+          ],
+          "artist_id": [
+            "f1f1f55e-e3d9-45f2-b22b-81ac5b27680a"
+          ],
+          "album_id": [
+            "3accb0d1-46c5-458c-87df-c98ce6a16f29",
+            "aad504fe-d13d-45b0-be2b-d46f286e63cc"
+          ],
+          "release_date": "1963-11-24",
+          "duration": 151933,
+          "popularity": 61.0
+        },
+        {
+          "track_id": "96894de9-36d2-42d7-80cb-8c157bd58ce4",
+          "track_name": "Jingle Bell Rock - Daryl's Version",
+          "artist_name": "Daryl Hall & John Oates",
+          "album_name": "Jingle Bell Rock From Daryl (Digital 45)",
+          "isrc": [
+            "USRC10900416"
+          ],
+          "artist_id": [
+            "c2b7039f-1e3d-4088-b5d0-b4cd303dbc43"
+          ],
+          "album_id": [
+            "a7c7b9c0-83de-4654-abc2-82d04d563092",
+            "bad16260-edbe-4271-90cc-12acfc46e8f5"
+          ],
+          "release_date": "1983-11-01",
+          "duration": 126360,
+          "popularity": 51.0
+        },
+        {
+          "track_id": "512b86b8-461e-4107-9057-bdd76cad54e7",
+          "track_name": "Let It Snow",
+          "artist_name": "She & Him",
+          "album_name": "Christmas Party",
+          "isrc": [
+            "USSM11606550"
+          ],
+          "artist_id": [
+            "6609fceb-b721-467e-89fb-7ec210efa537"
+          ],
+          "album_id": [
+            "ffef86f4-0572-4bdc-b714-3f24711843de"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 49.0
+        }
+      ]
+    },
+    {
+      "row_index": 43,
+      "session_id": "2fe9abf6-ccea-4f05-8490-82da8bf57764",
+      "session_prefix": "2fe9abf6",
+      "session_date": "2015-05-15",
+      "year": 2015,
+      "turns": 13,
+      "user_turns": 5,
+      "n_played": 4,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "20s",
+        "RS",
+        "male",
+        "Extreme Metal"
+      ],
+      "query": "Bloodbath is always solid for brutal death metal, and \"Bastard Son of God\" is crushing. But I was hoping for something with a bit more of that melancholic, melodic riffing found in early Entombed or Dismember, while still being absolutely heavy. Do you have anything that leans more into that melodic, Swedish death metal sound?",
+      "played_tracks": [
+        {
+          "track_id": "4db1fcfc-960c-473e-a928-53ab289d69b5",
+          "track_name": "Left to Die",
+          "artist_name": "Death",
+          "album_name": "Fate: The Best of Death",
+          "isrc": [
+            "US2641322804"
+          ],
+          "artist_id": [
+            "74dcb9fc-b821-45d9-b995-e50ca0018c7e"
+          ],
+          "album_id": [
+            "1b2046a5-3ed7-46c4-bc2b-b66919d6fbfa",
+            "3e85f4b3-8423-4245-ba5f-d038e8a2f953"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 45.0
+        },
+        {
+          "track_id": "3edfecaf-107e-4608-8991-72b552d94b32",
+          "track_name": "After World Obliteration",
+          "artist_name": "Terrorizer",
+          "album_name": "World Downfall",
+          "isrc": [
+            "GBBPB0400806"
+          ],
+          "artist_id": [
+            "408cf0e6-6c4b-4fd2-bd03-38a40b4e30a9"
+          ],
+          "album_id": [
+            "4489eaca-5934-4bce-af10-a57ee51482c3",
+            "16d5aaab-802f-40f0-8029-8ffd78dfb788"
+          ],
+          "release_date": "1989-01-01",
+          "duration": 209573,
+          "popularity": 36.0
+        },
+        {
+          "track_id": "29757863-a454-480f-a6b2-588658f96ed9",
+          "track_name": "Bloodsoaked - Bonus Track",
+          "artist_name": "Obituary",
+          "album_name": "Inked in Blood (Deluxe Version)",
+          "isrc": [
+            "US2641496014"
+          ],
+          "artist_id": [
+            "8bf36421-f2b5-466f-85e1-099869f50ec9"
+          ],
+          "album_id": [
+            "5c7fc0de-3388-45f9-a06f-2318349fcadd"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 20.0
+        },
+        {
+          "track_id": "f6398378-32d5-42aa-a199-b4d3612c7cc4",
+          "track_name": "Bastard Son of God",
+          "artist_name": "Bloodbath",
+          "album_name": "Nightmares Made Flesh",
+          "isrc": [
+            "US4E40425507"
+          ],
+          "artist_id": [
+            "d648bc3a-422b-4da8-b9d9-5861b9f04f2b"
+          ],
+          "album_id": [
+            "c9169006-28ad-4dac-9b4e-8073f2388164",
+            "7df41f66-e0f8-49f6-a3ec-38cd6f1b2fdd"
+          ],
+          "release_date": "2005-07-13",
+          "duration": 171773,
+          "popularity": 32.0
+        }
+      ]
+    },
+    {
+      "row_index": 58,
+      "session_id": "3734e44b-ca86-456b-95b1-9352effa8d3a",
+      "session_prefix": "3734e44b",
+      "session_date": "2016-09-18",
+      "year": 2016,
+      "turns": 13,
+      "user_turns": 5,
+      "n_played": 4,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "20s",
+        "RU",
+        "male",
+        "North American R&B/Hip-Hop"
+      ],
+      "query": "Yeah, 'Brown Skin' is another solid track from P3. I'm really feeling this album. Keep them coming! What other deep cuts are there from 'PARTYNEXTDOOR 3 (P3)' that have that smooth, late-night R&B sound?",
+      "played_tracks": [
+        {
+          "track_id": "f1c05018-a89f-43ab-93b0-bc20d5566b97",
+          "track_name": "Nobody",
+          "artist_name": "PARTYNEXTDOOR",
+          "album_name": "PARTYNEXTDOOR 3 (P3)",
+          "isrc": [
+            "USWB11601395"
+          ],
+          "artist_id": [
+            "ffa938ab-5564-4f8d-acc2-d914ab32c669"
+          ],
+          "album_id": [
+            "79cec095-3252-49b0-9381-2e0176a0df77"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 47.0
+        },
+        {
+          "track_id": "40d6f73f-1170-4f36-8658-997e37fcf123",
+          "track_name": "High Hopes",
+          "artist_name": "PARTYNEXTDOOR",
+          "album_name": "PARTYNEXTDOOR 3 (P3)",
+          "isrc": [
+            "USWB11601393"
+          ],
+          "artist_id": [
+            "ffa938ab-5564-4f8d-acc2-d914ab32c669"
+          ],
+          "album_id": [
+            "79cec095-3252-49b0-9381-2e0176a0df77"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 46.0
+        },
+        {
+          "track_id": "4449578b-c495-449f-b052-3ed423f0efda",
+          "track_name": "Temptations",
+          "artist_name": "PARTYNEXTDOOR",
+          "album_name": "PARTYNEXTDOOR 3 (P3)",
+          "isrc": [
+            "USWB11601399"
+          ],
+          "artist_id": [
+            "ffa938ab-5564-4f8d-acc2-d914ab32c669"
+          ],
+          "album_id": [
+            "79cec095-3252-49b0-9381-2e0176a0df77"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 50.0
+        },
+        {
+          "track_id": "dff0f9e6-78a6-418b-93a5-5f509cec34b6",
+          "track_name": "Brown Skin",
+          "artist_name": "PARTYNEXTDOOR",
+          "album_name": "PARTYNEXTDOOR 3 (P3)",
+          "isrc": [
+            "USWB11601404"
+          ],
+          "artist_id": [
+            "ffa938ab-5564-4f8d-acc2-d914ab32c669"
+          ],
+          "album_id": [
+            "79cec095-3252-49b0-9381-2e0176a0df77"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 40.0
+        }
+      ]
+    },
+    {
+      "row_index": 46,
+      "session_id": "6953ac7a-5e95-48d8-be4e-8f153ac937e2",
+      "session_prefix": "6953ac7a",
+      "session_date": "2017-03-23",
+      "year": 2017,
+      "turns": 13,
+      "user_turns": 5,
+      "n_played": 4,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "30s",
+        "DK",
+        "male",
+        "Video Game Music"
+      ],
+      "query": "Yes, \"The Assassin Two-Step\" is fantastic! That's exactly the kind of energetic, high-stakes chase music I was imagining for parkour across London rooftops. Can you give me another track from the Assassin's Creed Syndicate soundtrack that's a little bit slower?",
+      "played_tracks": [
+        {
+          "track_id": "f223debe-4d0d-4383-bc72-22e91a3967e9",
+          "track_name": "Cathedrals of Steel",
+          "artist_name": "Austin Wintory",
+          "album_name": "Assassin's Creed Syndicate (Original Game Soundtrack)",
+          "isrc": [
+            "CA2BN1501694"
+          ],
+          "artist_id": [
+            "ac8d6ed9-6309-42a4-8369-409d22b8feb8"
+          ],
+          "album_id": [
+            "2b311172-53fd-42d3-b50c-cc00c5c3a857"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 28.0
+        },
+        {
+          "track_id": "54db6fa5-ad28-422e-96e6-7a05d3bfce2b",
+          "track_name": "Death Is Now a Welcome Guest",
+          "artist_name": "Austin Wintory",
+          "album_name": "Assassin's Creed Syndicate (Original Game Soundtrack)",
+          "isrc": [
+            "CA2BN1501706"
+          ],
+          "artist_id": [
+            "ac8d6ed9-6309-42a4-8369-409d22b8feb8"
+          ],
+          "album_id": [
+            "2b311172-53fd-42d3-b50c-cc00c5c3a857",
+            "b792bc46-225c-4775-9ad7-8371ff16cb1a"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 21.0
+        },
+        {
+          "track_id": "ef798248-e420-41a9-b11a-b3d42eb6ea12",
+          "track_name": "Jokes Jokes Jokes",
+          "artist_name": "Austin Wintory",
+          "album_name": "Assassin's Creed Syndicate (Original Game Soundtrack)",
+          "isrc": [
+            "CA2BN1501641"
+          ],
+          "artist_id": [
+            "ac8d6ed9-6309-42a4-8369-409d22b8feb8"
+          ],
+          "album_id": [
+            "2b311172-53fd-42d3-b50c-cc00c5c3a857"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 32.0
+        },
+        {
+          "track_id": "e4f8f386-4650-4e6f-8b5f-d6ae76890a9f",
+          "track_name": "The Assassin Two-Step",
+          "artist_name": "Austin Wintory",
+          "album_name": "Assassin's Creed Syndicate (Original Game Soundtrack)",
+          "isrc": [
+            "CA2BN1501698"
+          ],
+          "artist_id": [
+            "ac8d6ed9-6309-42a4-8369-409d22b8feb8"
+          ],
+          "album_id": [
+            "2b311172-53fd-42d3-b50c-cc00c5c3a857",
+            "43a0faa8-e1dd-412e-aa9f-c580187c378d"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 27.0
+        }
+      ]
+    },
+    {
+      "row_index": 17,
+      "session_id": "198470a5-db1e-4add-b04a-bee8c5945d4b",
+      "session_prefix": "198470a5",
+      "session_date": "2017-10-01",
+      "year": 2017,
+      "turns": 13,
+      "user_turns": 5,
+      "n_played": 4,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "20s",
+        "DK",
+        "male",
+        "Indie"
+      ],
+      "query": "Yes, \"Feel Alright\" is exactly what I meant! It's the perfect track for that relaxed evening by the pool. This is really hitting the spot. Do you have any other tracks that capture this kind of summery, chill electronic groove?",
+      "played_tracks": [
+        {
+          "track_id": "ef666ec8-358f-4aa1-ad7d-ced727ac9452",
+          "track_name": "Actress",
+          "artist_name": "Hand Habits",
+          "album_name": "Wildly Idle (Humble Before the Void)",
+          "isrc": [
+            "US2FD1710002"
+          ],
+          "artist_id": [
+            "8e59df5d-9d91-4d7c-881c-b1b19cf18be6"
+          ],
+          "album_id": [
+            "9ef17533-fc82-4e7f-8101-ea36053fda32"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 13.0
+        },
+        {
+          "track_id": "3c3b494c-e6d5-4c0a-a96b-fd3c7db1e63c",
+          "track_name": "Demand It",
+          "artist_name": "Hand Habits",
+          "album_name": "Wildly Idle (Humble Before the Void)",
+          "isrc": [
+            "US2FD1710006"
+          ],
+          "artist_id": [
+            "8e59df5d-9d91-4d7c-881c-b1b19cf18be6"
+          ],
+          "album_id": [
+            "9ef17533-fc82-4e7f-8101-ea36053fda32"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 12.0
+        },
+        {
+          "track_id": "3ba27d4d-831e-4d6d-8be4-e8453c0dd299",
+          "track_name": "Olivia",
+          "artist_name": "Satin Jackets",
+          "album_name": "The Pink Collection",
+          "isrc": [
+            "BEN581300258"
+          ],
+          "artist_id": [
+            "c0eef7d7-e4bf-4c2b-98ec-3d76534b1552"
+          ],
+          "album_id": [
+            "ab9aa851-2624-4599-8c6f-60c7b135f80d"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 36.0
+        },
+        {
+          "track_id": "9e5ac2f6-8bb0-41f9-8e11-abb96b7fb32d",
+          "track_name": "Feel Alright",
+          "artist_name": "Poolside",
+          "album_name": "Heat",
+          "isrc": [
+            "QM24S1702291"
+          ],
+          "artist_id": [
+            "91968526-471e-4bc1-b417-a94e1a7187bd"
+          ],
+          "album_id": [
+            "31b1b9f1-a575-44b8-85b8-0f8d95b3f181"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 55.0
+        }
+      ]
+    },
+    {
+      "row_index": 3,
+      "session_id": "39698083-bc11-4514-9e53-da76d9260b3a",
+      "session_prefix": "39698083",
+      "session_date": "2017-12-23",
+      "year": 2017,
+      "turns": 13,
+      "user_turns": 5,
+      "n_played": 4,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "10s",
+        "FR",
+        "female",
+        "Japanese"
+      ],
+      "query": "YES! 'We Are'! That's exactly the song I was looking for. It perfectly captures that anthemic, unifying spirit. Thank you! What album is this track from? I'd love to explore more songs like it.",
+      "played_tracks": [
+        {
+          "track_id": "7ce1ed9d-5ec8-4584-aa71-5a67db2781ea",
+          "track_name": "Kanzen kankaku Dreamer",
+          "artist_name": "ONE OK ROCK",
+          "album_name": "Niche Syndrome",
+          "isrc": [],
+          "artist_id": [
+            "7fa528cd-0473-472c-be86-8c3cbc76549e"
+          ],
+          "album_id": [
+            "1dbae2bd-6e27-46fb-b43e-d43cd7dbe6ab"
+          ],
+          "release_date": "2010-06-09",
+          "duration": 252200,
+          "popularity": 58.0
+        },
+        {
+          "track_id": "8be7129a-8b80-41a5-bd1d-9aaef0ae6ca1",
+          "track_name": "Take Me To The Top",
+          "artist_name": "ONE OK ROCK",
+          "album_name": "35xxxv",
+          "isrc": [
+            "USWB11507713"
+          ],
+          "artist_id": [
+            "5af31ccd-fb95-4264-9176-3a2f9159346d"
+          ],
+          "album_id": [
+            "80834697-38e1-4fc6-87db-825bec7ade15",
+            "4d2eb629-feb9-4020-8b97-110bf7ce8ce3"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 44.0
+        },
+        {
+          "track_id": "f458b2c5-4338-4f07-8232-e7029f835d58",
+          "track_name": "3xxxv5",
+          "artist_name": "ONE OK ROCK",
+          "album_name": "35xxxv",
+          "isrc": [
+            "USWB11507712"
+          ],
+          "artist_id": [
+            "5af31ccd-fb95-4264-9176-3a2f9159346d"
+          ],
+          "album_id": [
+            "80834697-38e1-4fc6-87db-825bec7ade15",
+            "4d2eb629-feb9-4020-8b97-110bf7ce8ce3"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 40.0
+        },
+        {
+          "track_id": "ef5bc36d-ea99-4246-beea-a7b5a5f866d4",
+          "track_name": "We Are",
+          "artist_name": "ONE OK ROCK",
+          "album_name": "Ambitions",
+          "isrc": [
+            "USAT21603322"
+          ],
+          "artist_id": [
+            "5af31ccd-fb95-4264-9176-3a2f9159346d"
+          ],
+          "album_id": [
+            "2b83aa6a-3ca1-4816-b514-cd1f774719be"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 63.0
+        }
+      ]
+    },
+    {
+      "row_index": 64,
+      "session_id": "164fc33f-b103-424f-836a-b7a7d565f6c2",
+      "session_prefix": "164fc33f",
+      "session_date": "2018-01-08",
+      "year": 2018,
+      "turns": 13,
+      "user_turns": 5,
+      "n_played": 4,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "30s",
+        "DK",
+        "male",
+        "Intelligent Electronic Music Culture"
+      ],
+      "query": "Absolutely spot on again! 'Rhodes to Freedom' is another fantastic atmospheric D&B track, and the album art continues to be exactly the abstract, silhouetted style I'm into. These selections are excellent. What other artists or tracks can you suggest that maintain this blend of intelligent electronic music with striking, abstract visual themes in their album art?",
+      "played_tracks": [
+        {
+          "track_id": "11884c8d-6de6-4820-bfe5-dd1a457f90a8",
+          "track_name": "Rainfall",
+          "artist_name": "LTJ Bukem",
+          "album_name": "Producer 05",
+          "isrc": [
+            "GBCCH9500087"
+          ],
+          "artist_id": [
+            "26050fc5-f249-409c-88ed-2ca8d7191ebc"
+          ],
+          "album_id": [
+            "67e27497-7fb8-4bad-bc62-371db7e318e8"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 32.0
+        },
+        {
+          "track_id": "93bd2280-004b-45a9-a514-c130ec4b3c3c",
+          "track_name": "Undress Your Mind",
+          "artist_name": "LTJ Bukem",
+          "album_name": "Journey Inwards",
+          "isrc": [
+            "GBCCH0000297"
+          ],
+          "artist_id": [
+            "26050fc5-f249-409c-88ed-2ca8d7191ebc"
+          ],
+          "album_id": [
+            "000bfd92-6390-4a6d-9bd3-e1cf204519cf"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 28.0
+        },
+        {
+          "track_id": "476986d8-1951-44ba-bb0b-89afca7483d2",
+          "track_name": "Close to the source",
+          "artist_name": "LTJ Bukem",
+          "album_name": "Journey Inwards",
+          "isrc": [
+            "GBCCH0000300"
+          ],
+          "artist_id": [
+            "26050fc5-f249-409c-88ed-2ca8d7191ebc"
+          ],
+          "album_id": [
+            "000bfd92-6390-4a6d-9bd3-e1cf204519cf"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 28.0
+        },
+        {
+          "track_id": "e43ddc27-925e-43ea-9edf-63e3a9dab7d6",
+          "track_name": "Rhodes to Freedom",
+          "artist_name": "LTJ Bukem",
+          "album_name": "Journey Inwards",
+          "isrc": [
+            "GBCCH9900247"
+          ],
+          "artist_id": [
+            "26050fc5-f249-409c-88ed-2ca8d7191ebc"
+          ],
+          "album_id": [
+            "000bfd92-6390-4a6d-9bd3-e1cf204519cf"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 31.0
+        }
+      ]
+    },
+    {
+      "row_index": 10,
+      "session_id": "d53d9457-12f1-4286-b195-aa42c23d3bce",
+      "session_prefix": "d53d9457",
+      "session_date": "2018-04-23",
+      "year": 2018,
+      "turns": 13,
+      "user_turns": 5,
+      "n_played": 4,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "20s",
+        "PL",
+        "male",
+        "Hip-Hop Culture"
+      ],
+      "query": "These are perfect! They really capture the thoughtful and meaningful lyrical vibe I was looking for. Can you recommend some more tracks like this, maybe exploring the Electronic side this time, but still keeping those deep, reflective lyrics?",
+      "played_tracks": [
+        {
+          "track_id": "bb9c78ce-b321-4902-9cbb-60c55bf74965",
+          "track_name": "That's Where It All Started",
+          "artist_name": "Kognitif",
+          "album_name": "Soul Food",
+          "isrc": [
+            "TCACF1576201"
+          ],
+          "artist_id": [
+            "92d6650e-deec-44f9-9f61-1fc8b325ce0f"
+          ],
+          "album_id": [
+            "83a3f9b0-f07d-4742-b35b-d4bfb0843912"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 26.0
+        },
+        {
+          "track_id": "03701bdd-7aa7-4d6b-b452-f5b5e35fd1e4",
+          "track_name": "Letter to My Last Love",
+          "artist_name": "Kognitif",
+          "album_name": "Soul Food",
+          "isrc": [
+            "TCACF1576200"
+          ],
+          "artist_id": [
+            "92d6650e-deec-44f9-9f61-1fc8b325ce0f"
+          ],
+          "album_id": [
+            "83a3f9b0-f07d-4742-b35b-d4bfb0843912"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 22.0
+        },
+        {
+          "track_id": "85f4e7e0-95e5-466b-9fdb-5d30d87e5226",
+          "track_name": "Punish Me",
+          "artist_name": "Kognitif",
+          "album_name": "Soul Food",
+          "isrc": [
+            "TCACF1576207"
+          ],
+          "artist_id": [
+            "92d6650e-deec-44f9-9f61-1fc8b325ce0f"
+          ],
+          "album_id": [
+            "83a3f9b0-f07d-4742-b35b-d4bfb0843912"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 18.0
+        },
+        {
+          "track_id": "07616e96-7b98-4a43-b4d5-1f03a27f271b",
+          "track_name": "Common Ground (feat. the Mic Jordan)",
+          "artist_name": "Kognitif",
+          "album_name": "Soul Food",
+          "isrc": [
+            "TCACF1576202"
+          ],
+          "artist_id": [
+            "92d6650e-deec-44f9-9f61-1fc8b325ce0f"
+          ],
+          "album_id": [
+            "83a3f9b0-f07d-4742-b35b-d4bfb0843912"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 24.0
+        }
+      ]
+    },
+    {
+      "row_index": 7,
+      "session_id": "4b8ed42b-39ec-4d17-9bea-507828687a0c",
+      "session_prefix": "4b8ed42b",
+      "session_date": "2015-04-18",
+      "year": 2015,
+      "turns": 10,
+      "user_turns": 4,
+      "n_played": 3,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "20s",
+        "US",
+        "female",
+        "Alternative/Punk Culture"
+      ],
+      "query": "Yes, this selection perfectly captures that nostalgic, energetic road trip feeling! Thank you. The Bouncing Souls are awesome and this track is exactly what I was looking for. Can you give me a few more tracks with a similar vibe – energetic, catchy punk with that sense of good-time nostalgia and singalong choruses?",
+      "played_tracks": [
+        {
+          "track_id": "61bff533-8fa5-46dd-934d-f2f4e2925c20",
+          "track_name": "Lambs at the Slaughter",
+          "artist_name": "Defiance, Ohio",
+          "album_name": "The Great Depression",
+          "isrc": [
+            "US4KC0618912"
+          ],
+          "artist_id": [
+            "715b16b0-92eb-47bc-b255-47ddb4474ccf"
+          ],
+          "album_id": [
+            "c511a53f-9722-4cd6-ac87-a42072665741"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 35.0
+        },
+        {
+          "track_id": "10a4eb6f-2914-4798-bdef-14360ae154d7",
+          "track_name": "Letter Home",
+          "artist_name": "Defiance, Ohio",
+          "album_name": "The Great Depression",
+          "isrc": [
+            "US4KC0618910"
+          ],
+          "artist_id": [
+            "715b16b0-92eb-47bc-b255-47ddb4474ccf"
+          ],
+          "album_id": [
+            "c511a53f-9722-4cd6-ac87-a42072665741"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 39.0
+        },
+        {
+          "track_id": "aaa5f9c0-97bf-4e22-8184-58787750f5b9",
+          "track_name": "Hopeless Romantic",
+          "artist_name": "The Bouncing Souls",
+          "album_name": "Punk-O-Rama 4",
+          "isrc": [
+            "USEP40343301"
+          ],
+          "artist_id": [
+            "f2bbe8e8-ab9e-4e0d-ac47-e4d783b1637f"
+          ],
+          "album_id": [
+            "58986941-4643-43f8-ad98-5b63eb34c5d5",
+            "78e71337-8c28-44e2-9a3b-d1cc574c0838"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 50.0
+        }
+      ]
+    },
+    {
+      "row_index": 21,
+      "session_id": "eb4a6ef2-7a7e-448a-bfed-c94e68b01505",
+      "session_prefix": "eb4a6ef2",
+      "session_date": "2018-01-26",
+      "year": 2018,
+      "turns": 10,
+      "user_turns": 4,
+      "n_played": 3,
+      "fingerprint_strength": "STRONG",
+      "target_bucket": "LFM2B_ONLY_STRONG",
+      "profile_key": [
+        "20s",
+        "RU",
+        "male",
+        "Western Indie/Alternative Electronic Culture"
+      ],
+      "query": "Yes, this is much better! The instrumental and atmospheric quality of \"A Thousand-Yard Stare\" is exactly what I need for focusing. Do you have more tracks in a similar ambient, instrumental vein?",
+      "played_tracks": [
+        {
+          "track_id": "9cb0a873-0f5f-4dc5-a58d-6f7845182a32",
+          "track_name": "Walls of Silence",
+          "artist_name": "John Maus",
+          "album_name": "Screen Memories",
+          "isrc": [
+            "GBCEL1700351"
+          ],
+          "artist_id": [
+            "34271dbf-0d22-455a-bf06-7ef90f4a6d9d"
+          ],
+          "album_id": [
+            "659c5110-95e6-4c6f-a187-65b0ca367522"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 44.0
+        },
+        {
+          "track_id": "c36d2f97-8afe-47a8-8397-f6a16e3e2c0c",
+          "track_name": "Get Around To It",
+          "artist_name": "Arthur Russell",
+          "album_name": "Calling Out Of Context",
+          "isrc": [
+            "USAK20300009"
+          ],
+          "artist_id": [
+            "2f95a139-db95-4d56-89ba-46767015a5d4"
+          ],
+          "album_id": [
+            "cf28a2da-2b4d-4fc8-9848-c7de607fb39d"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 33.0
+        },
+        {
+          "track_id": "03e2e1a0-222a-4b30-993f-883d1cb88226",
+          "track_name": "A Thousand-Yard Stare",
+          "artist_name": "Rafael Anton Irisarri",
+          "album_name": "Daydreaming",
+          "isrc": [
+            "DEX260904002"
+          ],
+          "artist_id": [
+            "30b46e65-a22b-4bc5-a30a-f946856ecc4a"
+          ],
+          "album_id": [
+            "42d95aaa-3332-4a45-98f5-ee9238411190"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 0.0
+        }
+      ]
+    },
+    {
+      "row_index": 6,
+      "session_id": "02ec3071-bd03-4f78-91bc-96666d0e3b6b",
+      "session_prefix": "02ec3071",
+      "session_date": "2012-10-05",
+      "year": 2012,
+      "turns": 7,
+      "user_turns": 3,
+      "n_played": 2,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "MLHD_WEAK",
+      "profile_key": [
+        "30s",
+        "NO",
+        "male",
+        "Americana"
+      ],
+      "query": "Yes, \"Fire By Night\" is exactly what I was hoping for! The contemplative lyrics and the beautiful acoustic feel really resonate. These songs perfectly capture that reflective and hopeful folk sound for personal growth. I'm very satisfied with this selection! Can you recommend another track that evokes a similar feeling of quiet strength, perhaps from a different artist but still in that soulful Americana folk vein?",
+      "played_tracks": [
+        {
+          "track_id": "4ac9a3d8-4d35-4024-9a2b-8369de1bf18f",
+          "track_name": "Million Miles",
+          "artist_name": "Josh Garrels",
+          "album_name": "Love & War & The Sea In Between",
+          "isrc": [
+            "USCGJ1182581"
+          ],
+          "artist_id": [
+            "34d1aaf7-183f-4b68-bf55-0a99dd181f69"
+          ],
+          "album_id": [
+            "bbf47f26-fe7e-4f02-b328-17ca416cc426"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 31.0
+        },
+        {
+          "track_id": "3908be19-2209-4fb5-b5a8-ea7dddaf01c2",
+          "track_name": "Fire By Night",
+          "artist_name": "Josh Garrels",
+          "album_name": "Over Oceans",
+          "isrc": [
+            "USCGJ0693919"
+          ],
+          "artist_id": [
+            "34d1aaf7-183f-4b68-bf55-0a99dd181f69"
+          ],
+          "album_id": [
+            "13dc19ce-d325-4ec9-ab06-45db13a5eb8f"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 32.0
+        }
+      ]
+    },
+    {
+      "row_index": 53,
+      "session_id": "8998b916-97bf-406f-92db-3ae40a832f4c",
+      "session_prefix": "8998b916",
+      "session_date": "2013-12-02",
+      "year": 2013,
+      "turns": 7,
+      "user_turns": 3,
+      "n_played": 2,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "MLHD_WEAK",
+      "profile_key": [
+        "10s",
+        "CA",
+        "female",
+        "Underground Metal Culture"
+      ],
+      "query": "YES! Eyehategod! That's the band I was thinking of. And 'Dopesick' is definitely the album! The album cover with the eye operation is exactly what I remembered. That album defines a whole era of sludge.",
+      "played_tracks": [
+        {
+          "track_id": "66fa11d7-9e21-456f-b959-9c4351b5000a",
+          "track_name": "Dogs Holy Life",
+          "artist_name": "Eyehategod",
+          "album_name": "Dopesick (re-issue + Bonus Tracks)",
+          "isrc": [
+            "US4E40626202"
+          ],
+          "artist_id": [
+            "225d63f4-9b06-43a7-8843-fd956a736f3a"
+          ],
+          "album_id": [
+            "c2ecd660-1290-48e9-bdb8-7c08db03d914",
+            "3c0a6c8d-026f-4f5d-926d-0d62856c2c2c"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 23.0
+        },
+        {
+          "track_id": "1395fac2-9498-4ae4-95ab-b5b5cdf5fe10",
+          "track_name": "Masters of Legalized Confusion",
+          "artist_name": "Eyehategod",
+          "album_name": "Dopesick (re-issue + Bonus Tracks)",
+          "isrc": [
+            "US4E40626203"
+          ],
+          "artist_id": [
+            "225d63f4-9b06-43a7-8843-fd956a736f3a"
+          ],
+          "album_id": [
+            "c2ecd660-1290-48e9-bdb8-7c08db03d914",
+            "3c0a6c8d-026f-4f5d-926d-0d62856c2c2c"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 24.0
+        }
+      ]
+    },
+    {
+      "row_index": 14,
+      "session_id": "70a0e5ad-50cb-475c-95a3-adffcf04b72e",
+      "session_prefix": "70a0e5ad",
+      "session_date": "2014-07-13",
+      "year": 2014,
+      "turns": 7,
+      "user_turns": 3,
+      "n_played": 2,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "MLHD_WEAK",
+      "profile_key": [
+        "20s",
+        "US",
+        "female",
+        "Latin"
+      ],
+      "query": "Yes, 'Más que ayer' is beautiful too! I love the emotional depth of this album. Can you recommend another song by Laura Pausini that has a similar passionate and romantic feeling?",
+      "played_tracks": [
+        {
+          "track_id": "6dc6e8fe-dc68-44a2-9ac5-3fe17cdb0d1e",
+          "track_name": "En cambio no",
+          "artist_name": "Laura Pausini",
+          "album_name": "Primavera anticipada",
+          "isrc": [
+            "ITR000800090"
+          ],
+          "artist_id": [
+            "448708c7-d4e3-426f-bbb6-bdf3b76003d3"
+          ],
+          "album_id": [
+            "4ed63985-cd87-4956-8349-15bf42b09004",
+            "621a028d-58a8-42f7-b1fc-07ed5de017d0"
+          ],
+          "release_date": "2008-11-11",
+          "duration": 237440,
+          "popularity": 71.0
+        },
+        {
+          "track_id": "792449c5-04cf-4df2-8847-22fceec1143f",
+          "track_name": "Más que ayer",
+          "artist_name": "Laura Pausini",
+          "album_name": "Primavera anticipada",
+          "isrc": [
+            "ITR000800096"
+          ],
+          "artist_id": [
+            "ed12abb6-5e84-496f-9f21-eb241ef964dc"
+          ],
+          "album_id": [
+            "44c12cbd-cf0c-41aa-9e52-7a9c4cc61a2a"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 24.0
+        }
+      ]
+    },
+    {
+      "row_index": 68,
+      "session_id": "91ce5668-ec1e-4d09-a30a-3440be9c8861",
+      "session_prefix": "91ce5668",
+      "session_date": "2016-06-29",
+      "year": 2016,
+      "turns": 7,
+      "user_turns": 3,
+      "n_played": 2,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "LFM2B_ONLY_WEAK",
+      "profile_key": [
+        "10s",
+        "PL",
+        "male",
+        "Electronic Dance Music (EDM) Culture"
+      ],
+      "query": "Yes! This is way better! \"Superman Lost\" has that awesome energetic electronic sound, and the album art is so vibrant and cool with all the colors. This is exactly the kind of visual-musical connection I wanted! Can you show me more tracks that have this kind of bold, colorful, abstract artwork with upbeat electronic music?",
+      "played_tracks": [
+        {
+          "track_id": "735b1e39-d0c3-4afa-bc2a-9c84831e33d2",
+          "track_name": "Leaving Earth",
+          "artist_name": "Seven Lions",
+          "album_name": "Creation",
+          "isrc": [
+            "USUM71602620"
+          ],
+          "artist_id": [
+            "b916df05-5da1-4f9c-abd1-2e8092bd6565"
+          ],
+          "album_id": [
+            "de747b48-3f97-4084-8033-386074a8e122"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 41.0
+        },
+        {
+          "track_id": "cf43eb3b-e74b-4aba-9e57-94874f828ce8",
+          "track_name": "Superman Lost",
+          "artist_name": "Mat Zo",
+          "album_name": "Damage Control",
+          "isrc": [],
+          "artist_id": [
+            "9d7f703c-d930-4f8b-8ec7-ef7ccb3e8324"
+          ],
+          "album_id": [
+            "8d9cc13a-d138-457b-b3ea-2dd418c4c0c2"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 0.0
+        }
+      ]
+    },
+    {
+      "row_index": 55,
+      "session_id": "12124711-bfe3-4634-8368-2fa1d8ddf885",
+      "session_prefix": "12124711",
+      "session_date": "2017-01-23",
+      "year": 2017,
+      "turns": 7,
+      "user_turns": 3,
+      "n_played": 2,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "LFM2B_ONLY_WEAK",
+      "profile_key": [
+        "10s",
+        "FR",
+        "male",
+        "French Hip-Hop Culture"
+      ],
+      "query": "Wondercash\" is really good too! I'm getting a good feel for the \"Comment c'est loin\" soundtrack. How about some other popular French Hip-Hop tracks that have a buzz right now, maybe by other artists but still in that popular, trending style?",
+      "played_tracks": [
+        {
+          "track_id": "63627c3c-3063-4242-9c48-b3a5867fe0ff",
+          "track_name": "C’est toujours 2 connards dans un abribus",
+          "artist_name": "Casseurs Flowters",
+          "album_name": "Comment c'est loin",
+          "isrc": [
+            "FR6F31511450"
+          ],
+          "artist_id": [
+            "752094f6-763c-4d1d-b6ed-73c73062f6e1"
+          ],
+          "album_id": [
+            "03f3efc5-64b0-4a75-8891-1d8d4406b124"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 42.0
+        },
+        {
+          "track_id": "b9b3f53c-200c-4d3f-9712-d019112aa96e",
+          "track_name": "Wondercash",
+          "artist_name": "Casseurs Flowters",
+          "album_name": "Comment c'est loin",
+          "isrc": [
+            "FR6F31511500"
+          ],
+          "artist_id": [
+            "752094f6-763c-4d1d-b6ed-73c73062f6e1"
+          ],
+          "album_id": [
+            "03f3efc5-64b0-4a75-8891-1d8d4406b124"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 51.0
+        }
+      ]
+    },
+    {
+      "row_index": 25,
+      "session_id": "ee7bfbda-86ee-4ade-b695-dbdeb12ae063",
+      "session_prefix": "ee7bfbda",
+      "session_date": "2017-02-25",
+      "year": 2017,
+      "turns": 7,
+      "user_turns": 3,
+      "n_played": 2,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "LFM2B_ONLY_WEAK",
+      "profile_key": [
+        "20s",
+        "BR",
+        "female",
+        "Western Indie"
+      ],
+      "query": "This is lovely and has a really nice contemplative atmosphere! The \"indie girl vibes\" are definitely working for me. Can you suggest more songs with lyrics that are really introspective and delve into personal feelings or silent struggles?",
+      "played_tracks": [
+        {
+          "track_id": "6a2537f1-5a99-4937-8d6f-87c094de8a0a",
+          "track_name": "Lost It All",
+          "artist_name": "Jill Andrews",
+          "album_name": "Lost It All",
+          "isrc": [
+            "TCACM1643272"
+          ],
+          "artist_id": [
+            "9e595052-5541-4a3a-8208-bed9c7cc8ed7"
+          ],
+          "album_id": [
+            "964f57da-0d04-450b-b6a4-935a82209036"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 48.0
+        },
+        {
+          "track_id": "6ce8f027-c4ea-4bbb-8bbd-f0b8ca1f9957",
+          "track_name": "In for the Kill",
+          "artist_name": "Billie Marten",
+          "album_name": "Ribbon (EP)",
+          "isrc": [
+            "GB2MH1410004"
+          ],
+          "artist_id": [
+            "650cb08c-770c-4d9d-979a-a526b9bd9afb"
+          ],
+          "album_id": [
+            "279a8fec-dfd7-474d-8569-f7f483e1fd2f"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 37.0
+        }
+      ]
+    },
+    {
+      "row_index": 47,
+      "session_id": "49009ca7-f8da-45df-9c62-7b88d960d5d2",
+      "session_prefix": "49009ca7",
+      "session_date": "2017-09-19",
+      "year": 2017,
+      "turns": 7,
+      "user_turns": 3,
+      "n_played": 2,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "LFM2B_ONLY_WEAK",
+      "profile_key": [
+        "20s",
+        "CZ",
+        "male",
+        "Nordic Metal Culture"
+      ],
+      "query": "That was quite intense and atmospheric! I can definitely feel the power. What I'm still trying to find is the specific way she blends those raw black metal aesthetics with her ethereal, often classical or folk-inspired vocals. It's the contrast and the seamless integration of those different vocal styles and traditional Nordic sounds into the metal that really fascinates me. Can you suggest something that showcases that vocal versatility and genre fusion more distinctly?",
+      "played_tracks": [
+        {
+          "track_id": "add3912b-9fae-4eeb-a15b-a72a9c9ae552",
+          "track_name": "Skøgen Skulle Dø",
+          "artist_name": "Myrkur",
+          "album_name": "M (Deluxe Version)",
+          "isrc": [
+            "US2641529201"
+          ],
+          "artist_id": [
+            "0cedd847-0d67-41fc-ab56-d92abe86c2ca"
+          ],
+          "album_id": [
+            "3380bf32-4c5f-4288-a162-f0616eafb11a",
+            "8ef6f8c4-2e74-429e-b0bb-f20f8b350d69"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 24.0
+        },
+        {
+          "track_id": "db987b16-6369-4a17-9b61-376aa7623516",
+          "track_name": "Ravnens Banner",
+          "artist_name": "Myrkur",
+          "album_name": "Myrkur",
+          "isrc": [
+            "US2641427801"
+          ],
+          "artist_id": [
+            "0cedd847-0d67-41fc-ab56-d92abe86c2ca"
+          ],
+          "album_id": [
+            "f100df24-e45a-416c-be78-fca9d0f4c0ff"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 20.0
+        }
+      ]
+    },
+    {
+      "row_index": 56,
+      "session_id": "9cd93031-ae32-4c15-99fa-fbb1b6fbac0b",
+      "session_prefix": "9cd93031",
+      "session_date": "2017-11-26",
+      "year": 2017,
+      "turns": 7,
+      "user_turns": 3,
+      "n_played": 2,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "LFM2B_ONLY_WEAK",
+      "profile_key": [
+        "20s",
+        "JP",
+        "male",
+        "American"
+      ],
+      "query": "Yes, this track really hits the mark. 'Let Us Down Easy' perfectly captures that introspective yet warm vibe I was hoping for, with the strong acoustic elements and reflective mood. This collection is excellent for a thoughtful evening. Can you suggest some more tracks with a similar emotional depth and acoustic focus, maybe exploring other artists in the singer-songwriter or alt-country vein?",
+      "played_tracks": [
+        {
+          "track_id": "ebd770a8-53f2-48d8-a13e-3c97b3b8e902",
+          "track_name": "Go Easy",
+          "artist_name": "Ryan Adams & The Cardinals",
+          "album_name": "Cardinology (International Version)",
+          "isrc": [
+            "USUM70836833"
+          ],
+          "artist_id": [
+            "1079cecd-b1e1-4871-81a8-2e8f7cc3938b"
+          ],
+          "album_id": [
+            "64d9b866-7d87-4745-80f2-a6dc5f2b0ebe",
+            "ebba60d5-f10a-44e8-a895-9d03841a686b"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 29.0
+        },
+        {
+          "track_id": "fff9842a-c9be-4b7e-800f-5e4df03e66d1",
+          "track_name": "Let Us Down Easy",
+          "artist_name": "Ryan Adams & The Cardinals",
+          "album_name": "Cardinology (International Version)",
+          "isrc": [
+            "USUM70836831"
+          ],
+          "artist_id": [
+            "1079cecd-b1e1-4871-81a8-2e8f7cc3938b"
+          ],
+          "album_id": [
+            "64d9b866-7d87-4745-80f2-a6dc5f2b0ebe",
+            "ebba60d5-f10a-44e8-a895-9d03841a686b"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 16.0
+        }
+      ]
+    },
+    {
+      "row_index": 26,
+      "session_id": "9d4ef919-504b-4963-af47-777478ace477",
+      "session_prefix": "9d4ef919",
+      "session_date": "2018-12-11",
+      "year": 2018,
+      "turns": 7,
+      "user_turns": 3,
+      "n_played": 2,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "LFM2B_ONLY_WEAK",
+      "profile_key": [
+        "20s",
+        "NO",
+        "male",
+        "Nordic"
+      ],
+      "query": "Crown\" is beautiful and definitely has that haunting feel. But what about the moments in her music where those raw, heavy metal parts meet with really serene, almost ancient-sounding folk melodies or traditional instrumentation? That contrast is what truly fascinates me.",
+      "played_tracks": [
+        {
+          "track_id": "050f591a-035c-41db-bd51-57839f635705",
+          "track_name": "Mareridt",
+          "artist_name": "Myrkur",
+          "album_name": "Mareridt (Deluxe Version)",
+          "isrc": [
+            "US2641737801"
+          ],
+          "artist_id": [
+            "e9218e11-0bd5-446e-be7c-b9d76d704c26"
+          ],
+          "album_id": [
+            "fdf29561-772d-4b69-aadd-5ee6899167be"
+          ],
+          "release_date": "2017-09-15",
+          "duration": 203631,
+          "popularity": 37.0
+        },
+        {
+          "track_id": "04451621-ccc4-48bb-96da-b1f6e5d526d3",
+          "track_name": "Crown",
+          "artist_name": "Myrkur",
+          "album_name": "Mareridt (Deluxe Version)",
+          "isrc": [
+            "US2641737804"
+          ],
+          "artist_id": [
+            "e9218e11-0bd5-446e-be7c-b9d76d704c26"
+          ],
+          "album_id": [
+            "fdf29561-772d-4b69-aadd-5ee6899167be"
+          ],
+          "release_date": "2017-09-15",
+          "duration": 296413,
+          "popularity": 31.0
+        }
+      ]
+    },
+    {
+      "row_index": 78,
+      "session_id": "c75f8e41-fde6-4d81-9c90-6f4844dad1b5",
+      "session_prefix": "c75f8e41",
+      "session_date": "2018-12-19",
+      "year": 2018,
+      "turns": 7,
+      "user_turns": 3,
+      "n_played": 2,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "LFM2B_ONLY_WEAK",
+      "profile_key": [
+        "20s",
+        "CZ",
+        "female",
+        "American Jazz"
+      ],
+      "query": "Oh, \"Have Yourself A Merry Little Christmas\" is beautiful and absolutely puts me in the holiday spirit! Beegie Adair always delivers. I was actually hoping for something different this time, maybe a popular jazz song with a clear vocal performance or a prominent saxophone, to add some variety to my holiday playlist.",
+      "played_tracks": [
+        {
+          "track_id": "87727b49-ad60-49da-bf0d-b53624601646",
+          "track_name": "The Christmas Waltz",
+          "artist_name": "Beegie Adair",
+          "album_name": "Jazz Piano Christmas",
+          "isrc": [
+            "USB4U0751476"
+          ],
+          "artist_id": [
+            "7846e682-37e8-43f4-b9e3-bdbeeaa2844b"
+          ],
+          "album_id": [
+            "edf71205-5e54-4493-90e5-853f0e0bacaf"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 52.0
+        },
+        {
+          "track_id": "f2a60a6b-978a-4cc8-a071-ad3f80349f09",
+          "track_name": "Have Yourself A Merry Little Christmas",
+          "artist_name": "Beegie Adair",
+          "album_name": "Jazz Piano Christmas",
+          "isrc": [
+            "USB4U0751469"
+          ],
+          "artist_id": [
+            "7846e682-37e8-43f4-b9e3-bdbeeaa2844b"
+          ],
+          "album_id": [
+            "edf71205-5e54-4493-90e5-853f0e0bacaf"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 47.0
+        }
+      ]
+    },
+    {
+      "row_index": 59,
+      "session_id": "8aeb8706-f800-4827-ba71-0797bf5afb0d",
+      "session_prefix": "8aeb8706",
+      "session_date": "2009-06-16",
+      "year": 2009,
+      "turns": 4,
+      "user_turns": 2,
+      "n_played": 1,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "MLHD_WEAK",
+      "profile_key": [
+        "20s",
+        "PL",
+        "male",
+        "North American"
+      ],
+      "query": "Yes, 'Finding and Believing' is an excellent choice, a true cornerstone from 'Secret Story.' That's exactly the kind of influential track I'm looking for. Could you recommend another track that's considered a classic for its innovative guitar work or particularly strong melodic complexity within his jazz fusion catalog?",
+      "played_tracks": [
+        {
+          "track_id": "08436a25-cc00-4d8b-bc11-a4dc79faf6e0",
+          "track_name": "Finding and Believing",
+          "artist_name": "Pat Metheny Group",
+          "album_name": "Secret Story",
+          "isrc": [
+            "USNO10750531"
+          ],
+          "artist_id": [
+            "41eac047-78b6-4d63-ac35-b37eab962b7e"
+          ],
+          "album_id": [
+            "c1f26568-7454-4734-a7c4-2639cbcad537"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 31.0
+        }
+      ]
+    },
+    {
+      "row_index": 61,
+      "session_id": "46faad58-58e7-4379-978e-4de6e5cc3b4f",
+      "session_prefix": "46faad58",
+      "session_date": "2011-04-13",
+      "year": 2011,
+      "turns": 4,
+      "user_turns": 2,
+      "n_played": 1,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "MLHD_WEAK",
+      "profile_key": [
+        "20s",
+        "FI",
+        "male",
+        "Metal Culture"
+      ],
+      "query": "Her Ghost in the Fog\" is a classic, absolutely love the dark storytelling and atmosphere. It's exactly what I'm looking for in terms of gothic or horror-inspired lyrics. Now, how about some lyrics that explore social commentary or political ideas?",
+      "played_tracks": [
+        {
+          "track_id": "b898f886-1695-45f1-9eb3-aca307a677bf",
+          "track_name": "Her Ghost in the Fog",
+          "artist_name": "Cradle Of Filth",
+          "album_name": "Midian",
+          "isrc": [
+            "GBCKC0000146"
+          ],
+          "artist_id": [
+            "69856499-5678-4aef-9d88-acf3c3e6f960"
+          ],
+          "album_id": [
+            "4c2c2174-ef1f-4b69-b46a-59cfbd971bb7"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 49.0
+        }
+      ]
+    },
+    {
+      "row_index": 73,
+      "session_id": "d9cca604-febe-4c95-a5cc-a4318c33ec40",
+      "session_prefix": "d9cca604",
+      "session_date": "2011-12-31",
+      "year": 2011,
+      "turns": 4,
+      "user_turns": 2,
+      "n_played": 1,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "MLHD_WEAK",
+      "profile_key": [
+        "10s",
+        "US",
+        "female",
+        "Indie Music Culture"
+      ],
+      "query": "Yeah, that's pretty good! I like the energy. Can you show me more songs by Hollerado?",
+      "played_tracks": [
+        {
+          "track_id": "605c4871-494b-4650-ba87-9df39c673e8d",
+          "track_name": "Got To Lose",
+          "artist_name": "Hollerado",
+          "album_name": "Record In A Bag",
+          "isrc": [
+            "CAAA10970908"
+          ],
+          "artist_id": [
+            "9909a6a7-4bc4-4ab0-80b8-069644d3e66f"
+          ],
+          "album_id": [
+            "45dd4972-88b9-4ccc-b17b-56415cdfd5e7"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 20.0
+        }
+      ]
+    },
+    {
+      "row_index": 32,
+      "session_id": "4b239a62-4435-4f39-80d6-26cffe0d1871",
+      "session_prefix": "4b239a62",
+      "session_date": "2013-05-10",
+      "year": 2013,
+      "turns": 4,
+      "user_turns": 2,
+      "n_played": 1,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "MLHD_WEAK",
+      "profile_key": [
+        "20s",
+        "NO",
+        "male",
+        "Chill & Electronic"
+      ],
+      "query": "Thanks for breaking down \"The Beach.\" You mentioned the nu-jazz, downtempo feel, and lovely female vocals. I think those are definitely part of it. I'm trying to pinpoint it... Is it the rhythm or the overall instrumentation that makes it feel so good?",
+      "played_tracks": [
+        {
+          "track_id": "21f85cf6-8e88-421e-a032-d55335271e86",
+          "track_name": "The Beach",
+          "artist_name": "Parov Stelar",
+          "album_name": "The Princess",
+          "isrc": [
+            "ATE612000011"
+          ],
+          "artist_id": [
+            "01c76f25-2364-4170-967c-82f996299e78"
+          ],
+          "album_id": [
+            "6c3ccf65-fcf3-42e9-875f-6589c655fb9a"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 30.0
+        }
+      ]
+    },
+    {
+      "row_index": 13,
+      "session_id": "b6457586-ddb1-4e18-a9b5-4d4926b8b46d",
+      "session_prefix": "b6457586",
+      "session_date": "2014-04-20",
+      "year": 2014,
+      "turns": 4,
+      "user_turns": 2,
+      "n_played": 1,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "MLHD_WEAK",
+      "profile_key": [
+        "40s",
+        "US",
+        "female",
+        "American Indie & Alternative"
+      ],
+      "query": "Yes, \"It Is What It Is\" was perfect for country, and \"So Nice So Smart\" is exactly the quirky indie folk sound I was hoping for too! Now, can you suggest some alternative rock songs with strong female vocalists and a darker edge?",
+      "played_tracks": [
+        {
+          "track_id": "969e770c-4c3d-447f-82e7-d7e076874349",
+          "track_name": "So Nice So Smart",
+          "artist_name": "Kimya Dawson",
+          "album_name": "Knock-Knock Who?",
+          "isrc": [
+            "QMQQH1301878"
+          ],
+          "artist_id": [
+            "33b65389-29fb-4b84-92e8-812575b1988a"
+          ],
+          "album_id": [
+            "d7c2f257-59a1-4405-9e8d-29ede08fa959",
+            "1af9bde6-f86f-4a1c-ad67-7da8f054cf4e"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 46.0
+        }
+      ]
+    },
+    {
+      "row_index": 41,
+      "session_id": "6c54de37-9c55-4c59-b203-ec190dd07523",
+      "session_prefix": "6c54de37",
+      "session_date": "2014-10-09",
+      "year": 2014,
+      "turns": 4,
+      "user_turns": 2,
+      "n_played": 1,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "MLHD_WEAK",
+      "profile_key": [
+        "10s",
+        "CA",
+        "female",
+        "Canadian"
+      ],
+      "query": "That was a good track, very atmospheric. Can you find more experimental electronic tracks from that 2011-2013 period, but specifically ones that have a more drone-heavy and expansive sound?",
+      "played_tracks": [
+        {
+          "track_id": "985acd13-59cd-48f6-8b55-79915f4aef69",
+          "track_name": "Prism",
+          "artist_name": "Tim Hecker",
+          "album_name": "Virgins",
+          "isrc": [
+            "USNCB1318301"
+          ],
+          "artist_id": [
+            "31669b5a-fb5b-4a22-b082-108139d9c1eb"
+          ],
+          "album_id": [
+            "80cabff1-5841-4690-a959-bf8145993e08"
+          ],
+          "release_date": "2013-10-14",
+          "duration": 173503,
+          "popularity": 29.0
+        }
+      ]
+    },
+    {
+      "row_index": 57,
+      "session_id": "789f9994-f2b6-481d-b71a-c0c6706d82c6",
+      "session_prefix": "789f9994",
+      "session_date": "2015-06-02",
+      "year": 2015,
+      "turns": 4,
+      "user_turns": 2,
+      "n_played": 1,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "LFM2B_ONLY_WEAK",
+      "profile_key": [
+        "10s",
+        "FI",
+        "male",
+        "Finnish Metal Culture"
+      ],
+      "query": "That's a good start. Do you have anything by them that's a bit heavier or has more black metal elements?",
+      "played_tracks": [
+        {
+          "track_id": "2e04b932-0f81-4662-b379-fddeae8aa372",
+          "track_name": "Fanskapsfylld",
+          "artist_name": "Finntroll",
+          "album_name": "Blodsvept",
+          "isrc": [
+            "US4E41301410"
+          ],
+          "artist_id": [
+            "92566943-da5d-4aab-92cc-9924647e3792"
+          ],
+          "album_id": [
+            "93d1cffa-e331-4d80-a7d7-e999b3ad0c43"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 20.0
+        }
+      ]
+    },
+    {
+      "row_index": 71,
+      "session_id": "1415a335-8fa3-4ead-8f30-0f04b337d079",
+      "session_prefix": "1415a335",
+      "session_date": "2015-08-20",
+      "year": 2015,
+      "turns": 4,
+      "user_turns": 2,
+      "n_played": 1,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "LFM2B_ONLY_WEAK",
+      "profile_key": [
+        "20s",
+        "RS",
+        "male",
+        "Viking Culture"
+      ],
+      "query": "This is a great start! \"End of an Empire\" perfectly captures that powerful, epic sound with the strong warrior imagery. Can you recommend more folk/viking metal tracks that feature album art depicting mythological figures or grand battle scenes, paired with an equally strong and energetic sound?",
+      "played_tracks": [
+        {
+          "track_id": "a3eac6df-31fe-454f-b2a3-76fb74eb9bbd",
+          "track_name": "End of an Empire",
+          "artist_name": "Turisas",
+          "album_name": "Stand Up and Fight",
+          "isrc": [
+            "US4E41168209"
+          ],
+          "artist_id": [
+            "695d92d5-0301-4a36-bcca-3d07fd80dede"
+          ],
+          "album_id": [
+            "04a41a9f-6576-4462-beda-4589392a7a3e"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 34.0
+        }
+      ]
+    },
+    {
+      "row_index": 48,
+      "session_id": "8cd8575d-4743-4235-a493-aee6039551b4",
+      "session_prefix": "8cd8575d",
+      "session_date": "2015-09-08",
+      "year": 2015,
+      "turns": 4,
+      "user_turns": 2,
+      "n_played": 1,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "LFM2B_ONLY_WEAK",
+      "profile_key": [
+        "10s",
+        "CA",
+        "female",
+        "Heavy Metal / Hardcore Punk Culture"
+      ],
+      "query": "Yeah, that Full Of Hell track is pretty sick, it's got that raw aggression. Can you find something similar in intensity but with even more driving rhythms, maybe some blast beats, and a stronger hardcore punk influence?",
+      "played_tracks": [
+        {
+          "track_id": "fb826d1e-0ba0-4905-af52-7db2bc4408e8",
+          "track_name": "Coven of the Larynx",
+          "artist_name": "Full Of Hell",
+          "album_name": "Rudiments of Mutilation",
+          "isrc": [
+            "USA2P1300156"
+          ],
+          "artist_id": [
+            "7a97fa61-a0cf-4538-a4d0-115bdb5ab666"
+          ],
+          "album_id": [
+            "a4edfdf2-f6dd-4098-b893-563890fb9fdf"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 31.0
+        }
+      ]
+    },
+    {
+      "row_index": 8,
+      "session_id": "ca9c5de4-c2b7-4972-a524-615a400d0105",
+      "session_prefix": "ca9c5de4",
+      "session_date": "2016-09-12",
+      "year": 2016,
+      "turns": 4,
+      "user_turns": 2,
+      "n_played": 1,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "LFM2B_ONLY_WEAK",
+      "profile_key": [
+        "20s",
+        "UK",
+        "male",
+        "Film & TV Soundtracks"
+      ],
+      "query": "Great start! Now, can you focus on tracks that build tension with deep synth pads and arpeggiated melodies, similar to 'Danger Danger' or 'Abilities'?",
+      "played_tracks": [
+        {
+          "track_id": "44c48e75-a540-4ae4-866e-b032bec8ffed",
+          "track_name": "Abilities",
+          "artist_name": "Kyle Dixon",
+          "album_name": "Stranger Things, Vol. 2 (A Netflix Original Series Soundtrack)",
+          "isrc": [
+            "USLS51684626"
+          ],
+          "artist_id": [
+            "f27a4cee-016f-49ab-a711-4077c40f8aa6",
+            "f68aeef5-c2fc-42ce-9793-7dec9fdf1ae6"
+          ],
+          "album_id": [
+            "819b6719-2362-4682-989b-70da0a1ea7f5"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 19.0
+        }
+      ]
+    },
+    {
+      "row_index": 28,
+      "session_id": "38a5f361-9802-40be-9d15-15c67d5ba60a",
+      "session_prefix": "38a5f361",
+      "session_date": "2017-11-02",
+      "year": 2017,
+      "turns": 4,
+      "user_turns": 2,
+      "n_played": 1,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "LFM2B_ONLY_WEAK",
+      "profile_key": [
+        "20s",
+        "CL",
+        "male",
+        "Extreme Metal Culture"
+      ],
+      "query": "Yeah, Pig Destroyer is always good for that intensity. \"The Diplomat\" definitely delivers. Can you find songs that delve into themes of decay, rot, or existential dread in their lyrics?",
+      "played_tracks": [
+        {
+          "track_id": "3fe50b3c-6817-4c24-8662-28e194c3aa35",
+          "track_name": "The Diplomat",
+          "artist_name": "Pig Destroyer",
+          "album_name": "Book Burner",
+          "isrc": [
+            "US2641212705"
+          ],
+          "artist_id": [
+            "07291e37-d5e8-465c-b1bd-c2634ba0e72f"
+          ],
+          "album_id": [
+            "5bafcbd4-43e2-446c-a424-626975777609"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 37.0
+        }
+      ]
+    },
+    {
+      "row_index": 24,
+      "session_id": "574f75cf-7036-4cd2-b699-93202d81e7e1",
+      "session_prefix": "574f75cf",
+      "session_date": "2018-01-13",
+      "year": 2018,
+      "turns": 4,
+      "user_turns": 2,
+      "n_played": 1,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "LFM2B_ONLY_WEAK",
+      "profile_key": [
+        "20s",
+        "FR",
+        "male",
+        "Underground Electronic and Metal Scene"
+      ],
+      "query": "Good! \"Dressed For Space\" is definitely in the right direction, continuing that darker, synth-driven electronic vibe. Now, let's transition to electronic tracks that have a more melancholic or gothic feel, perhaps leaning towards early 2010s darkwave or EBM.",
+      "played_tracks": [
+        {
+          "track_id": "99ec929b-ecf4-4328-8109-4dd69d7bfdae",
+          "track_name": "Dressed For Space",
+          "artist_name": "TR/ST",
+          "album_name": "TRST",
+          "isrc": [
+            "CAAA11106802"
+          ],
+          "artist_id": [
+            "93e2e92a-64d3-4dff-8d44-d64297fe18b5"
+          ],
+          "album_id": [
+            "136e8b99-7066-4ed4-97af-5d22a9007396"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 43.0
+        }
+      ]
+    },
+    {
+      "row_index": 45,
+      "session_id": "ebad356d-d5ab-437a-81f1-6d219e532c33",
+      "session_prefix": "ebad356d",
+      "session_date": "2018-11-08",
+      "year": 2018,
+      "turns": 4,
+      "user_turns": 2,
+      "n_played": 1,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "LFM2B_ONLY_WEAK",
+      "profile_key": [
+        "20s",
+        "MX",
+        "female",
+        "Latin American"
+      ],
+      "query": "This is nice! I like the upbeat rhythm of Los Caligaris. Do you have anything that feels even more energetic and vibrant, something really passionate and good for a party?",
+      "played_tracks": [
+        {
+          "track_id": "874e3067-9b10-4a2c-8216-b2111d47e265",
+          "track_name": "Entre Vos y Yo",
+          "artist_name": "Los Caligaris",
+          "album_name": "Bailarín Apocalíptico",
+          "isrc": [
+            "ARN4W1400063"
+          ],
+          "artist_id": [
+            "23427f1c-c1c4-45a3-8cc2-961921414020"
+          ],
+          "album_id": [
+            "65e1364a-1989-4782-9fe5-98842069fa61"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 53.0
+        }
+      ]
+    },
+    {
+      "row_index": 34,
+      "session_id": "5e1f5a89-99c0-46bb-af78-005338d05858",
+      "session_prefix": "5e1f5a89",
+      "session_date": "2018-12-17",
+      "year": 2018,
+      "turns": 4,
+      "user_turns": 2,
+      "n_played": 1,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "LFM2B_ONLY_WEAK",
+      "profile_key": [
+        "20s",
+        "UK",
+        "male",
+        "North American Indie Folk"
+      ],
+      "query": "That's a good one from Leif, and the title 'Cairo Blues' definitely suggests a place. I'm looking for something that really paints a picture of a distant place, maybe with a more melancholic or reflective tone. Can you find something that feels distinctly rooted in a specific location, perhaps even something with a slightly more unique geographical reference?",
+      "played_tracks": [
+        {
+          "track_id": "42a5382f-943b-40bb-a1cd-c96c0736090d",
+          "track_name": "Cairo Blues",
+          "artist_name": "Leif Vollebekk",
+          "album_name": "North Americana",
+          "isrc": [
+            "QMBZ91308725"
+          ],
+          "artist_id": [
+            "97dcec62-c57c-40ed-bd39-08408516847e"
+          ],
+          "album_id": [
+            "d569f556-ebca-48c8-8ad8-9864bf0bb108"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 22.0
+        }
+      ]
+    },
+    {
+      "row_index": 63,
+      "session_id": "2b1cbd1c-dd5b-40ab-943a-0392894babc0",
+      "session_prefix": "2b1cbd1c",
+      "session_date": "2018-12-28",
+      "year": 2018,
+      "turns": 4,
+      "user_turns": 2,
+      "n_played": 1,
+      "fingerprint_strength": "WEAK",
+      "target_bucket": "LFM2B_ONLY_WEAK",
+      "profile_key": [
+        "10s",
+        "MA",
+        "male",
+        "Western Alternative Rock Culture"
+      ],
+      "query": "Oh, wait! The album cover for \"On Oni Pond\" – the one with the people on a boat with tigers – that's it! Is \"Pyramids\" from that album? That cover is definitely the kind of surreal and quirky visual I had in mind.",
+      "played_tracks": [
+        {
+          "track_id": "dde45ac4-9c21-49a3-8239-d47c5c14f0aa",
+          "track_name": "Pyramids",
+          "artist_name": "Man Man",
+          "album_name": "On Oni Pond",
+          "isrc": [
+            "USEP41313008"
+          ],
+          "artist_id": [
+            "33c82c94-215b-4d64-a958-1e2c54435f4f"
+          ],
+          "album_id": [
+            "813e4ac2-43bf-463b-bfd4-93494c05a597"
+          ],
+          "release_date": "",
+          "duration": 0,
+          "popularity": 22.0
+        }
+      ]
+    },
+    {
+      "row_index": 75,
+      "session_id": "c0d4e758-5dfe-41a4-b0f2-07c29e27cdce",
+      "session_prefix": "c0d4e758",
+      "session_date": "2011-09-03",
+      "year": 2011,
+      "turns": 1,
+      "user_turns": 1,
+      "n_played": 0,
+      "fingerprint_strength": "NONE",
+      "target_bucket": "NO_PLAYED_TRACKS",
+      "profile_key": [
+        "20s",
+        "US",
+        "male",
+        "Video Game Music Culture"
+      ],
+      "query": "Do you know any soundtracks that have a really unique, almost retro-futuristic vibe, perhaps with a moon on the album cover?",
+      "played_tracks": []
+    },
+    {
+      "row_index": 60,
+      "session_id": "ab87371b-9ebc-4fb1-9eea-b984a5b76258",
+      "session_prefix": "ab87371b",
+      "session_date": "2012-08-10",
+      "year": 2012,
+      "turns": 1,
+      "user_turns": 1,
+      "n_played": 0,
+      "fingerprint_strength": "NONE",
+      "target_bucket": "NO_PLAYED_TRACKS",
+      "profile_key": [
+        "20s",
+        "EE",
+        "male",
+        "American Hip-Hop Culture"
+      ],
+      "query": "I need some intense, focused hip-hop for getting through a tough creative block, something with a raw urban vibe to keep me locked in.",
+      "played_tracks": []
+    },
+    {
+      "row_index": 1,
+      "session_id": "60a6fd69-33f4-4dbf-aa0d-872b27a69037",
+      "session_prefix": "60a6fd69",
+      "session_date": "2012-08-11",
+      "year": 2012,
+      "turns": 1,
+      "user_turns": 1,
+      "n_played": 0,
+      "fingerprint_strength": "NONE",
+      "target_bucket": "NO_PLAYED_TRACKS",
+      "profile_key": [
+        "20s",
+        "EE",
+        "male",
+        "American 90s Golden Age Hip-Hop Culture"
+      ],
+      "query": "I'm trying to remember a track with that distinctive, soulful early 90s hip-hop feel, with smooth flows and a laid-back vibe.",
+      "played_tracks": []
+    },
+    {
+      "row_index": 50,
+      "session_id": "78487c90-fda7-4723-ad4c-4557393ea95f",
+      "session_prefix": "78487c90",
+      "session_date": "2012-08-13",
+      "year": 2012,
+      "turns": 1,
+      "user_turns": 1,
+      "n_played": 0,
+      "fingerprint_strength": "NONE",
+      "target_bucket": "NO_PLAYED_TRACKS",
+      "profile_key": [
+        "20s",
+        "AU",
+        "male",
+        "Australian Rock"
+      ],
+      "query": "Play a Robert Johnson song about going to the crossroad and asking for mercy.",
+      "played_tracks": []
+    },
+    {
+      "row_index": 54,
+      "session_id": "31bf71ab-497f-4045-bc91-06552f9b69b8",
+      "session_prefix": "31bf71ab",
+      "session_date": "2012-09-07",
+      "year": 2012,
+      "turns": 1,
+      "user_turns": 1,
+      "n_played": 0,
+      "fingerprint_strength": "NONE",
+      "target_bucket": "NO_PLAYED_TRACKS",
+      "profile_key": [
+        "20s",
+        "AU",
+        "male",
+        "American Hip-Hop"
+      ],
+      "query": "Can you put on 'License to Drive' by Work Drugs?",
+      "played_tracks": []
+    },
+    {
+      "row_index": 79,
+      "session_id": "77faef85-566c-4eb7-90b6-ee9fdeeacbe8",
+      "session_prefix": "77faef85",
+      "session_date": "2012-12-15",
+      "year": 2012,
+      "turns": 1,
+      "user_turns": 1,
+      "n_played": 0,
+      "fingerprint_strength": "NONE",
+      "target_bucket": "NO_PLAYED_TRACKS",
+      "profile_key": [
+        "30s",
+        "NO",
+        "male",
+        "Western Christian Holiday Music"
+      ],
+      "query": "Can you recommend some holiday music with traditional winter themes in the lyrics, beyond just Santa Claus?",
+      "played_tracks": []
+    },
+    {
+      "row_index": 62,
+      "session_id": "3afb9f67-a18a-4b97-81cf-ef1806fce0e9",
+      "session_prefix": "3afb9f67",
+      "session_date": "2014-02-18",
+      "year": 2014,
+      "turns": 1,
+      "user_turns": 1,
+      "n_played": 0,
+      "fingerprint_strength": "NONE",
+      "target_bucket": "NO_PLAYED_TRACKS",
+      "profile_key": [
+        "10s",
+        "PL",
+        "male",
+        "American Hip-Hop Culture"
+      ],
+      "query": "I'm trying to remember a Lil Wayne song that sounded a bit different from his usual stuff, maybe from an experimental phase.",
+      "played_tracks": []
+    },
+    {
+      "row_index": 40,
+      "session_id": "68993adf-60d9-42f9-b21f-cdd5bf851cb1",
+      "session_prefix": "68993adf",
+      "session_date": "2014-03-09",
+      "year": 2014,
+      "turns": 1,
+      "user_turns": 1,
+      "n_played": 0,
+      "fingerprint_strength": "NONE",
+      "target_bucket": "NO_PLAYED_TRACKS",
+      "profile_key": [
+        "30s",
+        "US",
+        "male",
+        "American Country Culture"
+      ],
+      "query": "I'm searching for a song with a strong narrative, something that feels like a life story unfolding, maybe a bit melancholic.",
+      "played_tracks": []
+    },
+    {
+      "row_index": 52,
+      "session_id": "db11666f-bfb8-4d0d-b62b-075ab85d92f9",
+      "session_prefix": "db11666f",
+      "session_date": "2014-04-19",
+      "year": 2014,
+      "turns": 1,
+      "user_turns": 1,
+      "n_played": 0,
+      "fingerprint_strength": "NONE",
+      "target_bucket": "NO_PLAYED_TRACKS",
+      "profile_key": [
+        "10s",
+        "ES",
+        "female",
+        "Anglo-American Alternative Culture"
+      ],
+      "query": "I'm in the mood for some music that has a really distinct sonic quality, something that stands out in its production or instrumentation.",
+      "played_tracks": []
+    },
+    {
+      "row_index": 38,
+      "session_id": "5b2f877b-a6d5-4473-879c-f5a24d4fd06f",
+      "session_prefix": "5b2f877b",
+      "session_date": "2014-05-26",
+      "year": 2014,
+      "turns": 1,
+      "user_turns": 1,
+      "n_played": 0,
+      "fingerprint_strength": "NONE",
+      "target_bucket": "NO_PLAYED_TRACKS",
+      "profile_key": [
+        "20s",
+        "CL",
+        "female",
+        "UK Bass Music Culture"
+      ],
+      "query": "I'm trying to remember a song that talks about love being hard to find.",
+      "played_tracks": []
+    },
+    {
+      "row_index": 36,
+      "session_id": "d851eac7-27a7-4363-b2a4-6cb365c79d22",
+      "session_prefix": "d851eac7",
+      "session_date": "2017-05-05",
+      "year": 2017,
+      "turns": 1,
+      "user_turns": 1,
+      "n_played": 0,
+      "fingerprint_strength": "NONE",
+      "target_bucket": "NO_PLAYED_TRACKS",
+      "profile_key": [
+        "20s",
+        "UK",
+        "male",
+        "Western Indie/Alternative"
+      ],
+      "query": "I'm looking for music with album art that really stands out visually, something that has an interesting design or color palette.",
+      "played_tracks": []
+    },
+    {
+      "row_index": 2,
+      "session_id": "25cc9533-7c02-4781-9100-ab438e848a3d",
+      "session_prefix": "25cc9533",
+      "session_date": "2017-05-21",
+      "year": 2017,
+      "turns": 1,
+      "user_turns": 1,
+      "n_played": 0,
+      "fingerprint_strength": "NONE",
+      "target_bucket": "NO_PLAYED_TRACKS",
+      "profile_key": [
+        "10s",
+        "AR",
+        "male",
+        "Anglo-American Indie"
+      ],
+      "query": "Can you tell me which song from Peter Doherty's 'Grace/Wastelands' was frequently mentioned as one of the best tracks of 2009?",
+      "played_tracks": []
+    },
+    {
+      "row_index": 22,
+      "session_id": "0a1f7a63-c5e4-4a2d-9285-433cd036f4e7",
+      "session_prefix": "0a1f7a63",
+      "session_date": "2017-08-14",
+      "year": 2017,
+      "turns": 1,
+      "user_turns": 1,
+      "n_played": 0,
+      "fingerprint_strength": "NONE",
+      "target_bucket": "NO_PLAYED_TRACKS",
+      "profile_key": [
+        "20s",
+        "CZ",
+        "male",
+        "Outlaw Americana"
+      ],
+      "query": "I'm looking for songs with a rebellious spirit or a sense of breaking free.",
+      "played_tracks": []
+    },
+    {
+      "row_index": 12,
+      "session_id": "fc6ba76a-3dd8-4c11-b5af-a233253b01bf",
+      "session_prefix": "fc6ba76a",
+      "session_date": "2018-05-08",
+      "year": 2018,
+      "turns": 1,
+      "user_turns": 1,
+      "n_played": 0,
+      "fingerprint_strength": "NONE",
+      "target_bucket": "NO_PLAYED_TRACKS",
+      "profile_key": [
+        "10s",
+        "US",
+        "male",
+        "Wellness & Relaxation"
+      ],
+      "query": "I'm looking for some background music to help me relax and unwind.",
+      "played_tracks": []
+    },
+    {
+      "row_index": 72,
+      "session_id": "4831a3b4-3964-40ec-92a3-151cef2cae8f",
+      "session_prefix": "4831a3b4",
+      "session_date": "2018-08-09",
+      "year": 2018,
+      "turns": 1,
+      "user_turns": 1,
+      "n_played": 0,
+      "fingerprint_strength": "NONE",
+      "target_bucket": "NO_PLAYED_TRACKS",
+      "profile_key": [
+        "10s",
+        "SK",
+        "male",
+        "American Hip-Hop"
+      ],
+      "query": "I'm trying to recall an album based solely on its distinctive cover art. It left a strong impression on me, almost like a painting.",
+      "played_tracks": []
+    },
+    {
+      "row_index": 74,
+      "session_id": "f321d88d-d809-4bcb-aca0-a1ef551a48de",
+      "session_prefix": "f321d88d",
+      "session_date": "2018-10-16",
+      "year": 2018,
+      "turns": 1,
+      "user_turns": 1,
+      "n_played": 0,
+      "fingerprint_strength": "NONE",
+      "target_bucket": "NO_PLAYED_TRACKS",
+      "profile_key": [
+        "10s",
+        "US",
+        "male",
+        "Folk Punk Culture"
+      ],
+      "query": "I'm looking for songs with a raw, driving punk rhythm and passionate, almost shouting vocals, similar to Defiance, Ohio's sound.",
+      "played_tracks": []
+    },
+    {
+      "row_index": 49,
+      "session_id": "ff76b679-7d7a-4796-8f6c-929efef45428",
+      "session_prefix": "ff76b679",
+      "session_date": "2018-10-17",
+      "year": 2018,
+      "turns": 1,
+      "user_turns": 1,
+      "n_played": 0,
+      "fingerprint_strength": "NONE",
+      "target_bucket": "NO_PLAYED_TRACKS",
+      "profile_key": [
+        "10s",
+        "PL",
+        "male",
+        "American Hip-Hop Culture"
+      ],
+      "query": "I'm looking for an album with a really striking, abstract cover art. It had some bold colors and shapes, almost like a modern painting.",
+      "played_tracks": []
+    },
+    {
+      "row_index": 70,
+      "session_id": "7905bb71-efea-4210-8ad9-881f37cad50a",
+      "session_prefix": "7905bb71",
+      "session_date": "2018-11-03",
+      "year": 2018,
+      "turns": 1,
+      "user_turns": 1,
+      "n_played": 0,
+      "fingerprint_strength": "NONE",
+      "target_bucket": "NO_PLAYED_TRACKS",
+      "profile_key": [
+        "20s",
+        "ID",
+        "female",
+        "Indonesian"
+      ],
+      "query": "I need some happy, feel-good music right now to lift my spirits.",
+      "played_tracks": []
+    },
+    {
+      "row_index": 65,
+      "session_id": "ab8bc8fa-6326-47a5-afb4-3e3a30ca7360",
+      "session_prefix": "ab8bc8fa",
+      "session_date": "2018-11-05",
+      "year": 2018,
+      "turns": 1,
+      "user_turns": 1,
+      "n_played": 0,
+      "fingerprint_strength": "NONE",
+      "target_bucket": "NO_PLAYED_TRACKS",
+      "profile_key": [
+        "10s",
+        "BR",
+        "female",
+        "Brazilian"
+      ],
+      "query": "I'm trying to remember a K-Pop song from a few years ago that was really popular, everyone seemed to know it.",
+      "played_tracks": []
+    },
+    {
+      "row_index": 0,
+      "session_id": "9c37dcd7-d7c2-4686-8541-1e37c4814a09",
+      "session_prefix": "9c37dcd7",
+      "session_date": "2018-12-16",
+      "year": 2018,
+      "turns": 1,
+      "user_turns": 1,
+      "n_played": 0,
+      "fingerprint_strength": "NONE",
+      "target_bucket": "NO_PLAYED_TRACKS",
+      "profile_key": [
+        "10s",
+        "DE",
+        "male",
+        "Korean Pop Culture"
+      ],
+      "query": "Play me some music that makes me want to dance and feel good.",
+      "played_tracks": []
+    }
+  ]
+}
