@@ -517,6 +517,13 @@ def apply_policy(record: dict[str, Any], ranking: list[int], policy: str, confid
         body = [t for t in ranked_tracks if t != top1]
         out = [top1] + body + [t for t in base[1:] if t not in body]
         return out[:20]
+    if policy.startswith("full20_keep_top"):
+        keep_n = int(policy.removeprefix("full20_keep_top"))
+        fixed = base[:keep_n]
+        fixed_set = set(fixed)
+        body = [t for t in ranked_tracks if t not in fixed_set]
+        out = fixed + body + [t for t in base[keep_n:] if t not in body]
+        return out[:20]
     if policy.startswith("top") and policy.endswith("_keep_top1"):
         k = int(policy[3:].split("_", 1)[0])
         top1 = base[0]

@@ -1,0 +1,10 @@
+{
+  "experiment": "R498 raw full20 with repaired top1 responses",
+  "base": "exp/inference/blind_a/r432s_targeted_subset_submission.zip",
+  "raw_full20": "exp/inference/blind_a/r498_listwise_llm/r498_gpt41_full20_submission.zip",
+  "prompts": "exp/eval/r498_listwise_llm/r498_blind_prompts.jsonl",
+  "repairs": "exp/eval/r498_listwise_llm/r498_full20_response_repairs_gpt41.jsonl",
+  "out_zip": "exp/inference/blind_a/r498_listwise_llm/r498_gpt41_full20_repaired_submission.zip",
+  "sha256": "0818d67a963c688e1665ce0809e54ac5acf89c7e666b7246d012350fe38dab12",
+  "top1_changed_and_repaired": 28
+}

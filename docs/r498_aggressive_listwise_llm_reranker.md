@@ -1,8 +1,9 @@
 # R498 — Aggressive Listwise LLM Reranker
 
-**Status:** **GO candidate built.** `gpt-4.1` listwise reranking produced the first large,
-fold-positive offline nDCG signal since the Blind-A scorer reset. A rank-preserving
-Blind-A candidate is ready for upload.
+**Status:** official first upload transferred weakly. `gpt-4.1` listwise reranking
+produced the first large, fold-positive offline nDCG signal since the Blind-A scorer
+reset. The rank-preserving first candidate improved nDCG but lost composite due to an
+LLM drop.
 
 ## Why this is different
 
@@ -27,6 +28,8 @@ Those cannot plausibly move nDCG from `0.5092` to `>0.60`. R498 is intentionally
 - Dev fold-balanced benchmark prompts: `exp/eval/r498_listwise_llm/r498_dev_foldbalanced500_prompts.jsonl`
 - Blind-A prompts: `exp/eval/r498_listwise_llm/r498_blind_prompts.jsonl`
 - Recommended Blind-A candidate: `exp/inference/blind_a/r498_listwise_llm/r498_gpt41_full20_keep_top1_submission.zip`
+- Higher-nDCG repaired candidate: `exp/inference/blind_a/r498_listwise_llm/r498_gpt41_full20_repaired_submission.zip`
+- Composite/LLM-recovery candidate: `exp/inference/blind_a/r498_listwise_llm/r498_gpt41_full20_keep_top5_submission.zip`
 
 The first `balanced400` pack was useful but skewed toward folds 0/1. The decision-grade
 pack is `foldbalanced500`: exactly `50` recoverable misses and `50` current hits from
@@ -77,6 +80,39 @@ response changes: 0
 bad lengths / duplicate tracks: 0 / 0
 mean top20 overlap vs R432s: 9.82
 ```
+
+Official result for `r498_gpt41_full20_keep_top1_submission.zip`:
+
+```text
+nDCG@20 = 0.5126  (baseline ~0.5092, +0.0034)
+CatDiv  = 0.0319
+LexDiv  = 0.8859
+LLM     = 4.85    (baseline 4.90, -0.05)
+Composite = 0.6368
+```
+
+Interpretation: the LLM reranker does transfer, but only about `5%` of the
+fold-balanced offline delta. The unchanged-response/top1-safe candidate still changed
+the top-3 on `71/80` rows and top-5 on `78/80`, which likely caused the LLM penalty.
+
+Follow-up candidates built after the official result:
+
+```text
+file:    exp/inference/blind_a/r498_listwise_llm/r498_gpt41_full20_repaired_submission.zip
+sha256:  0818d67a963c688e1665ce0809e54ac5acf89c7e666b7246d012350fe38dab12
+policy:  raw full20, with response repairs for the 28 top-1 changes
+audit:   80 changed rows, 28 top-1 changes, 28 response changes, valid 20 unique tracks
+use:     best next pure-nDCG candidate
+
+file:    exp/inference/blind_a/r498_listwise_llm/r498_gpt41_full20_keep_top5_submission.zip
+sha256:  3da288e95dd1ff009325d65a5f1c1981d830fe23abb22c9d3039c010457c0d1b
+policy:  preserve current top-5, rerank ranks 6-20
+audit:   80 changed rows, top-1/top-3/top-5 churn all 0, valid 20 unique tracks
+use:     lower nDCG expectation, but better chance to recover LLM/composite
+```
+
+If the goal is specifically to maximize nDCG, submit the repaired raw `full20` package
+before `keep_top5`. If the goal is composite recovery, submit `keep_top5` first.
 
 ## Exact Run Protocol
 
