@@ -111,8 +111,38 @@ audit:   80 changed rows, top-1/top-3/top-5 churn all 0, valid 20 unique tracks
 use:     lower nDCG expectation, but better chance to recover LLM/composite
 ```
 
-If the goal is specifically to maximize nDCG, submit the repaired raw `full20` package
-before `keep_top5`. If the goal is composite recovery, submit `keep_top5` first.
+Official result for `r498_gpt41_full20_repaired_submission.zip`:
+
+```text
+nDCG@20 = 0.4253
+CatDiv  = 0.0319
+LexDiv  = 0.8902
+LLM     = 4.65
+Composite = 0.5786
+```
+
+This invalidates top-1-changing R498 policies. The response repair was structurally
+correct, but the model-selected new top tracks were wrong often enough to destroy many
+existing hits.
+
+Postmortem:
+
+- The decision-grade pack was fold-balanced but not prevalence-balanced: it used
+  `250` recoverable misses and `250` current hits.
+- Actual all-dev prevalence under the same 60-track slate is roughly:
+  `50.5%` unrecoverable, `42.4%` current hit, `7.2%` recoverable miss.
+- Therefore the offline benchmark over-weighted the only category where aggressive
+  reranking can help by about `7x`.
+- Per-category deltas on the 500-row pack:
+  `full20` recoverable `+0.2048`, hit `-0.0476`;
+  `full20_keep_top1` recoverable `+0.1809`, hit `-0.0458`;
+  `top3_keep_top1` recoverable `+0.0604`, hit `-0.0018`.
+
+Current conclusion: R498 proves that modern listwise LLMs contain some transfer signal,
+but not enough to bridge toward `0.60` nDCG without a reliable recoverable-row gate or a
+source-pool reconstruction signal. Raw top-1 replacement is closed. The `keep_top5`
+candidate remains a possible LLM/composite recovery test, not a credible high-nDCG
+candidate.
 
 ## Exact Run Protocol
 
