@@ -1,0 +1,44 @@
+{
+  "run": "R499",
+  "base": "exp/inference/blind_a/r498_listwise_llm/r498_gpt41_full20_keep_top1_submission.zip",
+  "candidate": "exp/inference/blind_a/r499_source_guided/r499_ca8_source_misery_r498base_submission.zip",
+  "sha256": "71a70b4a2218838443889e5ee83b0323f577b9573999a782ae1216a7b1efa9dc",
+  "hypothesis": "MLHD+ source-day fingerprint for ca8cbe02 exposes source-neighbor pool; promote Misery Loves Company over non-source Girls.",
+  "official_base": {
+    "ndcg": 0.5126,
+    "llm": 4.85,
+    "composite": 0.6368
+  },
+  "changed_rows": [
+    {
+      "session_id": "ca8cbe02-1def-4fca-ba48-f17f9fac0ed8",
+      "before_top10": [
+        "a9550ed3-9e75-4763-a630-a3a13a6e95c8",
+        "746ec84b-da8c-44c8-9fac-292a473edbbc",
+        "4ed05288-20e2-424a-9c11-05476046cbe3",
+        "336755f0-c038-4172-804c-de3c66875a23",
+        "1be962dd-528f-4a7a-983b-d3a8223c76bf",
+        "7a7f8898-62b9-4ecd-ac08-401000e025d3",
+        "d483e61b-78cf-4a31-ad40-3b7d8da0ff9d",
+        "2d4b6470-1a21-475a-8a0d-dba729eb104b",
+        "68cf82e5-c7a6-4cde-9595-aaef69951cc8",
+        "c37f15dc-7631-47d0-823a-75cb84687108"
+      ],
+      "after_top10": [
+        "7a7f8898-62b9-4ecd-ac08-401000e025d3",
+        "1be962dd-528f-4a7a-983b-d3a8223c76bf",
+        "a9550ed3-9e75-4763-a630-a3a13a6e95c8",
+        "746ec84b-da8c-44c8-9fac-292a473edbbc",
+        "4ed05288-20e2-424a-9c11-05476046cbe3",
+        "336755f0-c038-4172-804c-de3c66875a23",
+        "d483e61b-78cf-4a31-ad40-3b7d8da0ff9d",
+        "2d4b6470-1a21-475a-8a0d-dba729eb104b",
+        "68cf82e5-c7a6-4cde-9595-aaef69951cc8",
+        "c37f15dc-7631-47d0-823a-75cb84687108"
+      ],
+      "response_changed": true
+    }
+  ],
+  "expected_if_misery_gt": "gain roughly +0.008 nDCG vs R498 ca8 rank6",
+  "risk_if_girls_gt": "loss roughly -0.006 nDCG vs R498 ca8 rank1"
+}

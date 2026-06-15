@@ -1,0 +1,500 @@
+{
+  "summary": {
+    "session": "ca8cbe02",
+    "source_user": "267da809-5762-4c2c-85fb-ebf0667d8cbb.txt",
+    "source_member": "26/267da809-5762-4c2c-85fb-ebf0667d8cbb.txt.zst",
+    "source_day_unique_recordings": 37,
+    "source_day_recordings": 41,
+    "mapped_mbids": 7,
+    "catalog_track_ids": [
+      "1be962dd-528f-4a7a-983b-d3a8223c76bf",
+      "1e20b21e-75b3-4d96-9cc4-093333627ccc",
+      "336755f0-c038-4172-804c-de3c66875a23",
+      "4ed05288-20e2-424a-9c11-05476046cbe3",
+      "60fd71b1-c45f-496c-957a-04364da9d64d",
+      "746ec84b-da8c-44c8-9fac-292a473edbbc",
+      "7a7f8898-62b9-4ecd-ac08-401000e025d3"
+    ]
+  },
+  "pool": [
+    {
+      "source_mbid": "c844960b-225b-4ff7-b66b-1acbff8465e0",
+      "mb_title": "Sirocco",
+      "mb_artists": [
+        "Fire on Fire"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "c6c79625-418b-4061-8be1-47afdf36dd1b",
+      "mb_title": "Heavy D",
+      "mb_artists": [
+        "Fire on Fire"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "81dce803-bdb6-4dc7-aed2-d6320e1a359a",
+      "mb_title": "Assanine Race",
+      "mb_artists": [
+        "Fire on Fire"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "8925131f-29e3-46b8-a756-4d808ccdfed5",
+      "mb_title": "The Orchard",
+      "mb_artists": [
+        "Fire on Fire"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "5361e5ec-6ca0-453b-aab1-825846cb7b90",
+      "mb_title": "Flordinese",
+      "mb_artists": [
+        "Fire on Fire"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "ea3bf86c-e8d0-4ade-970a-fb849d365f52",
+      "mb_title": "Hartford Blues",
+      "mb_artists": [
+        "Fire on Fire"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "56267156-280f-4116-940e-94f69b310b48",
+      "mb_title": "Toknight",
+      "mb_artists": [
+        "Fire on Fire"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "27e16a35-a09a-4fab-ac12-dada15799d6e",
+      "mb_title": "Squeeze Box",
+      "mb_artists": [
+        "Fire on Fire"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "2ff3a3b4-c501-4374-b249-d9e8fa745c31",
+      "mb_title": "Flight Song",
+      "mb_artists": [
+        "Fire on Fire"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "f882b386-9f61-41f1-84a5-9bec12469233",
+      "mb_title": "Grin",
+      "mb_artists": [
+        "Fire on Fire"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "5e713569-5f19-410a-abe3-92cd2e541f3d",
+      "mb_title": "Tsunami",
+      "mb_artists": [
+        "Fire on Fire"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "679cf19d-aacb-4922-9974-f9d3257f0c5d",
+      "mb_title": "Opheliac",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079028"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "1be962dd-528f-4a7a-983b-d3a8223c76bf",
+          "track_name": [
+            "Opheliac"
+          ],
+          "artist_name": [
+            "Emilie Autumn"
+          ],
+          "album_name": [
+            "Opheliac -- The Deluxe Edition"
+          ],
+          "isrc": [
+            "USHM21079028"
+          ],
+          "popularity": 37.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "562c1f6d-122c-441f-82e1-ad9feebbc190",
+      "mb_title": "Swallow",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079029"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "60fd71b1-c45f-496c-957a-04364da9d64d",
+          "track_name": [
+            "Swallow"
+          ],
+          "artist_name": [
+            "Emilie Autumn"
+          ],
+          "album_name": [
+            "Opheliac -- The Deluxe Edition"
+          ],
+          "isrc": [
+            "USHM21079029"
+          ],
+          "popularity": 30.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "a45bcfe0-07a6-41a5-b4a3-d341025723e7",
+      "mb_title": "Liar",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079030",
+        "USHM80762296"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "860f542a-55ff-48c8-b81c-ea176f74c535",
+      "mb_title": "The Art of Suicide",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079031"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "336755f0-c038-4172-804c-de3c66875a23",
+          "track_name": [
+            "The Art of Suicide"
+          ],
+          "artist_name": [
+            "Emilie Autumn"
+          ],
+          "album_name": [
+            "Opheliac -- The Deluxe Edition"
+          ],
+          "isrc": [
+            "USHM21079031"
+          ],
+          "popularity": 30.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "6b991259-30f3-45c2-af36-2b3cac3e1b9f",
+      "mb_title": "I Want My Innocence Back",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079032"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "746ec84b-da8c-44c8-9fac-292a473edbbc",
+          "track_name": [
+            "I Want My Innocence Back"
+          ],
+          "artist_name": [
+            "Emilie Autumn"
+          ],
+          "album_name": [
+            "Opheliac -- The Deluxe Edition",
+            "Opheliac - The Deluxe Edition"
+          ],
+          "isrc": [
+            "USHM21079032"
+          ],
+          "popularity": 28.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "cb0112af-b38e-4389-8a31-8d1d51635bd9",
+      "mb_title": "Misery Loves Company",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079033"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "7a7f8898-62b9-4ecd-ac08-401000e025d3",
+          "track_name": [
+            "Misery Loves Company"
+          ],
+          "artist_name": [
+            "Emilie Autumn"
+          ],
+          "album_name": [
+            "Opheliac -- The Deluxe Edition"
+          ],
+          "isrc": [
+            "USHM21079033"
+          ],
+          "popularity": 33.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "4a2308ed-ff4e-4ec5-ac57-8e3af8509d39",
+      "mb_title": "God Help Me",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079034"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "edc007db-3cb2-45e3-af73-4b070ba078e4",
+      "mb_title": "Shalott",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079035"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "1e20b21e-75b3-4d96-9cc4-093333627ccc",
+          "track_name": [
+            "Shalott"
+          ],
+          "artist_name": [
+            "Emilie Autumn"
+          ],
+          "album_name": [
+            "Opheliac -- The Deluxe Edition"
+          ],
+          "isrc": [
+            "USHM21079035"
+          ],
+          "popularity": 32.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "dba537f3-5021-4068-a95f-0593e6a489d4",
+      "mb_title": "Gothic Lolita",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079036"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "4ed05288-20e2-424a-9c11-05476046cbe3",
+          "track_name": [
+            "Gothic Lolita"
+          ],
+          "artist_name": [
+            "Emilie Autumn"
+          ],
+          "album_name": [
+            "Opheliac -- The Deluxe Edition",
+            "Opheliac - The Deluxe Edition"
+          ],
+          "isrc": [
+            "USHM21079036"
+          ],
+          "popularity": 27.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "fe697cdf-1ad7-4f69-991f-83010ca91f60",
+      "mb_title": "Eat Yr Heart",
+      "mb_artists": [
+        "HTRK"
+      ],
+      "mb_isrcs": [
+        "US2J71104403"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "b80337aa-930c-4c82-954c-672058253bb8",
+      "mb_title": "Bendin'",
+      "mb_artists": [
+        "HTRK"
+      ],
+      "mb_isrcs": [
+        "US2J71104404"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "a601fe41-d26b-4900-852b-8769398e0a55",
+      "mb_title": "Love Triangle",
+      "mb_artists": [
+        "HTRK"
+      ],
+      "mb_isrcs": [
+        "US2J71104409"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "12b04959-c142-4157-adf9-3ec963ba2c08",
+      "mb_title": "Goodwife Keeping",
+      "mb_artists": [
+        "Red Pocket"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "94ec62f6-1dc9-4215-a5dc-c8f070f67fb8",
+      "mb_title": "The Way It Is",
+      "mb_artists": [
+        "Red Pocket"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "c7ac2eba-dee0-4c42-ae38-3a7cc2acaf23",
+      "mb_title": "Ceiling View",
+      "mb_artists": [
+        "Red Pocket"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "47bbeb38-1b3b-4cb8-a018-7078ee664d86",
+      "mb_title": "The Very Last Muse",
+      "mb_artists": [
+        "Red Pocket"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "3f835aae-b3b4-4ff2-9cf5-39e1e301b8ad",
+      "mb_title": "Never Two Weeks",
+      "mb_artists": [
+        "Red Pocket"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "9b0f5de1-65ce-40d6-b929-6d213df0af08",
+      "mb_title": "Happy Family",
+      "mb_artists": [
+        "Red Pocket"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "9b80fb5e-720d-4bb6-8d2c-a917cb5a2753",
+      "mb_title": "Villain",
+      "mb_artists": [
+        "CocoRosie"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "2c93134c-9c52-474d-bf77-bccaaeea54b1",
+      "mb_title": "Harmless Monster",
+      "mb_artists": [
+        "CocoRosie"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "ed5ee57b-d2a1-4b2e-9532-966aa5ed4bee",
+      "mb_title": "Child Bride",
+      "mb_artists": [
+        "CocoRosie"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "4f680efc-95a3-410e-be08-f057d812b3ad",
+      "mb_title": "Roots of My Hair",
+      "mb_artists": [
+        "CocoRosie"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "ed1ae776-b16f-4e82-950c-1add43c23fcb",
+      "mb_title": "End of Time",
+      "mb_artists": [
+        "CocoRosie"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "c602c4c4-a1b8-4b23-b86a-92e51e558012",
+      "mb_title": "Gravediggress",
+      "mb_artists": [
+        "CocoRosie"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "a73eff3f-c942-4e24-ac01-c7909813958d",
+      "mb_title": "Tears for Animals",
+      "mb_artists": [
+        "CocoRosie"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "3f602f85-d1de-41b5-b4dd-28a93dc89be8",
+      "mb_title": "After the Afterlife",
+      "mb_artists": [
+        "CocoRosie"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    }
+  ]
+}

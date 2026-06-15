@@ -1,0 +1,264 @@
+{
+  "session": "ca8cbe02",
+  "session_id": "ca8cbe02-1def-4fca-ba48-f17f9fac0ed8",
+  "source": "https://data.musicbrainz.org/pub/musicbrainz/listenbrainz/mlhd/mlhdplus-complete-2.tar",
+  "member": "26/267da809-5762-4c2c-85fb-ebf0667d8cbb.txt.zst",
+  "user_id": "267da809-5762-4c2c-85fb-ebf0667d8cbb.txt",
+  "matched_count": 2,
+  "matched_mbids": [
+    "562c1f6d-122c-441f-82e1-ad9feebbc190",
+    "edc007db-3cb2-45e3-af73-4b070ba078e4"
+  ],
+  "matched_tracks": [
+    "Swallow — Emilie Autumn",
+    "Shalott — Emilie Autumn"
+  ],
+  "day_recording_count": 41,
+  "day_unique_recording_count": 37,
+  "day_sample_mbids": [
+    "c844960b-225b-4ff7-b66b-1acbff8465e0",
+    "c6c79625-418b-4061-8be1-47afdf36dd1b",
+    "81dce803-bdb6-4dc7-aed2-d6320e1a359a",
+    "8925131f-29e3-46b8-a756-4d808ccdfed5",
+    "5361e5ec-6ca0-453b-aab1-825846cb7b90",
+    "ea3bf86c-e8d0-4ade-970a-fb849d365f52",
+    "56267156-280f-4116-940e-94f69b310b48",
+    "27e16a35-a09a-4fab-ac12-dada15799d6e",
+    "2ff3a3b4-c501-4374-b249-d9e8fa745c31",
+    "f882b386-9f61-41f1-84a5-9bec12469233",
+    "5e713569-5f19-410a-abe3-92cd2e541f3d",
+    "679cf19d-aacb-4922-9974-f9d3257f0c5d",
+    "562c1f6d-122c-441f-82e1-ad9feebbc190",
+    "a45bcfe0-07a6-41a5-b4a3-d341025723e7",
+    "860f542a-55ff-48c8-b81c-ea176f74c535",
+    "6b991259-30f3-45c2-af36-2b3cac3e1b9f",
+    "cb0112af-b38e-4389-8a31-8d1d51635bd9",
+    "4a2308ed-ff4e-4ec5-ac57-8e3af8509d39",
+    "edc007db-3cb2-45e3-af73-4b070ba078e4",
+    "dba537f3-5021-4068-a95f-0593e6a489d4",
+    "fe697cdf-1ad7-4f69-991f-83010ca91f60",
+    "b80337aa-930c-4c82-954c-672058253bb8",
+    "a601fe41-d26b-4900-852b-8769398e0a55",
+    "12b04959-c142-4157-adf9-3ec963ba2c08",
+    "94ec62f6-1dc9-4215-a5dc-c8f070f67fb8",
+    "c7ac2eba-dee0-4c42-ae38-3a7cc2acaf23",
+    "47bbeb38-1b3b-4cb8-a018-7078ee664d86",
+    "3f835aae-b3b4-4ff2-9cf5-39e1e301b8ad",
+    "9b0f5de1-65ce-40d6-b929-6d213df0af08",
+    "9b80fb5e-720d-4bb6-8d2c-a917cb5a2753",
+    "2c93134c-9c52-474d-bf77-bccaaeea54b1",
+    "ed5ee57b-d2a1-4b2e-9532-966aa5ed4bee",
+    "4f680efc-95a3-410e-be08-f057d812b3ad",
+    "ed1ae776-b16f-4e82-950c-1add43c23fcb",
+    "c602c4c4-a1b8-4b23-b86a-92e51e558012",
+    "a73eff3f-c942-4e24-ac01-c7909813958d",
+    "3f602f85-d1de-41b5-b4dd-28a93dc89be8"
+  ],
+  "records": [
+    {
+      "ts": 1370790597,
+      "recording_mbid": "c844960b-225b-4ff7-b66b-1acbff8465e0",
+      "played_match": false
+    },
+    {
+      "ts": 1370790906,
+      "recording_mbid": "c6c79625-418b-4061-8be1-47afdf36dd1b",
+      "played_match": false
+    },
+    {
+      "ts": 1370791177,
+      "recording_mbid": "81dce803-bdb6-4dc7-aed2-d6320e1a359a",
+      "played_match": false
+    },
+    {
+      "ts": 1370791552,
+      "recording_mbid": "8925131f-29e3-46b8-a756-4d808ccdfed5",
+      "played_match": false
+    },
+    {
+      "ts": 1370791798,
+      "recording_mbid": "5361e5ec-6ca0-453b-aab1-825846cb7b90",
+      "played_match": false
+    },
+    {
+      "ts": 1370792127,
+      "recording_mbid": "ea3bf86c-e8d0-4ade-970a-fb849d365f52",
+      "played_match": false
+    },
+    {
+      "ts": 1370792337,
+      "recording_mbid": "56267156-280f-4116-940e-94f69b310b48",
+      "played_match": false
+    },
+    {
+      "ts": 1370792710,
+      "recording_mbid": "27e16a35-a09a-4fab-ac12-dada15799d6e",
+      "played_match": false
+    },
+    {
+      "ts": 1370792962,
+      "recording_mbid": "2ff3a3b4-c501-4374-b249-d9e8fa745c31",
+      "played_match": false
+    },
+    {
+      "ts": 1370793226,
+      "recording_mbid": "f882b386-9f61-41f1-84a5-9bec12469233",
+      "played_match": false
+    },
+    {
+      "ts": 1370793528,
+      "recording_mbid": "5e713569-5f19-410a-abe3-92cd2e541f3d",
+      "played_match": false
+    },
+    {
+      "ts": 1370794088,
+      "recording_mbid": "679cf19d-aacb-4922-9974-f9d3257f0c5d",
+      "played_match": false
+    },
+    {
+      "ts": 1370794421,
+      "recording_mbid": "562c1f6d-122c-441f-82e1-ad9feebbc190",
+      "played_match": true
+    },
+    {
+      "ts": 1370794797,
+      "recording_mbid": "a45bcfe0-07a6-41a5-b4a3-d341025723e7",
+      "played_match": false
+    },
+    {
+      "ts": 1370795158,
+      "recording_mbid": "860f542a-55ff-48c8-b81c-ea176f74c535",
+      "played_match": false
+    },
+    {
+      "ts": 1370795491,
+      "recording_mbid": "6b991259-30f3-45c2-af36-2b3cac3e1b9f",
+      "played_match": false
+    },
+    {
+      "ts": 1370795719,
+      "recording_mbid": "cb0112af-b38e-4389-8a31-8d1d51635bd9",
+      "played_match": false
+    },
+    {
+      "ts": 1370795988,
+      "recording_mbid": "4a2308ed-ff4e-4ec5-ac57-8e3af8509d39",
+      "played_match": false
+    },
+    {
+      "ts": 1370796346,
+      "recording_mbid": "edc007db-3cb2-45e3-af73-4b070ba078e4",
+      "played_match": true
+    },
+    {
+      "ts": 1370796590,
+      "recording_mbid": "dba537f3-5021-4068-a95f-0593e6a489d4",
+      "played_match": false
+    },
+    {
+      "ts": 1370796780,
+      "recording_mbid": "fe697cdf-1ad7-4f69-991f-83010ca91f60",
+      "played_match": false
+    },
+    {
+      "ts": 1370796997,
+      "recording_mbid": "b80337aa-930c-4c82-954c-672058253bb8",
+      "played_match": false
+    },
+    {
+      "ts": 1370797348,
+      "recording_mbid": "a601fe41-d26b-4900-852b-8769398e0a55",
+      "played_match": false
+    },
+    {
+      "ts": 1370797575,
+      "recording_mbid": "a601fe41-d26b-4900-852b-8769398e0a55",
+      "played_match": false
+    },
+    {
+      "ts": 1370797879,
+      "recording_mbid": "12b04959-c142-4157-adf9-3ec963ba2c08",
+      "played_match": false
+    },
+    {
+      "ts": 1370798037,
+      "recording_mbid": "94ec62f6-1dc9-4215-a5dc-c8f070f67fb8",
+      "played_match": false
+    },
+    {
+      "ts": 1370798167,
+      "recording_mbid": "c7ac2eba-dee0-4c42-ae38-3a7cc2acaf23",
+      "played_match": false
+    },
+    {
+      "ts": 1370798222,
+      "recording_mbid": "47bbeb38-1b3b-4cb8-a018-7078ee664d86",
+      "played_match": false
+    },
+    {
+      "ts": 1370798388,
+      "recording_mbid": "3f835aae-b3b4-4ff2-9cf5-39e1e301b8ad",
+      "played_match": false
+    },
+    {
+      "ts": 1370798529,
+      "recording_mbid": "9b0f5de1-65ce-40d6-b929-6d213df0af08",
+      "played_match": false
+    },
+    {
+      "ts": 1370798730,
+      "recording_mbid": "9b0f5de1-65ce-40d6-b929-6d213df0af08",
+      "played_match": false
+    },
+    {
+      "ts": 1370798931,
+      "recording_mbid": "9b0f5de1-65ce-40d6-b929-6d213df0af08",
+      "played_match": false
+    },
+    {
+      "ts": 1370799061,
+      "recording_mbid": "9b80fb5e-720d-4bb6-8d2c-a917cb5a2753",
+      "played_match": false
+    },
+    {
+      "ts": 1370799613,
+      "recording_mbid": "2c93134c-9c52-474d-bf77-bccaaeea54b1",
+      "played_match": false
+    },
+    {
+      "ts": 1370799800,
+      "recording_mbid": "ed5ee57b-d2a1-4b2e-9532-966aa5ed4bee",
+      "played_match": false
+    },
+    {
+      "ts": 1370800059,
+      "recording_mbid": "4f680efc-95a3-410e-be08-f057d812b3ad",
+      "played_match": false
+    },
+    {
+      "ts": 1370800417,
+      "recording_mbid": "ed1ae776-b16f-4e82-950c-1add43c23fcb",
+      "played_match": false
+    },
+    {
+      "ts": 1370800617,
+      "recording_mbid": "c602c4c4-a1b8-4b23-b86a-92e51e558012",
+      "played_match": false
+    },
+    {
+      "ts": 1370800944,
+      "recording_mbid": "a73eff3f-c942-4e24-ac01-c7909813958d",
+      "played_match": false
+    },
+    {
+      "ts": 1370801262,
+      "recording_mbid": "3f602f85-d1de-41b5-b4dd-28a93dc89be8",
+      "played_match": false
+    },
+    {
+      "ts": 1370801484,
+      "recording_mbid": "ed5ee57b-d2a1-4b2e-9532-966aa5ed4bee",
+      "played_match": false
+    }
+  ]
+}

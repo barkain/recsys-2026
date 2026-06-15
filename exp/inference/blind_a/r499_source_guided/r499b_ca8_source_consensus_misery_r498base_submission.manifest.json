@@ -1,0 +1,46 @@
+{
+  "run": "R499b",
+  "base": "exp/inference/blind_a/r498_listwise_llm/r498_gpt41_full20_keep_top1_submission.zip",
+  "candidate": "exp/inference/blind_a/r499_source_guided/r499b_ca8_source_consensus_misery_r498base_submission.zip",
+  "sha256": "2e031431bc99bc3ac49fe87443bab9c8136481132eb04e011224aeecbb6b6614",
+  "hypothesis": "Two independent MLHD+ ca8 source-day matches both expose Misery Loves Company as a non-played source-neighbor; promote it to rank1 while preserving R498 source-backed ranks 2-5.",
+  "official_base": {
+    "ndcg": 0.5126,
+    "llm": 4.85,
+    "composite": 0.6368
+  },
+  "changed_rows": [
+    {
+      "session_id": "ca8cbe02-1def-4fca-ba48-f17f9fac0ed8",
+      "before_top10": [
+        "a9550ed3-9e75-4763-a630-a3a13a6e95c8",
+        "746ec84b-da8c-44c8-9fac-292a473edbbc",
+        "4ed05288-20e2-424a-9c11-05476046cbe3",
+        "336755f0-c038-4172-804c-de3c66875a23",
+        "1be962dd-528f-4a7a-983b-d3a8223c76bf",
+        "7a7f8898-62b9-4ecd-ac08-401000e025d3",
+        "d483e61b-78cf-4a31-ad40-3b7d8da0ff9d",
+        "2d4b6470-1a21-475a-8a0d-dba729eb104b",
+        "68cf82e5-c7a6-4cde-9595-aaef69951cc8",
+        "c37f15dc-7631-47d0-823a-75cb84687108"
+      ],
+      "after_top10": [
+        "7a7f8898-62b9-4ecd-ac08-401000e025d3",
+        "746ec84b-da8c-44c8-9fac-292a473edbbc",
+        "4ed05288-20e2-424a-9c11-05476046cbe3",
+        "336755f0-c038-4172-804c-de3c66875a23",
+        "1be962dd-528f-4a7a-983b-d3a8223c76bf",
+        "a9550ed3-9e75-4763-a630-a3a13a6e95c8",
+        "d483e61b-78cf-4a31-ad40-3b7d8da0ff9d",
+        "2d4b6470-1a21-475a-8a0d-dba729eb104b",
+        "68cf82e5-c7a6-4cde-9595-aaef69951cc8",
+        "c37f15dc-7631-47d0-823a-75cb84687108"
+      ]
+    }
+  ],
+  "source_evidence": [
+    "exp/eval/expR497_ca8cbe02_source_day_sequence.json",
+    "exp/eval/expR497_ca8cbe02_267da809_source_day_sequence.json"
+  ],
+  "risk": "If R498 top1 Girls is GT this loses about 0.007 nDCG; if Misery is GT it gains about 0.008 nDCG."
+}

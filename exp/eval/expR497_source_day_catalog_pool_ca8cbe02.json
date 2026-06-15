@@ -1,0 +1,663 @@
+{
+  "summary": {
+    "session": "ca8cbe02",
+    "source_user": "164bbbf0-dd04-424f-9f5b-bf36a2704061.txt",
+    "source_member": "16/164bbbf0-dd04-424f-9f5b-bf36a2704061.txt.zst",
+    "source_day_unique_recordings": 44,
+    "source_day_recordings": 65,
+    "mapped_mbids": 9,
+    "catalog_track_ids": [
+      "1be962dd-528f-4a7a-983b-d3a8223c76bf",
+      "1e20b21e-75b3-4d96-9cc4-093333627ccc",
+      "4c164f38-f149-466e-bd5b-564e3b035819",
+      "5bf3c6aa-9d7d-40dc-8330-65da38d1c095",
+      "60fd71b1-c45f-496c-957a-04364da9d64d",
+      "7a7f8898-62b9-4ecd-ac08-401000e025d3",
+      "b213d6a1-c3e5-405a-b088-f3156c52ef58",
+      "de0a0c2c-c896-436c-8257-07c48d96a4aa",
+      "fa92ed08-623d-41a5-b3dc-d38dfbafe2b3"
+    ]
+  },
+  "pool": [
+    {
+      "source_mbid": "4be8b26a-429f-4bb2-8cb6-79e3bed6d339",
+      "mb_title": "A Drowning",
+      "mb_artists": [
+        "How to Destroy Angels"
+      ],
+      "mb_isrcs": [
+        "USTCF1042967"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "de5cdb40-62d7-4ae8-b244-ed8a4634dbf4",
+      "mb_title": "Is Your Love Strong Enough?",
+      "mb_artists": [
+        "How to Destroy Angels"
+      ],
+      "mb_isrcs": [
+        "US4DG1100197"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "c7f21163-b8dd-4c6a-9cfe-71f17568464c",
+      "mb_title": "I Like You So Much Better When You’re Naked",
+      "mb_artists": [
+        "Ida Maria"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "69398261-f681-4727-9b8a-81abd574c7ed",
+      "mb_title": "Hot",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USRC10700073"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "8d5acf6d-1e7b-48ca-b95f-379b77bf8155",
+      "mb_title": "Things I’ll Never Say",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USAR10200228"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "ff1349b8-bff0-4973-9360-6c9823dbfbc7",
+      "mb_title": "My World",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USAR10200226"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "08c0e88a-49d9-4040-9f6c-8fd9ab8231dd",
+      "mb_title": "Too Much to Ask",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USAR10200233"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "83a031ca-6838-44e2-8f3a-ac5273caa88a",
+      "mb_title": "Naked",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USAR10200234"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "ff64be58-9692-48a1-88ce-a2f8d3890b29",
+      "mb_title": "Innocence",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USRC10700080"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "1b2236ac-1653-4bfb-be21-95936d5b45d8",
+      "mb_title": "Take Me Away",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USAR10400373"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "b213d6a1-c3e5-405a-b088-f3156c52ef58",
+          "track_name": [
+            "Take Me Away"
+          ],
+          "artist_name": [
+            "Avril Lavigne"
+          ],
+          "album_name": [
+            "Under My Skin",
+            "Under My Skin/Let Go"
+          ],
+          "isrc": [
+            "USAR10400373"
+          ],
+          "popularity": 56.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "9abc736d-b987-406a-ba5b-7c956a7f1ed2",
+      "mb_title": "Tomorrow",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USAR10200230"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "0843a412-bd6c-4f0e-b77e-429957b5687e",
+      "mb_title": "Mobile",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USAR10200225"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "c5998fbe-e09d-4468-b6e9-113b1e88d585",
+      "mb_title": "Darlin",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USRC11100017"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "141edb31-4538-4144-a864-8b1c135eba48",
+      "mb_title": "Everybody Hurts",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USRC11100014"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "10ea20a5-6cf5-4b5a-bf1b-3ba2958c1aa6",
+      "mb_title": "Smile",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USRC11100011",
+        "USRC11100115",
+        "USRC11100280"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "4c3aaa25-7628-4767-8315-7b246dce52e8",
+      "mb_title": "Black Star",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USRC11000161"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "ce7bf2da-7d32-409c-89fe-2b3cf505fc50",
+      "mb_title": "Contagious",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USRC10700074"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "f06649e9-056a-4e73-9e97-91cd96efb3ba",
+      "mb_title": "Sk8er Boi",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USAR10200229"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "548aed8f-504e-4b4f-8956-e26977b6a57e",
+      "mb_title": "Alice (extended version)",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USRC11000944"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "10763eef-00fe-4ed4-80b5-7e789cbeec72",
+      "mb_title": "I’m With You",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USAR10200224"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "31d04283-f0b3-4f5e-a24c-fc9eb47157f1",
+      "mb_title": "How Does It Feel",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USAR10400485"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "fa92ed08-623d-41a5-b3dc-d38dfbafe2b3",
+          "track_name": [
+            "How Does It Feel"
+          ],
+          "artist_name": [
+            "Avril Lavigne"
+          ],
+          "album_name": [
+            "Under My Skin",
+            "Under My Skin/Let Go"
+          ],
+          "isrc": [
+            "USAR10400485"
+          ],
+          "popularity": 49.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "cc5a8f25-77ef-442f-8871-5116f7c5d575",
+      "mb_title": "Everything Back but You",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USRC10700202"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "942d9abc-2f3b-4aa0-a097-587392706c71",
+      "mb_title": "I Can Do Better",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USRC10700203"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "dda8bf82-b994-41d5-98d1-4135ef47d817",
+      "mb_title": "Remember When",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USRC11100018"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "42abdd93-709c-4ff6-98b3-90e2cf2bd058",
+      "mb_title": "What the Hell",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USRC11000915",
+        "USRC11100111"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "48a56de5-3cad-48b4-ac0a-2c5ad7e7c67e",
+      "mb_title": "Together",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USAR10400483"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "4c164f38-f149-466e-bd5b-564e3b035819",
+          "track_name": [
+            "Together"
+          ],
+          "artist_name": [
+            "Avril Lavigne"
+          ],
+          "album_name": [
+            "Under My Skin",
+            "Under My Skin/Let Go"
+          ],
+          "isrc": [
+            "USAR10400483"
+          ],
+          "popularity": 49.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "da5646fa-7016-404d-88bd-77a80847e4a9",
+      "mb_title": "I Love You",
+      "mb_artists": [
+        "Avril Lavigne"
+      ],
+      "mb_isrcs": [
+        "USRC11100013"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "cb0112af-b38e-4389-8a31-8d1d51635bd9",
+      "mb_title": "Misery Loves Company",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079033"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "7a7f8898-62b9-4ecd-ac08-401000e025d3",
+          "track_name": [
+            "Misery Loves Company"
+          ],
+          "artist_name": [
+            "Emilie Autumn"
+          ],
+          "album_name": [
+            "Opheliac -- The Deluxe Edition"
+          ],
+          "isrc": [
+            "USHM21079033"
+          ],
+          "popularity": 33.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "679cf19d-aacb-4922-9974-f9d3257f0c5d",
+      "mb_title": "Opheliac",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079028"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "1be962dd-528f-4a7a-983b-d3a8223c76bf",
+          "track_name": [
+            "Opheliac"
+          ],
+          "artist_name": [
+            "Emilie Autumn"
+          ],
+          "album_name": [
+            "Opheliac -- The Deluxe Edition"
+          ],
+          "isrc": [
+            "USHM21079028"
+          ],
+          "popularity": 37.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "edc007db-3cb2-45e3-af73-4b070ba078e4",
+      "mb_title": "Shalott",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079035"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "1e20b21e-75b3-4d96-9cc4-093333627ccc",
+          "track_name": [
+            "Shalott"
+          ],
+          "artist_name": [
+            "Emilie Autumn"
+          ],
+          "album_name": [
+            "Opheliac -- The Deluxe Edition"
+          ],
+          "isrc": [
+            "USHM21079035"
+          ],
+          "popularity": 32.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "a45bcfe0-07a6-41a5-b4a3-d341025723e7",
+      "mb_title": "Liar",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079030",
+        "USHM80762296"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "562c1f6d-122c-441f-82e1-ad9feebbc190",
+      "mb_title": "Swallow",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079029"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "60fd71b1-c45f-496c-957a-04364da9d64d",
+          "track_name": [
+            "Swallow"
+          ],
+          "artist_name": [
+            "Emilie Autumn"
+          ],
+          "album_name": [
+            "Opheliac -- The Deluxe Edition"
+          ],
+          "isrc": [
+            "USHM21079029"
+          ],
+          "popularity": 30.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "6f9287e0-db7f-4953-80bc-d20bfe91d571",
+      "mb_title": "4 O’Clock",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USCGH0859983"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "4a2308ed-ff4e-4ec5-ac57-8e3af8509d39",
+      "mb_title": "God Help Me",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079034"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "f22f7649-fdf0-41a9-ab43-f98ee3b58443",
+      "mb_title": "Marry Me",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079050"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "098c08d8-0d5a-442a-a7e5-71240e30b213",
+      "mb_title": "Tymps (The Sick in the Head Song)",
+      "mb_artists": [
+        "Fiona Apple"
+      ],
+      "mb_isrcs": [
+        "USSM10504583"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "5bf3c6aa-9d7d-40dc-8330-65da38d1c095",
+          "track_name": [
+            "Tymps (The Sick in the Head Song)"
+          ],
+          "artist_name": [
+            "Fiona Apple"
+          ],
+          "album_name": [
+            "Extraordinary Machine"
+          ],
+          "isrc": [
+            "USSM10504583"
+          ],
+          "popularity": 47.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "5edbf458-3e1f-4cfc-9bc2-c84146bdf1a5",
+      "mb_title": "Red Red Red",
+      "mb_artists": [
+        "Fiona Apple"
+      ],
+      "mb_isrcs": [
+        "USSM10504587"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "de0a0c2c-c896-436c-8257-07c48d96a4aa",
+          "track_name": [
+            "Red Red Red"
+          ],
+          "artist_name": [
+            "Fiona Apple"
+          ],
+          "album_name": [
+            "Extraordinary Machine"
+          ],
+          "isrc": [
+            "USSM10504587"
+          ],
+          "popularity": 42.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "e1230ef8-6f13-4c94-af7e-592a2ea903d7",
+      "mb_title": "Across the Universe",
+      "mb_artists": [
+        "Fiona Apple"
+      ],
+      "mb_isrcs": [
+        "USSM19803669"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "f55f743b-9d77-42a3-b64d-54671b23bd70",
+      "mb_title": "Please Send Me Someone to Love",
+      "mb_artists": [
+        "Fiona Apple"
+      ],
+      "mb_isrcs": [
+        "USSM19803670"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "8dc890c2-994b-4dc8-8228-bff4ea622609",
+      "mb_title": "The First Taste",
+      "mb_artists": [
+        "Fiona Apple"
+      ],
+      "mb_isrcs": [
+        "USSM19600949"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "d0bcf565-091f-408b-8fa3-1d45dcd26098",
+      "mb_title": "Daredevil",
+      "mb_artists": [
+        "Fiona Apple"
+      ],
+      "mb_isrcs": [
+        "USSM11202378"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "2b579e32-53f1-477d-a3f3-216e130719e8",
+      "mb_title": "Fragile",
+      "mb_artists": [
+        "Kerli"
+      ],
+      "mb_isrcs": [
+        "USUM70808256"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "ebfd757a-5ebd-4390-8c91-d28af2d60eae",
+      "mb_title": "Beautiful Inside",
+      "mb_artists": [
+        "Kerli"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "ae2a34be-20d0-4dbb-ab23-50928adbbcf0",
+      "mb_title": "Strange Boy",
+      "mb_artists": [
+        "Kerli"
+      ],
+      "mb_isrcs": [
+        "USUM70808255"
+      ],
+      "catalog_hits": []
+    }
+  ]
+}
