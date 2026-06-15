@@ -1,0 +1,11 @@
+{
+  "experiment": "R498 aggressive listwise LLM reranker",
+  "kind": "dev_prompt_pack",
+  "rows": 500,
+  "slate_size": 20,
+  "filter": "all",
+  "sample_mode": "fold_balanced",
+  "output": "exp/eval/r500_top20_llm/r500_dev_foldbalanced500_top20_prompts.jsonl",
+  "recoverable_misses": 0,
+  "hits": 500
+}
