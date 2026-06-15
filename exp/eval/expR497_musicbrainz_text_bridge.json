@@ -1,0 +1,2074 @@
+{
+  "summary": {
+    "target_buckets": [
+      "MLHD_STRONG"
+    ],
+    "sessions": 8,
+    "track_text_lookups": 37,
+    "lookups_with_confident_recording": 29,
+    "coverage": 0.7837837837837838
+  },
+  "rows": [
+    {
+      "session_id": "2bfd631e-7d47-4dd6-a419-7d63615833c5",
+      "session_prefix": "2bfd631e",
+      "session_date": "2010-02-26",
+      "target_bucket": "MLHD_STRONG",
+      "profile_key": [
+        "20s",
+        "US",
+        "female",
+        "Alternative Music Culture"
+      ],
+      "query": "Yes! 'Johnny Too Bad Freestyle' is exactly what I was looking for from 'Everything Under The Sun'. This is great! These tracks hit exactly the sound I was looking for. Play 'Johnny Too Bad Freestyle - Rarities Version'.",
+      "played_tracks": [
+        {
+          "track_id": "74b0756a-d65f-4dba-8c0a-ccaca0230735",
+          "track_name": "STP - Rarities Version",
+          "artist_name": "Sublime",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 0,
+              "best_recording": null,
+              "top_recordings": []
+            }
+          ]
+        },
+        {
+          "track_id": "d50111b2-71cb-48a7-8beb-3a05420125d9",
+          "track_name": "5446 Thats My Number/ Ball And Chain",
+          "artist_name": "Sublime",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 0,
+              "best_recording": null,
+              "top_recordings": []
+            }
+          ]
+        },
+        {
+          "track_id": "4a3bad54-69c5-4907-8b9a-2265081e186f",
+          "track_name": "Scarlet Begonias",
+          "artist_name": "Sublime",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 10,
+              "best_recording": {
+                "recording_mbid": "8ea99637-9a89-4dd5-bb16-ea23d31e954d",
+                "title": "Scarlet Begonias",
+                "artists": [
+                  "Sublime"
+                ],
+                "score": 100.0,
+                "disambiguation": "live, 1994-03: KUCI radio station, Irvine, CA, USA",
+                "length": 246813,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "8ea99637-9a89-4dd5-bb16-ea23d31e954d",
+                  "title": "Scarlet Begonias",
+                  "artists": [
+                    "Sublime"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 1994-03: KUCI radio station, Irvine, CA, USA",
+                  "length": 246813,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "ddf9bf2b-8dff-4649-a1eb-a68e86862512",
+                  "title": "Scarlet Begonias",
+                  "artists": [
+                    "Sublime"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 1995-05-06: Olympic Velodrome, Dominguez Hills, CA, USA",
+                  "length": 414000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "abf7587f-f46d-416b-bf95-67b5ca84827d",
+                  "title": "Scarlet Begonias",
+                  "artists": [
+                    "Sublime"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 1995-02-17: Las Palmas Theatre, Hollywood, CA, USA",
+                  "length": 228000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "3c8f933f-159b-40eb-a535-1dd89e0af1ce",
+                  "title": "Scarlet Begonias",
+                  "artists": [
+                    "Sublime"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 1995-05-06: Olympic Velodrome, Dominguez Hills, CA, USA",
+                  "length": 263000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "6098ee31-b9e1-4b23-84ee-fcac9aebfbb1",
+                  "title": "Scarlet Begonias",
+                  "artists": [
+                    "Sublime"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 1995-10-21: The Palace, Hollywood, CA, USA: multi-source mix",
+                  "length": 188000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "50f9048f-7b3a-4d0a-bc32-16f5124d5bf5",
+          "track_name": "Smoke Two Joints",
+          "artist_name": "Sublime",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 10,
+              "best_recording": {
+                "recording_mbid": "dbe9cd79-0c77-4903-b3d3-dcd4d02427af",
+                "title": "Smoke Two Joints",
+                "artists": [
+                  "Sublime"
+                ],
+                "score": 100.0,
+                "disambiguation": "demo",
+                "length": 257000,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "dbe9cd79-0c77-4903-b3d3-dcd4d02427af",
+                  "title": "Smoke Two Joints",
+                  "artists": [
+                    "Sublime"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "demo",
+                  "length": 257000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "36c09824-9039-46ee-bf8a-54625665c620",
+                  "title": "Smoke Two Joints",
+                  "artists": [
+                    "Sublime"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 1995-10-21: The Palace, Hollywood, CA, USA: 5.1 channel multi-source mix",
+                  "length": 207000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "9710e83b-f397-4c9f-bfb1-70181843b093",
+                  "title": "Smoke Two Joints",
+                  "artists": [
+                    "Sublime"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 1996-04-05: House of Blues, Los Angeles, CA, USA",
+                  "length": 64000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "62b4309b-1927-47d0-a5cd-b963cbaacc3f",
+                  "title": "Smoke Two Joints",
+                  "artists": [
+                    "Sublime"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "no Valley of the Dolls",
+                  "length": 158733,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "509bd89e-d6ad-4a5e-a742-cba21f98f87d",
+                  "title": "Smoke Two Joints",
+                  "artists": [
+                    "Sublime"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 1995-10-21: The Palace, Hollywood, CA, USA: soundboard recording",
+                  "length": 208000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "2456ac67-03db-4897-a976-e0e6c8d99b47",
+          "track_name": "Ebin",
+          "artist_name": "Sublime",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 10,
+              "best_recording": {
+                "recording_mbid": "10e897a6-2332-4099-a63d-f316eb590ba7",
+                "title": "Ebin",
+                "artists": [
+                  "Sublime"
+                ],
+                "score": 100.0,
+                "disambiguation": "live, 1995-02-17: Las Palmas Theatre, Hollywood, CA, USA",
+                "length": 285000,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "10e897a6-2332-4099-a63d-f316eb590ba7",
+                  "title": "Ebin",
+                  "artists": [
+                    "Sublime"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 1995-02-17: Las Palmas Theatre, Hollywood, CA, USA",
+                  "length": 285000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "4cfc4759-e4b9-4882-823b-24f9950ed983",
+                  "title": "Ebin",
+                  "artists": [
+                    "Sublime"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 1995-10-21: The Palace, Hollywood, CA, USA",
+                  "length": null,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "21f460a5-5a39-4072-9633-c81112872b20",
+                  "title": "Ebin",
+                  "artists": [
+                    "Sublime"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 1995-10-21: The Palace, Hollywood, CA, USA: 5.1 channel multi-source mix",
+                  "length": 223000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "1fdaf20e-fe15-4f2e-9fdf-b6691b315d4d",
+                  "title": "Ebin",
+                  "artists": [
+                    "Sublime"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 1994-11-14: Tressell Tavern, Everett, WA, USA",
+                  "length": 222000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "7cf6e2dc-710c-4b69-81ba-03bae1902ca5",
+                  "title": "Ebin",
+                  "artists": [
+                    "Sublime"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 1994-02-27: The Lab, Costa Mesa, CA, USA",
+                  "length": 275000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "008db103-8bdc-4674-b992-19575aa23ea6",
+          "track_name": "Right Back",
+          "artist_name": "Sublime",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 10,
+              "best_recording": {
+                "recording_mbid": "f6531a85-1117-4e82-997d-45e3858aeedc",
+                "title": "Right Back",
+                "artists": [
+                  "Sublime"
+                ],
+                "score": 100.0,
+                "disambiguation": "live, 1996-04-05: House of Blues, Los Angeles, CA, USA",
+                "length": 191000,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "f6531a85-1117-4e82-997d-45e3858aeedc",
+                  "title": "Right Back",
+                  "artists": [
+                    "Sublime"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 1996-04-05: House of Blues, Los Angeles, CA, USA",
+                  "length": 191000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "8b37ac9c-5097-4211-a01d-dba711f69e70",
+                  "title": "Right Back",
+                  "artists": [
+                    "Sublime"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 1995-11-09: Majestic Theater, Ventura, CA, USA",
+                  "length": 160000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "bd38e212-7538-4cd3-9207-9febc0e6dc98",
+                  "title": "Right Back",
+                  "artists": [
+                    "Sublime"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 1994-09-09: Kommotion, San Francisco, CA, USA: remix",
+                  "length": 161560,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "d3737b23-1021-4677-8c1a-48f2a9360683",
+                  "title": "Right Back",
+                  "artists": [
+                    "Sublime"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 1996-04-05: House of Blues, Los Angeles, CA, USA",
+                  "length": 171000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "0f9c6006-a415-4141-9945-772a17ced14b",
+                  "title": "Right Back",
+                  "artists": [
+                    "Sublime"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 1994: The Barn, Riverside, CA, USA",
+                  "length": 174413,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "bcba1fcf-6ac7-4c31-9c1a-5f21603f4ebb",
+          "track_name": "Johnny Too Bad Freestyle - Rarities Version",
+          "artist_name": "Sublime",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 0,
+              "best_recording": null,
+              "top_recordings": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "session_id": "525f9f69-31e5-4fee-9813-e903ad24e39e",
+      "session_prefix": "525f9f69",
+      "session_date": "2014-11-07",
+      "target_bucket": "MLHD_STRONG",
+      "profile_key": [
+        "20s",
+        "RS",
+        "male",
+        "Finnish Metal"
+      ],
+      "query": "Okay, while Omnium Gatherum is excellent, it's not the album with the skull art I was trying to recall. However, I definitely found one of the albums I was looking for, Mors Principium Est's \"...and Death Said Live\"! That artwork was exactly what I had in mind. Thank you for helping me remember that one! Can you just give me some more general recommendations for Finnish melodic death metal now?",
+      "played_tracks": [
+        {
+          "track_id": "becafff4-e735-4424-aeaf-e6845509eb2c",
+          "track_name": "Departure",
+          "artist_name": "Mors Principium Est",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 1,
+              "best_recording": {
+                "recording_mbid": "08317f76-847a-4669-953a-cebbe83c4055",
+                "title": "Departure",
+                "artists": [
+                  "Mors Principium Est"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 344000,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "08317f76-847a-4669-953a-cebbe83c4055",
+                  "title": "Departure",
+                  "artists": [
+                    "Mors Principium Est"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 344000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "a1a50d16-1d26-4c98-8376-6064f2f1d6e4",
+          "track_name": "Break Myself Away",
+          "artist_name": "Norther",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 1,
+              "best_recording": {
+                "recording_mbid": "2f619f3e-86b1-415e-be09-fe489c9d2e94",
+                "title": "Break Myself Away",
+                "artists": [
+                  "Norther"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 246000,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "2f619f3e-86b1-415e-be09-fe489c9d2e94",
+                  "title": "Break Myself Away",
+                  "artists": [
+                    "Norther"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 246000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "b753af54-a187-466f-b524-99fb5c64ac8c",
+          "track_name": "Frozen Angel",
+          "artist_name": "Norther",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 5,
+              "best_recording": {
+                "recording_mbid": "cc0f9c68-37ac-4029-a9e4-a825ef624873",
+                "title": "Frozen Angel",
+                "artists": [
+                  "Norther"
+                ],
+                "score": 100.0,
+                "disambiguation": "live, 2007-08-04: Wacken Open Air, Wacken, Germany",
+                "length": 256000,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "cc0f9c68-37ac-4029-a9e4-a825ef624873",
+                  "title": "Frozen Angel",
+                  "artists": [
+                    "Norther"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 2007-08-04: Wacken Open Air, Wacken, Germany",
+                  "length": 256000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "bbd5ba59-3d3e-439b-b990-588e8e518557",
+                  "title": "Frozen Angel",
+                  "artists": [
+                    "Norther"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "Aleksi Sihvonen's audition",
+                  "length": 252000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "f96487f2-af9e-4578-b6d9-221fcc086ea6",
+                  "title": "Frozen Angel",
+                  "artists": [
+                    "Norther"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "album version",
+                  "length": 246826,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "f0854dfa-40fd-40b7-a483-3b8f9e85dfbd",
+                  "title": "Frozen Angel",
+                  "artists": [
+                    "Norther"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "EP version",
+                  "length": 247946,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "220a9651-34f5-4a48-b810-c245a4971826",
+                  "title": "Frozen Angel",
+                  "artists": [
+                    "Norther"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live",
+                  "length": 268240,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "aa4ea9df-334a-45f9-b279-a2459ad448c3",
+          "track_name": "New Dynamic",
+          "artist_name": "Omnium Gatherum",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 1,
+              "best_recording": {
+                "recording_mbid": "861d8e10-58d0-4086-9ef7-afa1f9d045b9",
+                "title": "New Dynamic",
+                "artists": [
+                  "Omnium Gatherum"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 295000,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "861d8e10-58d0-4086-9ef7-afa1f9d045b9",
+                  "title": "New Dynamic",
+                  "artists": [
+                    "Omnium Gatherum"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 295000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "061762b6-9438-4e71-9872-2aaddeb5019a",
+          "track_name": "Nightwalkers",
+          "artist_name": "Omnium Gatherum",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 1,
+              "best_recording": {
+                "recording_mbid": "571cb3dc-9cb0-4a28-a71c-c26aeef60732",
+                "title": "Nightwalkers",
+                "artists": [
+                  "Omnium Gatherum"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 495000,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "571cb3dc-9cb0-4a28-a71c-c26aeef60732",
+                  "title": "Nightwalkers",
+                  "artists": [
+                    "Omnium Gatherum"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 495000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "10196b1e-a490-49b5-9dd9-3a6f52d27409",
+          "track_name": "The Unknowing",
+          "artist_name": "Omnium Gatherum",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 1,
+              "best_recording": {
+                "recording_mbid": "7d5ba6fa-af69-4a39-bfb2-ffd139bff6df",
+                "title": "The Unknowing",
+                "artists": [
+                  "Omnium Gatherum"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 358000,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "7d5ba6fa-af69-4a39-bfb2-ffd139bff6df",
+                  "title": "The Unknowing",
+                  "artists": [
+                    "Omnium Gatherum"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 358000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "8d9e0678-e017-4e3a-b0fb-30779210212b",
+          "track_name": "Living in Me",
+          "artist_name": "Omnium Gatherum",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 1,
+              "best_recording": {
+                "recording_mbid": "b60a4639-a243-48fc-9203-79c329b24f58",
+                "title": "Living in Me",
+                "artists": [
+                  "Omnium Gatherum"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 280000,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "b60a4639-a243-48fc-9203-79c329b24f58",
+                  "title": "Living in Me",
+                  "artists": [
+                    "Omnium Gatherum"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 280000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "session_id": "3aee4d9b-b0f1-4282-bbe6-58942c71f311",
+      "session_prefix": "3aee4d9b",
+      "session_date": "2009-07-30",
+      "target_bucket": "MLHD_STRONG",
+      "profile_key": [
+        "20s",
+        "PL",
+        "male",
+        "Western"
+      ],
+      "query": "Yes, 'Bella Luna' is wonderful! The Rippingtons always deliver. Please play another great smooth jazz track by them.",
+      "played_tracks": [
+        {
+          "track_id": "697a4797-275c-4581-85ae-e2dacfe68aaf",
+          "track_name": "Kilimanjaro",
+          "artist_name": "The Rippingtons",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 1,
+              "best_recording": {
+                "recording_mbid": "f419e3c6-43f2-4fe5-8e94-9fed42cbe9f6",
+                "title": "Kilimanjaro",
+                "artists": [
+                  "The Rippingtons"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 288160,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "f419e3c6-43f2-4fe5-8e94-9fed42cbe9f6",
+                  "title": "Kilimanjaro",
+                  "artists": [
+                    "The Rippingtons"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 288160,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "94bff1ae-9825-4d03-ba9c-c5e67b3bf3c2",
+          "track_name": "Morocco",
+          "artist_name": "The Rippingtons",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 3,
+              "best_recording": {
+                "recording_mbid": "78f41061-dd69-4c0d-9bd0-507a021f6647",
+                "title": "Morocco",
+                "artists": [
+                  "The Rippingtons"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 292000,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "78f41061-dd69-4c0d-9bd0-507a021f6647",
+                  "title": "Morocco",
+                  "artists": [
+                    "The Rippingtons"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 292000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "b37a24bb-4013-4f54-9c3d-d02f1052c7fe",
+                  "title": "Morocco",
+                  "artists": [
+                    "The Rippingtons"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 293120,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "6be524d2-3879-4745-acba-662c1984f4eb",
+                  "title": "Morocco",
+                  "artists": [
+                    "The Rippingtons"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 292000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "e0dfc0c6-8614-49f1-bb1c-8c17d8891d71",
+          "track_name": "Oceansong",
+          "artist_name": "The Rippingtons",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 0,
+              "best_recording": null,
+              "top_recordings": []
+            }
+          ]
+        },
+        {
+          "track_id": "64b277e6-5467-4478-bdf4-c8001d004208",
+          "track_name": "Northern Lights",
+          "artist_name": "The Rippingtons",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 0,
+              "best_recording": null,
+              "top_recordings": []
+            }
+          ]
+        },
+        {
+          "track_id": "0aaee03e-7294-45b3-863b-8abe357070d0",
+          "track_name": "Bella Luna",
+          "artist_name": "The Rippingtons",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 1,
+              "best_recording": {
+                "recording_mbid": "04f8127e-f61c-4c4f-b88f-0a7868f5ddb1",
+                "title": "Bella Luna",
+                "artists": [
+                  "The Rippingtons"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 236533,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "04f8127e-f61c-4c4f-b88f-0a7868f5ddb1",
+                  "title": "Bella Luna",
+                  "artists": [
+                    "The Rippingtons"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 236533,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "session_id": "ca8cbe02-1def-4fca-ba48-f17f9fac0ed8",
+      "session_prefix": "ca8cbe02",
+      "session_date": "2013-06-09",
+      "target_bucket": "MLHD_STRONG",
+      "profile_key": [
+        "20s",
+        "IN",
+        "female",
+        "Gothic Western"
+      ],
+      "query": "Time for Tea\" is superb! The theatricality and storytelling are just mesmerizing. I'm completely drawn into it. Do you have another recommendation that's equally dramatic and theatrical, but perhaps with a really strong, driving beat or more prominent industrial rhythm?",
+      "played_tracks": [
+        {
+          "track_id": "1e20b21e-75b3-4d96-9cc4-093333627ccc",
+          "track_name": "Shalott",
+          "artist_name": "Emilie Autumn",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 5,
+              "best_recording": {
+                "recording_mbid": "edc007db-3cb2-45e3-af73-4b070ba078e4",
+                "title": "Shalott",
+                "artists": [
+                  "Emilie Autumn"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 244360,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "edc007db-3cb2-45e3-af73-4b070ba078e4",
+                  "title": "Shalott",
+                  "artists": [
+                    "Emilie Autumn"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 244360,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "74162381-9c1b-418b-8e07-e07034bd43c8",
+                  "title": "Shalott",
+                  "artists": [
+                    "Emilie Autumn"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 241000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "43fc02e7-59f1-49a9-a54c-ebbd4fe4f682",
+                  "title": "Shalott",
+                  "artists": [
+                    "Emilie Autumn"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 991000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "a13d6fc1-1f22-43e5-8215-018ed5e1fdd6",
+                  "title": "Shalott",
+                  "artists": [
+                    "Emilie Autumn"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 244000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "00824df0-74e7-4930-913a-4b5e749683d1",
+                  "title": "Shalott (live)",
+                  "artists": [
+                    "Emilie Autumn"
+                  ],
+                  "score": 93.0,
+                  "disambiguation": "live, 2003",
+                  "length": 231000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "46eda0e7-4e48-4fc6-abfb-780f6cb39381",
+          "track_name": "306",
+          "artist_name": "Emilie Autumn",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 2,
+              "best_recording": {
+                "recording_mbid": "6cb085e8-1d3e-4d33-ac40-a7319f7e0d52",
+                "title": "306",
+                "artists": [
+                  "Emilie Autumn"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 336493,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "6cb085e8-1d3e-4d33-ac40-a7319f7e0d52",
+                  "title": "306",
+                  "artists": [
+                    "Emilie Autumn"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 336493,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "cd3e0cb0-331b-412c-a131-f7f3b592792e",
+                  "title": "306",
+                  "artists": [
+                    "Emilie Autumn"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 336493,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "60fd71b1-c45f-496c-957a-04364da9d64d",
+          "track_name": "Swallow",
+          "artist_name": "Emilie Autumn",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 5,
+              "best_recording": {
+                "recording_mbid": "d524bdde-d603-4729-8d89-adcdce99c47f",
+                "title": "Swallow",
+                "artists": [
+                  "Emilie Autumn"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 376000,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "d524bdde-d603-4729-8d89-adcdce99c47f",
+                  "title": "Swallow",
+                  "artists": [
+                    "Emilie Autumn"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 376000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "562c1f6d-122c-441f-82e1-ad9feebbc190",
+                  "title": "Swallow",
+                  "artists": [
+                    "Emilie Autumn"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 375533,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "fe1cf209-39f8-4054-a810-d320798caa15",
+                  "title": "Swallow",
+                  "artists": [
+                    "Emilie Autumn"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 2050000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "51e28663-2634-489d-8a08-811778e6b108",
+                  "title": "Swallow (Oyster mix by Punto Omega)",
+                  "artists": [
+                    "Emilie Autumn"
+                  ],
+                  "score": 82.0,
+                  "disambiguation": null,
+                  "length": 218066,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "338425a1-45c8-495d-8017-a1722516b93a",
+                  "title": "Swallow (Filthy Victorian mix by Perfidious Words)",
+                  "artists": [
+                    "Emilie Autumn"
+                  ],
+                  "score": 80.0,
+                  "disambiguation": null,
+                  "length": 305333,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "82088dc4-8068-4140-af55-7edc9a59ab30",
+          "track_name": "Castle Down",
+          "artist_name": "Emilie Autumn",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 1,
+              "best_recording": {
+                "recording_mbid": "17a1b684-92bf-4034-93d1-11c4b14a0b0a",
+                "title": "Castle Down",
+                "artists": [
+                  "Emilie Autumn"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 232160,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "17a1b684-92bf-4034-93d1-11c4b14a0b0a",
+                  "title": "Castle Down",
+                  "artists": [
+                    "Emilie Autumn"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 232160,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "1599aa9f-09d3-4ef4-8079-2cccb1d73423",
+          "track_name": "Time for Tea",
+          "artist_name": "Emilie Autumn",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 2,
+              "best_recording": {
+                "recording_mbid": "cd6cb22b-1afb-42f5-ae68-5d8cc06cf23c",
+                "title": "Time for Tea",
+                "artists": [
+                  "Emilie Autumn"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 271000,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "cd6cb22b-1afb-42f5-ae68-5d8cc06cf23c",
+                  "title": "Time for Tea",
+                  "artists": [
+                    "Emilie Autumn"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 271000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "a20ce820-c836-441d-b528-fcc2ba424b81",
+                  "title": "Time for Tea",
+                  "artists": [
+                    "Emilie Autumn"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 242493,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "session_id": "a1df8767-11df-44d3-a1f6-e1ba2115e8f0",
+      "session_prefix": "a1df8767",
+      "session_date": "2014-11-19",
+      "target_bucket": "MLHD_STRONG",
+      "profile_key": [
+        "20s",
+        "UK",
+        "male",
+        "Stoner Rock Culture"
+      ],
+      "query": "Urethane\" is a classic! Thanks for that. So 'The Action Is Go' has that raw energy and heavy riffs. Can you tell me more about what specific themes Fu Manchu explores on that album, or any particular musical elements that make it distinct from their other work?",
+      "played_tracks": [
+        {
+          "track_id": "fade54a7-aa8c-42ae-b21b-b39e347f4228",
+          "track_name": "Evil Eye",
+          "artist_name": "Fu Manchu",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 3,
+              "best_recording": {
+                "recording_mbid": "e4c67c68-57eb-4085-a2fa-55f9284458c0",
+                "title": "Evil Eye",
+                "artists": [
+                  "Fu Manchu"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 210866,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "e4c67c68-57eb-4085-a2fa-55f9284458c0",
+                  "title": "Evil Eye",
+                  "artists": [
+                    "Fu Manchu"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 210866,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "b55a4ac8-4b02-4467-a635-a80dd3c40912",
+                  "title": "Evil Eye",
+                  "artists": [
+                    "Fu Manchu"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 227000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "166c6227-9c04-426a-9da5-83b39e8a2fdc",
+                  "title": "Evil Eye",
+                  "artists": [
+                    "Fu Manchu"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 2002",
+                  "length": 285000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "961d3531-d6c0-4fde-a3e4-2fc1e6889ea4",
+          "track_name": "King Of The Road",
+          "artist_name": "Fu Manchu",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 5,
+              "best_recording": {
+                "recording_mbid": "02ec394a-0f7e-4246-b3a3-6d41c3f81521",
+                "title": "King of the Road",
+                "artists": [
+                  "Fu Manchu"
+                ],
+                "score": 100.0,
+                "disambiguation": "live, 2003‐06‐27: Roadburn Festival 2003, Effenaar, Eindhoven, Netherlands",
+                "length": 265787,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "02ec394a-0f7e-4246-b3a3-6d41c3f81521",
+                  "title": "King of the Road",
+                  "artists": [
+                    "Fu Manchu"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 2003‐06‐27: Roadburn Festival 2003, Effenaar, Eindhoven, Netherlands",
+                  "length": 265787,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "0349eb3b-4c44-4182-80ca-3eb25bc5d4dc",
+                  "title": "King of the Road",
+                  "artists": [
+                    "Fu Manchu"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": "live, 2002",
+                  "length": 282000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "b4800da4-27a2-4c0d-a577-a494ca816a0e",
+                  "title": "King of the Road",
+                  "artists": [
+                    "Fu Manchu"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 243600,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "65018ee4-da0c-4011-b440-2696106b8c36",
+                  "title": "King of the Road",
+                  "artists": [
+                    "Fu Manchu"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 245000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "1dd42e2d-8457-42f2-aec3-57229dd1f11f",
+                  "title": "King of the Road (live)",
+                  "artists": [
+                    "Fu Manchu"
+                  ],
+                  "score": 95.0,
+                  "disambiguation": null,
+                  "length": 276000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "f3b090f1-40d5-464b-90da-591a9515b524",
+          "track_name": "Blue Tile Fever",
+          "artist_name": "Fu Manchu",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 1,
+              "best_recording": {
+                "recording_mbid": "87da6110-d3b6-40b9-bebd-ce3c8fe028cf",
+                "title": "Blue Tile Fever",
+                "artists": [
+                  "Fu Manchu"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 330493,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "87da6110-d3b6-40b9-bebd-ce3c8fe028cf",
+                  "title": "Blue Tile Fever",
+                  "artists": [
+                    "Fu Manchu"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 330493,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "d802fa0d-d5b5-420b-bfc3-2b851eff6e00",
+          "track_name": "Urethane",
+          "artist_name": "Fu Manchu",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 3,
+              "best_recording": {
+                "recording_mbid": "720aadee-2fdf-4662-881d-453e411eebe3",
+                "title": "Urethane",
+                "artists": [
+                  "Fu Manchu"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 216466,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "720aadee-2fdf-4662-881d-453e411eebe3",
+                  "title": "Urethane",
+                  "artists": [
+                    "Fu Manchu"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 216466,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "b69e272f-9069-4faf-80c5-09a8c9807441",
+                  "title": "Urethane",
+                  "artists": [
+                    "Fu Manchu"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 270186,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "1f4ffe8f-7e17-463c-8e55-6354585e9bed",
+                  "title": "Urethane (demo)",
+                  "artists": [
+                    "Fu Manchu"
+                  ],
+                  "score": 93.0,
+                  "disambiguation": null,
+                  "length": 270000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "session_id": "2a677d32-23e9-4fe7-8b8e-4875c93509a2",
+      "session_prefix": "2a677d32",
+      "session_date": "2012-05-25",
+      "target_bucket": "MLHD_STRONG",
+      "profile_key": [
+        "30s",
+        "DK",
+        "male",
+        "Blue Note Jazz"
+      ],
+      "query": "502 Blues\" is fantastic, a strong track from another great Wayne Shorter album. That's exactly the kind of seminal Blue Note record I'm after. Could you recommend another classic Blue Note album, perhaps from a different legendary saxophonist of that era, like Jackie McLean or Dexter Gordon?",
+      "played_tracks": [
+        {
+          "track_id": "b2a18968-8952-47e6-934f-83e0296fbbad",
+          "track_name": "Oriental Folk Song - 2004 - Remaster",
+          "artist_name": "McCoy Tyner",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 0,
+              "best_recording": null,
+              "top_recordings": []
+            }
+          ]
+        },
+        {
+          "track_id": "7948c458-e7e3-484b-a2bd-9b01fed66555",
+          "track_name": "Black Nile - 2004 - Remaster",
+          "artist_name": "McCoy Tyner",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 0,
+              "best_recording": null,
+              "top_recordings": []
+            }
+          ]
+        },
+        {
+          "track_id": "dc87b313-e1bc-49a6-8a23-64b76ea73b4c",
+          "track_name": "502 Blues (Drinkin' And Drivin') - 2000 Digital Remaster",
+          "artist_name": "Jimmy Rowles",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 0,
+              "best_recording": null,
+              "top_recordings": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "session_id": "5ad7094f-3764-4e32-94c9-c0c02b65e01b",
+      "session_prefix": "5ad7094f",
+      "session_date": "2012-11-16",
+      "target_bucket": "MLHD_STRONG",
+      "profile_key": [
+        "20s",
+        "EE",
+        "male",
+        "90s Underground Hip-Hop Culture"
+      ],
+      "query": "Excellent! This selection, especially Del's track, truly highlights the lyrical depth and wordplay I wanted to discover. These tracks perfectly align with the characteristics I was searching for. What else do you have for me in the realm of underground hip-hop with strong lyrical focus, perhaps something with a more introspective or philosophical edge now?",
+      "played_tracks": [
+        {
+          "track_id": "58122c73-c29d-44fd-acb0-627ca52f0e68",
+          "track_name": "One Life One Love",
+          "artist_name": "Hieroglyphics",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 1,
+              "best_recording": {
+                "recording_mbid": "84c2e943-00a8-4bee-bc0c-74bdfd1c5e58",
+                "title": "One Life One Love",
+                "artists": [
+                  "Hieroglyphics"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 243960,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "84c2e943-00a8-4bee-bc0c-74bdfd1c5e58",
+                  "title": "One Life One Love",
+                  "artists": [
+                    "Hieroglyphics"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 243960,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "b5c1e9fc-0012-469c-a6d8-20536dc7da7d",
+          "track_name": "7 Sixes",
+          "artist_name": "Hieroglyphics",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 2,
+              "best_recording": {
+                "recording_mbid": "c2fb707c-6e52-490f-bafd-453a37a96c85",
+                "title": "7 Sixes",
+                "artists": [
+                  "Hieroglyphics"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 288546,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "c2fb707c-6e52-490f-bafd-453a37a96c85",
+                  "title": "7 Sixes",
+                  "artists": [
+                    "Hieroglyphics"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 288546,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                },
+                {
+                  "recording_mbid": "32746f33-d1a6-4fbd-b069-c980a215e830",
+                  "title": "7 Sixes",
+                  "artists": [
+                    "Hieroglyphics"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 128000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "887a2c82-4c55-4664-9fef-d18e53c80a92",
+          "track_name": "Pet Peeves",
+          "artist_name": "Del The Funky Homosapien",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 1,
+              "best_recording": {
+                "recording_mbid": "5e6764b1-28d8-4976-a07f-d3c60b66dd2b",
+                "title": "Pet Peeves",
+                "artists": [
+                  "Del the Funky Homosapien"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 430960,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "5e6764b1-28d8-4976-a07f-d3c60b66dd2b",
+                  "title": "Pet Peeves",
+                  "artists": [
+                    "Del the Funky Homosapien"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 430960,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "session_id": "4e849a6c-dfbc-4a67-82cc-6dff9076b382",
+      "session_prefix": "4e849a6c",
+      "session_date": "2014-09-17",
+      "target_bucket": "MLHD_STRONG",
+      "profile_key": [
+        "10s",
+        "BR",
+        "male",
+        "Western"
+      ],
+      "query": "Yes! \"Lost Dreams\" totally completes the picture. These tracks really hit that specific early 2010s lo-fi chillwave sound I was looking for. Excellent work! Now that we've found that, do you have any other electronic tracks that have introspective or melancholic lyrics, maybe something with a slightly darker feel?",
+      "played_tracks": [
+        {
+          "track_id": "b88bc69d-7122-40ae-8170-5ef534694dc6",
+          "track_name": "Omni Island",
+          "artist_name": "Dreams West",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 1,
+              "best_recording": {
+                "recording_mbid": "a63e7e86-b8cb-4258-91c0-8031ad5a6efe",
+                "title": "Omni Island",
+                "artists": [
+                  "Dreams West"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 224000,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "a63e7e86-b8cb-4258-91c0-8031ad5a6efe",
+                  "title": "Omni Island",
+                  "artists": [
+                    "Dreams West"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 224000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "586507c2-dd82-4337-85c0-5df9b6e46585",
+          "track_name": "Tribes",
+          "artist_name": "Dreams West",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 1,
+              "best_recording": {
+                "recording_mbid": "0272411d-4214-43ee-84d0-fa0f3f2433be",
+                "title": "Tribes",
+                "artists": [
+                  "Dreams West"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 254000,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "0272411d-4214-43ee-84d0-fa0f3f2433be",
+                  "title": "Tribes",
+                  "artists": [
+                    "Dreams West"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 254000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "track_id": "8b3687ea-d6c9-4f31-90c5-20935c8e6d64",
+          "track_name": "Lost Dreams",
+          "artist_name": "Infinity Frequencies",
+          "isrc_matches": [
+            {
+              "isrc": null,
+              "bridge_method": "musicbrainz_text_search",
+              "error": null,
+              "recording_count": 1,
+              "best_recording": {
+                "recording_mbid": "28abd86e-e8a7-440a-b808-bcb0035910e8",
+                "title": "Lost Dreams",
+                "artists": [
+                  "Infinity Frequencies"
+                ],
+                "score": 100.0,
+                "disambiguation": null,
+                "length": 179000,
+                "title_exact": true,
+                "title_loose": true,
+                "artist_match": true,
+                "looks_like_same_track": true
+              },
+              "top_recordings": [
+                {
+                  "recording_mbid": "28abd86e-e8a7-440a-b808-bcb0035910e8",
+                  "title": "Lost Dreams",
+                  "artists": [
+                    "Infinity Frequencies"
+                  ],
+                  "score": 100.0,
+                  "disambiguation": null,
+                  "length": 179000,
+                  "title_exact": true,
+                  "title_loose": true,
+                  "artist_match": true,
+                  "looks_like_same_track": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
