@@ -1,0 +1,30 @@
+{
+  "experiment": "R511 source-day ca8 industrial-rhythm rank2 promotion",
+  "base_zip": "exp/inference/blind_a/r510_stack_r498_official_positives/r510_r498_plus_official_positive_rows_submission.zip",
+  "out_zip": "exp/inference/blind_a/r511_source_pool_ca8/r511_r510_ca8_dead_is_new_alive_rank2_submission.zip",
+  "sha256": "f567a9f6c0a86269034bb660eb6d03288883ee0b362fc592048d2fcb38aa8db1",
+  "validation_issues": [],
+  "row_index": 62,
+  "session_id": "ca8cbe02-1def-4fca-ba48-f17f9fac0ed8",
+  "turn_number": 6,
+  "query": "Time for Tea theatrical/storytelling plus strong driving beat or industrial rhythm",
+  "target_track_id": "2d4b6470-1a21-475a-8a0d-dba729eb104b",
+  "target_label": "Dead Is The New Alive - Manipulator Mix By Dope Stars Inc. - Emilie Autumn",
+  "old_rank_in_r510": 8,
+  "new_rank": 2,
+  "top1_unchanged": true,
+  "response_unchanged": true,
+  "changed_track_rows_vs_r510": [
+    62
+  ],
+  "changed_response_rows_vs_r510": [],
+  "base_lexdiv_local": 0.8873749568816833,
+  "candidate_lexdiv_local": 0.8873749568816833,
+  "source_evidence": {
+    "source_pool": "exp/eval/expR510_ca8cbe02_mlhd_candidate0_pool.json",
+    "source_user": "18f653ee-38f0-4c22-97b4-47810eb5976b.txt",
+    "source_day_unique_recordings": 26,
+    "mapped_catalog_tracks": 7,
+    "reason": "Target is in recovered source-day pool and is the strongest industrial-rhythm semantic match among mapped catalog tracks."
+  }
+}

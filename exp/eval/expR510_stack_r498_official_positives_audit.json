@@ -101,5 +101,14 @@
       }
     }
   ],
-  "caveat": "Deltas are official single-row evidence but not guaranteed additive across R498 because R498 changed row context on some rows."
+  "caveat": "Deltas are official single-row evidence but not guaranteed additive across R498 because R498 changed row context on some rows.",
+  "official_result": {
+    "ndcg20": 0.5149,
+    "catalog_diversity": 0.0319,
+    "lexical_diversity": 0.8874,
+    "llm_judge_score": 4.9,
+    "composite_score": 0.6419,
+    "scored_from_user_screenshot": "2026-06-17",
+    "interpretation": "Only part of the rough additive stack transferred; observed +0.0023 over R498 matches the row-40 holiday gain, so the other three R432s-positive actions appear non-additive on R498."
+  }
 }

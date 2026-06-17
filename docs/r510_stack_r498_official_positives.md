@@ -18,6 +18,14 @@ Starts from R498 (`0.5126` official nDCG) and applies only row actions with prio
 - This is a measured-positive stack, not a path to 0.60 by itself.
 - The larger retrieval path remains source-session/full-catalog reconstruction or another mechanism that admits true hidden-pool candidates.
 
+## Official result
+
+- Official score from the 2026-06-17 upload: nDCG `0.5149`, CatalogDiv `0.0319`,
+  LexDiv `0.8874`, LLM `4.90`, composite `0.6419`.
+- Interpretation: only part of the stack transferred on top of R498. The observed
+  `+0.0023` nDCG over R498 matches the row-40 holiday gain, so the three extra
+  R432s-positive actions appear non-additive in the R498 context.
+
 ## Validation
 
 - Changed track rows vs R498: `[4, 9, 40, 65]`

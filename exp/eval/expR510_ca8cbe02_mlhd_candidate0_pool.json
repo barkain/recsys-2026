@@ -1,0 +1,423 @@
+{
+  "summary": {
+    "session": "ca8cbe02",
+    "source_user": "18f653ee-38f0-4c22-97b4-47810eb5976b.txt",
+    "source_member": "18/18f653ee-38f0-4c22-97b4-47810eb5976b.txt.zst",
+    "source_day_unique_recordings": 26,
+    "source_day_recordings": 30,
+    "mapped_mbids": 7,
+    "catalog_track_ids": [
+      "1e20b21e-75b3-4d96-9cc4-093333627ccc",
+      "2d4b6470-1a21-475a-8a0d-dba729eb104b",
+      "4ed05288-20e2-424a-9c11-05476046cbe3",
+      "60fd71b1-c45f-496c-957a-04364da9d64d",
+      "7a7f8898-62b9-4ecd-ac08-401000e025d3",
+      "82088dc4-8068-4140-af55-7edc9a59ab30",
+      "863a663c-271b-4405-8da1-07c75135be3c"
+    ]
+  },
+  "pool": [
+    {
+      "source_mbid": "f4ee13a7-5b82-4b16-8f23-f8f983917a9a",
+      "mb_title": "Poison",
+      "mb_artists": [
+        "Tarja"
+      ],
+      "mb_isrcs": [
+        "DEUM70710674"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "578400fd-669f-4209-9e6a-c0b6400f3df5",
+      "mb_title": "Our Great Divide",
+      "mb_artists": [
+        "Tarja"
+      ],
+      "mb_isrcs": [
+        "DEUM70710675"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "b5069232-22c0-4705-adb9-9cb51c672e51",
+      "mb_title": "Sunset",
+      "mb_artists": [
+        "Tarja"
+      ],
+      "mb_isrcs": [
+        "DEUM70710676"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "ada79801-3cd8-4a0f-bafa-632d10cf46f7",
+      "mb_title": "Die Alive",
+      "mb_artists": [
+        "Tarja"
+      ],
+      "mb_isrcs": [
+        "DEUM70710670"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "05c6c8f7-445a-48c7-87f7-84381ce4a0f2",
+      "mb_title": "Minor Heaven",
+      "mb_artists": [
+        "Tarja"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "26ada78b-858e-456e-ab4d-9a155cd6ac30",
+      "mb_title": "Ciarán's Well",
+      "mb_artists": [
+        "Tarja"
+      ],
+      "mb_isrcs": [
+        "DEUM70709275"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "abb9a815-9788-4ac5-8075-5c35d546a755",
+      "mb_title": "Calling Grace",
+      "mb_artists": [
+        "Tarja"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "6bf9c11b-0c92-4718-aa94-f012e2825657",
+      "mb_title": "The Seer",
+      "mb_artists": [
+        "Tarja"
+      ],
+      "mb_isrcs": [],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "e1ab0e76-268c-47b7-a7e0-2cc25a33b84d",
+      "mb_title": "I Walk Alone",
+      "mb_artists": [
+        "Tarja"
+      ],
+      "mb_isrcs": [
+        "DEUM70710666"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "b0d15114-b614-4027-8c5d-5511c3db2865",
+      "mb_title": "Lost Northern Star",
+      "mb_artists": [
+        "Tarja"
+      ],
+      "mb_isrcs": [
+        "DEUM70710664"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "7df0aa97-9ff2-4c35-8d9d-3c826b802a74",
+      "mb_title": "Oasis",
+      "mb_artists": [
+        "Tarja"
+      ],
+      "mb_isrcs": [
+        "DEUM70710673"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "5e00974d-b75a-429f-b01a-2b9283f3fb31",
+      "mb_title": "Jar of Hearts",
+      "mb_artists": [
+        "Christina Perri"
+      ],
+      "mb_isrcs": [
+        "USAT21001508"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "863a663c-271b-4405-8da1-07c75135be3c",
+          "track_name": [
+            "Jar of Hearts"
+          ],
+          "artist_name": [
+            "Christina Perri"
+          ],
+          "album_name": [
+            "lovestrong.",
+            "jar of hearts"
+          ],
+          "isrc": [
+            "USAT21001508"
+          ],
+          "popularity": 77.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "f22f7649-fdf0-41a9-ab43-f98ee3b58443",
+      "mb_title": "Marry Me",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079050"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "562c1f6d-122c-441f-82e1-ad9feebbc190",
+      "mb_title": "Swallow",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079029"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "60fd71b1-c45f-496c-957a-04364da9d64d",
+          "track_name": [
+            "Swallow"
+          ],
+          "artist_name": [
+            "Emilie Autumn"
+          ],
+          "album_name": [
+            "Opheliac -- The Deluxe Edition"
+          ],
+          "isrc": [
+            "USHM21079029"
+          ],
+          "popularity": 30.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "edc007db-3cb2-45e3-af73-4b070ba078e4",
+      "mb_title": "Shalott",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079035"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "1e20b21e-75b3-4d96-9cc4-093333627ccc",
+          "track_name": [
+            "Shalott"
+          ],
+          "artist_name": [
+            "Emilie Autumn"
+          ],
+          "album_name": [
+            "Opheliac -- The Deluxe Edition"
+          ],
+          "isrc": [
+            "USHM21079035"
+          ],
+          "popularity": 32.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "17a1b684-92bf-4034-93d1-11c4b14a0b0a",
+      "mb_title": "Castle Down",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM90512406"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "82088dc4-8068-4140-af55-7edc9a59ab30",
+          "track_name": [
+            "Castle Down"
+          ],
+          "artist_name": [
+            "Emilie Autumn"
+          ],
+          "album_name": [
+            "Enchant"
+          ],
+          "isrc": [
+            "USHM90512406"
+          ],
+          "popularity": 21.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "338425a1-45c8-495d-8017-a1722516b93a",
+      "mb_title": "Swallow (Filthy Victorian mix by Perfidious Words)",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USCGH0859986"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "51e28663-2634-489d-8a08-811778e6b108",
+      "mb_title": "Swallow (Oyster mix by Punto Omega)",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USCGH0859987"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "0c760dfb-8664-4f86-9cf9-941789770586",
+      "mb_title": "Organ Grinder",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USCGH0859988"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "cb0112af-b38e-4389-8a31-8d1d51635bd9",
+      "mb_title": "Misery Loves Company",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079033"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "7a7f8898-62b9-4ecd-ac08-401000e025d3",
+          "track_name": [
+            "Misery Loves Company"
+          ],
+          "artist_name": [
+            "Emilie Autumn"
+          ],
+          "album_name": [
+            "Opheliac -- The Deluxe Edition"
+          ],
+          "isrc": [
+            "USHM21079033"
+          ],
+          "popularity": 33.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "6f9287e0-db7f-4953-80bc-d20bfe91d571",
+      "mb_title": "4 O’Clock",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USCGH0859983"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "c7d1df84-390d-4ff1-a97d-144c9c1bf4cd",
+      "mb_title": "Chambermaid",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM90512399"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "cfaaf9ed-6608-48f5-b57a-ea64a2a689be",
+      "mb_title": "Dead Is the New Alive (Manipulator mix)",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USAHB0700250",
+        "USHM80762307"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "2d4b6470-1a21-475a-8a0d-dba729eb104b",
+          "track_name": [
+            "Dead Is The New Alive - Manipulator Mix By Dope Stars Inc."
+          ],
+          "artist_name": [
+            "Emilie Autumn"
+          ],
+          "album_name": [
+            "Liar, Dead Is The New Alive (Double Feature EP)"
+          ],
+          "isrc": [
+            "USHM80762307"
+          ],
+          "popularity": 35.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "656594a9-01ee-4537-842c-23444bc951d7",
+      "mb_title": "Gentlemen Aren’t Nice",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USL4Q0844770"
+      ],
+      "catalog_hits": []
+    },
+    {
+      "source_mbid": "dba537f3-5021-4068-a95f-0593e6a489d4",
+      "mb_title": "Gothic Lolita",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079036"
+      ],
+      "catalog_hits": [
+        {
+          "track_id": "4ed05288-20e2-424a-9c11-05476046cbe3",
+          "track_name": [
+            "Gothic Lolita"
+          ],
+          "artist_name": [
+            "Emilie Autumn"
+          ],
+          "album_name": [
+            "Opheliac -- The Deluxe Edition",
+            "Opheliac - The Deluxe Edition"
+          ],
+          "isrc": [
+            "USHM21079036"
+          ],
+          "popularity": 27.0
+        }
+      ]
+    },
+    {
+      "source_mbid": "62749329-0b5c-4c81-902e-531b1bc8b173",
+      "mb_title": "I Know Where You Sleep",
+      "mb_artists": [
+        "Emilie Autumn"
+      ],
+      "mb_isrcs": [
+        "USHM21079038"
+      ],
+      "catalog_hits": []
+    }
+  ]
+}
