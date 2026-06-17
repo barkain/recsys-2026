@@ -1,0 +1,886 @@
+[
+  {
+    "name": "top5_ov14_conf70",
+    "mode": "top5",
+    "min_overlap": 14,
+    "min_conf": 0.7,
+    "base_zip": "exp/inference/blind_a/r510_stack_r498_official_positives/r510_r498_plus_official_positive_rows_submission.zip",
+    "order_zip": "exp/inference/blind_a/r500_top20_llm/r500_gpt41_top20_full20_keep_top1_submission.zip",
+    "out_zip": "exp/inference/blind_a/r513_r510_r500_common_order/r513_r510_r500_common_top5_ov14_conf70_submission.zip",
+    "sha256": "84663fdf55e73ca243628fb3375c72ff9292ac0a737b7aeb7b3a7a1ebaab048b",
+    "validation_issues": [],
+    "changed_rows": [
+      0,
+      16,
+      19,
+      26,
+      39,
+      47,
+      51
+    ],
+    "changed_row_count": 7,
+    "top1_changed_count": 0,
+    "response_changed_count": 0,
+    "membership_changed_count": 0,
+    "applied": [
+      {
+        "row_index": 0,
+        "session_short": "02ec3071",
+        "turn_number": 3,
+        "confidence": 0.74,
+        "overlap": 14,
+        "changed_positions": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "base_top5": [
+          "69ab3de6-b138-4708-b9a0-eac472b2ac40",
+          "2fb3661e-e3ca-45a6-9ba3-e267a3be02ce",
+          "5ee8713b-b7eb-4d3a-9992-cefc22514629",
+          "91a129d9-555c-4f7f-a2a4-fc6b0355b34b",
+          "6058fb7e-3a0c-4512-8240-a3d67c08f8df"
+        ],
+        "new_top5": [
+          "69ab3de6-b138-4708-b9a0-eac472b2ac40",
+          "befbf90b-d6b9-4910-ad34-22aa40a2d747",
+          "12079a89-1244-49a1-960d-976ca32d9d34",
+          "52298b88-0091-450f-a3be-cce76d434176",
+          "658645e8-fb22-4a8b-a365-4b33de26f8bf"
+        ]
+      },
+      {
+        "row_index": 16,
+        "session_short": "31bf71ab",
+        "turn_number": 1,
+        "confidence": 0.98,
+        "overlap": 14,
+        "changed_positions": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "base_top5": [
+          "676f59fc-1bd0-42cf-a80a-3b9d846f7810",
+          "60115193-dd26-4436-a14b-f2e27ca76487",
+          "b9cf4002-1125-4693-9771-616ec296cb02",
+          "b4d08917-bb15-4273-a4ae-a85d533b09b1",
+          "59abd72e-7131-4d94-b4ee-70faa35409e2"
+        ],
+        "new_top5": [
+          "676f59fc-1bd0-42cf-a80a-3b9d846f7810",
+          "60115193-dd26-4436-a14b-f2e27ca76487",
+          "b9cf4002-1125-4693-9771-616ec296cb02",
+          "a49bd8d8-c8e0-4a23-8081-5164fb351c72",
+          "3a9bd1b9-2fff-4e60-9c8b-4bc39f8ebc16"
+        ]
+      },
+      {
+        "row_index": 19,
+        "session_short": "39698083",
+        "turn_number": 5,
+        "confidence": 0.79,
+        "overlap": 15,
+        "changed_positions": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "base_top5": [
+          "9d9ca4fe-fa41-482c-b3ca-af1ed38d62fc",
+          "dd5f1710-121f-4102-98ba-5023f2ce11fa",
+          "8ceefcd4-79dc-4408-962f-1965dc725819",
+          "54edac4e-4619-4068-bfb5-a697fc1a34e0",
+          "e4ae522e-2e38-4dfb-8a83-045d2bc269a4"
+        ],
+        "new_top5": [
+          "9d9ca4fe-fa41-482c-b3ca-af1ed38d62fc",
+          "b314c5b0-bf78-4ad4-b064-8ae799c6d3b8",
+          "e3b8bffa-dcc9-42fc-8766-b1565e5b501b",
+          "e4ae522e-2e38-4dfb-8a83-045d2bc269a4",
+          "da9c05b6-88eb-4629-a245-f7da1c4ceed3"
+        ]
+      },
+      {
+        "row_index": 26,
+        "session_short": "4b239a62",
+        "turn_number": 2,
+        "confidence": 0.7,
+        "overlap": 14,
+        "changed_positions": [
+          5,
+          6
+        ],
+        "base_top5": [
+          "d469984d-5dbc-4e1b-89a8-4a964554d062",
+          "2ff2cb7b-bcc0-4be1-89f3-58c654827417",
+          "c2d2a7aa-c73b-4ea4-9a37-b65e5cafeb6d",
+          "55358b27-9b92-4c44-bf37-16f171735040",
+          "195c655c-35a2-4665-9e7a-7e27e9247240"
+        ],
+        "new_top5": [
+          "d469984d-5dbc-4e1b-89a8-4a964554d062",
+          "2ff2cb7b-bcc0-4be1-89f3-58c654827417",
+          "c2d2a7aa-c73b-4ea4-9a37-b65e5cafeb6d",
+          "55358b27-9b92-4c44-bf37-16f171735040",
+          "a827f76a-60f3-42b3-8678-de3f6b4eb2a9"
+        ]
+      },
+      {
+        "row_index": 39,
+        "session_short": "70a0e5ad",
+        "turn_number": 3,
+        "confidence": 0.89,
+        "overlap": 17,
+        "changed_positions": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "base_top5": [
+          "cbc91a29-9394-4b73-9166-46f32afb4fac",
+          "ec381df1-988d-4023-9039-920ec0c4be86",
+          "6fceaa8a-0453-4cc7-add5-6569d4b4e5f2",
+          "a6967cbf-a8f0-46b7-9a58-3037f9e48ffe",
+          "1301287e-7139-4355-a223-277e9d699bf9"
+        ],
+        "new_top5": [
+          "cbc91a29-9394-4b73-9166-46f32afb4fac",
+          "ec381df1-988d-4023-9039-920ec0c4be86",
+          "6fceaa8a-0453-4cc7-add5-6569d4b4e5f2",
+          "e3bdcf1c-b090-42a2-8a69-dff2220980ce",
+          "ade870be-9df7-4939-a0de-2de6880c8d5d"
+        ]
+      },
+      {
+        "row_index": 47,
+        "session_short": "8cd8575d",
+        "turn_number": 2,
+        "confidence": 0.7,
+        "overlap": 14,
+        "changed_positions": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "base_top5": [
+          "0550c249-1fa8-4df8-ad07-756e08856a3e",
+          "462091da-49e4-449d-b075-3e24e7933b89",
+          "5296ef32-5df5-441a-a799-054c110219a4",
+          "bfdd793b-174e-4579-8181-bade21c10d92",
+          "9affc43d-5af8-4542-81a3-5e479ae42b3c"
+        ],
+        "new_top5": [
+          "0550c249-1fa8-4df8-ad07-756e08856a3e",
+          "462091da-49e4-449d-b075-3e24e7933b89",
+          "63086dfb-2f4a-4138-bac4-d1e04f977c98",
+          "5296ef32-5df5-441a-a799-054c110219a4",
+          "bfdd793b-174e-4579-8181-bade21c10d92"
+        ]
+      },
+      {
+        "row_index": 51,
+        "session_short": "9d4ef919",
+        "turn_number": 3,
+        "confidence": 0.92,
+        "overlap": 17,
+        "changed_positions": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "base_top5": [
+          "52604ca3-85ff-4852-ba67-2dffdf9bcf9b",
+          "4f4a2b42-6d44-40ab-b917-55c1c4dfd3f2",
+          "e6b4b65e-335e-4335-afec-2f9be641bf4b",
+          "dcf69574-3a6f-4fa0-b88b-5f3e5546b3c3",
+          "ff41bc47-7a51-4179-9451-96453e8860fc"
+        ],
+        "new_top5": [
+          "52604ca3-85ff-4852-ba67-2dffdf9bcf9b",
+          "4f4a2b42-6d44-40ab-b917-55c1c4dfd3f2",
+          "dcf69574-3a6f-4fa0-b88b-5f3e5546b3c3",
+          "e6b4b65e-335e-4335-afec-2f9be641bf4b",
+          "e55f84ef-68a4-45b0-a617-92328c6a2489"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "top5_ov16_conf65",
+    "mode": "top5",
+    "min_overlap": 16,
+    "min_conf": 0.65,
+    "base_zip": "exp/inference/blind_a/r510_stack_r498_official_positives/r510_r498_plus_official_positive_rows_submission.zip",
+    "order_zip": "exp/inference/blind_a/r500_top20_llm/r500_gpt41_top20_full20_keep_top1_submission.zip",
+    "out_zip": "exp/inference/blind_a/r513_r510_r500_common_order/r513_r510_r500_common_top5_ov16_conf65_submission.zip",
+    "sha256": "525e917bb425aedd1ae938eba9f9d115707824f580aa082cd3506d6d3db8029f",
+    "validation_issues": [],
+    "changed_rows": [
+      39,
+      50,
+      51,
+      61
+    ],
+    "changed_row_count": 4,
+    "top1_changed_count": 0,
+    "response_changed_count": 0,
+    "membership_changed_count": 0,
+    "applied": [
+      {
+        "row_index": 39,
+        "session_short": "70a0e5ad",
+        "turn_number": 3,
+        "confidence": 0.89,
+        "overlap": 17,
+        "changed_positions": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "base_top5": [
+          "cbc91a29-9394-4b73-9166-46f32afb4fac",
+          "ec381df1-988d-4023-9039-920ec0c4be86",
+          "6fceaa8a-0453-4cc7-add5-6569d4b4e5f2",
+          "a6967cbf-a8f0-46b7-9a58-3037f9e48ffe",
+          "1301287e-7139-4355-a223-277e9d699bf9"
+        ],
+        "new_top5": [
+          "cbc91a29-9394-4b73-9166-46f32afb4fac",
+          "ec381df1-988d-4023-9039-920ec0c4be86",
+          "6fceaa8a-0453-4cc7-add5-6569d4b4e5f2",
+          "e3bdcf1c-b090-42a2-8a69-dff2220980ce",
+          "ade870be-9df7-4939-a0de-2de6880c8d5d"
+        ]
+      },
+      {
+        "row_index": 50,
+        "session_short": "9cd93031",
+        "turn_number": 3,
+        "confidence": 0.65,
+        "overlap": 16,
+        "changed_positions": [
+          2,
+          3,
+          4,
+          6
+        ],
+        "base_top5": [
+          "f6643fd4-c8b2-4e34-83d2-11c6475755a2",
+          "00f307f9-36a2-4f50-9af1-3e4fd36bc7c7",
+          "d27c4d32-0484-492d-b371-c5e5fc4c28ca",
+          "c627eb06-4ed4-4fa2-9d2f-db6dc16b69fd",
+          "a5108f9b-24eb-40a8-9922-e4c99ed3b95e"
+        ],
+        "new_top5": [
+          "f6643fd4-c8b2-4e34-83d2-11c6475755a2",
+          "d27c4d32-0484-492d-b371-c5e5fc4c28ca",
+          "c627eb06-4ed4-4fa2-9d2f-db6dc16b69fd",
+          "681f8eeb-0fb1-4fe2-85ab-db7c15696efa",
+          "a5108f9b-24eb-40a8-9922-e4c99ed3b95e"
+        ]
+      },
+      {
+        "row_index": 51,
+        "session_short": "9d4ef919",
+        "turn_number": 3,
+        "confidence": 0.92,
+        "overlap": 17,
+        "changed_positions": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "base_top5": [
+          "52604ca3-85ff-4852-ba67-2dffdf9bcf9b",
+          "4f4a2b42-6d44-40ab-b917-55c1c4dfd3f2",
+          "e6b4b65e-335e-4335-afec-2f9be641bf4b",
+          "dcf69574-3a6f-4fa0-b88b-5f3e5546b3c3",
+          "ff41bc47-7a51-4179-9451-96453e8860fc"
+        ],
+        "new_top5": [
+          "52604ca3-85ff-4852-ba67-2dffdf9bcf9b",
+          "4f4a2b42-6d44-40ab-b917-55c1c4dfd3f2",
+          "dcf69574-3a6f-4fa0-b88b-5f3e5546b3c3",
+          "e6b4b65e-335e-4335-afec-2f9be641bf4b",
+          "e55f84ef-68a4-45b0-a617-92328c6a2489"
+        ]
+      },
+      {
+        "row_index": 61,
+        "session_short": "c75f8e41",
+        "turn_number": 3,
+        "confidence": 0.68,
+        "overlap": 16,
+        "changed_positions": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "base_top5": [
+          "6e9ace56-0fe8-43bd-9117-b2e5eba4d117",
+          "b0bd95d4-6d86-459c-9e81-76d7acd3ce18",
+          "a6d4a635-a239-4d2d-80f7-47b70b2c92c9",
+          "9e31b3c7-a492-4b16-a9f1-7d8311c5f8ec",
+          "782b2c2b-1586-45c3-bd50-87056d5f3bc8"
+        ],
+        "new_top5": [
+          "6e9ace56-0fe8-43bd-9117-b2e5eba4d117",
+          "b0bd95d4-6d86-459c-9e81-76d7acd3ce18",
+          "a6d4a635-a239-4d2d-80f7-47b70b2c92c9",
+          "b2633879-42fa-458d-869c-11e5929fcbf5",
+          "fd261a70-eb37-4a57-a626-9dfb517be6ab"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "top5_ov17_conf80",
+    "mode": "top5",
+    "min_overlap": 17,
+    "min_conf": 0.8,
+    "base_zip": "exp/inference/blind_a/r510_stack_r498_official_positives/r510_r498_plus_official_positive_rows_submission.zip",
+    "order_zip": "exp/inference/blind_a/r500_top20_llm/r500_gpt41_top20_full20_keep_top1_submission.zip",
+    "out_zip": "exp/inference/blind_a/r513_r510_r500_common_order/r513_r510_r500_common_top5_ov17_conf80_submission.zip",
+    "sha256": "c2b98a79871297279547f90e8a58d1d552b2ba827889ef0f6ede0c9498f1ca31",
+    "validation_issues": [],
+    "changed_rows": [
+      39,
+      51
+    ],
+    "changed_row_count": 2,
+    "top1_changed_count": 0,
+    "response_changed_count": 0,
+    "membership_changed_count": 0,
+    "applied": [
+      {
+        "row_index": 39,
+        "session_short": "70a0e5ad",
+        "turn_number": 3,
+        "confidence": 0.89,
+        "overlap": 17,
+        "changed_positions": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "base_top5": [
+          "cbc91a29-9394-4b73-9166-46f32afb4fac",
+          "ec381df1-988d-4023-9039-920ec0c4be86",
+          "6fceaa8a-0453-4cc7-add5-6569d4b4e5f2",
+          "a6967cbf-a8f0-46b7-9a58-3037f9e48ffe",
+          "1301287e-7139-4355-a223-277e9d699bf9"
+        ],
+        "new_top5": [
+          "cbc91a29-9394-4b73-9166-46f32afb4fac",
+          "ec381df1-988d-4023-9039-920ec0c4be86",
+          "6fceaa8a-0453-4cc7-add5-6569d4b4e5f2",
+          "e3bdcf1c-b090-42a2-8a69-dff2220980ce",
+          "ade870be-9df7-4939-a0de-2de6880c8d5d"
+        ]
+      },
+      {
+        "row_index": 51,
+        "session_short": "9d4ef919",
+        "turn_number": 3,
+        "confidence": 0.92,
+        "overlap": 17,
+        "changed_positions": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "base_top5": [
+          "52604ca3-85ff-4852-ba67-2dffdf9bcf9b",
+          "4f4a2b42-6d44-40ab-b917-55c1c4dfd3f2",
+          "e6b4b65e-335e-4335-afec-2f9be641bf4b",
+          "dcf69574-3a6f-4fa0-b88b-5f3e5546b3c3",
+          "ff41bc47-7a51-4179-9451-96453e8860fc"
+        ],
+        "new_top5": [
+          "52604ca3-85ff-4852-ba67-2dffdf9bcf9b",
+          "4f4a2b42-6d44-40ab-b917-55c1c4dfd3f2",
+          "dcf69574-3a6f-4fa0-b88b-5f3e5546b3c3",
+          "e6b4b65e-335e-4335-afec-2f9be641bf4b",
+          "e55f84ef-68a4-45b0-a617-92328c6a2489"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "full_ov17_conf80",
+    "mode": "full",
+    "min_overlap": 17,
+    "min_conf": 0.8,
+    "base_zip": "exp/inference/blind_a/r510_stack_r498_official_positives/r510_r498_plus_official_positive_rows_submission.zip",
+    "order_zip": "exp/inference/blind_a/r500_top20_llm/r500_gpt41_top20_full20_keep_top1_submission.zip",
+    "out_zip": "exp/inference/blind_a/r513_r510_r500_common_order/r513_r510_r500_common_full_ov17_conf80_submission.zip",
+    "sha256": "1a54b64a23111d3ec1e4e9141a1e35db5b826739e9d4e3616b80a9301e23dd53",
+    "validation_issues": [],
+    "changed_rows": [
+      14,
+      25,
+      39,
+      51
+    ],
+    "changed_row_count": 4,
+    "top1_changed_count": 0,
+    "response_changed_count": 0,
+    "membership_changed_count": 0,
+    "applied": [
+      {
+        "row_index": 14,
+        "session_short": "2bfd631e",
+        "turn_number": 8,
+        "confidence": 0.93,
+        "overlap": 19,
+        "changed_positions": [
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "base_top5": [
+          "a3819f53-078f-4cc6-b7f1-3e6820914541",
+          "f0d0f366-7a93-4ab6-92ba-66b8bd365e1d",
+          "838e652b-c07b-4ad3-8164-480e53fe1beb",
+          "84247006-c5f1-41ea-9326-cc4f9d31cdeb",
+          "2ca070d7-e1ab-4d8b-b77b-3fe018b6e1cb"
+        ],
+        "new_top5": [
+          "a3819f53-078f-4cc6-b7f1-3e6820914541",
+          "f0d0f366-7a93-4ab6-92ba-66b8bd365e1d",
+          "838e652b-c07b-4ad3-8164-480e53fe1beb",
+          "84247006-c5f1-41ea-9326-cc4f9d31cdeb",
+          "2ca070d7-e1ab-4d8b-b77b-3fe018b6e1cb"
+        ]
+      },
+      {
+        "row_index": 25,
+        "session_short": "49009ca7",
+        "turn_number": 3,
+        "confidence": 0.82,
+        "overlap": 17,
+        "changed_positions": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "base_top5": [
+          "ff41bc47-7a51-4179-9451-96453e8860fc",
+          "52604ca3-85ff-4852-ba67-2dffdf9bcf9b",
+          "034315a5-1da7-4cb0-9c62-19f5a85fb8b7",
+          "e55f84ef-68a4-45b0-a617-92328c6a2489",
+          "608f04b3-ba0f-4314-890f-e6fe9cce4bed"
+        ],
+        "new_top5": [
+          "ff41bc47-7a51-4179-9451-96453e8860fc",
+          "52604ca3-85ff-4852-ba67-2dffdf9bcf9b",
+          "034315a5-1da7-4cb0-9c62-19f5a85fb8b7",
+          "e55f84ef-68a4-45b0-a617-92328c6a2489",
+          "608f04b3-ba0f-4314-890f-e6fe9cce4bed"
+        ]
+      },
+      {
+        "row_index": 39,
+        "session_short": "70a0e5ad",
+        "turn_number": 3,
+        "confidence": 0.89,
+        "overlap": 17,
+        "changed_positions": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "base_top5": [
+          "cbc91a29-9394-4b73-9166-46f32afb4fac",
+          "ec381df1-988d-4023-9039-920ec0c4be86",
+          "6fceaa8a-0453-4cc7-add5-6569d4b4e5f2",
+          "a6967cbf-a8f0-46b7-9a58-3037f9e48ffe",
+          "1301287e-7139-4355-a223-277e9d699bf9"
+        ],
+        "new_top5": [
+          "cbc91a29-9394-4b73-9166-46f32afb4fac",
+          "ec381df1-988d-4023-9039-920ec0c4be86",
+          "6fceaa8a-0453-4cc7-add5-6569d4b4e5f2",
+          "e3bdcf1c-b090-42a2-8a69-dff2220980ce",
+          "ade870be-9df7-4939-a0de-2de6880c8d5d"
+        ]
+      },
+      {
+        "row_index": 51,
+        "session_short": "9d4ef919",
+        "turn_number": 3,
+        "confidence": 0.92,
+        "overlap": 17,
+        "changed_positions": [
+          3,
+          4,
+          5,
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "base_top5": [
+          "52604ca3-85ff-4852-ba67-2dffdf9bcf9b",
+          "4f4a2b42-6d44-40ab-b917-55c1c4dfd3f2",
+          "e6b4b65e-335e-4335-afec-2f9be641bf4b",
+          "dcf69574-3a6f-4fa0-b88b-5f3e5546b3c3",
+          "ff41bc47-7a51-4179-9451-96453e8860fc"
+        ],
+        "new_top5": [
+          "52604ca3-85ff-4852-ba67-2dffdf9bcf9b",
+          "4f4a2b42-6d44-40ab-b917-55c1c4dfd3f2",
+          "dcf69574-3a6f-4fa0-b88b-5f3e5546b3c3",
+          "e6b4b65e-335e-4335-afec-2f9be641bf4b",
+          "e55f84ef-68a4-45b0-a617-92328c6a2489"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "full_ov16_conf65",
+    "mode": "full",
+    "min_overlap": 16,
+    "min_conf": 0.65,
+    "base_zip": "exp/inference/blind_a/r510_stack_r498_official_positives/r510_r498_plus_official_positive_rows_submission.zip",
+    "order_zip": "exp/inference/blind_a/r500_top20_llm/r500_gpt41_top20_full20_keep_top1_submission.zip",
+    "out_zip": "exp/inference/blind_a/r513_r510_r500_common_order/r513_r510_r500_common_full_ov16_conf65_submission.zip",
+    "sha256": "ef09b2cc824a312f38cf07574c339d979a084038f6cdf32493fa0d13fd2c2c4a",
+    "validation_issues": [],
+    "changed_rows": [
+      14,
+      25,
+      39,
+      50,
+      51,
+      61
+    ],
+    "changed_row_count": 6,
+    "top1_changed_count": 0,
+    "response_changed_count": 0,
+    "membership_changed_count": 0,
+    "applied": [
+      {
+        "row_index": 14,
+        "session_short": "2bfd631e",
+        "turn_number": 8,
+        "confidence": 0.93,
+        "overlap": 19,
+        "changed_positions": [
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "base_top5": [
+          "a3819f53-078f-4cc6-b7f1-3e6820914541",
+          "f0d0f366-7a93-4ab6-92ba-66b8bd365e1d",
+          "838e652b-c07b-4ad3-8164-480e53fe1beb",
+          "84247006-c5f1-41ea-9326-cc4f9d31cdeb",
+          "2ca070d7-e1ab-4d8b-b77b-3fe018b6e1cb"
+        ],
+        "new_top5": [
+          "a3819f53-078f-4cc6-b7f1-3e6820914541",
+          "f0d0f366-7a93-4ab6-92ba-66b8bd365e1d",
+          "838e652b-c07b-4ad3-8164-480e53fe1beb",
+          "84247006-c5f1-41ea-9326-cc4f9d31cdeb",
+          "2ca070d7-e1ab-4d8b-b77b-3fe018b6e1cb"
+        ]
+      },
+      {
+        "row_index": 25,
+        "session_short": "49009ca7",
+        "turn_number": 3,
+        "confidence": 0.82,
+        "overlap": 17,
+        "changed_positions": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "base_top5": [
+          "ff41bc47-7a51-4179-9451-96453e8860fc",
+          "52604ca3-85ff-4852-ba67-2dffdf9bcf9b",
+          "034315a5-1da7-4cb0-9c62-19f5a85fb8b7",
+          "e55f84ef-68a4-45b0-a617-92328c6a2489",
+          "608f04b3-ba0f-4314-890f-e6fe9cce4bed"
+        ],
+        "new_top5": [
+          "ff41bc47-7a51-4179-9451-96453e8860fc",
+          "52604ca3-85ff-4852-ba67-2dffdf9bcf9b",
+          "034315a5-1da7-4cb0-9c62-19f5a85fb8b7",
+          "e55f84ef-68a4-45b0-a617-92328c6a2489",
+          "608f04b3-ba0f-4314-890f-e6fe9cce4bed"
+        ]
+      },
+      {
+        "row_index": 39,
+        "session_short": "70a0e5ad",
+        "turn_number": 3,
+        "confidence": 0.89,
+        "overlap": 17,
+        "changed_positions": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "base_top5": [
+          "cbc91a29-9394-4b73-9166-46f32afb4fac",
+          "ec381df1-988d-4023-9039-920ec0c4be86",
+          "6fceaa8a-0453-4cc7-add5-6569d4b4e5f2",
+          "a6967cbf-a8f0-46b7-9a58-3037f9e48ffe",
+          "1301287e-7139-4355-a223-277e9d699bf9"
+        ],
+        "new_top5": [
+          "cbc91a29-9394-4b73-9166-46f32afb4fac",
+          "ec381df1-988d-4023-9039-920ec0c4be86",
+          "6fceaa8a-0453-4cc7-add5-6569d4b4e5f2",
+          "e3bdcf1c-b090-42a2-8a69-dff2220980ce",
+          "ade870be-9df7-4939-a0de-2de6880c8d5d"
+        ]
+      },
+      {
+        "row_index": 50,
+        "session_short": "9cd93031",
+        "turn_number": 3,
+        "confidence": 0.65,
+        "overlap": 16,
+        "changed_positions": [
+          2,
+          3,
+          4,
+          6,
+          8,
+          9,
+          10,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "base_top5": [
+          "f6643fd4-c8b2-4e34-83d2-11c6475755a2",
+          "00f307f9-36a2-4f50-9af1-3e4fd36bc7c7",
+          "d27c4d32-0484-492d-b371-c5e5fc4c28ca",
+          "c627eb06-4ed4-4fa2-9d2f-db6dc16b69fd",
+          "a5108f9b-24eb-40a8-9922-e4c99ed3b95e"
+        ],
+        "new_top5": [
+          "f6643fd4-c8b2-4e34-83d2-11c6475755a2",
+          "d27c4d32-0484-492d-b371-c5e5fc4c28ca",
+          "c627eb06-4ed4-4fa2-9d2f-db6dc16b69fd",
+          "681f8eeb-0fb1-4fe2-85ab-db7c15696efa",
+          "a5108f9b-24eb-40a8-9922-e4c99ed3b95e"
+        ]
+      },
+      {
+        "row_index": 51,
+        "session_short": "9d4ef919",
+        "turn_number": 3,
+        "confidence": 0.92,
+        "overlap": 17,
+        "changed_positions": [
+          3,
+          4,
+          5,
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "base_top5": [
+          "52604ca3-85ff-4852-ba67-2dffdf9bcf9b",
+          "4f4a2b42-6d44-40ab-b917-55c1c4dfd3f2",
+          "e6b4b65e-335e-4335-afec-2f9be641bf4b",
+          "dcf69574-3a6f-4fa0-b88b-5f3e5546b3c3",
+          "ff41bc47-7a51-4179-9451-96453e8860fc"
+        ],
+        "new_top5": [
+          "52604ca3-85ff-4852-ba67-2dffdf9bcf9b",
+          "4f4a2b42-6d44-40ab-b917-55c1c4dfd3f2",
+          "dcf69574-3a6f-4fa0-b88b-5f3e5546b3c3",
+          "e6b4b65e-335e-4335-afec-2f9be641bf4b",
+          "e55f84ef-68a4-45b0-a617-92328c6a2489"
+        ]
+      },
+      {
+        "row_index": 61,
+        "session_short": "c75f8e41",
+        "turn_number": 3,
+        "confidence": 0.68,
+        "overlap": 16,
+        "changed_positions": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          17,
+          18,
+          19,
+          20
+        ],
+        "base_top5": [
+          "6e9ace56-0fe8-43bd-9117-b2e5eba4d117",
+          "b0bd95d4-6d86-459c-9e81-76d7acd3ce18",
+          "a6d4a635-a239-4d2d-80f7-47b70b2c92c9",
+          "9e31b3c7-a492-4b16-a9f1-7d8311c5f8ec",
+          "782b2c2b-1586-45c3-bd50-87056d5f3bc8"
+        ],
+        "new_top5": [
+          "6e9ace56-0fe8-43bd-9117-b2e5eba4d117",
+          "b0bd95d4-6d86-459c-9e81-76d7acd3ce18",
+          "a6d4a635-a239-4d2d-80f7-47b70b2c92c9",
+          "b2633879-42fa-458d-869c-11e5929fcbf5",
+          "fd261a70-eb37-4a57-a626-9dfb517be6ab"
+        ]
+      }
+    ]
+  }
+]
