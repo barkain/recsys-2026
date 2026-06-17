@@ -1,0 +1,105 @@
+{
+  "experiment": "R510 stack R498 plus independently official-positive rows",
+  "base_zip": "exp/inference/blind_a/r498_listwise_llm/r498_gpt41_full20_keep_top1_submission.zip",
+  "out_zip": "exp/inference/blind_a/r510_stack_r498_official_positives/r510_r498_plus_official_positive_rows_submission.zip",
+  "sha256": "13512bcbb346d8684593c452da544fa4fd3ad281b0e3f733e99e20fb18445250",
+  "validation_issues": [],
+  "base_official_ndcg": 0.5126,
+  "rough_additive_expected_ndcg": 0.5206,
+  "rough_additive_delta_ndcg": 0.008,
+  "changed_track_rows_vs_r498": [
+    4,
+    9,
+    40,
+    65
+  ],
+  "changed_response_rows_vs_r498": [
+    4,
+    40
+  ],
+  "base_lexdiv_local": 0.8858611825192803,
+  "candidate_lexdiv_local": 0.8873749568816833,
+  "applied": [
+    {
+      "probe_id": "r433p04_1f7b28c1_t8_mm_rank2",
+      "row_index": 9,
+      "session_id": "1f7b28c1-8b18-4045-be27-0475edb96857",
+      "turn_number": 8,
+      "target_track_id": "ea5476b3-3e39-4414-9851-34cd35f5f216",
+      "target_label": "Hatred of Music II - Tim Hecker",
+      "response_changed": false,
+      "top1_before": "5731da30-a079-4ee5-8719-86d1dc05f2a1",
+      "top1_after": "5731da30-a079-4ee5-8719-86d1dc05f2a1",
+      "old_rank_in_r498": null,
+      "dropped_track_id": "c385d189-3392-4a82-bc58-9e64c3674fef",
+      "dropped_label": "You Wash My Soul - Mark Pritchard",
+      "evidence": {
+        "official_base": "R432s",
+        "official_base_ndcg": 0.5092,
+        "official_probe_ndcg": 0.5111,
+        "delta_ndcg": 0.0019
+      }
+    },
+    {
+      "probe_id": "r433p03_d5c80ee5_t7_mm_rank2",
+      "row_index": 65,
+      "session_id": "d5c80ee5-97c2-4de1-af2e-2295e3ae34a3",
+      "turn_number": 7,
+      "target_track_id": "27fe592f-17af-4a91-a517-256b2a9bfdea",
+      "target_label": "Maki Ya - Anamanaguchi",
+      "response_changed": false,
+      "top1_before": "983dbea0-db39-423f-b734-c9a18f384620",
+      "top1_after": "983dbea0-db39-423f-b734-c9a18f384620",
+      "old_rank_in_r498": null,
+      "dropped_track_id": "048fa128-4d8b-41ac-a3d7-962556bbe75a",
+      "dropped_label": "Focus - Chipzel",
+      "evidence": {
+        "official_base": "R432s",
+        "official_base_ndcg": 0.5092,
+        "official_probe_ndcg": 0.5111,
+        "delta_ndcg": 0.0019
+      }
+    },
+    {
+      "probe_id": "r446p03_no_more_wood_brothers_rank1",
+      "row_index": 4,
+      "session_id": "0fedfa80-ebe2-4977-b16b-594f4a2b19b1",
+      "turn_number": 7,
+      "target_track_id": "bbdccad2-9bd0-41ad-a128-787f856b6544",
+      "target_label": "The Preacher - Jamie N Commons",
+      "response_changed": true,
+      "top1_before": "f88c7884-6c2c-4ab8-9e98-6ed4ee49673e",
+      "top1_after": "bbdccad2-9bd0-41ad-a128-787f856b6544",
+      "old_rank_in_r498": null,
+      "dropped_track_id": "fbaf2b85-b76d-4db7-8887-409bd1923f69",
+      "dropped_label": "Sanctified Woman - Blackberry Smoke",
+      "evidence": {
+        "official_base": "R432s",
+        "official_base_ndcg": 0.5073,
+        "official_probe_ndcg": 0.5092,
+        "delta_ndcg": 0.0019
+      }
+    },
+    {
+      "probe_id": "r446p02_holiday_beyond_santa_rank1",
+      "row_index": 40,
+      "session_id": "77faef85-566c-4eb7-90b6-ee9fdeeacbe8",
+      "turn_number": 1,
+      "target_track_id": "9326e512-add8-4b78-8c25-d086e4c5deb0",
+      "target_label": "O Little Town of Bethlehem - Sarah McLachlan",
+      "response_changed": true,
+      "top1_before": "b0f7d7c6-6b81-4320-82f6-e0bb2b28391b",
+      "top1_after": "9326e512-add8-4b78-8c25-d086e4c5deb0",
+      "old_rank_in_r498": 2,
+      "dropped_track_id": null,
+      "dropped_label": null,
+      "evidence": {
+        "official_base": "R432s/R491",
+        "official_base_ndcg": 0.5092,
+        "official_probe_ndcg": 0.5115,
+        "delta_ndcg": 0.0023
+      }
+    }
+  ],
+  "caveat": "Deltas are official single-row evidence but not guaranteed additive across R498 because R498 changed row context on some rows."
+}
