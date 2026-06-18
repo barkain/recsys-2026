@@ -1,0 +1,236 @@
+{
+  "run": "R521",
+  "base_zip": "exp/inference/blind_a/r510_stack_r498_official_positives/r510_r498_plus_official_positive_rows_submission.zip",
+  "out_zip": "exp/inference/blind_a/r521_source_sequence_ca8_misery_rank2/r521_r510_ca8_misery_rank2_submission.zip",
+  "out_sha256": "38b029a0dba047d7679f5efe321368dfea21799e0b8f505155629ec1c5653195",
+  "changed_rows": [
+    {
+      "row_index": 62,
+      "session_id": "ca8cbe02-1def-4fca-ba48-f17f9fac0ed8",
+      "turn_number": 6,
+      "target_track_id": "7a7f8898-62b9-4ecd-ac08-401000e025d3",
+      "target_label": "Misery Loves Company — Emilie Autumn",
+      "old_rank": 6,
+      "new_rank": 2,
+      "top1_before": "a9550ed3-9e75-4763-a630-a3a13a6e95c8",
+      "top1_after": "a9550ed3-9e75-4763-a630-a3a13a6e95c8",
+      "top1_unchanged": true,
+      "old_top20": [
+        {
+          "rank": 1,
+          "track_id": "a9550ed3-9e75-4763-a630-a3a13a6e95c8",
+          "label": "Girls! Girls! Girls! — Emilie Autumn"
+        },
+        {
+          "rank": 2,
+          "track_id": "746ec84b-da8c-44c8-9fac-292a473edbbc",
+          "label": "I Want My Innocence Back — Emilie Autumn"
+        },
+        {
+          "rank": 3,
+          "track_id": "4ed05288-20e2-424a-9c11-05476046cbe3",
+          "label": "Gothic Lolita — Emilie Autumn"
+        },
+        {
+          "rank": 4,
+          "track_id": "336755f0-c038-4172-804c-de3c66875a23",
+          "label": "The Art of Suicide — Emilie Autumn"
+        },
+        {
+          "rank": 5,
+          "track_id": "1be962dd-528f-4a7a-983b-d3a8223c76bf",
+          "label": "Opheliac — Emilie Autumn"
+        },
+        {
+          "rank": 6,
+          "track_id": "7a7f8898-62b9-4ecd-ac08-401000e025d3",
+          "label": "Misery Loves Company — Emilie Autumn"
+        },
+        {
+          "rank": 7,
+          "track_id": "d483e61b-78cf-4a31-ad40-3b7d8da0ff9d",
+          "label": "Prick! Goes the Scorpion's Tale — Emilie Autumn"
+        },
+        {
+          "rank": 8,
+          "track_id": "2d4b6470-1a21-475a-8a0d-dba729eb104b",
+          "label": "Dead Is The New Alive - Manipulator Mix By Dope Stars Inc. — Emilie Autumn"
+        },
+        {
+          "rank": 9,
+          "track_id": "68cf82e5-c7a6-4cde-9595-aaef69951cc8",
+          "label": "Ultravioletfly — I:Scintilla"
+        },
+        {
+          "rank": 10,
+          "track_id": "c37f15dc-7631-47d0-823a-75cb84687108",
+          "label": "Victorian Vigilante — Abney Park"
+        },
+        {
+          "rank": 11,
+          "track_id": "c1bacd8e-6e45-4859-aaa0-d886746966f5",
+          "label": "Evil Night Together — Jill Tracy"
+        },
+        {
+          "rank": 12,
+          "track_id": "482548ee-5b5e-434c-a067-a137fba77126",
+          "label": "Sandy Fishnets — Evelyn Evelyn"
+        },
+        {
+          "rank": 13,
+          "track_id": "dc6aa016-f4d8-46db-837f-28b39dfdb532",
+          "label": "Any Old Actress — Rasputina"
+        },
+        {
+          "rank": 14,
+          "track_id": "563405d7-5782-4cac-b83e-3c5015451a12",
+          "label": "Evelyn Evelyn — Evelyn Evelyn"
+        },
+        {
+          "rank": 15,
+          "track_id": "2a54c62e-c854-4f71-a7ba-4abb9b081156",
+          "label": "Forever More (feat. Lauren Krothe) — The Synthetic Dream Foundation"
+        },
+        {
+          "rank": 16,
+          "track_id": "7b05d55e-8f11-48b7-a501-02d0c537e782",
+          "label": "Withering Resolve (feat. Susan Siren) — The Synthetic Dream Foundation"
+        },
+        {
+          "rank": 17,
+          "track_id": "f2b14c8b-2f42-414e-ab08-5920c01fb8f2",
+          "label": "Chicken Man — Evelyn Evelyn"
+        },
+        {
+          "rank": 18,
+          "track_id": "cd805609-d4a1-4e07-9ed4-89a69eb5b0ab",
+          "label": "A Campaign of Shock and Awe — Evelyn Evelyn"
+        },
+        {
+          "rank": 19,
+          "track_id": "65cff34d-1535-4b84-b070-13f93d641cae",
+          "label": "A Strange Thing to Say — Sopor Aeternus & The Ensemble Of Shadows"
+        },
+        {
+          "rank": 20,
+          "track_id": "71b73ed8-742d-4518-8ebd-a5f5ea175e2b",
+          "label": "Keeper Of Secrets — Theatres Des Vampires"
+        }
+      ],
+      "new_top20": [
+        {
+          "rank": 1,
+          "track_id": "a9550ed3-9e75-4763-a630-a3a13a6e95c8",
+          "label": "Girls! Girls! Girls! — Emilie Autumn"
+        },
+        {
+          "rank": 2,
+          "track_id": "7a7f8898-62b9-4ecd-ac08-401000e025d3",
+          "label": "Misery Loves Company — Emilie Autumn"
+        },
+        {
+          "rank": 3,
+          "track_id": "746ec84b-da8c-44c8-9fac-292a473edbbc",
+          "label": "I Want My Innocence Back — Emilie Autumn"
+        },
+        {
+          "rank": 4,
+          "track_id": "4ed05288-20e2-424a-9c11-05476046cbe3",
+          "label": "Gothic Lolita — Emilie Autumn"
+        },
+        {
+          "rank": 5,
+          "track_id": "336755f0-c038-4172-804c-de3c66875a23",
+          "label": "The Art of Suicide — Emilie Autumn"
+        },
+        {
+          "rank": 6,
+          "track_id": "1be962dd-528f-4a7a-983b-d3a8223c76bf",
+          "label": "Opheliac — Emilie Autumn"
+        },
+        {
+          "rank": 7,
+          "track_id": "d483e61b-78cf-4a31-ad40-3b7d8da0ff9d",
+          "label": "Prick! Goes the Scorpion's Tale — Emilie Autumn"
+        },
+        {
+          "rank": 8,
+          "track_id": "2d4b6470-1a21-475a-8a0d-dba729eb104b",
+          "label": "Dead Is The New Alive - Manipulator Mix By Dope Stars Inc. — Emilie Autumn"
+        },
+        {
+          "rank": 9,
+          "track_id": "68cf82e5-c7a6-4cde-9595-aaef69951cc8",
+          "label": "Ultravioletfly — I:Scintilla"
+        },
+        {
+          "rank": 10,
+          "track_id": "c37f15dc-7631-47d0-823a-75cb84687108",
+          "label": "Victorian Vigilante — Abney Park"
+        },
+        {
+          "rank": 11,
+          "track_id": "c1bacd8e-6e45-4859-aaa0-d886746966f5",
+          "label": "Evil Night Together — Jill Tracy"
+        },
+        {
+          "rank": 12,
+          "track_id": "482548ee-5b5e-434c-a067-a137fba77126",
+          "label": "Sandy Fishnets — Evelyn Evelyn"
+        },
+        {
+          "rank": 13,
+          "track_id": "dc6aa016-f4d8-46db-837f-28b39dfdb532",
+          "label": "Any Old Actress — Rasputina"
+        },
+        {
+          "rank": 14,
+          "track_id": "563405d7-5782-4cac-b83e-3c5015451a12",
+          "label": "Evelyn Evelyn — Evelyn Evelyn"
+        },
+        {
+          "rank": 15,
+          "track_id": "2a54c62e-c854-4f71-a7ba-4abb9b081156",
+          "label": "Forever More (feat. Lauren Krothe) — The Synthetic Dream Foundation"
+        },
+        {
+          "rank": 16,
+          "track_id": "7b05d55e-8f11-48b7-a501-02d0c537e782",
+          "label": "Withering Resolve (feat. Susan Siren) — The Synthetic Dream Foundation"
+        },
+        {
+          "rank": 17,
+          "track_id": "f2b14c8b-2f42-414e-ab08-5920c01fb8f2",
+          "label": "Chicken Man — Evelyn Evelyn"
+        },
+        {
+          "rank": 18,
+          "track_id": "cd805609-d4a1-4e07-9ed4-89a69eb5b0ab",
+          "label": "A Campaign of Shock and Awe — Evelyn Evelyn"
+        },
+        {
+          "rank": 19,
+          "track_id": "65cff34d-1535-4b84-b070-13f93d641cae",
+          "label": "A Strange Thing to Say — Sopor Aeternus & The Ensemble Of Shadows"
+        },
+        {
+          "rank": 20,
+          "track_id": "71b73ed8-742d-4518-8ebd-a5f5ea175e2b",
+          "label": "Keeper Of Secrets — Theatres Des Vampires"
+        }
+      ]
+    }
+  ],
+  "rationale": {
+    "source_evidence": [
+      "MLHD text-bridge row ca8cbe02 has multiple candidate days containing the Emilie Autumn block.",
+      "Misery Loves Company appears repeatedly near Shalott and Swallow in the source day sequence.",
+      "The official conversation asks for another Emilie Autumn track with theatrical drama and a strong driving/industrial beat after Time for Tea."
+    ],
+    "risk_control": [
+      "Only one row changes.",
+      "Top-1 is unchanged, so the existing response remains coherent.",
+      "The target was already in R510 top20 at rank 6; this is a rank-only promotion, not broad retrieval replacement."
+    ]
+  }
+}
