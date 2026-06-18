@@ -130,5 +130,14 @@
       "not_in_base_any_source": 0.0
     }
   },
+  "official_blind_a_result": {
+    "verdict": "NO_GO",
+    "ndcg@20": 0.4888,
+    "catalog_diversity": 0.0318,
+    "lexical_diversity": 0.8874,
+    "llm_judge_score": 4.9,
+    "composite_score": 0.6288,
+    "interpretation": "Offline-positive R518/R520 wide semantic residual did not transfer to Blind-A; do not reuse this policy as a production base."
+  },
   "note": "nDCG-first candidate; responses are preserved from R510, so LLM may move if top-1 changes."
 }

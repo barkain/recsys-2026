@@ -2,6 +2,7 @@
 
 **Date:** 2026-06-18
 **Intent:** nDCG-first deployment of the R518 wide semantic residual reranker on top of R510.
+**Official Blind-A result:** **NO_GO** — nDCG@20 `0.4888`, CatDiv `0.0318`, LexDiv `0.8874`, LLM `4.90`, composite `0.6288`.
 
 ## Candidate
 
@@ -18,4 +19,5 @@
 - response changes: `0`
 
 This candidate is not composite-safe by design; it keeps R510 responses while changing rankings.
+Blind result confirms the offline-positive R518/R520 wide semantic residual does **not** transfer; do not reuse this policy as a production base.
 Full audit JSON: `/Users/nadavbarkai/dev/recsys-2026/exp/eval/expR520_wide_semantic_blind_candidate.json`

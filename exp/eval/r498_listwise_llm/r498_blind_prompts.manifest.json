@@ -1,8 +1,0 @@
-{
-  "experiment": "R498 aggressive listwise LLM reranker",
-  "kind": "blind_prompt_pack",
-  "rows": 80,
-  "slate_size": 60,
-  "base_zip": "exp/inference/blind_a/r432s_targeted_subset_submission.zip",
-  "output": "exp/eval/r498_listwise_llm/r498_blind_prompts.jsonl"
-}
