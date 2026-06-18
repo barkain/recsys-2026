@@ -1,0 +1,247 @@
+{
+  "run": "R522",
+  "base_zip": "exp/inference/blind_a/r510_stack_r498_official_positives/r510_r498_plus_official_positive_rows_submission.zip",
+  "out_zip": "exp/inference/blind_a/r522_source_sequence_stack/r522_r510_ca8_misery_5ad_miles_rank2_submission.zip",
+  "out_sha256": "d981b137e1fd2cbd08520b57375c6cf328807afb3b8f7d25d4ba7975fa58bb56",
+  "changed_rows": [
+    {
+      "row_index": 31,
+      "session_id": "5ad7094f-3764-4e32-94c9-c0c02b65e01b",
+      "turn_number": 4,
+      "target_track_id": "058126ce-0c84-4787-97dc-4fff4b78b5b2",
+      "target_label": "Miles to the Sun — Hieroglyphics",
+      "old_rank": 9,
+      "new_rank": 2,
+      "top1_before": "06dbde2c-185f-437a-aa92-8ece8094fe83",
+      "top1_after": "06dbde2c-185f-437a-aa92-8ece8094fe83",
+      "top1_unchanged": true,
+      "reason": "MLHD source-day Hieroglyphics sequence; Miles to the Sun best fits introspective/philosophical edge.",
+      "old_top10": [
+        {
+          "rank": 1,
+          "track_id": "06dbde2c-185f-437a-aa92-8ece8094fe83",
+          "label": "Let It Roll — Hieroglyphics"
+        },
+        {
+          "rank": 2,
+          "track_id": "8a670e37-3198-494f-9558-614285ecba1d",
+          "label": "Disastrous — Del The Funky Homosapien"
+        },
+        {
+          "rank": 3,
+          "track_id": "5525f9f5-33fb-44ab-bfe6-8fcb42891a73",
+          "label": "Signature Slogans — Del The Funky Homosapien"
+        },
+        {
+          "rank": 4,
+          "track_id": "9bf94b8b-ec15-4361-aecf-0a02b473b95f",
+          "label": "Corner Story — Del The Funky Homosapien"
+        },
+        {
+          "rank": 5,
+          "track_id": "ae0ae170-15ed-4850-ad83-3bb61b4308f3",
+          "label": "Mindstate [Deluxe Edition] — Cunninlynguists"
+        },
+        {
+          "rank": 6,
+          "track_id": "2e43bce0-92b3-4472-850c-cbcac2f822a2",
+          "label": "Skull & Crossbones — Del The Funky Homosapien"
+        },
+        {
+          "rank": 7,
+          "track_id": "7d7c9137-8e7e-4d35-a55a-be6f0a02c67c",
+          "label": "Make Your Move — Hieroglyphics"
+        },
+        {
+          "rank": 8,
+          "track_id": "9dbda0a8-11f6-4eb5-b28a-398c5fe1d071",
+          "label": "Powers That Be — Hieroglyphics"
+        },
+        {
+          "rank": 9,
+          "track_id": "058126ce-0c84-4787-97dc-4fff4b78b5b2",
+          "label": "Miles to the Sun — Hieroglyphics"
+        },
+        {
+          "rank": 10,
+          "track_id": "b5b86c04-ffe0-45a0-9a73-33364acfe23a",
+          "label": "You Never Knew — Hieroglyphics"
+        }
+      ],
+      "new_top10": [
+        {
+          "rank": 1,
+          "track_id": "06dbde2c-185f-437a-aa92-8ece8094fe83",
+          "label": "Let It Roll — Hieroglyphics"
+        },
+        {
+          "rank": 2,
+          "track_id": "058126ce-0c84-4787-97dc-4fff4b78b5b2",
+          "label": "Miles to the Sun — Hieroglyphics"
+        },
+        {
+          "rank": 3,
+          "track_id": "8a670e37-3198-494f-9558-614285ecba1d",
+          "label": "Disastrous — Del The Funky Homosapien"
+        },
+        {
+          "rank": 4,
+          "track_id": "5525f9f5-33fb-44ab-bfe6-8fcb42891a73",
+          "label": "Signature Slogans — Del The Funky Homosapien"
+        },
+        {
+          "rank": 5,
+          "track_id": "9bf94b8b-ec15-4361-aecf-0a02b473b95f",
+          "label": "Corner Story — Del The Funky Homosapien"
+        },
+        {
+          "rank": 6,
+          "track_id": "ae0ae170-15ed-4850-ad83-3bb61b4308f3",
+          "label": "Mindstate [Deluxe Edition] — Cunninlynguists"
+        },
+        {
+          "rank": 7,
+          "track_id": "2e43bce0-92b3-4472-850c-cbcac2f822a2",
+          "label": "Skull & Crossbones — Del The Funky Homosapien"
+        },
+        {
+          "rank": 8,
+          "track_id": "7d7c9137-8e7e-4d35-a55a-be6f0a02c67c",
+          "label": "Make Your Move — Hieroglyphics"
+        },
+        {
+          "rank": 9,
+          "track_id": "9dbda0a8-11f6-4eb5-b28a-398c5fe1d071",
+          "label": "Powers That Be — Hieroglyphics"
+        },
+        {
+          "rank": 10,
+          "track_id": "b5b86c04-ffe0-45a0-9a73-33364acfe23a",
+          "label": "You Never Knew — Hieroglyphics"
+        }
+      ]
+    },
+    {
+      "row_index": 62,
+      "session_id": "ca8cbe02-1def-4fca-ba48-f17f9fac0ed8",
+      "turn_number": 6,
+      "target_track_id": "7a7f8898-62b9-4ecd-ac08-401000e025d3",
+      "target_label": "Misery Loves Company — Emilie Autumn",
+      "old_rank": 6,
+      "new_rank": 2,
+      "top1_before": "a9550ed3-9e75-4763-a630-a3a13a6e95c8",
+      "top1_after": "a9550ed3-9e75-4763-a630-a3a13a6e95c8",
+      "top1_unchanged": true,
+      "reason": "MLHD source-day Emilie Autumn sequence; dramatic/theatrical request after Time for Tea.",
+      "old_top10": [
+        {
+          "rank": 1,
+          "track_id": "a9550ed3-9e75-4763-a630-a3a13a6e95c8",
+          "label": "Girls! Girls! Girls! — Emilie Autumn"
+        },
+        {
+          "rank": 2,
+          "track_id": "746ec84b-da8c-44c8-9fac-292a473edbbc",
+          "label": "I Want My Innocence Back — Emilie Autumn"
+        },
+        {
+          "rank": 3,
+          "track_id": "4ed05288-20e2-424a-9c11-05476046cbe3",
+          "label": "Gothic Lolita — Emilie Autumn"
+        },
+        {
+          "rank": 4,
+          "track_id": "336755f0-c038-4172-804c-de3c66875a23",
+          "label": "The Art of Suicide — Emilie Autumn"
+        },
+        {
+          "rank": 5,
+          "track_id": "1be962dd-528f-4a7a-983b-d3a8223c76bf",
+          "label": "Opheliac — Emilie Autumn"
+        },
+        {
+          "rank": 6,
+          "track_id": "7a7f8898-62b9-4ecd-ac08-401000e025d3",
+          "label": "Misery Loves Company — Emilie Autumn"
+        },
+        {
+          "rank": 7,
+          "track_id": "d483e61b-78cf-4a31-ad40-3b7d8da0ff9d",
+          "label": "Prick! Goes the Scorpion's Tale — Emilie Autumn"
+        },
+        {
+          "rank": 8,
+          "track_id": "2d4b6470-1a21-475a-8a0d-dba729eb104b",
+          "label": "Dead Is The New Alive - Manipulator Mix By Dope Stars Inc. — Emilie Autumn"
+        },
+        {
+          "rank": 9,
+          "track_id": "68cf82e5-c7a6-4cde-9595-aaef69951cc8",
+          "label": "Ultravioletfly — I:Scintilla"
+        },
+        {
+          "rank": 10,
+          "track_id": "c37f15dc-7631-47d0-823a-75cb84687108",
+          "label": "Victorian Vigilante — Abney Park"
+        }
+      ],
+      "new_top10": [
+        {
+          "rank": 1,
+          "track_id": "a9550ed3-9e75-4763-a630-a3a13a6e95c8",
+          "label": "Girls! Girls! Girls! — Emilie Autumn"
+        },
+        {
+          "rank": 2,
+          "track_id": "7a7f8898-62b9-4ecd-ac08-401000e025d3",
+          "label": "Misery Loves Company — Emilie Autumn"
+        },
+        {
+          "rank": 3,
+          "track_id": "746ec84b-da8c-44c8-9fac-292a473edbbc",
+          "label": "I Want My Innocence Back — Emilie Autumn"
+        },
+        {
+          "rank": 4,
+          "track_id": "4ed05288-20e2-424a-9c11-05476046cbe3",
+          "label": "Gothic Lolita — Emilie Autumn"
+        },
+        {
+          "rank": 5,
+          "track_id": "336755f0-c038-4172-804c-de3c66875a23",
+          "label": "The Art of Suicide — Emilie Autumn"
+        },
+        {
+          "rank": 6,
+          "track_id": "1be962dd-528f-4a7a-983b-d3a8223c76bf",
+          "label": "Opheliac — Emilie Autumn"
+        },
+        {
+          "rank": 7,
+          "track_id": "d483e61b-78cf-4a31-ad40-3b7d8da0ff9d",
+          "label": "Prick! Goes the Scorpion's Tale — Emilie Autumn"
+        },
+        {
+          "rank": 8,
+          "track_id": "2d4b6470-1a21-475a-8a0d-dba729eb104b",
+          "label": "Dead Is The New Alive - Manipulator Mix By Dope Stars Inc. — Emilie Autumn"
+        },
+        {
+          "rank": 9,
+          "track_id": "68cf82e5-c7a6-4cde-9595-aaef69951cc8",
+          "label": "Ultravioletfly — I:Scintilla"
+        },
+        {
+          "rank": 10,
+          "track_id": "c37f15dc-7631-47d0-823a-75cb84687108",
+          "label": "Victorian Vigilante — Abney Park"
+        }
+      ]
+    }
+  ],
+  "rationale": {
+    "why_narrow": "Broad rerank/retrieval edits repeatedly regressed official nDCG; this only promotes source-backed tracks already in top20.",
+    "expected_gain_if_hits": "ca8 rank6->2 is about +0.0034 nDCG; 5ad rank9->2 is about +0.0049 nDCG.",
+    "main_risk": "If either hidden GT is in old ranks 2..target_rank-1, that row loses a small amount."
+  }
+}
