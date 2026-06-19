@@ -11,4 +11,16 @@ Starts from R510 (`0.5149` official nDCG) and changes one row:
 
 Expected value is asymmetric: if this source-pool track is the GT, moving rank 8 to rank 2 gains material nDCG; if it is not, top-1 is preserved and only ranks 2-7 shift down by one.
 
+## Official Result
+
+Uploaded on 2026-06-17. Official score was unchanged from R510 at the visible precision:
+
+- nDCG@20: `0.5149`
+- CatalogDiv: `0.0319`
+- LexDiv: `0.8874`
+- LLM: `4.90`
+- Composite: `0.6419`
+
+Interpretation: neutral. The source-day industrial remix promotion did not move official nDCG, so `Dead Is The New Alive - Manipulator Mix By Dope Stars Inc.` is not useful as a ca8 promotion target on top of R510.
+
 Validation issues: `[]`

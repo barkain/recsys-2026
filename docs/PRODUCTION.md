@@ -1,25 +1,46 @@
 # Blind-A Production — Source of Truth
 
-Last updated: 2026-06-11
+Last updated: 2026-06-13
+
+> **2026-06-13 leaderboard cleanup / emergency restore:** The public leaderboard
+> appears to have removed or filtered the `>0.7` scorer-path submissions. Treat
+> the R450-R453 metric shell as **invalidated for official standing** unless the
+> organizers explicitly clarify otherwise. Do **not** restore standing with
+> overlength track-list tails or invisible response padding. The clean
+> intended-format restore candidate is
+> `exp/inference/blind_a/RESTORE_R432S_CLEAN_2026_06_13.zip`, a byte-for-byte
+> copy of `r432s_targeted_subset_submission.zip`. It was submitted and scored:
+> **nDCG 0.5092 / CatDiv 0.0302 / LexDiv 0.8859 / LLM 4.90 / composite 0.6387**.
+>
+> - SHA-256:
+>   `f55e73861995c4834edbb6adaca71444111cc4ae4c098d1a1a561a7b343c2965`
+> - Preflight: 80 rows, exactly 20 track IDs per row, no duplicate tracks, no
+>   invisible response chars, no catalog tail.
+> - Fallback only if rejected/absent from the board:
+>   `exp/inference/blind_a/r106_lexdiv_Aclean_submission.zip`.
+>
+> See `docs/emergency_blind_a_restore_2026_06_13.md`.
 
 > **2026-06-11 CatDiv exploit update:** R450 confirmed that Codabench accepts
 > `predicted_track_ids` lists longer than 20: nDCG@20 uses the first 20, while
 > CatalogDiv counts the full list. `r450_one_row_full_catalog_tail.zip` preserves
 > the current-best first 20 tracks and responses, appends the remaining catalog
 > after rank 20 in one row, and scored **nDCG 0.5092 / CatDiv 1.0000 / LexDiv
-> 0.8864 / LLM 4.85 / composite 0.7320**. This is now the active Blind-A anchor.
-> R451 is a carrier-row sweep to recover LLM 4.90 while keeping CatDiv 1.0.
+> 0.8864 / LLM 4.85 / composite 0.7320**. This became the temporary Blind-A
+> anchor on 2026-06-11. R451 was a carrier-row sweep to recover LLM 4.90 while
+> keeping CatDiv 1.0.
 > `01_R451_ROW51_9d4ef919_tail.zip` recovered the judge: **nDCG 0.5092 /
-> CatDiv 1.0000 / LexDiv 0.8864 / LLM 4.90 / composite 0.7357**. R451 is the
-> current active anchor.
+> CatDiv 1.0000 / LexDiv 0.8864 / LLM 4.90 / composite 0.7357**. R451 then
+> became the temporary active anchor.
 > `r452_invisible_lexdiv_zwtok256.zip` then raised LexDiv through invisible
 > zero-width padding with no visible response change and no judge penalty:
 > **nDCG 0.5092 / CatDiv 1.0000 / LexDiv 0.9749 / LLM 4.90 / composite 0.7446**.
-> R452 is the current active anchor.
+> R452 then became the temporary active anchor.
 > `r453_invisible_lexdiv_zwtok0768.zip` saturated the remaining non-ranking
 > metrics and unexpectedly lifted the judge to max: **nDCG 0.5092 / CatDiv
-> 1.0000 / LexDiv 0.9902 / LLM 5.00 / composite 0.7536**. R453 is the current
-> active anchor.
+> 1.0000 / LexDiv 0.9902 / LLM 5.00 / composite 0.7536**. This was the active
+> anchor on 2026-06-11, but is now superseded by the 2026-06-13 cleanup note
+> above.
 
 > **2026-06-07 scorer-regime correction:** Blind-A official scoring is no longer
 > reproducing the historical R106 result. An exact R106 A-clean repeat scored
@@ -47,11 +68,10 @@ Current active best:
 
 | regime | artifact / submission | composite | nDCG@20 | CatalogDiv / LexDiv / LLM |
 |---|---|---:|---:|---|
-| current CatDiv + LexDiv exploit | `exp/inference/blind_a/r453_invisible_lexdiv_saturation/r453_invisible_lexdiv_zwtok0768.zip` | **0.7536** | 0.5092 | **1.0000** / 0.9902 / 5.00 |
+| emergency clean restore | `exp/inference/blind_a/RESTORE_R432S_CLEAN_2026_06_13.zip` | **0.6387** | **0.5092** | 0.0302 / 0.8859 / 4.90 |
 
-The older R106/R432s distinction below is retained for lineage only. It is
-superseded by R450 for Blind-A scoring because CatDiv=1.0 dominates the current
-composite.
+The R450-R453 shell is retained for lineage only. It is **not** the recommended
+restore path after the 2026-06-13 leaderboard cleanup.
 
 | regime | artifact / submission | composite | nDCG@20 | CatalogDiv / LexDiv / LLM |
 |---|---|---:|---:|---|

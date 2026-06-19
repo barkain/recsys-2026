@@ -1,12 +1,15 @@
 # Blind-A nDCG Investigation — Findings & Strategic Conclusion
 
-**Date:** 2026-06-04
-**Status:** nDCG comprehensively closed on provided data. Production = **R106 A-clean, composite 0.6377**.
-**TL;DR:** Our nDCG (0.5073) is near-optimal on the data *as intended*. The leaders' +0.12 nDCG
+**Date:** 2026-06-04; updated 2026-06-14
+**Status:** Provided-data nDCG levers are exhausted below the >0.6 target. Current valid anchor is
+**R432s/R106-family: nDCG 0.5092, LLM 4.90, composite 0.6387**.
+**TL;DR:** Our nDCG (~0.51) is near-optimal on the data *as intended*. The leaders' +0.12 nDCG
 comes from reconstructing the hidden candidate pool out of the public LFM-2b source dataset —
 which is (a) against the challenge's spirit and (b) practically blocked for us because LFM-2b
-has been taken down. We compete clean on our composite-optimal profile (best LexDiv + tied-best
-LLM) and shift effort to Blind-B (the final ranking, Jun 23).
+has been taken down. After R432/R480/R495/R496, ordinary retrieval, reranking, response edits,
+and rank-preserving semantic promotions cannot plausibly bridge the +0.09 nDCG gap to 0.60.
+The only remaining high-ceiling line is source/pool reconstruction feasibility, gated by legality
+and organizer clarity.
 
 ---
 
@@ -45,6 +48,9 @@ Composite formula (recovered, RMSE 5.6e-5): `0.506·nDCG + 0.095·LexDiv + 0.305
 | popularity / selection-policy | **R108/R109/R420** | real GT-correlate, non-convertible |
 | pool broadening / admission | R59–R62, R103 | recovered < lost through frozen LR |
 | public user embeddings (cf-bpr) | R180/R431 | real recall (257 GTs), but full LR integration +0.0017 all-cases (gate +0.010), non-converting |
+| goal-aware retrieval / reorders | R432/R432s | real blind nDCG transfer to 0.5092, but small; subsets do not approach 0.60 |
+| instruction-aware reranking | R480/Qwen3 | rec@20 improves on hard misses, but deployment sim +0.0003 due rec@1 and displacement wall |
+| rank-preserving semantic promotions | R495/R496 | R495 blind stack 0.5092 -> 0.5081; R496 OOF AUC 0.405/AP 0.012, best policy 0 actions |
 
 ## 3. R421 — the cross-encoder deep-dive (the most thorough ranking attempt)
 
@@ -74,6 +80,24 @@ Dev OOF: **28% of GTs (2,261/8,000) are not in our union@300** (recall ceiling).
 → **99% of the unreachable GTs are vibe-only.** The conversation says "something dark and
 atmospheric"; Gemini picked one specific track among many that fit, and nothing in the text
 points to it. No retriever or ranker can extract what the text doesn't determine.
+
+## 4b. R495/R496 — rank-preserving promotions closed
+
+After the scorer-regime reset removed the CatDiv/LexDiv shell from the leaderboard, the clean
+path was to keep the R432s/R106 response profile and only change the visible top-20 ordering.
+R495 tested the safest version: preserve the current #1 and response, promote one existing
+top-20 track to #2, and shift the intervening tracks down.
+
+- **R495 official blind stack:** six vetted semantic promotions, top-1 and responses unchanged.
+  Result: **nDCG 0.5092 -> 0.5081**, LLM held at 4.90. The action class is LLM-safe but not
+  nDCG-positive.
+- **R496 dev-calibrated model:** LightGBM OOF calibration over 144,000 dev rank-2 promotion
+  actions. Result: **AUC 0.405 / AP 0.012**, best OOF policy selects **0 actions**. Top-k
+  policies are neutral or negative.
+
+This closes the last low-risk reorder path. To reach **nDCG 0.60** from 0.5092 requires roughly
+eight perfect new rank-1 recoveries, or many more lower-rank clean recoveries, with near-zero
+losses. The provided-data action classes tested so far do not have that precision.
 
 ## 5. How the leaders actually do it (the mechanism)
 

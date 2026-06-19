@@ -26,5 +26,14 @@
     "source_day_unique_recordings": 26,
     "mapped_catalog_tracks": 7,
     "reason": "Target is in recovered source-day pool and is the strongest industrial-rhythm semantic match among mapped catalog tracks."
+  },
+  "official_result": {
+    "ndcg20": 0.5149,
+    "catalog_diversity": 0.0319,
+    "lexical_diversity": 0.8874,
+    "llm_judge_score": 4.9,
+    "composite_score": 0.6419,
+    "scored_from_user_screenshot": "2026-06-17",
+    "interpretation": "Neutral vs R510; the source-day industrial remix promotion from rank 8 to rank 2 did not move official nDCG at 4-decimal precision."
   }
 }
