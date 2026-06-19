@@ -1,0 +1,70 @@
+{
+  "experiment": "R523 filtered full-catalog GPT-4.1 candidate",
+  "base_zip": "exp/inference/blind_a/r510_stack_r498_official_positives/r510_r498_plus_official_positive_rows_submission.zip",
+  "out_zip": "exp/inference/blind_a/r523_generative_catalog_r510/r523_r510_gpt41_fullcatalog_filtered2_repaired_submission.zip",
+  "sha256": "f4cf167a9de21b8a5409377ce980c1ba207cf6a72ce508035a0b0f619b8eb1a7",
+  "source_dev_result": {
+    "slice_rows": 240,
+    "policy": "GPT-4.1 generative full-catalog, threshold>=0.6, insert rank1",
+    "delta_ndcg": 0.009014274319945533,
+    "recovered": 1,
+    "lost": 0
+  },
+  "raw_blind_selector": {
+    "threshold": 0.6,
+    "changed_rows": [
+      6,
+      16,
+      19,
+      36
+    ],
+    "dropped_rows": {
+      "16": "License to Drive exact-title row already failed officially.",
+      "19": "ONE OK ROCK pick conflicts with explicit We Are/album context."
+    }
+  },
+  "changed_track_rows": [
+    6,
+    36
+  ],
+  "changed_response_rows": [
+    6,
+    36
+  ],
+  "top1_churn": 2,
+  "validation_issues": [],
+  "actions": [
+    {
+      "row_index": 6,
+      "session_prefix": "1415a335",
+      "target_track_id": "ed5c9953-3ba6-4bb9-80e4-7bedcc4a1833",
+      "target_label": "Battle Metal - Turisas",
+      "reason": "Full-catalog GPT-4.1 selected the exact title/artist at confidence 0.82 for the folk/viking metal battle-scene query; current R510 has it at rank 3.",
+      "response": "I recommend \"Battle Metal\" by Turisas. It directly fits the epic folk/viking-metal direction you asked for: mythic battle imagery, huge chanted hooks, and a forceful warrior-march energy that follows naturally from \"End of an Empire\". I kept the rest of the list close to that Turisas-led battle-metal sound.",
+      "session_id": "1415a335-8fa3-4ead-8f30-0f04b337d079",
+      "turn_number": 2,
+      "old_rank": 3,
+      "old_top1": "5ee789d5-0ca1-4aa5-88b2-1463ab242155",
+      "old_top1_label": "Hunting Pirates - Turisas",
+      "new_top1": "ed5c9953-3ba6-4bb9-80e4-7bedcc4a1833",
+      "new_top1_label": "Battle Metal - Turisas",
+      "max_delta_if_gt": 0.5
+    },
+    {
+      "row_index": 36,
+      "session_prefix": "68993adf",
+      "target_track_id": "707d63de-3ecd-47f1-8b22-21d73207dd96",
+      "target_label": "Story of My Life - One Direction",
+      "reason": "Full-catalog GPT-4.1 selected the exact title/artist at confidence 0.70 for the narrative life-story query; current R510 has it at rank 2.",
+      "response": "I recommend \"Story of My Life\" by One Direction. It is a direct match for your request for a song that feels like a life story unfolding: reflective, narrative-driven, and slightly melancholic without losing its melodic pull. The rest of the list keeps adjacent story-song alternatives.",
+      "session_id": "68993adf-60d9-42f9-b21f-cdd5bf851cb1",
+      "turn_number": 1,
+      "old_rank": 2,
+      "old_top1": "93140c81-0c14-4b06-98e3-228c3b9867e4",
+      "old_top1_label": "What It Feels Like - Original Mix - Sons Of Maria",
+      "new_top1": "707d63de-3ecd-47f1-8b22-21d73207dd96",
+      "new_top1_label": "Story of My Life - One Direction",
+      "max_delta_if_gt": 0.36907024642854247
+    }
+  ]
+}
