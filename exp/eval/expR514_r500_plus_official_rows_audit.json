@@ -1,0 +1,58 @@
+[
+  {
+    "name": "r500_top5",
+    "base_zip": "exp/inference/blind_a/r500_top20_llm/r500_gpt41_top20_top5_keep_top1_submission.zip",
+    "source_positive_rows_zip": "exp/inference/blind_a/r510_stack_r498_official_positives/r510_r498_plus_official_positive_rows_submission.zip",
+    "out_zip": "exp/inference/blind_a/r514_r500_plus_official_rows/r514_r500_top5_plus_r510_positive_rows_submission.zip",
+    "sha256": "9d53717064d59303cfbfd34f71d0ceb3233ebdbb8551569e550d3d581d3c04a2",
+    "validation_issues": [],
+    "copied_rows_from_r510": [
+      4,
+      9,
+      40,
+      65
+    ],
+    "changed_rows_vs_base": [
+      4,
+      9,
+      40,
+      65
+    ],
+    "changed_response_rows_vs_base": [
+      4,
+      40
+    ],
+    "top1_churn_rows_vs_base": [
+      4,
+      40
+    ]
+  },
+  {
+    "name": "r500_full20",
+    "base_zip": "exp/inference/blind_a/r500_top20_llm/r500_gpt41_top20_full20_keep_top1_submission.zip",
+    "source_positive_rows_zip": "exp/inference/blind_a/r510_stack_r498_official_positives/r510_r498_plus_official_positive_rows_submission.zip",
+    "out_zip": "exp/inference/blind_a/r514_r500_plus_official_rows/r514_r500_full20_plus_r510_positive_rows_submission.zip",
+    "sha256": "a3f3a4771125fb4d87e4596a81635dbed8a338c2aceb6ac7ac0dc1f23c0f1b8f",
+    "validation_issues": [],
+    "copied_rows_from_r510": [
+      4,
+      9,
+      40,
+      65
+    ],
+    "changed_rows_vs_base": [
+      4,
+      9,
+      40,
+      65
+    ],
+    "changed_response_rows_vs_base": [
+      4,
+      40
+    ],
+    "top1_churn_rows_vs_base": [
+      4,
+      40
+    ]
+  }
+]
