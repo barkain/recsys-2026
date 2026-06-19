@@ -243,5 +243,14 @@
     "why_narrow": "Broad rerank/retrieval edits repeatedly regressed official nDCG; this only promotes source-backed tracks already in top20.",
     "expected_gain_if_hits": "ca8 rank6->2 is about +0.0034 nDCG; 5ad rank9->2 is about +0.0049 nDCG.",
     "main_risk": "If either hidden GT is in old ranks 2..target_rank-1, that row loses a small amount."
+  },
+  "official_result": {
+    "status": "NO_GO",
+    "ndcg_at_20": 0.5149,
+    "catalog_diversity": 0.0319,
+    "lexical_diversity": 0.8874,
+    "llm_judge_score": 4.9,
+    "composite_score": 0.6419,
+    "interpretation": "Neutral vs R510. The ca8cbe02 Misery rank promotion and 5ad7094f Miles rank promotion did not produce measurable official nDCG gain; stop this source-sequence branch."
   }
 }

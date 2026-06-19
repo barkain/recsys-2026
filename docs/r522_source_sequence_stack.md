@@ -4,6 +4,7 @@
 **Base:** R510 (`nDCG@20=0.5149`, current best tracked candidate)  
 **Zip:** `exp/inference/blind_a/r522_source_sequence_stack/r522_r510_ca8_misery_5ad_miles_rank2_submission.zip`  
 **SHA256:** `d981b137e1fd2cbd08520b57375c6cf328807afb3b8f7d25d4ba7975fa58bb56`
+**Official result:** **NO_GO** — nDCG stayed `0.5149`, CatDiv `0.0319`, LexDiv `0.8874`, LLM `4.90`, composite `0.6419`.
 
 ## Change
 
@@ -25,8 +26,12 @@ source-sequence evidence:
 - `5ad7094f`: the mapped source day contains a Hieroglyphics sequence; `Miles to the Sun` is the best semantic fit for “underground hip-hop with
   strong lyrical focus” and a more introspective/philosophical edge.
 
-## Expected Outcome
+## Outcome
 
-If both promoted tracks are hidden GTs, the expected gain is roughly `+0.008` nDCG. If neither is GT but the GT is in the old ranks shifted down,
-the loss is bounded. This is not a path to `0.55` by itself; it is the strongest current source-evidence candidate after excluding broad reranks and
-the already-negative `2bfd631e` exact-title path.
+The official score was neutral versus R510: `0.5149` nDCG. That closes this source-sequence branch for now:
+
+- `ca8cbe02` has now tested both `Dead Is The New Alive` and `Misery Loves Company` rank promotions without measurable gain.
+- `5ad7094f` tested the best mapped Hieroglyphics source-sequence candidate without measurable gain.
+- The remaining legal/MLHD-backed source evidence is too sparse to justify more slots without a new signal.
+
+This is not a path to `0.55`; continue with a different mechanism.
