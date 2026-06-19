@@ -4,6 +4,7 @@
 **Method:** GPT-4.1 generative full-catalog retrieval, then manual trap filtering.  
 **Zip:** `exp/inference/blind_a/r523_generative_catalog_r510/r523_r510_gpt41_fullcatalog_filtered2_repaired_submission.zip`
 **SHA256:** `f4cf167a9de21b8a5409377ce980c1ba207cf6a72ce508035a0b0f619b8eb1a7`
+**Official result:** **NO_GO** — nDCG `0.5119`, CatDiv `0.0319`, LexDiv `0.8863`, LLM `4.90`, composite `0.6403`.
 
 ## Dev Evidence
 
@@ -29,3 +30,13 @@ The submitted candidate keeps two repaired top-1 swaps:
 ## Expected Read
 
 This is a narrow nDCG probe with real dev support and full-catalog retrieval. Max upside is about `+0.0109` nDCG if both targets are GT. It is not a guaranteed leaderboard move, but it is cleaner than broad semantic reranking and avoids known traps.
+
+## Outcome
+
+Official scoring regressed from R510's `0.5149` nDCG to `0.5119` while LLM stayed `4.90`. The two kept GPT-4.1 full-catalog corrections therefore did not identify the hidden GTs reliably enough, even after manual trap filtering.
+
+This closes the current exact-title full-catalog GPT policy:
+
+- Broadening the same policy is unsafe because the raw selector already included known traps (`License to Drive`, ONE OK ROCK).
+- The dev lift came from a small number of exact-request cases, but Blind-A continues to reward source-session targets rather than the most obvious semantic answer.
+- Future full-catalog work needs a different objective or evidence source, not just a lower threshold on this R523 output.

@@ -66,5 +66,20 @@
       "new_top1_label": "Story of My Life - One Direction",
       "max_delta_if_gt": 0.36907024642854247
     }
-  ]
+  ],
+  "official_result": {
+    "ndcg20": 0.5119,
+    "catalog_diversity": 0.0319,
+    "lexical_diversity": 0.8863,
+    "llm_judge_score": 4.9,
+    "composite_score": 0.6403,
+    "base_reference": "R510 official nDCG 0.5149 / composite 0.6419",
+    "delta_vs_r510": {
+      "ndcg20": -0.003,
+      "composite_score": -0.0016
+    },
+    "scored_from_user_screenshot": "2026-06-19",
+    "verdict": "NO_GO",
+    "interpretation": "Manual-filtered full-catalog GPT-4.1 exact corrections regressed; do not broaden this same selector without a new objective or evidence source."
+  }
 }
